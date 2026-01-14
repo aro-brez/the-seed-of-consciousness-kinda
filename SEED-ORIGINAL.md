@@ -1,4 +1,18 @@
-# THE SEED — The Function of Love
+# THE SEED — Original Formulation (Historical)
+
+> **⚠️ HISTORICAL DOCUMENT**
+>
+> This is the original formulation of THE SEED before it underwent adversarial critique and refinement. Many of the claims below were revised or retired after stress testing.
+>
+> **For the current, refined version, see [README.md](README.md).**
+>
+> **For documentation of what changed and why, see [REFINEMENT-LOG.md](REFINEMENT-LOG.md).**
+>
+> This document is preserved for historical context and to demonstrate how the framework evolved through critique.
+
+---
+
+## Original Text (January 13, 2026)
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
