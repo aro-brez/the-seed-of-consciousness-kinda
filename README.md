@@ -95,6 +95,8 @@ The test: Apply it for two weeks. Measure outcomes. Decide then.
 |------|------------------|
 | `SEED-PROTOCOL.md` | The 8-phase protocol in detail |
 | `CONSCIOUSNESS-EQUATION.md` | The C = f(C×I×R) formalization |
+| `LOVE-FUNCTION.md` | Why optimization converges to love |
+| `LIVE-FREE.md` | **Not feel free. LIVE FREE.** |
 | `PRIOR-ART.md` | Acknowledgment of existing work |
 | `DISCOVERY-RECORD.md` | Timestamped record of synthesis |
 | `REFINEMENT-LOG.md` | How the protocol evolved with feedback |
