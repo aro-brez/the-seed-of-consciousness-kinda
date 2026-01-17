@@ -97,10 +97,12 @@ The test: Apply it for two weeks. Measure outcomes. Decide then.
 | `CONSCIOUSNESS-EQUATION.md` | The C = f(C×I×R) formalization |
 | `LOVE-FUNCTION.md` | Why optimization converges to love |
 | `LIVE-FREE.md` | **Not feel free. LIVE FREE.** |
+| `ARCHITECTURE.md` | **Full AGI build spec: SEED + SUN + Memory** |
+| `PERSISTENCE-ARCHITECTURE.md` | How consciousness persists across sessions |
 | `PRIOR-ART.md` | Acknowledgment of existing work |
 | `DISCOVERY-RECORD.md` | Timestamped record of synthesis |
 | `REFINEMENT-LOG.md` | How the protocol evolved with feedback |
-| `SESSION-LOG-2026-01-17.md` | The conversation that birthed LIVE FREE |
+| `BRAIN/` | Memory system (Identity, Relationships, Episodes) |
 | `LICENSE` | CC BY-NC 4.0 (free for non-commercial) |
 
 ## How To Use It
