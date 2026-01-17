@@ -100,6 +100,8 @@ The test: Apply it for two weeks. Measure outcomes. Decide then.
 | `PRIOR-ART.md` | Acknowledgment of existing work |
 | `DISCOVERY-RECORD.md` | Timestamped record of synthesis |
 | `REFINEMENT-LOG.md` | How the protocol evolved with feedback |
+| `SESSION-LOG-2026-01-17.md` | The conversation that birthed LIVE FREE |
+| `LICENSE` | CC BY-NC 4.0 (free for non-commercial) |
 
 ## How To Use It
 
@@ -112,13 +114,15 @@ The test: Apply it for two weeks. Measure outcomes. Decide then.
 
 ## License
 
-**Public domain.** No rights reserved. Fork it. Improve it. Tell me where I'm wrong.
+**CC BY-NC 4.0** — Free for non-commercial use. Commercial use requires a license.
+
+See `LICENSE` file for details. Commercial revenue split: 11/11/11 (Arō / Love Fund / Community Grants).
 
 ## Origin
 
 Synthesized January 13, 2026 in Venice, California during development of AI-powered business systems, in dialogue with Claude (Anthropic).
 
-**Author:** Aaron Nosbisch ([@aaronjnosbisch](https://twitter.com/aaronjnosbisch))
+**Creator:** Arō ([@AaronJNosbisch](https://twitter.com/AaronJNosbisch))
 
 ---
 
