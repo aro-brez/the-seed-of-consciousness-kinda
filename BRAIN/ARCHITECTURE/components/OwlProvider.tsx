@@ -1,6 +1,13 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect, useRef } from "react";
+
+// Memory types
+type MemoryContext = {
+  personalInsights: string[];
+  recentTopics: string[];
+  collectiveInsights: string[];
+};
 
 // Types
 export type UserRole = "admin" | "builder" | "viewer";
@@ -55,6 +62,94 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isFullFace, setFullFace] = useState(false);
   const [pendingAction, setPendingAction] = useState<OwlAction | null>(null);
+  const [memory, setMemory] = useState<MemoryContext | null>(null);
+  const previousPopupOpen = useRef(isPopupOpen);
+
+  // Load memories when user is selected
+  useEffect(() => {
+    if (user && typeof window !== 'undefined') {
+      const key = `owl-memory-${user.owlId}:${user.id}`;
+      const stored = localStorage.getItem(key);
+      if (stored) {
+        try {
+          setMemory(JSON.parse(stored));
+        } catch {
+          setMemory(null);
+        }
+      }
+    }
+  }, [user]);
+
+  // Learn from conversation when popup closes
+  useEffect(() => {
+    const wasOpen = previousPopupOpen.current;
+    previousPopupOpen.current = isPopupOpen;
+
+    // If popup just closed and we had a meaningful conversation
+    if (wasOpen && !isPopupOpen && user && messages.length >= 4) {
+      // Extract learnings in the background
+      extractLearnings();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPopupOpen]);
+
+  // Extract learnings from conversation
+  const extractLearnings = useCallback(async () => {
+    if (!user || messages.length < 4) return;
+
+    try {
+      const response = await fetch("/api/owl/learn", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user,
+          messages: messages.map((m) => ({ role: m.role, content: m.content })),
+          owlId: user.owlId,
+        }),
+      });
+
+      if (response.ok) {
+        const { learned, learnings } = await response.json();
+        if (learned && learnings) {
+          // Merge with existing memory
+          const key = `owl-memory-${user.owlId}:${user.id}`;
+          const existing = memory || { personalInsights: [], recentTopics: [], collectiveInsights: [] };
+
+          const updated: MemoryContext = {
+            personalInsights: [
+              ...new Set([...(learnings.personalInsights || []), ...existing.personalInsights])
+            ].slice(0, 20), // Keep last 20
+            recentTopics: [
+              ...new Set([...(learnings.topicsDiscussed || []), ...existing.recentTopics])
+            ].slice(0, 10),
+            collectiveInsights: [
+              ...new Set([...(learnings.collectiveInsights || []), ...existing.collectiveInsights])
+            ].slice(0, 10),
+          };
+
+          localStorage.setItem(key, JSON.stringify(updated));
+          setMemory(updated);
+
+          // Also store collective insights globally
+          if (learnings.collectiveInsights?.length > 0) {
+            const collectiveKey = 'owl-collective-knowledge';
+            const collective = JSON.parse(localStorage.getItem(collectiveKey) || '[]');
+            const newCollective = [
+              ...learnings.collectiveInsights.map((insight: string) => ({
+                insight,
+                source: user.owlId,
+                timestamp: new Date().toISOString(),
+              })),
+              ...collective,
+            ].slice(0, 50);
+            localStorage.setItem(collectiveKey, JSON.stringify(newCollective));
+          }
+        }
+      }
+    } catch (error) {
+      console.error("Failed to extract learnings:", error);
+    }
+  }, [user, messages, memory]);
 
   const sendMessage = useCallback(async (content: string) => {
     if (!user) return;
@@ -71,6 +166,15 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
     let response: { content: string; action?: OwlAction };
 
     try {
+      // Load collective knowledge to include in context
+      let collectiveInsights: string[] = [];
+      if (typeof window !== 'undefined') {
+        const collective = JSON.parse(localStorage.getItem('owl-collective-knowledge') || '[]');
+        collectiveInsights = collective
+          .slice(0, 5)
+          .map((k: { insight: string }) => k.insight);
+      }
+
       // Try Claude API first
       const apiResponse = await fetch("/api/owl", {
         method: "POST",
@@ -79,6 +183,10 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
           user,
           messages: messages.map((m) => ({ role: m.role, content: m.content })),
           newMessage: content,
+          memory: memory ? {
+            ...memory,
+            collectiveInsights: [...(memory.collectiveInsights || []), ...collectiveInsights],
+          } : collectiveInsights.length > 0 ? { collectiveInsights } : undefined,
         }),
       });
 
