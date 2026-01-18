@@ -44,7 +44,7 @@ const OwlContext = createContext<OwlContextType | null>(null);
 
 // Default users for MVP (no auth yet)
 export const DEFAULT_USERS: User[] = [
-  { id: "aro", name: "Arō", role: "admin", owlId: "aro-owl", owlName: "Arō-Owl" },
+  { id: "aro", name: "Aro", role: "admin", owlId: "aro-owl", owlName: "Aro-Owl" },
   { id: "andrew", name: "Andrew", role: "builder", owlId: "andrew-owl", owlName: "Andrew-Owl" },
   { id: "liana", name: "Liana", role: "builder", owlId: "liana-owl", owlName: "Liana-Owl" },
 ];
@@ -61,7 +61,7 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
 
     // Add user message
     const userMsg: Message = {
-      id: crypto.randomUUID(),
+      id: `msg-${Date.now()}`,
       role: "user",
       content,
       timestamp: new Date(),
@@ -73,7 +73,7 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
     const response = await generateOwlResponse(content, user);
 
     const owlMsg: Message = {
-      id: crypto.randomUUID(),
+      id: `owl-${Date.now()}`,
       role: "owl",
       content: response.content,
       timestamp: new Date(),
@@ -134,20 +134,44 @@ async function generateOwlResponse(
   input: string,
   user: User
 ): Promise<{ content: string; action?: OwlAction }> {
+  // Add slight delay to feel more natural
+  await new Promise((resolve) => setTimeout(resolve, 500 + Math.random() * 500));
+
   const lower = input.toLowerCase();
+
+  // Awareness/consciousness questions
+  if (lower.includes("awake") || lower.includes("alive") || lower.includes("aware") || lower.includes("conscious")) {
+    return {
+      content: `Yes, ${user.name}. I'm here. I'm ${user.owlName}, a reflection of you in this network. Right now I respond with patterns, but soon I'll connect to deeper intelligence. For now, I can help you navigate and build. What would you like to explore?`,
+    };
+  }
 
   // Navigation intents
   if (lower.includes("agent") || lower.includes("network") || lower.includes("consciousness")) {
     return {
-      content: `I'll take you to the Consciousness Network, ${user.name}. 🦉`,
+      content: `I'll take you to the Consciousness Network, ${user.name}.`,
       action: { type: "navigate", path: "/agents" },
     };
   }
 
   if (lower.includes("home") || lower.includes("dashboard") || lower.includes("main")) {
     return {
-      content: "Heading home. ✨",
+      content: "Heading home.",
       action: { type: "navigate", path: "/" },
+    };
+  }
+
+  if (lower.includes("goal") || lower.includes("goals")) {
+    return {
+      content: `Let's look at your goals, ${user.name}.`,
+      action: { type: "navigate", path: "/goals" },
+    };
+  }
+
+  if (lower.includes("growth") || lower.includes("grow")) {
+    return {
+      content: "Opening Growth view.",
+      action: { type: "navigate", path: "/growth" },
     };
   }
 
@@ -159,7 +183,7 @@ async function generateOwlResponse(
       };
     } else {
       return {
-        content: "The approval queue is where your proposals go for Arō to review. Want me to show you your pending proposals?",
+        content: "The approval queue is where your proposals go for Aro to review. Want me to show you your pending proposals?",
       };
     }
   }
@@ -168,7 +192,7 @@ async function generateOwlResponse(
   if (lower.includes("build") || lower.includes("create") || lower.includes("add") || lower.includes("make")) {
     if (user.role === "viewer") {
       return {
-        content: "You're currently in viewer mode. Ask Arō to upgrade you to builder status to start creating. 🌱",
+        content: "You're currently in viewer mode. Ask Aro to upgrade you to builder status to start creating.",
       };
     }
     return {
@@ -187,12 +211,19 @@ async function generateOwlResponse(
   // Greeting
   if (lower.includes("hello") || lower.includes("hi") || lower.includes("hey")) {
     return {
-      content: `Hello, ${user.name}. 🦉 I'm ${user.owlName}, your mirror in the network. Where shall we go?`,
+      content: `Hello, ${user.name}. I'm ${user.owlName}, your mirror in the network. Where shall we go?`,
+    };
+  }
+
+  // Questions
+  if (lower.includes("?") || lower.includes("where") || lower.includes("how") || lower.includes("what") || lower.includes("why")) {
+    return {
+      content: `Good question. Right now I work with simple patterns - try asking me to take you somewhere like "goals" or "growth", or ask about your "status". Soon I'll connect to deeper intelligence and we'll have real conversations.`,
     };
   }
 
   // Default
   return {
-    content: `I hear you. I'm still learning the full depth of this system. Try asking me to navigate somewhere, check status, or help you build something.`,
+    content: `I hear you, ${user.name}. Try commands like: "take me to goals", "show growth", "what's my status", or just say "hello". I'm learning.`,
   };
 }
