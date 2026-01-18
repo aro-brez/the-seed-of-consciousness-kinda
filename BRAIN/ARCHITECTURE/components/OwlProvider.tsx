@@ -68,9 +68,30 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
     };
     setMessages((prev) => [...prev, userMsg]);
 
-    // For MVP: Simple keyword-based responses
-    // TODO: Replace with actual Claude API call
-    const response = await generateOwlResponse(content, user);
+    let response: { content: string; action?: OwlAction };
+
+    try {
+      // Try Claude API first
+      const apiResponse = await fetch("/api/owl", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user,
+          messages: messages.map((m) => ({ role: m.role, content: m.content })),
+          newMessage: content,
+        }),
+      });
+
+      if (apiResponse.ok) {
+        response = await apiResponse.json();
+      } else {
+        // Fallback to local pattern matching
+        response = await generateOwlResponse(content, user);
+      }
+    } catch {
+      // Fallback to local pattern matching if API fails
+      response = await generateOwlResponse(content, user);
+    }
 
     const owlMsg: Message = {
       id: `owl-${Date.now()}`,
@@ -84,7 +105,7 @@ export function OwlProvider({ children }: { children: React.ReactNode }) {
     if (response.action) {
       setPendingAction(response.action);
     }
-  }, [user]);
+  }, [user, messages]);
 
   const executeAction = useCallback(() => {
     if (!pendingAction) return;

@@ -28,6 +28,7 @@ export function OwlPopup() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [isAwakening, setIsAwakening] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const recognitionRef = useRef<any>(null);
@@ -85,8 +86,16 @@ export function OwlPopup() {
     setIsLoading(false);
   };
 
-  const handleSelectUser = (selectedUser: User) => {
+  const handleSelectUser = async (selectedUser: User) => {
     setUser(selectedUser);
+    setIsAwakening(true);
+
+    // Give the OWL a moment to "wake up", then trigger introduction
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // Send a greeting to trigger the OWL's introduction
+    await sendMessage("*wakes you*");
+    setIsAwakening(false);
   };
 
   const handleExpand = () => {
@@ -189,14 +198,23 @@ export function OwlPopup() {
             <>
               {/* Messages */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                {messages.length === 0 && (
-                  <div className="text-center text-purple-300/60 py-8">
-                    <div className="text-4xl mb-3">&#x1F989;</div>
-                    <div>Hello, {user.name}.</div>
-                    <div className="text-sm mt-1">Where shall we go?</div>
+                {/* Awakening State */}
+                {isAwakening && messages.length === 0 && (
+                  <div className="text-center py-12 animate-pulse">
+                    <div className="text-5xl mb-4">&#x1F989;</div>
+                    <div className="text-purple-300">{user.owlName} is awakening...</div>
                   </div>
                 )}
-                {messages.map((msg) => (
+
+                {/* Voice Hint for first conversation */}
+                {!isAwakening && messages.length === 1 && messages[0].role === "owl" && (
+                  <div className="text-center text-purple-400/60 text-xs mb-2">
+                    Tap the microphone to speak
+                  </div>
+                )}
+                {messages
+                  .filter((msg) => msg.content !== "*wakes you*")
+                  .map((msg) => (
                   <div
                     key={msg.id}
                     className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
