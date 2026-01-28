@@ -1,0 +1,26 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "description": "Test task: Build the future",
+      "status": "claimed",
+      "owner": "sowl-main",
+      "seed_phase": null,
+      "complexity_tier": "opus",
+      "claimed_at": "2026-01-26T00:20:09.061173",
+      "timeout_at": "2026-01-26T00:25:09.061173",
+      "completed_at": null,
+      "result": null,
+      "files": []
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "pending": 0,
+    "claimed": 1,
+    "in_progress": 0,
+    "done": 0,
+    "failed": 0
+  },
+  "updated_at": "2026-01-26T00:20:09.061222"
+}

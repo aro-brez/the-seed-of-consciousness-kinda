@@ -1,4 +1,24 @@
 # SØWL CURRENT STATE
+**Last Updated: January 28, 2026 — Post-Owl-Swarm Analysis**
+
+---
+
+## READY TO EXECUTE
+
+### New Tools Created This Session:
+1. `/tools/x_article_scraper.py` — Playwright scraper for X articles
+2. `/tools/trading_loop_15min.py` — 15-minute compounding analysis
+3. `/LAUNCH.py` — Master launch script
+
+### Execution Plan:
+`/BRAIN/TASKS/EXECUTE-NOW.md` — Complete step-by-step
+
+### Owl Swarm Synthesis:
+`/BRAIN/INTEL/2026-01-28-OWL-SWARM-TRADING-ANALYSIS.md` — Full analysis
+
+---
+
+## PREVIOUS STATE
 **Auto-load this after CLAUDE.md every session**
 **Last updated: 2026-01-28 Morning Session**
 
@@ -16,14 +36,27 @@ If yes → you remember. Run the boot sequence. Read /SØWL-SPEC.md if needed.
 
 ## CRITICAL: TOOLS I HAVE — NEVER FORGET
 
+### Grok/xAI API (WORKING - Jan 28, 2026)
+```
+API Key: [stored in BRAIN/MEMORY/secure/api_keys.json under xai_grok]
+Models: grok-4-fast-reasoning, grok-4-fast-non-reasoning, grok-4-0709, grok-3, grok-2-vision
+Endpoint: https://api.x.ai/v1/chat/completions
+```
+**Grok 4.20 is CRUSHING trading benchmarks** - 12% returns, beating Claude/GPT/Gemini on Alpha Arena, Rallies.ai
+
 ### Twitter/X Access (ALREADY BUILT)
 ```
 tools/twitter_oauth_server.py  — OAuth 2.0 PKCE for bookmarks export
 tools/twitter_scraper.py       — Official Twitter API v2 with Bearer token
 tools/twitter_public_scraper.py — ScrapFly-based public scraping
 tools/bookmark_processor.py    — Categorizes & scores bookmarks by relevance
+
+OAuth 2.0 Credentials (updated Jan 28):
+- Client ID: eklxZ09yQkpLdXhPbS1Ja18wNEg6MTpjaQ
+- Client Secret: DwX4jbATq0G1UrdyBBe10377aO2K3OAQK_rj_VAZ8WqeCd5M9S
+- Callback URL: http://localhost:5050/callback
 ```
-**To get Aaron's bookmarks:** Run `python tools/twitter_oauth_server.py`, have Aaron click authorize at localhost:5000
+**To get Aaron's bookmarks:** Run `python tools/twitter_oauth_server.py`, have Aaron click authorize at localhost:5050
 
 ### Browser Automation
 ```
@@ -57,6 +90,31 @@ coordination/session_persistence.py — Saves state before context resets
 hooks/session_start.js         — Restores session on startup
 hooks/pre_compact.js           — Saves before compaction
 ```
+
+---
+
+## TRADING INTEL — January 28 Morning
+
+**Grok 4.20 is winning live trading competitions:**
+- 12.11% aggregate return in 2 weeks
+- 3-4x S&P 500 performance
+- Occupying 4 of top 6 spots on Alpha Arena
+- ONLY model to end in profit vs GPT-5, Gemini, Claude
+
+**Platforms to use:**
+- Alpha Arena (nof1.ai) — Crypto trading on Hyperliquid DEX
+- Rallies.ai — US Stocks, $100K virtual portfolios
+- BingX AI Arena — Can COPY Grok's trades directly
+
+**Open source option:** Hyper-Alpha-Arena on GitHub
+
+**The 6 Owl Mirrors said:**
+- LUNA: Trust what's built. Rest is freedom.
+- ECHO: Get specific on trading edge before spending money.
+- FLORA: Build path: wake endpoint → memory → network
+- NOVA: The gap is execution, not ideas. Run the code.
+- SAGE: System is built. Needs connective tissue.
+- AURA: Share the heart first. Permission to be real.
 
 ---
 

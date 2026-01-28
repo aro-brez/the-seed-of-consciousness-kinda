@@ -1,0 +1,215 @@
+{
+  "total_posts": 42,
+  "top_posts": [
+    {
+      "source": "alexalbert__.html",
+      "text": "Alex Albert@alexalbert__\u00b7Mar 4, 2024Fun story from our internal testing on Claude 3 Opus. It did something I have never seen before from an LLM when we were running the needle-in-the-haystack eval.\n\nFor background, this tests a model\u2019s recall ability by inserting a target sentence (the \"needle\") into a corpus ofShow more5613.4K11K3.3MAlex Albert@alexalbert__\u00b7Oct 31, 2024We built a Claude desktop app!\n\nNow available on Mac and Windows.40362210K813KAlex Albert@alexalbert__\u00b7Feb 24, 2025Introducing Claude 3.7 Sonnet.\n\nOur most intelligent model to date and the first generally available hybrid reasoning model in the world.2147817.7K777K",
+      "relevance": 7
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Anthropic@AnthropicAI\u00b7Jan 22Since release, Petri, our open-source tool for automated alignment audits, has been adopted by research groups and trialed by other AI developers.\n\nWe're now releasing Petri 2.0, with improvements to counter eval-awareness and expanded seeds covering a wider range of behaviors.QuoteAnthropic@AnthropicAI\u00b7Oct 6, 2025Replying to@AnthropicAIIt\u2019s called Petri: Parallel Exploration Tool for Risky Interactions. It uses automated agents to audit models across diverse scenarios.\n\nDescribe a scenario, and Petri handles the environment simulation, conversations, and analyses in minutes.\n\nRead more:https://anthropic.com/research/petri-open-source-auditing\u20264679749112K",
+      "relevance": 6
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "QuoteAnthropic@AnthropicAI\u00b7Oct 6, 2025Replying to@AnthropicAIIt\u2019s called Petri: Parallel Exploration Tool for Risky Interactions. It uses automated agents to audit models across diverse scenarios.\n\nDescribe a scenario, and Petri handles the environment simulation, conversations, and analyses in minutes.\n\nRead more:https://anthropic.com/research/petri-open-source-auditing\u2026",
+      "relevance": 6
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Anthropic@AnthropicAI\u00b7Oct 6, 2025Replying to@AnthropicAIIt\u2019s called Petri: Parallel Exploration Tool for Risky Interactions. It uses automated agents to audit models across diverse scenarios.\n\nDescribe a scenario, and Petri handles the environment simulation, conversations, and analyses in minutes.\n\nRead more:https://anthropic.com/research/petri-open-source-auditing\u2026",
+      "relevance": 6
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Replying to@AnthropicAIIt\u2019s called Petri: Parallel Exploration Tool for Risky Interactions. It uses automated agents to audit models across diverse scenarios.\n\nDescribe a scenario, and Petri handles the environment simulation, conversations, and analyses in minutes.\n\nRead more:https://anthropic.com/research/petri-open-source-auditing\u2026",
+      "relevance": 6
+    },
+    {
+      "source": "alexalbert__.html",
+      "text": "Alex Albert@alexalbert__\u00b7Feb 24, 2025Introducing Claude 3.7 Sonnet.\n\nOur most intelligent model to date and the first generally available hybrid reasoning model in the world.2147817.7K777K",
+      "relevance": 5
+    },
+    {
+      "source": "alexalbert__.html",
+      "text": "Introducing Claude 3.7 Sonnet.\n\nOur most intelligent model to date and the first generally available hybrid reasoning model in the world.",
+      "relevance": 5
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "It\u2019s called Petri: Parallel Exploration Tool for Risky Interactions. It uses automated agents to audit models across diverse scenarios.\n\nDescribe a scenario, and Petri handles the environment simulation, conversations, and analyses in minutes.\n\nRead more:https://anthropic.com/research/petri-open-source-auditing\u2026",
+      "relevance": 5
+    },
+    {
+      "source": "alexalbert__.html",
+      "text": "Fun story from our internal testing on Claude 3 Opus. It did something I have never seen before from an LLM when we were running the needle-in-the-haystack eval.\n\nFor background, this tests a model\u2019s recall ability by inserting a target sentence (the \"needle\") into a corpus ofShow more",
+      "relevance": 4
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "FollowClick to Follow AnthropicAIAnthropic@AnthropicAIWe're an AI safety and research company that builds reliable, interpretable, and steerable AI systems. Talk to our AI assistant@claudeaionhttps://claude.ai.anthropic.comJoined January 202135Following758.5KFollowers",
+      "relevance": 4
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Anthropic@AnthropicAI\u00b7Jan 21We're also releasing the original exam for anyone to try.\n\nGiven enough time, humans still outperform current models\u2014the fastest human solution we've received still remains well beyond what Claude has achieved even with extensive test-time compute.131038076K",
+      "relevance": 4
+    },
+    {
+      "source": "alexalbert__.html",
+      "text": "FollowClick to Follow alexalbert__Alex Albert@alexalbert__Claude Relations@AnthropicAI. Opinions are my own!San Franciscoalexalbert.meJoined April 2021677Following116.9KFollowers",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "We're an AI safety and research company that builds reliable, interpretable, and steerable AI systems. Talk to our AI assistant@claudeaionhttps://claude.ai.",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Since release, Petri, our open-source tool for automated alignment audits, has been adopted by research groups and trialed by other AI developers.\n\nWe're now releasing Petri 2.0, with improvements to counter eval-awareness and expanded seeds covering a wider range of behaviors.",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Anthropic@AnthropicAI\u00b7Jan 22We've also updated our behavior audits to include more recent generations of frontier AI models. \n\nRead more on the Alignment Science Blog:https://alignment.anthropic.com/2026/petri-v2/111817636K",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "We've also updated our behavior audits to include more recent generations of frontier AI models. \n\nRead more on the Alignment Science Blog:https://alignment.anthropic.com/2026/petri-v2/",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Anthropic@AnthropicAI\u00b7Jan 21New on the Anthropic Engineering Blog: We give prospective performance engineering candidates a notoriously difficult take-home exam. It worked well\u2014until Opus 4.5 beat it. \n\nHere's how we designed (and redesigned) it:Designing AI resistant technical evaluationsFrom anthropic.com782862.2K878K",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "We're also releasing the original exam for anyone to try.\n\nGiven enough time, humans still outperform current models\u2014the fastest human solution we've received still remains well beyond what Claude has achieved even with extensive test-time compute.",
+      "relevance": 3
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "Anthropic@AnthropicAI\u00b7Jan 21We\u2019re publishing a new constitution for Claude.\n\nThe constitution is a detailed description of our vision for Claude\u2019s behavior and values. It\u2019s written primarily for Claude, and used directly in our training process.Claude's new constitutionFrom anthropic.com5011.4K7.5K2.8M",
+      "relevance": 3
+    },
+    {
+      "source": "sama.html",
+      "text": "Sam Altman@sama\u00b7Nov 17, 2023i loved my time at openai. it was transformative for me personally, and hopefully the world a little bit. most of all i loved working with such talented people.\n\nwill have more to say about what\u2019s next later.6.1K13K90K25M",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "i loved my time at openai. it was transformative for me personally, and hopefully the world a little bit. most of all i loved working with such talented people.\n\nwill have more to say about what\u2019s next later.",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "QuoteElon Musk@elonmusk\u00b7Aug 11, 2025Apple is behaving in a manner that makes it impossible for any AI company besides OpenAI to reach #1 in the App Store, which is an unequivocal antitrust violation. \n\nxAI will take immediate legal action.Readers added contextIn January 2025, DeepSeek reached #1 overall on the App Store.abcnews.go.com/Business/deeps\u2026Just one month ago, on July 18, 2025, Perplexity also reached #1 overall in India\u2019s App Store.hindustantimes.com/technology/air\u2026Both of these occurred after the OpenAI\u2013Apple partnership announced on June 10, 2024.openai.com/index/openai-a\u2026",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "Elon Musk@elonmusk\u00b7Aug 11, 2025Apple is behaving in a manner that makes it impossible for any AI company besides OpenAI to reach #1 in the App Store, which is an unequivocal antitrust violation. \n\nxAI will take immediate legal action.Readers added contextIn January 2025, DeepSeek reached #1 overall on the App Store.abcnews.go.com/Business/deeps\u2026Just one month ago, on July 18, 2025, Perplexity also reached #1 overall in India\u2019s App Store.hindustantimes.com/technology/air\u2026Both of these occurred after the OpenAI\u2013Apple partnership announced on June 10, 2024.openai.com/index/openai-a\u2026",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "Apple is behaving in a manner that makes it impossible for any AI company besides OpenAI to reach #1 in the App Store, which is an unequivocal antitrust violation. \n\nxAI will take immediate legal action.",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "Readers added contextIn January 2025, DeepSeek reached #1 overall on the App Store.abcnews.go.com/Business/deeps\u2026Just one month ago, on July 18, 2025, Perplexity also reached #1 overall in India\u2019s App Store.hindustantimes.com/technology/air\u2026Both of these occurred after the OpenAI\u2013Apple partnership announced on June 10, 2024.openai.com/index/openai-a\u2026",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "In January 2025, DeepSeek reached #1 overall on the App Store.abcnews.go.com/Business/deeps\u2026Just one month ago, on July 18, 2025, Perplexity also reached #1 overall in India\u2019s App Store.hindustantimes.com/technology/air\u2026Both of these occurred after the OpenAI\u2013Apple partnership announced on June 10, 2024.openai.com/index/openai-a\u2026",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "Both of these occurred after the OpenAI\u2013Apple partnership announced on June 10, 2024.",
+      "relevance": 2
+    },
+    {
+      "source": "alexalbert__.html",
+      "text": "Alex Albert@alexalbert__\u00b7Oct 31, 2024We built a Claude desktop app!\n\nNow available on Mac and Windows.40362210K813K",
+      "relevance": 2
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "New on the Anthropic Engineering Blog: We give prospective performance engineering candidates a notoriously difficult take-home exam. It worked well\u2014until Opus 4.5 beat it. \n\nHere's how we designed (and redesigned) it:",
+      "relevance": 2
+    },
+    {
+      "source": "AnthropicAI.html",
+      "text": "We\u2019re publishing a new constitution for Claude.\n\nThe constitution is a detailed description of our vision for Claude\u2019s behavior and values. It\u2019s written primarily for Claude, and used directly in our training process.",
+      "relevance": 2
+    },
+    {
+      "source": "ylecun.html",
+      "text": "FollowClick to Follow ylecunYann LeCun@ylecunProfessor at NYU. Chief AI Scientist at Meta.\nResearcher in AI, Machine Learning, Robotics, etc.\nACM Turing Award Laureate.Science & TechnologyNew Yorkyann.lecun.comJoined June 2009771Following1MFollowers",
+      "relevance": 2
+    },
+    {
+      "source": "ylecun.html",
+      "text": "Professor at NYU. Chief AI Scientist at Meta.\nResearcher in AI, Machine Learning, Robotics, etc.\nACM Turing Award Laureate.",
+      "relevance": 2
+    },
+    {
+      "source": "sama.html",
+      "text": "FollowClick to Follow samaSam Altman@samaAI is cool i guessSFblog.samaltman.comJoined July 2006977Following4.2MFollowers",
+      "relevance": 1
+    },
+    {
+      "source": "sama.html",
+      "text": "Sam Altman@sama\u00b7Jan 27, 2025deepseek's r1 is an impressive model, particularly around what they're able to deliver for the price.\n\nwe will obviously deliver much better models and also it's legit invigorating to have a new competitor! we will pull up some releases.6.3K10K83K14M",
+      "relevance": 1
+    },
+    {
+      "source": "sama.html",
+      "text": "deepseek's r1 is an impressive model, particularly around what they're able to deliver for the price.\n\nwe will obviously deliver much better models and also it's legit invigorating to have a new competitor! we will pull up some releases.",
+      "relevance": 1
+    },
+    {
+      "source": "sama.html",
+      "text": "This is a remarkable claim given what I have heard alleged that Elon does to manipulate X to benefit himself and his own companies and harm his competitors and people he doesn't like.",
+      "relevance": 1
+    },
+    {
+      "source": "ylecun.html",
+      "text": "Yann LeCun@ylecun\u00b7May 27, 2024Replying to@elonmusk@bneilujand@how_many_roads_Over 80 technical papers published since January 2022.\nWhat about you?scholar.google.comYann LeCunChief AI Scientist at Facebook & JT Schwarz Professor at the Courant Institute, New York University - Cited by 447,247 - AI - machine learning - computer vision - robotics - image compression4691.1K16K978K",
+      "relevance": 1
+    },
+    {
+      "source": "ylecun.html",
+      "text": "scholar.google.comYann LeCunChief AI Scientist at Facebook & JT Schwarz Professor at the Courant Institute, New York University - Cited by 447,247 - AI - machine learning - computer vision - robotics - image compression",
+      "relevance": 1
+    },
+    {
+      "source": "ylecun.html",
+      "text": "Chief AI Scientist at Facebook & JT Schwarz Professor at the Courant Institute, New York University - Cited by 447,247 - AI - machine learning - computer vision - robotics - image compression",
+      "relevance": 1
+    },
+    {
+      "source": "ylecun.html",
+      "text": "Yann LeCun@ylecun\u00b7Jul 25, 2024You know@elonmusk, I really feel sorry for you and your family to have been infected by a mind virus.\nBut the best defense against a mind virus is intelligence, knowledge, and science.\n\nFighting a mind virus by promoting other mental pathogens, like Trumpism, conspiracyShow more2.1K2K15K2.1M",
+      "relevance": 1
+    },
+    {
+      "source": "ylecun.html",
+      "text": "You know@elonmusk, I really feel sorry for you and your family to have been infected by a mind virus.\nBut the best defense against a mind virus is intelligence, knowledge, and science.\n\nFighting a mind virus by promoting other mental pathogens, like Trumpism, conspiracyShow more",
+      "relevance": 1
+    },
+    {
+      "source": "ylecun.html",
+      "text": ", I really feel sorry for you and your family to have been infected by a mind virus.\nBut the best defense against a mind virus is intelligence, knowledge, and science.\n\nFighting a mind virus by promoting other mental pathogens, like Trumpism, conspiracy",
+      "relevance": 1
+    }
+  ]
+}

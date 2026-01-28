@@ -1,0 +1,47 @@
+{
+  "scraped_at": "2026-01-26T00:00:37.738631",
+  "profiles": [
+    {
+      "account": "AnthropicAI",
+      "status": 200,
+      "size": 425330
+    },
+    {
+      "account": "alexalbert__",
+      "status": 200,
+      "size": 379165
+    },
+    {
+      "account": "kaboris",
+      "status": 200,
+      "size": 310142
+    },
+    {
+      "account": "sama",
+      "status": 200,
+      "size": 460292
+    },
+    {
+      "account": "ylecun",
+      "status": 200,
+      "size": 422331
+    }
+  ],
+  "searches": [
+    {
+      "term": "Claude Code",
+      "status": 200,
+      "size": 294308
+    },
+    {
+      "term": "AI agents 2026",
+      "status": 200,
+      "size": 294212
+    },
+    {
+      "term": "Mac Mini M4 AI",
+      "status": 200,
+      "size": 294212
+    }
+  ]
+}

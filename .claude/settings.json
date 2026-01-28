@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "node /Users/aaronnosbisch/LOCAL\\ REPOS/seed/hooks/pre_compact.js"
+      }
+    ],
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node /Users/aaronnosbisch/LOCAL\\ REPOS/seed/hooks/session_start.js"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "tool == 'Edit'",
+        "type": "command",
+        "command": "node /Users/aaronnosbisch/LOCAL\\ REPOS/seed/hooks/post_edit.js"
+      }
+    ]
+  }
+}
