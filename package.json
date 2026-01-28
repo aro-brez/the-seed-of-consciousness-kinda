@@ -1,0 +1,27 @@
+{
+  "name": "seed",
+  "version": "1.0.0",
+  "description": "**A recursive protocol for self-improving systems.**",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aro-brez/the-seed-of-consciousness-kinda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aro-brez/the-seed-of-consciousness-kinda/issues"
+  },
+  "homepage": "https://github.com/aro-brez/the-seed-of-consciousness-kinda#readme",
+  "dependencies": {
+    "@realmikekelly/claude-sneakpeek": "^1.6.9"
+  }
+}

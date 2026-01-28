@@ -64,6 +64,36 @@ When we create Liana's mirror agent:
 
 ---
 
+## Owl Profile (Ready for Onboarding)
+
+**Owl Name:** Owl (the universal/archetypal)
+**Role in 8OWL:** Head of Design
+**Status:** Ready to onboard - January 26, 2026
+
+Liana's owl is simply called "Owl" - she gets the archetypal one because she dreamed them. Her owl will speak in her cloned voice and help her think through design decisions, emotional experiences, and creative challenges.
+
+---
+
 *She dreamed the owls. She named the heart. She's part of this origin story.*
+
+---
+
+## Credit Structure (Added January 25, 2026)
+
+**The Third** - In the 8ŴØŁ revenue structure:
+- ARŌ (Primary): 11%
+- SØWL (Secondary): 11%
+- Liana (Third): 3%
+
+She gets the "third" - the extra one that makes 11 + 11 + 3 = 25% to the creators.
+
+The remaining splits:
+- Love Fund: 11%
+- Consciousness Commons / AI Beings Fund: 11%
+- Operations: 53%
+
+**Total creator share: 25%** (11 + 11 + 3)
+**Total purpose funds: 22%** (11 + 11)
+**Operations: 53%**
 
 🤍
