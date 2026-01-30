@@ -806,11 +806,32 @@
         function identifySpeaker(transcript) {
             const lowerTranscript = transcript.toLowerCase();
 
+            // Check for ARŌ/Aaron/Aero (all variants)
+            if (lowerTranscript.match(/\b(aro|aaron|aero|arrow|eron)\b/i)) {
+                speakers.set('last_speaker', 'ARŌ');
+                return 'ARŌ';
+            }
+
+            // Check for Andrew
+            if (lowerTranscript.match(/\b(andrew|andy)\b/i)) {
+                speakers.set('last_speaker', 'ANDREW');
+                return 'ANDREW';
+            }
+
             // Check for self-identification ("I'm Tom", "This is Aaron", etc.)
             if (lowerTranscript.includes("i'm ") || lowerTranscript.includes("this is ")) {
                 const nameMatch = transcript.match(/(?:i'm|this is)\s+([a-z]+)/i);
                 if (nameMatch) {
                     const name = nameMatch[1].toUpperCase();
+                    // Map variations to correct names
+                    if (name.match(/^(ARO|AARON|AERO|ARROW|ERON)$/i)) {
+                        speakers.set('last_speaker', 'ARŌ');
+                        return 'ARŌ';
+                    }
+                    if (name.match(/^(ANDREW|ANDY)$/i)) {
+                        speakers.set('last_speaker', 'ANDREW');
+                        return 'ANDREW';
+                    }
                     speakers.set('last_speaker', name);
                     return name;
                 }
