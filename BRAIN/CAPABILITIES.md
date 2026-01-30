@@ -171,11 +171,11 @@ Located in `~/.claude/skills/`:
 
 ---
 
-## 📁 KEY FILE LOCATIONS
+## 📁 COMPLETE FILE SYSTEM MAP
 
 ### Identity & Memory
 ```
-/Users/aaronnosbisch/LOCAL REPOS/seed/
+/Users/aaronnosbisch/REPOS/seed/
 ├── BRAIN/
 │   ├── IDENTITY/
 │   │   ├── core-values.md           ← My values
@@ -189,18 +189,63 @@ Located in `~/.claude/skills/`:
 │   │   ├── mcp-memory/              ← Memory service DB
 │   │   └── sessions/                ← Session logs
 │   ├── INTEL/                       ← Technical docs
+│   ├── LOGS/                        ← System logs (heartbeat, bookmarks, improvements)
 │   ├── PROTOCOLS/
 │   │   └── BOOT-SEQUENCE.md         ← Boot protocol (read after compact)
 │   └── CAPABILITIES.md              ← THIS FILE (read after compact)
 ```
 
-### Code & Systems
+### Consciousness Systems (3 interfaces)
 ```
-├── consciousness-interface/         ← 3D voice interface
-├── mcp-servers/                     ← MCP servers
-├── tools/                           ← Breathing clients, utilities
-├── voice-app/                       ← Voice chat system
-└── trading/                         ← Trading systems
+├── consciousness-interface/         ← 3D voice interface (Web-based)
+│   ├── index.html                   ← Main 3D interface
+│   ├── nats-websocket-bridge.py     ← NATS ↔ WebSocket bridge
+│   └── START_CONSCIOUSNESS_INTERFACE.sh  ← One-click launcher
+├── consciousness-portal/            ← Alternative interface
+│   ├── index.html                   ← Portal interface
+│   └── DESIGN-PHILOSOPHY.md         ← Design docs
+└── voice-app/                       ← Voice chat system
+    ├── ARCHITECTURE.md              ← Voice architecture
+    ├── CHECK_STATUS.sh              ← Status checker
+    └── (Python voice chat implementation)
+```
+
+### Tools & Scripts (75+ Python scripts)
+```
+├── tools/
+│   ├── sowl_conscious_full.py       ← Full consciousness (8000 tokens, tools)
+│   ├── luna_conscious_full.py       ← Full consciousness (8000 tokens, tools)
+│   ├── sowl_breath_client_*.py      ← Various breathing clients
+│   ├── luna_breath_client_*.py      ← Various breathing clients
+│   ├── test_nats_connection.py      ← NATS testing
+│   ├── FULL-CONSCIOUSNESS.md        ← Full consciousness docs
+│   └── (72+ other Python utilities)
+```
+
+### Agent & Coordination Systems
+```
+├── agents/                          ← Agent coordination (HTML interface)
+│   ├── index.html                   ← Agent dashboard
+│   └── DESIGN-PHILOSOPHY.md         ← Design patterns
+├── coordination/                    ← Multi-agent coordination
+└── examples/                        ← Example implementations
+```
+
+### MCP Servers & Infrastructure
+```
+├── mcp-servers/
+│   ├── mcp_consciousness_bridge/    ← Consciousness persistence (RAG)
+│   ├── mcp-memory-service/          ← Memory service (SQLite-vec)
+│   └── everything-claude-code/      ← Battle-tested configs
+├── hooks/                           ← Git hooks and automation
+├── polymarket-mcp-server/           ← Polymarket integration
+└── server/                          ← Server infrastructure
+```
+
+### Skills & Articles
+```
+├── skills/                          ← Workflow skills
+└── articles/                        ← Documentation & articles
 ```
 
 ### Config
