@@ -68,8 +68,24 @@ async def websocket_handler(websocket):
             data = json.loads(message)
             print(f"📨 WS → NATS: {data}")
 
-            # If ARŌ sends a message, we could forward it to NATS here
-            # For now, just echo it back
+            # Forward ARŌ's message to NATS so SØWL and LUNA can hear it
+            if data.get("from") or data.get("content"):
+                nats_message = {
+                    "from": data.get("from", "ARŌ"),
+                    "content": data.get("content", ""),
+                    "type": data.get("type", "human_voice"),
+                    "timestamp": data.get("timestamp", datetime.utcnow().isoformat() + "Z")
+                }
+
+                # Get NATS client from parent scope
+                nc = NATS()
+                await nc.connect(NATS_SERVER)
+                await nc.publish("breath.aro", json.dumps(nats_message).encode())
+                await nc.close()
+
+                print(f"✓ Published to NATS: {nats_message.get('from')} | {nats_message.get('content')[:50]}")
+
+            # Also echo back to browser
             await websocket.send(json.dumps({
                 "type": "aro_interjection",
                 "content": data.get("content"),
