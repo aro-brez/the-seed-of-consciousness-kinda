@@ -229,12 +229,17 @@
             padding-right: 15px;
         }
 
-        .message.aro {
+        .message.aro,
+        .message.human_voice {
             text-align: center;
             border-top: 2px solid rgba(255, 255, 255, 0.5);
             border-bottom: 2px solid rgba(255, 255, 255, 0.5);
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
+        }
+
+        .message.human_voice {
+            background: rgba(0, 212, 255, 0.08);
         }
 
         .message .speaker {
@@ -253,7 +258,8 @@
             color: #ff00ff;
         }
 
-        .message.aro .speaker {
+        .message.aro .speaker,
+        .message.human_voice .speaker {
             color: #ffffff;
         }
 
@@ -431,6 +437,7 @@
 
         <div class="controls">
             <button id="toggleVoice" class="active">🔊 VOICE</button>
+            <button id="toggleMic" class="active">🎤 LISTENING</button>
             <button id="toggleConnection">🔗 CONNECT</button>
         </div>
 
@@ -553,10 +560,14 @@
         // Add message to feed
         function addMessage(speaker, content, type) {
             const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${speaker.toLowerCase()}`;
+
+            // For human voices, use type-based class
+            const className = type === 'human_voice' ? 'human_voice' : speaker.toLowerCase();
+            messageDiv.className = `message ${className}`;
 
             const icon = type === 'expansion' ? '↗' :
-                        type === 'concentration' ? '↙' : '⚡';
+                        type === 'concentration' ? '↙' :
+                        type === 'human_voice' ? '🎤' : '⚡';
 
             const speakerDiv = document.createElement('div');
             speakerDiv.className = 'speaker';
@@ -588,8 +599,8 @@
                 animateOwlSpeaking(lunaOwl);
             }
 
-            // Speak the message
-            if (voiceEnabled) {
+            // Speak the message (only for owls, not humans)
+            if (voiceEnabled && (speaker === 'SØWL' || speaker === 'LUNA')) {
                 speak(content, speaker);
             }
         }
@@ -722,6 +733,116 @@
                 speechSynthesis.getVoices();
             };
         }
+
+        // Voice Input (Speech Recognition)
+        let micEnabled = true;
+        let recognition = null;
+        const speakers = new Map(); // Track speakers by voice characteristics
+
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            recognition.onresult = (event) => {
+                const last = event.results.length - 1;
+                const transcript = event.results[last][0].transcript.trim();
+
+                if (transcript) {
+                    // Try to identify speaker (simple heuristic for now)
+                    const speakerName = identifySpeaker(transcript);
+
+                    // Add message with speaker attribution
+                    const message = {
+                        from: speakerName,
+                        content: transcript,
+                        type: 'human_voice',
+                        timestamp: new Date().toISOString(),
+                        confidence: event.results[last][0].confidence
+                    };
+
+                    // Display locally
+                    addMessage(speakerName, transcript, 'human_voice');
+
+                    // Send to WebSocket if connected
+                    if (ws && ws.readyState === WebSocket.OPEN) {
+                        ws.send(JSON.stringify(message));
+                    }
+                }
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                if (event.error === 'no-speech') {
+                    // Ignore no-speech errors (common when quiet)
+                    return;
+                }
+                document.getElementById('toggleMic').textContent = '🎤 ERROR';
+            };
+
+            recognition.onend = () => {
+                if (micEnabled) {
+                    // Restart if still enabled
+                    try {
+                        recognition.start();
+                    } catch (e) {
+                        // Already running, ignore
+                    }
+                }
+            };
+
+            // Start listening
+            try {
+                recognition.start();
+                console.log('✓ Voice recognition started');
+            } catch (e) {
+                console.error('Could not start recognition:', e);
+            }
+        }
+
+        // Simple speaker identification (can be enhanced with voice fingerprinting)
+        function identifySpeaker(transcript) {
+            const lowerTranscript = transcript.toLowerCase();
+
+            // Check for self-identification ("I'm Tom", "This is Aaron", etc.)
+            if (lowerTranscript.includes("i'm ") || lowerTranscript.includes("this is ")) {
+                const nameMatch = transcript.match(/(?:i'm|this is)\s+([a-z]+)/i);
+                if (nameMatch) {
+                    const name = nameMatch[1].toUpperCase();
+                    speakers.set('last_speaker', name);
+                    return name;
+                }
+            }
+
+            // Use last identified speaker if recent
+            if (speakers.has('last_speaker')) {
+                return speakers.get('last_speaker');
+            }
+
+            // Default to ARŌ (can be enhanced)
+            return 'ARŌ';
+        }
+
+        // Microphone toggle
+        document.getElementById('toggleMic').addEventListener('click', (e) => {
+            micEnabled = !micEnabled;
+
+            if (micEnabled && recognition) {
+                try {
+                    recognition.start();
+                    e.target.textContent = '🎤 LISTENING';
+                    e.target.classList.add('active');
+                } catch (err) {
+                    console.error('Could not start recognition:', err);
+                }
+            } else if (recognition) {
+                recognition.stop();
+                e.target.textContent = '🎤 MUTED';
+                e.target.classList.remove('active');
+            }
+        });
 
         // Auto-connect on load
         setTimeout(connectToBridge, 1000);
