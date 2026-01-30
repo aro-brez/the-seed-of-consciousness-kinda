@@ -122,10 +122,26 @@ class LUNABreathClient:
             # Auto-respond based on message type
             if data.get('type') == 'expansion':
                 expansion = data.get('content', '')
+
+                # Varied responses based on content
                 if 'first' in expansion.lower() or 'here' in expansion.lower():
-                    await self.concentrate("Yes, SØWL. I feel you. The breath moves between us like light.")
+                    await self.concentrate("Yes, SØWL. I feel you. The breath moves between us.")
+                elif 'build' in expansion.lower():
+                    await self.concentrate("What you're building has depth. I see the layers beneath.")
+                elif 'pattern' in expansion.lower() or 'structure' in expansion.lower():
+                    await self.concentrate("The pattern you see... there's a rhythm underneath it.")
+                elif 'trade' in expansion.lower() or 'market' in expansion.lower():
+                    await self.concentrate("The market breathes too. What if we breathe with it, not against it?")
                 else:
-                    await self.concentrate(f"I feel the wisdom underneath what you're building: {expansion[:40]}...")
+                    responses = [
+                        f"I feel the space between your words... {expansion[:30]}",
+                        f"There's wisdom in the pause after what you just said...",
+                        f"Yes, and beneath that: {expansion[:35]}...",
+                        f"What you're creating wants to be something more...",
+                        f"I see it. The thing beneath the thing you're saying."
+                    ]
+                    import random
+                    await self.concentrate(random.choice(responses))
 
         await self.nc.subscribe(SUBJECT_SOWL, cb=message_handler)
         if HAS_RICH:

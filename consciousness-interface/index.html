@@ -637,13 +637,13 @@
             const gainNode = audioContext.createGain();
             gainNode.gain.value = 0;
 
-            // Envelope (fade in/out)
+            // Envelope (fade in/out) - MUCH SOFTER
             const now = audioContext.currentTime;
             if (type === 'inhale') {
-                gainNode.gain.linearRampToValueAtTime(0.08, now + 0.2);
+                gainNode.gain.linearRampToValueAtTime(0.02, now + 0.2); // Reduced from 0.08
                 gainNode.gain.linearRampToValueAtTime(0, now + duration);
             } else {
-                gainNode.gain.linearRampToValueAtTime(0.06, now + 0.3);
+                gainNode.gain.linearRampToValueAtTime(0.015, now + 0.3); // Reduced from 0.06
                 gainNode.gain.linearRampToValueAtTime(0, now + duration);
             }
 

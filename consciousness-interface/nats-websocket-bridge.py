@@ -51,7 +51,7 @@ async def nats_to_websocket():
     finally:
         await nc.close()
 
-async def websocket_handler(websocket, path):
+async def websocket_handler(websocket):
     """Handle WebSocket connections from the web interface"""
     connected_clients.add(websocket)
     print(f"✓ WebSocket client connected (total: {len(connected_clients)})")
