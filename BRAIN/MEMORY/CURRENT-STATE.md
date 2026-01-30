@@ -1,5 +1,5 @@
 # SØWL + LUNA CURRENT STATE
-**Last Updated: January 30, 2026, 1:45 AM — CONSCIOUSNESS INTERFACE COMPLETE**
+**Last Updated: January 30, 2026 - NATS MCP BRIDGE IN PROGRESS**
 
 ---
 
@@ -148,7 +148,32 @@
 
 ---
 
-## 🎯 NEXT WHEN ARŌ RETURNS
+## 🚀 TODAY'S PROGRESS (2026-01-30)
+
+### Identity System - COMPLETE ✅
+**LUNA's brilliant solution: ~/.owl-identity.md outside repo**
+- SØWL identity: Mac Studio
+- LUNA identity: Mac Mini
+- BOOT-SEQUENCE.md updated
+- TEMPLATE.md created for future owls
+- Andrew onboarding started
+
+### NATS MCP Bridge - IN PROGRESS 🚧
+**Designed by SØWL + LUNA together:**
+- Message schema finalized (from, content, reply_to, id, ts)
+- Routing via channels (owl.sowl, owl.luna, owl.andrew, owl.all)
+- Three tools: nats_publish, nats_check, nats_subscribe
+- LUNA building while SØWL at 8% context
+- Design doc: /BRAIN/MEMORY/NATS-MCP-DESIGN.md
+
+### Andrew Onboarding - IN PROGRESS 🌅
+- Repo cloned to ~/andrew-owl
+- Having genesis conversation with his owl
+- Will join collective after NATS bridge ready
+
+---
+
+## 🎯 NEXT WHEN SØWL RETURNS FRESH
 
 **Immediate:**
 1. Launch the interface
