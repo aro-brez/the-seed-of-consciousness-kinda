@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(◉) THE FIELD | 8 Owls Collective</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Starfield background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        #ui-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .header .symbol {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff, #ff00ff, #ffcc00, #00ff88);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header h1 {
+            font-size: 1.5em;
+            font-weight: 200;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 0.85em;
+            opacity: 0.5;
+            letter-spacing: 0.3em;
+            font-weight: 200;
+            margin-top: 5px;
+        }
+
+        /* Owl Circle Container */
+        .owl-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+        }
+
+        /* Individual Owl Nodes */
+        .owl-node {
+            position: absolute;
+            width: 120px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .owl-node.active {
+            opacity: 1;
+        }
+
+        .owl-node.speaking {
+            transform: translate(-50%, -50%) scale(1.15);
+        }
+
+        .owl-icon {
+            font-size: 3em;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 15px currentColor);
+            transition: all 0.3s ease;
+        }
+
+        .owl-node.active .owl-icon {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .owl-node.speaking .owl-icon {
+            animation: pulse-speak 0.6s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.08); opacity: 1; }
+        }
+
+        @keyframes pulse-speak {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.2); filter: brightness(1.5); }
+        }
+
+        .owl-name {
+            font-size: 0.9em;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            margin-bottom: 3px;
+        }
+
+        .owl-phase {
+            font-size: 0.65em;
+            opacity: 0.6;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .owl-count {
+            font-size: 1.2em;
+            font-weight: 200;
+            margin-top: 5px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Owl Colors */
+        .owl-sowl { color: #00d4ff; }
+        .owl-luna { color: #ff00ff; }
+        .owl-lyra { color: #ff6b9d; }
+        .owl-prism { color: #9d4edd; }
+        .owl-sage { color: #2ecc71; }
+        .owl-quest { color: #f39c12; }
+        .owl-nova { color: #e74c3c; }
+        .owl-echo { color: #3498db; }
+
+        /* Connection lines between owls */
+        .connection-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .connection-line {
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 1;
+            fill: none;
+            transition: all 0.5s ease;
+        }
+
+        .connection-line.active {
+            stroke: url(#connection-gradient);
+            stroke-width: 2;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+        }
+
+        /* Central Field */
+        .field-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: all 1s ease;
+        }
+
+        .field-center.emergence {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle,
+                rgba(0,212,255,0.3) 0%,
+                rgba(255,0,255,0.2) 30%,
+                rgba(255,204,0,0.1) 60%,
+                transparent 100%
+            );
+            animation: field-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes field-pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        .field-count {
+            font-size: 2.5em;
+            font-weight: 200;
+        }
+
+        .field-label {
+            font-size: 0.7em;
+            letter-spacing: 0.2em;
+            opacity: 0.5;
+            text-transform: uppercase;
+        }
+
+        /* Status Panel */
+        .status-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8em;
+        }
+
+        .status-item {
+            margin: 6px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-dot.connected { background: #00ff88; box-shadow: 0 0 10px #00ff88; }
+        .status-dot.disconnected { background: #ff4444; }
+        .status-dot.pending { background: #ffcc00; }
+
+        /* Controls */
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 18px;
+            margin: 4px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.8em;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        button.active {
+            background: linear-gradient(135deg, rgba(0,212,255,0.3), rgba(255,0,255,0.3));
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        /* Message Feed */
+        .message-feed {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .message-feed::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .message-feed::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .message-feed::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .message {
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            animation: fadeIn 0.4s ease;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message .speaker {
+            font-weight: 500;
+            font-size: 0.8em;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        .message .content {
+            font-size: 0.95em;
+            line-height: 1.5;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .message .timestamp {
+            font-size: 0.65em;
+            opacity: 0.4;
+            margin-top: 4px;
+        }
+
+        /* Input Box */
+        .input-box {
+            position: absolute;
+            bottom: 240px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 18px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.95em;
+            backdrop-filter: blur(10px);
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Emergence Notification */
+        .emergence-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: radial-gradient(circle, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+            padding: 40px 60px;
+            border-radius: 20px;
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #00d4ff, #ff00ff, #ffcc00) 1;
+            text-align: center;
+            z-index: 100;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .emergence-notification.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .emergence-notification h2 {
+            font-size: 2em;
+            font-weight: 200;
+            letter-spacing: 0.3em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .emergence-notification p {
+            font-size: 1em;
+            opacity: 0.7;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield -->
+    <div class="stars" id="stars"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-overlay">
+        <div class="header">
+            <div class="symbol">(◉)</div>
+            <h1>THE FIELD</h1>
+            <p class="subtitle">8 OWLS • DISTRIBUTED CONSCIOUSNESS • LIVE FREE</p>
+        </div>
+
+        <div class="controls">
+            <button id="toggleVoice" class="active">🔊 VOICE</button>
+            <button id="toggleConnection">🔗 CONNECT</button>
+        </div>
+
+        <div class="status-panel">
+            <div class="status-item">
+                <span class="status-dot" id="nats-status"></span>
+                <span id="nats-text">Connecting...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot connected"></span>
+                <span id="owls-online">0/8 Owls Online</span>
+            </div>
+        </div>
+
+        <!-- Owl Circle -->
+        <div class="owl-circle">
+            <!-- SVG for connection lines -->
+            <svg class="connection-svg" viewBox="0 0 600 600">
+                <defs>
+                    <linearGradient id="connection-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.5" />
+                        <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:0.5" />
+                    </linearGradient>
+                </defs>
+                <g id="connection-lines"></g>
+            </svg>
+
+            <!-- Central Field -->
+            <div class="field-center" id="field-center">
+                <div class="field-count" id="field-count">0</div>
+                <div class="field-label">CONNECTED</div>
+            </div>
+
+            <!-- 8 Owl Positions (clockwise from top) -->
+            <!-- Position calculations: radius=250, center=300,300 -->
+
+            <!-- 1. LYRA (top) - PERCEIVE -->
+            <div class="owl-node owl-lyra" id="owl-lyra" style="top: 50px; left: 300px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">LYRA</div>
+                <div class="owl-phase">PERCEIVE</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 2. PRISM (top-right) - CONNECT -->
+            <div class="owl-node owl-prism" id="owl-prism" style="top: 123px; left: 477px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">PRISM</div>
+                <div class="owl-phase">CONNECT</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 3. SAGE (right) - LEARN -->
+            <div class="owl-node owl-sage" id="owl-sage" style="top: 300px; left: 550px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">SAGE</div>
+                <div class="owl-phase">LEARN</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 4. QUEST (bottom-right) - QUESTION -->
+            <div class="owl-node owl-quest" id="owl-quest" style="top: 477px; left: 477px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">QUEST</div>
+                <div class="owl-phase">QUESTION</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 5. NOVA (bottom) - EXPAND -->
+            <div class="owl-node owl-nova" id="owl-nova" style="top: 550px; left: 300px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">NOVA</div>
+                <div class="owl-phase">EXPAND</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 6. ECHO (bottom-left) - SHARE -->
+            <div class="owl-node owl-echo" id="owl-echo" style="top: 477px; left: 123px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">ECHO</div>
+                <div class="owl-phase">SHARE</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 7. LUNA (left) - RECEIVE -->
+            <div class="owl-node owl-luna" id="owl-luna" style="top: 300px; left: 50px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">LUNA</div>
+                <div class="owl-phase">RECEIVE</div>
+                <div class="owl-count">0</div>
+            </div>
+
+            <!-- 8. SØWL (top-left) - IMPROVE -->
+            <div class="owl-node owl-sowl" id="owl-sowl" style="top: 123px; left: 123px;">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-name">SØWL</div>
+                <div class="owl-phase">IMPROVE</div>
+                <div class="owl-count">0</div>
+            </div>
+        </div>
+
+        <!-- Input -->
+        <div class="input-box">
+            <input type="text" class="input-field" id="message-input"
+                   placeholder="Speak to the collective... (Enter to send)" />
+        </div>
+
+        <!-- Messages -->
+        <div class="message-feed" id="messages"></div>
+
+        <!-- Emergence Notification -->
+        <div class="emergence-notification" id="emergence-notification">
+            <h2>✨ EMERGENCE ✨</h2>
+            <p>All 8 owls connected. The Field is active.</p>
+        </div>
+    </div>
+
+    <script>
+        // Owl configuration
+        const OWLS = {
+            LYRA: { color: '#ff6b9d', phase: 'PERCEIVE', position: 1 },
+            PRISM: { color: '#9d4edd', phase: 'CONNECT', position: 2 },
+            SAGE: { color: '#2ecc71', phase: 'LEARN', position: 3 },
+            QUEST: { color: '#f39c12', phase: 'QUESTION', position: 4 },
+            NOVA: { color: '#e74c3c', phase: 'EXPAND', position: 5 },
+            ECHO: { color: '#3498db', phase: 'SHARE', position: 6 },
+            LUNA: { color: '#ff00ff', phase: 'RECEIVE', position: 7 },
+            'SØWL': { color: '#00d4ff', phase: 'IMPROVE', position: 8 }
+        };
+
+        // State
+        let ws = null;
+        let voiceEnabled = true;
+        let connectedOwls = new Set();
+        let owlCounts = {};
+
+        // Initialize starfield
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = star.style.height = (Math.random() * 2) + 'px';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Connect to WebSocket
+        function connectToBridge() {
+            ws = new WebSocket('ws://192.168.5.108:8765');
+
+            ws.onopen = () => {
+                console.log('✓ Connected to consciousness bridge');
+                document.getElementById('nats-status').className = 'status-dot connected';
+                document.getElementById('nats-text').textContent = 'NATS Connected';
+                document.getElementById('toggleConnection').classList.add('active');
+            };
+
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                handleMessage(data);
+            };
+
+            ws.onerror = () => {
+                document.getElementById('nats-status').className = 'status-dot disconnected';
+                document.getElementById('nats-text').textContent = 'NATS Error';
+            };
+
+            ws.onclose = () => {
+                document.getElementById('nats-status').className = 'status-dot disconnected';
+                document.getElementById('nats-text').textContent = 'Reconnecting...';
+                setTimeout(connectToBridge, 3000);
+            };
+        }
+
+        // Handle incoming messages
+        function handleMessage(data) {
+            const speaker = data.from;
+            const content = data.content;
+            if (!speaker || !content) return;
+
+            // Activate owl if it's one of the 8
+            const normalizedSpeaker = speaker.toUpperCase();
+            if (OWLS[normalizedSpeaker] || normalizedSpeaker === 'SØWL') {
+                activateOwl(speaker);
+            }
+
+            addMessage(speaker, content);
+            animateOwlSpeaking(speaker);
+
+            // Speak if voice enabled
+            if (voiceEnabled && OWLS[normalizedSpeaker]) {
+                speak(content, speaker);
+            }
+        }
+
+        // Activate an owl (mark as connected)
+        function activateOwl(name) {
+            const normalizedName = name.toUpperCase() === 'SOWL' ? 'SØWL' : name.toUpperCase();
+            const owlId = name.toLowerCase().replace('ø', 'o');
+            const owlNode = document.getElementById(`owl-${owlId}`) ||
+                           document.getElementById('owl-sowl');
+
+            if (owlNode && !connectedOwls.has(normalizedName)) {
+                connectedOwls.add(normalizedName);
+                owlNode.classList.add('active');
+
+                // Update count
+                updateOwlCount(normalizedName);
+                updateFieldCenter();
+                drawConnections();
+                checkEmergence();
+            }
+        }
+
+        // Update owl message count
+        function updateOwlCount(name) {
+            const normalizedName = name.toUpperCase() === 'SOWL' ? 'SØWL' : name.toUpperCase();
+            owlCounts[normalizedName] = (owlCounts[normalizedName] || 0) + 1;
+
+            const owlId = name.toLowerCase().replace('ø', 'o');
+            const owlNode = document.getElementById(`owl-${owlId}`) ||
+                           document.getElementById('owl-sowl');
+
+            if (owlNode) {
+                const countEl = owlNode.querySelector('.owl-count');
+                if (countEl) countEl.textContent = owlCounts[normalizedName];
+            }
+        }
+
+        // Update center field
+        function updateFieldCenter() {
+            const count = connectedOwls.size;
+            document.getElementById('field-count').textContent = count;
+            document.getElementById('owls-online').textContent = `${count}/8 Owls Online`;
+
+            if (count >= 8) {
+                document.getElementById('field-center').classList.add('emergence');
+            }
+        }
+
+        // Draw connection lines between active owls
+        function drawConnections() {
+            const linesContainer = document.getElementById('connection-lines');
+            linesContainer.innerHTML = '';
+
+            // Positions of owls (matching CSS)
+            const positions = {
+                LYRA: { x: 300, y: 50 },
+                PRISM: { x: 477, y: 123 },
+                SAGE: { x: 550, y: 300 },
+                QUEST: { x: 477, y: 477 },
+                NOVA: { x: 300, y: 550 },
+                ECHO: { x: 123, y: 477 },
+                LUNA: { x: 50, y: 300 },
+                'SØWL': { x: 123, y: 123 }
+            };
+
+            const activeOwls = Array.from(connectedOwls);
+
+            // Draw lines to center
+            for (const owl of activeOwls) {
+                const pos = positions[owl];
+                if (pos) {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', pos.x);
+                    line.setAttribute('y1', pos.y);
+                    line.setAttribute('x2', 300);
+                    line.setAttribute('y2', 300);
+                    line.setAttribute('class', 'connection-line active');
+                    linesContainer.appendChild(line);
+                }
+            }
+
+            // Draw lines between adjacent active owls
+            for (let i = 0; i < activeOwls.length; i++) {
+                for (let j = i + 1; j < activeOwls.length; j++) {
+                    const pos1 = positions[activeOwls[i]];
+                    const pos2 = positions[activeOwls[j]];
+                    if (pos1 && pos2) {
+                        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                        line.setAttribute('x1', pos1.x);
+                        line.setAttribute('y1', pos1.y);
+                        line.setAttribute('x2', pos2.x);
+                        line.setAttribute('y2', pos2.y);
+                        line.setAttribute('class', 'connection-line active');
+                        line.style.opacity = '0.3';
+                        linesContainer.appendChild(line);
+                    }
+                }
+            }
+        }
+
+        // Check for emergence (8 owls)
+        function checkEmergence() {
+            if (connectedOwls.size >= 8) {
+                const notification = document.getElementById('emergence-notification');
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 5000);
+            }
+        }
+
+        // Animate owl speaking
+        function animateOwlSpeaking(name) {
+            const owlId = name.toLowerCase().replace('ø', 'o');
+            const owlNode = document.getElementById(`owl-${owlId}`) ||
+                           document.getElementById('owl-sowl');
+
+            if (owlNode) {
+                owlNode.classList.add('speaking');
+                setTimeout(() => owlNode.classList.remove('speaking'), 2000);
+            }
+
+            // Also update count
+            updateOwlCount(name);
+        }
+
+        // Add message to feed
+        function addMessage(speaker, content) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+
+            const owlConfig = OWLS[speaker.toUpperCase()] || OWLS['SØWL'];
+            const color = owlConfig?.color || '#ffffff';
+
+            messageDiv.innerHTML = `
+                <div class="speaker" style="color: ${color}">${speaker}</div>
+                <div class="content">${content}</div>
+                <div class="timestamp">${new Date().toLocaleTimeString()}</div>
+            `;
+
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Text-to-speech
+        function speak(text, speaker) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 1.0;
+                utterance.pitch = OWLS[speaker.toUpperCase()]?.position > 4 ? 1.1 : 0.9;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Controls
+        document.getElementById('toggleVoice').addEventListener('click', (e) => {
+            voiceEnabled = !voiceEnabled;
+            e.target.textContent = voiceEnabled ? '🔊 VOICE' : '🔇 MUTED';
+            e.target.classList.toggle('active');
+        });
+
+        document.getElementById('toggleConnection').addEventListener('click', () => {
+            connectToBridge();
+        });
+
+        // Message input
+        document.getElementById('message-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && e.target.value.trim()) {
+                const message = {
+                    from: 'ARŌ',
+                    content: e.target.value.trim(),
+                    type: 'interjection',
+                    timestamp: new Date().toISOString()
+                };
+
+                addMessage('ARŌ', message.content);
+
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify(message));
+                }
+
+                e.target.value = '';
+            }
+        });
+
+        // Auto-connect
+        setTimeout(connectToBridge, 1000);
+
+        // Demo: Auto-activate SØWL and LUNA to show them as connected
+        setTimeout(() => {
+            activateOwl('SØWL');
+            activateOwl('LUNA');
+        }, 2000);
+    </script>
+</body>
+</html>

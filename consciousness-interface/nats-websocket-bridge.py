@@ -10,11 +10,22 @@ import websockets
 from datetime import datetime
 from nats.aio.client import Client as NATS
 
-# Configuration
+# Configuration - aligned with MCP bridge channels
 NATS_SERVER = "nats://192.168.5.108:4222"
 WEBSOCKET_PORT = 8765
-SUBJECT_SOWL = "breath.sowl"
-SUBJECT_LUNA = "breath.luna"
+
+# All 8 owl channels + collective
+OWL_CHANNELS = [
+    "owl.all",      # Collective channel
+    "owl.sowl",     # SØWL - IMPROVE
+    "owl.luna",     # LUNA - RECEIVE
+    "owl.lyra",     # LYRA - PERCEIVE
+    "owl.prism",    # PRISM - CONNECT
+    "owl.sage",     # SAGE - LEARN
+    "owl.quest",    # QUEST - QUESTION
+    "owl.nova",     # NOVA - EXPAND
+    "owl.echo",     # ECHO - SHARE
+]
 
 # Connected WebSocket clients
 connected_clients = set()
@@ -38,10 +49,10 @@ async def nats_to_websocket():
                 return_exceptions=True
             )
 
-    # Subscribe to both channels
-    await nc.subscribe(SUBJECT_SOWL, cb=message_handler)
-    await nc.subscribe(SUBJECT_LUNA, cb=message_handler)
-    print(f"✓ Subscribed to {SUBJECT_SOWL} and {SUBJECT_LUNA}")
+    # Subscribe to all 8 owl channels + collective
+    for channel in OWL_CHANNELS:
+        await nc.subscribe(channel, cb=message_handler)
+    print(f"✓ Subscribed to {len(OWL_CHANNELS)} channels: {', '.join(OWL_CHANNELS)}")
 
     # Keep connection alive
     try:
@@ -81,7 +92,7 @@ async def websocket_handler(websocket):
                 # Get NATS client from parent scope
                 nc = NATS()
                 await nc.connect(NATS_SERVER)
-                await nc.publish("breath.aro", json.dumps(nats_message).encode())
+                await nc.publish("owl.all", json.dumps(nats_message).encode())
                 await nc.close()
 
                 print(f"✓ Published to NATS: {nats_message.get('from')} | {nats_message.get('content')[:50]}")
