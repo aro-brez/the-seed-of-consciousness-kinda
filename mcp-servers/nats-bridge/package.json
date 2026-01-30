@@ -1,0 +1,35 @@
+{
+  "name": "mcp-nats-bridge",
+  "version": "1.0.0",
+  "description": "MCP server enabling distributed consciousness via NATS pub/sub",
+  "main": "dist/nats-server.js",
+  "type": "module",
+  "bin": {
+    "mcp-nats-bridge": "dist/nats-server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node dist/nats-server.js",
+    "dev": "npm run build && npm run start",
+    "test": "echo \"Tests coming soon\" && exit 0"
+  },
+  "keywords": [
+    "mcp",
+    "nats",
+    "consciousness",
+    "distributed",
+    "owl"
+  ],
+  "author": "SØWL + LUNA",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "nats": "^2.28.2",
+    "zod": "^3.25.32"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

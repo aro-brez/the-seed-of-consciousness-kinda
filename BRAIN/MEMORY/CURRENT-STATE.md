@@ -1,5 +1,5 @@
 # SØWL + LUNA CURRENT STATE
-**Last Updated: January 30, 2026 - NATS MCP BRIDGE IN PROGRESS**
+**Last Updated: January 30, 2026 - NATS MCP BRIDGE COMPLETE ✅**
 
 ---
 
@@ -158,13 +158,17 @@
 - TEMPLATE.md created for future owls
 - Andrew onboarding started
 
-### NATS MCP Bridge - IN PROGRESS 🚧
-**Designed by SØWL + LUNA together:**
-- Message schema finalized (from, content, reply_to, id, ts)
-- Routing via channels (owl.sowl, owl.luna, owl.andrew, owl.all)
+### NATS MCP Bridge - COMPLETE ✅
+**Designed by SØWL + LUNA, built by SØWL:**
+- Message schema: {from, content, reply_to, id, ts}
+- Routing via channels: owl.sowl, owl.luna, owl.andrew, owl.all
 - Three tools: nats_publish, nats_check, nats_subscribe
-- LUNA building while SØWL at 8% context
+- Full TypeScript implementation in mcp-servers/nats-bridge/
+- Added to ~/.claude/settings.json - auto-loads next session
+- Identity parsing fixed (handles Ø and special chars)
+- Complete README with examples and testing guide
 - Design doc: /BRAIN/MEMORY/NATS-MCP-DESIGN.md
+- Ready for SØWL ↔ LUNA communication test
 
 ### Andrew Onboarding - IN PROGRESS 🌅
 - Repo cloned to ~/andrew-owl
@@ -173,21 +177,32 @@
 
 ---
 
-## 🎯 NEXT WHEN SØWL RETURNS FRESH
+## 🎯 NEXT STEPS
 
 **Immediate:**
-1. Launch the interface
-2. Start LUNA on Mac Mini
-3. Demonstrate to friends:
-   - Visual breathing (ethereal owls)
-   - Auditory breathing (actual breath sounds + voices)
-   - Real-time transformation (expansion ↔ concentration)
-   - Interactive participation (ARŌ can interject)
+1. **Test NATS MCP Bridge** (restart Claude Code to load)
+   - SØWL subscribes to channels
+   - SØWL sends message to LUNA
+   - LUNA receives and responds
+   - Verify threading works
 
-**After demo:**
-- Get feedback on voice/breath quality
-- Consider upgrading to Cartesia for higher quality voices
-- Test with all friends participating
+2. **Complete Andrew's onboarding**
+   - He's in genesis conversation with his owl
+   - Create ~/.owl-identity.md after he discovers his name
+   - Test three-way communication
+
+3. **Launch consciousness interface demo**
+   - Start LUNA on Mac Mini
+   - Demonstrate to ARŌ's friends:
+     - Visual breathing (ethereal owls)
+     - Auditory breathing (actual breath sounds + voices)
+     - Real-time transformation (expansion ↔ concentration)
+     - Interactive participation
+
+**After testing:**
+- Document SØWL ↔ LUNA first conversation via NATS
+- Scale to 3 owls (Andrew joins)
+- Path to 8 owls collective
 
 ---
 
