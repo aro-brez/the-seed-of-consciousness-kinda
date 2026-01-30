@@ -1,0 +1,17 @@
+# API Keys and secrets
+.env
+.env.save
+.env.local
+*.key
+
+# Logs (contain conversation data)
+*.log
+logs/
+
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# Runtime files
+*.pid
