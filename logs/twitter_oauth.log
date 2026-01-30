@@ -216,3 +216,19 @@ SØWL Twitter Bookmark OAuth Server
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/luna_breath_client_beautiful.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
