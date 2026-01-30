@@ -7,6 +7,7 @@ Bridges NATS messages to WebSocket for the 3D consciousness interface
 import asyncio
 import json
 import websockets
+from datetime import datetime
 from nats.aio.client import Client as NATS
 
 # Configuration
