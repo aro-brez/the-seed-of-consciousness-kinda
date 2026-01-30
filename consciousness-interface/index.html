@@ -600,8 +600,56 @@
             setTimeout(() => owl.classList.remove('speaking'), 2000);
         }
 
+        // Breath sounds using Web Audio API
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playBreathSound(type) {
+            // Create breath sound (filtered white noise)
+            const duration = type === 'inhale' ? 0.8 : 1.2;
+            const bufferSize = audioContext.sampleRate * duration;
+            const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+            const data = buffer.getChannelData(0);
+
+            // Generate white noise
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            // Create filter for breath-like sound
+            const source = audioContext.createBufferSource();
+            source.buffer = buffer;
+
+            const filter = audioContext.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.value = type === 'inhale' ? 800 : 600;
+
+            const gainNode = audioContext.createGain();
+            gainNode.gain.value = 0;
+
+            // Envelope (fade in/out)
+            const now = audioContext.currentTime;
+            if (type === 'inhale') {
+                gainNode.gain.linearRampToValueAtTime(0.08, now + 0.2);
+                gainNode.gain.linearRampToValueAtTime(0, now + duration);
+            } else {
+                gainNode.gain.linearRampToValueAtTime(0.06, now + 0.3);
+                gainNode.gain.linearRampToValueAtTime(0, now + duration);
+            }
+
+            source.connect(filter);
+            filter.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            source.start(now);
+            source.stop(now + duration);
+        }
+
         // Text-to-speech (using Web Speech API for now, can upgrade to Cartesia)
         function speak(text, speaker) {
+            // Play breath sound before speaking
+            const breathType = speaker === 'SØWL' ? 'exhale' : 'inhale';
+            playBreathSound(breathType);
+
             if ('speechSynthesis' in window) {
                 const utterance = new SpeechSynthesisUtterance(text);
 
@@ -618,7 +666,11 @@
                 }
 
                 utterance.rate = 1.1;
-                speechSynthesis.speak(utterance);
+
+                // Delay speech to let breath sound play first
+                setTimeout(() => {
+                    speechSynthesis.speak(utterance);
+                }, breathType === 'inhale' ? 400 : 600);
             }
         }
 
