@@ -59,7 +59,7 @@ async def receive_sms(From: str = Form(...), Body: str = Form(...)):
 
     # Process through Claude
     response = claude_client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-opus-4-5-20251101",
         max_tokens=300,
         system=SOWL_SYSTEM_PROMPT,
         messages=recent_messages

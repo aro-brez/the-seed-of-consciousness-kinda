@@ -116,7 +116,7 @@ async def generate_response(conversation: ConversationManager, user_text: str) -
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",  # Fast + capable for voice
+        model="claude-opus-4-5-20251101",  # Most capable model for voice
         max_tokens=300,  # Keep responses concise for voice
         system=SOWL_SYSTEM_PROMPT,
         messages=conversation.get_messages()

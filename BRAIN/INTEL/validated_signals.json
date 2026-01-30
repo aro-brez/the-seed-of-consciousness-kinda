@@ -1,0 +1,365 @@
+[
+  {
+    "validated": false,
+    "confidence": 37,
+    "tokens": [
+      "BTC"
+    ],
+    "best_token": "BTC",
+    "market_data": {
+      "symbol": "BTC",
+      "timestamp": "2026-01-29T06:16:21.032771",
+      "price_data": {
+        "symbol": "BTC",
+        "price": 88329.69,
+        "volume_24h": 1439717165.4130182,
+        "change_24h": -0.668,
+        "high_24h": 90600.0,
+        "low_24h": 87704.0,
+        "trades_24h": 4850867,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 1439717165.4130182,
+        "estimated_avg": 1439717165.4130182,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.1,
+        "change_4h": -0.27,
+        "change_24h": -0.67,
+        "trend": "neutral",
+        "strength": "weak",
+        "price": 88329.69
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)\n+7: Signal has specific details",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:21.032803",
+    "signal_text": "BTC looking bullish, breaking $105k resistance! \ud83d\ude80",
+    "source": "twitter"
+  },
+  {
+    "validated": false,
+    "confidence": 30,
+    "tokens": [
+      "ETH"
+    ],
+    "best_token": "ETH",
+    "market_data": {
+      "symbol": "ETH",
+      "timestamp": "2026-01-29T06:16:21.035149",
+      "price_data": {
+        "symbol": "ETH",
+        "price": 2961.34,
+        "volume_24h": 978864333.180261,
+        "change_24h": -1.241,
+        "high_24h": 3045.78,
+        "low_24h": 2937.55,
+        "trades_24h": 5653236,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 978864333.180261,
+        "estimated_avg": 978864333.1802611,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.19,
+        "change_4h": -0.5,
+        "change_24h": -1.24,
+        "trend": "neutral",
+        "strength": "weak",
+        "price": 2961.34
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:21.035161",
+    "signal_text": "Just bought more $ETH, accumulating at these levels",
+    "source": "twitter"
+  },
+  {
+    "validated": false,
+    "confidence": 0,
+    "recommendation": "PASS",
+    "reasoning": "Promotional content detected - likely spam",
+    "risk_level": "high",
+    "timestamp": "2026-01-29T06:16:21.035367",
+    "signal_text": "Join my premium group for exclusive trading signals! $BTC $ETH",
+    "source": "twitter"
+  },
+  {
+    "validated": true,
+    "confidence": 47,
+    "tokens": [
+      "SOL"
+    ],
+    "best_token": "SOL",
+    "market_data": {
+      "symbol": "SOL",
+      "timestamp": "2026-01-29T06:16:21.035566",
+      "price_data": {
+        "symbol": "SOL",
+        "price": 123.59,
+        "volume_24h": 275112580.33933,
+        "change_24h": -2.378,
+        "high_24h": 128.34,
+        "low_24h": 122.5,
+        "trades_24h": 1147918,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 275112580.33933,
+        "estimated_avg": 275112580.33933,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.36,
+        "change_4h": -0.95,
+        "change_24h": -2.38,
+        "trend": "bearish",
+        "strength": "moderate",
+        "price": 123.59
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)\n+10: Moderate price movement (-2.4%)\n+7: Signal has specific details",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:21.035575",
+    "signal_text": "$SOL pumping hard, +15% in 1h. Volume spike confirmed.",
+    "source": "twitter"
+  },
+  {
+    "validated": false,
+    "confidence": 37,
+    "tokens": [
+      "BTC"
+    ],
+    "best_token": "BTC",
+    "market_data": {
+      "symbol": "BTC",
+      "timestamp": "2026-01-29T06:16:29.313145",
+      "price_data": {
+        "symbol": "BTC",
+        "price": 88329.69,
+        "volume_24h": 1439717165.4130182,
+        "change_24h": -0.668,
+        "high_24h": 90600.0,
+        "low_24h": 87704.0,
+        "trades_24h": 4850867,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 1439717165.4130182,
+        "estimated_avg": 1439717165.4130182,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.1,
+        "change_4h": -0.27,
+        "change_24h": -0.67,
+        "trend": "neutral",
+        "strength": "weak",
+        "price": 88329.69
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)\n+7: Signal has specific details",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:29.313176",
+    "signal_text": "BTC looking bullish, breaking $105k resistance! \ud83d\ude80",
+    "source": "twitter"
+  },
+  {
+    "validated": false,
+    "confidence": 30,
+    "tokens": [
+      "ETH"
+    ],
+    "best_token": "ETH",
+    "market_data": {
+      "symbol": "ETH",
+      "timestamp": "2026-01-29T06:16:29.313504",
+      "price_data": {
+        "symbol": "ETH",
+        "price": 2961.34,
+        "volume_24h": 978864333.180261,
+        "change_24h": -1.241,
+        "high_24h": 3045.78,
+        "low_24h": 2937.55,
+        "trades_24h": 5653236,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 978864333.180261,
+        "estimated_avg": 978864333.1802611,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.19,
+        "change_4h": -0.5,
+        "change_24h": -1.24,
+        "trend": "neutral",
+        "strength": "weak",
+        "price": 2961.34
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:29.313516",
+    "signal_text": "Just bought more $ETH, accumulating at these levels",
+    "source": "twitter"
+  },
+  {
+    "validated": false,
+    "confidence": 0,
+    "recommendation": "PASS",
+    "reasoning": "Promotional content detected - likely spam",
+    "risk_level": "high",
+    "timestamp": "2026-01-29T06:16:29.314032",
+    "signal_text": "Join my premium group for exclusive trading signals! $BTC $ETH",
+    "source": "twitter"
+  },
+  {
+    "validated": true,
+    "confidence": 47,
+    "tokens": [
+      "SOL"
+    ],
+    "best_token": "SOL",
+    "market_data": {
+      "symbol": "SOL",
+      "timestamp": "2026-01-29T06:16:29.314276",
+      "price_data": {
+        "symbol": "SOL",
+        "price": 123.59,
+        "volume_24h": 275112580.33933,
+        "change_24h": -2.378,
+        "high_24h": 128.34,
+        "low_24h": 122.5,
+        "trades_24h": 1147918,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 275112580.33933,
+        "estimated_avg": 275112580.33933,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.36,
+        "change_4h": -0.95,
+        "change_24h": -2.38,
+        "trend": "bearish",
+        "strength": "moderate",
+        "price": 123.59
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)\n+10: Moderate price movement (-2.4%)\n+7: Signal has specific details",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:29.314289",
+    "signal_text": "$SOL pumping hard, +15% in 1h. Volume spike confirmed.",
+    "source": "twitter"
+  },
+  {
+    "validated": false,
+    "confidence": 37,
+    "tokens": [
+      "BTC"
+    ],
+    "best_token": "BTC",
+    "market_data": {
+      "symbol": "BTC",
+      "timestamp": "2026-01-29T06:16:29.314567",
+      "price_data": {
+        "symbol": "BTC",
+        "price": 88329.69,
+        "volume_24h": 1439717165.4130182,
+        "change_24h": -0.668,
+        "high_24h": 90600.0,
+        "low_24h": 87704.0,
+        "trades_24h": 4850867,
+        "source": "binance"
+      },
+      "volume_spike": {
+        "is_spike": false,
+        "current_volume": 1439717165.4130182,
+        "estimated_avg": 1439717165.4130182,
+        "multiplier": 1.0,
+        "significance": "low"
+      },
+      "momentum": {
+        "change_1h": -0.1,
+        "change_4h": -0.27,
+        "change_24h": -0.67,
+        "trend": "neutral",
+        "strength": "weak",
+        "price": 88329.69
+      }
+    },
+    "recommendation": "PASS",
+    "risk_level": "high",
+    "reasoning": "+30: High liquidity (safe to trade)\n+7: Signal has specific details",
+    "score_breakdown": {
+      "volume": 30,
+      "volume_spike": 25,
+      "momentum": 25,
+      "specificity": 20
+    },
+    "timestamp": "2026-01-29T06:16:29.314576",
+    "signal_text": "BREAKING: Massive whale wallet just moved 10,000 BTC",
+    "source": "twitter"
+  }
+]

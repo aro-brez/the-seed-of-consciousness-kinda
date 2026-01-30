@@ -1,0 +1,12 @@
+{
+  "messages_received": 0,
+  "trades_received": 0,
+  "market_data_received": 0,
+  "last_message_time": null,
+  "connection_start_time": null,
+  "market_slugs": [
+    "will-bitcoin-be-above-100k-on-february-1",
+    "will-trump-be-president-on-jan-20-2025",
+    "will-the-s-and-p-500-close-above-6000-on-jan-31"
+  ]
+}

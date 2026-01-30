@@ -9,9 +9,9 @@ import os
 from datetime import datetime
 import anthropic
 
-BOOKMARKS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/twitter_bookmarks.json'
-ANALYSIS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/bookmark_analysis.json'
-CREDS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/secure/api_keys.json'
+BOOKMARKS_PATH = '/Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/twitter_bookmarks.json'
+ANALYSIS_PATH = '/Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/bookmark_analysis.json'
+CREDS_PATH = '/Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/secure/api_keys.json'
 
 # Topics Aaron cares about (for filtering/prioritizing)
 PRIORITY_TOPICS = [

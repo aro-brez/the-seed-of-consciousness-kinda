@@ -28,8 +28,8 @@ TOKEN_URL = 'https://api.twitter.com/2/oauth2/token'
 SCOPES = ['bookmark.read', 'tweet.read', 'users.read', 'offline.access']
 
 # Storage paths
-CREDS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/secure/api_keys.json'
-BOOKMARKS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/twitter_bookmarks.json'
+CREDS_PATH = '/Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/secure/api_keys.json'
+BOOKMARKS_PATH = '/Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/twitter_bookmarks.json'
 
 
 def generate_pkce():
@@ -77,8 +77,19 @@ def callback():
         code_verifier=code_verifier
     )
 
-    # Save token
+    # Save token to api_keys.json
     session['token'] = token
+
+    # Load existing credentials
+    with open(CREDS_PATH) as f:
+        creds = json.load(f)
+
+    # Add OAuth token
+    creds['twitter_oauth_token'] = token
+
+    # Save back
+    with open(CREDS_PATH, 'w') as f:
+        json.dump(creds, f, indent=2)
 
     # Get user ID
     user_response = oauth.get('https://api.twitter.com/2/users/me')

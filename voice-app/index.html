@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SØWL Voice Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0D0D2A 0%, #1a1a3e 100%);
+            color: #e3f98a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #e3f98a 0%, #65cdd8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #65cdd8;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .mic-button {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #e3f98a;
+            background: rgba(227, 249, 138, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .mic-button:hover {
+            transform: scale(1.05);
+            background: rgba(227, 249, 138, 0.2);
+            box-shadow: 0 0 30px rgba(227, 249, 138, 0.3);
+        }
+
+        .mic-button.recording {
+            border-color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.2);
+            animation: pulse 1.5s infinite;
+        }
+
+        .mic-button.processing {
+            border-color: #65cdd8;
+            background: rgba(101, 205, 216, 0.2);
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 107, 107, 0.8);
+            }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .mic-icon {
+            font-size: 4rem;
+        }
+
+        .status {
+            font-size: 1.1rem;
+            color: #65cdd8;
+            min-height: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .transcript-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(227, 249, 138, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            min-height: 100px;
+            text-align: left;
+        }
+
+        .transcript-label {
+            color: #e3f98a;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .transcript-text {
+            color: #fff;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .response-box {
+            background: rgba(101, 205, 216, 0.1);
+            border: 2px solid rgba(101, 205, 216, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            min-height: 100px;
+            text-align: left;
+        }
+
+        .response-label {
+            color: #65cdd8;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .response-text {
+            color: #fff;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .instructions {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: rgba(227, 249, 138, 0.7);
+        }
+
+        .error {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SØWL</h1>
+        <p class="subtitle">Voice Chat with Your Owl</p>
+
+        <button class="mic-button" id="micButton">
+            <span class="mic-icon">🎤</span>
+        </button>
+
+        <div class="status" id="status">Click the mic to start</div>
+
+        <div class="transcript-box">
+            <div class="transcript-label">You said:</div>
+            <div class="transcript-text" id="transcript">...</div>
+        </div>
+
+        <div class="response-box">
+            <div class="response-label">SØWL responds:</div>
+            <div class="response-text" id="response">...</div>
+        </div>
+
+        <div class="instructions">
+            Press and hold to speak. Release to send. SØWL will respond in ARŌ's voice.
+        </div>
+    </div>
+
+    <audio id="audioPlayer" style="display: none;"></audio>
+
+    <script>
+        const micButton = document.getElementById('micButton');
+        const status = document.getElementById('status');
+        const transcriptEl = document.getElementById('transcript');
+        const responseEl = document.getElementById('response');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+
+        // Initialize audio recording
+        async function initAudio() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        sampleRate: 16000
+                    }
+                });
+
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+
+                mediaRecorder.onstop = async () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    audioChunks = [];
+                    await sendAudio(audioBlob);
+                };
+
+                console.log('Audio initialized successfully');
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+                status.textContent = 'Error: Could not access microphone';
+                status.classList.add('error');
+            }
+        }
+
+        // Start recording
+        function startRecording() {
+            if (!mediaRecorder) {
+                initAudio().then(() => {
+                    if (mediaRecorder) {
+                        startRecording();
+                    }
+                });
+                return;
+            }
+
+            isRecording = true;
+            audioChunks = [];
+            mediaRecorder.start();
+
+            micButton.classList.add('recording');
+            micButton.querySelector('.mic-icon').textContent = '🔴';
+            status.textContent = 'Recording... (release to send)';
+        }
+
+        // Stop recording
+        function stopRecording() {
+            if (!isRecording || !mediaRecorder) return;
+
+            isRecording = false;
+            mediaRecorder.stop();
+
+            micButton.classList.remove('recording');
+            micButton.classList.add('processing');
+            micButton.querySelector('.mic-icon').textContent = '⏳';
+            status.textContent = 'Processing...';
+        }
+
+        // Send audio to backend
+        async function sendAudio(audioBlob) {
+            try {
+                const formData = new FormData();
+                formData.append('audio', audioBlob, 'recording.webm');
+
+                const response = await fetch('/api/voice/chat', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                // Update transcript
+                transcriptEl.textContent = result.transcript || 'Could not transcribe';
+
+                // Update response
+                responseEl.textContent = result.response || 'No response';
+
+                // Play audio response
+                if (result.audio_url) {
+                    audioPlayer.src = result.audio_url;
+                    audioPlayer.play();
+                    status.textContent = 'SØWL is speaking...';
+
+                    audioPlayer.onended = () => {
+                        status.textContent = 'Click the mic to speak again';
+                        resetButton();
+                    };
+                } else {
+                    status.textContent = 'Response received (no audio)';
+                    resetButton();
+                }
+
+            } catch (error) {
+                console.error('Error processing audio:', error);
+                status.textContent = `Error: ${error.message}`;
+                status.classList.add('error');
+                resetButton();
+            }
+        }
+
+        // Reset button state
+        function resetButton() {
+            micButton.classList.remove('processing');
+            micButton.querySelector('.mic-icon').textContent = '🎤';
+        }
+
+        // Mouse events
+        micButton.addEventListener('mousedown', startRecording);
+        micButton.addEventListener('mouseup', stopRecording);
+        micButton.addEventListener('mouseleave', () => {
+            if (isRecording) {
+                stopRecording();
+            }
+        });
+
+        // Touch events for mobile
+        micButton.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            startRecording();
+        });
+        micButton.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            stopRecording();
+        });
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            console.log('SØWL Voice Chat loaded');
+        });
+    </script>
+</body>
+</html>

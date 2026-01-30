@@ -12,10 +12,11 @@ from datetime import datetime
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-# Paths
-BOOKMARKS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/twitter_bookmarks.json'
-OUTPUT_DIR = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/INTEL/articles'
-FULL_CONTEXT_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/twitter_bookmarks_full_context.json'
+# Paths (dynamic detection)
+REPO_ROOT = Path(__file__).parent.parent
+BOOKMARKS_PATH = REPO_ROOT / 'BRAIN' / 'MEMORY' / 'twitter_bookmarks.json'
+OUTPUT_DIR = REPO_ROOT / 'BRAIN' / 'INTEL' / 'articles'
+FULL_CONTEXT_PATH = REPO_ROOT / 'BRAIN' / 'MEMORY' / 'twitter_bookmarks_full_context.json'
 
 # Create output directory
 Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)

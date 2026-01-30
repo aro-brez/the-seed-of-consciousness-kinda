@@ -1,0 +1,1257 @@
+{
+  "cycle_count": 103,
+  "last_run": "2026-01-30T01:13:48.626552",
+  "performance_history": [
+    {
+      "timestamp": "2026-01-29T14:58:05.955672",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 54,
+          "uptime_hours": 9.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T15:08:06.609017",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 55,
+          "uptime_hours": 9.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T15:18:07.275296",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 56,
+          "uptime_hours": 9.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T15:28:07.312401",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 57,
+          "uptime_hours": 9.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T15:38:07.897451",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 58,
+          "uptime_hours": 9.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T15:48:08.500560",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 59,
+          "uptime_hours": 9.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T15:58:09.365326",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 60,
+          "uptime_hours": 10.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T16:08:10.110867",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 61,
+          "uptime_hours": 10.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T16:18:10.414608",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 62,
+          "uptime_hours": 10.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T16:47:50.054099",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 63,
+          "uptime_hours": 10.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T16:57:50.866405",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 64,
+          "uptime_hours": 10.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T17:07:50.899320",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 65,
+          "uptime_hours": 10.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T17:17:51.645247",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 66,
+          "uptime_hours": 11.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T17:27:52.530348",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 67,
+          "uptime_hours": 11.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T17:52:48.892983",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 68,
+          "uptime_hours": 11.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T18:02:49.329592",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 69,
+          "uptime_hours": 11.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T18:12:49.507401",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 70,
+          "uptime_hours": 11.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T18:22:49.645496",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 71,
+          "uptime_hours": 11.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T18:32:49.994168",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 72,
+          "uptime_hours": 12.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T18:42:50.522779",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 73,
+          "uptime_hours": 12.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T19:11:09.356949",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 74,
+          "uptime_hours": 12.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T19:21:09.468925",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 75,
+          "uptime_hours": 12.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T19:31:10.409672",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 76,
+          "uptime_hours": 12.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T19:41:11.304167",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 77,
+          "uptime_hours": 12.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T19:51:11.657781",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 78,
+          "uptime_hours": 13.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T20:08:39.665629",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 79,
+          "uptime_hours": 13.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T20:18:39.702166",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 80,
+          "uptime_hours": 13.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T20:28:39.795540",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 81,
+          "uptime_hours": 13.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T20:52:40.531836",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 82,
+          "uptime_hours": 13.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T21:02:40.961220",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 83,
+          "uptime_hours": 13.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T21:23:39.809528",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 84,
+          "uptime_hours": 14.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T21:36:08.099608",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 85,
+          "uptime_hours": 14.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T21:46:08.892356",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 86,
+          "uptime_hours": 14.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T22:12:51.042879",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 87,
+          "uptime_hours": 14.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T22:22:51.075874",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 88,
+          "uptime_hours": 14.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T22:32:51.301567",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 89,
+          "uptime_hours": 14.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T22:42:51.646540",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 90,
+          "uptime_hours": 15.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T22:52:51.905885",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 91,
+          "uptime_hours": 15.166666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T23:02:52.241466",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 92,
+          "uptime_hours": 15.333333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T23:20:07.407585",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 93,
+          "uptime_hours": 15.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T23:41:39.957308",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 94,
+          "uptime_hours": 15.666666666666666,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-29T23:51:40.935102",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 95,
+          "uptime_hours": 15.833333333333334,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T00:01:41.479884",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 96,
+          "uptime_hours": 16.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T00:11:42.470016",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 97,
+          "uptime_hours": 16.166666666666668,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T00:21:42.730456",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 98,
+          "uptime_hours": 16.333333333333332,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T00:31:43.547600",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 99,
+          "uptime_hours": 16.5,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T00:41:43.674880",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 100,
+          "uptime_hours": 16.666666666666668,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T00:51:44.345858",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 101,
+          "uptime_hours": 16.833333333333332,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T01:01:44.711492",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 102,
+          "uptime_hours": 17.0,
+          "status": "running"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-30T01:11:44.929809",
+      "performance": {
+        "trading": {
+          "total_cycles": 35,
+          "recent_cycles": 10,
+          "avg_signals_per_cycle": 4.0,
+          "last_cycle": {
+            "cycle": 5,
+            "timestamp": "2026-01-29T05:50:22.584898",
+            "signal_count": 4,
+            "analysis": "### 1. IMMEDIATE OPPORTUNITIES (next 15 minutes)\n- **None**. No price action, volume spikes, or orderbook imbalances tied to these signals. Hype tweets lack timestamps or verifiable on-chain data for execution.\n- Confidence: Low.\n\n### 2. PATTERN RECOGNITION\n- **Emerging trends**: AI-driven trading automation (Claude bots, clawdbot on Hyperliquid) + prediction markets (Polymarket whale at $3.9M). Cross-over hype between AI tools (Lovable/Claude) and crypto perps/Dexes. 4/4 signals push \"alpha\" via AI sentiment scanners (Twitter/Trump).\n- **Market sentiment**: Bullish froth in AI/crypto niche (Hyperliquid, Polymarket). Retail FOMO on bots/whales, but no broad market move.\n- **Whale/insider signals**: $3.9M Polymarket winner (potential election bet whale) + clawdbot wallet ($2K seed on Hyperliquid). No on-chain confirms; watch Hyperliquid leaderboards/Twitter for $HYPER pumps.\n\n### 3. RISK ASSESSMENT\n- **Red flags**: Pure narrative hype, no TA/volume/OHLCV data. Self-promo (Lovable course, Claude tutorials) screams pump. Bot wallets unverified\u2014could be rugs.\n- **Counter-indicators**: No correlation to BTC/ETH (flat last 24h). Polymarket volumes election-tied but fading post-debate. AI tokens (e.g., FET/TAO) unchanged.\n- **Position sizing**: Max 0.5% portfolio if trading hype; use 5x leverage cap.\n\n### 4. RECOMMENDED ACTION\n- **PASS**. Zero edge\u2014social noise, not signals. Monitor Hyperliquid $HYPER for >10% 15m wick + whale txns before entry (long at $0.45, stop $0.42, target $0.52)."
+          }
+        },
+        "signal_quality": {
+          "total_bookmarks_analyzed": 126,
+          "status": "active"
+        },
+        "system_health": {
+          "cycle_count": 103,
+          "uptime_hours": 17.166666666666668,
+          "status": "running"
+        }
+      }
+    }
+  ],
+  "active_experiments": []
+}

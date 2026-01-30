@@ -73,7 +73,7 @@ async def voice_respond(
 
         # Generate response
         response = claude_client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-opus-4-5-20251101",
             max_tokens=150,  # Keep it short for voice
             system=SOWL_VOICE_PROMPT,
             messages=conversations[CallSid][-10:]  # Last 10 messages

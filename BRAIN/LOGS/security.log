@@ -1,0 +1,1 @@
+{"timestamp": "2026-01-29T04:32:44.105868", "level": "HIGH", "message": "Insecure permissions: /Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/secure/phantom_key.txt", "details": {"mode": "0o644"}}

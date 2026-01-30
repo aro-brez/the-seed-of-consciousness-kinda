@@ -1,0 +1,41 @@
+{
+  "price_BTC": {
+    "timestamp": 1769663775.212815,
+    "data": {
+      "symbol": "BTC",
+      "price": 88329.69,
+      "volume_24h": 1439717165.4130182,
+      "change_24h": -0.668,
+      "high_24h": 90600.0,
+      "low_24h": 87704.0,
+      "trades_24h": 4850867,
+      "source": "binance"
+    }
+  },
+  "price_ETH": {
+    "timestamp": 1769663775.951096,
+    "data": {
+      "symbol": "ETH",
+      "price": 2961.34,
+      "volume_24h": 978864333.180261,
+      "change_24h": -1.241,
+      "high_24h": 3045.78,
+      "low_24h": 2937.55,
+      "trades_24h": 5653236,
+      "source": "binance"
+    }
+  },
+  "price_SOL": {
+    "timestamp": 1769663777.128353,
+    "data": {
+      "symbol": "SOL",
+      "price": 123.59,
+      "volume_24h": 275112580.33933,
+      "change_24h": -2.378,
+      "high_24h": 128.34,
+      "low_24h": 122.5,
+      "trades_24h": 1147918,
+      "source": "binance"
+    }
+  }
+}

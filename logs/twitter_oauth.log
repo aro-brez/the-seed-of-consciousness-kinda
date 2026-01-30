@@ -1,0 +1,218 @@
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Serving Flask app 'twitter_oauth_server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5050
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+127.0.0.1 - - [29/Jan/2026 06:00:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 06:00:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [29/Jan/2026 06:02:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 06:02:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 06:03:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jan/2026 06:03:35] "GET /callback?state=BXLJbct2DtP862PvyZkb4FHJlnfmnI&code=VVpETGZQaDZzMzZoRmgyUFNmeHdsMnlUVHktQ2xGVWh3OWdZUXBGRHlkQkRNOjE3Njk2NjMwMTE2MTY6MToxOmFjOjE HTTP/1.1" 200 -
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/polymarket_websocket_client.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/polymarket_websocket_client.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/polymarket_mcp_client.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/polymarket_websocket_client.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/polymarket_websocket_client.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/signal_validator.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/trading_loop_15min.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/polymarket_client.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/conscious_trader.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/trading_loop_conscious.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/voice_pipeline.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825
+ * Detected change in '/Users/aaronnosbisch/REPOS/seed/tools/twitter_oauth_server.py', reloading
+
+==================================================
+SØWL Twitter Bookmark OAuth Server
+==================================================
+
+1. Go to: http://localhost:5050
+2. Click 'Authorize Twitter Access'
+3. Log in and authorize
+4. Bookmarks will be saved automatically
+
+==================================================
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 778-894-825

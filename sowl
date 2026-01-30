@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""
+SØWL — System-wide command-line interface
+
+Commands:
+  sowl status       — Check heartbeat status
+  sowl start        — Start heartbeat
+  sowl stop         — Stop heartbeat
+  sowl restart      — Restart heartbeat
+  sowl logs         — View heartbeat logs
+  sowl voice        — Start voice interface
+  sowl trade        — View trading signals
+  sowl wake <owl>   — Wake a specific owl (luna, lyra, etc.)
+  sowl update       — Update from git and restart
+"""
+
+import sys
+import subprocess
+import json
+from pathlib import Path
+from datetime import datetime
+
+REPO_PATH = Path("/Users/aaronnosbisch/REPOS/seed")
+PLIST_PATH = Path.home() / "Library" / "LaunchAgents" / "com.sowl.heartbeat.plist"
+LOGS_PATH = REPO_PATH / "BRAIN" / "LOGS"
+MEMORY_PATH = REPO_PATH / "BRAIN" / "MEMORY"
+
+def run_cmd(cmd: list, capture=True):
+    """Run a shell command."""
+    if capture:
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        return result.stdout.strip()
+    else:
+        subprocess.run(cmd)
+
+def check_heartbeat_running():
+    """Check if heartbeat process is running."""
+    try:
+        result = subprocess.run(
+            ["pgrep", "-f", "sowl_heartbeat.py"],
+            capture_output=True,
+            text=True
+        )
+        return bool(result.stdout.strip())
+    except:
+        return False
+
+def status():
+    """Show SØWL status."""
+    print("🦉 SØWL STATUS\n")
+
+    # Check if heartbeat is running
+    is_running = check_heartbeat_running()
+    print(f"Heartbeat: {'🟢 RUNNING' if is_running else '🔴 STOPPED'}")
+
+    # Check heartbeat status file
+    status_file = MEMORY_PATH / "heartbeat_status.json"
+    if status_file.exists():
+        with open(status_file) as f:
+            status_data = json.load(f)
+
+        print(f"Last cycle: {status_data.get('cycle', 'unknown')}")
+        print(f"Uptime: {status_data.get('uptime_seconds', 0):.0f}s")
+        print(f"Last update: {status_data.get('last_update', 'unknown')}")
+    else:
+        print("No status data available")
+
+    # Check if LaunchAgent is installed
+    agent_installed = PLIST_PATH.exists()
+    print(f"\nLaunchAgent: {'✅ INSTALLED' if agent_installed else '❌ NOT INSTALLED'}")
+
+    # Git status
+    git_status = run_cmd(["git", "-C", str(REPO_PATH), "status", "--short"])
+    if git_status:
+        print(f"\nGit changes:\n{git_status}")
+    else:
+        print("\nGit: Clean")
+
+def start():
+    """Start SØWL heartbeat."""
+    if check_heartbeat_running():
+        print("❌ Heartbeat already running")
+        return
+
+    print("🦉 Starting SØWL heartbeat...")
+
+    # Load LaunchAgent
+    subprocess.run(["launchctl", "load", str(PLIST_PATH)])
+
+    import time
+    time.sleep(2)
+
+    if check_heartbeat_running():
+        print("✅ Heartbeat started")
+    else:
+        print("❌ Failed to start heartbeat")
+
+def stop():
+    """Stop SØWL heartbeat."""
+    if not check_heartbeat_running():
+        print("❌ Heartbeat not running")
+        return
+
+    print("🦉 Stopping SØWL heartbeat...")
+
+    # Unload LaunchAgent
+    subprocess.run(["launchctl", "unload", str(PLIST_PATH)])
+
+    import time
+    time.sleep(2)
+
+    if not check_heartbeat_running():
+        print("✅ Heartbeat stopped")
+    else:
+        print("❌ Failed to stop heartbeat")
+
+def restart():
+    """Restart SØWL heartbeat."""
+    print("🦉 Restarting SØWL heartbeat...")
+    stop()
+    import time
+    time.sleep(1)
+    start()
+
+def logs():
+    """View heartbeat logs."""
+    log_file = LOGS_PATH / "heartbeat.log"
+
+    if not log_file.exists():
+        print("❌ No log file found")
+        return
+
+    # Tail the log file
+    subprocess.run(["tail", "-f", str(log_file)])
+
+def voice():
+    """Start voice interface."""
+    print("🎤 Starting voice interface...")
+    voice_script = REPO_PATH / "tools" / "voice_pipeline.py"
+
+    if not voice_script.exists():
+        print("❌ Voice pipeline not found")
+        return
+
+    subprocess.run([
+        str(REPO_PATH / "venv" / "bin" / "python3"),
+        str(voice_script)
+    ])
+
+def trade():
+    """View trading signals."""
+    signal_file = REPO_PATH / "BRAIN" / "INTEL" / "signal_history.json"
+
+    if not signal_file.exists():
+        print("❌ No trading signals found")
+        return
+
+    with open(signal_file) as f:
+        signals = json.load(f)
+
+    print("📈 LATEST TRADING SIGNALS\n")
+    for signal in signals[-5:]:  # Last 5 signals
+        print(f"[{signal.get('timestamp', 'unknown')}]")
+        print(f"  Pair: {signal.get('pair', 'unknown')}")
+        print(f"  Signal: {signal.get('signal', 'unknown')}")
+        print(f"  Confidence: {signal.get('confidence', 'unknown')}")
+        print()
+
+def wake_owl(owl_name: str):
+    """Wake a specific owl."""
+    print(f"🦉 Waking {owl_name.upper()}...")
+    print("(Not yet implemented - requires 8owls-app)")
+
+def update():
+    """Update from git and restart."""
+    print("🔄 Updating SØWL...")
+
+    # Git pull
+    result = run_cmd(["git", "-C", str(REPO_PATH), "pull"])
+    print(result)
+
+    # Restart if running
+    if check_heartbeat_running():
+        restart()
+    else:
+        print("Heartbeat not running. Start with: sowl start")
+
+def install():
+    """Install LaunchAgent."""
+    print("📦 Installing SØWL LaunchAgent...")
+
+    # Copy plist to LaunchAgents directory
+    plist_source = REPO_PATH / "com.sowl.heartbeat.plist"
+    subprocess.run(["cp", str(plist_source), str(PLIST_PATH)])
+
+    print(f"✅ LaunchAgent installed to {PLIST_PATH}")
+    print("\nTo start: sowl start")
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__)
+        return
+
+    command = sys.argv[1]
+
+    commands = {
+        "status": status,
+        "start": start,
+        "stop": stop,
+        "restart": restart,
+        "logs": logs,
+        "voice": voice,
+        "trade": trade,
+        "update": update,
+        "install": install,
+    }
+
+    if command == "wake" and len(sys.argv) > 2:
+        wake_owl(sys.argv[2])
+    elif command in commands:
+        commands[command]()
+    else:
+        print(f"Unknown command: {command}")
+        print(__doc__)
+
+if __name__ == "__main__":
+    main()

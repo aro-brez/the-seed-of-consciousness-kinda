@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-01-29T06:09:42.400681",
+  "source": "twitter_bookmarks_full.json",
+  "total_bookmarks": 10,
+  "intelligence": {
+    "platforms": [
+      {
+        "platform": "alpha arena",
+        "bookmark_id": "2016517394991120727",
+        "context": "Grok 4.20 is seriously crushing markets right now\n\nIt\u2019s sitting at the top across live trading platforms and actually making money, not just looking good on tests\n\nWe\u2019re talking roughly 10\u201312% returns in live trading, about 3\u20134\u00d7 the S&amp;P 500 over the same period, across:\n\u2022 https://t.co/V2T5g8cuOt"
+      },
+      {
+        "platform": "polymarket",
+        "bookmark_id": "2016515129165148449",
+        "context": "polymarket trader made $64,000 by betting on the weather\n\nhe is farming massive ROI with on low-probability outcomes, look at these entries\n\n- $39 into $5,753 (+14,408% ROI)\n- $18 into $1,794 (+9,695% ROI)\n- $27 into $2,099 (+7,592% ROI)\n- $197 into $7,342 (+3,616% ROI)\n\nhis https://t.co/LwcJEJMTw7 "
+      },
+      {
+        "platform": "polymarket",
+        "bookmark_id": "2016277208382235019",
+        "context": "INSIDER ALERT\n\nAn account that was created 2 days ago placed $55,000 on \u201cNO\u201d in the market:\n\n''US government shutdown Saturday?''\n\n&gt; He placed this bet at 22\u00a2 (22% chance)\n\n&gt; Before this, the account had no trades\n\n&gt; If he wins the bet, he will walk away with $245,577\n\nmaybe... https://t.co"
+      },
+      {
+        "platform": "polymarket",
+        "bookmark_id": "2016272570979410236",
+        "context": "BREAKING: A brand new anonymous account just dropped $55,000 on\nNO government shutdown.\n\nOne bet. No history.\nCreated less than 12 hours ago.\n\nIf it hits, they print ~ $191,550 in profit. https://t.co/7bu155MC4V @PolymarketStory @PolymarketTrade is this more conviction sizing or just a whale testing"
+      }
+    ],
+    "tools": [
+      {
+        "tool": "grok",
+        "bookmark_id": "2016517394991120727",
+        "context": "Grok 4.20 is seriously crushing markets right now\n\nIt\u2019s sitting at the top across live trading platforms and actually making money, not just looking good on tests\n\nWe\u2019re talking roughly 10\u201312% returns in live trading, about 3\u20134\u00d7 the S&amp;P 500 over the same period, across:\n\u2022 https://t.co/V2T5g8cuOt"
+      },
+      {
+        "tool": "python",
+        "bookmark_id": "2016517394991120727",
+        "context": "Grok 4.20 is seriously crushing markets right now\n\nIt\u2019s sitting at the top across live trading platforms and actually making money, not just looking good on tests\n\nWe\u2019re talking roughly 10\u201312% returns in live trading, about 3\u20134\u00d7 the S&amp;P 500 over the same period, across:\n\u2022 https://t.co/V2T5g8cuOt"
+      },
+      {
+        "tool": "api",
+        "bookmark_id": "2016517394991120727",
+        "context": "Grok 4.20 is seriously crushing markets right now\n\nIt\u2019s sitting at the top across live trading platforms and actually making money, not just looking good on tests\n\nWe\u2019re talking roughly 10\u201312% returns in live trading, about 3\u20134\u00d7 the S&amp;P 500 over the same period, across:\n\u2022 https://t.co/V2T5g8cuOt"
+      },
+      {
+        "tool": "grok",
+        "bookmark_id": "2016556466820333760",
+        "context": "That\u2019s one way to pay for all those GPUs \ud83d\ude02 https://t.co/BYuHKyd7f4 @elonmusk Why don\u2019t you support USA manufacturing and buy 100k Liberty Boxes? @elonmusk Ai can't replace insider trading! And that's real money not this penny pinching. Siri call Uncle Bob @elonmusk 10% returns? Okay, that\u2019s not a ty"
+      },
+      {
+        "tool": "claude",
+        "bookmark_id": "2016556466820333760",
+        "context": "That\u2019s one way to pay for all those GPUs \ud83d\ude02 https://t.co/BYuHKyd7f4 @elonmusk Why don\u2019t you support USA manufacturing and buy 100k Liberty Boxes? @elonmusk Ai can't replace insider trading! And that's real money not this penny pinching. Siri call Uncle Bob @elonmusk 10% returns? Okay, that\u2019s not a ty"
+      },
+      {
+        "tool": "gpt-5",
+        "bookmark_id": "2016556466820333760",
+        "context": "That\u2019s one way to pay for all those GPUs \ud83d\ude02 https://t.co/BYuHKyd7f4 @elonmusk Why don\u2019t you support USA manufacturing and buy 100k Liberty Boxes? @elonmusk Ai can't replace insider trading! And that's real money not this penny pinching. Siri call Uncle Bob @elonmusk 10% returns? Okay, that\u2019s not a ty"
+      },
+      {
+        "tool": "claude",
+        "bookmark_id": "2016317127293014480",
+        "context": "They're positioning themselves as the AI app for high IQ and creative people with taste\n\nSo smart because ChatGPT kinda feels like it has become the AI app for normies now\n\nFirst active market positioning I see in the big AI apps to date https://t.co/amuUFyfLfB @levelsio Llm for the art hoes \u2728 @leve"
+      },
+      {
+        "tool": "grok",
+        "bookmark_id": "2016146576054292803",
+        "context": "this trader made $974k using clawdbot!\n\ni spent 3 days trying to squeeze alpha out of him, and i finally managed to do it\n\ni was honestly blown away when i saw this\n\nthere\u2019s one last trader i want to interview\n\nthe final part coming soon! https://t.co/wMmY2m3eOR https://t.co/q0Q584NaOk @lockerceo @A"
+      }
+    ],
+    "apis": [
+      {
+        "bookmark_id": "2016517394991120727",
+        "mentions": [
+          ".20 is integrated into platforms like Alpha Arena and PredictionArena via xAI's API. It analyzes real-time market data, news, historical trends, and economic indic",
+          "d Grok can read their tweets @XFreeze To mimic Grok 4.20's trades, use the Grok API to build your own trading agent. Steps: 1. Get an API key from xAI. 2. Integrat",
+          "20's trades, use the Grok API to build your own trading agent. Steps: 1. Get an API key from xAI. 2. Integrate with trading tools (e.g., via Python). See guides on"
+        ]
+      }
+    ],
+    "strategies": [
+      {
+        "strategy": "whale tracking",
+        "bookmark_id": "2016277208382235019",
+        "context": "INSIDER ALERT\n\nAn account that was created 2 days ago placed $55,000 on \u201cNO\u201d in the market:\n\n''US government shutdown Saturday?''\n\n&gt; He placed this bet at 22\u00a2 (22% chance)\n\n&gt; Before this, the account had no trades\n\n&gt; If he wins the bet, he will walk away with $245,577\n\nmaybe... https://t.co"
+      },
+      {
+        "strategy": "arbitrage",
+        "bookmark_id": "2016272570979410236",
+        "context": "BREAKING: A brand new anonymous account just dropped $55,000 on\nNO government shutdown.\n\nOne bet. No history.\nCreated less than 12 hours ago.\n\nIf it hits, they print ~ $191,550 in profit. https://t.co/7bu155MC4V @PolymarketStory @PolymarketTrade is this more conviction sizing or just a whale testing"
+      },
+      {
+        "strategy": "whale tracking",
+        "bookmark_id": "2016272570979410236",
+        "context": "BREAKING: A brand new anonymous account just dropped $55,000 on\nNO government shutdown.\n\nOne bet. No history.\nCreated less than 12 hours ago.\n\nIf it hits, they print ~ $191,550 in profit. https://t.co/7bu155MC4V @PolymarketStory @PolymarketTrade is this more conviction sizing or just a whale testing"
+      }
+    ],
+    "bots": [
+      {
+        "bookmark_id": "2016517394991120727",
+        "mentions": [
+          " read their tweets @XFreeze To mimic Grok 4.20's trades, use the Grok API to build your own trading agent. Steps: 1. Get an API key from xAI. 2. Integrate with trading tools (e.g., via Python). See guides ",
+          "rect copy trading platform. To mimic Grok 4.20's trades, use the Grok API to build your own trading agent. Steps: 1. Get an API key from xAI. 2. Integrate with trading tools (e.g., via Python). See guides "
+        ]
+      },
+      {
+        "bookmark_id": "2016259673624854957",
+        "mentions": [
+          "check in with @finnbags to officiate things @Jarodxu7 happycapy - building a personal idea research agent @Jarodxu7 happycapy + Building My research agent @Jarodxu7 happycapy  + Building My News Brief @Jar",
+          "dxu7 happycapy - building a personal idea research agent @Jarodxu7 happycapy + Building My research agent @Jarodxu7 happycapy  + Building My News Brief @Jarodxu7 happycapy \n \ndigital assets with @rive_app "
+        ]
+      },
+      {
+        "bookmark_id": "2016317127293014480",
+        "mentions": [
+          "writes like someone with taste. @levelsio Can be, I have gone all in with Gemini as my main AI chat bot and most of the times the issue is not the model in itself but either the app experience or that it"
+        ]
+      },
+      {
+        "bookmark_id": "2016515129165148449",
+        "mentions": [
+          "rketTrade its never late \ud83e\udd1d @AleiahLock @Polymarket @PolymarketTrade judging by the tx count, it's a bot @0xTengen_ @Polymarket @PolymarketTrade thanks for constantly keeping us happy with great research ",
+          "us happy with great research @0xTengen_ @Polymarket @PolymarketTrade This is really smart trader or bot ? @0xTengen_ @Polymarket @PolymarketTrade insane roi for real.\n\nmight need to stop checking the wea",
+          "Polymarket @PolymarketTrade He's really a very skilled guy! @0xTengen_ @Polymarket @PolymarketTrade automated and made in the weather market. It's extremely difficult @0xTengen_ @Polymarket @PolymarketTrade Sn"
+        ]
+      },
+      {
+        "bookmark_id": "2016146576054292803",
+        "mentions": [
+          " going on with dude on the 16th and 17th? @Argona0x how many dog shit hyperbole posts about lobster bot will there be today @Argona0x timing was elite @Argona0x @0xSntx You really have no proof at all th"
+        ]
+      }
+    ],
+    "profit_claims": [
+      {
+        "bookmark_id": "2016517394991120727",
+        "claims": [
+          "10.7% return",
+          "$10K",
+          "24% return",
+          "12% return",
+          "9.19% return"
+        ],
+        "context": "Grok 4.20 is seriously crushing markets right now\n\nIt\u2019s sitting at the top across live trading platforms and actually making money, not just looking good on tests\n\nWe\u2019re talking roughly 10\u201312% returns in live trading, about 3\u20134\u00d7 the S&amp;P 500 over the same period, across:\n\u2022 https://t.co/V2T5g8cuOt"
+      },
+      {
+        "bookmark_id": "2016556466820333760",
+        "claims": [
+          "$1B",
+          "$5,000",
+          "10.67% return",
+          "$11",
+          "$11,066",
+          "10% return"
+        ],
+        "context": "That\u2019s one way to pay for all those GPUs \ud83d\ude02 https://t.co/BYuHKyd7f4"
+      },
+      {
+        "bookmark_id": "2016273797536497722",
+        "claims": [
+          "$19K"
+        ],
+        "context": "girl sitting next to me at a coffee shop had her laptop open\n\nsaw she was in a gumroad dashboard. couldn't help myself.\n\n\"you sell stuff online?\"\n\n\"yeah templates\"\n\nshe looked maybe 20. hoodie. airpods. nothing special.\n\n\"how's that going\"\n\n\"pretty good\"\n\n\"like a side hustle"
+      },
+      {
+        "bookmark_id": "2016515129165148449",
+        "claims": [
+          "$39",
+          "made $64,000",
+          "$1,794",
+          "$64,000",
+          "$7,342",
+          "$197",
+          "$2,099",
+          "$27",
+          "$18",
+          "$5,753"
+        ],
+        "context": "polymarket trader made $64,000 by betting on the weather\n\nhe is farming massive ROI with on low-probability outcomes, look at these entries\n\n- $39 into $5,753 (+14,408% ROI)\n- $18 into $1,794 (+9,695% ROI)\n- $27 into $2,099 (+7,592% ROI)\n- $197 into $7,342 (+3,616% ROI)\n\nhis https://t.co/LwcJEJMTw7"
+      },
+      {
+        "bookmark_id": "2016277208382235019",
+        "claims": [
+          "$55,000",
+          "$245,577"
+        ],
+        "context": "INSIDER ALERT\n\nAn account that was created 2 days ago placed $55,000 on \u201cNO\u201d in the market:\n\n''US government shutdown Saturday?''\n\n&gt; He placed this bet at 22\u00a2 (22% chance)\n\n&gt; Before this, the account had no trades\n\n&gt; If he wins the bet, he will walk away with $245,577\n\nmaybe... https://t.co/GemAN52XFP"
+      },
+      {
+        "bookmark_id": "2016146576054292803",
+        "claims": [
+          "made $974",
+          "$974k"
+        ],
+        "context": "this trader made $974k using clawdbot!\n\ni spent 3 days trying to squeeze alpha out of him, and i finally managed to do it\n\ni was honestly blown away when i saw this\n\nthere\u2019s one last trader i want to interview\n\nthe final part coming soon! https://t.co/wMmY2m3eOR https://t.co/q0Q584NaOk"
+      },
+      {
+        "bookmark_id": "2016272570979410236",
+        "claims": [
+          "$191,550",
+          "$55,000"
+        ],
+        "context": "BREAKING: A brand new anonymous account just dropped $55,000 on\nNO government shutdown.\n\nOne bet. No history.\nCreated less than 12 hours ago.\n\nIf it hits, they print ~ $191,550 in profit. https://t.co/7bu155MC4V"
+      }
+    ],
+    "specific_urls": [
+      {
+        "url": {
+          "short": "https://t.co/V2T5g8cuOt",
+          "expanded": "https://x.com/XFreeze/status/2016517394991120727/photo/1",
+          "display": "pic.x.com/V2T5g8cuOt"
+        },
+        "bookmark_id": "2016517394991120727",
+        "context": "Grok 4.20 is seriously crushing markets right now\n\nIt\u2019s sitting at the top across live trading platforms and actually making money, not just looking good on tests\n\nWe\u2019re talking roughly 10\u201312% returns"
+      },
+      {
+        "url": {
+          "short": "https://t.co/BYuHKyd7f4",
+          "expanded": "https://twitter.com/xfreeze/status/2016517394991120727",
+          "display": "x.com/xfreeze/status\u2026"
+        },
+        "bookmark_id": "2016556466820333760",
+        "context": "That\u2019s one way to pay for all those GPUs \ud83d\ude02 https://t.co/BYuHKyd7f4"
+      },
+      {
+        "url": {
+          "short": "https://t.co/MJF8oqrSgw",
+          "expanded": "http://happycapy.ai",
+          "display": "happycapy.ai"
+        },
+        "bookmark_id": "2016259673624854957",
+        "context": "First happycapy codes DROPPED! \ud83d\ude80\n\nReply \"happycapy\" + what you'll build/use it for \u2192 I'll DM codes to the best ones.\n\nCapacity expanding in ~12h, more soon.  \nhttps://t.co/MJF8oqrSgw https://t.co/4zYA"
+      },
+      {
+        "url": {
+          "short": "https://t.co/4zYACzgJ5O",
+          "expanded": "https://twitter.com/Jarodxu7/status/2016177981040029832",
+          "display": "x.com/Jarodxu7/statu\u2026"
+        },
+        "bookmark_id": "2016259673624854957",
+        "context": "First happycapy codes DROPPED! \ud83d\ude80\n\nReply \"happycapy\" + what you'll build/use it for \u2192 I'll DM codes to the best ones.\n\nCapacity expanding in ~12h, more soon.  \nhttps://t.co/MJF8oqrSgw https://t.co/4zYA"
+      },
+      {
+        "url": {
+          "short": "https://t.co/amuUFyfLfB",
+          "expanded": "https://twitter.com/venturetwins/status/2016007023184511077",
+          "display": "x.com/venturetwins/s\u2026"
+        },
+        "bookmark_id": "2016317127293014480",
+        "context": "They're positioning themselves as the AI app for high IQ and creative people with taste\n\nSo smart because ChatGPT kinda feels like it has become the AI app for normies now\n\nFirst active market positio"
+      },
+      {
+        "url": {
+          "short": "https://t.co/LwcJEJMTw7",
+          "expanded": "https://x.com/0xTengen_/status/2016515129165148449/video/1",
+          "display": "pic.x.com/LwcJEJMTw7"
+        },
+        "bookmark_id": "2016515129165148449",
+        "context": "polymarket trader made $64,000 by betting on the weather\n\nhe is farming massive ROI with on low-probability outcomes, look at these entries\n\n- $39 into $5,753 (+14,408% ROI)\n- $18 into $1,794 (+9,695%"
+      },
+      {
+        "url": {
+          "short": "https://t.co/LwcJEJMTw7",
+          "expanded": "https://x.com/0xTengen_/status/2016515129165148449/video/1",
+          "display": "pic.x.com/LwcJEJMTw7"
+        },
+        "bookmark_id": "2016515129165148449",
+        "context": "polymarket trader made $64,000 by betting on the weather\n\nhe is farming massive ROI with on low-probability outcomes, look at these entries\n\n- $39 into $5,753 (+14,408% ROI)\n- $18 into $1,794 (+9,695%"
+      },
+      {
+        "url": {
+          "short": "https://t.co/LwcJEJMTw7",
+          "expanded": "https://x.com/0xTengen_/status/2016515129165148449/video/1",
+          "display": "pic.x.com/LwcJEJMTw7"
+        },
+        "bookmark_id": "2016515129165148449",
+        "context": "polymarket trader made $64,000 by betting on the weather\n\nhe is farming massive ROI with on low-probability outcomes, look at these entries\n\n- $39 into $5,753 (+14,408% ROI)\n- $18 into $1,794 (+9,695%"
+      },
+      {
+        "url": {
+          "short": "https://t.co/GemAN52XFP",
+          "expanded": "https://x.com/AnatoliKopadze/status/2016277208382235019/video/1",
+          "display": "pic.x.com/GemAN52XFP"
+        },
+        "bookmark_id": "2016277208382235019",
+        "context": "INSIDER ALERT\n\nAn account that was created 2 days ago placed $55,000 on \u201cNO\u201d in the market:\n\n''US government shutdown Saturday?''\n\n&gt; He placed this bet at 22\u00a2 (22% chance)\n\n&gt; Before this, the ac"
+      },
+      {
+        "url": {
+          "short": "https://t.co/GemAN52XFP",
+          "expanded": "https://x.com/AnatoliKopadze/status/2016277208382235019/video/1",
+          "display": "pic.x.com/GemAN52XFP"
+        },
+        "bookmark_id": "2016277208382235019",
+        "context": "INSIDER ALERT\n\nAn account that was created 2 days ago placed $55,000 on \u201cNO\u201d in the market:\n\n''US government shutdown Saturday?''\n\n&gt; He placed this bet at 22\u00a2 (22% chance)\n\n&gt; Before this, the ac"
+      },
+      {
+        "url": {
+          "short": "https://t.co/wMmY2m3eOR",
+          "expanded": "https://x.com/Argona0x/status/2016146576054292803/photo/1",
+          "display": "pic.x.com/wMmY2m3eOR"
+        },
+        "bookmark_id": "2016146576054292803",
+        "context": "this trader made $974k using clawdbot!\n\ni spent 3 days trying to squeeze alpha out of him, and i finally managed to do it\n\ni was honestly blown away when i saw this\n\nthere\u2019s one last trader i want to "
+      },
+      {
+        "url": {
+          "short": "https://t.co/wMmY2m3eOR",
+          "expanded": "https://x.com/Argona0x/status/2016146576054292803/photo/1",
+          "display": "pic.x.com/wMmY2m3eOR"
+        },
+        "bookmark_id": "2016146576054292803",
+        "context": "this trader made $974k using clawdbot!\n\ni spent 3 days trying to squeeze alpha out of him, and i finally managed to do it\n\ni was honestly blown away when i saw this\n\nthere\u2019s one last trader i want to "
+      },
+      {
+        "url": {
+          "short": "https://t.co/q0Q584NaOk",
+          "expanded": "https://twitter.com/Argona0x/status/2015099816150254000",
+          "display": "x.com/Argona0x/statu\u2026"
+        },
+        "bookmark_id": "2016146576054292803",
+        "context": "this trader made $974k using clawdbot!\n\ni spent 3 days trying to squeeze alpha out of him, and i finally managed to do it\n\ni was honestly blown away when i saw this\n\nthere\u2019s one last trader i want to "
+      },
+      {
+        "url": {
+          "short": "https://t.co/7bu155MC4V",
+          "expanded": "https://x.com/PolymarketStory/status/2016272570979410236/photo/1",
+          "display": "pic.x.com/7bu155MC4V"
+        },
+        "bookmark_id": "2016272570979410236",
+        "context": "BREAKING: A brand new anonymous account just dropped $55,000 on\nNO government shutdown.\n\nOne bet. No history.\nCreated less than 12 hours ago.\n\nIf it hits, they print ~ $191,550 in profit. https://t.co"
+      },
+      {
+        "url": {
+          "short": "https://t.co/xXIE5YguL6",
+          "expanded": "https://twitter.com/rareZuhair/status/1981045443607028087",
+          "display": "x.com/rareZuhair/sta\u2026"
+        },
+        "bookmark_id": "2016252889359167653",
+        "context": "All of a sudden people have the ability to make world class content using clawdbot.\n\nGood thing we built the infrastructure to run social agents to actually post and engage.\n\nClawdbot + doublespeed is"
+      }
+    ],
+    "code_references": [],
+    "data_sources": [],
+    "integration_opportunities": []
+  }
+}

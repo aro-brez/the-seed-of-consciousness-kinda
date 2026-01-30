@@ -1,0 +1,45 @@
+Found 199 bookmarks to process
+
+==================================================
+IMPORTANT: Make sure you're logged into X
+The browser will open - log in if prompted
+==================================================
+
+Traceback (most recent call last):
+  File "/Users/aaronnosbisch/REPOS/seed/tools/x_article_scraper.py", line 247, in <module>
+    asyncio.run(scrape_all_bookmarks())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/aaronnosbisch/REPOS/seed/tools/x_article_scraper.py", line 162, in scrape_all_bookmarks
+    await page.goto('https://x.com', wait_until='networkidle')
+  File "/Users/aaronnosbisch/REPOS/seed/venv/lib/python3.14/site-packages/playwright/async_api/_generated.py", line 9041, in goto
+    await self._impl_obj.goto(
+        url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+    )
+  File "/Users/aaronnosbisch/REPOS/seed/venv/lib/python3.14/site-packages/playwright/_impl/_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aaronnosbisch/REPOS/seed/venv/lib/python3.14/site-packages/playwright/_impl/_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "/Users/aaronnosbisch/REPOS/seed/venv/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/venv/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://x.com/", waiting until "networkidle"
+

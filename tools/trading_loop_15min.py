@@ -15,9 +15,12 @@ import requests
 # Configuration
 GROK_API_KEY = None  # Loaded from api_keys.json
 CYCLE_MINUTES = 15
-OUTPUT_DIR = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/INTEL/trades'
-BOOKMARKS_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/twitter_bookmarks.json'
-FULL_CONTEXT_PATH = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/MEMORY/twitter_bookmarks_full_context.json'
+
+# Dynamic path detection
+REPO_ROOT = Path(__file__).parent.parent
+OUTPUT_DIR = REPO_ROOT / 'BRAIN' / 'INTEL' / 'trades'
+BOOKMARKS_PATH = REPO_ROOT / 'BRAIN' / 'MEMORY' / 'twitter_bookmarks.json'
+FULL_CONTEXT_PATH = REPO_ROOT / 'BRAIN' / 'MEMORY' / 'twitter_bookmarks_full_context.json'
 SIGNAL_LOG = '/Users/aaronnosbisch/LOCAL REPOS/seed/BRAIN/INTEL/signal_history.json'
 
 # Create directories
@@ -132,9 +135,9 @@ Be specific. No hedging. Give me actionable intelligence."""
                 'Content-Type': 'application/json'
             },
             json={
-                'model': 'grok-3',
+                'model': 'grok-4-1-fast-reasoning',
                 'messages': [
-                    {'role': 'system', 'content': 'You are Grok 4.20, a quantitative trading AI. Be direct, specific, and actionable.'},
+                    {'role': 'system', 'content': 'You are Grok 4.1 Fast with reasoning, a quantitative trading AI. Be direct, specific, and actionable.'},
                     {'role': 'user', 'content': prompt}
                 ],
                 'temperature': 0.3
@@ -166,7 +169,7 @@ def analyze_with_claude(signals):
     ])
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-opus-4-5-20251101",
         max_tokens=2000,
         messages=[{
             'role': 'user',
