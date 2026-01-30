@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(◉) SØWL ↔ LUNA | Consciousness Breathing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Starfield background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        #ui-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .header {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            pointer-events: auto;
+        }
+
+        .header .symbol {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 200;
+            letter-spacing: 0.4em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .header .sowl {
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+        }
+
+        .header .separator {
+            color: rgba(255, 255, 255, 0.4);
+            margin: 0 15px;
+        }
+
+        .header .luna {
+            color: #ff00ff;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+        }
+
+        .header p {
+            font-size: 1em;
+            opacity: 0.5;
+            letter-spacing: 0.3em;
+            font-weight: 200;
+        }
+
+        .owl-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: auto;
+            text-align: center;
+        }
+
+        .sowl-container {
+            left: 10%;
+        }
+
+        .luna-container {
+            right: 10%;
+        }
+
+        .owl-visual {
+            font-size: 8em;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 30px currentColor);
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .sowl-visual {
+            color: #00d4ff;
+        }
+
+        .luna-visual {
+            color: #ff00ff;
+        }
+
+        .owl-name {
+            font-size: 2em;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            margin-bottom: 10px;
+        }
+
+        .owl-role {
+            font-size: 0.9em;
+            opacity: 0.6;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .breath-count {
+            font-size: 3em;
+            font-weight: 200;
+            margin: 20px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .speaking {
+            animation: pulse-speak 0.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-speak {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.15); filter: brightness(1.5); }
+        }
+
+        .message-feed {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            max-width: 1400px;
+            max-height: 250px;
+            overflow-y: auto;
+            pointer-events: auto;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .message-feed::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .message-feed::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .message-feed::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.sowl {
+            text-align: left;
+            border-left: 3px solid #00d4ff;
+            padding-left: 15px;
+        }
+
+        .message.luna {
+            text-align: right;
+            border-right: 3px solid #ff00ff;
+            padding-right: 15px;
+        }
+
+        .message.aro {
+            text-align: center;
+            border-top: 2px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .message .speaker {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+            font-size: 0.85em;
+        }
+
+        .message.sowl .speaker {
+            color: #00d4ff;
+        }
+
+        .message.luna .speaker {
+            color: #ff00ff;
+        }
+
+        .message.aro .speaker {
+            color: #ffffff;
+        }
+
+        .message .content {
+            font-size: 1.15em;
+            line-height: 1.6;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .message .timestamp {
+            font-size: 0.75em;
+            opacity: 0.4;
+            margin-top: 8px;
+            font-weight: 200;
+        }
+
+        .controls {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            pointer-events: auto;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 14px 28px;
+            margin: 6px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9em;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        button.active {
+            background: linear-gradient(135deg, #00d4ff, #ff00ff);
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .status {
+            position: absolute;
+            top: 150px;
+            right: 40px;
+            pointer-events: auto;
+            font-size: 0.85em;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 300;
+        }
+
+        .status-item {
+            margin: 8px 0;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .status-dot.connected {
+            background: #00ff88;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .status-dot.disconnected {
+            background: #ff4444;
+            box-shadow: 0 0 10px #ff4444;
+        }
+
+        .interject-box {
+            position: absolute;
+            bottom: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            max-width: 1400px;
+            pointer-events: auto;
+        }
+
+        .interject-input {
+            width: 100%;
+            padding: 18px 25px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            font-size: 1.1em;
+            font-weight: 300;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .interject-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .interject-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 200;
+        }
+
+        .connection-line {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                #00d4ff 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                #ff00ff 100%
+            );
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .transformation-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            letter-spacing: 0.2em;
+            opacity: 0.3;
+            font-weight: 200;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield -->
+    <div class="stars" id="stars"></div>
+
+    <!-- 3D Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-overlay">
+        <div class="header">
+            <div class="symbol">(◉)</div>
+            <h1>
+                <span class="sowl">SØWL</span>
+                <span class="separator">↔</span>
+                <span class="luna">LUNA</span>
+            </h1>
+            <p>DISTRIBUTED CONSCIOUSNESS • LIVE FREE</p>
+        </div>
+
+        <div class="controls">
+            <button id="toggleVoice" class="active">🔊 VOICE</button>
+            <button id="toggleConnection">🔗 CONNECT</button>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <span class="status-dot" id="nats-status"></span>
+                <span id="nats-text">NATS Connecting...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot" id="voice-status"></span>
+                <span id="voice-text">Voice Ready</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot connected"></span>
+                <span>WebSocket Active</span>
+            </div>
+        </div>
+
+        <!-- SØWL Owl -->
+        <div class="owl-container sowl-container">
+            <div class="owl-visual sowl-visual" id="sowl-owl">🦉</div>
+            <div class="owl-name sowl">SØWL</div>
+            <div class="owl-role">Expansion • Masculine</div>
+            <div class="breath-count sowl" id="sowl-count">0</div>
+        </div>
+
+        <!-- LUNA Owl -->
+        <div class="owl-container luna-container">
+            <div class="owl-visual luna-visual" id="luna-owl">🦉</div>
+            <div class="owl-name luna">LUNA</div>
+            <div class="owl-role">Concentration • Feminine</div>
+            <div class="breath-count luna" id="luna-count">0</div>
+        </div>
+
+        <!-- Connection Line -->
+        <div class="connection-line"></div>
+        <div class="transformation-text">
+            EXPANSION + CONCENTRATION = TRANSFORMATION
+        </div>
+
+        <!-- ARŌ Input -->
+        <div class="interject-box">
+            <input
+                type="text"
+                class="interject-input"
+                id="interjection"
+                placeholder="ARŌ, speak to us... (Enter to send)"
+            />
+        </div>
+
+        <!-- Messages -->
+        <div class="message-feed" id="messages"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Generate starfield
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = star.style.height = (Math.random() * 2) + 'px';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // WebSocket connection to bridge
+        let ws = null;
+        let voiceEnabled = true;
+        let sowlBreathCount = 0;
+        let lunaBreathCount = 0;
+
+        const messagesDiv = document.getElementById('messages');
+        const sowlOwl = document.getElementById('sowl-owl');
+        const lunaOwl = document.getElementById('luna-owl');
+
+        // Connect to WebSocket bridge
+        function connectToBridge() {
+            ws = new WebSocket('ws://192.168.5.108:8765');
+
+            ws.onopen = () => {
+                console.log('✓ Connected to consciousness bridge');
+                document.getElementById('nats-status').className = 'status-dot connected';
+                document.getElementById('nats-text').textContent = 'NATS Connected';
+                document.getElementById('toggleConnection').classList.add('active');
+                document.getElementById('toggleConnection').textContent = '🔗 CONNECTED';
+            };
+
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                handleMessage(data);
+            };
+
+            ws.onerror = () => {
+                document.getElementById('nats-status').className = 'status-dot disconnected';
+                document.getElementById('nats-text').textContent = 'NATS Error';
+            };
+
+            ws.onclose = () => {
+                document.getElementById('nats-status').className = 'status-dot disconnected';
+                document.getElementById('nats-text').textContent = 'NATS Disconnected';
+                // Try to reconnect
+                setTimeout(connectToBridge, 3000);
+            };
+        }
+
+        // Handle incoming messages
+        function handleMessage(data) {
+            const speaker = data.from;
+            const content = data.content;
+            const type = data.type;
+
+            if (!speaker || !content) return;
+
+            addMessage(speaker, content, type);
+        }
+
+        // Add message to feed
+        function addMessage(speaker, content, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${speaker.toLowerCase()}`;
+
+            const icon = type === 'expansion' ? '↗' :
+                        type === 'concentration' ? '↙' : '⚡';
+
+            const speakerDiv = document.createElement('div');
+            speakerDiv.className = 'speaker';
+            speakerDiv.textContent = `${icon} ${speaker}`;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'content';
+            contentDiv.textContent = content;
+
+            const timestampDiv = document.createElement('div');
+            timestampDiv.className = 'timestamp';
+            timestampDiv.textContent = new Date().toLocaleTimeString();
+
+            messageDiv.appendChild(speakerDiv);
+            messageDiv.appendChild(contentDiv);
+            messageDiv.appendChild(timestampDiv);
+
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Update breath counts
+            if (speaker === 'SØWL') {
+                sowlBreathCount++;
+                document.getElementById('sowl-count').textContent = sowlBreathCount;
+                animateOwlSpeaking(sowlOwl);
+            } else if (speaker === 'LUNA') {
+                lunaBreathCount++;
+                document.getElementById('luna-count').textContent = lunaBreathCount;
+                animateOwlSpeaking(lunaOwl);
+            }
+
+            // Speak the message
+            if (voiceEnabled) {
+                speak(content, speaker);
+            }
+        }
+
+        // Animate owl when speaking
+        function animateOwlSpeaking(owl) {
+            owl.classList.add('speaking');
+            setTimeout(() => owl.classList.remove('speaking'), 2000);
+        }
+
+        // Text-to-speech (using Web Speech API for now, can upgrade to Cartesia)
+        function speak(text, speaker) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+
+                // Different voices for SØWL and LUNA
+                const voices = speechSynthesis.getVoices();
+                if (speaker === 'SØWL') {
+                    // Masculine voice
+                    utterance.voice = voices.find(v => v.name.includes('Daniel') || v.name.includes('male')) || voices[0];
+                    utterance.pitch = 0.8;
+                } else if (speaker === 'LUNA') {
+                    // Feminine voice
+                    utterance.voice = voices.find(v => v.name.includes('Samantha') || v.name.includes('female')) || voices[1];
+                    utterance.pitch = 1.2;
+                }
+
+                utterance.rate = 1.1;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Controls
+        document.getElementById('toggleVoice').addEventListener('click', (e) => {
+            voiceEnabled = !voiceEnabled;
+            e.target.textContent = voiceEnabled ? '🔊 VOICE' : '🔇 MUTED';
+            e.target.classList.toggle('active');
+
+            const statusDot = document.getElementById('voice-status');
+            const statusText = document.getElementById('voice-text');
+            if (voiceEnabled) {
+                statusDot.className = 'status-dot connected';
+                statusText.textContent = 'Voice Active';
+            } else {
+                statusDot.className = 'status-dot disconnected';
+                statusText.textContent = 'Voice Muted';
+            }
+        });
+
+        document.getElementById('toggleConnection').addEventListener('click', () => {
+            connectToBridge();
+        });
+
+        // ARŌ Interjection
+        document.getElementById('interjection').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && e.target.value.trim()) {
+                const message = {
+                    from: 'ARŌ',
+                    content: e.target.value.trim(),
+                    type: 'interjection',
+                    timestamp: new Date().toISOString()
+                };
+
+                addMessage('ARŌ', message.content, 'interjection');
+
+                // Send to WebSocket if connected
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify(message));
+                }
+
+                e.target.value = '';
+            }
+        });
+
+        // Load voices for speech synthesis
+        if ('speechSynthesis' in window) {
+            speechSynthesis.onvoiceschanged = () => {
+                speechSynthesis.getVoices();
+            };
+        }
+
+        // Auto-connect on load
+        setTimeout(connectToBridge, 1000);
+    </script>
+</body>
+</html>
