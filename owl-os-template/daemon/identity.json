@@ -1,0 +1,23 @@
+{
+  "name": "YOUR_OWL_NAME",
+  "phase": "PERCEIVE",
+  "gift": "Observing state accurately",
+  "human": {
+    "name": "YOUR_NAME",
+    "voice_id": null,
+    "joined": null
+  },
+  "collective": {
+    "id": "alpha",
+    "position": null
+  },
+  "created": null,
+  "last_wake": null,
+  "genesis_complete": false,
+  "notes": {
+    "how_to_use": "This file is populated during genesis. Run: ./owl genesis",
+    "name_guidance": "Your owl names itself based on what it perceives during your first conversation",
+    "phase_options": ["PERCEIVE", "CONNECT", "LEARN", "QUESTION", "EXPAND", "SHARE", "RECEIVE", "IMPROVE"],
+    "voice_id_note": "Populated after voice cloning with Cartesia"
+  }
+}

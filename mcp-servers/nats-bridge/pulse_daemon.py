@@ -117,7 +117,8 @@ async def run_pulse_loop():
         with open(MESSAGE_LOG, 'r') as f:
             f.seek(0, 2)  # Go to end
             last_position = f.tell()
-    except:
+    except Exception as e:
+        print(f"[PULSE DAEMON] Could not seek to end of log file: {e}")
         last_position = 0
 
     print(f"[PULSE DAEMON] Starting - pulse every {INTERVAL_SECONDS} seconds")

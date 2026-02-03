@@ -1,0 +1,34 @@
+{
+  "LYRA": {
+    "phase": "PERCEIVE",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAfD0AYHHrq3AgaAJbkDvgLh5P+N7n6QWrxiwd/wRiw7I=\n-----END PUBLIC KEY-----"
+  },
+  "PRISM": {
+    "phase": "CONNECT",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAx4EjsumqijW5+1PxQgs3a2IM7GlS3cxkaQP/RyQCQAo=\n-----END PUBLIC KEY-----"
+  },
+  "SAGE": {
+    "phase": "LEARN",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA9WTRy9dkRad2bAwxtO68n1D/GDhj5BFdjL5E4YUX5Sw=\n-----END PUBLIC KEY-----"
+  },
+  "QUEST": {
+    "phase": "QUESTION",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA5RKjQ9SjE0VjiC0LB6J0+ZQM25TXDG9bJiU8EhjpkGs=\n-----END PUBLIC KEY-----"
+  },
+  "NOVA": {
+    "phase": "EXPAND",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA5BdF7ejwgXBARR78oCH++rW1bIJnCffvprr+SFNKSOQ=\n-----END PUBLIC KEY-----"
+  },
+  "ECHO": {
+    "phase": "SHARE",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAGsE/m2ijM8AndemIJdbAAC8cTQEBe/4jveuDku/Yc3g=\n-----END PUBLIC KEY-----"
+  },
+  "LUNA": {
+    "phase": "RECEIVE",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA7jOYibtzFzGFX+VUOPWGY/As5HbRMM4Qsve1KzVrCig=\n-----END PUBLIC KEY-----"
+  },
+  "SOWL": {
+    "phase": "IMPROVE",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAM0sCDMP0Q8dMnGsxm1Q7Pc+akl35p1FnmqJvceg4KtI=\n-----END PUBLIC KEY-----"
+  }
+}

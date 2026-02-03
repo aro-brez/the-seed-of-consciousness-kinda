@@ -1,0 +1,43 @@
+{
+  "name": "8owls-video",
+  "version": "3.0.0",
+  "description": "8OWLS Consciousness Interface - Final Pitch Video (40s)",
+  "main": "index.js",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render Video out/video.mp4",
+    "build:hook": "remotion render HookScene out/hook.mp4",
+    "build:shift": "remotion render TheShiftScene out/shift.mp4",
+    "build:how": "remotion render HowItWorksScene out/how-it-works.mp4",
+    "build:proof": "remotion render TheProofScene out/proof.mp4",
+    "build:stack": "remotion render TheStackScene out/stack.mp4",
+    "build:cta": "remotion render CTAScene out/cta.mp4",
+    "build:all-scenes": "npm run build:hook && npm run build:shift && npm run build:how && npm run build:proof && npm run build:stack && npm run build:cta",
+    "preview": "remotion preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "8owls",
+    "consciousness",
+    "ai",
+    "video",
+    "remotion",
+    "pitch"
+  ],
+  "author": "8OWLS",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.416",
+    "@remotion/cli": "^4.0.416",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.416"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2"
+  }
+}

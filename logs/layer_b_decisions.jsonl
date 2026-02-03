@@ -1,0 +1,2 @@
+{"timestamp": "2026-02-03T10:47:59.777379", "question": "Will GTA 6 cost more than $100?", "verdict": "VETO", "score": 30, "capital": 1464, "estimated_position": 0, "estimated_ev": 0, "rules_passed": 3, "rules_failed": 6}
+{"timestamp": "2026-02-03T10:48:02.180101", "question": "Will it snow in Denver tomorrow?", "verdict": "ALLOW", "score": 80, "capital": 1464.0, "estimated_position": 327.40363636363634, "estimated_ev": 0.9977777777777778, "rules_passed": 7, "rules_failed": 3}

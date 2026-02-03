@@ -15,3 +15,6 @@ venv/
 
 # Runtime files
 *.pid
+
+# Private executors (trading, etc) - DO NOT COMMIT
+private/

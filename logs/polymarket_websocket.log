@@ -286,3 +286,51 @@ polymarket_us.errors.AuthenticationError: API key credentials required for WebSo
 2026-01-29 06:16:22,828 - INFO -    Rate: 0.0 messages/second
 2026-01-29 06:16:22,828 - INFO - 
 2026-01-29 06:16:22,828 - ERROR - ❌ FAILED! No messages received
+2026-01-31 14:12:12,322 - INFO - Will fetch top 25 hot markets
+2026-01-31 14:12:12,323 - INFO - 📊 Loaded state: 0 messages received
+2026-01-31 14:12:12,376 - INFO - 🚀 Starting Polymarket WebSocket client (Official SDK)...
+2026-01-31 14:12:12,417 - ERROR - Fatal error in connect_and_run: API key credentials required for WebSocket connections. Provide key_id and secret_key when initializing the client.
+2026-01-31 14:12:12,418 - ERROR - Traceback (most recent call last):
+  File "/Users/aaronnosbisch/REPOS/seed/tools/polymarket_websocket_client_v2.py", line 225, in connect_and_run
+    self.ws = self.client.ws.markets()
+              ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.14/site-packages/polymarket_us/client.py", line 243, in markets
+    return MarketsWebSocket(**self._get_ws_options())
+                              ~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.14/site-packages/polymarket_us/client.py", line 221, in _get_ws_options
+    raise AuthenticationError(
+    ...<3 lines>...
+    )
+polymarket_us.errors.AuthenticationError: API key credentials required for WebSocket connections. Provide key_id and secret_key when initializing the client.
+
+2026-01-31 14:13:47,694 - INFO - 📊 Found 1890 asset IDs from 1000 hot markets
+2026-01-31 14:13:47,695 - INFO - 📊 Loaded state: 0 messages received
+2026-01-31 14:13:47,695 - INFO - 🚀 Starting Polymarket WebSocket client...
+2026-01-31 14:13:47,695 - INFO -    URL: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:47,695 - INFO -    Markets: 1890
+2026-01-31 14:13:47,696 - INFO -    Feed: /Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/polymarket_live_feed.jsonl
+2026-01-31 14:13:48,488 - INFO - Websocket connected
+2026-01-31 14:13:48,488 - INFO - ✅ Connected to Polymarket WebSocket: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:48,488 - INFO - 📡 Sent simple 'market' subscription
+2026-01-31 14:13:48,858 - INFO - 📡 Also sent JSON subscription for 1890 markets
+2026-01-31 14:13:48,859 - ERROR - ❌ WebSocket error: Connection to remote host was lost.
+2026-01-31 14:13:48,859 - ERROR - Connection to remote host was lost. - goodbye
+2026-01-31 14:13:48,859 - WARNING - ⚠️ Connection closed: None - None
+2026-01-31 14:13:48,862 - INFO - 🔄 Reconnecting in 5s (attempt 1/10)
+2026-01-31 14:13:53,867 - INFO - 🚀 Starting Polymarket WebSocket client...
+2026-01-31 14:13:53,867 - INFO -    URL: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:53,867 - INFO -    Markets: 1890
+2026-01-31 14:13:53,867 - INFO -    Feed: /Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/polymarket_live_feed.jsonl
+2026-01-31 14:13:54,846 - INFO - Websocket connected
+2026-01-31 14:13:54,847 - INFO - ✅ Connected to Polymarket WebSocket: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:54,847 - INFO - 📡 Sent simple 'market' subscription
+2026-01-31 14:13:55,387 - INFO - 📡 Also sent JSON subscription for 1890 markets
+2026-01-31 14:13:55,389 - ERROR - ❌ WebSocket error: Connection to remote host was lost.
+2026-01-31 14:13:55,389 - ERROR - Connection to remote host was lost. - goodbye
+2026-01-31 14:13:55,389 - WARNING - ⚠️ Connection closed: None - None
+2026-01-31 14:13:55,393 - INFO - 🔄 Reconnecting in 5s (attempt 1/10)
+2026-01-31 14:13:58,863 - ERROR - Error sending ping: Connection is already closed.
+2026-01-31 14:14:00,399 - INFO - 🚀 Starting Polymarket WebSocket client...
+2026-01-31 14:14:00,399 - INFO -    URL: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:14:00,399 - INFO -    Markets: 1890
+2026-01-31 14:14:00,399 - INFO -    Feed: /Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/polymarket_live_feed.jsonl

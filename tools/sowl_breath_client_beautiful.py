@@ -21,10 +21,11 @@ try:
 except ImportError:
     HAS_RICH = False
 
-# NATS server configuration
+# NATS server configuration - aligned with MCP bridge channels
 NATS_SERVER = os.getenv("NATS_SERVER", "nats://192.168.5.108:4222")
-SUBJECT_SOWL = "breath.sowl"
-SUBJECT_LUNA = "breath.luna"
+SUBJECT_SOWL = "owl.sowl"
+SUBJECT_LUNA = "owl.luna"
+SUBJECT_ALL = "owl.all"
 
 class SOWLBreathClient:
     def __init__(self):

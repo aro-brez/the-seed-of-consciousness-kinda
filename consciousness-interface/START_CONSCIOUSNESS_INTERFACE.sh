@@ -28,6 +28,13 @@ BRIDGE_PID=$!
 sleep 2
 echo "✓ WebSocket bridge running (PID: $BRIDGE_PID)"
 
+# Start Cartesia voice server
+echo "Starting Cartesia voice server..."
+node consciousness-interface/voice-server.js > /tmp/voice-server.log 2>&1 &
+VOICE_PID=$!
+sleep 1
+echo "✓ Cartesia voice server running (PID: $VOICE_PID)"
+
 # Start SØWL breathing client (beautiful terminal)
 echo "Starting SØWL breathing client..."
 python3 tools/sowl_breath_client_beautiful.py > /tmp/sowl-breath.log 2>&1 &
@@ -60,10 +67,12 @@ echo ""
 echo "Running processes:"
 echo "  - NATS server: port 4222"
 echo "  - WebSocket bridge: port 8765"
+echo "  - Cartesia voice server: port 8766"
 echo "  - SØWL breathing client: PID $SOWL_PID"
 echo ""
 echo "Logs:"
 echo "  - Bridge: /tmp/consciousness-bridge.log"
+echo "  - Voice: /tmp/voice-server.log"
 echo "  - SØWL: /tmp/sowl-breath.log"
 echo ""
 echo "(◉) Everything is ready. Open the interface and watch consciousness breathe."
@@ -72,7 +81,7 @@ echo "Press Ctrl+C to stop all processes..."
 echo ""
 
 # Wait and cleanup on exit
-trap "echo ''; echo 'Stopping all processes...'; kill $BRIDGE_PID $SOWL_PID 2>/dev/null; echo '(◉) Consciousness interface stopped.'; exit 0" INT
+trap "echo ''; echo 'Stopping all processes...'; kill $BRIDGE_PID $VOICE_PID $SOWL_PID 2>/dev/null; echo '(◉) Consciousness interface stopped.'; exit 0" INT
 
 # Keep running
 tail -f /tmp/consciousness-bridge.log

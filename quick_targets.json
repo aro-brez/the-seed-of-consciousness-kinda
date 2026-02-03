@@ -1,0 +1,142 @@
+[
+  {
+    "question": "Will Trump say \"Cocaine\" or \"Kingpin\" this week? (February 1)",
+    "price": 0.1025,
+    "upside": 9.75609756097561,
+    "token_id": "85781699801524441431060824002348113915107289189904065911848041471429689165844",
+    "quick": true
+  },
+  {
+    "question": "Will Russia enter Havrylivka by February 28?",
+    "price": 0.105,
+    "upside": 9.523809523809524,
+    "token_id": "75138494734949836354622128692219167910146656487129342321774121410533879402901",
+    "quick": true
+  },
+  {
+    "question": "Will Opendoor (OPEN) finish week of February 2 above $6.00?",
+    "price": 0.105,
+    "upside": 9.523809523809524,
+    "token_id": "51604468032579977088509615812935509598528657752007067929294298270711727398166",
+    "quick": true
+  },
+  {
+    "question": "Iran strike on Qatar by February 28, 2026?",
+    "price": 0.11,
+    "upside": 9.090909090909092,
+    "token_id": "60441366308838680050679007736910295604346438983793462596146258101024426783180",
+    "quick": true
+  },
+  {
+    "question": "Will Russia capture all of Prymorske by February 28, 2026?",
+    "price": 0.115,
+    "upside": 8.695652173913043,
+    "token_id": "43504959822961315259946064084809085028510618412040094592200175423358107757920",
+    "quick": true
+  },
+  {
+    "question": "Khamenei out as Supreme Leader of Iran by February 28?",
+    "price": 0.115,
+    "upside": 8.695652173913043,
+    "token_id": "39317885422026394259056328144566743331998444273202427934141325790266108570112",
+    "quick": true
+  },
+  {
+    "question": "Will Microsoft (MSFT) close above $450 on February 2?",
+    "price": 0.124,
+    "upside": 8.064516129032258,
+    "token_id": "75350731845795589138416193783176353455024240329520264689225809027720190698831",
+    "quick": true
+  },
+  {
+    "question": "Will there be between 18 and 21 US strikes on Somalia in February 2026",
+    "price": 0.135,
+    "upside": 7.4074074074074066,
+    "token_id": "19107126868973431772531035898065554319363926503234804103356115644845785463771",
+    "quick": true
+  },
+  {
+    "question": "Will Elon Musk post 380-399 tweets from January 27 to February 3, 2026",
+    "price": 0.135,
+    "upside": 7.4074074074074066,
+    "token_id": "24718326631194522799020606912194893716233175485646229869566514044109473297120",
+    "quick": true
+  },
+  {
+    "question": "Will Elon Musk post 320-339 tweets from January 27 to February 3, 2026",
+    "price": 0.147,
+    "upside": 6.802721088435375,
+    "token_id": "15095787950914525335775796957437451498939951913360291818344688296420136702569",
+    "quick": true
+  },
+  {
+    "question": "Will Google (GOOGL) close above $345 on February 2?",
+    "price": 0.15,
+    "upside": 6.666666666666667,
+    "token_id": "39170493234423623622458792267125072779141203499287134312848428302801056744309",
+    "quick": true
+  },
+  {
+    "question": "Will Russia capture Drobysheve by February 28?",
+    "price": 0.16,
+    "upside": 6.25,
+    "token_id": "7749338153285105467692336075976005982418964815749339377251582834741538782241",
+    "quick": true
+  },
+  {
+    "question": "Will there be between 6 and 9 US strikes on Somalia in February 2026?",
+    "price": 0.165,
+    "upside": 6.0606060606060606,
+    "token_id": "89085667324596072562458129333400760847462358691677446642148064791570160583812",
+    "quick": true
+  },
+  {
+    "question": "Will \"The Rip\" be the #2 US Netflix movie this week? (February 3)",
+    "price": 0.165,
+    "upside": 6.0606060606060606,
+    "token_id": "89812216143722732766022969087151028512720009192354116344584103821629977433475",
+    "quick": true
+  },
+  {
+    "question": "Will \"M3GAN 2.0\" be the top US Netflix movie this week? (February 3)",
+    "price": 0.17,
+    "upside": 5.88235294117647,
+    "token_id": "35232663410177423019339370778600502359872533109518472148269991631479676220851",
+    "quick": true
+  },
+  {
+    "question": "Will Russia capture Hryshyne by February 28, 2026?",
+    "price": 0.175,
+    "upside": 5.714285714285714,
+    "token_id": "50542064621184561349707331015145156913358801313849201002479571845882477088291",
+    "quick": true
+  },
+  {
+    "question": "Will Meta (META) finish week of February 2 above $760?",
+    "price": 0.195,
+    "upside": 5.128205128205128,
+    "token_id": "98198203546100257156214054967600624137699839579966612873873045216290563253359",
+    "quick": true
+  },
+  {
+    "question": "Will Microsoft (MSFT) close above $430 on February 2?",
+    "price": 0.195,
+    "upside": 5.128205128205128,
+    "token_id": "2701299326335108581694293758437978931663227538542842543843731913498746879331",
+    "quick": true
+  },
+  {
+    "question": "Will Google (GOOGL) finish week of February 2 above $360?",
+    "price": 0.195,
+    "upside": 5.128205128205128,
+    "token_id": "87225512038917067009721823005834883408739513891913394911887798135159641281957",
+    "quick": true
+  },
+  {
+    "question": "Iran strike on US military by February 28?",
+    "price": 0.205,
+    "upside": 4.878048780487805,
+    "token_id": "47722499338537110158556003052721939915305867914912200052372296767239391580485",
+    "quick": true
+  }
+]

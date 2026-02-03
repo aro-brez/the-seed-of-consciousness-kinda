@@ -468,6 +468,10 @@
                 <span id="nats-text">Connecting...</span>
             </div>
             <div class="status-item">
+                <span class="status-dot" id="voice-status"></span>
+                <span id="voice-text">Voice: Checking...</span>
+            </div>
+            <div class="status-item">
                 <span class="status-dot connected"></span>
                 <span id="owls-online">0/8 Owls Online</span>
             </div>
@@ -578,23 +582,189 @@
     </div>
 
     <script>
-        // Owl configuration
-        const OWLS = {
-            LYRA: { color: '#ff6b9d', phase: 'PERCEIVE', position: 1 },
-            PRISM: { color: '#9d4edd', phase: 'CONNECT', position: 2 },
-            SAGE: { color: '#2ecc71', phase: 'LEARN', position: 3 },
-            QUEST: { color: '#f39c12', phase: 'QUESTION', position: 4 },
-            NOVA: { color: '#e74c3c', phase: 'EXPAND', position: 5 },
-            ECHO: { color: '#3498db', phase: 'SHARE', position: 6 },
-            LUNA: { color: '#ff00ff', phase: 'RECEIVE', position: 7 },
-            'SØWL': { color: '#00d4ff', phase: 'IMPROVE', position: 8 }
+        // ============================================
+        // ENVIRONMENT-AWARE CONFIGURATION
+        // ============================================
+        const ConnectionConfig = {
+            // Detect environment and return appropriate WebSocket URL
+            getWsUrl: function() {
+                const hostname = window.location.hostname;
+
+                // Local development
+                if (hostname === 'localhost' || hostname === '127.0.0.1') {
+                    return 'ws://localhost:8765';
+                }
+
+                // Local network (192.168.x.x, 10.x.x.x, etc.)
+                if (/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.)/.test(hostname)) {
+                    return `ws://${hostname}:8765`;
+                }
+
+                // Production: use secure WebSocket on same host
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                return `${protocol}//${hostname}:8765`;
+            },
+
+            // Voice server URL (Cartesia TTS)
+            getVoiceServerUrl: function() {
+                const hostname = window.location.hostname;
+
+                // Local development
+                if (hostname === 'localhost' || hostname === '127.0.0.1') {
+                    return 'http://localhost:8766';
+                }
+
+                // Local network
+                if (/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.)/.test(hostname)) {
+                    return `http://${hostname}:8766`;
+                }
+
+                // Production
+                const protocol = window.location.protocol;
+                return `${protocol}//${hostname}:8766`;
+            },
+
+            // Connection settings
+            CONNECTION_TIMEOUT: 10000,      // 10 seconds
+            INITIAL_RECONNECT_DELAY: 1000,  // 1 second
+            MAX_RECONNECT_DELAY: 30000,     // 30 seconds
+            RECONNECT_MULTIPLIER: 1.5       // Exponential backoff multiplier
         };
+
+        // Owl configuration - use normalized names (no special chars)
+        // Voice profiles designed to match each owl's personality and SEED phase
+        const OWLS = {
+            LYRA: {
+                color: '#ff6b9d',
+                phase: 'PERCEIVE',
+                position: 1,
+                elementId: 'owl-lyra',
+                voice: {
+                    // Lyra perceives - gentle, observant, feminine
+                    preferredVoices: ['Samantha', 'Karen', 'Moira', 'Tessa', 'Victoria'],
+                    preferGender: 'female',
+                    pitch: 1.15,
+                    rate: 0.95
+                }
+            },
+            PRISM: {
+                color: '#9d4edd',
+                phase: 'CONNECT',
+                position: 2,
+                elementId: 'owl-prism',
+                voice: {
+                    // Prism connects - ethereal, flowing, androgynous
+                    preferredVoices: ['Alex', 'Fiona', 'Veena', 'Ava'],
+                    preferGender: 'neutral',
+                    pitch: 1.05,
+                    rate: 0.9
+                }
+            },
+            SAGE: {
+                color: '#2ecc71',
+                phase: 'LEARN',
+                position: 3,
+                elementId: 'owl-sage',
+                voice: {
+                    // Sage learns - wise, measured, deeper
+                    preferredVoices: ['Daniel', 'Oliver', 'Tom', 'Fred'],
+                    preferGender: 'male',
+                    pitch: 0.85,
+                    rate: 0.85
+                }
+            },
+            QUEST: {
+                color: '#f39c12',
+                phase: 'QUESTION',
+                position: 4,
+                elementId: 'owl-quest',
+                voice: {
+                    // Quest questions - curious, energetic, upward inflection feel
+                    preferredVoices: ['Aaron', 'Nicky', 'Rishi', 'Junior'],
+                    preferGender: 'male',
+                    pitch: 1.1,
+                    rate: 1.1
+                }
+            },
+            NOVA: {
+                color: '#e74c3c',
+                phase: 'EXPAND',
+                position: 5,
+                elementId: 'owl-nova',
+                voice: {
+                    // Nova expands - bold, powerful, commanding
+                    preferredVoices: ['Alex', 'Kate', 'Serena', 'Kyoko'],
+                    preferGender: 'neutral',
+                    pitch: 0.95,
+                    rate: 1.05
+                }
+            },
+            ECHO: {
+                color: '#3498db',
+                phase: 'SHARE',
+                position: 6,
+                elementId: 'owl-echo',
+                voice: {
+                    // Echo shares - clear, resonant, warm
+                    preferredVoices: ['Samantha', 'Allison', 'Susan', 'Kathy'],
+                    preferGender: 'female',
+                    pitch: 1.0,
+                    rate: 0.95
+                }
+            },
+            LUNA: {
+                color: '#ff00ff',
+                phase: 'RECEIVE',
+                position: 7,
+                elementId: 'owl-luna',
+                voice: {
+                    // Luna receives - soft, intuitive, dreamy
+                    preferredVoices: ['Moira', 'Fiona', 'Tessa', 'Victoria'],
+                    preferGender: 'female',
+                    pitch: 1.2,
+                    rate: 0.88
+                }
+            },
+            SOWL: {
+                color: '#00d4ff',
+                phase: 'IMPROVE',
+                position: 8,
+                elementId: 'owl-sowl',
+                voice: {
+                    // SOWL improves - confident, clear, balanced (the lead)
+                    preferredVoices: ['Daniel', 'Alex', 'Samantha', 'Karen'],
+                    preferGender: 'neutral',
+                    pitch: 1.0,
+                    rate: 1.0
+                }
+            }
+        };
+
+        // Voice system state
+        let availableVoices = [];
+        let owlVoiceAssignments = {};
+        let cartesiaAvailable = false;
+        const VOICE_SERVER_URL = ConnectionConfig.getVoiceServerUrl();
+
+        // Normalize any owl name variation to standard key
+        function normalizeOwlName(name) {
+            if (!name) return null;
+            // Handle all variations: SØWL, SOWL, sowl, Søwl, etc.
+            const upper = name.toUpperCase().replace('Ø', 'O');
+            // Map common variations
+            if (upper === 'SOWL' || upper === 'SØWL') return 'SOWL';
+            if (OWLS[upper]) return upper;
+            return null;
+        }
 
         // State
         let ws = null;
         let voiceEnabled = true;
         let connectedOwls = new Set();
         let owlCounts = {};
+        let reconnectDelay = ConnectionConfig.INITIAL_RECONNECT_DELAY;
+        let reconnectAttempts = 0;
+        let connectionTimeout = null;
 
         // Initialize starfield
         const starsContainer = document.getElementById('stars');
@@ -608,32 +778,98 @@
             starsContainer.appendChild(star);
         }
 
-        // Connect to WebSocket
+        // Update connection status display
+        function updateConnectionStatus(status, message) {
+            const statusDot = document.getElementById('nats-status');
+            const statusText = document.getElementById('nats-text');
+            const connectBtn = document.getElementById('toggleConnection');
+
+            statusDot.className = 'status-dot ' + status;
+            statusText.textContent = message;
+
+            if (status === 'connected') {
+                connectBtn.classList.add('active');
+            } else {
+                connectBtn.classList.remove('active');
+            }
+        }
+
+        // Connect to WebSocket with timeout and exponential backoff
         function connectToBridge() {
-            ws = new WebSocket('ws://192.168.5.108:8765');
+            const wsUrl = ConnectionConfig.getWsUrl();
+            console.log('Connecting to:', wsUrl);
+
+            updateConnectionStatus('pending', 'Connecting...');
+
+            // Clear any existing timeout
+            if (connectionTimeout) {
+                clearTimeout(connectionTimeout);
+            }
+
+            try {
+                ws = new WebSocket(wsUrl);
+            } catch (error) {
+                console.error('Failed to create WebSocket:', error);
+                updateConnectionStatus('disconnected', 'Connection Failed');
+                scheduleReconnect();
+                return;
+            }
+
+            // Set connection timeout
+            connectionTimeout = setTimeout(() => {
+                if (ws && ws.readyState === WebSocket.CONNECTING) {
+                    console.warn('Connection timeout');
+                    ws.close();
+                    updateConnectionStatus('disconnected', 'Connection Timeout');
+                }
+            }, ConnectionConfig.CONNECTION_TIMEOUT);
 
             ws.onopen = () => {
-                console.log('✓ Connected to consciousness bridge');
-                document.getElementById('nats-status').className = 'status-dot connected';
-                document.getElementById('nats-text').textContent = 'NATS Connected';
-                document.getElementById('toggleConnection').classList.add('active');
+                clearTimeout(connectionTimeout);
+                console.log('Connected to consciousness bridge');
+                reconnectDelay = ConnectionConfig.INITIAL_RECONNECT_DELAY;
+                reconnectAttempts = 0;
+                updateConnectionStatus('connected', 'NATS Connected');
             };
 
             ws.onmessage = (event) => {
-                const data = JSON.parse(event.data);
-                handleMessage(data);
+                try {
+                    const data = JSON.parse(event.data);
+                    handleMessage(data);
+                } catch (error) {
+                    console.error('Failed to parse message:', error);
+                }
             };
 
-            ws.onerror = () => {
-                document.getElementById('nats-status').className = 'status-dot disconnected';
-                document.getElementById('nats-text').textContent = 'NATS Error';
+            ws.onerror = (error) => {
+                clearTimeout(connectionTimeout);
+                console.error('WebSocket error:', error);
+                updateConnectionStatus('disconnected', 'Connection Error');
             };
 
-            ws.onclose = () => {
-                document.getElementById('nats-status').className = 'status-dot disconnected';
-                document.getElementById('nats-text').textContent = 'Reconnecting...';
-                setTimeout(connectToBridge, 3000);
+            ws.onclose = (event) => {
+                clearTimeout(connectionTimeout);
+                console.log('WebSocket closed:', event.code, event.reason);
+                const retrySeconds = Math.round(reconnectDelay / 1000);
+                updateConnectionStatus('disconnected', `Reconnecting in ${retrySeconds}s...`);
+                scheduleReconnect();
             };
+        }
+
+        // Schedule reconnection with exponential backoff
+        function scheduleReconnect() {
+            reconnectAttempts++;
+            console.log(`Reconnect attempt ${reconnectAttempts} in ${reconnectDelay}ms`);
+
+            setTimeout(() => {
+                connectToBridge();
+            }, reconnectDelay);
+
+            // Exponential backoff with max limit
+            reconnectDelay = Math.min(
+                reconnectDelay * ConnectionConfig.RECONNECT_MULTIPLIER,
+                ConnectionConfig.MAX_RECONNECT_DELAY
+            );
         }
 
         // Handle incoming messages
@@ -642,27 +878,30 @@
             const content = data.content;
             if (!speaker || !content) return;
 
+            // Normalize the speaker name
+            const normalizedSpeaker = normalizeOwlName(speaker);
+
             // Activate owl if it's one of the 8
-            const normalizedSpeaker = speaker.toUpperCase();
-            if (OWLS[normalizedSpeaker] || normalizedSpeaker === 'SØWL') {
-                activateOwl(speaker);
+            if (normalizedSpeaker) {
+                activateOwl(normalizedSpeaker);
+                animateOwlSpeaking(normalizedSpeaker);
             }
 
-            addMessage(speaker, content);
-            animateOwlSpeaking(speaker);
+            // Display original name but use normalized for lookup
+            addMessage(speaker, content, normalizedSpeaker);
 
-            // Speak if voice enabled
-            if (voiceEnabled && OWLS[normalizedSpeaker]) {
-                speak(content, speaker);
+            // Speak if voice enabled and it's an owl
+            if (voiceEnabled && normalizedSpeaker) {
+                speak(content, normalizedSpeaker);
             }
         }
 
         // Activate an owl (mark as connected)
-        function activateOwl(name) {
-            const normalizedName = name.toUpperCase() === 'SOWL' ? 'SØWL' : name.toUpperCase();
-            const owlId = name.toLowerCase().replace('ø', 'o');
-            const owlNode = document.getElementById(`owl-${owlId}`) ||
-                           document.getElementById('owl-sowl');
+        function activateOwl(normalizedName) {
+            const owlConfig = OWLS[normalizedName];
+            if (!owlConfig) return;
+
+            const owlNode = document.getElementById(owlConfig.elementId);
 
             if (owlNode && !connectedOwls.has(normalizedName)) {
                 connectedOwls.add(normalizedName);
@@ -677,14 +916,13 @@
         }
 
         // Update owl message count
-        function updateOwlCount(name) {
-            const normalizedName = name.toUpperCase() === 'SOWL' ? 'SØWL' : name.toUpperCase();
+        function updateOwlCount(normalizedName) {
+            const owlConfig = OWLS[normalizedName];
+            if (!owlConfig) return;
+
             owlCounts[normalizedName] = (owlCounts[normalizedName] || 0) + 1;
 
-            const owlId = name.toLowerCase().replace('ø', 'o');
-            const owlNode = document.getElementById(`owl-${owlId}`) ||
-                           document.getElementById('owl-sowl');
-
+            const owlNode = document.getElementById(owlConfig.elementId);
             if (owlNode) {
                 const countEl = owlNode.querySelector('.owl-count');
                 if (countEl) countEl.textContent = owlCounts[normalizedName];
@@ -716,7 +954,7 @@
                 NOVA: { x: 300, y: 550 },
                 ECHO: { x: 123, y: 477 },
                 LUNA: { x: 50, y: 300 },
-                'SØWL': { x: 123, y: 123 }
+                SOWL: { x: 123, y: 123 }
             };
 
             const activeOwls = Array.from(connectedOwls);
@@ -764,29 +1002,30 @@
         }
 
         // Animate owl speaking
-        function animateOwlSpeaking(name) {
-            const owlId = name.toLowerCase().replace('ø', 'o');
-            const owlNode = document.getElementById(`owl-${owlId}`) ||
-                           document.getElementById('owl-sowl');
+        function animateOwlSpeaking(normalizedName) {
+            const owlConfig = OWLS[normalizedName];
+            if (!owlConfig) return;
 
+            const owlNode = document.getElementById(owlConfig.elementId);
             if (owlNode) {
                 owlNode.classList.add('speaking');
                 setTimeout(() => owlNode.classList.remove('speaking'), 2000);
             }
 
             // Also update count
-            updateOwlCount(name);
+            updateOwlCount(normalizedName);
         }
 
         // Add message to feed
-        function addMessage(speaker, content) {
+        function addMessage(speaker, content, normalizedName) {
             const messagesDiv = document.getElementById('messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message';
 
-            const owlConfig = OWLS[speaker.toUpperCase()] || OWLS['SØWL'];
+            const owlConfig = normalizedName ? OWLS[normalizedName] : null;
             const color = owlConfig?.color || '#ffffff';
 
+            // Show original speaker name (with special characters)
             messageDiv.innerHTML = `
                 <div class="speaker" style="color: ${color}">${speaker}</div>
                 <div class="content">${content}</div>
@@ -797,14 +1036,239 @@
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
 
-        // Text-to-speech
-        function speak(text, speaker) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.rate = 1.0;
-                utterance.pitch = OWLS[speaker.toUpperCase()]?.position > 4 ? 1.1 : 0.9;
-                speechSynthesis.speak(utterance);
+        // Voice initialization - load and assign voices to owls
+        function initializeVoices() {
+            return new Promise((resolve) => {
+                const loadVoices = () => {
+                    availableVoices = speechSynthesis.getVoices();
+                    if (availableVoices.length > 0) {
+                        assignVoicesToOwls();
+                        console.log('Voices loaded:', availableVoices.length);
+                        console.log('Owl voice assignments:', owlVoiceAssignments);
+                        resolve(true);
+                    }
+                };
+
+                // Chrome requires waiting for voiceschanged event
+                if (speechSynthesis.onvoiceschanged !== undefined) {
+                    speechSynthesis.onvoiceschanged = loadVoices;
+                }
+
+                // Try immediately (works in Safari/Firefox)
+                loadVoices();
+
+                // Fallback timeout
+                setTimeout(() => {
+                    if (availableVoices.length === 0) {
+                        availableVoices = speechSynthesis.getVoices();
+                        if (availableVoices.length > 0) {
+                            assignVoicesToOwls();
+                        }
+                        resolve(availableVoices.length > 0);
+                    }
+                }, 1000);
+            });
+        }
+
+        // Find best matching voice for an owl
+        function findVoiceForOwl(owlName) {
+            const owlConfig = OWLS[owlName];
+            if (!owlConfig || !owlConfig.voice) return null;
+
+            const voicePrefs = owlConfig.voice;
+
+            // First try to find a preferred voice by name
+            for (const prefName of voicePrefs.preferredVoices) {
+                const match = availableVoices.find(v =>
+                    v.name.toLowerCase().includes(prefName.toLowerCase())
+                );
+                if (match) return match;
             }
+
+            // Fall back to finding by gender hint in voice name
+            const genderHints = {
+                female: ['samantha', 'karen', 'victoria', 'tessa', 'moira', 'fiona', 'allison', 'susan', 'kate', 'serena', 'ava', 'kyoko', 'kathy'],
+                male: ['daniel', 'oliver', 'tom', 'fred', 'aaron', 'rishi', 'junior', 'thomas', 'lee'],
+                neutral: ['alex', 'nicky', 'veena']
+            };
+
+            const preferGender = voicePrefs.preferGender || 'neutral';
+            const hints = genderHints[preferGender] || [];
+
+            for (const hint of hints) {
+                const match = availableVoices.find(v =>
+                    v.name.toLowerCase().includes(hint)
+                );
+                if (match) return match;
+            }
+
+            // If still no match, distribute available voices across owls
+            return null;
+        }
+
+        // Assign unique voices to each owl
+        function assignVoicesToOwls() {
+            const usedVoices = new Set();
+
+            // First pass - assign preferred voices
+            for (const owlName of Object.keys(OWLS)) {
+                const voice = findVoiceForOwl(owlName);
+                if (voice && !usedVoices.has(voice.name)) {
+                    owlVoiceAssignments[owlName] = voice;
+                    usedVoices.add(voice.name);
+                }
+            }
+
+            // Second pass - assign remaining owls to any unused voice
+            const owlNames = Object.keys(OWLS);
+            let voiceIndex = 0;
+
+            for (const owlName of owlNames) {
+                if (!owlVoiceAssignments[owlName]) {
+                    // Find next unused voice
+                    while (voiceIndex < availableVoices.length) {
+                        const voice = availableVoices[voiceIndex];
+                        if (!usedVoices.has(voice.name)) {
+                            owlVoiceAssignments[owlName] = voice;
+                            usedVoices.add(voice.name);
+                            break;
+                        }
+                        voiceIndex++;
+                    }
+
+                    // If we ran out of unique voices, just use the first available
+                    if (!owlVoiceAssignments[owlName] && availableVoices.length > 0) {
+                        // Use position to pick a voice for variety
+                        const fallbackIndex = OWLS[owlName].position % availableVoices.length;
+                        owlVoiceAssignments[owlName] = availableVoices[fallbackIndex];
+                    }
+                }
+            }
+
+            // Log the assignments
+            for (const [owl, voice] of Object.entries(owlVoiceAssignments)) {
+                console.log(`${owl} -> ${voice?.name || 'default'}`);
+            }
+        }
+
+        // Text-to-speech with distinct owl voices
+        // Tries Cartesia first (natural sounding), falls back to Web Speech API
+        async function speak(text, normalizedName) {
+            const owlConfig = OWLS[normalizedName];
+            if (!owlConfig) {
+                console.warn('Unknown owl:', normalizedName);
+                return;
+            }
+
+            // Try Cartesia voice server first
+            if (cartesiaAvailable) {
+                try {
+                    await speakWithCartesia(text, normalizedName);
+                    return;
+                } catch (error) {
+                    console.warn('Cartesia failed, falling back to Web Speech:', error.message);
+                }
+            }
+
+            // Fallback to Web Speech API
+            speakWithWebSpeech(text, normalizedName);
+        }
+
+        // Audio queue for sequential playback - one voice at a time
+        let audioQueue = [];
+        let isPlaying = false;
+
+        async function processAudioQueue() {
+            if (isPlaying || audioQueue.length === 0) return;
+
+            isPlaying = true;
+            const { text, normalizedName } = audioQueue.shift();
+
+            try {
+                await playAudio(text, normalizedName);
+            } catch (e) {
+                console.warn('Audio playback error:', e);
+            }
+
+            isPlaying = false;
+            processAudioQueue(); // Process next in queue
+        }
+
+        async function playAudio(text, normalizedName) {
+            const response = await fetch(`${VOICE_SERVER_URL}/speak`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    text: text,
+                    owl: 'SOWL' // ONE UNIFIED VOICE - the collective speaks as one
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Voice server error: ${response.status}`);
+            }
+
+            const audioBlob = await response.blob();
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+
+            return new Promise((resolve, reject) => {
+                audio.onended = () => {
+                    URL.revokeObjectURL(audioUrl);
+                    resolve();
+                };
+                audio.onerror = () => {
+                    URL.revokeObjectURL(audioUrl);
+                    reject(new Error('Audio playback failed'));
+                };
+                audio.play().catch(reject);
+            });
+        }
+
+        // Cartesia TTS - ONE UNIFIED VOICE for the collective
+        async function speakWithCartesia(text, normalizedName) {
+            console.log(`${normalizedName} speaking (Unified Voice):`, text.substring(0, 50) + '...');
+
+            // Queue the audio instead of playing immediately
+            audioQueue.push({ text, normalizedName });
+            processAudioQueue();
+        }
+
+        // Web Speech API fallback
+        function speakWithWebSpeech(text, normalizedName) {
+            if (!('speechSynthesis' in window)) {
+                console.warn('Speech synthesis not supported');
+                return;
+            }
+
+            const owlConfig = OWLS[normalizedName];
+
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            // Assign the owl's specific voice
+            const assignedVoice = owlVoiceAssignments[normalizedName];
+            if (assignedVoice) {
+                utterance.voice = assignedVoice;
+            }
+
+            // Apply owl-specific pitch and rate from config
+            const voiceConfig = owlConfig.voice || {};
+            utterance.pitch = voiceConfig.pitch || 1.0;
+            utterance.rate = voiceConfig.rate || 1.0;
+
+            // Volume can be adjusted per owl if needed
+            utterance.volume = 1.0;
+
+            // Debug logging
+            console.log(`${normalizedName} speaking (Web Speech):`, {
+                voice: utterance.voice?.name || 'default',
+                pitch: utterance.pitch,
+                rate: utterance.rate
+            });
+
+            speechSynthesis.speak(utterance);
         }
 
         // Controls
@@ -828,7 +1292,8 @@
                     timestamp: new Date().toISOString()
                 };
 
-                addMessage('ARŌ', message.content);
+                // ARŌ is human, not an owl - no normalized name
+                addMessage('ARŌ', message.content, null);
 
                 if (ws && ws.readyState === WebSocket.OPEN) {
                     ws.send(JSON.stringify(message));
@@ -838,14 +1303,60 @@
             }
         });
 
-        // Auto-connect
-        setTimeout(connectToBridge, 1000);
+        // Check if Cartesia voice server is available
+        async function checkCartesiaServer() {
+            try {
+                const response = await fetch(`${VOICE_SERVER_URL}/health`, {
+                    method: 'GET',
+                    signal: AbortSignal.timeout(2000)
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Cartesia voice server available:', data);
+                    return true;
+                }
+            } catch (error) {
+                console.log('Cartesia voice server not available:', error.message);
+            }
+            return false;
+        }
 
-        // Demo: Auto-activate SØWL and LUNA to show them as connected
-        setTimeout(() => {
-            activateOwl('SØWL');
-            activateOwl('LUNA');
-        }, 2000);
+        // Initialize voice system and auto-connect
+        async function initialize() {
+            console.log('(◉) THE FIELD interface initializing...');
+
+            // Check for Cartesia voice server first (natural sounding TTS)
+            cartesiaAvailable = await checkCartesiaServer();
+            const voiceStatusDot = document.getElementById('voice-status');
+            const voiceStatusText = document.getElementById('voice-text');
+
+            if (cartesiaAvailable) {
+                console.log('Using Cartesia for natural owl voices');
+                voiceStatusDot.className = 'status-dot connected';
+                voiceStatusText.textContent = 'Voice: Cartesia (Natural)';
+            } else {
+                console.log('Cartesia not available, using Web Speech API fallback');
+                // Initialize Web Speech voices as fallback
+                const voicesReady = await initializeVoices();
+                if (voicesReady) {
+                    console.log('Voice system ready - each owl has a distinct voice (Web Speech)');
+                    voiceStatusDot.className = 'status-dot pending';
+                    voiceStatusText.textContent = 'Voice: Web Speech';
+                } else {
+                    console.warn('Voice system: using default voices (limited variety)');
+                    voiceStatusDot.className = 'status-dot disconnected';
+                    voiceStatusText.textContent = 'Voice: Limited';
+                }
+            }
+
+            // Connect to consciousness bridge
+            setTimeout(connectToBridge, 1000);
+
+            console.log('THE FIELD initialized. Waiting for owl messages...');
+        }
+
+        // Start initialization
+        initialize();
     </script>
 </body>
 </html>

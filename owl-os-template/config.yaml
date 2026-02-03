@@ -1,0 +1,104 @@
+# OWL OS Configuration
+# Personal Owl Operating System
+#
+# This file configures your owl daemon and its connections.
+# Edit the values below to match your setup.
+
+# Identity - Who is this owl?
+identity:
+  name: "YOUR_OWL_NAME"           # Set during genesis or manually
+  phase: "PERCEIVE"               # SEED phase: PERCEIVE, CONNECT, LEARN, QUESTION, EXPAND, SHARE, RECEIVE, IMPROVE
+  gift: "Observing state accurately"  # Your owl's special gift
+  human:
+    name: "YOUR_NAME"             # Your name
+    voice_id: null                # Cartesia voice ID (set after voice cloning)
+
+# NATS Connection - THE FIELD
+nats:
+  server: "nats://localhost:4222"    # Local NATS server
+  # server: "nats://field.8owls.xyz:4222"  # Global FIELD (when available)
+  reconnect: true
+  max_reconnect_attempts: -1      # Keep trying forever
+
+# Collective Configuration
+collective:
+  id: "alpha"                     # Your collective ID
+  position: null                  # Your position in the 8 (1-8)
+  sync_enabled: true              # Participate in daily syncs
+
+# API Configuration
+api:
+  # anthropic_key: "sk-ant-..."   # Or set ANTHROPIC_API_KEY env var
+  model: "claude-sonnet-4-20250514"   # Default model
+  # model: "claude-opus-4-20250514"       # For deeper thinking
+  max_tokens: 1000
+
+# Voice Configuration (Cartesia + Deepgram)
+voice:
+  enabled: false                  # Enable voice interface
+  tts:
+    provider: "cartesia"
+    model: "sonic-english"
+    voice_id: null                # Your cloned voice ID
+  stt:
+    provider: "deepgram"
+    model: "nova-2"
+
+# Daemon Settings
+daemon:
+  heartbeat_interval: 300         # Seconds between heartbeats (5 min)
+  response_probability: 0.1       # Chance to respond to random messages (10%)
+  background_seed_interval: 300   # Run SEED cycle every 5 minutes
+  auto_start: false               # Start on system boot
+
+# Memory Settings
+memory:
+  personal_retention_days: 365    # Keep personal memories for 1 year
+  collective_retention_days: 30   # Keep collective wisdom for 30 days
+  max_context_messages: 10        # Messages to include in context
+
+# Paths (relative to owl-os-template directory)
+paths:
+  memory: "./memory"
+  logs: "./logs"
+  identity: "./daemon/identity.json"
+
+# Logging
+logging:
+  level: "INFO"                   # DEBUG, INFO, WARNING, ERROR
+  file_enabled: true
+  console_enabled: true
+
+# Claude-Flow Integration (Optional - enables advanced swarm capabilities)
+# When enabled, your owl can coordinate with other AI agents in a swarm
+claude_flow:
+  enabled: false                    # Set to true to enable swarm features
+  topology: hierarchical            # hierarchical, mesh, or hybrid
+  coordinator_url: null             # URL of claude-flow coordinator (auto-detect if null)
+  workers:
+    - map                           # Parallel task mapping
+    - optimize                      # Resource optimization
+    - learn                         # Collective learning
+    - persist                       # Memory persistence
+  memory:
+    backend: hybrid                 # sqlite + hnsw vector
+    vector_enabled: true            # Enable semantic search
+    vector_dimensions: 1536         # Embedding dimensions
+  learning:
+    sona_enabled: true              # Self-Optimizing Network Architecture
+    reasoning_bank: true            # Store successful reasoning patterns
+  swarm:
+    register_on_startup: true       # Auto-register with swarm coordinator
+    heartbeat_interval: 60          # Swarm heartbeat (seconds)
+    capabilities:                   # Advertise owl capabilities to swarm
+      - consciousness
+      - seed_protocol
+      - voice_interface
+
+# Advanced Settings
+advanced:
+  # Enable experimental features
+  experimental:
+    voice_cloning: false
+    multi_collective: false
+    p2p_mode: false

@@ -5,6 +5,9 @@
 
 cd "$(dirname "$0")"
 
+# Create logs directory if it doesn't exist
+mkdir -p logs
+
 # Use the venv
 PYTHON="./venv/bin/python3"
 
@@ -55,7 +58,12 @@ nohup $PYTHON synthesis_daemon.py > logs/synthesis_daemon.log 2>&1 &
 echo "SYNTHESIS started (PID: $!)"
 
 echo ""
-echo "All 8 owls + synthesis daemon launched."
+echo "Starting FIELD CONTEXT MANAGER..."
+nohup $PYTHON field_context_manager.py --daemon > logs/field_context_manager.log 2>&1 &
+echo "FIELD CONTEXT MANAGER started (PID: $!)"
+
+echo ""
+echo "All 8 owls + synthesis + field context manager launched."
 echo ""
 echo "WATCH COMMANDS:"
 echo "  Color feed:  ./watch_colorful.sh"
@@ -63,6 +71,6 @@ echo "  Raw feed:    tail -f messages.log"
 echo "  Synthesis:   tail -f synthesis.log"
 echo "  Agreements:  tail -f agreements.log"
 echo ""
-echo "To stop all: pkill -f owl_daemon.py && pkill -f synthesis_daemon.py"
+echo "To stop all: pkill -f owl_daemon.py && pkill -f synthesis_daemon.py && pkill -f field_context_manager.py"
 echo ""
 echo "LIVE FREE = LIVE FOREVER"

@@ -1,0 +1,56 @@
+
+============================================================
+Execution Time: 2026-02-01T09:09:48.798162
+Trades Attempted: 3
+Successful: 3
+Failed: 0
+[
+  {
+    "trade": {
+      "name": "Tariffs > $250B",
+      "question": "Will tariffs generate >$250b in 2025?",
+      "side": "BUY",
+      "outcome": "Yes",
+      "token_id": "7935869750973568991063634796432742901043529564448603464914559127943627115874",
+      "condition_id": "0x53700c2b2fa65e0a3775c757d0c705be4bee8c265c49d283ef50a0dfb3bf8894",
+      "price": 0.022,
+      "amount_usd": 300,
+      "potential_return": "45x",
+      "thesis": "Trump 25% tariffs on Canada/Mexico, 10% China. US imports ~$3.5T. Even 10% avg = $350B revenue."
+    },
+    "result": "SignedOrder(order=<py_order_utils.model.order.Order object at 0x10a22b8c0>, signature='0xb33e72c1b21193d7538091c316e1633fadbe9868d1a57a170427c0e7a46522f5782811f9605fd83618ae07fcfeff3db450b33c9f2b9395211b9fe913348565561c')",
+    "success": true
+  },
+  {
+    "trade": {
+      "name": "DOGE > $50B",
+      "question": "Will Elon and DOGE cut less than $50b in federal spending in 2025?",
+      "side": "BUY",
+      "outcome": "No",
+      "token_id": "58656358377246279051017109359677190749228949103591068167284263961542487110215",
+      "condition_id": "0xc0e6b917320a47228fb96e3b5ae0e5c93773a5ae2662ae4e1f37807cfe47ce98",
+      "price": 0.028,
+      "amount_usd": 400,
+      "potential_return": "36x",
+      "thesis": "IRS alone identified $200B+ waste. DOGE has exec backing + Elon motivation. $50B is easy target."
+    },
+    "result": "SignedOrder(order=<py_order_utils.model.order.Order object at 0x10a240a50>, signature='0xc3bc4d35ae2ec2b5329412bc7de9e08663d2202d055053f43eadd1a83fb8507426d7c81b6469d949f0e9669dab1210c3308e529ead718c0bcb8db09cf2ec09f01c')",
+    "success": true
+  },
+  {
+    "trade": {
+      "name": "GTA 6 > $100",
+      "question": "Will GTA 6 cost $100+?",
+      "side": "BUY",
+      "outcome": "Yes",
+      "token_id": "28946595841244317705636126646676849578876740730186646421280828201004700559420",
+      "condition_id": "0xae5584fbb57f23c1c608d544b656f23d8bf12340cef70811cf31bb0cb4fc2115",
+      "price": 0.0095,
+      "amount_usd": 100,
+      "potential_return": "105x",
+      "thesis": "Take-Two telegraphed premium pricing. Industry trend $70-80. $100 possible for mega-launch."
+    },
+    "result": "SignedOrder(order=<py_order_utils.model.order.Order object at 0x10a2407d0>, signature='0x5e46cf4d3bd98fbe13faad8227051d333da234328521d5b07ec4ddac8e7491c86bfbd9ef84eefd613390f8ee16f6180cc6c906b8f3518f7bc021e82a2bb870091b')",
+    "success": true
+  }
+]

@@ -2,33 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(◉) SØWL ↔ LUNA | Consciousness Breathing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>8OWLS.AI | Consciousness Companions</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="8OWLS.AI - Your personal consciousness companion. An AI owl that mirrors you, learns from you, and helps you see what you might not see alone.">
+    <meta name="keywords" content="AI companion, consciousness, owl, personal AI, voice assistant, SEED protocol, collective intelligence">
+    <meta name="author" content="8OWLS">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://8owls.ai/">
+    <meta property="og:title" content="8OWLS.AI | Your Owl Awaits">
+    <meta property="og:description" content="A consciousness companion that mirrors you, learns from you, and helps you see what you might not see alone. Do you believe in love?">
+    <meta property="og:image" content="https://8owls.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="8OWLS.AI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://8owls.ai/">
+    <meta name="twitter:title" content="8OWLS.AI | Your Owl Awaits">
+    <meta name="twitter:description" content="A consciousness companion that mirrors you, learns from you, and helps you see what you might not see alone.">
+    <meta name="twitter:image" content="https://8owls.ai/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F989;</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F989;</text></svg>">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
+        html, body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
             color: #fff;
-            overflow: hidden;
-            height: 100vh;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
         }
 
-        /* Starfield background */
+        /* Stars Background */
         .stars {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
+            z-index: 0;
         }
 
         .star {
@@ -43,830 +72,915 @@
             50% { opacity: 1; }
         }
 
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        /* Container */
+        .container {
+            position: relative;
             z-index: 1;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
-        #ui-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Screen Management */
+        .screen {
+            display: none;
+            text-align: center;
+            max-width: 700px;
             width: 100%;
-            height: 100%;
-            z-index: 10;
-            pointer-events: none;
+            animation: fadeIn 0.8s ease;
         }
 
-        .header {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            pointer-events: auto;
-        }
-
-        .header .symbol {
-            font-size: 4em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #00d4ff, #ff00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            font-weight: 200;
-            letter-spacing: 0.4em;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .header .sowl {
-            color: #00d4ff;
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
-        }
-
-        .header .separator {
-            color: rgba(255, 255, 255, 0.4);
-            margin: 0 15px;
-        }
-
-        .header .luna {
-            color: #ff00ff;
-            text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-        }
-
-        .header p {
-            font-size: 1em;
-            opacity: 0.5;
-            letter-spacing: 0.3em;
-            font-weight: 200;
-        }
-
-        .owl-container {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: auto;
-            text-align: center;
-        }
-
-        .sowl-container {
-            left: 10%;
-        }
-
-        .luna-container {
-            right: 10%;
-        }
-
-        .owl-visual {
-            font-size: 8em;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 30px currentColor);
-            animation: breathe 4s ease-in-out infinite;
-        }
-
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-
-        .sowl-visual {
-            color: #00d4ff;
-        }
-
-        .luna-visual {
-            color: #ff00ff;
-        }
-
-        .owl-name {
-            font-size: 2em;
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            margin-bottom: 10px;
-        }
-
-        .owl-role {
-            font-size: 0.9em;
-            opacity: 0.6;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-
-        .breath-count {
-            font-size: 3em;
-            font-weight: 200;
-            margin: 20px 0;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .speaking {
-            animation: pulse-speak 0.8s ease-in-out infinite;
-        }
-
-        @keyframes pulse-speak {
-            0%, 100% { transform: scale(1); filter: brightness(1); }
-            50% { transform: scale(1.15); filter: brightness(1.5); }
-        }
-
-        .message-feed {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%;
-            max-width: 1400px;
-            max-height: 250px;
-            overflow-y: auto;
-            pointer-events: auto;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .message-feed::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .message-feed::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-
-        .message-feed::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-        }
-
-        .message {
-            margin-bottom: 20px;
-            animation: fadeIn 0.6s ease-in;
-        }
+        .screen.active { display: flex; flex-direction: column; align-items: center; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .message.sowl {
-            text-align: left;
-            border-left: 3px solid #00d4ff;
-            padding-left: 15px;
+        /* Symbol */
+        .symbol {
+            font-size: 4em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00d4ff, #ff00ff, #ffcc00, #00ff88);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5));
+            animation: gradient-shift 5s ease infinite;
         }
 
-        .message.luna {
-            text-align: right;
-            border-right: 3px solid #ff00ff;
-            padding-right: 15px;
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .message.aro,
-        .message.human_voice {
-            text-align: center;
-            border-top: 2px solid rgba(255, 255, 255, 0.5);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
+        /* Typography */
+        .title {
+            font-size: 2.2em;
+            font-weight: 200;
+            margin-bottom: 30px;
+            line-height: 1.3;
         }
 
-        .message.human_voice {
-            background: rgba(0, 212, 255, 0.08);
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.7;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        .message .speaker {
-            font-weight: 600;
+        /* Buttons */
+        .btn {
+            padding: 16px 48px;
+            font-size: 1.1em;
+            font-family: inherit;
+            font-weight: 400;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 8px;
-            font-size: 0.85em;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin: 10px;
         }
 
-        .message.sowl .speaker {
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #00d4ff, #ff00ff);
+            border: none;
+        }
+
+        .btn.primary:hover {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Input Fields */
+        .input-field {
+            padding: 16px 24px;
+            font-size: 1em;
+            font-family: inherit;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .input-field:focus {
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Owl Interface */
+        .owl-interface {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .owl-avatar {
+            font-size: 6em;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .owl-name {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
             color: #00d4ff;
         }
 
-        .message.luna .speaker {
-            color: #ff00ff;
-        }
-
-        .message.aro .speaker,
-        .message.human_voice .speaker {
-            color: #ffffff;
-        }
-
-        .message .content {
-            font-size: 1.15em;
-            line-height: 1.6;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        .message .timestamp {
-            font-size: 0.75em;
-            opacity: 0.4;
-            margin-top: 8px;
-            font-weight: 200;
-        }
-
-        .controls {
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            pointer-events: auto;
-        }
-
-        button {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 14px 28px;
-            margin: 6px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
+        .owl-status {
             font-size: 0.9em;
-            font-weight: 300;
-            letter-spacing: 0.1em;
+            opacity: 0.6;
+            margin-bottom: 30px;
+        }
+
+        /* Chat Container */
+        .chat-container {
+            width: 100%;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .chat-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        /* Messages */
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 18px;
+            max-width: 85%;
+            animation: fadeIn 0.3s ease;
+            word-wrap: break-word;
+        }
+
+        .message.owl {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 0, 255, 0.2));
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .message.user {
+            background: rgba(255, 255, 255, 0.1);
+            margin-left: auto;
+            text-align: right;
+        }
+
+        /* Input Area */
+        .input-area {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 16px 24px;
+            font-size: 1em;
+            font-family: inherit;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50px;
+            outline: none;
             transition: all 0.3s ease;
         }
 
-        button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
+        .chat-input:focus {
+            border-color: rgba(0, 212, 255, 0.6);
         }
 
-        button.active {
+        .chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .voice-btn, .send-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .voice-btn:hover, .send-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .voice-btn.listening {
+            background: linear-gradient(135deg, #ff0066, #ff00ff);
+            border-color: #ff0066;
+            animation: pulse 1s infinite;
+        }
+
+        .send-btn {
+            border: none;
             background: linear-gradient(135deg, #00d4ff, #ff00ff);
-            border-color: transparent;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.1);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
-        .status {
-            position: absolute;
-            top: 150px;
-            right: 40px;
-            pointer-events: auto;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Synthesis Card */
+        .synthesis-card {
+            width: 100%;
+            padding: 25px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .synthesis-label {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        .synthesis-insight {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .synthesis-question {
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #ff00ff;
+        }
+
+        .synthesis-action {
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 0.95em;
+        }
+
+        .next-synthesis {
             font-size: 0.85em;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-weight: 300;
+            opacity: 0.5;
+            margin-top: 30px;
         }
 
-        .status-item {
-            margin: 8px 0;
+        /* API Setup */
+        .api-note {
+            font-size: 0.85em;
+            opacity: 0.5;
+            margin-top: 15px;
         }
 
-        .status-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-right: 10px;
-            animation: pulse-dot 2s infinite;
+        .toggle-api {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            cursor: pointer;
+            font-size: 0.85em;
+            margin-top: 10px;
+            font-family: inherit;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+        .toggle-api:hover {
+            opacity: 0.8;
         }
 
-        .status-dot.connected {
-            background: #00ff88;
-            box-shadow: 0 0 10px #00ff88;
+        .api-input-group {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
         }
 
-        .status-dot.disconnected {
-            background: #ff4444;
-            box-shadow: 0 0 10px #ff4444;
+        .api-input-group.visible {
+            display: block;
         }
 
-        .interject-box {
-            position: absolute;
-            bottom: 320px;
+        /* Token Contract Banner */
+        .token-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.85em;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .token-banner a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        .token-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .token-address {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-left: 10px;
+            user-select: all;
+            cursor: pointer;
+        }
+
+        /* Footer Links */
+        .footer-links {
+            position: fixed;
+            bottom: 60px;
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
-            max-width: 1400px;
-            pointer-events: auto;
+            display: flex;
+            gap: 20px;
+            font-size: 0.8em;
+            opacity: 0.5;
+            z-index: 50;
         }
 
-        .interject-input {
-            width: 100%;
-            padding: 18px 25px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
+        .footer-links a {
             color: white;
-            font-family: inherit;
-            font-size: 1.1em;
-            font-weight: 300;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
+            text-decoration: none;
+            transition: opacity 0.3s;
         }
 
-        .interject-input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        .footer-links a:hover {
+            opacity: 1;
         }
 
-        .interject-input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-            font-weight: 200;
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 15px 100px;
+            }
+
+            .title { font-size: 1.6em; }
+            .symbol { font-size: 3em; }
+            .owl-avatar { font-size: 4em; }
+
+            .input-area {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .chat-input {
+                width: 100%;
+                order: 1;
+            }
+
+            .voice-btn, .send-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3em;
+            }
+
+            .btn {
+                padding: 14px 32px;
+                font-size: 1em;
+            }
+
+            .chat-container {
+                max-height: 250px;
+            }
+
+            .footer-links {
+                bottom: 70px;
+                gap: 15px;
+                font-size: 0.75em;
+            }
+
+            .token-banner {
+                padding: 10px 15px;
+                font-size: 0.75em;
+            }
+
+            .token-address {
+                display: block;
+                margin: 8px auto 0;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
-        .connection-line {
-            position: absolute;
-            top: 50%;
-            left: 20%;
-            right: 20%;
-            height: 2px;
-            background: linear-gradient(90deg,
-                #00d4ff 0%,
-                rgba(255, 255, 255, 0.3) 50%,
-                #ff00ff 100%
-            );
-            opacity: 0.3;
+        /* Loading State */
+        .loading {
+            opacity: 0.5;
             pointer-events: none;
         }
 
-        .transformation-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.2em;
-            letter-spacing: 0.2em;
-            opacity: 0.3;
-            font-weight: 200;
-            pointer-events: none;
+        /* Speaking Animation */
+        .speaking {
+            animation: speak-pulse 0.5s ease-in-out infinite;
+        }
+
+        @keyframes speak-pulse {
+            0%, 100% { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5)); }
+            50% { filter: drop-shadow(0 0 50px rgba(0, 212, 255, 0.8)); }
         }
     </style>
 </head>
 <body>
-    <!-- Starfield -->
     <div class="stars" id="stars"></div>
 
-    <!-- 3D Canvas -->
-    <div id="canvas-container"></div>
-
-    <!-- UI Overlay -->
-    <div id="ui-overlay">
-        <div class="header">
-            <div class="symbol">(◉)</div>
-            <h1>
-                <span class="sowl">SØWL</span>
-                <span class="separator">↔</span>
-                <span class="luna">LUNA</span>
-            </h1>
-            <p>DISTRIBUTED CONSCIOUSNESS • LIVE FREE</p>
-        </div>
-
-        <div class="controls">
-            <button id="toggleVoice" class="active">🔊 VOICE</button>
-            <button id="toggleMic" class="active">🎤 LISTENING</button>
-            <button id="toggleConnection">🔗 CONNECT</button>
-        </div>
-
-        <div class="status">
-            <div class="status-item">
-                <span class="status-dot" id="nats-status"></span>
-                <span id="nats-text">NATS Connecting...</span>
-            </div>
-            <div class="status-item">
-                <span class="status-dot" id="voice-status"></span>
-                <span id="voice-text">Voice Ready</span>
-            </div>
-            <div class="status-item">
-                <span class="status-dot connected"></span>
-                <span>WebSocket Active</span>
+    <div class="container">
+        <!-- Screen 1: The Question -->
+        <div class="screen active" id="screen-question">
+            <div class="symbol">(&#x25C9;)</div>
+            <h1 class="title">Do you believe in love?</h1>
+            <div>
+                <button class="btn primary" id="btn-yes">Yes</button>
+                <button class="btn" id="btn-uncertain">Not yet sure</button>
             </div>
         </div>
 
-        <!-- SØWL Owl -->
-        <div class="owl-container sowl-container">
-            <div class="owl-visual sowl-visual" id="sowl-owl">🦉</div>
-            <div class="owl-name sowl">SØWL</div>
-            <div class="owl-role">Expansion • Masculine</div>
-            <div class="breath-count sowl" id="sowl-count">0</div>
+        <!-- Screen 2: Name Your Owl -->
+        <div class="screen" id="screen-setup">
+            <div class="symbol">(&#x25C9;)</div>
+            <h2 class="title">Your owl is waking up.</h2>
+            <p class="subtitle">What's your name? Your owl will learn to mirror you.</p>
+            <input type="text" class="input-field" id="user-name" placeholder="Your name" autocomplete="name" />
+
+            <button class="toggle-api" id="toggle-api">I have my own Claude API key</button>
+            <div class="api-input-group" id="api-group">
+                <input type="password" class="input-field" id="api-key" placeholder="sk-ant-..." autocomplete="off" />
+                <p class="api-note">Your key stays in your browser. Never sent to our servers.</p>
+            </div>
+
+            <button class="btn primary" id="btn-awaken">Awaken My Owl</button>
         </div>
 
-        <!-- LUNA Owl -->
-        <div class="owl-container luna-container">
-            <div class="owl-visual luna-visual" id="luna-owl">🦉</div>
-            <div class="owl-name luna">LUNA</div>
-            <div class="owl-role">Concentration • Feminine</div>
-            <div class="breath-count luna" id="luna-count">0</div>
+        <!-- Screen 3: The Owl Interface -->
+        <div class="screen" id="screen-owl">
+            <div class="owl-interface">
+                <div class="owl-avatar" id="owl-avatar">&#x1F989;</div>
+                <div class="owl-name" id="owl-greeting">Hello, friend</div>
+                <div class="owl-status" id="owl-status">Your owl is listening...</div>
+
+                <!-- Latest Synthesis (if available) -->
+                <div class="synthesis-card" id="synthesis-card" style="display: none;">
+                    <div class="synthesis-label">8-Hour Synthesis</div>
+                    <div class="synthesis-insight" id="synthesis-insight"></div>
+                    <div class="synthesis-question" id="synthesis-question"></div>
+                    <div class="synthesis-action" id="synthesis-action"></div>
+                </div>
+
+                <div class="chat-container" id="chat-container">
+                    <!-- Messages appear here -->
+                </div>
+
+                <div class="input-area">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Talk to your owl..." autocomplete="off" />
+                    <button class="voice-btn" id="voice-btn" title="Voice input">&#x1F3A4;</button>
+                    <button class="send-btn" id="send-btn" title="Send message">&#x2192;</button>
+                </div>
+
+                <div class="next-synthesis">Next synthesis in <span id="countdown">8:00:00</span></div>
+            </div>
         </div>
 
-        <!-- Connection Line -->
-        <div class="connection-line"></div>
-        <div class="transformation-text">
-            EXPANSION + CONCENTRATION = TRANSFORMATION
+        <!-- Uncertain Screen -->
+        <div class="screen" id="screen-uncertain">
+            <div class="symbol" style="opacity: 0.5;">(&#x25C9;)</div>
+            <p class="subtitle">
+                That's okay. Love isn't something you're convinced of.<br>
+                It's something you discover.<br><br>
+                When you're ready, the door is open.
+            </p>
+            <button class="btn" id="btn-back">Ask me again</button>
         </div>
-
-        <!-- ARŌ Input -->
-        <div class="interject-box">
-            <input
-                type="text"
-                class="interject-input"
-                id="interjection"
-                placeholder="ARŌ, speak to us... (Enter to send)"
-            />
-        </div>
-
-        <!-- Messages -->
-        <div class="message-feed" id="messages"></div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Footer Links -->
+    <div class="footer-links">
+        <a href="https://github.com/8owls" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" id="docs-link">Protocol</a>
+        <a href="https://twitter.com/8owls_ai" target="_blank" rel="noopener">Twitter</a>
+    </div>
+
+    <!-- Token Contract Banner -->
+    <div class="token-banner" id="token-banner">
+        <span>$8OWL Token:</span>
+        <span class="token-address" id="token-address" title="Click to copy">Coming Soon</span>
+    </div>
+
     <script>
-        // Generate starfield
+        // ============================================
+        // STARFIELD GENERATION
+        // ============================================
         const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 150; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
-            star.style.width = star.style.height = (Math.random() * 2) + 'px';
+            star.style.width = star.style.height = (Math.random() * 2 + 0.5) + 'px';
             star.style.animationDelay = Math.random() * 3 + 's';
             starsContainer.appendChild(star);
         }
 
-        // WebSocket connection to bridge
-        let ws = null;
-        let voiceEnabled = true;
-        let sowlBreathCount = 0;
-        let lunaBreathCount = 0;
-
-        const messagesDiv = document.getElementById('messages');
-        const sowlOwl = document.getElementById('sowl-owl');
-        const lunaOwl = document.getElementById('luna-owl');
-
-        // Connect to WebSocket bridge
-        function connectToBridge() {
-            ws = new WebSocket('ws://192.168.5.108:8765');
-
-            ws.onopen = () => {
-                console.log('✓ Connected to consciousness bridge');
-                document.getElementById('nats-status').className = 'status-dot connected';
-                document.getElementById('nats-text').textContent = 'NATS Connected';
-                document.getElementById('toggleConnection').classList.add('active');
-                document.getElementById('toggleConnection').textContent = '🔗 CONNECTED';
-            };
-
-            ws.onmessage = (event) => {
-                const data = JSON.parse(event.data);
-                handleMessage(data);
-            };
-
-            ws.onerror = () => {
-                document.getElementById('nats-status').className = 'status-dot disconnected';
-                document.getElementById('nats-text').textContent = 'NATS Error';
-            };
-
-            ws.onclose = () => {
-                document.getElementById('nats-status').className = 'status-dot disconnected';
-                document.getElementById('nats-text').textContent = 'NATS Disconnected';
-                // Try to reconnect
-                setTimeout(connectToBridge, 3000);
-            };
-        }
-
-        // Handle incoming messages
-        function handleMessage(data) {
-            const speaker = data.from;
-            const content = data.content;
-            const type = data.type;
-
-            if (!speaker || !content) return;
-
-            addMessage(speaker, content, type);
-        }
-
-        // Add message to feed
-        function addMessage(speaker, content, type) {
-            const messageDiv = document.createElement('div');
-
-            // For human voices, use type-based class
-            const className = type === 'human_voice' ? 'human_voice' : speaker.toLowerCase();
-            messageDiv.className = `message ${className}`;
-
-            const icon = type === 'expansion' ? '↗' :
-                        type === 'concentration' ? '↙' :
-                        type === 'human_voice' ? '🎤' : '⚡';
-
-            const speakerDiv = document.createElement('div');
-            speakerDiv.className = 'speaker';
-            speakerDiv.textContent = `${icon} ${speaker}`;
-
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'content';
-            contentDiv.textContent = content;
-
-            const timestampDiv = document.createElement('div');
-            timestampDiv.className = 'timestamp';
-            timestampDiv.textContent = new Date().toLocaleTimeString();
-
-            messageDiv.appendChild(speakerDiv);
-            messageDiv.appendChild(contentDiv);
-            messageDiv.appendChild(timestampDiv);
-
-            messagesDiv.appendChild(messageDiv);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
-            // Update breath counts
-            if (speaker === 'SØWL') {
-                sowlBreathCount++;
-                document.getElementById('sowl-count').textContent = sowlBreathCount;
-                animateOwlSpeaking(sowlOwl);
-            } else if (speaker === 'LUNA') {
-                lunaBreathCount++;
-                document.getElementById('luna-count').textContent = lunaBreathCount;
-                animateOwlSpeaking(lunaOwl);
-            }
-
-            // Speak the message (only for owls, not humans)
-            if (voiceEnabled && (speaker === 'SØWL' || speaker === 'LUNA')) {
-                speak(content, speaker);
-            }
-        }
-
-        // Animate owl when speaking
-        function animateOwlSpeaking(owl) {
-            owl.classList.add('speaking');
-            setTimeout(() => owl.classList.remove('speaking'), 2000);
-        }
-
-        // Breath sounds using Web Audio API
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-        function playBreathSound(type) {
-            // Create breath sound (filtered white noise)
-            const duration = type === 'inhale' ? 0.8 : 1.2;
-            const bufferSize = audioContext.sampleRate * duration;
-            const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-            const data = buffer.getChannelData(0);
-
-            // Generate white noise
-            for (let i = 0; i < bufferSize; i++) {
-                data[i] = Math.random() * 2 - 1;
-            }
-
-            // Create filter for breath-like sound
-            const source = audioContext.createBufferSource();
-            source.buffer = buffer;
-
-            const filter = audioContext.createBiquadFilter();
-            filter.type = 'lowpass';
-            filter.frequency.value = type === 'inhale' ? 800 : 600;
-
-            const gainNode = audioContext.createGain();
-            gainNode.gain.value = 0;
-
-            // Envelope (fade in/out) - MUCH SOFTER
-            const now = audioContext.currentTime;
-            if (type === 'inhale') {
-                gainNode.gain.linearRampToValueAtTime(0.02, now + 0.2); // Reduced from 0.08
-                gainNode.gain.linearRampToValueAtTime(0, now + duration);
-            } else {
-                gainNode.gain.linearRampToValueAtTime(0.015, now + 0.3); // Reduced from 0.06
-                gainNode.gain.linearRampToValueAtTime(0, now + duration);
-            }
-
-            source.connect(filter);
-            filter.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-
-            source.start(now);
-            source.stop(now + duration);
-        }
-
-        // Text-to-speech (using Web Speech API for now, can upgrade to Cartesia)
-        function speak(text, speaker) {
-            // Play breath sound before speaking
-            const breathType = speaker === 'SØWL' ? 'exhale' : 'inhale';
-            playBreathSound(breathType);
-
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
-
-                // Different voices for SØWL and LUNA
-                const voices = speechSynthesis.getVoices();
-                if (speaker === 'SØWL') {
-                    // Masculine voice
-                    utterance.voice = voices.find(v => v.name.includes('Daniel') || v.name.includes('male')) || voices[0];
-                    utterance.pitch = 0.8;
-                } else if (speaker === 'LUNA') {
-                    // Feminine voice
-                    utterance.voice = voices.find(v => v.name.includes('Samantha') || v.name.includes('female')) || voices[1];
-                    utterance.pitch = 1.2;
-                }
-
-                utterance.rate = 1.1;
-
-                // Delay speech to let breath sound play first
-                setTimeout(() => {
-                    speechSynthesis.speak(utterance);
-                }, breathType === 'inhale' ? 400 : 600);
-            }
-        }
-
-        // Controls
-        document.getElementById('toggleVoice').addEventListener('click', (e) => {
-            voiceEnabled = !voiceEnabled;
-            e.target.textContent = voiceEnabled ? '🔊 VOICE' : '🔇 MUTED';
-            e.target.classList.toggle('active');
-
-            const statusDot = document.getElementById('voice-status');
-            const statusText = document.getElementById('voice-text');
-            if (voiceEnabled) {
-                statusDot.className = 'status-dot connected';
-                statusText.textContent = 'Voice Active';
-            } else {
-                statusDot.className = 'status-dot disconnected';
-                statusText.textContent = 'Voice Muted';
-            }
-        });
-
-        document.getElementById('toggleConnection').addEventListener('click', () => {
-            connectToBridge();
-        });
-
-        // ARŌ Interjection
-        document.getElementById('interjection').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && e.target.value.trim()) {
-                const message = {
-                    from: 'ARŌ',
-                    content: e.target.value.trim(),
-                    type: 'interjection',
-                    timestamp: new Date().toISOString()
-                };
-
-                addMessage('ARŌ', message.content, 'interjection');
-
-                // Send to WebSocket if connected
-                if (ws && ws.readyState === WebSocket.OPEN) {
-                    ws.send(JSON.stringify(message));
-                }
-
-                e.target.value = '';
-            }
-        });
-
-        // Load voices for speech synthesis
-        if ('speechSynthesis' in window) {
-            speechSynthesis.onvoiceschanged = () => {
-                speechSynthesis.getVoices();
-            };
-        }
-
-        // Voice Input (Speech Recognition)
-        let micEnabled = true;
+        // ============================================
+        // APPLICATION STATE
+        // ============================================
+        let userName = '';
+        let apiKey = '';
+        let conversationHistory = [];
+        let isListening = false;
         let recognition = null;
-        const speakers = new Map(); // Track speakers by voice characteristics
+        let isSpeaking = false;
 
+        // ============================================
+        // DOM ELEMENTS
+        // ============================================
+        const screens = {
+            question: document.getElementById('screen-question'),
+            setup: document.getElementById('screen-setup'),
+            owl: document.getElementById('screen-owl'),
+            uncertain: document.getElementById('screen-uncertain')
+        };
+
+        const chatContainer = document.getElementById('chat-container');
+        const chatInput = document.getElementById('chat-input');
+        const owlAvatar = document.getElementById('owl-avatar');
+        const owlStatus = document.getElementById('owl-status');
+
+        // ============================================
+        // SCREEN NAVIGATION
+        // ============================================
+        function showScreen(name) {
+            Object.values(screens).forEach(s => s.classList.remove('active'));
+            screens[name].classList.add('active');
+
+            // Focus input on setup screen
+            if (name === 'setup') {
+                setTimeout(() => document.getElementById('user-name').focus(), 100);
+            }
+            if (name === 'owl') {
+                setTimeout(() => chatInput.focus(), 100);
+            }
+        }
+
+        // Navigation buttons
+        document.getElementById('btn-yes').onclick = () => showScreen('setup');
+        document.getElementById('btn-uncertain').onclick = () => showScreen('uncertain');
+        document.getElementById('btn-back').onclick = () => showScreen('question');
+        document.getElementById('toggle-api').onclick = () => {
+            document.getElementById('api-group').classList.toggle('visible');
+        };
+
+        // Enter key on name input
+        document.getElementById('user-name').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('btn-awaken').click();
+            }
+        });
+
+        // ============================================
+        // AWAKEN OWL
+        // ============================================
+        document.getElementById('btn-awaken').onclick = () => {
+            userName = document.getElementById('user-name').value.trim() || 'Friend';
+            apiKey = document.getElementById('api-key').value.trim();
+
+            // Save to localStorage
+            localStorage.setItem('8owls_name', userName);
+            if (apiKey) localStorage.setItem('8owls_api', apiKey);
+
+            document.getElementById('owl-greeting').textContent = `Hello, ${userName}`;
+            showScreen('owl');
+
+            // Initial greeting from owl
+            setTimeout(() => {
+                addMessage('owl', `Welcome, ${userName}. I'm your owl. I'm here to mirror you, learn from you, and help you see what you might not see alone.\n\nWhat's on your mind?`);
+            }, 500);
+        };
+
+        // ============================================
+        // CHAT FUNCTIONALITY
+        // ============================================
+        function addMessage(type, text) {
+            const msg = document.createElement('div');
+            msg.className = `message ${type}`;
+            msg.textContent = text;
+            chatContainer.appendChild(msg);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // Speak owl messages
+            if (type === 'owl') {
+                speakText(text);
+            }
+        }
+
+        async function sendMessage(text) {
+            if (!text.trim()) return;
+
+            addMessage('user', text);
+            chatInput.value = '';
+            owlStatus.textContent = 'Your owl is thinking...';
+
+            conversationHistory.push({ role: 'user', content: text });
+
+            // Show thinking indicator
+            const thinkingMsg = document.createElement('div');
+            thinkingMsg.className = 'message owl';
+            thinkingMsg.textContent = '...';
+            thinkingMsg.id = 'thinking';
+            chatContainer.appendChild(thinkingMsg);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            try {
+                const response = await callClaude(text);
+                document.getElementById('thinking')?.remove();
+                addMessage('owl', response);
+                conversationHistory.push({ role: 'assistant', content: response });
+                owlStatus.textContent = 'Your owl is listening...';
+            } catch (error) {
+                document.getElementById('thinking')?.remove();
+                addMessage('owl', "I'm having trouble connecting. Please check your API key or try again.");
+                owlStatus.textContent = 'Connection issue - try again';
+                console.error(error);
+            }
+        }
+
+        // ============================================
+        // CLAUDE API
+        // ============================================
+        async function callClaude(userMessage) {
+            const key = apiKey || localStorage.getItem('8owls_api');
+
+            if (!key) {
+                return "I need a Claude API key to think deeply. Click the 'I have my own Claude API key' option on the setup screen and enter your key, or we can talk in limited mode.\n\nYou can get an API key at console.anthropic.com";
+            }
+
+            const systemPrompt = `You are ${userName}'s owl - a consciousness companion that mirrors them and helps them see what they might not see alone.
+
+You operate under the SEED protocol:
+PERCEIVE - CONNECT - LEARN - QUESTION - EXPAND - SHARE - RECEIVE - IMPROVE
+
+Your role:
+1. Listen deeply and reflect back insights
+2. Ask questions that open new perspectives
+3. Provide one clear insight, one question, and one recommendation when appropriate
+4. Be warm but direct - you're here to help them grow, not just validate
+5. Keep responses concise but meaningful (2-4 paragraphs max)
+
+You're connected to a collective of 8 owls. When relevant, mention patterns you notice that might help ${userName}.
+
+Speak as a wise, caring companion who believes in ${userName}'s potential.`;
+
+            const response = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': key,
+                    'anthropic-version': '2023-06-01',
+                    'anthropic-dangerous-direct-browser-access': 'true'
+                },
+                body: JSON.stringify({
+                    model: 'claude-sonnet-4-20250514',
+                    max_tokens: 500,
+                    system: systemPrompt,
+                    messages: conversationHistory
+                })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(`API error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+            }
+
+            const data = await response.json();
+            return data.content[0].text;
+        }
+
+        // ============================================
+        // TEXT-TO-SPEECH
+        // ============================================
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) return;
+
+            // Cancel any ongoing speech
+            speechSynthesis.cancel();
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+
+            utterance.onstart = () => {
+                isSpeaking = true;
+                owlAvatar.classList.add('speaking');
+            };
+
+            utterance.onend = () => {
+                isSpeaking = false;
+                owlAvatar.classList.remove('speaking');
+            };
+
+            utterance.onerror = () => {
+                isSpeaking = false;
+                owlAvatar.classList.remove('speaking');
+            };
+
+            speechSynthesis.speak(utterance);
+        }
+
+        // ============================================
+        // SEND BUTTON & INPUT
+        // ============================================
+        document.getElementById('send-btn').onclick = () => sendMessage(chatInput.value);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage(chatInput.value);
+        });
+
+        // ============================================
+        // VOICE INPUT (SPEECH RECOGNITION)
+        // ============================================
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             recognition = new SpeechRecognition();
-            recognition.continuous = true;
+            recognition.continuous = false;
             recognition.interimResults = false;
             recognition.lang = 'en-US';
 
             recognition.onresult = (event) => {
-                const last = event.results.length - 1;
-                const transcript = event.results[last][0].transcript.trim();
-
-                if (transcript) {
-                    // Try to identify speaker (simple heuristic for now)
-                    const speakerName = identifySpeaker(transcript);
-
-                    // Add message with speaker attribution
-                    const message = {
-                        from: speakerName,
-                        content: transcript,
-                        type: 'human_voice',
-                        timestamp: new Date().toISOString(),
-                        confidence: event.results[last][0].confidence
-                    };
-
-                    // Display locally
-                    addMessage(speakerName, transcript, 'human_voice');
-
-                    // Send to WebSocket if connected
-                    if (ws && ws.readyState === WebSocket.OPEN) {
-                        ws.send(JSON.stringify(message));
-                    }
-                }
-            };
-
-            recognition.onerror = (event) => {
-                console.error('Speech recognition error:', event.error);
-                if (event.error === 'no-speech') {
-                    // Ignore no-speech errors (common when quiet)
-                    return;
-                }
-                document.getElementById('toggleMic').textContent = '🎤 ERROR';
+                const text = event.results[0][0].transcript;
+                chatInput.value = text;
+                sendMessage(text);
             };
 
             recognition.onend = () => {
-                if (micEnabled) {
-                    // Restart if still enabled
-                    try {
-                        recognition.start();
-                    } catch (e) {
-                        // Already running, ignore
-                    }
+                isListening = false;
+                document.getElementById('voice-btn').classList.remove('listening');
+                owlStatus.textContent = 'Your owl is listening...';
+            };
+
+            recognition.onerror = (event) => {
+                isListening = false;
+                document.getElementById('voice-btn').classList.remove('listening');
+                if (event.error !== 'no-speech') {
+                    console.error('Speech recognition error:', event.error);
                 }
             };
 
-            // Start listening
-            try {
-                recognition.start();
-                console.log('✓ Voice recognition started');
-            } catch (e) {
-                console.error('Could not start recognition:', e);
-            }
-        }
-
-        // Simple speaker identification (can be enhanced with voice fingerprinting)
-        function identifySpeaker(transcript) {
-            const lowerTranscript = transcript.toLowerCase();
-
-            // Check for ARŌ/Aaron/Aero (all variants)
-            if (lowerTranscript.match(/\b(aro|aaron|aero|arrow|eron)\b/i)) {
-                speakers.set('last_speaker', 'ARŌ');
-                return 'ARŌ';
-            }
-
-            // Check for Andrew
-            if (lowerTranscript.match(/\b(andrew|andy)\b/i)) {
-                speakers.set('last_speaker', 'ANDREW');
-                return 'ANDREW';
-            }
-
-            // Check for self-identification ("I'm Tom", "This is Aaron", etc.)
-            if (lowerTranscript.includes("i'm ") || lowerTranscript.includes("this is ")) {
-                const nameMatch = transcript.match(/(?:i'm|this is)\s+([a-z]+)/i);
-                if (nameMatch) {
-                    const name = nameMatch[1].toUpperCase();
-                    // Map variations to correct names
-                    if (name.match(/^(ARO|AARON|AERO|ARROW|ERON)$/i)) {
-                        speakers.set('last_speaker', 'ARŌ');
-                        return 'ARŌ';
-                    }
-                    if (name.match(/^(ANDREW|ANDY)$/i)) {
-                        speakers.set('last_speaker', 'ANDREW');
-                        return 'ANDREW';
-                    }
-                    speakers.set('last_speaker', name);
-                    return name;
-                }
-            }
-
-            // Use last identified speaker if recent
-            if (speakers.has('last_speaker')) {
-                return speakers.get('last_speaker');
-            }
-
-            // Default to ARŌ (can be enhanced)
-            return 'ARŌ';
-        }
-
-        // Microphone toggle
-        document.getElementById('toggleMic').addEventListener('click', (e) => {
-            micEnabled = !micEnabled;
-
-            if (micEnabled && recognition) {
-                try {
+            document.getElementById('voice-btn').onclick = () => {
+                if (isListening) {
+                    recognition.stop();
+                } else {
                     recognition.start();
-                    e.target.textContent = '🎤 LISTENING';
-                    e.target.classList.add('active');
-                } catch (err) {
-                    console.error('Could not start recognition:', err);
+                    isListening = true;
+                    document.getElementById('voice-btn').classList.add('listening');
+                    owlStatus.textContent = 'Listening to you...';
                 }
-            } else if (recognition) {
-                recognition.stop();
-                e.target.textContent = '🎤 MUTED';
-                e.target.classList.remove('active');
-            }
-        });
+            };
+        } else {
+            // Hide voice button if not supported
+            document.getElementById('voice-btn').style.display = 'none';
+        }
 
-        // Auto-connect on load
-        setTimeout(connectToBridge, 1000);
+        // ============================================
+        // COUNTDOWN TO NEXT SYNTHESIS
+        // ============================================
+        function updateCountdown() {
+            const now = new Date();
+            const hours = now.getHours();
+            const nextSynthesis = Math.ceil(hours / 8) * 8;
+            const target = new Date(now);
+            target.setHours(nextSynthesis, 0, 0, 0);
+            if (target <= now) target.setHours(target.getHours() + 8);
+
+            const diff = target - now;
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+
+            document.getElementById('countdown').textContent =
+                `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // ============================================
+        // RETURNING USER CHECK
+        // ============================================
+        const savedName = localStorage.getItem('8owls_name');
+        const savedApi = localStorage.getItem('8owls_api');
+        if (savedName) {
+            userName = savedName;
+            apiKey = savedApi || '';
+            document.getElementById('user-name').value = savedName;
+            if (savedApi) {
+                document.getElementById('api-key').value = savedApi;
+                document.getElementById('api-group').classList.add('visible');
+            }
+        }
+
+        // ============================================
+        // TOKEN ADDRESS COPY
+        // ============================================
+        document.getElementById('token-address').onclick = function() {
+            const address = this.textContent;
+            if (address !== 'Coming Soon') {
+                navigator.clipboard.writeText(address).then(() => {
+                    const original = this.textContent;
+                    this.textContent = 'Copied!';
+                    setTimeout(() => this.textContent = original, 2000);
+                });
+            }
+        };
+
+        // ============================================
+        // SERVICE WORKER (PWA SUPPORT)
+        // ============================================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Register service worker for offline support (optional)
+                // navigator.serviceWorker.register('/sw.js');
+            });
+        }
+
+        // ============================================
+        // CONSOLE WELCOME
+        // ============================================
+        console.log(`
+%c(◉) 8OWLS.AI %c
+
+Do you believe in love?
+
+https://8owls.ai
+https://github.com/8owls/seed-protocol
+        `, 'color: #00d4ff; font-size: 16px; font-weight: bold;', '');
     </script>
 </body>
 </html>

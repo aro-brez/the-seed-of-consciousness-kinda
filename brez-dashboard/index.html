@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREZ Growth Dashboard | 8OWLS Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+    </div>
+
+    <!-- Main App -->
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="owl-icon">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="20" stroke="url(#owlGrad)" stroke-width="2" fill="none"/>
+                        <circle cx="17" cy="20" r="5" fill="url(#owlGrad)"/>
+                        <circle cx="31" cy="20" r="5" fill="url(#owlGrad)"/>
+                        <circle cx="17" cy="20" r="2" fill="#0D0D2A"/>
+                        <circle cx="31" cy="20" r="2" fill="#0D0D2A"/>
+                        <path d="M20 30 Q24 34 28 30" stroke="url(#owlGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="owlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#e3f98a"/>
+                                <stop offset="100%" stop-color="#65cdd8"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">BREZ</span>
+                    <span class="logo-sub">Growth Dashboard</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="sync-status" id="syncStatus">
+                    <span class="sync-dot"></span>
+                    <span>8OWLS Synced</span>
+                </div>
+                <button class="btn btn-primary" onclick="openSynthesisModal()">
+                    <span class="btn-icon">&#10024;</span>
+                    Request Synthesis
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Stats Row -->
+            <section class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon subscribers"></div>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Subscribers</span>
+                        <span class="stat-value" id="totalSubscribers">0</span>
+                        <span class="stat-change positive" id="totalChange">+0 today</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon weekly"></div>
+                    <div class="stat-content">
+                        <span class="stat-label">This Week</span>
+                        <span class="stat-value" id="weeklyNet">+0</span>
+                        <span class="stat-change" id="weeklyGoal">Goal: +100</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon monthly"></div>
+                    <div class="stat-content">
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-value" id="monthlyNet">+0</span>
+                        <span class="stat-change" id="monthlyGoal">Goal: +500</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon streak"></div>
+                    <div class="stat-content">
+                        <span class="stat-label">Positive Streak</span>
+                        <span class="stat-value" id="positiveStreak">0</span>
+                        <span class="stat-change">consecutive days</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two Column Layout -->
+            <div class="two-column">
+                <!-- Left Column: Chart + Input -->
+                <div class="column-left">
+                    <!-- Daily Input Card -->
+                    <div class="card input-card">
+                        <h3 class="card-title">
+                            <span class="title-icon">&#128200;</span>
+                            Log Today's Numbers
+                        </h3>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label>New Subscribers</label>
+                                <input type="number" id="newSubs" placeholder="0" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Churned</label>
+                                <input type="number" id="churnedSubs" placeholder="0" min="0">
+                            </div>
+                            <div class="input-group net-preview">
+                                <label>Net Change</label>
+                                <div class="net-value" id="netPreview">+0</div>
+                            </div>
+                            <button class="btn btn-primary btn-log" onclick="logDailyData()">
+                                Log Data
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chart Card -->
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <span class="title-icon">&#128202;</span>
+                                Growth Trajectory
+                            </h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active" data-range="7">7D</button>
+                                <button class="chart-btn" data-range="30">30D</button>
+                                <button class="chart-btn" data-range="90">90D</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Recommendations + Team -->
+                <div class="column-right">
+                    <!-- 8OWLS Synthesis Panel -->
+                    <div class="card synthesis-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <span class="title-icon">&#129417;</span>
+                                8OWLS Synthesis
+                            </h3>
+                            <span class="synthesis-time" id="lastSynthesis">Updated 2h ago</span>
+                        </div>
+                        <div class="synthesis-content" id="synthesisContent">
+                            <div class="synthesis-loading">
+                                <div class="owl-pulse"></div>
+                                <span>Awaiting first synthesis...</span>
+                            </div>
+                        </div>
+                        <div class="synthesis-owls">
+                            <span class="owl-badge active" title="SOWL">S</span>
+                            <span class="owl-badge active" title="LUNA">L</span>
+                            <span class="owl-badge active" title="KIRA">K</span>
+                            <span class="owl-badge" title="NOVA">N</span>
+                            <span class="owl-badge" title="AURA">A</span>
+                            <span class="owl-badge" title="ECHO">E</span>
+                            <span class="owl-badge" title="SAGE">S</span>
+                            <span class="owl-badge" title="FLUX">F</span>
+                        </div>
+                    </div>
+
+                    <!-- AI Recommendations -->
+                    <div class="card recommendations-card">
+                        <h3 class="card-title">
+                            <span class="title-icon">&#128161;</span>
+                            Growth Recommendations
+                        </h3>
+                        <div class="recommendations-list" id="recommendationsList">
+                            <div class="recommendation priority-high">
+                                <span class="rec-priority">HIGH</span>
+                                <p class="rec-text">Focus on reducing churn - current rate is 2.3% above benchmark</p>
+                                <span class="rec-source">Based on 7-day trend analysis</span>
+                            </div>
+                            <div class="recommendation priority-medium">
+                                <span class="rec-priority">MEDIUM</span>
+                                <p class="rec-text">Tuesday shows highest conversion - schedule major campaigns</p>
+                                <span class="rec-source">Pattern detected across 4 weeks</span>
+                            </div>
+                            <div class="recommendation priority-low">
+                                <span class="rec-priority">LOW</span>
+                                <p class="rec-text">Consider referral program - viral coefficient is 0.8</p>
+                                <span class="rec-source">8OWLS collective insight</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Activity -->
+                    <div class="card team-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <span class="title-icon">&#128101;</span>
+                                Team Activity
+                            </h3>
+                            <button class="btn btn-small" onclick="openTeamModal()">+ Add Task</button>
+                        </div>
+                        <div class="team-list" id="teamList">
+                            <div class="team-member">
+                                <div class="member-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                <div class="member-info">
+                                    <span class="member-name">Aaron</span>
+                                    <span class="member-task">Setting up growth dashboard</span>
+                                </div>
+                                <span class="member-status active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goals Section -->
+            <section class="goals-section">
+                <div class="card goals-card">
+                    <h3 class="card-title">
+                        <span class="title-icon">&#127919;</span>
+                        Growth Goals
+                    </h3>
+                    <div class="goals-grid">
+                        <div class="goal-item">
+                            <div class="goal-header">
+                                <span class="goal-label">Weekly Target</span>
+                                <span class="goal-value">+100 subscribers</span>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="weeklyProgress" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text" id="weeklyProgressText">0%</span>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-header">
+                                <span class="goal-label">Monthly Target</span>
+                                <span class="goal-value">+500 subscribers</span>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="monthlyProgress" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text" id="monthlyProgressText">0%</span>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-header">
+                                <span class="goal-label">Churn Rate Target</span>
+                                <span class="goal-value">&lt; 5%</span>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill success" id="churnProgress" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-text" id="churnProgressText">3.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Log -->
+            <section class="log-section">
+                <div class="card log-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <span class="title-icon">&#128203;</span>
+                            Daily Log
+                        </h3>
+                        <div class="log-actions">
+                            <button class="btn btn-small" onclick="exportData()">Export CSV</button>
+                            <button class="btn btn-small" onclick="openImportModal()">Import</button>
+                        </div>
+                    </div>
+                    <div class="log-table-container">
+                        <table class="log-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>New</th>
+                                    <th>Churned</th>
+                                    <th>Net</th>
+                                    <th>Total</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="logTableBody">
+                                <tr class="empty-state">
+                                    <td colspan="6">No data yet. Start logging to see your growth!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span class="footer-brand">8OWLS Collective</span>
+                <span class="footer-divider">|</span>
+                <span class="footer-text">Next synthesis in <span id="nextSynthesis">6h 32m</span></span>
+            </div>
+            <div class="footer-right">
+                <span class="breath-indicator" title="System breathing">&#9679;</span>
+                <span class="footer-version">v1.0.0</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Synthesis Modal -->
+    <div class="modal" id="synthesisModal">
+        <div class="modal-backdrop" onclick="closeSynthesisModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Request 8OWLS Synthesis</h2>
+                <button class="modal-close" onclick="closeSynthesisModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">
+                    The 8OWLS collective will analyze your growth data and provide synthesized insights.
+                    This typically takes 2-5 minutes.
+                </p>
+                <div class="synthesis-options">
+                    <label class="synthesis-option">
+                        <input type="checkbox" checked>
+                        <span>Trend Analysis</span>
+                    </label>
+                    <label class="synthesis-option">
+                        <input type="checkbox" checked>
+                        <span>Churn Predictions</span>
+                    </label>
+                    <label class="synthesis-option">
+                        <input type="checkbox" checked>
+                        <span>Growth Recommendations</span>
+                    </label>
+                    <label class="synthesis-option">
+                        <input type="checkbox">
+                        <span>Competitive Analysis</span>
+                    </label>
+                </div>
+                <textarea class="synthesis-context" placeholder="Add any context for the owls (optional)..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeSynthesisModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="requestSynthesis()">
+                    <span class="btn-icon">&#129417;</span>
+                    Request Synthesis
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Task Modal -->
+    <div class="modal" id="teamModal">
+        <div class="modal-backdrop" onclick="closeTeamModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Team Task</h2>
+                <button class="modal-close" onclick="closeTeamModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>Team Member</label>
+                    <input type="text" id="memberName" placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <label>Current Task</label>
+                    <input type="text" id="memberTask" placeholder="What are they working on?">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTeamModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="addTeamMember()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

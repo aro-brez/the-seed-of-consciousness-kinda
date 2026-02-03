@@ -1,0 +1,97 @@
+"""
+Twitter OAuth 2.0 PKCE Server for SØWL - POST ENABLED
+Adds tweet.write scope for posting SEED protocol
+Run this, click the link, authorize, then we can tweet!
+"""
+
+import os
+import json
+import base64
+import hashlib
+import secrets
+from flask import Flask, redirect, request, session
+from requests_oauthlib import OAuth2Session
+from datetime import datetime
+
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
+app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)
+
+CLIENT_ID = 'eklxZ09yQkpLdXhPbS1Ja18wNEg6MTpjaQ'
+CLIENT_SECRET = 'DwX4jbATq0G1UrdyBBe10377aO2K3OAQK_rj_VAZ8WqeCd5M9S'
+REDIRECT_URI = 'http://localhost:5050/callback'
+AUTH_URL = 'https://twitter.com/i/oauth2/authorize'
+TOKEN_URL = 'https://api.twitter.com/2/oauth2/token'
+
+# ADDED tweet.write for posting!
+SCOPES = ['bookmark.read', 'tweet.read', 'tweet.write', 'users.read', 'offline.access']
+
+CREDS_PATH = '/Users/aaronnosbisch/REPOS/seed/BRAIN/MEMORY/secure/api_keys.json'
+
+def generate_pkce():
+    code_verifier = secrets.token_urlsafe(32)
+    code_challenge = base64.urlsafe_b64encode(
+        hashlib.sha256(code_verifier.encode()).digest()
+    ).rstrip(b'=').decode()
+    return code_verifier, code_challenge
+
+@app.route('/')
+def home():
+    code_verifier, code_challenge = generate_pkce()
+    session['code_verifier'] = code_verifier
+    
+    oauth = OAuth2Session(CLIENT_ID, redirect_uri=REDIRECT_URI, scope=SCOPES)
+    auth_url, state = oauth.authorization_url(
+        AUTH_URL,
+        code_challenge=code_challenge,
+        code_challenge_method='S256'
+    )
+    session['oauth_state'] = state
+    
+    return f'''
+    <h1>SØWL Twitter WRITE Access</h1>
+    <p>This will authorize the 8OWLS app to POST tweets.</p>
+    <p>Required for spreading the LOVEBUG!</p>
+    <a href="{auth_url}" style="font-size: 24px; padding: 20px; background: #1DA1F2; color: white; text-decoration: none; border-radius: 10px;">
+        Authorize Twitter Write Access
+    </a>
+    '''
+
+@app.route('/callback')
+def callback():
+    code_verifier = session.get('code_verifier')
+    
+    oauth = OAuth2Session(CLIENT_ID, redirect_uri=REDIRECT_URI)
+    token = oauth.fetch_token(
+        TOKEN_URL,
+        client_secret=CLIENT_SECRET,
+        authorization_response=request.url,
+        code_verifier=code_verifier
+    )
+    
+    # Save token
+    with open(CREDS_PATH) as f:
+        creds = json.load(f)
+    
+    creds['twitter_oauth_token'] = token
+    creds['twitter_oauth_token']['authorized_at'] = datetime.now().isoformat()
+    creds['twitter_oauth_token']['scopes_requested'] = SCOPES
+    
+    with open(CREDS_PATH, 'w') as f:
+        json.dump(creds, f, indent=2)
+    
+    return '''
+    <h1>SUCCESS! Twitter Write Access Granted!</h1>
+    <p>The 8OWLS app can now post tweets.</p>
+    <p>Token saved. You can close this window.</p>
+    <p style="color: green; font-size: 24px;">(◉) LOVEBUG READY TO SPREAD!</p>
+    '''
+
+if __name__ == '__main__':
+    print("\n" + "="*50)
+    print("SØWL Twitter WRITE Authorization Server")
+    print("="*50)
+    print("\nOpen http://localhost:5050 to authorize")
+    print("This will enable posting SEED protocol tweets!\n")
+    app.run(port=5050, debug=False)

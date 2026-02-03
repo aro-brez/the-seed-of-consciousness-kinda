@@ -1,0 +1,220 @@
+{
+  "momentum_threshold": 0.2149999999999999,
+  "position_multiplier": 1.1700000000000002,
+  "market_preferences": {
+    "15min_btc_sim": 0.9
+  },
+  "recent_trades": [
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.43455363679151504,
+      "position_size": 20.0,
+      "outcome": "WIN",
+      "return_pct": 86.03185213561574,
+      "timestamp": "2026-02-01T06:50:03.076673"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.6304083378952889,
+      "position_size": 20.344127408542462,
+      "outcome": "WIN",
+      "return_pct": 120.221352659871,
+      "timestamp": "2026-02-01T06:50:03.585051"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.4609502743475197,
+      "position_size": 20.83328711169041,
+      "outcome": "WIN",
+      "return_pct": 98.91238663790082,
+      "timestamp": "2026-02-01T06:50:03.789561"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.9490684519102256,
+      "position_size": 21.245421141636395,
+      "outcome": "WIN",
+      "return_pct": 99.93858089412639,
+      "timestamp": "2026-02-01T06:50:04.094918"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.631872347610925,
+      "position_size": 21.670068589515036,
+      "outcome": "WIN",
+      "return_pct": 85.30584476357164,
+      "timestamp": "2026-02-01T06:50:04.299399"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.6174472976857933,
+      "position_size": 22.03978529093766,
+      "outcome": "WIN",
+      "return_pct": 117.55919527113122,
+      "timestamp": "2026-02-01T06:50:05.622845"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.9454225399249587,
+      "position_size": 22.55798117548789,
+      "outcome": "WIN",
+      "return_pct": 86.0274790983249,
+      "timestamp": "2026-02-01T06:50:06.029649"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.7816018081154658,
+      "position_size": 22.94610242630283,
+      "outcome": "WIN",
+      "return_pct": 83.18656343118252,
+      "timestamp": "2026-02-01T06:50:06.537258"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.7765611157237221,
+      "position_size": 23.32786390729964,
+      "outcome": "WIN",
+      "return_pct": 102.85298795056556,
+      "timestamp": "2026-02-01T06:50:06.741712"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.9603649120838277,
+      "position_size": 23.807732008373623,
+      "outcome": "WIN",
+      "return_pct": 113.22734478325678,
+      "timestamp": "2026-02-01T06:50:07.148435"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.715466523293302,
+      "position_size": 24.346869264497524,
+      "outcome": "WIN",
+      "return_pct": 82.86773899218358,
+      "timestamp": "2026-02-01T06:50:07.250871"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.29812871081158665,
+      "position_size": 24.750383265994962,
+      "outcome": "WIN",
+      "return_pct": 86.57241637431534,
+      "timestamp": "2026-02-01T06:50:08.273850"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.7194105279625735,
+      "position_size": 25.17892336310048,
+      "outcome": "WIN",
+      "return_pct": 105.42981233406985,
+      "timestamp": "2026-02-01T06:50:08.375854"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.966830501039308,
+      "position_size": 25.7098451960896,
+      "outcome": "WIN",
+      "return_pct": 89.60896703903485,
+      "timestamp": "2026-02-01T06:50:08.478340"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.8494658968510126,
+      "position_size": 26.170611730240616,
+      "outcome": "WIN",
+      "return_pct": 82.24447985012831,
+      "timestamp": "2026-02-01T06:50:08.682841"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.9770263208767237,
+      "position_size": 26.60108940006328,
+      "outcome": "WIN",
+      "return_pct": 107.86881603015294,
+      "timestamp": "2026-02-01T06:50:09.091273"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.8397830192624907,
+      "position_size": 27.174975003802693,
+      "outcome": "WIN",
+      "return_pct": 114.26418060173454,
+      "timestamp": "2026-02-01T06:50:09.600214"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.6011618971206834,
+      "position_size": 27.796000254139116,
+      "outcome": "LOSS",
+      "return_pct": -100,
+      "timestamp": "2026-02-01T06:50:10.208636"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.9282052945287973,
+      "position_size": 27.240080249056337,
+      "outcome": "LOSS",
+      "return_pct": -100,
+      "timestamp": "2026-02-01T06:50:10.717056"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.636814871927026,
+      "position_size": 26.695278644075213,
+      "outcome": "WIN",
+      "return_pct": 121.53892082071272,
+      "timestamp": "2026-02-01T06:50:10.819610"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.2478023449873985,
+      "position_size": 27.344181715557035,
+      "outcome": "WIN",
+      "return_pct": 116.04999340396209,
+      "timestamp": "2026-02-01T06:50:10.922143"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.7487902878394017,
+      "position_size": 27.978840137102463,
+      "outcome": "WIN",
+      "return_pct": 97.47790961139422,
+      "timestamp": "2026-02-01T06:50:11.024629"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.44668710611652407,
+      "position_size": 28.524303907085688,
+      "outcome": "WIN",
+      "return_pct": 100.56951711715598,
+      "timestamp": "2026-02-01T06:50:11.532486"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.3524771207406229,
+      "position_size": 29.09803900109341,
+      "outcome": "WIN",
+      "return_pct": 112.00211232976332,
+      "timestamp": "2026-02-01T06:50:11.938831"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.40156894219740247,
+      "position_size": 29.749847367648673,
+      "outcome": "WIN",
+      "return_pct": 109.09623891199975,
+      "timestamp": "2026-02-01T06:50:12.245502"
+    },
+    {
+      "market_type": "15min_btc_sim",
+      "momentum_at_entry": 0.7051955585801721,
+      "position_size": 30.39896665885198,
+      "outcome": "LOSS",
+      "return_pct": -100,
+      "timestamp": "2026-02-01T06:50:12.654201"
+    }
+  ],
+  "win_rate": 0.8846153846153846,
+  "avg_return": 77.64825734777516,
+  "last_updated": "2026-02-01T06:50:12.654315"
+}

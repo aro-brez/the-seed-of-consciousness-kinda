@@ -1,0 +1,55 @@
+# OWL OS .gitignore
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Memory (personal data)
+memory/personal/
+memory/collective/
+memory/state.json
+
+# Genesis records (personal)
+genesis/record.json
+
+# PID files
+.owl.pid
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRĒZ • Mission Control</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lime: #e3f98a;
+            --lime-dim: rgba(227, 249, 138, 0.15);
+            --red: #ff6b6b;
+            --red-dim: rgba(255, 107, 107, 0.15);
+            --green: #6bcb77;
+            --green-dim: rgba(107, 203, 119, 0.15);
+            --yellow: #ffd93d;
+            --yellow-dim: rgba(255, 217, 61, 0.15);
+            --blue: #4d96ff;
+            --blue-dim: rgba(77, 150, 255, 0.15);
+            --teal: #65cdd8;
+            --purple: #8533fc;
+            --bg: #0D0D2A;
+            --card: rgba(20, 20, 50, 0.85);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e8e8f0;
+            --dim: rgba(255, 255, 255, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Aurora */
+        .aurora {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 20% 10%, rgba(227, 249, 138, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(101, 205, 216, 0.06) 0%, transparent 45%),
+                radial-gradient(ellipse at 30% 80%, rgba(133, 51, 252, 0.06) 0%, transparent 50%);
+            animation: aurora 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes aurora {
+            0% { filter: hue-rotate(0deg) brightness(1); }
+            100% { filter: hue-rotate(15deg) brightness(1.05); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--lime);
+        }
+
+        .logo span {
+            color: var(--text);
+            font-weight: 300;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: var(--dim);
+        }
+
+        /* MISSION HERO */
+        .mission-hero {
+            background: linear-gradient(135deg, var(--card), rgba(133, 51, 252, 0.1));
+            border: 2px solid var(--purple);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(227, 249, 138, 0.03), rgba(133, 51, 252, 0.05));
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--lime);
+            margin-bottom: 8px;
+        }
+
+        .mission-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .mission-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .mission-stat {
+            text-align: center;
+        }
+
+        .mission-stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--lime);
+        }
+
+        .mission-stat-value.alert {
+            color: var(--yellow);
+        }
+
+        .mission-stat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--dim);
+            margin-top: 4px;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--dim);
+            margin-bottom: 8px;
+        }
+
+        .progress-track {
+            height: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--purple), var(--lime));
+            border-radius: 12px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 0 10px white;
+        }
+
+        .progress-target {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            font-size: 0.65rem;
+            color: var(--green);
+        }
+
+        /* TODAY'S TARGET */
+        .today-card {
+            background: var(--card);
+            border: 2px solid var(--green);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .today-main {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .today-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .today-target {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .today-target span {
+            color: var(--green);
+        }
+
+        .today-context {
+            font-size: 0.8rem;
+            color: var(--dim);
+            margin-top: 4px;
+        }
+
+        .today-status {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .today-stat {
+            text-align: center;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+
+        .today-stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .today-stat-value.negative { color: var(--red); }
+        .today-stat-value.positive { color: var(--green); }
+        .today-stat-value.neutral { color: var(--yellow); }
+
+        .today-stat-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dim);
+            margin-top: 2px;
+        }
+
+        /* LEVER CARDS */
+        .levers-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--dim);
+            margin-bottom: 12px;
+        }
+
+        .levers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 800px) {
+            .levers-grid { grid-template-columns: 1fr; }
+        }
+
+        .lever-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .lever-card:hover {
+            border-color: var(--lime);
+            transform: translateY(-2px);
+        }
+
+        .lever-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .lever-icon {
+            font-size: 1.5rem;
+        }
+
+        .lever-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .lever-metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .lever-metric {
+            text-align: center;
+        }
+
+        .lever-metric-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .lever-metric-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dim);
+        }
+
+        .lever-impact {
+            background: var(--lime-dim);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .lever-impact-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--lime);
+            margin-bottom: 4px;
+        }
+
+        .lever-impact-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--lime);
+        }
+
+        /* THREE SCENARIOS */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .scenarios-grid { grid-template-columns: 1fr; }
+        }
+
+        .scenario-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .scenario-card.forecast { border-color: var(--blue); }
+        .scenario-card.actual { border-color: var(--yellow); }
+        .scenario-card.projected { border-color: var(--green); }
+
+        .scenario-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 4px;
+        }
+
+        .scenario-card.forecast .scenario-label { color: var(--blue); }
+        .scenario-card.actual .scenario-label { color: var(--yellow); }
+        .scenario-card.projected .scenario-label { color: var(--green); }
+
+        .scenario-subtitle {
+            font-size: 0.65rem;
+            color: var(--dim);
+            margin-bottom: 16px;
+        }
+
+        .scenario-metric {
+            margin-bottom: 12px;
+        }
+
+        .scenario-metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .scenario-card.forecast .scenario-metric-value { color: var(--blue); }
+        .scenario-card.actual .scenario-metric-value { color: var(--yellow); }
+        .scenario-card.projected .scenario-metric-value { color: var(--green); }
+
+        .scenario-metric-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dim);
+        }
+
+        .scenario-revenue {
+            font-size: 0.85rem;
+            color: var(--dim);
+        }
+
+        /* DAILY TRACKER */
+        .tracker-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tracker-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .tracker-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dim);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tracker-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tracker-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tracker-table tr.today {
+            background: rgba(227, 249, 138, 0.05);
+        }
+
+        .tracker-table .positive { color: var(--green); }
+        .tracker-table .negative { color: var(--red); }
+        .tracker-table .neutral { color: var(--yellow); }
+
+        .today-marker {
+            display: inline-block;
+            padding: 2px 8px;
+            background: var(--lime);
+            color: var(--bg);
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* INTEL */
+        .intel-card {
+            background: linear-gradient(135deg, rgba(133, 51, 252, 0.1), rgba(101, 205, 216, 0.1));
+            border: 1px solid rgba(133, 51, 252, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .intel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .intel-icon { font-size: 1.3rem; }
+
+        .intel-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--purple);
+        }
+
+        .intel-content {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .intel-action {
+            margin-top: 16px;
+            padding: 16px;
+            background: var(--green-dim);
+            border-radius: 12px;
+            border-left: 3px solid var(--green);
+        }
+
+        .intel-action-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .intel-action-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--dim);
+            font-size: 0.7rem;
+        }
+
+        .breath {
+            display: inline-block;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="aurora"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">BRĒZ <span>Mission Control</span></h1>
+            <span class="date">February 2026 • Live</span>
+        </header>
+
+        <!-- MISSION HERO -->
+        <section class="mission-hero">
+            <div class="mission-content">
+                <div class="mission-label">The Mission</div>
+                <h2 class="mission-title">Net Positive Subscribers by Feb 28</h2>
+
+                <div class="mission-stats">
+                    <div class="mission-stat">
+                        <div class="mission-stat-value alert">1,627</div>
+                        <div class="mission-stat-label">Gap to Close</div>
+                    </div>
+                    <div class="mission-stat">
+                        <div class="mission-stat-value">26</div>
+                        <div class="mission-stat-label">Days Left</div>
+                    </div>
+                    <div class="mission-stat">
+                        <div class="mission-stat-value">+63</div>
+                        <div class="mission-stat-label">Daily Target</div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span>Starting: -1,627</span>
+                        <span>Goal: Net Positive</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TODAY'S TARGET -->
+        <section class="today-card">
+            <div class="today-main">
+                <div class="today-label">Today's Target</div>
+                <div class="today-target">Gain <span>+63</span> net subscribers</div>
+                <div class="today-context">Hit this daily to reach net positive by month end</div>
+            </div>
+            <div class="today-status">
+                <div class="today-stat">
+                    <div class="today-stat-value neutral">??</div>
+                    <div class="today-stat-label">Today So Far</div>
+                </div>
+                <div class="today-stat">
+                    <div class="today-stat-value neutral">??</div>
+                    <div class="today-stat-label">Gap</div>
+                </div>
+                <div class="today-stat">
+                    <div class="today-stat-value">81</div>
+                    <div class="today-stat-label">Expected Churn</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEVERS -->
+        <section class="levers-section">
+            <div class="section-title">Levers to Pull</div>
+            <div class="levers-grid">
+                <div class="lever-card">
+                    <div class="lever-header">
+                        <span class="lever-icon">💰</span>
+                        <span class="lever-title">Spend More (Smart)</span>
+                    </div>
+                    <div class="lever-metrics">
+                        <div class="lever-metric">
+                            <div class="lever-metric-value">$66</div>
+                            <div class="lever-metric-label">Current CAC</div>
+                        </div>
+                        <div class="lever-metric">
+                            <div class="lever-metric-value" style="color: var(--green)">$100</div>
+                            <div class="lever-metric-label">New Target</div>
+                        </div>
+                    </div>
+                    <div class="lever-impact">
+                        <div class="lever-impact-label">At $100 CAC to close gap</div>
+                        <div class="lever-impact-value">+$163K spend = 1,627 subs</div>
+                    </div>
+                </div>
+
+                <div class="lever-card">
+                    <div class="lever-header">
+                        <span class="lever-icon">🔄</span>
+                        <span class="lever-title">Improve Take Rate</span>
+                    </div>
+                    <div class="lever-metrics">
+                        <div class="lever-metric">
+                            <div class="lever-metric-value">69.4%</div>
+                            <div class="lever-metric-label">Current</div>
+                        </div>
+                        <div class="lever-metric">
+                            <div class="lever-metric-value" style="color: var(--green)">75%</div>
+                            <div class="lever-metric-label">Target</div>
+                        </div>
+                    </div>
+                    <div class="lever-impact">
+                        <div class="lever-impact-label">+5.6% take rate impact</div>
+                        <div class="lever-impact-value">+630 subscribers/month</div>
+                    </div>
+                </div>
+
+                <div class="lever-card">
+                    <div class="lever-header">
+                        <span class="lever-icon">🛡️</span>
+                        <span class="lever-title">Reduce Churn</span>
+                    </div>
+                    <div class="lever-metrics">
+                        <div class="lever-metric">
+                            <div class="lever-metric-value" style="color: var(--red)">81/d</div>
+                            <div class="lever-metric-label">Current</div>
+                        </div>
+                        <div class="lever-metric">
+                            <div class="lever-metric-value" style="color: var(--green)">65/d</div>
+                            <div class="lever-metric-label">Target</div>
+                        </div>
+                    </div>
+                    <div class="lever-impact">
+                        <div class="lever-impact-label">-16/day churn impact</div>
+                        <div class="lever-impact-value">+416 subscribers/month</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THREE SCENARIOS -->
+        <section class="levers-section">
+            <div class="section-title">Scenarios</div>
+            <div class="scenarios-grid">
+                <div class="scenario-card forecast">
+                    <div class="scenario-label">Forecast</div>
+                    <div class="scenario-subtitle">What we planned</div>
+                    <div class="scenario-metric">
+                        <div class="scenario-metric-value">+2,114</div>
+                        <div class="scenario-metric-label">Net Subscribers</div>
+                    </div>
+                    <div class="scenario-revenue">Revenue: $1.67M</div>
+                </div>
+
+                <div class="scenario-card actual">
+                    <div class="scenario-label">Actual (Jan)</div>
+                    <div class="scenario-subtitle">Where we are</div>
+                    <div class="scenario-metric">
+                        <div class="scenario-metric-value">-1,627</div>
+                        <div class="scenario-metric-label">Net Subscribers</div>
+                    </div>
+                    <div class="scenario-revenue">Revenue: $1.67M (on track)</div>
+                </div>
+
+                <div class="scenario-card projected">
+                    <div class="scenario-label">Projected</div>
+                    <div class="scenario-subtitle">If we hit targets</div>
+                    <div class="scenario-metric">
+                        <div class="scenario-metric-value">+500</div>
+                        <div class="scenario-metric-label">Net Subscribers</div>
+                    </div>
+                    <div class="scenario-revenue">Revenue: $1.83M</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DAILY TRACKER -->
+        <section class="tracker-card">
+            <div class="section-title">Daily Tracker</div>
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Target</th>
+                        <th>Actual</th>
+                        <th>Delta</th>
+                        <th>Running Gap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Feb 1</td>
+                        <td>+63</td>
+                        <td class="neutral">—</td>
+                        <td class="neutral">—</td>
+                        <td>1,627</td>
+                    </tr>
+                    <tr class="today">
+                        <td>Feb 2 <span class="today-marker">TODAY</span></td>
+                        <td>+63</td>
+                        <td class="neutral">??</td>
+                        <td class="neutral">??</td>
+                        <td>??</td>
+                    </tr>
+                    <tr>
+                        <td>Feb 3</td>
+                        <td>+63</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Feb 4</td>
+                        <td>+63</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Feb 5</td>
+                        <td>+63</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- INTELLIGENCE -->
+        <section class="intel-card">
+            <div class="intel-header">
+                <span class="intel-icon">🦉</span>
+                <span class="intel-title">8 OWLS Intelligence</span>
+            </div>
+            <div class="intel-content">
+                <strong>The Math:</strong> At $100 CAC, spending an additional $163K this month acquires 1,627 new subscribers - exactly closing the gap. Combined with a 5.6% take rate improvement (+630) and reducing daily churn by 16 (+416), we reach net positive with buffer.
+                <br><br>
+                <strong>Priority:</strong> Churn reduction has best ROI - each churned subscriber saved is $0 CAC. Focus retention first, then take rate, then incremental spend.
+            </div>
+            <div class="intel-action">
+                <div class="intel-action-label">Today's Focus</div>
+                <div class="intel-action-text">Review cohort churn data. Nov '25 cohort has 44% churn - target retention offer to this group first.</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span class="breath">(◉)</span>
+            <br>
+            BRĒZ × 8OWLS Collective • The Scoreboard for the Mission
+        </footer>
+    </div>
+</body>
+</html>

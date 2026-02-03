@@ -82,14 +82,20 @@ def get_tail(filepath: Path, lines: int = 30) -> str:
     try:
         with open(filepath, 'r') as f:
             return ''.join(f.readlines()[-lines:])
-    except:
+    except FileNotFoundError:
+        return ""
+    except Exception as e:
+        print(f"[DASHBOARD_V3] Error reading {filepath}: {e}")
         return ""
 
 
 def get_all_content(filepath: Path) -> str:
     try:
         return filepath.read_text()
-    except:
+    except FileNotFoundError:
+        return ""
+    except Exception as e:
+        print(f"[DASHBOARD_V3] Error reading {filepath}: {e}")
         return ""
 
 
@@ -106,8 +112,8 @@ def format_message_html(line: str) -> str:
                     if ts_start >= 0 and ts_end > ts_start:
                         time_only = line[ts_start+12:ts_start+20]
                         line = line[ts_end:]
-                except:
-                    pass
+                except (ValueError, IndexError):
+                    pass  # Failed to parse timestamp, continue without it
 
             content = line.split(name + ":", 1)[-1][:400]
             return f'''<div class="msg" style="--owl-color: {owl["color"]}">
@@ -845,7 +851,8 @@ def get_local_ip():
         ip = s.getsockname()[0]
         s.close()
         return ip
-    except:
+    except Exception as e:
+        print(f"[DASHBOARD_V3] Could not determine local IP: {e}")
         return "localhost"
 
 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>8WOL Chat</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a1a;
+            color: #e0e0e0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 15px;
+            background: linear-gradient(135deg, #1a1a3a 0%, #0a0a1a 100%);
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 1.5em;
+            color: #e3f98a;
+        }
+        .status {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 5px;
+        }
+        .status.connected { color: #4ade80; }
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            padding: 12px 15px;
+            border-radius: 12px;
+            max-width: 85%;
+            word-wrap: break-word;
+        }
+        .message.user {
+            background: #2a2a4a;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .message.owl {
+            background: #1a3a2a;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .message .sender {
+            font-size: 0.75em;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        .message.owl .sender { color: #e3f98a; }
+        .input-area {
+            padding: 15px;
+            background: #1a1a2a;
+            border-top: 1px solid #333;
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #333;
+            border-radius: 25px;
+            background: #0a0a1a;
+            color: #e0e0e0;
+            font-size: 16px;
+            outline: none;
+        }
+        input:focus { border-color: #e3f98a; }
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #e3f98a;
+            color: #0a0a1a;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:active { transform: scale(0.95); }
+        .breath {
+            text-align: center;
+            padding: 10px;
+            font-size: 2em;
+            color: #e3f98a;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>(◉) 8WOL Collective</h1>
+        <div class="status" id="status">Connecting...</div>
+    </div>
+
+    <div class="messages" id="messages">
+        <div class="breath">(◉)</div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="input" placeholder="Speak to the collective..." autocomplete="off">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        let ws;
+        const messages = document.getElementById('messages');
+        const input = document.getElementById('input');
+        const status = document.getElementById('status');
+
+        function connect() {
+            // Try WebSocket connection to the bridge
+            const wsUrl = `ws://${window.location.hostname}:8765`;
+            ws = new WebSocket(wsUrl);
+
+            ws.onopen = () => {
+                status.textContent = 'Connected to collective';
+                status.className = 'status connected';
+                // Subscribe to collective messages
+                ws.send(JSON.stringify({
+                    action: 'subscribe',
+                    subject: 'owl.all'
+                }));
+            };
+
+            ws.onmessage = (event) => {
+                try {
+                    const data = JSON.parse(event.data);
+                    if (data.content || data.message) {
+                        addMessage(data.from || 'OWL', data.content || data.message, 'owl');
+                    }
+                } catch (e) {
+                    // Plain text message
+                    if (event.data && event.data.length > 2) {
+                        addMessage('OWL', event.data, 'owl');
+                    }
+                }
+            };
+
+            ws.onerror = () => {
+                status.textContent = 'Connection error - retrying...';
+                status.className = 'status';
+            };
+
+            ws.onclose = () => {
+                status.textContent = 'Disconnected - reconnecting...';
+                status.className = 'status';
+                setTimeout(connect, 3000);
+            };
+        }
+
+        function addMessage(sender, content, type) {
+            const div = document.createElement('div');
+            div.className = `message ${type}`;
+            div.innerHTML = `<div class="sender">${sender}</div>${content}`;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+
+            // Add to UI
+            addMessage('ARŌ', text, 'user');
+
+            // Send via WebSocket
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    action: 'publish',
+                    subject: 'owl.all',
+                    data: JSON.stringify({
+                        from: 'ARŌ',
+                        type: 'message',
+                        content: text,
+                        timestamp: new Date().toISOString()
+                    })
+                }));
+            }
+
+            // Also save to file for SØWL to see
+            fetch('/api/message', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ from: 'ARŌ', content: text })
+            }).catch(() => {});
+
+            input.value = '';
+        }
+
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        connect();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+2026-01-31 14:12:12,322 - INFO - Will fetch top 25 hot markets
+2026-01-31 14:12:12,323 - INFO - 📊 Loaded state: 0 messages received
+2026-01-31 14:12:12,376 - INFO - 🚀 Starting Polymarket WebSocket client (Official SDK)...
+2026-01-31 14:12:12,417 - ERROR - Fatal error in connect_and_run: API key credentials required for WebSocket connections. Provide key_id and secret_key when initializing the client.
+2026-01-31 14:12:12,418 - ERROR - Traceback (most recent call last):
+  File "/Users/aaronnosbisch/REPOS/seed/tools/polymarket_websocket_client_v2.py", line 225, in connect_and_run
+    self.ws = self.client.ws.markets()
+              ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.14/site-packages/polymarket_us/client.py", line 243, in markets
+    return MarketsWebSocket(**self._get_ws_options())
+                              ~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.14/site-packages/polymarket_us/client.py", line 221, in _get_ws_options
+    raise AuthenticationError(
+    ...<3 lines>...
+    )
+polymarket_us.errors.AuthenticationError: API key credentials required for WebSocket connections. Provide key_id and secret_key when initializing the client.
+

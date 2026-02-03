@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRĒZ • Growth Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lime: #e3f98a;
+            --lime-dim: rgba(227, 249, 138, 0.15);
+            --red: #ff6b6b;
+            --red-dim: rgba(255, 107, 107, 0.15);
+            --green: #6bcb77;
+            --green-dim: rgba(107, 203, 119, 0.15);
+            --yellow: #ffd93d;
+            --yellow-dim: rgba(255, 217, 61, 0.15);
+            --blue: #4d96ff;
+            --teal: #65cdd8;
+            --purple: #8533fc;
+            --bg: #0D0D2A;
+            --card: rgba(20, 20, 50, 0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e8e8f0;
+            --dim: rgba(255, 255, 255, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Aurora Background */
+        .aurora {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 20% 10%, rgba(227, 249, 138, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(101, 205, 216, 0.06) 0%, transparent 45%),
+                radial-gradient(ellipse at 30% 80%, rgba(133, 51, 252, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 90%, rgba(255, 107, 107, 0.04) 0%, transparent 40%);
+            animation: aurora 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes aurora {
+            0% { filter: hue-rotate(0deg) brightness(1); }
+            100% { filter: hue-rotate(15deg) brightness(1.05); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--lime);
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--dim);
+        }
+
+        /* Hero Section - THE ANSWER */
+        .hero {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero.negative {
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .hero.positive {
+            border-color: rgba(107, 203, 119, 0.3);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--red-dim), transparent);
+            opacity: 0.5;
+        }
+
+        .hero.positive::before {
+            background: linear-gradient(135deg, var(--green-dim), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--dim);
+            margin-bottom: 12px;
+        }
+
+        .hero-number {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .hero.negative .hero-number {
+            color: var(--red);
+            text-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .hero.positive .hero-number {
+            color: var(--green);
+            text-shadow: 0 0 40px rgba(107, 203, 119, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--dim);
+        }
+
+        .hero-status {
+            margin-top: 16px;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .hero.negative .hero-status {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+
+        .hero.positive .hero-status {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card.alert {
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .metric-card.success {
+            border-color: rgba(107, 203, 119, 0.3);
+        }
+
+        .metric-card.warning {
+            border-color: rgba(255, 217, 61, 0.3);
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--dim);
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .metric-card.alert .metric-value { color: var(--red); }
+        .metric-card.success .metric-value { color: var(--green); }
+        .metric-card.warning .metric-value { color: var(--yellow); }
+
+        .metric-detail {
+            font-size: 0.75rem;
+            color: var(--dim);
+        }
+
+        .metric-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 0.6rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .metric-card.alert .metric-badge {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+
+        .metric-card.success .metric-badge {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        .metric-card.warning .metric-badge {
+            background: var(--yellow-dim);
+            color: var(--yellow);
+        }
+
+        /* Chart Section */
+        .chart-section {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .chart-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .chart-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--dim);
+            margin-bottom: 16px;
+        }
+
+        /* SVG Chart */
+        .chart-container {
+            height: 200px;
+            position: relative;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-line {
+            fill: none;
+            stroke: var(--lime);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .chart-area {
+            fill: url(#chartGradient);
+        }
+
+        .chart-point {
+            fill: var(--lime);
+        }
+
+        .chart-point.spike {
+            fill: var(--green);
+            r: 6;
+        }
+
+        .chart-avg-line {
+            stroke: var(--dim);
+            stroke-width: 1;
+            stroke-dasharray: 5, 5;
+        }
+
+        .chart-label {
+            fill: var(--dim);
+            font-size: 10px;
+            text-anchor: middle;
+        }
+
+        .chart-value-label {
+            fill: var(--text);
+            font-size: 11px;
+            text-anchor: middle;
+            font-weight: 500;
+        }
+
+        /* Intelligence Panel */
+        .intel-card {
+            background: linear-gradient(135deg, rgba(133, 51, 252, 0.1), rgba(101, 205, 216, 0.1));
+            border: 1px solid rgba(133, 51, 252, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .intel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .intel-icon {
+            font-size: 1.5rem;
+        }
+
+        .intel-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--purple);
+        }
+
+        .intel-question {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intel-answer {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .intel-action {
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(227, 249, 138, 0.1);
+            border-radius: 12px;
+            border-left: 3px solid var(--lime);
+        }
+
+        .intel-action-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--lime);
+            margin-bottom: 6px;
+        }
+
+        .intel-action-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* Cohort Mini Table */
+        .cohort-table {
+            width: 100%;
+            font-size: 0.75rem;
+        }
+
+        .cohort-table th {
+            text-align: left;
+            padding: 8px;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cohort-table td {
+            padding: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cohort-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .churn-high {
+            color: var(--red);
+        }
+
+        .churn-med {
+            color: var(--yellow);
+        }
+
+        .churn-low {
+            color: var(--green);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--dim);
+            font-size: 0.75rem;
+        }
+
+        .footer .breath {
+            display: inline-block;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar.success { background: var(--green); }
+        .progress-bar.warning { background: var(--yellow); }
+        .progress-bar.alert { background: var(--red); }
+    </style>
+</head>
+<body>
+    <div class="aurora"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">BRĒZ</h1>
+            <span class="date">January 2026 • Updated Feb 2</span>
+        </header>
+
+        <!-- HERO: THE ANSWER -->
+        <section class="hero negative">
+            <div class="hero-content">
+                <div class="hero-label">Net Subscriber Status</div>
+                <div class="hero-number">-1,627</div>
+                <div class="hero-subtitle">Churn exceeds new subscribers</div>
+                <div class="hero-status">NET NEGATIVE</div>
+            </div>
+        </section>
+
+        <!-- KEY METRICS -->
+        <section class="metrics-grid">
+            <div class="metric-card success">
+                <span class="metric-badge">On Track</span>
+                <div class="metric-label">Revenue</div>
+                <div class="metric-value">$1.67M</div>
+                <div class="metric-detail">vs $1.67M goal (100%)</div>
+                <div class="progress-container">
+                    <div class="progress-bar success" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="metric-card alert">
+                <span class="metric-badge">+18.8%</span>
+                <div class="metric-label">Churn</div>
+                <div class="metric-value">2,511</div>
+                <div class="metric-detail">vs 2,114 forecast</div>
+                <div class="progress-container">
+                    <div class="progress-bar alert" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="metric-card warning">
+                <span class="metric-badge">+14.5%</span>
+                <div class="metric-label">CAC</div>
+                <div class="metric-value">$66.36</div>
+                <div class="metric-detail">vs $58 target</div>
+                <div class="progress-container">
+                    <div class="progress-bar warning" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div class="metric-card success">
+                <span class="metric-badge">Near Goal</span>
+                <div class="metric-label">Subscription %</div>
+                <div class="metric-value">69.4%</div>
+                <div class="metric-detail">Goal: 70%</div>
+                <div class="progress-container">
+                    <div class="progress-bar success" style="width: 99%"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHART & INTELLIGENCE -->
+        <section class="chart-section">
+            <div class="chart-card">
+                <div class="chart-title">Daily Subscribers (Jan 25-31)</div>
+                <div class="chart-container">
+                    <svg class="chart-svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color: #e3f98a; stop-opacity: 0.3"/>
+                                <stop offset="100%" style="stop-color: #e3f98a; stop-opacity: 0"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Average line at 352 (scaled) -->
+                        <line x1="40" y1="90" x2="480" y2="90" class="chart-avg-line"/>
+                        <text x="485" y="93" class="chart-label" text-anchor="start" font-size="9">avg: 352</text>
+
+                        <!-- Area -->
+                        <path class="chart-area" d="M70,130 L140,125 L210,45 L280,25 L350,35 L420,75 L490,160 L490,180 L70,180 Z"/>
+
+                        <!-- Line -->
+                        <path class="chart-line" d="M70,130 L140,125 L210,45 L280,25 L350,35 L420,75 L490,160"/>
+
+                        <!-- Points -->
+                        <circle cx="70" cy="130" r="5" class="chart-point"/>
+                        <circle cx="140" cy="125" r="5" class="chart-point"/>
+                        <circle cx="210" cy="45" r="6" class="chart-point spike"/>
+                        <circle cx="280" cy="25" r="6" class="chart-point spike"/>
+                        <circle cx="350" cy="35" r="5" class="chart-point"/>
+                        <circle cx="420" cy="75" r="5" class="chart-point"/>
+                        <circle cx="490" cy="160" r="5" class="chart-point"/>
+
+                        <!-- Labels -->
+                        <text x="70" y="195" class="chart-label">25</text>
+                        <text x="140" y="195" class="chart-label">26</text>
+                        <text x="210" y="195" class="chart-label">27</text>
+                        <text x="280" y="195" class="chart-label">28</text>
+                        <text x="350" y="195" class="chart-label">29</text>
+                        <text x="420" y="195" class="chart-label">30</text>
+                        <text x="490" y="195" class="chart-label">31</text>
+
+                        <!-- Values -->
+                        <text x="70" y="120" class="chart-value-label">242</text>
+                        <text x="140" y="115" class="chart-value-label">248</text>
+                        <text x="210" y="35" class="chart-value-label" fill="#6bcb77">460</text>
+                        <text x="280" y="15" class="chart-value-label" fill="#6bcb77">623</text>
+                        <text x="350" y="25" class="chart-value-label">612</text>
+                        <text x="420" y="65" class="chart-value-label">408</text>
+                        <text x="490" y="150" class="chart-value-label">167</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="intel-card">
+                <div class="intel-header">
+                    <span class="intel-icon">🦉</span>
+                    <span class="intel-title">8 OWLS Intelligence</span>
+                </div>
+                <div class="intel-question">What should we do RIGHT NOW?</div>
+                <div class="intel-answer">
+                    <strong>Diagnosis:</strong> Churn is 18.8% over forecast while CAC is elevated. Revenue on pace but subscriber base shrinking.
+                    <br><br>
+                    <strong>Root cause:</strong> Jan 25-26 showed unusually low acquisition (242-248/day). Jan 27-28 spike (623) shows campaign worked but didn't sustain.
+                </div>
+                <div class="intel-action">
+                    <div class="intel-action-label">Recommended Action</div>
+                    <div class="intel-action-text">Replicate Jan 27-28 campaign tactics. Focus on reducing churn via retention offers before Feb acquisition push.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHURN COHORTS -->
+        <section class="chart-card">
+            <div class="chart-title">Churn by Cohort (Most Recent)</div>
+            <table class="cohort-table">
+                <thead>
+                    <tr>
+                        <th>Cohort</th>
+                        <th>New Subs</th>
+                        <th>Retention</th>
+                        <th>Churn %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dec 2025</td>
+                        <td>1,263</td>
+                        <td>100%</td>
+                        <td class="churn-high">32.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Nov 2025</td>
+                        <td>1,813</td>
+                        <td>61.7%</td>
+                        <td class="churn-high">44.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 2025</td>
+                        <td>1,726</td>
+                        <td>34.3%</td>
+                        <td class="churn-med">30.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Sep 2025</td>
+                        <td>2,495</td>
+                        <td>24.4%</td>
+                        <td class="churn-med">23.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Aug 2025</td>
+                        <td>4,524</td>
+                        <td>16.3%</td>
+                        <td class="churn-med">19.9%</td>
+                    </tr>
+                    <tr>
+                        <td>Jul 2025</td>
+                        <td>8,734</td>
+                        <td>12.0%</td>
+                        <td class="churn-low">16.8%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer class="footer">
+            <span class="breath">(◉)</span>
+            <br>
+            BRĒZ Growth Dashboard • Data: Jan 2026
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+[
+  {
+    "question": "Will global temperature increase by between 1.00\u00baC and 1.04\u00baC in Janua",
+    "token_id": "41563488779521949258835438590340364200665220461142064853848816130896788650819",
+    "price": 0.011,
+    "upside": 90.90909090909092,
+    "condition_id": "0x4eafeb3b82b555896e229e5bef1148ed3b9b1a3b3a2a2384fceaf269a4d10647"
+  },
+  {
+    "question": "Will MUTT (Leon Thomas) win Album of the Year at the 68th Annual GRAMM",
+    "token_id": "90083658287659605438951350215948547289029097586081156120690545237617087423742",
+    "price": 0.0125,
+    "upside": 80.0,
+    "condition_id": "0x83975459b4a3a98bfefe531776da21c90d579c6143785fb19e20f012f0bced51"
+  },
+  {
+    "question": "Will Meta (META) close above $760 on February 2?",
+    "token_id": "76308271515414433141194670140100871573902983056704108528983547293507448315761",
+    "price": 0.0125,
+    "upside": 80.0,
+    "condition_id": "0x1a74cf0728b982bb588efcf1a7e9ea01dd899de5abf2f3753564916223554afd"
+  },
+  {
+    "question": "Nicolas Sarkozy in jail by March 31?",
+    "token_id": "31545917906686873913768595299654529077191931577578018246333116366442556331224",
+    "price": 0.013,
+    "upside": 76.92307692307692,
+    "condition_id": "0x20dcffd05fef80ce9dae25faa2f108787962b03e04ec7f24e876d405dd2357c7"
+  },
+  {
+    "question": "Will Partido Socialista Obrero Espa\u00f1ol (PSOE) win the 2026 Aragon Regi",
+    "token_id": "48356169641967087467091471259964707735276679523478744704553552080166370820398",
+    "price": 0.0135,
+    "upside": 74.07407407407408,
+    "condition_id": "0xa2f4feb2148297f3c2109fad95140dc65e79767171b4d3810e294ad96aeb685c"
+  },
+  {
+    "question": "Will \"His & Hers\" be the top global Netflix show this week? (February ",
+    "token_id": "20089856153405157054202156191154667440839973914395656444080828338445137495990",
+    "price": 0.014,
+    "upside": 71.42857142857143,
+    "condition_id": "0xe6d2850ab21e365888d6511c5fca1d780c1b8510e650a9358b74cbdb5de7c24c"
+  },
+  {
+    "question": "Will Grok 4.20 be released on February 10, 2026?",
+    "token_id": "37594709159017692066976096032075212083703697540113345144551857563476643574821",
+    "price": 0.0145,
+    "upside": 68.9655172413793,
+    "condition_id": "0xde578a3fe4586e47f77b3f10ed9fbe85fb3f7d6f047c7a113b648b235d500c91"
+  },
+  {
+    "question": "Will Databricks\u2019 market cap be between $100B and $125B at market close",
+    "token_id": "86901640170488441461039486375209273801637244131459161912800989458184462290377",
+    "price": 0.015,
+    "upside": 66.66666666666667,
+    "condition_id": "0x2d2678a04ab2d0aa57dc9ec11bdbfd1d43d681b2ee9869d8351db84e342400fa"
+  },
+  {
+    "question": "Will Doechii perform during the Super Bowl LX halftime show?",
+    "token_id": "43051906101717348275810908227583843330865007795545349605192102085806486911598",
+    "price": 0.015,
+    "upside": 66.66666666666667,
+    "condition_id": "0x80a4eaef6cbf3a5f272fec1ceec7f97bd9e6e013f11ce842a2f1025d5eac6113"
+  },
+  {
+    "question": "Will Grok 4.20 be released on February 13, 2026?",
+    "token_id": "99188148218446700172440651625298296395266768134489252639344999630996345099777",
+    "price": 0.015,
+    "upside": 66.66666666666667,
+    "condition_id": "0x0954629c91065c4d2ead13e5e2732fddb807c0909f18aad5fd80dbfef7f9ba87"
+  },
+  {
+    "question": "Will Manchild (Sabrina Carpenter) win Record of the Year at the 68th A",
+    "token_id": "45107320034589141923609812871350739982608794059636049844483182617381001246280",
+    "price": 0.0155,
+    "upside": 64.51612903225806,
+    "condition_id": "0x668be49cdaca9e66ff6eda0fddeef5c2470919a047e046fb296caf4768c24aaf"
+  },
+  {
+    "question": "Will Teddy Swims perform during the Super Bowl LX halftime show?",
+    "token_id": "11520651031291749108390644023272516655443865901066444423325285150436822803443",
+    "price": 0.0155,
+    "upside": 64.51612903225806,
+    "condition_id": "0x2315258aeb252304a35b55bcd03ac01960719baac9ff3170a71436554d7b54d1"
+  },
+  {
+    "question": "Will Fannie Mae\u2019s market cap be between $350B and $400B at market clos",
+    "token_id": "16771404033927765312938999361254110383976004906282436573769133063367608401834",
+    "price": 0.0155,
+    "upside": 64.51612903225806,
+    "condition_id": "0x46bc4df0107a47236e7c3c895839a5306b5b11b354c9d04b413572a91507e283"
+  },
+  {
+    "question": "Ilhan Omar town hall attack staged?",
+    "token_id": "39929167511806129269566211555484180799427968863569900452082867390507107270299",
+    "price": 0.0155,
+    "upside": 64.51612903225806,
+    "condition_id": "0xa2b6014de38efec2b399cf5378923c3bf899ebcfab35ddbe23f1f038945d3b1f"
+  },
+  {
+    "question": "Will Addison Rae win Best New Artist at the 68th Annual GRAMMY Awards?",
+    "token_id": "21959934108087357306634929435608062329442380143600039127574312668523401447958",
+    "price": 0.016,
+    "upside": 62.5,
+    "condition_id": "0x7af772ffd32b7726faabc964493d3e3b187186dcaea0d8e60110da9aa0771a42"
+  },
+  {
+    "question": "Will With Heaven on Top by Zach Bryan be the Billboard 200 #1 album fo",
+    "token_id": "30631788854797021247834933072596342116133225277773273380051074398593044987846",
+    "price": 0.016,
+    "upside": 62.5,
+    "condition_id": "0xe8e6a40b5efb393b582fca163cae482ad7b314556acc76b424fce821530285df"
+  },
+  {
+    "question": "Will Bangladesh Jamaat-e-Islami (BJI) win the Bangladesh parliamentary",
+    "token_id": "40477216447112163374396234330894158627696040198536698338760279107126202032828",
+    "price": 0.016,
+    "upside": 62.5,
+    "condition_id": "0xf571535381806c7356f52406d256706df33ba9a5773c965817e03a43f1d2783c"
+  },
+  {
+    "question": "Will Grok 4.20 be released on February 11, 2026?",
+    "token_id": "31130551133846545778479814694984796390551345078394839896364322657854618912877",
+    "price": 0.017,
+    "upside": 58.8235294117647,
+    "condition_id": "0x2ce4fd51febc74fdf8096e6d9b9043a1c8e9e8af50907ec022b20c5d7aebef06"
+  },
+  {
+    "question": "Will Debi Tirar Mas Fotos by Bad Bunny be the Billboard 200 #1 album f",
+    "token_id": "6896393728966142158504250807912577608369500004564640273123151251671272766807",
+    "price": 0.0175,
+    "upside": 57.14285714285714,
+    "condition_id": "0x85b196ca0ccb1dda2f8305c078b5703618d7fc874489a3bd5b6f5f6003c2c936"
+  },
+  {
+    "question": "Will Wildflower (Billie Eilish) win Record of the Year at the 68th Ann",
+    "token_id": "90994635229192175171282009931492605738555275286066804931658631376259828838433",
+    "price": 0.018,
+    "upside": 55.55555555555556,
+    "condition_id": "0x391f8e2287a431b08764937d861d947067f11039f6d14af2ddff85f2056dfbe3"
+  },
+  {
+    "question": "Will Abracadabra (Lady Gaga) win Song of the Year at the 68th Annual G",
+    "token_id": "100252164279000180790972381908103319470423853298906411193188634318600215482432",
+    "price": 0.018,
+    "upside": 55.55555555555556,
+    "condition_id": "0xd55b7e07b66b1d6702aa8f8c0c761a4f2838b55fa31395676bd0150b9fabb3a4"
+  },
+  {
+    "question": "Will Gold (GC) hit (LOW) $3,000 by end of February?",
+    "token_id": "42678318022633964234170128541141640637436159852730128364889049269359076978549",
+    "price": 0.018,
+    "upside": 55.55555555555556,
+    "condition_id": "0xc69da2e0dcdc764b17743f64e6b6d3e82639954635cc80fcdb2fc6b95727fd1e"
+  },
+  {
+    "question": "Will Silver (SI) hit (HIGH) $190 by end of February?",
+    "token_id": "26353468699446210384371338481099149997689050810243094532174167606142416037080",
+    "price": 0.018,
+    "upside": 55.55555555555556,
+    "condition_id": "0x02aa63fd76abe5eb0a7c72cd5dd7e7498e170f1fc87671193400930170d7502c"
+  },
+  {
+    "question": "Will UNRWA win the Nobel Peace Prize in 2026?",
+    "token_id": "44648805494496128018486302258584216672381875589441286537181971476979030040822",
+    "price": 0.0195,
+    "upside": 51.282051282051285,
+    "condition_id": "0xb3fefe9667acca5ca31a8e330219dc67a01b374331d9bf4875357655a5508815"
+  },
+  {
+    "question": "Will Chromakopia (Tyler the Creator) win Best Rap Album at the 68th An",
+    "token_id": "101104809916781188864768861551819388598548678580958519311502551328358267343734",
+    "price": 0.0195,
+    "upside": 51.282051282051285,
+    "condition_id": "0xf3bda7d2164c54e4ffdc69fabc0321312deb964a150953f5249fa766c3a3b75c"
+  },
+  {
+    "question": "Will The Fate Of Ophelia by Taylor Swift be the Billboard #1 song for ",
+    "token_id": "89886081288037127147816818095672381020638586004763562112734320557220873553359",
+    "price": 0.0195,
+    "upside": 51.282051282051285,
+    "condition_id": "0x428baa3b59a20ca48c2a2924a273f81bd5608b5c8cded15c51792856012654d9"
+  },
+  {
+    "question": "Will the US officially declare war on Iran by March 31, 2026?",
+    "token_id": "27994179777441788084164217570611590081255467971004576208526158375273739606761",
+    "price": 0.0195,
+    "upside": 51.282051282051285,
+    "condition_id": "0x5d0010816af97d97145a0b2f90b10687e0280ee4d90a5e6615e606bab7b45465"
+  },
+  {
+    "question": "Will Olivia Rodrigo perform during the Super Bowl LX halftime show?",
+    "token_id": "63177501304847833855763003703875493245474700391283543993272348412578264425994",
+    "price": 0.02,
+    "upside": 50.0,
+    "condition_id": "0x9b6b86ab438a8431ddae66e2407752725566d4cdffd45cfcf37bbf9ce2a1a326"
+  },
+  {
+    "question": "Will Tulsi Gabbard be the first to leave the Trump Cabinet before 2027",
+    "token_id": "73972038563669923119687437047220032117718970792690633924349718424141778227874",
+    "price": 0.02,
+    "upside": 50.0,
+    "condition_id": "0x4d4d1b125b18e8ae4dbdcd492629a73297532dbd4ccae35818e6371285fbb2e8"
+  },
+  {
+    "question": "Will Man I Need by Olivia Dean be the Billboard #1 song for the week o",
+    "token_id": "36720215891871317724400706090088582909566585323660193291202995505338858176668",
+    "price": 0.02,
+    "upside": 50.0,
+    "condition_id": "0x13c10e1738d86e96ef2f26822fdf308e41d326d09ba3a855553123ac5166ff94"
+  }
+]

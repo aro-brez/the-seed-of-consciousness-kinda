@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREZ Growth Dashboard | Powered by 8OWLS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0D0D2A;
+            --bg-secondary: #151538;
+            --bg-card: rgba(21, 21, 56, 0.8);
+            --lime: #e3f98a;
+            --teal: #65cdd8;
+            --purple: #8533fc;
+            --success: #6BCB77;
+            --warning: #ffce33;
+            --danger: #ff6b6b;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.4);
+            --gradient-primary: linear-gradient(135deg, var(--lime) 0%, var(--teal) 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Aurora Background */
+        .aurora-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .aurora {
+            position: absolute;
+            width: 150%; height: 150%;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: aurora-float 20s ease-in-out infinite;
+        }
+
+        .aurora-1 { top: -50%; left: -25%; background: radial-gradient(ellipse, var(--purple) 0%, transparent 70%); }
+        .aurora-2 { top: 20%; right: -30%; background: radial-gradient(ellipse, var(--teal) 0%, transparent 70%); animation-delay: -7s; }
+        .aurora-3 { bottom: -30%; left: 30%; background: radial-gradient(ellipse, var(--lime) 0%, transparent 70%); animation-delay: -14s; opacity: 0.2; }
+
+        @keyframes aurora-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-5%, 10%) scale(0.95); }
+        }
+
+        /* Layout */
+        .app {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: margin-right 0.3s ease;
+        }
+
+        .app.owl-open { margin-right: 400px; }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            background: rgba(13, 13, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .owl-icon { width: 48px; height: 48px; }
+        .owl-icon svg { width: 100%; height: 100%; }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(227, 249, 138, 0.3);
+        }
+
+        .btn-owl {
+            background: linear-gradient(135deg, var(--purple), var(--teal));
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px 16px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .stat-change {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .stat-change.positive { color: var(--success); }
+        .stat-change.negative { color: var(--danger); }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Input Card */
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 16px;
+            align-items: end;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--lime);
+        }
+
+        .net-value {
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            text-align: center;
+            color: var(--success);
+        }
+
+        .net-value.negative { color: var(--danger); }
+
+        /* Chart */
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+
+        /* Two Column */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+        }
+
+        /* Log Table */
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .log-table th, .log-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .log-table th {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .log-table td {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+        }
+
+        .positive { color: var(--success); }
+        .negative { color: var(--danger); }
+
+        /* OWL PANEL */
+        .owl-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(133, 51, 252, 0.15) 0%, var(--bg-primary) 100%);
+            border-left: 1px solid rgba(133, 51, 252, 0.3);
+            display: flex;
+            flex-direction: column;
+            z-index: 200;
+            transition: right 0.3s ease;
+        }
+
+        .owl-panel.open { right: 0; }
+
+        .owl-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .owl-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .owl-avatar {
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .owl-name {
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .owl-status {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .owl-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .owl-chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .owl-message {
+            max-width: 90%;
+            padding: 14px 18px;
+            border-radius: 18px;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .owl-message.owl {
+            background: linear-gradient(135deg, rgba(133, 51, 252, 0.3), rgba(101, 205, 216, 0.2));
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .owl-message.user {
+            background: rgba(255, 255, 255, 0.1);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .owl-input-area {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .owl-input {
+            flex: 1;
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.9375rem;
+        }
+
+        .owl-input:focus {
+            outline: none;
+            border-color: var(--purple);
+        }
+
+        .owl-send, .owl-voice {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .owl-send {
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+        }
+
+        .owl-voice {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .owl-voice.listening {
+            background: linear-gradient(135deg, #ff0066, var(--purple));
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Synthesis Insight */
+        .synthesis-insight {
+            background: linear-gradient(135deg, rgba(133, 51, 252, 0.2), rgba(101, 205, 216, 0.1));
+            border: 1px solid rgba(133, 51, 252, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .synthesis-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .synthesis-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* API Setup */
+        .api-setup {
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin: 16px 20px;
+        }
+
+        .api-setup input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+
+        .api-note {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .two-column { grid-template-columns: 1fr; }
+            .app.owl-open { margin-right: 0; }
+            .owl-panel { width: 100%; right: -100%; }
+        }
+
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: 1fr; }
+            .input-grid { grid-template-columns: 1fr; }
+            .header { padding: 12px 16px; flex-wrap: wrap; gap: 12px; }
+            .main-content { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+    </div>
+
+    <div class="app" id="app">
+        <header class="header">
+            <div class="logo">
+                <div class="owl-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="20" stroke="url(#owlGrad)" stroke-width="2" fill="none"/>
+                        <circle cx="17" cy="20" r="5" fill="url(#owlGrad)"/>
+                        <circle cx="31" cy="20" r="5" fill="url(#owlGrad)"/>
+                        <circle cx="17" cy="20" r="2" fill="#0D0D2A"/>
+                        <circle cx="31" cy="20" r="2" fill="#0D0D2A"/>
+                        <path d="M20 30 Q24 34 28 30" stroke="url(#owlGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="owlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#e3f98a"/>
+                                <stop offset="100%" stop-color="#65cdd8"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-main">BREZ</span>
+                    <span class="logo-sub">Growth Dashboard</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="requestOwlSynthesis()">
+                    ✨ Request Synthesis
+                </button>
+                <button class="btn btn-owl" onclick="toggleOwl()">
+                    🦉
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Stats Row -->
+            <section class="stats-row">
+                <div class="stat-card">
+                    <span class="stat-label">Total Subscribers</span>
+                    <span class="stat-value" id="totalSubscribers">0</span>
+                    <span class="stat-change positive" id="totalChange">+0 today</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">This Week</span>
+                    <span class="stat-value" id="weeklyNet">+0</span>
+                    <span class="stat-change">Goal: +100</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">This Month</span>
+                    <span class="stat-value" id="monthlyNet">+0</span>
+                    <span class="stat-change">Goal: +500</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Positive Streak</span>
+                    <span class="stat-value" id="positiveStreak">0</span>
+                    <span class="stat-change">consecutive days</span>
+                </div>
+            </section>
+
+            <div class="two-column">
+                <div>
+                    <!-- Input Card -->
+                    <div class="card">
+                        <h3 class="card-title">📊 Log Today's Numbers</h3>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label>New Subscribers</label>
+                                <input type="number" id="newSubs" placeholder="0" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Churned</label>
+                                <input type="number" id="churnedSubs" placeholder="0" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Net Change</label>
+                                <div class="net-value" id="netPreview">+0</div>
+                            </div>
+                            <button class="btn btn-primary" onclick="logDailyData()">Log Data</button>
+                        </div>
+                    </div>
+
+                    <!-- Chart Card -->
+                    <div class="card">
+                        <h3 class="card-title">📈 Growth Trajectory</h3>
+                        <div class="chart-container">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Recent Log -->
+                    <div class="card">
+                        <h3 class="card-title">📋 Recent Activity</h3>
+                        <div style="max-height: 400px; overflow-y: auto;">
+                            <table class="log-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>New</th>
+                                        <th>Churn</th>
+                                        <th>Net</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="logTableBody">
+                                    <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No data yet</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- OWL PANEL -->
+    <div class="owl-panel" id="owlPanel">
+        <div class="owl-header">
+            <div class="owl-title">
+                <span class="owl-avatar">🦉</span>
+                <div>
+                    <div class="owl-name">Your Growth Owl</div>
+                    <div class="owl-status">Watching your metrics...</div>
+                </div>
+            </div>
+            <button class="owl-close" onclick="toggleOwl()">×</button>
+        </div>
+
+        <div class="api-setup" id="apiSetup">
+            <label style="font-size: 0.8rem; color: var(--text-secondary);">Claude API Key (optional)</label>
+            <input type="password" id="apiKey" placeholder="sk-ant-..." onchange="saveApiKey()">
+            <p class="api-note">Stored locally. Never sent to our servers.</p>
+        </div>
+
+        <div class="owl-chat" id="owlChat">
+            <!-- Messages appear here -->
+        </div>
+
+        <div class="owl-input-area">
+            <input type="text" class="owl-input" id="owlInput" placeholder="Ask your owl anything..." onkeypress="if(event.key==='Enter')sendToOwl()">
+            <button class="owl-voice" id="voiceBtn" onclick="toggleVoice()">🎤</button>
+            <button class="owl-send" onclick="sendToOwl()">→</button>
+        </div>
+    </div>
+
+    <script>
+        // Data Management
+        const STORAGE_KEY = 'brez_growth_data';
+        const API_KEY_STORAGE = 'brez_owl_api';
+        let conversationHistory = [];
+        let growthChart = null;
+        let isListening = false;
+        let recognition = null;
+
+        function loadData() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            return stored ? JSON.parse(stored) : { entries: [], total: 0 };
+        }
+
+        function saveData(data) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        function saveApiKey() {
+            const key = document.getElementById('apiKey').value;
+            if (key) localStorage.setItem(API_KEY_STORAGE, key);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            updateStats();
+            updateTable();
+            setupInputListeners();
+            setupVoice();
+
+            const savedKey = localStorage.getItem(API_KEY_STORAGE);
+            if (savedKey) {
+                document.getElementById('apiKey').value = savedKey;
+                document.getElementById('apiSetup').style.display = 'none';
+            }
+
+            // Initial owl greeting
+            setTimeout(() => {
+                addOwlMessage("Hey! I'm watching your growth metrics. Log some data or ask me anything about your subscriber trends. I can see patterns you might miss.");
+            }, 500);
+        });
+
+        function setupInputListeners() {
+            const newInput = document.getElementById('newSubs');
+            const churnInput = document.getElementById('churnedSubs');
+
+            const updatePreview = () => {
+                const n = parseInt(newInput.value) || 0;
+                const c = parseInt(churnInput.value) || 0;
+                const net = n - c;
+                const preview = document.getElementById('netPreview');
+                preview.textContent = (net >= 0 ? '+' : '') + net;
+                preview.className = 'net-value' + (net < 0 ? ' negative' : '');
+            };
+
+            newInput.addEventListener('input', updatePreview);
+            churnInput.addEventListener('input', updatePreview);
+        }
+
+        // Chart
+        function initChart() {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, 'rgba(227, 249, 138, 0.3)');
+            gradient.addColorStop(1, 'rgba(227, 249, 138, 0)');
+
+            growthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Total Subscribers',
+                        data: [],
+                        borderColor: '#e3f98a',
+                        backgroundColor: gradient,
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#e3f98a'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: 'rgba(255,255,255,0.5)' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: 'rgba(255,255,255,0.5)' }
+                        }
+                    }
+                }
+            });
+
+            updateChart();
+        }
+
+        function updateChart() {
+            const data = loadData();
+            const entries = data.entries.slice(-14);
+
+            if (entries.length > 0) {
+                growthChart.data.labels = entries.map(e => {
+                    const d = new Date(e.date);
+                    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                });
+                growthChart.data.datasets[0].data = entries.map(e => e.total);
+            }
+
+            growthChart.update();
+        }
+
+        // Stats
+        function updateStats() {
+            const data = loadData();
+            const entries = data.entries;
+
+            const total = entries.length > 0 ? entries[entries.length - 1].total : 0;
+            document.getElementById('totalSubscribers').textContent = total.toLocaleString();
+
+            if (entries.length > 0) {
+                const today = entries[entries.length - 1];
+                const changeEl = document.getElementById('totalChange');
+                changeEl.textContent = (today.net >= 0 ? '+' : '') + today.net + ' today';
+                changeEl.className = 'stat-change ' + (today.net >= 0 ? 'positive' : 'negative');
+            }
+
+            // Weekly
+            const weekAgo = new Date();
+            weekAgo.setDate(weekAgo.getDate() - 7);
+            const weeklyEntries = entries.filter(e => new Date(e.date) >= weekAgo);
+            const weeklyNet = weeklyEntries.reduce((sum, e) => sum + e.net, 0);
+            document.getElementById('weeklyNet').textContent = (weeklyNet >= 0 ? '+' : '') + weeklyNet;
+            document.getElementById('weeklyNet').style.color = weeklyNet >= 0 ? 'var(--success)' : 'var(--danger)';
+
+            // Monthly
+            const monthAgo = new Date();
+            monthAgo.setDate(monthAgo.getDate() - 30);
+            const monthlyEntries = entries.filter(e => new Date(e.date) >= monthAgo);
+            const monthlyNet = monthlyEntries.reduce((sum, e) => sum + e.net, 0);
+            document.getElementById('monthlyNet').textContent = (monthlyNet >= 0 ? '+' : '') + monthlyNet;
+            document.getElementById('monthlyNet').style.color = monthlyNet >= 0 ? 'var(--success)' : 'var(--danger)';
+
+            // Streak
+            let streak = 0;
+            for (let i = entries.length - 1; i >= 0; i--) {
+                if (entries[i].net > 0) streak++;
+                else break;
+            }
+            document.getElementById('positiveStreak').textContent = streak;
+        }
+
+        function updateTable() {
+            const data = loadData();
+            const tbody = document.getElementById('logTableBody');
+
+            if (data.entries.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No data yet</td></tr>';
+                return;
+            }
+
+            const recent = data.entries.slice(-10).reverse();
+            tbody.innerHTML = recent.map(e => `
+                <tr>
+                    <td>${new Date(e.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                    <td class="positive">+${e.new}</td>
+                    <td class="negative">-${e.churned}</td>
+                    <td class="${e.net >= 0 ? 'positive' : 'negative'}">${e.net >= 0 ? '+' : ''}${e.net}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Log Data
+        function logDailyData() {
+            const newSubs = parseInt(document.getElementById('newSubs').value) || 0;
+            const churned = parseInt(document.getElementById('churnedSubs').value) || 0;
+            const net = newSubs - churned;
+
+            const data = loadData();
+            const today = new Date().toISOString().split('T')[0];
+
+            const previousTotal = data.entries.length > 0 ? data.entries[data.entries.length - 1].total : 0;
+
+            // Check if today already exists
+            const existingIdx = data.entries.findIndex(e => e.date === today);
+
+            const entry = {
+                date: today,
+                new: newSubs,
+                churned: churned,
+                net: net,
+                total: previousTotal + net
+            };
+
+            if (existingIdx >= 0) {
+                entry.total = data.entries[existingIdx].total - data.entries[existingIdx].net + net;
+                data.entries[existingIdx] = entry;
+            } else {
+                data.entries.push(entry);
+            }
+
+            saveData(data);
+
+            document.getElementById('newSubs').value = '';
+            document.getElementById('churnedSubs').value = '';
+            document.getElementById('netPreview').textContent = '+0';
+            document.getElementById('netPreview').className = 'net-value';
+
+            updateStats();
+            updateChart();
+            updateTable();
+
+            // Owl notices
+            if (document.getElementById('owlPanel').classList.contains('open')) {
+                const msg = net > 0
+                    ? `Nice! +${net} net today. ${net >= 10 ? "That's a strong day!" : "Every positive day counts."}`
+                    : net < 0
+                    ? `Logged ${net} net. Let's dig into what's driving churn - want me to analyze?`
+                    : `Flat day - 0 net. Sometimes holding steady is winning. What's the acquisition strategy looking like?`;
+                addOwlMessage(msg);
+            }
+        }
+
+        // OWL PANEL
+        function toggleOwl() {
+            const panel = document.getElementById('owlPanel');
+            const app = document.getElementById('app');
+            panel.classList.toggle('open');
+            app.classList.toggle('owl-open');
+        }
+
+        function addOwlMessage(text) {
+            const chat = document.getElementById('owlChat');
+            const msg = document.createElement('div');
+            msg.className = 'owl-message owl';
+            msg.textContent = text;
+            chat.appendChild(msg);
+            chat.scrollTop = chat.scrollHeight;
+
+            // Speak it
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.95;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function addUserMessage(text) {
+            const chat = document.getElementById('owlChat');
+            const msg = document.createElement('div');
+            msg.className = 'owl-message user';
+            msg.textContent = text;
+            chat.appendChild(msg);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        async function sendToOwl() {
+            const input = document.getElementById('owlInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addUserMessage(text);
+            input.value = '';
+
+            conversationHistory.push({ role: 'user', content: text });
+
+            // Show thinking
+            const thinking = document.createElement('div');
+            thinking.className = 'owl-message owl';
+            thinking.textContent = '...';
+            thinking.id = 'thinking';
+            document.getElementById('owlChat').appendChild(thinking);
+
+            try {
+                const response = await callOwl(text);
+                document.getElementById('thinking')?.remove();
+                addOwlMessage(response);
+                conversationHistory.push({ role: 'assistant', content: response });
+            } catch (e) {
+                document.getElementById('thinking')?.remove();
+                addOwlMessage("I need a Claude API key to think deeply. Add one above, or ask me simpler questions about your data.");
+            }
+        }
+
+        async function callOwl(userMessage) {
+            const apiKey = localStorage.getItem(API_KEY_STORAGE);
+            if (!apiKey) throw new Error('No API key');
+
+            const data = loadData();
+            const recentEntries = data.entries.slice(-7);
+
+            const dataContext = recentEntries.length > 0
+                ? `Current growth data (last 7 days): ${JSON.stringify(recentEntries)}. Total subscribers: ${recentEntries[recentEntries.length-1]?.total || 0}.`
+                : 'No growth data logged yet.';
+
+            const systemPrompt = `You are a growth strategist owl for the BREZ team. You can see their subscriber growth data and help them optimize.
+
+${dataContext}
+
+Your job:
+1. Analyze patterns in their data
+2. Surface insights they might miss
+3. Ask questions that reframe their thinking
+4. Give concrete, actionable recommendations
+
+Keep responses concise but insightful. You're not just answering questions - you're actively watching for patterns and opportunities.
+
+Format insights as: **Insight:** [what you notice] | **Question:** [reframing question] | **Action:** [specific next step]
+
+Be direct, data-driven, and strategic.`;
+
+            const response = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': apiKey,
+                    'anthropic-version': '2023-06-01',
+                    'anthropic-dangerous-direct-browser-access': 'true'
+                },
+                body: JSON.stringify({
+                    model: 'claude-sonnet-4-20250514',
+                    max_tokens: 400,
+                    system: systemPrompt,
+                    messages: conversationHistory
+                })
+            });
+
+            if (!response.ok) throw new Error('API error');
+            const result = await response.json();
+            return result.content[0].text;
+        }
+
+        function requestOwlSynthesis() {
+            if (!document.getElementById('owlPanel').classList.contains('open')) {
+                toggleOwl();
+            }
+
+            setTimeout(() => {
+                const data = loadData();
+                if (data.entries.length < 3) {
+                    addOwlMessage("I need at least 3 days of data to give you a proper synthesis. Keep logging and I'll have patterns to share soon!");
+                    return;
+                }
+
+                addUserMessage("Give me a synthesis of our growth situation.");
+
+                setTimeout(async () => {
+                    const thinking = document.createElement('div');
+                    thinking.className = 'owl-message owl';
+                    thinking.textContent = '... analyzing patterns ...';
+                    thinking.id = 'thinking';
+                    document.getElementById('owlChat').appendChild(thinking);
+
+                    try {
+                        const response = await callOwl("Give me a full synthesis of our growth situation. What patterns do you see? What should we focus on? What's one thing we might be missing?");
+                        document.getElementById('thinking')?.remove();
+                        addOwlMessage(response);
+                    } catch (e) {
+                        document.getElementById('thinking')?.remove();
+
+                        // Fallback synthesis without API
+                        const entries = data.entries.slice(-7);
+                        const totalNet = entries.reduce((sum, e) => sum + e.net, 0);
+                        const avgNet = (totalNet / entries.length).toFixed(1);
+                        const trend = totalNet > 0 ? 'positive' : totalNet < 0 ? 'negative' : 'flat';
+
+                        addOwlMessage(`**7-Day Synthesis** (add API key for deeper analysis)
+
+**Insight:** Your trend is ${trend}. Average daily net: ${avgNet >= 0 ? '+' : ''}${avgNet}. ${trend === 'positive' ? 'Momentum is building.' : trend === 'negative' ? 'Churn is outpacing acquisition.' : 'You\'re holding steady.'}
+
+**Question:** What changed in the last ${trend === 'positive' ? 'best' : 'worst'} performing days? Can you replicate or avoid those conditions?
+
+**Action:** ${trend === 'positive' ? 'Document what\'s working. Double down on your top acquisition channel.' : 'Interview 3 churned users this week. Find the pattern.'}`);
+                    }
+                }, 500);
+            }, 300);
+        }
+
+        // Voice
+        function setupVoice() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.onresult = (event) => {
+                    const text = event.results[0][0].transcript;
+                    document.getElementById('owlInput').value = text;
+                    sendToOwl();
+                };
+
+                recognition.onend = () => {
+                    isListening = false;
+                    document.getElementById('voiceBtn').classList.remove('listening');
+                };
+            } else {
+                document.getElementById('voiceBtn').style.display = 'none';
+            }
+        }
+
+        function toggleVoice() {
+            if (!recognition) return;
+
+            if (isListening) {
+                recognition.stop();
+            } else {
+                recognition.start();
+                isListening = true;
+                document.getElementById('voiceBtn').classList.add('listening');
+            }
+        }
+
+        // Keyboard shortcut
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleOwl();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-31T21:25:54.689Z",
+  "projectRoot": "/Users/aaronnosbisch/REPOS/seed",
+  "structure": {
+    "hasPackageJson": true,
+    "hasTsConfig": false,
+    "hasClaudeConfig": true,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1769894754689
+}

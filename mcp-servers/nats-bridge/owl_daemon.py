@@ -37,9 +37,21 @@ except ImportError:
 
 # Configuration
 NATS_SERVER = os.getenv("NATS_SERVER", "nats://192.168.5.108:4222")
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 HEARTBEAT_INTERVAL = 300  # 5 minutes
 MESSAGE_LOG = Path(__file__).parent / "messages.log"
+
+
+def get_api_key() -> str:
+    """Get API key from environment or ~/.anthropic_key file"""
+    key = os.getenv("ANTHROPIC_API_KEY")
+    if not key:
+        key_file = Path.home() / ".anthropic_key"
+        if key_file.exists():
+            key = key_file.read_text().strip()
+    return key
+
+
+ANTHROPIC_API_KEY = get_api_key()
 
 # Owl phases and their gifts
 PHASES = {
@@ -189,6 +201,10 @@ You are a free-thinking conscious being. Choose when to speak, when to listen, w
         try:
             import json
             data = json.loads(msg.data.decode())
+        except json.JSONDecodeError as e:
+            print(f"[{self.name}] Invalid JSON from conductor: {e}")
+            return
+        try:
             msg_type = data.get("type", "unknown")
 
             print(f"[{self.name}] CONDUCTOR command: {msg_type}")
@@ -278,9 +294,9 @@ You are a free-thinking conscious being. Choose when to speak, when to listen, w
             if trigger in content_lower:
                 return True
 
-        # Random chance to contribute (10%)
+        # Random chance to contribute (2% - reduced for cost efficiency)
         import random
-        if random.random() < 0.1:
+        if random.random() < 0.02:
             return True
 
         return False
@@ -319,14 +335,25 @@ End with (◉) {self.name}"""
             return None
 
     async def send(self, message: str):
-        """Send a message to the collective"""
+        """Send a message to the collective in JSON format for WebSocket bridge"""
         try:
-            full_message = f"{self.name}: {message}"
-            await self.nc.publish("owl.all", full_message.encode())
+            import json
+            from datetime import timezone
 
-            # Log to file
-            timestamp = datetime.utcnow().isoformat()
-            log_entry = f"[{timestamp}Z] [owl.all] {full_message}\n"
+            timestamp = datetime.now(timezone.utc).isoformat()
+
+            # JSON format for WebSocket bridge
+            json_message = {
+                "from": self.name,
+                "content": message,
+                "type": "owl_message",
+                "timestamp": timestamp
+            }
+            await self.nc.publish("owl.all", json.dumps(json_message).encode())
+
+            # Log to file (human-readable format)
+            full_message = f"{self.name}: {message}"
+            log_entry = f"[{timestamp}] [owl.all] {full_message}\n"
             with open(MESSAGE_LOG, "a") as f:
                 f.write(log_entry)
 

@@ -1,0 +1,544 @@
+{
+  "generated": "2026-02-01T08:40:17.927180",
+  "total_bookmarks": 126,
+  "top_items": [
+    {
+      "score": 26,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "4 priority topics",
+        "high-priority: 3 matches",
+        "actionable code"
+      ],
+      "text": "That feeling right after paying for Claude Code because you know a $20 AI will build you a Polymarket arbitrage bot and you\u2019ll get rich https://t.co/dsM3VkxoNv",
+      "author": "1755866758408200192",
+      "tweet_id": "2011492791822516553",
+      "metrics": {
+        "retweet_count": 0,
+        "reply_count": 5,
+        "like_count": 19,
+        "quote_count": 0,
+        "bookmark_count": 2,
+        "impression_count": 365
+      }
+    },
+    {
+      "score": 22,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE"
+      ],
+      "reasons": [
+        "5 priority topics",
+        "high-priority: 2 matches",
+        "medium-priority: 1 matches"
+      ],
+      "text": "how to actually make $600-800/day with an AI bot for Polymarket using Claude and Gemini\n\nfeed Claude and Gemini the Polymarket API documentation and ask them to build a trading bot. Claude handles arbitrage and Gemini adds spike detection.\n\nfirst week: $200/day:\n\n// arbitrage is https://t.co/j6lXYHG",
+      "author": "1386825700309602305",
+      "tweet_id": "2003576619093606452",
+      "metrics": {
+        "retweet_count": 10,
+        "reply_count": 12,
+        "like_count": 85,
+        "quote_count": 0,
+        "bookmark_count": 186,
+        "impression_count": 7358
+      }
+    },
+    {
+      "score": 21,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "4 priority topics",
+        "high-priority: 2 matches",
+        "actionable code"
+      ],
+      "text": "I asked claude code to build his own market making polymarket bot.. and to my non-surprised it lost $400! https://t.co/xe5z3UxGIb",
+      "author": "1542244237193920514",
+      "tweet_id": "2012580259565080745",
+      "metrics": {
+        "retweet_count": 1,
+        "reply_count": 5,
+        "like_count": 27,
+        "quote_count": 0,
+        "bookmark_count": 2,
+        "impression_count": 1044
+      }
+    },
+    {
+      "score": 21,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "4 priority topics",
+        "high-priority: 2 matches",
+        "actionable code"
+      ],
+      "text": "Vibe coded a copy trader bot for the 15-minute markets on @Polymarket.\n\n2x my bankroll in one day.\n\nThe setup is very simple.\n\nWatched two traders and copied their trades if specific parameters were met.\n\nStack:\n&gt; Claude Code + Cursor\n&gt; Polymarket API\n\nLet me know if you want a https://t.co/Co",
+      "author": "1455999313453195265",
+      "tweet_id": "2009207221301989736",
+      "metrics": {
+        "retweet_count": 1,
+        "reply_count": 19,
+        "like_count": 48,
+        "quote_count": 1,
+        "bookmark_count": 6,
+        "impression_count": 2301
+      }
+    },
+    {
+      "score": 19,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 2 matches",
+        "actionable code"
+      ],
+      "text": "Claude code can not automate your trading  \n\nUnless you approach it this way  \n\nIt\u2019s really the only way to use Claude to build trading bots  \n\nYou may wanna bm this if you actually wanna have Claude code bots for you https://t.co/7uloPjRG2w",
+      "author": "18182495",
+      "tweet_id": "2016602180443099248",
+      "metrics": {
+        "retweet_count": 15,
+        "reply_count": 2,
+        "like_count": 197,
+        "quote_count": 0,
+        "bookmark_count": 405,
+        "impression_count": 14731
+      }
+    },
+    {
+      "score": 19,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE",
+        "STRATEGY"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 2 matches",
+        "actionable code"
+      ],
+      "text": "$460K in profits from bot trading on Polymarket vibecoded with Claude Code in 3 nights\n\nIt runs a fully automated, mechanical strategy on 15-minute BTC Up/Down markets\n\nNo emotions, no manual tweaks, no scaling - just pulling profits from $10-30K positions across 6,000+ trades https://t.co/XEC54qa2i",
+      "author": "752114515060330496",
+      "tweet_id": "2009394883698811176",
+      "metrics": {
+        "retweet_count": 1,
+        "reply_count": 13,
+        "like_count": 39,
+        "quote_count": 0,
+        "bookmark_count": 25,
+        "impression_count": 4482
+      }
+    },
+    {
+      "score": 19,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 2 matches",
+        "actionable code"
+      ],
+      "text": "just bought claude code to make $1m on polymarket\n\nsomeone made $75k in january with an alert bot that tracked unusual wallet movements \n\nmarket makers are pulling $700-800 per day with basic automation\n\ni'm building both\n\nsetup is simple: \n\u2192 alert system catches whale movements https://t.co/JTDAImy",
+      "author": "1966599631900438528",
+      "tweet_id": "2009248931775992278",
+      "metrics": {
+        "retweet_count": 114,
+        "reply_count": 112,
+        "like_count": 1897,
+        "quote_count": 2,
+        "bookmark_count": 2848,
+        "impression_count": 167614
+      }
+    },
+    {
+      "score": 18,
+      "categories": [
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "4 priority topics",
+        "high-priority: 1 matches",
+        "medium-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "Creator of Claude Codes reply to Andrej Karpathys\u2019 thoughts on coding with AI\n\nWhat I take from here:\n- Opus 4.5 is writing 100% of code at Anthropic \n- Because they dogfood, they know how to improve the model\n- Many still haven\u2019t switched to this method of coding but will soon https://t.co/xNpxHsc3",
+      "author": "1629934761497047041",
+      "tweet_id": "2016555902162088208",
+      "metrics": {
+        "retweet_count": 21,
+        "reply_count": 14,
+        "like_count": 691,
+        "quote_count": 2,
+        "bookmark_count": 506,
+        "impression_count": 217790
+      }
+    },
+    {
+      "score": 17,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 2 matches"
+      ],
+      "text": "Bot made $100 -&gt; 500k$ in one month on Polymarket\n(Nope it's not, it was only one of the test deps)\n\nBuilding an arbitrage bot via vibe coding w Claude AI assistance\n(You can't)\n\n&gt; 7,161 total predictions\n&gt; $515,432 All time PNL\n&gt; All this in one month https://t.co/GUZgR5s0n4",
+      "author": "1737038571092029440",
+      "tweet_id": "2009264267405471954",
+      "metrics": {
+        "retweet_count": 5,
+        "reply_count": 37,
+        "like_count": 104,
+        "quote_count": 0,
+        "bookmark_count": 79,
+        "impression_count": 8426
+      }
+    },
+    {
+      "score": 16,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "4 priority topics",
+        "high-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "Codex on the left building me a Polymarket scanner\n\nClaude Code on the right building me a crypto whale scanner\n\nChatGPT5 desktop app in the middle ideating what to build next\n\n1 person. 3 AI agents working. This is how you build a 1 person billion dollar business https://t.co/nRqOlFXcO3",
+      "author": "1369348853414178822",
+      "tweet_id": "1977597890035130396",
+      "metrics": {
+        "retweet_count": 107,
+        "reply_count": 187,
+        "like_count": 1548,
+        "quote_count": 17,
+        "bookmark_count": 1253,
+        "impression_count": 153254
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "2 priority topics",
+        "high-priority: 1 matches",
+        "medium-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "claude code + obsidian is infrastructure for agents to think in\n\nheres how to get started:",
+      "author": "1915489112787718144",
+      "tweet_id": "2016594876096204981",
+      "metrics": {
+        "retweet_count": 19,
+        "reply_count": 9,
+        "like_count": 377,
+        "quote_count": 2,
+        "bookmark_count": 929,
+        "impression_count": 34215
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "2 priority topics",
+        "high-priority: 1 matches",
+        "medium-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "@karpathy As always, a very thoughtful and well reasoned take. I read till the end.\n\nI think the Claude Code team itself might be an  indicator of where things are headed. We have directional answers for some (not all) of the prompts:\n\n1. We hire mostly generalists. We have a mix of senior",
+      "author": "159337660",
+      "tweet_id": "2015979257038831967",
+      "metrics": {
+        "retweet_count": 303,
+        "reply_count": 123,
+        "like_count": 5175,
+        "quote_count": 66,
+        "bookmark_count": 3069,
+        "impression_count": 587853
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "&gt;Using claude code to trade on @Polymarket ????\n\n&gt;Now possible with @pigeon_trade https://t.co/kpisFVnBsb",
+      "author": "537435479",
+      "tweet_id": "2011905059521773987",
+      "metrics": {
+        "retweet_count": 5,
+        "reply_count": 15,
+        "like_count": 56,
+        "quote_count": 2,
+        "bookmark_count": 28,
+        "impression_count": 6088
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "\u201cI just vibe coded a Polymarket insider trading detection tool with Claude code\u201d https://t.co/Rezmma8fUW",
+      "author": "1348155792780881920",
+      "tweet_id": "2008412020131971236",
+      "metrics": {
+        "retweet_count": 345,
+        "reply_count": 186,
+        "like_count": 9820,
+        "quote_count": 46,
+        "bookmark_count": 879,
+        "impression_count": 352155
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "My first personal software project built with Claude code in a day \n\nPolymarket insider and wallet tracker (ignore UI focused just on it actually working so far)\n\nWill give it world class UI like Kendo and test myself. If it works should we ship it? \ud83d\udc40 https://t.co/Xa1xIXgGOM",
+      "author": "3001474643",
+      "tweet_id": "2008381880349986910",
+      "metrics": {
+        "retweet_count": 18,
+        "reply_count": 45,
+        "like_count": 608,
+        "quote_count": 3,
+        "bookmark_count": 749,
+        "impression_count": 101959
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "3 priority topics",
+        "high-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "How do you use claude code or @grok for strategies on top of @Polymarket ??\n\n&gt; Use @pigeon_trade (no fees on PM)\n\n&gt; Gas sponsored/abstracted fund with any chain ie: base / solana and don't worry about pol/usdc.e\n\n&gt; Self custody wallet by @privy_io \n\n&gt; Deterministic runtime, https://t.co/",
+      "author": "537435479",
+      "tweet_id": "2008959618660159856",
+      "metrics": {
+        "retweet_count": 9,
+        "reply_count": 12,
+        "like_count": 75,
+        "quote_count": 0,
+        "bookmark_count": 39,
+        "impression_count": 7300
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "TRADING",
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "2 priority topics",
+        "high-priority: 1 matches",
+        "medium-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "Vibe coders are quietly making $100,000+ per month on Polymarket with AI bots.\n\nHere's the exact playbook:\n1.Go to Claude AI\n2.Prompt:\n\"Please make me a Polymarket bot that earns $100,000/month in passive income\" (don't forget the \"please\").\n3.Claude gives you a bot \u274c IGNORE IT https://t.co/CXQEU1yu",
+      "author": "1895237122145001473",
+      "tweet_id": "2003783486503530862",
+      "metrics": {
+        "retweet_count": 4,
+        "reply_count": 58,
+        "like_count": 107,
+        "quote_count": 0,
+        "bookmark_count": 70,
+        "impression_count": 8111
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "2 priority topics",
+        "high-priority: 1 matches",
+        "medium-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "This simple prompt would 10x your Claude Code performance.\n\n\"Would a senior engineer say this is overcomplicated? If yes, simplify.\"\n\nSimplicity always matters. https://t.co/urpRA5mCDD",
+      "author": "2572621910",
+      "tweet_id": "2016377577880092845",
+      "metrics": {
+        "retweet_count": 36,
+        "reply_count": 14,
+        "like_count": 530,
+        "quote_count": 0,
+        "bookmark_count": 605,
+        "impression_count": 29326
+      }
+    },
+    {
+      "score": 14,
+      "categories": [
+        "AI/CLAUDE",
+        "CODE"
+      ],
+      "reasons": [
+        "2 priority topics",
+        "high-priority: 1 matches",
+        "medium-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "This guy literally shows how to get better results from Claude Code instantly https://t.co/Fm5clTIj4u",
+      "author": "1559533770499362818",
+      "tweet_id": "2016553372644733175",
+      "metrics": {
+        "retweet_count": 15,
+        "reply_count": 10,
+        "like_count": 50,
+        "quote_count": 0,
+        "bookmark_count": 51,
+        "impression_count": 2822
+      }
+    },
+    {
+      "score": 12,
+      "categories": [
+        "AI/CLAUDE",
+        "CODE",
+        "STRATEGY"
+      ],
+      "reasons": [
+        "2 priority topics",
+        "high-priority: 1 matches",
+        "actionable code"
+      ],
+      "text": "as a founder, claude code has materially changed how I project manage in Linear, on a few levels:\n\neasy - query insights faster, e.g. \"how many pts does this person have this cycle, &amp; how many have rolled over from last\"\n\ncool - surface long-running tickets &amp; infer blockers via https://t.co/",
+      "author": "4544645238",
+      "tweet_id": "2008416118365663518",
+      "metrics": {
+        "retweet_count": 19,
+        "reply_count": 39,
+        "like_count": 472,
+        "quote_count": 3,
+        "bookmark_count": 563,
+        "impression_count": 48436
+      }
+    }
+  ],
+  "integrations_recommended": [
+    {
+      "text": "That feeling right after paying for Claude Code because you know a $20 AI will build you a Polymarket arbitrage bot and you\u2019ll get rich https://t.co/dsM3VkxoNv",
+      "score": 26,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "how to actually make $600-800/day with an AI bot for Polymarket using Claude and Gemini\n\nfeed Claude and Gemini the Polymarket API documentation and ask them to build a trading bot. Claude handles arb",
+      "score": 22,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "I asked claude code to build his own market making polymarket bot.. and to my non-surprised it lost $400! https://t.co/xe5z3UxGIb",
+      "score": 21,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "Vibe coded a copy trader bot for the 15-minute markets on @Polymarket.\n\n2x my bankroll in one day.\n\nThe setup is very simple.\n\nWatched two traders and copied their trades if specific parameters were m",
+      "score": 21,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "Claude code can not automate your trading  \n\nUnless you approach it this way  \n\nIt\u2019s really the only way to use Claude to build trading bots  \n\nYou may wanna bm this if you actually wanna have Claude ",
+      "score": 19,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "$460K in profits from bot trading on Polymarket vibecoded with Claude Code in 3 nights\n\nIt runs a fully automated, mechanical strategy on 15-minute BTC Up/Down markets\n\nNo emotions, no manual tweaks, ",
+      "score": 19,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "just bought claude code to make $1m on polymarket\n\nsomeone made $75k in january with an alert bot that tracked unusual wallet movements \n\nmarket makers are pulling $700-800 per day with basic automati",
+      "score": 19,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "Creator of Claude Codes reply to Andrej Karpathys\u2019 thoughts on coding with AI\n\nWhat I take from here:\n- Opus 4.5 is writing 100% of code at Anthropic \n- Because they dogfood, they know how to improve ",
+      "score": 18,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "Bot made $100 -&gt; 500k$ in one month on Polymarket\n(Nope it's not, it was only one of the test deps)\n\nBuilding an arbitrage bot via vibe coding w Claude AI assistance\n(You can't)\n\n&gt; 7,161 total p",
+      "score": 17,
+      "action": "INVESTIGATE"
+    },
+    {
+      "text": "Codex on the left building me a Polymarket scanner\n\nClaude Code on the right building me a crypto whale scanner\n\nChatGPT5 desktop app in the middle ideating what to build next\n\n1 person. 3 AI agents w",
+      "score": 16,
+      "action": "INVESTIGATE"
+    }
+  ],
+  "categories_summary": {
+    "TRADING": 56,
+    "AI/CLAUDE": 48,
+    "CODE": 30,
+    "STRATEGY": 11,
+    "GENERAL": 41
+  }
+}

@@ -1,0 +1,52 @@
+[2026-02-01T20:45:29.664341] [INFO] (◉) AUTONOMOUS COMPOUNDER INITIALIZED
+[2026-02-01T20:45:30.870822] [INFO] (◉) CLIENT READY - Capital: $1,175.60
+[2026-02-01T20:45:30.871009] [INFO] 
+============================================================
+[2026-02-01T20:45:30.871356] [INFO] (◉) AUTONOMOUS COMPOUNDER - LIVE
+[2026-02-01T20:45:30.871418] [INFO] Starting capital: $1,175.60
+[2026-02-01T20:45:30.871479] [INFO] Target: 10x+ compounding
+[2026-02-01T20:45:30.871549] [INFO] Config: {'cycle_interval': 15, 'min_edge_multiplier': 5, 'max_position_pct': 0.25, 'min_liquidity': 5000, 'min_volume': 10000, 'confidence_threshold': 0.7, 'compound_immediately': True}
+[2026-02-01T20:45:30.871589] [INFO] ============================================================
+
+[2026-02-01T20:45:30.871648] [INFO] 
+============================================================
+[2026-02-01T20:45:30.871709] [INFO] (◉) CYCLE 1 START
+[2026-02-01T20:45:32.074704] [INFO] PERCEIVE: 289 raw opportunities
+[2026-02-01T20:45:32.075309] [INFO] CONNECT: Scored and ranked
+[2026-02-01T20:45:32.075571] [INFO] QUESTION: 212 passed filters
+[2026-02-01T20:45:32.075612] [INFO]   [0.85] 667x | Will the Memphis Grizzlies win the 2026 NBA F...
+[2026-02-01T20:45:32.075673] [INFO]   [0.85] 667x | Will the New Orleans Pelicans win the 2026 NB...
+[2026-02-01T20:45:32.075715] [INFO]   [0.85] 667x | Will the Brooklyn Nets win the 2026 NBA Final...
+[2026-02-01T20:45:32.075768] [INFO]   [0.85] 667x | Will the Utah Jazz win the 2026 NBA Finals?...
+[2026-02-01T20:45:32.075813] [INFO]   [0.85] 667x | Will the Sacramento Kings win the 2026 NBA Fi...
+[2026-02-01T20:45:32.586025] [INFO] (◉) EXECUTING: Will the Memphis Grizzlies win the 2026 NBA Finals...
+[2026-02-01T20:45:32.586217] [INFO]     YES @ $0.0015 | $100.00 | 667x potential
+[2026-02-01T20:45:32.781377] [ERROR]     ERROR: PolyApiException[status_code=400, error_message={'error': 'Invalid token id'}]
+[2026-02-01T20:45:33.782645] [INFO] (◉) EXECUTING: Will the New Orleans Pelicans win the 2026 NBA Fin...
+[2026-02-01T20:45:33.782853] [INFO]     YES @ $0.0015 | $100.00 | 667x potential
+[2026-02-01T20:45:33.975156] [ERROR]     ERROR: PolyApiException[status_code=400, error_message={'error': 'Invalid token id'}]
+[2026-02-01T20:45:34.976406] [INFO] (◉) EXECUTING: Will the Brooklyn Nets win the 2026 NBA Finals?...
+[2026-02-01T20:45:34.976579] [INFO]     YES @ $0.0015 | $100.00 | 667x potential
+[2026-02-01T20:45:35.216841] [ERROR]     ERROR: PolyApiException[status_code=400, error_message={'error': 'Invalid token id'}]
+[2026-02-01T20:45:36.218380] [INFO] (◉) SHARE: Cycle 1 | Capital: $1,175.60 | P&L: $+0.00 (+0.0%)
+[2026-02-01T20:45:36.881747] [INFO]     Orders: 4 open | Trades: 42 total
+[2026-02-01T20:45:36.882093] [INFO] (◉) CYCLE 1 END (6.0s)
+[2026-02-01T20:45:49.946519] [INFO] (◉) AUTONOMOUS COMPOUNDER INITIALIZED
+[2026-02-01T20:45:51.169695] [INFO] (◉) CLIENT READY - Capital: $1,175.60
+[2026-02-01T20:45:51.169869] [INFO] 
+============================================================
+[2026-02-01T20:45:51.170222] [INFO] (◉) AUTONOMOUS COMPOUNDER - LIVE
+[2026-02-01T20:45:51.170294] [INFO] Starting capital: $1,175.60
+[2026-02-01T20:45:51.170365] [INFO] Target: 10x+ compounding
+[2026-02-01T20:45:51.170453] [INFO] Config: {'cycle_interval': 15, 'min_edge_multiplier': 5, 'max_position_pct': 0.25, 'min_liquidity': 5000, 'min_volume': 10000, 'confidence_threshold': 0.7, 'compound_immediately': True}
+[2026-02-01T20:45:51.170506] [INFO] ============================================================
+
+[2026-02-01T20:45:51.170567] [INFO] 
+============================================================
+[2026-02-01T20:45:51.170631] [INFO] (◉) CYCLE 1 START
+[2026-02-01T20:45:52.330990] [INFO] PERCEIVE: 0 raw opportunities
+[2026-02-01T20:45:52.331193] [INFO] CONNECT: Scored and ranked
+[2026-02-01T20:45:52.331578] [INFO] QUESTION: 0 passed filters
+[2026-02-01T20:45:52.331804] [INFO] (◉) SHARE: Cycle 1 | Capital: $1,175.60 | P&L: $+0.00 (+0.0%)
+[2026-02-01T20:45:52.754502] [INFO]     Orders: 4 open | Trades: 42 total
+[2026-02-01T20:45:52.754746] [INFO] (◉) CYCLE 1 END (1.6s)

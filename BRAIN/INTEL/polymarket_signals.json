@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-02-03T10:51:07.541016",
+  "total_markets": 50,
+  "high_volume_count": 5,
+  "opportunities_count": 3,
+  "high_volume": [
+    {
+      "question": "Will GTA 6 cost $100+?",
+      "yes_price": 0.0085,
+      "no_price": 0.9915,
+      "volume_24h": 89837.40808499999,
+      "liquidity": 63726.58443,
+      "id": "527079",
+      "slug": "will-gta-6-cost-100"
+    },
+    {
+      "question": "Will the New England Patriots win Super Bowl 2026?",
+      "yes_price": 0.3185,
+      "no_price": 0.6815,
+      "volume_24h": 156524.88919200006,
+      "liquidity": 748107.9179,
+      "id": "540227",
+      "slug": "will-the-new-england-patriots-win-super-bowl-2026",
+      "signals": [
+        "High volume ($156,525)"
+      ]
+    },
+    {
+      "question": "Will the Seattle Seahawks win Super Bowl 2026?",
+      "yes_price": 0.681,
+      "no_price": 0.319,
+      "volume_24h": 97388.71556299998,
+      "liquidity": 824281.16392,
+      "id": "540234",
+      "slug": "will-the-seattle-seahawks-win-super-bowl-2026"
+    },
+    {
+      "question": "Will Jesus Christ return before GTA VI?",
+      "yes_price": 0.475,
+      "no_price": 0.525,
+      "volume_24h": 67486.76846699997,
+      "liquidity": 427507.8215,
+      "id": "540819",
+      "slug": "will-jesus-christ-return-before-gta-vi-665"
+    },
+    {
+      "question": "Will China invades Taiwan before GTA VI?",
+      "yes_price": 0.525,
+      "no_price": 0.475,
+      "volume_24h": 54223.95368300001,
+      "liquidity": 50761.6781,
+      "id": "540843",
+      "slug": "will-china-invades-taiwan-before-gta-vi-716"
+    }
+  ],
+  "opportunities": [
+    {
+      "question": "Will the U.S. collect less than $100b in revenue in 2025?",
+      "yes_price": 0.773,
+      "no_price": 0.227,
+      "volume_24h": 14153.815280999997,
+      "liquidity": 26678.77837,
+      "id": "537484",
+      "slug": "will-the-us-collect-less-than-100b-in-revenue-in-2025",
+      "signals": [
+        "High YES (77.3%) - potential value"
+      ]
+    },
+    {
+      "question": "Will the U.S. collect between $200b and $500b in revenue in 2025?",
+      "yes_price": 0.165,
+      "no_price": 0.835,
+      "volume_24h": 9499.616746,
+      "liquidity": 19124.563,
+      "id": "537486",
+      "slug": "will-the-us-collect-between-200b-and-500b-in-revenue-in-2025",
+      "signals": [
+        "Low YES (16.5%) - potential value"
+      ]
+    },
+    {
+      "question": "Will the New England Patriots win Super Bowl 2026?",
+      "yes_price": 0.3185,
+      "no_price": 0.6815,
+      "volume_24h": 156524.88919200006,
+      "liquidity": 748107.9179,
+      "id": "540227",
+      "slug": "will-the-new-england-patriots-win-super-bowl-2026",
+      "signals": [
+        "High volume ($156,525)"
+      ]
+    }
+  ]
+}

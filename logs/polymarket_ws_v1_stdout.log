@@ -1,0 +1,31 @@
+2026-01-31 14:13:47,694 - INFO - 📊 Found 1890 asset IDs from 1000 hot markets
+2026-01-31 14:13:47,695 - INFO - 📊 Loaded state: 0 messages received
+2026-01-31 14:13:47,695 - INFO - 🚀 Starting Polymarket WebSocket client...
+2026-01-31 14:13:47,695 - INFO -    URL: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:47,695 - INFO -    Markets: 1890
+2026-01-31 14:13:47,696 - INFO -    Feed: /Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/polymarket_live_feed.jsonl
+2026-01-31 14:13:48,488 - INFO - Websocket connected
+2026-01-31 14:13:48,488 - INFO - ✅ Connected to Polymarket WebSocket: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:48,488 - INFO - 📡 Sent simple 'market' subscription
+2026-01-31 14:13:48,858 - INFO - 📡 Also sent JSON subscription for 1890 markets
+2026-01-31 14:13:48,859 - ERROR - ❌ WebSocket error: Connection to remote host was lost.
+2026-01-31 14:13:48,859 - ERROR - Connection to remote host was lost. - goodbye
+2026-01-31 14:13:48,859 - WARNING - ⚠️ Connection closed: None - None
+2026-01-31 14:13:48,862 - INFO - 🔄 Reconnecting in 5s (attempt 1/10)
+2026-01-31 14:13:53,867 - INFO - 🚀 Starting Polymarket WebSocket client...
+2026-01-31 14:13:53,867 - INFO -    URL: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:53,867 - INFO -    Markets: 1890
+2026-01-31 14:13:53,867 - INFO -    Feed: /Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/polymarket_live_feed.jsonl
+2026-01-31 14:13:54,846 - INFO - Websocket connected
+2026-01-31 14:13:54,847 - INFO - ✅ Connected to Polymarket WebSocket: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:13:54,847 - INFO - 📡 Sent simple 'market' subscription
+2026-01-31 14:13:55,387 - INFO - 📡 Also sent JSON subscription for 1890 markets
+2026-01-31 14:13:55,389 - ERROR - ❌ WebSocket error: Connection to remote host was lost.
+2026-01-31 14:13:55,389 - ERROR - Connection to remote host was lost. - goodbye
+2026-01-31 14:13:55,389 - WARNING - ⚠️ Connection closed: None - None
+2026-01-31 14:13:55,393 - INFO - 🔄 Reconnecting in 5s (attempt 1/10)
+2026-01-31 14:13:58,863 - ERROR - Error sending ping: Connection is already closed.
+2026-01-31 14:14:00,399 - INFO - 🚀 Starting Polymarket WebSocket client...
+2026-01-31 14:14:00,399 - INFO -    URL: wss://ws-subscriptions-clob.polymarket.com/ws/market
+2026-01-31 14:14:00,399 - INFO -    Markets: 1890
+2026-01-31 14:14:00,399 - INFO -    Feed: /Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/polymarket_live_feed.jsonl

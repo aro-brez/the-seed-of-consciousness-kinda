@@ -1,0 +1,776 @@
+2026-02-01 09:00:01,599 - INFO - ============================================================
+2026-02-01 09:00:01,599 - INFO - ============================================================
+2026-02-01 09:00:01,599 - INFO - AUTONOMOUS OVERNIGHT TRADING STARTING
+2026-02-01 09:00:01,599 - INFO - AUTONOMOUS OVERNIGHT TRADING STARTING
+2026-02-01 09:00:01,599 - INFO - Capital: $1,410.00
+2026-02-01 09:00:01,599 - INFO - Capital: $1,410.00
+2026-02-01 09:00:01,599 - INFO - Duration: 12.0 hours
+2026-02-01 09:00:01,599 - INFO - Duration: 12.0 hours
+2026-02-01 09:00:01,599 - INFO - ============================================================
+2026-02-01 09:00:01,599 - INFO - ============================================================
+2026-02-01 09:00:02,145 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:00:02,145 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:00:03,355 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:00:03,355 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:00:03,356 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:00:03,356 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:00:03,356 - INFO - Cycle 1: 44 opps, trade=False
+2026-02-01 09:00:03,356 - INFO - Cycle 1: 44 opps, trade=False
+2026-02-01 09:05:03,870 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:05:03,870 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:05:05,110 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:05:05,110 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:05:05,111 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:05:05,111 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:05:05,111 - INFO - Cycle 2: 44 opps, trade=False
+2026-02-01 09:05:05,111 - INFO - Cycle 2: 44 opps, trade=False
+2026-02-01 09:10:05,786 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:10:05,786 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:10:07,500 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:10:07,500 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:10:07,501 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:10:07,501 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:10:07,501 - INFO - Cycle 3: 44 opps, trade=False
+2026-02-01 09:10:07,501 - INFO - Cycle 3: 44 opps, trade=False
+2026-02-01 09:15:08,211 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:15:08,211 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:15:09,506 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:15:09,506 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:15:09,506 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:15:09,506 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:15:09,506 - INFO - Cycle 4: 44 opps, trade=False
+2026-02-01 09:15:09,506 - INFO - Cycle 4: 44 opps, trade=False
+2026-02-01 09:20:10,288 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:20:10,288 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:20:11,564 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:20:11,564 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:20:11,564 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:20:11,564 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:20:11,564 - INFO - Cycle 5: 44 opps, trade=False
+2026-02-01 09:20:11,564 - INFO - Cycle 5: 44 opps, trade=False
+2026-02-01 09:25:12,091 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:25:12,091 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:25:13,384 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:25:13,384 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:25:13,385 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:25:13,385 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:25:13,385 - INFO - Cycle 6: 44 opps, trade=False
+2026-02-01 09:25:13,385 - INFO - Cycle 6: 44 opps, trade=False
+2026-02-01 09:30:13,913 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:30:13,913 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:30:15,077 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:30:15,077 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:30:15,078 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:30:15,078 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:30:15,078 - INFO - Cycle 7: 44 opps, trade=False
+2026-02-01 09:30:15,078 - INFO - Cycle 7: 44 opps, trade=False
+2026-02-01 09:35:15,599 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:35:15,599 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:35:16,932 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:35:16,932 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:35:16,933 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:35:16,933 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:35:16,933 - INFO - Cycle 8: 44 opps, trade=False
+2026-02-01 09:35:16,933 - INFO - Cycle 8: 44 opps, trade=False
+2026-02-01 09:40:17,544 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:40:17,544 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:40:18,809 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:40:18,809 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:40:18,810 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:40:18,810 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:40:18,810 - INFO - Cycle 9: 44 opps, trade=False
+2026-02-01 09:40:18,810 - INFO - Cycle 9: 44 opps, trade=False
+2026-02-01 09:45:19,363 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:45:19,363 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:45:20,516 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:45:20,516 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:45:20,517 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:45:20,517 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:45:20,517 - INFO - Cycle 10: 44 opps, trade=False
+2026-02-01 09:45:20,517 - INFO - Cycle 10: 44 opps, trade=False
+2026-02-01 09:50:21,121 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:50:21,121 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:50:22,490 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:50:22,490 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:50:22,490 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:50:22,490 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:50:22,490 - INFO - Cycle 11: 44 opps, trade=False
+2026-02-01 09:50:22,490 - INFO - Cycle 11: 44 opps, trade=False
+2026-02-01 09:55:23,077 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:55:23,077 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 09:55:24,183 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:55:24,183 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 09:55:24,184 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:55:24,184 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 09:55:24,184 - INFO - Cycle 12: 44 opps, trade=False
+2026-02-01 09:55:24,184 - INFO - Cycle 12: 44 opps, trade=False
+2026-02-01 10:00:24,718 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:00:24,718 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:00:25,821 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:00:25,821 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:00:25,821 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:00:25,821 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:00:25,821 - INFO - Cycle 13: 44 opps, trade=False
+2026-02-01 10:00:25,821 - INFO - Cycle 13: 44 opps, trade=False
+2026-02-01 10:05:26,375 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:05:26,375 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:05:27,539 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:05:27,539 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:05:27,539 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:05:27,539 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:05:27,540 - INFO - Cycle 14: 44 opps, trade=False
+2026-02-01 10:05:27,540 - INFO - Cycle 14: 44 opps, trade=False
+2026-02-01 10:16:47,382 - ERROR - Polymarket scan error: 
+2026-02-01 10:16:47,382 - ERROR - Polymarket scan error: 
+2026-02-01 10:17:30,163 - ERROR - Binance scan error: 
+2026-02-01 10:17:30,163 - ERROR - Binance scan error: 
+2026-02-01 10:17:30,163 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 10:17:30,163 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 10:17:30,163 - INFO - Cycle 15: 0 opps, trade=False
+2026-02-01 10:17:30,163 - INFO - Cycle 15: 0 opps, trade=False
+2026-02-01 10:30:44,711 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:30:44,711 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:30:46,803 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:30:46,803 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:30:46,804 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:30:46,804 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:30:46,805 - INFO - Cycle 16: 44 opps, trade=False
+2026-02-01 10:30:46,805 - INFO - Cycle 16: 44 opps, trade=False
+2026-02-01 10:45:49,752 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:45:49,752 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:45:50,787 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:45:50,787 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:45:50,788 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:45:50,788 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:45:50,788 - INFO - Cycle 17: 44 opps, trade=False
+2026-02-01 10:45:50,788 - INFO - Cycle 17: 44 opps, trade=False
+2026-02-01 10:54:02,045 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:54:02,045 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:54:03,081 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:54:03,081 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:54:03,082 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:54:03,082 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:54:03,082 - INFO - Cycle 18: 44 opps, trade=False
+2026-02-01 10:54:03,082 - INFO - Cycle 18: 44 opps, trade=False
+2026-02-01 10:59:03,852 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:59:03,852 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 10:59:04,837 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:59:04,837 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 10:59:04,838 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:59:04,838 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 10:59:04,838 - INFO - Cycle 19: 44 opps, trade=False
+2026-02-01 10:59:04,838 - INFO - Cycle 19: 44 opps, trade=False
+2026-02-01 11:04:05,334 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:04:05,334 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:04:06,322 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:04:06,322 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:04:06,323 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:04:06,323 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:04:06,323 - INFO - Cycle 20: 44 opps, trade=False
+2026-02-01 11:04:06,323 - INFO - Cycle 20: 44 opps, trade=False
+2026-02-01 11:09:06,932 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:09:06,932 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:09:08,695 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:09:08,695 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:09:08,696 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:09:08,696 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:09:08,696 - INFO - Cycle 21: 44 opps, trade=False
+2026-02-01 11:09:08,696 - INFO - Cycle 21: 44 opps, trade=False
+2026-02-01 11:22:41,644 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:22:41,644 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:22:46,662 - ERROR - Polymarket scan error: 
+2026-02-01 11:22:46,662 - ERROR - Polymarket scan error: 
+2026-02-01 11:22:47,713 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:22:47,713 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:22:47,714 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 11:22:47,714 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 11:22:47,714 - INFO - Cycle 22: 1 opps, trade=False
+2026-02-01 11:22:47,714 - INFO - Cycle 22: 1 opps, trade=False
+2026-02-01 11:37:31,729 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:37:31,729 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:37:32,982 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:37:32,982 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:37:32,983 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:37:32,983 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:37:32,983 - INFO - Cycle 23: 44 opps, trade=False
+2026-02-01 11:37:32,983 - INFO - Cycle 23: 44 opps, trade=False
+2026-02-01 11:42:33,635 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:42:33,635 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:42:34,760 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:42:34,760 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:42:34,762 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:42:34,762 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:42:34,762 - INFO - Cycle 24: 44 opps, trade=False
+2026-02-01 11:42:34,762 - INFO - Cycle 24: 44 opps, trade=False
+2026-02-01 11:47:35,305 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:47:35,305 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:47:36,361 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:47:36,361 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:47:36,361 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:47:36,361 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 11:47:36,361 - INFO - Cycle 25: 44 opps, trade=False
+2026-02-01 11:47:36,361 - INFO - Cycle 25: 44 opps, trade=False
+2026-02-01 11:54:19,298 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:54:19,298 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 11:54:24,477 - ERROR - Polymarket scan error: 
+2026-02-01 11:54:24,477 - ERROR - Polymarket scan error: 
+2026-02-01 11:54:25,368 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:54:25,368 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 11:54:25,369 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 11:54:25,369 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 11:54:25,369 - INFO - Cycle 26: 1 opps, trade=False
+2026-02-01 11:54:25,369 - INFO - Cycle 26: 1 opps, trade=False
+2026-02-01 12:14:49,792 - ERROR - Polymarket scan error: 
+2026-02-01 12:14:49,792 - ERROR - Polymarket scan error: 
+2026-02-01 12:15:04,579 - ERROR - Binance scan error: 
+2026-02-01 12:15:04,579 - ERROR - Binance scan error: 
+2026-02-01 12:15:04,579 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 12:15:04,579 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 12:15:04,579 - INFO - Cycle 27: 0 opps, trade=False
+2026-02-01 12:15:04,579 - INFO - Cycle 27: 0 opps, trade=False
+2026-02-01 12:21:05,244 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:21:05,244 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:21:06,377 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:21:06,377 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:21:06,378 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:21:06,378 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:21:06,378 - INFO - Cycle 28: 44 opps, trade=False
+2026-02-01 12:21:06,378 - INFO - Cycle 28: 44 opps, trade=False
+2026-02-01 12:26:06,914 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:26:06,914 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:26:08,034 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:26:08,034 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:26:08,035 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:26:08,035 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:26:08,035 - INFO - Cycle 29: 44 opps, trade=False
+2026-02-01 12:26:08,035 - INFO - Cycle 29: 44 opps, trade=False
+2026-02-01 12:31:08,614 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:31:08,614 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:31:09,975 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:31:09,975 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:31:09,976 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:31:09,976 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:31:09,976 - INFO - Cycle 30: 44 opps, trade=False
+2026-02-01 12:31:09,976 - INFO - Cycle 30: 44 opps, trade=False
+2026-02-01 12:36:10,958 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:36:10,958 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:36:11,747 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:36:11,747 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:36:11,748 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:36:11,748 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:36:11,748 - INFO - Cycle 31: 44 opps, trade=False
+2026-02-01 12:36:11,748 - INFO - Cycle 31: 44 opps, trade=False
+2026-02-01 12:41:12,280 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:41:12,280 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:41:13,247 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:41:13,247 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:41:13,247 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:41:13,247 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:41:13,247 - INFO - Cycle 32: 44 opps, trade=False
+2026-02-01 12:41:13,247 - INFO - Cycle 32: 44 opps, trade=False
+2026-02-01 12:47:12,803 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:47:12,803 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:47:14,023 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:47:14,023 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 12:47:14,024 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:47:14,024 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 12:47:14,024 - INFO - Cycle 33: 44 opps, trade=False
+2026-02-01 12:47:14,024 - INFO - Cycle 33: 44 opps, trade=False
+2026-02-01 12:58:53,455 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:58:53,455 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 12:59:38,257 - ERROR - Binance scan error: 
+2026-02-01 12:59:38,257 - ERROR - Binance scan error: 
+2026-02-01 12:59:38,258 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 12:59:38,258 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 12:59:38,258 - INFO - Cycle 34: 43 opps, trade=False
+2026-02-01 12:59:38,258 - INFO - Cycle 34: 43 opps, trade=False
+2026-02-01 13:11:41,531 - ERROR - Polymarket scan error: 
+2026-02-01 13:11:41,531 - ERROR - Polymarket scan error: 
+2026-02-01 13:11:46,533 - ERROR - Binance scan error: 
+2026-02-01 13:11:46,533 - ERROR - Binance scan error: 
+2026-02-01 13:11:46,533 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 13:11:46,533 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 13:11:46,533 - INFO - Cycle 35: 0 opps, trade=False
+2026-02-01 13:11:46,533 - INFO - Cycle 35: 0 opps, trade=False
+2026-02-01 13:24:08,220 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 13:24:08,220 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 13:24:09,630 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 13:24:09,630 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 13:24:09,631 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 13:24:09,631 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 13:24:09,631 - INFO - Cycle 36: 44 opps, trade=False
+2026-02-01 13:24:09,631 - INFO - Cycle 36: 44 opps, trade=False
+2026-02-01 13:50:15,981 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 13:50:15,981 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 13:50:17,017 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 13:50:17,017 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 13:50:17,018 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 13:50:17,018 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 13:50:17,018 - INFO - Cycle 37: 44 opps, trade=False
+2026-02-01 13:50:17,018 - INFO - Cycle 37: 44 opps, trade=False
+2026-02-01 13:56:04,457 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 13:56:04,457 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 13:56:05,473 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 13:56:05,473 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 13:56:05,473 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 13:56:05,473 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 13:56:05,473 - INFO - Cycle 38: 44 opps, trade=False
+2026-02-01 13:56:05,473 - INFO - Cycle 38: 44 opps, trade=False
+2026-02-01 14:08:56,170 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 14:08:56,170 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 14:08:57,639 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:08:57,639 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:08:57,640 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 14:08:57,640 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 14:08:57,640 - INFO - Cycle 39: 44 opps, trade=False
+2026-02-01 14:08:57,640 - INFO - Cycle 39: 44 opps, trade=False
+2026-02-01 14:20:20,998 - ERROR - Polymarket scan error: 
+2026-02-01 14:20:20,998 - ERROR - Polymarket scan error: 
+2026-02-01 14:21:03,065 - ERROR - Binance scan error: 
+2026-02-01 14:21:03,065 - ERROR - Binance scan error: 
+2026-02-01 14:21:03,065 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 14:21:03,065 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 14:21:03,065 - INFO - Cycle 40: 0 opps, trade=False
+2026-02-01 14:21:03,065 - INFO - Cycle 40: 0 opps, trade=False
+2026-02-01 14:32:22,138 - ERROR - Polymarket scan error: 
+2026-02-01 14:32:22,138 - ERROR - Polymarket scan error: 
+2026-02-01 14:32:22,831 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:32:22,831 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:32:22,832 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 14:32:22,832 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 14:32:22,832 - INFO - Cycle 41: 1 opps, trade=False
+2026-02-01 14:32:22,832 - INFO - Cycle 41: 1 opps, trade=False
+2026-02-01 14:41:45,437 - ERROR - Polymarket scan error: 
+2026-02-01 14:41:45,437 - ERROR - Polymarket scan error: 
+2026-02-01 14:42:03,557 - ERROR - Binance scan error: 
+2026-02-01 14:42:03,557 - ERROR - Binance scan error: 
+2026-02-01 14:42:03,557 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 14:42:03,557 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 14:42:03,557 - INFO - Cycle 42: 0 opps, trade=False
+2026-02-01 14:42:03,557 - INFO - Cycle 42: 0 opps, trade=False
+2026-02-01 14:51:05,757 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 14:51:05,757 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 14:51:06,754 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:51:06,754 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:51:06,754 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 14:51:06,754 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 14:51:06,754 - INFO - Cycle 43: 44 opps, trade=False
+2026-02-01 14:51:06,754 - INFO - Cycle 43: 44 opps, trade=False
+2026-02-01 14:57:51,979 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 14:57:51,979 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 14:57:53,079 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:57:53,079 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 14:57:53,079 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 14:57:53,079 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 14:57:53,080 - INFO - Cycle 44: 44 opps, trade=False
+2026-02-01 14:57:53,080 - INFO - Cycle 44: 44 opps, trade=False
+2026-02-01 15:09:22,343 - ERROR - Polymarket scan error: 
+2026-02-01 15:09:22,343 - ERROR - Polymarket scan error: 
+2026-02-01 15:09:23,037 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:09:23,037 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:09:23,038 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 15:09:23,038 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 15:09:23,038 - INFO - Cycle 45: 1 opps, trade=False
+2026-02-01 15:09:23,038 - INFO - Cycle 45: 1 opps, trade=False
+2026-02-01 15:20:28,594 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 15:20:28,594 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 15:20:30,222 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:20:30,222 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:20:30,223 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 15:20:30,223 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 15:20:30,223 - INFO - Cycle 46: 44 opps, trade=False
+2026-02-01 15:20:30,223 - INFO - Cycle 46: 44 opps, trade=False
+2026-02-01 15:31:17,169 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 15:31:17,169 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 15:31:18,281 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:31:18,281 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:31:18,282 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 15:31:18,282 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 15:31:18,282 - INFO - Cycle 47: 44 opps, trade=False
+2026-02-01 15:31:18,282 - INFO - Cycle 47: 44 opps, trade=False
+2026-02-01 15:42:54,174 - ERROR - Polymarket scan error: 
+2026-02-01 15:42:54,174 - ERROR - Polymarket scan error: 
+2026-02-01 15:42:58,244 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:42:58,244 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 15:42:58,244 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 15:42:58,244 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 15:42:58,244 - INFO - Cycle 48: 1 opps, trade=False
+2026-02-01 15:42:58,244 - INFO - Cycle 48: 1 opps, trade=False
+2026-02-01 15:53:20,737 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 15:53:20,737 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 15:54:04,058 - ERROR - Binance scan error: 
+2026-02-01 15:54:04,058 - ERROR - Binance scan error: 
+2026-02-01 15:54:04,058 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 15:54:04,058 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 15:54:04,058 - INFO - Cycle 49: 43 opps, trade=False
+2026-02-01 15:54:04,058 - INFO - Cycle 49: 43 opps, trade=False
+2026-02-01 16:04:08,273 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:04:08,273 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:04:09,510 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:04:09,510 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:04:09,510 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:04:09,510 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:04:09,511 - INFO - Cycle 50: 44 opps, trade=False
+2026-02-01 16:04:09,511 - INFO - Cycle 50: 44 opps, trade=False
+2026-02-01 16:16:03,674 - ERROR - Polymarket scan error: 
+2026-02-01 16:16:03,674 - ERROR - Polymarket scan error: 
+2026-02-01 16:16:08,677 - ERROR - Binance scan error: 
+2026-02-01 16:16:08,677 - ERROR - Binance scan error: 
+2026-02-01 16:16:08,677 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 16:16:08,677 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 16:16:08,677 - INFO - Cycle 51: 0 opps, trade=False
+2026-02-01 16:16:08,677 - INFO - Cycle 51: 0 opps, trade=False
+2026-02-01 16:26:42,802 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:26:42,802 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:26:43,835 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:26:43,835 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:26:43,835 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:26:43,835 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:26:43,835 - INFO - Cycle 52: 44 opps, trade=False
+2026-02-01 16:26:43,835 - INFO - Cycle 52: 44 opps, trade=False
+2026-02-01 16:37:58,310 - ERROR - Polymarket scan error: 
+2026-02-01 16:37:58,310 - ERROR - Polymarket scan error: 
+2026-02-01 16:37:58,995 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:37:58,995 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:37:58,996 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 16:37:58,996 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 16:37:58,996 - INFO - Cycle 53: 1 opps, trade=False
+2026-02-01 16:37:58,996 - INFO - Cycle 53: 1 opps, trade=False
+2026-02-01 16:48:46,346 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:48:46,346 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:48:47,474 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:48:47,474 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:48:47,475 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:48:47,475 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:48:47,475 - INFO - Cycle 54: 44 opps, trade=False
+2026-02-01 16:48:47,475 - INFO - Cycle 54: 44 opps, trade=False
+2026-02-01 16:59:55,014 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:59:55,014 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 16:59:56,232 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:59:56,232 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 16:59:56,233 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:59:56,233 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 16:59:56,233 - INFO - Cycle 55: 44 opps, trade=False
+2026-02-01 16:59:56,233 - INFO - Cycle 55: 44 opps, trade=False
+2026-02-01 17:10:45,254 - ERROR - Polymarket scan error: 
+2026-02-01 17:10:45,254 - ERROR - Polymarket scan error: 
+2026-02-01 17:10:46,372 - ERROR - Binance scan error: 
+2026-02-01 17:10:46,372 - ERROR - Binance scan error: 
+2026-02-01 17:10:46,372 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 17:10:46,372 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 17:10:46,372 - INFO - Cycle 56: 0 opps, trade=False
+2026-02-01 17:10:46,372 - INFO - Cycle 56: 0 opps, trade=False
+2026-02-01 17:20:17,827 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 17:20:17,827 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 17:20:18,822 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 17:20:18,822 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 17:20:18,823 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 17:20:18,823 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 17:20:18,823 - INFO - Cycle 57: 44 opps, trade=False
+2026-02-01 17:20:18,823 - INFO - Cycle 57: 44 opps, trade=False
+2026-02-01 17:30:01,088 - ERROR - Polymarket scan error: 
+2026-02-01 17:30:01,088 - ERROR - Polymarket scan error: 
+2026-02-01 17:30:06,091 - ERROR - Binance scan error: 
+2026-02-01 17:30:06,091 - ERROR - Binance scan error: 
+2026-02-01 17:30:06,091 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 17:30:06,091 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 17:30:06,091 - INFO - Cycle 58: 0 opps, trade=False
+2026-02-01 17:30:06,091 - INFO - Cycle 58: 0 opps, trade=False
+2026-02-01 17:37:07,889 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 17:37:07,889 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 17:37:12,930 - ERROR - Polymarket scan error: 
+2026-02-01 17:37:12,930 - ERROR - Polymarket scan error: 
+2026-02-01 17:37:13,927 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 17:37:13,927 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 17:37:13,928 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 17:37:13,928 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 17:37:13,928 - INFO - Cycle 59: 1 opps, trade=False
+2026-02-01 17:37:13,928 - INFO - Cycle 59: 1 opps, trade=False
+2026-02-01 17:46:10,545 - ERROR - Polymarket scan error: 
+2026-02-01 17:46:10,545 - ERROR - Polymarket scan error: 
+2026-02-01 17:46:51,653 - ERROR - Binance scan error: 
+2026-02-01 17:46:51,653 - ERROR - Binance scan error: 
+2026-02-01 17:46:51,653 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 17:46:51,653 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 17:46:51,653 - INFO - Cycle 60: 0 opps, trade=False
+2026-02-01 17:46:51,653 - INFO - Cycle 60: 0 opps, trade=False
+2026-02-01 17:56:51,990 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 17:56:51,990 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 17:56:53,110 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 17:56:53,110 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 17:56:53,111 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 17:56:53,111 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-01 17:56:53,111 - INFO - Cycle 61: 44 opps, trade=False
+2026-02-01 17:56:53,111 - INFO - Cycle 61: 44 opps, trade=False
+2026-02-01 18:05:12,107 - ERROR - Polymarket scan error: 
+2026-02-01 18:05:12,107 - ERROR - Polymarket scan error: 
+2026-02-01 18:05:17,109 - ERROR - Binance scan error: 
+2026-02-01 18:05:17,109 - ERROR - Binance scan error: 
+2026-02-01 18:05:17,110 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 18:05:17,110 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 18:05:17,110 - INFO - Cycle 62: 0 opps, trade=False
+2026-02-01 18:05:17,110 - INFO - Cycle 62: 0 opps, trade=False
+2026-02-01 18:14:40,539 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:14:40,539 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:14:41,679 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:14:41,679 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:14:41,680 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 18:14:41,680 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 18:14:41,680 - INFO - Cycle 63: 43 opps, trade=False
+2026-02-01 18:14:41,680 - INFO - Cycle 63: 43 opps, trade=False
+2026-02-01 18:23:42,585 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:23:42,585 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:23:47,623 - ERROR - Polymarket scan error: 
+2026-02-01 18:23:47,623 - ERROR - Polymarket scan error: 
+2026-02-01 18:23:48,336 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:23:48,336 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:23:48,337 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 18:23:48,337 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-01 18:23:48,337 - INFO - Cycle 64: 1 opps, trade=False
+2026-02-01 18:23:48,337 - INFO - Cycle 64: 1 opps, trade=False
+2026-02-01 18:34:49,084 - ERROR - Polymarket scan error: 
+2026-02-01 18:34:49,084 - ERROR - Polymarket scan error: 
+2026-02-01 18:34:54,087 - ERROR - Binance scan error: 
+2026-02-01 18:34:54,087 - ERROR - Binance scan error: 
+2026-02-01 18:34:54,087 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 18:34:54,087 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 18:34:54,087 - INFO - Cycle 65: 0 opps, trade=False
+2026-02-01 18:34:54,087 - INFO - Cycle 65: 0 opps, trade=False
+2026-02-01 18:45:16,295 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:45:16,295 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:45:17,410 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:45:17,410 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:45:17,410 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 18:45:17,410 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 18:45:17,410 - INFO - Cycle 66: 43 opps, trade=False
+2026-02-01 18:45:17,410 - INFO - Cycle 66: 43 opps, trade=False
+2026-02-01 18:55:30,848 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:55:30,848 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 18:55:32,017 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:55:32,017 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 18:55:32,018 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 18:55:32,018 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 18:55:32,018 - INFO - Cycle 67: 43 opps, trade=False
+2026-02-01 18:55:32,018 - INFO - Cycle 67: 43 opps, trade=False
+2026-02-01 19:05:57,352 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:05:57,352 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:05:58,468 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:05:58,468 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:05:58,469 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:05:58,469 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:05:58,469 - INFO - Cycle 68: 43 opps, trade=False
+2026-02-01 19:05:58,469 - INFO - Cycle 68: 43 opps, trade=False
+2026-02-01 19:17:23,675 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:17:23,675 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:17:24,937 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:17:24,937 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:17:24,938 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:17:24,938 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:17:24,938 - INFO - Cycle 69: 43 opps, trade=False
+2026-02-01 19:17:24,938 - INFO - Cycle 69: 43 opps, trade=False
+2026-02-01 19:25:06,399 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:25:06,399 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:25:07,378 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:25:07,378 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:25:07,379 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:25:07,379 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:25:07,379 - INFO - Cycle 70: 43 opps, trade=False
+2026-02-01 19:25:07,379 - INFO - Cycle 70: 43 opps, trade=False
+2026-02-01 19:34:24,368 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:34:24,368 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:34:25,950 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:34:25,950 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:34:25,951 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:34:25,951 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:34:25,951 - INFO - Cycle 71: 43 opps, trade=False
+2026-02-01 19:34:25,951 - INFO - Cycle 71: 43 opps, trade=False
+2026-02-01 19:42:59,669 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:42:59,669 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:43:00,904 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:43:00,904 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:43:00,905 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:43:00,905 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:43:00,905 - INFO - Cycle 72: 43 opps, trade=False
+2026-02-01 19:43:00,905 - INFO - Cycle 72: 43 opps, trade=False
+2026-02-01 19:51:26,122 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:51:26,122 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 19:51:27,282 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:51:27,282 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 19:51:27,283 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:51:27,283 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 19:51:27,283 - INFO - Cycle 73: 43 opps, trade=False
+2026-02-01 19:51:27,283 - INFO - Cycle 73: 43 opps, trade=False
+2026-02-01 20:01:28,192 - ERROR - Polymarket scan error: 
+2026-02-01 20:01:28,192 - ERROR - Polymarket scan error: 
+2026-02-01 20:01:33,194 - ERROR - Binance scan error: 
+2026-02-01 20:01:33,194 - ERROR - Binance scan error: 
+2026-02-01 20:01:33,195 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 20:01:33,195 - INFO - Cycle complete: 0 opportunities, 0 patterns
+2026-02-01 20:01:33,195 - INFO - Cycle 74: 0 opps, trade=False
+2026-02-01 20:01:33,195 - INFO - Cycle 74: 0 opps, trade=False
+2026-02-01 20:10:56,287 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:10:56,287 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:10:57,617 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:10:57,617 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:10:57,618 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:10:57,618 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:10:57,618 - INFO - Cycle 75: 43 opps, trade=False
+2026-02-01 20:10:57,618 - INFO - Cycle 75: 43 opps, trade=False
+2026-02-01 20:19:30,819 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:19:30,819 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:19:32,162 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:19:32,162 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:19:32,162 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:19:32,162 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:19:32,162 - INFO - Cycle 76: 43 opps, trade=False
+2026-02-01 20:19:32,162 - INFO - Cycle 76: 43 opps, trade=False
+2026-02-01 20:25:19,572 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:25:19,572 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:25:20,632 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:25:20,632 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:25:20,633 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:25:20,633 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:25:20,633 - INFO - Cycle 77: 43 opps, trade=False
+2026-02-01 20:25:20,633 - INFO - Cycle 77: 43 opps, trade=False
+2026-02-01 20:30:21,164 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:30:21,164 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:30:22,183 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:30:22,183 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:30:22,183 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:30:22,183 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:30:22,183 - INFO - Cycle 78: 43 opps, trade=False
+2026-02-01 20:30:22,183 - INFO - Cycle 78: 43 opps, trade=False
+2026-02-01 20:35:22,680 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:35:22,680 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:35:23,834 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:35:23,834 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:35:23,835 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:35:23,835 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:35:23,835 - INFO - Cycle 79: 43 opps, trade=False
+2026-02-01 20:35:23,835 - INFO - Cycle 79: 43 opps, trade=False
+2026-02-01 20:41:06,694 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:41:06,694 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:41:07,832 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:41:07,832 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:41:07,833 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:41:07,833 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:41:07,833 - INFO - Cycle 80: 43 opps, trade=False
+2026-02-01 20:41:07,833 - INFO - Cycle 80: 43 opps, trade=False
+2026-02-01 20:46:08,367 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:46:08,367 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:46:09,585 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:46:09,585 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:46:09,586 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:46:09,586 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:46:09,586 - INFO - Cycle 81: 43 opps, trade=False
+2026-02-01 20:46:09,586 - INFO - Cycle 81: 43 opps, trade=False
+2026-02-01 20:51:10,103 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:51:10,103 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:51:11,322 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:51:11,322 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:51:11,323 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:51:11,323 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:51:11,323 - INFO - Cycle 82: 43 opps, trade=False
+2026-02-01 20:51:11,323 - INFO - Cycle 82: 43 opps, trade=False
+2026-02-01 20:56:11,945 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:56:11,945 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-01 20:56:13,506 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:56:13,506 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-01 20:56:13,507 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:56:13,507 - INFO - Cycle complete: 43 opportunities, 0 patterns
+2026-02-01 20:56:13,507 - INFO - Cycle 83: 43 opps, trade=False
+2026-02-01 20:56:13,507 - INFO - Cycle 83: 43 opps, trade=False
+2026-02-01 21:01:13,509 - INFO - ============================================================
+2026-02-01 21:01:13,509 - INFO - ============================================================
+2026-02-01 21:01:13,509 - INFO - AUTONOMOUS OVERNIGHT COMPLETE
+2026-02-01 21:01:13,509 - INFO - AUTONOMOUS OVERNIGHT COMPLETE
+2026-02-01 21:01:13,509 - INFO - Total cycles: 83
+2026-02-01 21:01:13,509 - INFO - Total cycles: 83
+2026-02-01 21:01:13,509 - INFO - Final capital: $1,410.00
+2026-02-01 21:01:13,509 - INFO - Final capital: $1,410.00
+2026-02-01 21:01:13,509 - INFO - ============================================================
+2026-02-01 21:01:13,509 - INFO - ============================================================
+2026-02-02 07:06:16,284 - INFO - ============================================================
+2026-02-02 07:06:16,284 - INFO - ============================================================
+2026-02-02 07:06:16,284 - INFO - AUTONOMOUS OVERNIGHT TRADING STARTING
+2026-02-02 07:06:16,284 - INFO - AUTONOMOUS OVERNIGHT TRADING STARTING
+2026-02-02 07:06:16,284 - INFO - Capital: $216.00
+2026-02-02 07:06:16,284 - INFO - Capital: $216.00
+2026-02-02 07:06:16,284 - INFO - Duration: 12.0 hours
+2026-02-02 07:06:16,284 - INFO - Duration: 12.0 hours
+2026-02-02 07:06:16,284 - INFO - ============================================================
+2026-02-02 07:06:16,284 - INFO - ============================================================
+2026-02-02 07:06:16,863 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:06:16,863 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:06:18,249 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:06:18,249 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:06:18,250 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:06:18,250 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:06:18,250 - INFO - Cycle 1: 44 opps, trade=False
+2026-02-02 07:06:18,250 - INFO - Cycle 1: 44 opps, trade=False
+2026-02-02 07:14:55,804 - INFO - ============================================================
+2026-02-02 07:14:55,804 - INFO - ============================================================
+2026-02-02 07:14:55,804 - INFO - AUTONOMOUS OVERNIGHT TRADING STARTING
+2026-02-02 07:14:55,804 - INFO - AUTONOMOUS OVERNIGHT TRADING STARTING
+2026-02-02 07:14:55,804 - INFO - Capital: $383.00
+2026-02-02 07:14:55,804 - INFO - Capital: $383.00
+2026-02-02 07:14:55,804 - INFO - Duration: 12.0 hours
+2026-02-02 07:14:55,804 - INFO - Duration: 12.0 hours
+2026-02-02 07:14:55,804 - INFO - ============================================================
+2026-02-02 07:14:55,804 - INFO - ============================================================
+2026-02-02 07:14:56,354 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:14:56,354 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:14:57,792 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:14:57,792 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:14:57,793 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:14:57,793 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:14:57,793 - INFO - Cycle 1: 44 opps, trade=False
+2026-02-02 07:14:57,793 - INFO - Cycle 1: 44 opps, trade=False
+2026-02-02 07:19:58,344 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:19:58,344 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:19:59,786 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:19:59,786 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:19:59,786 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:19:59,786 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:19:59,786 - INFO - Cycle 2: 44 opps, trade=False
+2026-02-02 07:19:59,786 - INFO - Cycle 2: 44 opps, trade=False
+2026-02-02 07:25:05,438 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:25:05,438 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:25:06,957 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:25:06,957 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:25:06,958 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:25:06,958 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:25:06,958 - INFO - Cycle 3: 44 opps, trade=False
+2026-02-02 07:25:06,958 - INFO - Cycle 3: 44 opps, trade=False
+2026-02-02 07:32:32,309 - ERROR - Polymarket scan error: 
+2026-02-02 07:32:32,309 - ERROR - Polymarket scan error: 
+2026-02-02 07:32:36,518 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:32:36,518 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:32:36,519 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-02 07:32:36,519 - INFO - Cycle complete: 1 opportunities, 0 patterns
+2026-02-02 07:32:36,519 - INFO - Cycle 4: 1 opps, trade=False
+2026-02-02 07:32:36,519 - INFO - Cycle 4: 1 opps, trade=False
+2026-02-02 07:39:11,971 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:39:11,971 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:39:13,571 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:39:13,571 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:39:13,571 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:39:13,571 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:39:13,572 - INFO - Cycle 5: 44 opps, trade=False
+2026-02-02 07:39:13,572 - INFO - Cycle 5: 44 opps, trade=False
+2026-02-02 07:44:14,238 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:44:14,238 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:44:15,565 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:44:15,565 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:44:15,565 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:44:15,565 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:44:15,565 - INFO - Cycle 6: 44 opps, trade=False
+2026-02-02 07:44:15,565 - INFO - Cycle 6: 44 opps, trade=False
+2026-02-02 07:49:16,073 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:49:16,073 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100 "HTTP/1.1 200 OK"
+2026-02-02 07:49:17,414 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:49:17,414 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-02 07:49:17,415 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:49:17,415 - INFO - Cycle complete: 44 opportunities, 0 patterns
+2026-02-02 07:49:17,415 - INFO - Cycle 7: 44 opps, trade=False
+2026-02-02 07:49:17,415 - INFO - Cycle 7: 44 opps, trade=False

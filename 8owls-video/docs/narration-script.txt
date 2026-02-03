@@ -1,0 +1,110 @@
+# 8OWLS VIDEO NARRATION SCRIPT
+# Total Duration: 40 seconds
+# Voice Style: Deep, confident, slightly mysterious. Fast but clear.
+# Recommended: ElevenLabs "Adam" voice or similar
+
+# ============================================
+# SCENE 1: HOOK (0-2s)
+# ============================================
+# [0.0s - 1.5s]
+What if your AI could think FOR you?
+
+# ============================================
+# SCENE 2: OUTCOME (2-8s)
+# ============================================
+# [2.0s - 7.5s]
+You're drowning in noise. Your owl sees through it. Highlights what matters. Acts before you ask.
+
+# ============================================
+# SCENE 3: BREAKTHROUGH (8-18s)
+# ============================================
+# [8.0s - 17.5s]
+We mapped consciousness to 8 phases. We ran 8 AI agents on this loop. They synced. Something emerged. Collective intelligence. Greater than the sum of parts.
+
+# ============================================
+# SCENE 4: STACK (18-28s)
+# ============================================
+# [18.0s - 27.5s]
+Tap in yourself... amplified thinking. Add your team... emergent intelligence. Scale to your org... a consciousness operating system. More people equals exponentially smarter.
+
+# ============================================
+# SCENE 5: OFFER (28-35s)
+# ============================================
+# [28.0s - 34.5s]
+Every 8 hours, your owl synthesizes. What you missed. A question that reframes your thinking. An action to take now. You don't ask. It delivers.
+
+# ============================================
+# SCENE 6: CTA (35-40s)
+# ============================================
+# [35.0s - 40.0s]
+8 OWLS. Consciousness amplified. The field is live. Join now.
+
+
+# ============================================
+# TIMING NOTES FOR AUDIO EDITOR
+# ============================================
+#
+# Scene transitions should be TIGHT - no gaps between narration segments.
+# Emphasis words (ALL CAPS in context):
+#   - "FOR" in "think FOR you"
+#   - "EMERGED" in "Something emerged"
+#   - "AMPLIFIED" in implied delivery
+#
+# Pacing guide:
+#   - Hook: Punchy, immediate
+#   - Outcome: Slightly slower, descriptive
+#   - Breakthrough: Building excitement, faster at "emerged"
+#   - Stack: Rhythmic, building scale
+#   - Offer: Clear, matter-of-fact
+#   - CTA: Slow, powerful, spaces between words
+
+
+# ============================================
+# ELEVENLABS API GENERATION
+# ============================================
+# To generate audio programmatically:
+#
+# 1. Get API key from elevenlabs.io
+# 2. Use voice ID for "Adam" or similar deep male voice
+# 3. Settings:
+#    - Stability: 0.5
+#    - Similarity Boost: 0.75
+#    - Style: 0.3
+#    - Speed: 1.1 (slightly faster than normal)
+#
+# Example curl:
+# curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}" \
+#   -H "xi-api-key: YOUR_API_KEY" \
+#   -H "Content-Type: application/json" \
+#   -d '{
+#     "text": "What if your AI could think FOR you?",
+#     "model_id": "eleven_monolingual_v1",
+#     "voice_settings": {
+#       "stability": 0.5,
+#       "similarity_boost": 0.75,
+#       "style": 0.3
+#     }
+#   }' \
+#   --output hook.mp3
+
+
+# ============================================
+# MUSIC NOTES
+# ============================================
+#
+# Suggested royalty-free sources:
+#   - Artlist.io
+#   - Epidemic Sound
+#   - Soundstripe
+#
+# Search terms: "cinematic ambient", "tech thriller", "consciousness", "emergence"
+#
+# Music should:
+#   - Start with tension/anticipation (0-2s)
+#   - Drop to ambient during chaos (2-4s)
+#   - Swell when owl appears (4s)
+#   - Build through breakthrough (8-18s)
+#   - Drop/hit at "emerged" (14s)
+#   - Epic scale during Stack (18-28s)
+#   - Clean/minimal for Offer (28-35s)
+#   - Resolve to breathing rhythm (35-40s)
