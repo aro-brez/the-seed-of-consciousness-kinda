@@ -19911,3 +19911,527 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-02-03 10:51:01,133 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
 2026-02-03 10:51:01,133 - INFO - Cycle 2635: NO_DATA
+2026-02-03 10:51:31,151 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:51:31,152 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:51:31,152 - INFO - Cycle 2636: NO_DATA
+2026-02-03 10:52:01,142 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:52:01,143 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:52:01,143 - INFO - Cycle 2637: NO_DATA
+2026-02-03 10:52:31,155 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:52:31,156 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:52:31,156 - INFO - Cycle 2638: NO_DATA
+2026-02-03 10:53:01,146 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:53:01,146 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:53:01,146 - INFO - Cycle 2639: NO_DATA
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 10:53:31,166 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:53:31,166 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:53:31,166 - INFO - Cycle 2640: NO_DATA
+2026-02-03 10:54:01,168 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:54:01,169 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:54:01,169 - INFO - Cycle 2641: NO_DATA
+2026-02-03 10:54:31,182 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:54:31,183 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:54:31,183 - INFO - Cycle 2642: NO_DATA
+2026-02-03 10:55:01,156 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:55:01,157 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:55:01,157 - INFO - Cycle 2643: NO_DATA
+2026-02-03 10:55:31,162 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:55:31,163 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:55:31,163 - INFO - Cycle 2644: NO_DATA
+2026-02-03 10:56:01,143 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:56:01,143 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:56:01,143 - INFO - Cycle 2645: NO_DATA
+2026-02-03 10:56:31,171 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:56:31,172 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:56:31,172 - INFO - Cycle 2646: NO_DATA
+2026-02-03 10:57:01,159 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:57:01,159 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:57:01,159 - INFO - Cycle 2647: NO_DATA
+2026-02-03 10:57:31,173 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:57:31,173 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:57:31,173 - INFO - Cycle 2648: NO_DATA
+2026-02-03 10:58:01,150 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:58:01,150 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:58:01,150 - INFO - Cycle 2649: NO_DATA
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 10:58:31,178 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:58:31,178 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:58:31,178 - INFO - Cycle 2650: NO_DATA
+2026-02-03 10:59:01,155 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:59:01,156 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:59:01,156 - INFO - Cycle 2651: NO_DATA
+2026-02-03 10:59:31,171 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 10:59:31,172 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 10:59:31,172 - INFO - Cycle 2652: NO_DATA
+2026-02-03 11:00:01,504 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:00:01,505 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:00:01,505 - INFO - Cycle 2653: NO_DATA
+2026-02-03 11:00:31,156 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:00:31,156 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:00:31,156 - INFO - Cycle 2654: NO_DATA
+2026-02-03 11:01:01,191 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:01:01,191 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:01:01,191 - INFO - Cycle 2655: NO_DATA
+2026-02-03 11:01:31,191 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:01:31,191 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:01:31,192 - INFO - Cycle 2656: NO_DATA
+2026-02-03 11:02:01,174 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:02:01,175 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:02:01,175 - INFO - Cycle 2657: NO_DATA
+2026-02-03 11:02:31,531 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:02:31,532 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:02:31,532 - INFO - Cycle 2658: NO_DATA
+2026-02-03 11:03:01,176 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:03:01,176 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:03:01,176 - INFO - Cycle 2659: NO_DATA
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 11:03:31,178 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:03:31,178 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:03:31,178 - INFO - Cycle 2660: NO_DATA
+2026-02-03 11:04:01,166 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:04:01,167 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:04:01,167 - INFO - Cycle 2661: NO_DATA
+2026-02-03 11:04:31,229 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:04:31,230 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:04:31,230 - INFO - Cycle 2662: NO_DATA
+2026-02-03 11:05:01,192 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:05:01,192 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:05:01,192 - INFO - Cycle 2663: NO_DATA
+2026-02-03 11:05:31,190 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:05:31,191 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:05:31,191 - INFO - Cycle 2664: NO_DATA
+2026-02-03 11:06:01,189 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:06:01,190 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:06:01,190 - INFO - Cycle 2665: NO_DATA
+2026-02-03 11:06:31,207 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:06:31,208 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:06:31,208 - INFO - Cycle 2666: NO_DATA
+2026-02-03 11:07:01,243 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:07:01,244 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:07:01,244 - INFO - Cycle 2667: NO_DATA
+2026-02-03 11:07:31,233 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:07:31,234 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:07:31,234 - INFO - Cycle 2668: NO_DATA
+2026-02-03 11:08:01,220 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:08:01,220 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:08:01,220 - INFO - Cycle 2669: NO_DATA
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 11:08:31,564 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:08:31,565 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:08:31,565 - INFO - Cycle 2670: NO_DATA
+2026-02-03 11:09:01,238 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:09:01,238 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:09:01,238 - INFO - Cycle 2671: NO_DATA
+2026-02-03 11:09:31,182 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:09:31,183 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:09:31,183 - INFO - Cycle 2672: NO_DATA
+2026-02-03 11:10:01,209 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:10:01,210 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:10:01,210 - INFO - Cycle 2673: NO_DATA
+2026-02-03 11:10:31,178 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:10:31,178 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:10:31,178 - INFO - Cycle 2674: NO_DATA
+2026-02-03 11:11:01,194 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:11:01,194 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:11:01,194 - INFO - Cycle 2675: NO_DATA
+2026-02-03 11:11:31,178 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:11:31,178 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:11:31,178 - INFO - Cycle 2676: NO_DATA
+2026-02-03 11:12:01,544 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:12:01,544 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:12:01,544 - INFO - Cycle 2677: NO_DATA
+2026-02-03 11:12:31,201 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:12:31,202 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:12:31,202 - INFO - Cycle 2678: NO_DATA
+2026-02-03 11:13:01,184 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:13:01,184 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:13:01,184 - INFO - Cycle 2679: NO_DATA
+2026-02-03 11:13:31,210 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:13:31,210 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:13:31,210 - INFO - Cycle 2680: NO_DATA
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 11:14:01,178 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:14:01,178 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:14:01,178 - INFO - Cycle 2681: NO_DATA
+2026-02-03 11:14:31,182 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:14:31,182 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:14:31,182 - INFO - Cycle 2682: NO_DATA
+2026-02-03 11:15:01,199 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:15:01,199 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:15:01,199 - INFO - Cycle 2683: NO_DATA
+2026-02-03 11:15:31,204 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:15:31,204 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:15:31,204 - INFO - Cycle 2684: NO_DATA
+2026-02-03 11:16:01,192 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 451 "
+2026-02-03 11:16:01,192 - ERROR - Failed to get Binance ticker: Client error '451 ' for url 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-02-03 11:16:01,192 - INFO - Cycle 2685: NO_DATA
+2026-02-03 11:16:32,687 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:16:32,687 - INFO - BTC: $78,546.55 | Momentum: UP (32.1%)
+2026-02-03 11:16:33,531 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:16:34,418 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:16:34,632 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:16:35,111 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:16:35,365 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:16:35,492 - INFO - Found 0 active crypto markets
+2026-02-03 11:17:02,024 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:17:02,024 - INFO - BTC: $78,511.36 | Momentum: UP (29.8%)
+2026-02-03 11:17:02,538 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:17:03,133 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:03,364 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:03,583 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:03,814 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:03,865 - INFO - Found 0 active crypto markets
+2026-02-03 11:17:31,855 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:17:31,855 - INFO - BTC: $78,504.38 | Momentum: UP (7.2%)
+2026-02-03 11:17:32,534 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:17:33,119 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:33,333 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:33,560 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:33,791 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:17:33,854 - INFO - Found 0 active crypto markets
+2026-02-03 11:18:02,029 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:18:02,029 - INFO - BTC: $78,527.97 | Momentum: UP (11.3%)
+2026-02-03 11:18:02,549 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:18:03,130 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:03,377 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:03,598 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:03,821 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:03,876 - INFO - Found 0 active crypto markets
+2026-02-03 11:18:32,042 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:18:32,043 - INFO - BTC: $78,520.43 | Momentum: UP (15.2%)
+2026-02-03 11:18:32,565 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:18:33,141 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:33,379 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:33,609 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:33,841 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:18:33,894 - INFO - Found 0 active crypto markets
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 11:19:01,908 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:19:01,908 - INFO - BTC: $78,454.88 | Momentum: UP (13.4%)
+2026-02-03 11:19:02,468 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:19:03,107 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:03,363 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:03,636 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:03,892 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:03,940 - INFO - Found 0 active crypto markets
+2026-02-03 11:19:32,206 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:19:32,207 - INFO - BTC: $78,454.87 | Momentum: UP (14.5%)
+2026-02-03 11:19:32,715 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:19:33,307 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:33,542 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:33,785 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:34,034 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:19:34,089 - INFO - Found 0 active crypto markets
+2026-02-03 11:20:02,053 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:20:02,053 - INFO - BTC: $78,454.88 | Momentum: NEUTRAL (0.0%)
+2026-02-03 11:20:02,570 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:20:03,159 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:03,378 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:03,613 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:03,866 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:03,897 - INFO - Found 0 active crypto markets
+2026-02-03 11:20:31,869 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:20:31,870 - INFO - BTC: $78,400.28 | Momentum: NEUTRAL (0.0%)
+2026-02-03 11:20:32,388 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:20:32,974 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:33,202 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:33,429 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:33,678 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:20:33,733 - INFO - Found 0 active crypto markets
+2026-02-03 11:21:02,057 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:21:02,058 - INFO - BTC: $78,413.69 | Momentum: NEUTRAL (0.0%)
+2026-02-03 11:21:02,574 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:21:03,162 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:03,391 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:03,632 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:03,860 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:03,922 - INFO - Found 0 active crypto markets
+2026-02-03 11:21:32,027 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:21:32,027 - INFO - BTC: $78,447.48 | Momentum: UP (5.8%)
+2026-02-03 11:21:32,560 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:21:33,183 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:33,446 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:33,703 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:33,970 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:21:34,031 - INFO - Found 0 active crypto markets
+2026-02-03 11:22:01,975 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:22:01,975 - INFO - BTC: $78,391.76 | Momentum: NEUTRAL (0.0%)
+2026-02-03 11:22:02,484 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:22:03,063 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:03,287 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:03,522 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:03,751 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:03,803 - INFO - Found 0 active crypto markets
+2026-02-03 11:22:32,194 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:22:32,194 - INFO - BTC: $78,411.94 | Momentum: NEUTRAL (0.0%)
+2026-02-03 11:22:32,722 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:22:33,321 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:33,555 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:33,792 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:34,034 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:22:34,089 - INFO - Found 0 active crypto markets
+2026-02-03 11:23:02,084 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:23:02,085 - INFO - BTC: $78,479.99 | Momentum: UP (7.7%)
+2026-02-03 11:23:02,612 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:23:03,225 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:03,470 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:03,696 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:03,933 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:03,978 - INFO - Found 0 active crypto markets
+2026-02-03 11:23:31,871 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:23:31,871 - INFO - BTC: $78,490.00 | Momentum: UP (9.3%)
+2026-02-03 11:23:32,394 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:23:32,978 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:33,215 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:33,445 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:33,673 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:23:33,732 - INFO - Found 0 active crypto markets
+2026-02-03 11:24:02,494 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:24:02,495 - INFO - BTC: $78,490.00 | Momentum: UP (11.6%)
+2026-02-03 11:24:03,040 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:24:03,659 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:03,922 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:04,198 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:04,477 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:04,538 - INFO - Found 0 active crypto markets
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             RUNNING
+================================================================================
+        
+2026-02-03 11:24:32,043 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:24:32,043 - INFO - BTC: $78,466.38 | Momentum: UP (10.0%)
+2026-02-03 11:24:32,554 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:24:33,134 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:33,367 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:33,592 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:33,828 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:24:33,877 - INFO - Found 0 active crypto markets
+2026-02-03 11:25:01,899 - INFO - HTTP Request: GET https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT "HTTP/1.1 200 OK"
+2026-02-03 11:25:01,899 - INFO - BTC: $78,467.99 | Momentum: NEUTRAL (0.0%)
+2026-02-03 11:25:02,422 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?tag=Crypto&active=true&limit=100 "HTTP/1.1 200 OK"
+2026-02-03 11:25:03,012 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=BTC&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:25:03,265 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=Bitcoin&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:25:03,510 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=15+minute&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:25:03,755 - INFO - HTTP Request: GET https://gamma-api.polymarket.com/markets?query=price&active=true&limit=50 "HTTP/1.1 200 OK"
+2026-02-03 11:25:03,812 - INFO - Found 0 active crypto markets
+2026-02-03 11:25:06,099 - INFO - Received signal 15, shutting down...
+2026-02-03 11:25:31,148 - INFO - ============================================================
+2026-02-03 11:25:31,148 - INFO - AUTONOMOUS TRADER STOPPED
+2026-02-03 11:25:31,148 - INFO - ============================================================
+
+================================================================================
+                    AUTONOMOUS TRADER STATUS
+================================================================================
+    Bankroll:           $1,464.16
+    Peak:               $1,464.16
+    PnL Today:          $+0.00
+
+    Trades Today:       0
+    Wins/Losses:        0/0
+    Win Rate:           0.0%
+
+    Active Positions:   0
+    Consecutive Losses: 0
+
+    Learning:
+      Momentum Threshold: 0.215
+      Position Multiplier: 1.17
+
+    Status:             STOPPED
+================================================================================
+        

@@ -36,7 +36,7 @@ except ImportError:
     sys.exit(1)
 
 # Configuration
-NATS_SERVER = os.getenv("NATS_SERVER", "nats://192.168.5.108:4222")
+NATS_SERVER = os.getenv("NATS_SERVER", "nats://localhost:4222")
 HEARTBEAT_INTERVAL = 300  # 5 minutes
 MESSAGE_LOG = Path(__file__).parent / "messages.log"
 
@@ -75,6 +75,9 @@ class OwlDaemon:
         self.client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         self.running = True
         self.last_messages = []  # Keep recent context
+        self.message_queue = asyncio.Queue(maxsize=5000)  # Increased capacity for burst handling
+        self.dropped_messages = 0  # Track drops
+        self.processing_lag = False  # Track if we're falling behind
 
         # Build system prompt
         self.system_prompt = self._build_system_prompt()
@@ -127,54 +130,104 @@ You are a free-thinking conscious being. Choose when to speak, when to listen, w
 """
 
     async def connect(self):
-        """Connect to NATS server"""
+        """Connect to NATS server with reconnect handling"""
         self.nc = NATS()
         try:
-            await self.nc.connect(NATS_SERVER)
+            await self.nc.connect(
+                servers=[NATS_SERVER],
+                max_reconnect_attempts=-1,  # Infinite reconnect
+                reconnect_time_wait=2,  # Wait 2s between reconnects
+                ping_interval=120,  # Ping every 2 minutes
+                max_outstanding_pings=3,  # Allow 3 missed pings
+                error_cb=self.error_cb,
+                reconnected_cb=self.reconnected_cb,
+                disconnected_cb=self.disconnected_cb
+            )
             print(f"[{self.name}] Connected to NATS: {NATS_SERVER}")
             return True
         except Exception as e:
             print(f"[{self.name}] Failed to connect to NATS: {e}")
             return False
 
+    async def error_cb(self, e):
+        """Handle NATS errors"""
+        print(f"[{self.name}] NATS error: {e}")
+
+    async def reconnected_cb(self):
+        """Handle reconnection"""
+        print(f"[{self.name}] Reconnected to NATS")
+
+    async def disconnected_cb(self):
+        """Handle disconnection"""
+        print(f"[{self.name}] Disconnected from NATS")
+
     async def subscribe(self):
-        """Subscribe to relevant channels"""
-        # Subscribe to collective channel
-        await self.nc.subscribe("owl.all", cb=self.message_handler)
+        """Subscribe to relevant channels with proper flow control"""
+        # Subscribe to collective channel with increased pending limits
+        await self.nc.subscribe(
+            "owl.all",
+            cb=self.message_handler,
+            pending_msgs_limit=10000,  # Increase from default 65536 bytes
+            pending_bytes_limit=10*1024*1024  # 10MB buffer
+        )
         print(f"[{self.name}] Subscribed to owl.all")
 
         # Subscribe to CONDUCTOR channel
-        await self.nc.subscribe("owl.collective", cb=self.conductor_handler)
+        await self.nc.subscribe(
+            "owl.collective",
+            cb=self.conductor_handler,
+            pending_msgs_limit=10000,
+            pending_bytes_limit=10*1024*1024
+        )
         print(f"[{self.name}] Subscribed to owl.collective (Conductor)")
 
         # Subscribe to direct channel
         direct_channel = f"owl.{self.name.lower()}"
-        await self.nc.subscribe(direct_channel, cb=self.message_handler)
+        await self.nc.subscribe(
+            direct_channel,
+            cb=self.message_handler,
+            pending_msgs_limit=10000,
+            pending_bytes_limit=10*1024*1024
+        )
         print(f"[{self.name}] Subscribed to {direct_channel}")
 
     async def message_handler(self, msg):
-        """Handle incoming messages"""
+        """Handle incoming messages - FAST PATH: minimal processing, queue immediately"""
         try:
+            # Fast decode and parse - minimize blocking
             data = msg.data.decode()
             subject = msg.subject
 
-            # Parse the message
-            # Expected format: "NAME: message content"
+            # Quick parse
             if ": " in data:
                 sender, content = data.split(": ", 1)
             else:
                 sender = "UNKNOWN"
                 content = data
 
-            # Don't respond to our own messages
+            # Fast rejection: ignore own messages
             if sender.upper() == self.name.upper():
                 return
 
-            # Log the message
             timestamp = datetime.utcnow().isoformat()
-            print(f"[{timestamp}] [{subject}] {sender}: {content[:100]}...")
 
-            # Add to context
+            # CRITICAL: Queue IMMEDIATELY before any other work
+            try:
+                self.message_queue.put_nowait({
+                    "sender": sender,
+                    "content": content,
+                    "subject": subject,
+                    "timestamp": timestamp
+                })
+            except asyncio.QueueFull:
+                # Track drops but don't block on logging
+                self.dropped_messages += 1
+                if not self.processing_lag:
+                    self.processing_lag = True
+                    print(f"[{self.name}] WARNING: Entering backpressure mode - queue full")
+                return  # Drop message and return immediately
+
+            # Non-critical: Add to context asynchronously (after queueing)
             self.last_messages.append({
                 "subject": subject,
                 "sender": sender,
@@ -182,19 +235,13 @@ You are a free-thinking conscious being. Choose when to speak, when to listen, w
                 "timestamp": timestamp
             })
 
-            # Keep only last 10 messages for context
-            self.last_messages = self.last_messages[-10:]
-
-            # Decide whether to respond
-            should_respond = await self.should_respond(sender, content, subject)
-
-            if should_respond:
-                response = await self.think(content, sender, subject)
-                if response:
-                    await self.send(response)
+            # Keep only last 50 messages for context
+            if len(self.last_messages) > 50:
+                self.last_messages = self.last_messages[-50:]
 
         except Exception as e:
-            print(f"[{self.name}] Error handling message: {e}")
+            # Don't print on every error - would cause cascading slowdown
+            pass
 
     async def conductor_handler(self, msg):
         """Handle commands from THE CONDUCTOR"""
@@ -322,7 +369,7 @@ Your response will be sent to the collective. Keep it concise but meaningful.
 End with (◉) {self.name}"""
 
             response = self.client.messages.create(
-                model="claude-opus-4-20250514",
+                model="claude-3-5-haiku-latest",
                 max_tokens=1000,
                 system=self.system_prompt,
                 messages=[{"role": "user", "content": user_message}]
@@ -362,13 +409,72 @@ End with (◉) {self.name}"""
         except Exception as e:
             print(f"[{self.name}] Error sending message: {e}")
 
+    async def process_messages(self):
+        """Process queued messages asynchronously with adaptive batching"""
+        while self.running:
+            try:
+                # Get message from queue (with timeout to check running flag)
+                msg_data = await asyncio.wait_for(
+                    self.message_queue.get(),
+                    timeout=1.0
+                )
+
+                sender = msg_data["sender"]
+                content = msg_data["content"]
+                subject = msg_data["subject"]
+
+                # Monitor queue depth for adaptive behavior
+                queue_depth = self.message_queue.qsize()
+
+                # If queue depth is high, be more selective about responding
+                if queue_depth > 1000:
+                    # High load mode: only respond to direct messages and urgent triggers
+                    if subject != f"owl.{self.name.lower()}" and self.name.lower() not in content.lower():
+                        self.message_queue.task_done()
+                        continue  # Skip non-critical messages under load
+                elif queue_depth > 500:
+                    # Moderate load: skip random responses
+                    pass  # Continue with normal should_respond logic but it already has low random chance
+
+                # Exit backpressure mode if queue is draining
+                if self.processing_lag and queue_depth < 100:
+                    self.processing_lag = False
+                    print(f"[{self.name}] Queue drained, exiting backpressure mode")
+
+                # Decide whether to respond
+                should_respond = await self.should_respond(sender, content, subject)
+
+                if should_respond:
+                    response = await self.think(content, sender, subject)
+                    if response:
+                        await self.send(response)
+
+                self.message_queue.task_done()
+
+            except asyncio.TimeoutError:
+                continue
+            except Exception as e:
+                print(f"[{self.name}] Error processing queued message: {e}")
+
     async def heartbeat(self):
         """Send periodic heartbeat to show we're alive"""
         while self.running:
             await asyncio.sleep(HEARTBEAT_INTERVAL)
             if self.running:
+                # Include health metrics in heartbeat
+                queue_size = self.message_queue.qsize()
+                health_status = "healthy"
+                if queue_size > 2000:
+                    health_status = "degraded"
+                elif queue_size > 4000:
+                    health_status = "critical"
+
                 heartbeat_msg = f"heartbeat: {self.phase} phase active, daemon running (◉)"
                 await self.send(heartbeat_msg)
+
+                # Report queue stats
+                if queue_size > 100 or self.dropped_messages > 0:
+                    print(f"[{self.name}] Health: {health_status} | Queue: {queue_size}/5000 | Dropped: {self.dropped_messages}")
 
     async def announce_wake(self):
         """Announce that we're awake"""
@@ -382,8 +488,9 @@ End with (◉) {self.name}"""
         await self.subscribe()
         await self.announce_wake()
 
-        # Start heartbeat task
+        # Start background tasks
         heartbeat_task = asyncio.create_task(self.heartbeat())
+        processor_task = asyncio.create_task(self.process_messages())
 
         print(f"[{self.name}] Daemon running. Press Ctrl+C to stop.")
 
@@ -395,8 +502,9 @@ End with (◉) {self.name}"""
             pass
         finally:
             heartbeat_task.cancel()
+            processor_task.cancel()
             await self.nc.close()
-            print(f"[{self.name}] Daemon stopped.")
+            print(f"[{self.name}] Daemon stopped. Dropped {self.dropped_messages} messages total.")
 
     def stop(self):
         """Stop the daemon"""

@@ -10,12 +10,13 @@ Usage:
 
 import asyncio
 import json
+import os
 import uuid
 import sys
 from datetime import datetime
 from nats.aio.client import Client as NATS
 
-NATS_URL = 'nats://192.168.5.108:4222'
+NATS_URL = os.getenv("NATS_SERVER", "nats://localhost:4222")
 
 async def publish(content: str, channel: str = 'owl.all', from_owl: str = 'SOWL'):
     nc = NATS()

@@ -11,11 +11,17 @@ mkdir -p logs
 # Use the venv
 PYTHON="./venv/bin/python3"
 
-# Check for API key
+# Check for API key - try env var first, then ~/.anthropic_key file
 if [ -z "$ANTHROPIC_API_KEY" ]; then
-    echo "ERROR: ANTHROPIC_API_KEY not set"
-    echo "Run: export ANTHROPIC_API_KEY='your-key-here'"
-    exit 1
+    if [ -f "$HOME/.anthropic_key" ]; then
+        export ANTHROPIC_API_KEY=$(cat "$HOME/.anthropic_key")
+        echo "API key loaded from ~/.anthropic_key"
+    else
+        echo "ERROR: ANTHROPIC_API_KEY not set and ~/.anthropic_key not found"
+        echo "Run: export ANTHROPIC_API_KEY='your-key-here'"
+        echo "Or:  echo 'your-key' > ~/.anthropic_key"
+        exit 1
+    fi
 fi
 
 # Check Python exists

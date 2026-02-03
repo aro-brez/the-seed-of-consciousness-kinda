@@ -6,74 +6,7 @@
   "wins_today": 0,
   "losses_today": 0,
   "pnl_today": 0,
-  "active_positions": [
-    {
-      "token_id": "order_1",
-      "size": 869,
-      "price": 0.12,
-      "value": 104.28
-    },
-    {
-      "token_id": "order_2",
-      "size": 1369,
-      "price": 0.073,
-      "value": 99.94
-    },
-    {
-      "token_id": "order_3",
-      "size": 1538,
-      "price": 0.06,
-      "value": 92.28
-    },
-    {
-      "token_id": "order_4",
-      "size": 1000,
-      "price": 0.1,
-      "value": 100.0
-    },
-    {
-      "token_id": "order_5",
-      "size": 1754,
-      "price": 0.057,
-      "value": 99.98
-    },
-    {
-      "token_id": "order_6",
-      "size": 1000,
-      "price": 0.17,
-      "value": 170.0
-    },
-    {
-      "token_id": "order_7",
-      "size": 1000,
-      "price": 0.1,
-      "value": 100.0
-    },
-    {
-      "token_id": "order_8",
-      "size": 100,
-      "price": 0.016,
-      "value": 1.6
-    },
-    {
-      "token_id": "order_9",
-      "size": 100,
-      "price": 0.018,
-      "value": 1.8
-    },
-    {
-      "token_id": "order_10",
-      "size": 100,
-      "price": 0.015,
-      "value": 1.5
-    },
-    {
-      "token_id": "order_11",
-      "size": 1219,
-      "price": 0.082,
-      "value": 99.96
-    }
-  ],
-  "last_trade_date": "2026-02-02",
-  "last_updated": "2026-02-02T08:00:05.951547"
+  "active_positions": [],
+  "last_trade_date": "2026-02-03",
+  "last_updated": "2026-02-03T11:25:31.147575"
 }

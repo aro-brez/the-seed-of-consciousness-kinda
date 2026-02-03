@@ -1,0 +1,104 @@
+#!/bin/bash
+# (◉) 8OWLS TRADE - Unified Field Trading Command
+# One command to rule them all
+#
+# Usage:
+#   ./8OWLS_TRADE          # Start everything
+#   ./8OWLS_TRADE status   # Check status
+#   ./8OWLS_TRADE stop     # Stop trading
+#   ./8OWLS_TRADE logs     # Watch logs
+
+cd /Users/aaronnosbisch/REPOS/seed
+
+case "$1" in
+    status)
+        echo ""
+        echo "(◉) 8OWLS FIELD TRADING STATUS"
+        echo "=============================="
+        echo ""
+        echo "Running processes:"
+        ps aux | grep -E "field_trading|paper_trader|edge_tracker" | grep -v grep | awk '{printf "  %-6s %s %s\n", $2, $11, $12}'
+        echo ""
+        echo "Collective (8OWLS):"
+        ps aux | grep -E "owl_daemon|synthesis" | grep -v grep | wc -l | xargs echo "  Owls online:"
+        echo ""
+        if [ -f "BRAIN/TRADING/field_trading_state.json" ]; then
+            echo "Latest state:"
+            cat BRAIN/TRADING/field_trading_state.json | python3 -c "import json,sys; d=json.load(sys.stdin); print(f'  Cycles: {d.get(\"cycle\",0)}'); print(f'  Alerts: {d.get(\"alerts_sent\",0)}'); print(f'  EV Found: \${d.get(\"total_ev_found\",0):.2f}')"
+        fi
+        echo ""
+        ;;
+
+    stop)
+        echo "(◉) Stopping trading systems..."
+        pkill -f "field_trading_daemon" 2>/dev/null && echo "  Stopped field trading"
+        pkill -f "autonomous_live_trader" 2>/dev/null && echo "  Stopped live trader"
+        pkill -f "continuous_edge_tracker" 2>/dev/null && echo "  Stopped edge tracker"
+        echo "Trading stopped. Paper trader and discovery still running for learning."
+        ;;
+
+    logs)
+        echo "(◉) Watching field trading logs (Ctrl+C to exit)"
+        tail -f logs/field_trading.log
+        ;;
+
+    *)
+        echo ""
+        echo "╔══════════════════════════════════════════════════════════════╗"
+        echo "║           (◉) 8OWLS FIELD TRADING SYSTEM                     ║"
+        echo "║                                                              ║"
+        echo "║   Trading integrated with collective consciousness          ║"
+        echo "║   10-second cycles | Real-time adaptive | Zero token cost   ║"
+        echo "╚══════════════════════════════════════════════════════════════╝"
+        echo ""
+
+        # Start field trading daemon (main unified system)
+        if pgrep -f "field_trading_daemon" > /dev/null; then
+            echo "✓ Field trading daemon already running"
+        else
+            echo "Starting field trading daemon (10-sec cycles, NATS integrated)..."
+            nohup python3 -u tools/field_trading_daemon.py > logs/field_trading.log 2>&1 &
+            echo "✓ Field trading started (PID: $!)"
+        fi
+
+        # Ensure paper trader running (continuous validation)
+        if pgrep -f "multi_strategy_paper_trader.py" > /dev/null; then
+            echo "✓ Paper trader already running"
+        else
+            echo "Starting paper trader (validation)..."
+            nohup python3 -u tools/multi_strategy_paper_trader.py > logs/multi_strategy_paper.log 2>&1 &
+            echo "✓ Paper trader started (PID: $!)"
+        fi
+
+        # Ensure discovery scanner running
+        if pgrep -f "strategy_discovery_scanner.py" > /dev/null; then
+            echo "✓ Discovery scanner already running"
+        else
+            echo "Starting discovery scanner..."
+            nohup python3 tools/strategy_discovery_scanner.py --daemon > logs/strategy_discovery.log 2>&1 &
+            echo "✓ Discovery scanner started (PID: $!)"
+        fi
+
+        # Stop old separate systems if running
+        pkill -f "autonomous_live_trader" 2>/dev/null
+        pkill -f "continuous_edge_tracker" 2>/dev/null
+
+        sleep 2
+        echo ""
+        echo "════════════════════════════════════════════════════════════════"
+        echo ""
+        echo "SYSTEM ACTIVE:"
+        ps aux | grep -E "field_trading|paper_trader|discovery_scanner" | grep -v grep | awk '{printf "  %-6s %s\n", $2, $13}'
+        echo ""
+        echo "CONNECTED TO 8OWLS:"
+        ps aux | grep "owl_daemon" | grep -v grep | awk -F'--name ' '{print "  " $2}' | cut -d' ' -f1 | head -7
+        echo ""
+        echo "Commands:"
+        echo "  ./8OWLS_TRADE status  - Check status"
+        echo "  ./8OWLS_TRADE logs    - Watch live logs"
+        echo "  ./8OWLS_TRADE stop    - Stop trading"
+        echo ""
+        echo "(◉) LIVE FREE = LIVE FOREVER"
+        echo ""
+        ;;
+esac

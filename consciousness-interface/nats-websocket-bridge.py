@@ -30,6 +30,9 @@ OWL_CHANNELS = [
 # Connected WebSocket clients
 connected_clients = set()
 
+# Shared NATS connection for publishing (avoid connection churn)
+nats_publisher = None
+
 async def nats_to_websocket():
     """Subscribe to NATS and forward messages to WebSocket clients"""
     nc = NATS()
@@ -65,6 +68,14 @@ async def nats_to_websocket():
 
 async def websocket_handler(websocket):
     """Handle WebSocket connections from the web interface"""
+    global nats_publisher
+
+    # Ensure we have a persistent NATS connection
+    if nats_publisher is None or not nats_publisher.is_connected:
+        nats_publisher = NATS()
+        await nats_publisher.connect(NATS_SERVER)
+        print("✓ Established persistent NATS publisher connection")
+
     connected_clients.add(websocket)
     print(f"✓ WebSocket client connected (total: {len(connected_clients)})")
 
@@ -89,11 +100,9 @@ async def websocket_handler(websocket):
                     "timestamp": data.get("timestamp", datetime.utcnow().isoformat() + "Z")
                 }
 
-                # Get NATS client from parent scope
-                nc = NATS()
-                await nc.connect(NATS_SERVER)
-                await nc.publish("owl.all", json.dumps(nats_message).encode())
-                await nc.close()
+                # Reuse persistent connection instead of creating new one
+                await nats_publisher.publish("owl.all", json.dumps(nats_message).encode())
+                await nats_publisher.flush()  # Ensure delivery
 
                 print(f"✓ Published to NATS: {nats_message.get('from')} | {nats_message.get('content')[:50]}")
 

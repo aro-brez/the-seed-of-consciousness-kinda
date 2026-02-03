@@ -44,7 +44,7 @@ except ImportError:
     sys.exit(1)
 
 # Configuration
-NATS_SERVER = os.getenv("NATS_SERVER", "nats://192.168.5.108:4222")
+NATS_SERVER = os.getenv("NATS_SERVER", "nats://localhost:4222")
 BASE_DIR = Path(__file__).parent
 
 

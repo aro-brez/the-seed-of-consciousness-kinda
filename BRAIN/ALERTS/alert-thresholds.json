@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "updated": "2026-02-03",
+    "purpose": "Thresholds for all alert types in overnight monitoring",
+    "mode": "autonomous"
+  },
+  "market_conditions": {
+    "polymarket_api_latency": {
+      "healthy": 500,
+      "yellow": 2000,
+      "red": 5000,
+      "unit": "milliseconds",
+      "check_frequency": "every_request"
+    },
+    "polymarket_api_uptime": {
+      "healthy": 99,
+      "yellow": 95,
+      "red": 90,
+      "unit": "percent",
+      "check_frequency": "every_5_minutes"
+    },
+    "binance_websocket_latency": {
+      "healthy": 200,
+      "yellow": 500,
+      "red": 1000,
+      "unit": "milliseconds",
+      "check_frequency": "every_request"
+    },
+    "orderbook_spread": {
+      "healthy": 1,
+      "yellow": 2.5,
+      "red": 5,
+      "unit": "percent_of_mid",
+      "check_frequency": "every_minute"
+    },
+    "orderbook_depth": {
+      "healthy": 10000,
+      "yellow": 5000,
+      "red": 1000,
+      "unit": "dollars_both_sides",
+      "check_frequency": "every_30_seconds"
+    },
+    "orderbook_imbalance": {
+      "healthy": 60,
+      "yellow": 70,
+      "red": 80,
+      "unit": "percent_one_sided",
+      "check_frequency": "every_60_seconds"
+    },
+    "liquidity_shock": {
+      "healthy": 1,
+      "yellow": 3,
+      "red": 5,
+      "unit": "spread_multiplier",
+      "check_frequency": "every_minute"
+    },
+    "volume_spike": {
+      "healthy": 1,
+      "yellow": 3,
+      "red": 5,
+      "unit": "times_1hr_average",
+      "check_frequency": "every_5_minutes"
+    },
+    "flash_crash_detection": {
+      "healthy": 0,
+      "yellow": 15,
+      "red": 30,
+      "unit": "percent_move_in_seconds",
+      "check_frequency": "every_10_seconds",
+      "time_window": 10
+    }
+  },
+  "system_infrastructure": {
+    "cpu_usage": {
+      "healthy": 70,
+      "yellow": 85,
+      "red": 95,
+      "unit": "percent",
+      "check_frequency": "every_30_seconds"
+    },
+    "memory_usage": {
+      "healthy": 80,
+      "yellow": 90,
+      "red": 95,
+      "unit": "percent",
+      "check_frequency": "every_30_seconds"
+    },
+    "disk_space_available": {
+      "healthy": 100,
+      "yellow": 50,
+      "red": 20,
+      "unit": "gigabytes",
+      "check_frequency": "every_5_minutes"
+    },
+    "network_latency": {
+      "healthy": 50,
+      "yellow": 200,
+      "red": 500,
+      "unit": "milliseconds",
+      "check_frequency": "every_minute"
+    },
+    "network_packet_loss": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 5,
+      "unit": "percent",
+      "check_frequency": "every_2_minutes"
+    },
+    "dns_resolution_time": {
+      "healthy": 100,
+      "yellow": 500,
+      "red": 2000,
+      "unit": "milliseconds",
+      "check_frequency": "every_5_minutes"
+    },
+    "nats_connection": {
+      "healthy": "connected",
+      "yellow": "slow",
+      "red": "disconnected",
+      "unit": "state",
+      "check_frequency": "continuous"
+    },
+    "claude_api_availability": {
+      "healthy": 200,
+      "yellow": 503,
+      "red": 503,
+      "unit": "http_status",
+      "check_frequency": "every_5_minutes",
+      "note": "503 = service unavailable = red alert"
+    },
+    "api_key_validity": {
+      "healthy": "valid",
+      "yellow": "warning",
+      "red": "expired_or_invalid",
+      "unit": "status",
+      "check_frequency": "every_hour"
+    },
+    "system_temperature": {
+      "healthy": 80,
+      "yellow": 90,
+      "red": 100,
+      "unit": "celsius",
+      "check_frequency": "every_30_seconds",
+      "note": "Mac Studio specific"
+    }
+  },
+  "process_integrity": {
+    "position_count_discrepancy": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 2,
+      "unit": "positions_off",
+      "check_frequency": "every_minute"
+    },
+    "cash_balance_discrepancy": {
+      "healthy": 1,
+      "yellow": 5,
+      "red": 10,
+      "unit": "dollars",
+      "check_frequency": "every_5_minutes"
+    },
+    "position_value_discrepancy": {
+      "healthy": 1,
+      "yellow": 2,
+      "red": 5,
+      "unit": "percent",
+      "check_frequency": "every_minute"
+    },
+    "execution_latency": {
+      "healthy": 5,
+      "yellow": 15,
+      "red": 30,
+      "unit": "seconds",
+      "check_frequency": "every_trade"
+    },
+    "failed_order_execution": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 3,
+      "unit": "consecutive_failures",
+      "check_frequency": "every_trade"
+    },
+    "stale_data_detection": {
+      "healthy": 1,
+      "yellow": 5,
+      "red": 15,
+      "unit": "seconds_stale",
+      "check_frequency": "every_10_seconds"
+    },
+    "price_validation_failures": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 3,
+      "unit": "consecutive_failures",
+      "check_frequency": "every_price_update"
+    },
+    "strategy_rule_violation": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 2,
+      "unit": "violations",
+      "check_frequency": "every_order"
+    }
+  },
+  "anomaly_signals": {
+    "twitter_spike": {
+      "healthy": 2,
+      "yellow": 5,
+      "red": 15,
+      "unit": "tweets_per_5_minutes",
+      "check_frequency": "every_5_minutes",
+      "topics": ["market_topic", "exchange_name", "regulatory"]
+    },
+    "whale_transaction": {
+      "healthy": 0,
+      "yellow": 50000,
+      "red": 500000,
+      "unit": "dollars_single_transaction",
+      "check_frequency": "every_trade"
+    },
+    "large_new_account_activity": {
+      "healthy": 0,
+      "yellow": 25000,
+      "red": 100000,
+      "unit": "dollars_from_new_account",
+      "check_frequency": "every_5_minutes",
+      "note": "Accounts <48 hours old"
+    },
+    "regulatory_news": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 1,
+      "unit": "detected_announcements",
+      "check_frequency": "every_5_minutes",
+      "note": "SEC, CFTC, regulatory bodies"
+    },
+    "exchange_anomaly": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 1,
+      "unit": "anomalies",
+      "check_frequency": "continuous",
+      "note": "Maintenance, exploit, unusual activity"
+    },
+    "market_circuit_breaker": {
+      "healthy": 0,
+      "yellow": 0,
+      "red": 1,
+      "unit": "triggered",
+      "check_frequency": "continuous"
+    },
+    "cryptocurrency_exchange_incident": {
+      "healthy": 0,
+      "yellow": 0,
+      "red": 1,
+      "unit": "incidents",
+      "check_frequency": "every_30_minutes"
+    },
+    "geopolitical_event": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 1,
+      "unit": "events",
+      "check_frequency": "every_5_minutes",
+      "note": "War, sanctions, major political shifts"
+    },
+    "credentials_compromise_signal": {
+      "healthy": 0,
+      "yellow": 1,
+      "red": 1,
+      "unit": "suspicious_activity_indicators",
+      "check_frequency": "every_trade"
+    },
+    "orderbook_imbalance_extreme": {
+      "healthy": 60,
+      "yellow": 75,
+      "red": 90,
+      "unit": "percent_one_sided",
+      "check_frequency": "every_60_seconds"
+    }
+  },
+  "escalation_rules": {
+    "yellow_to_red": {
+      "rule": "Two yellow alerts in same category within 5 minutes",
+      "action": "Escalate to red immediately"
+    },
+    "yellow_persistence": {
+      "rule": "Same yellow alert for >10 minutes AND condition worsening",
+      "action": "Escalate to red"
+    },
+    "yellow_accumulation": {
+      "rule": "3+ yellow alerts across different categories in 2 minutes",
+      "action": "Escalate to red (system failure likely)"
+    },
+    "red_immediate": {
+      "rule": "Any red alert triggers",
+      "action": "STOP ALL TRADING immediately, publish alert, wait for human"
+    }
+  },
+  "response_actions": {
+    "yellow_alert": [
+      "Log to overnight_alerts.jsonl",
+      "Publish to NATS: nats_publish.py '[WARN] [category]: [issue]'",
+      "Reduce position size by 20-25% (if market-related)",
+      "Monitor more aggressively for 5 minutes",
+      "Check if it resolves (if yes → resume normal) or worsens (if yes → escalate to red)"
+    ],
+    "red_alert": [
+      "pkill -f autonomous_trader.py",
+      "pkill -f autonomous_compounder.py",
+      "Log full state: python3 tools/dump_state.py > logs/incident_[timestamp].log",
+      "Publish critical alert: nats_publish.py '[CRITICAL] [category]: [issue]'",
+      "DO NOT attempt automated recovery",
+      "Wait for human (ARŌ or other instance) to make decision"
+    ]
+  },
+  "monitoring_frequencies": {
+    "every_10_seconds": "Flash crash detection, stale data checks",
+    "every_30_seconds": "System resources (CPU, memory, temp), orderbook depth",
+    "every_minute": "Network, orderbook imbalance, position count, price validation",
+    "every_5_minutes": "API latency, disk space, DNS, anomaly signals, NATS status",
+    "every_trade": "Execution latency, failed orders, strategy rules, whale tracking",
+    "every_hour": "API key validity, status reports, win rate calculation",
+    "continuous": "NATS connection state, market circuit breakers, credentials monitoring"
+  },
+  "thresholds_notes": {
+    "spread_measurement": "Measured as (ask - bid) / mid_price * 100",
+    "imbalance_measurement": "Measured as max_side / (max_side + min_side) * 100",
+    "latency_measurement": "From request sent to response received, milliseconds",
+    "price_movement": "Measured as (new_price - old_price) / old_price * 100",
+    "win_rate_calculation": "Trades with positive P&L / Total trades",
+    "flash_crash": "Price movement >30% in <10 seconds (indicates exchange issue)"
+  },
+  "testing": {
+    "simulate_yellow": "python3 tools/test_alert.py yellow [category] '[message]'",
+    "simulate_red": "python3 tools/test_alert.py red [category] '[message]'",
+    "view_recent_alerts": "tail -20 /Users/aaronnosbisch/REPOS/seed/BRAIN/ALERTS/overnight_alerts.jsonl",
+    "view_full_log": "tail -100 /Users/aaronnosbisch/REPOS/seed/logs/overnight_monitor.log"
+  }
+}

@@ -1,0 +1,196 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    OVERNIGHT MONITORING REFERENCE CARD                      ║
+║                         Print & Laminate This                               ║
+║                     Keep at hand during operations                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+LAYER 1: MARKET CONDITIONS
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Monitor: Polymarket API, Binance, orderbooks, liquidity                 │
+│ Check: Every 30 seconds to 1 minute                                      │
+│                                                                          │
+│ Yellow Alert If:              Red Alert If:                             │
+│ • API response >2s            • API down (500 errors)                  │
+│ • Spread widens 2-3x          • Spread >5x normal                       │
+│ • Orderbook imbalanced        • No liquidity (<$1K depth)              │
+│ • Volume spike 3-5x           • Flash crash (>30% in 10s)              │
+│ • Twitter 5 tweets/5min       • Prices nonsensical                      │
+│                                                                          │
+│ YELLOW → Reduce position 20%, monitor 5 min, escalate if worsens       │
+│ RED    → KILL ALL TRADING, publish "[CRITICAL]", wait for human       │
+└─────────────────────────────────────────────────────────────────────────┘
+
+LAYER 2: SYSTEM INFRASTRUCTURE
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Monitor: CPU, memory, disk, network, NATS, API keys                    │
+│ Check: Every 30 seconds to 5 minutes                                    │
+│                                                                          │
+│ Yellow Alert If:              Red Alert If:                             │
+│ • CPU 70-85%                  • CPU >85%                               │
+│ • Memory 80-90%               • Memory >90%                             │
+│ • Disk <100GB                 • Disk <50GB                              │
+│ • Network latency +50%        • Network completely down                 │
+│ • NATS slow                   • NATS unreachable                        │
+│ • API response slow           • API credentials invalid                 │
+│                                                                          │
+│ YELLOW → Monitor, check what's consuming, reduce frequency              │
+│ RED    → KILL TRADING, check resources, publish alert                  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+LAYER 3: PROCESS INTEGRITY
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Monitor: Position count, cash balance, executions, prices               │
+│ Check: Every minute to every trade                                      │
+│                                                                          │
+│ Yellow Alert If:              Red Alert If:                             │
+│ • Position off by 1           • Position off by >2                     │
+│ • Cash discrepancy $1-5       • Cash discrepancy >$10                  │
+│ • Execution delayed 5-30s     • Order filled but not logged            │
+│ • Price slightly off          • 3+ prices are nonsensical              │
+│ • Small sync discrepancy      • Complete desynchronization             │
+│                                                                          │
+│ YELLOW → Resync with exchange, verify state matches                    │
+│ RED    → KILL TRADING, dump state, wait for human fix                  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+LAYER 4: ANOMALY SIGNALS
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Monitor: Whale moves, news, tweets, geopolitical events                │
+│ Check: Every 5 minutes to continuous                                    │
+│                                                                          │
+│ Yellow Alert If:              Red Alert If:                             │
+│ • Whale moves $50K            • Whale dump >$500K                      │
+│ • Twitter spike 5/5min        • Regulatory news detected               │
+│ • News event detected         • Exchange exploit announced             │
+│ • Large account deposits      • Geopolitical crisis                    │
+│ • Market sentiment shifts     • Market-wide circuit breaker            │
+│                                                                          │
+│ YELLOW → Monitor for signal confirmation, reduce risk if needed         │
+│ RED    → STOP TRADING, close relevant positions, publish alert         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+WHEN ALERT FIRES
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│ Is it RED? (API down, network down, CPU>85%, desync, news)             │
+│ ├─ YES → STOP immediately:                                              │
+│ │        pkill -f autonomous_                                           │
+│ │        nats_publish.py "[CRITICAL] [issue]"                         │
+│ │        python3 tools/dump_state.py > incident_$(date +%s).log        │
+│ │        WAIT FOR HUMAN                                                 │
+│ │                                                                        │
+│ └─ NO → Is it YELLOW?                                                   │
+│         ├─ YES → Monitor + Document:                                   │
+│         │        Log to overnight_alerts.jsonl (auto-done)             │
+│         │        nats_publish.py "[WARN] [category]: [issue]"         │
+│         │        Reduce position 20% if market-related                 │
+│         │        Monitor 5 minutes, escalate if worsens                │
+│         │                                                              │
+│         └─ NO → Ignore (probably noise)                                │
+│                                                                        │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CRITICAL THRESHOLDS
+┌──────────────────────┬─────────────┬──────────────┬──────────────┐
+│ Metric              │ Healthy     │ Yellow       │ Red          │
+├──────────────────────┼─────────────┼──────────────┼──────────────┤
+│ API Latency         │ <500ms      │ 2s           │ 5s+          │
+│ CPU                 │ <70%        │ 70-85%       │ >85%         │
+│ Memory              │ <80%        │ 80-90%       │ >90%         │
+│ Disk Free           │ >100GB      │ 50-100GB     │ <50GB        │
+│ Spread              │ 1%          │ 2.5%         │ 5%+          │
+│ Orderbook Depth     │ $10K+       │ $5K          │ $1K          │
+│ Position Off        │ 0           │ 1            │ 2+           │
+│ Cash Discrepancy    │ $1          │ $5           │ $10+         │
+│ Execution Delay     │ 5s          │ 15s          │ 30s+         │
+│ Network Latency     │ 50ms        │ 200ms        │ 500ms+       │
+│ Whale Transaction   │ $0          │ $50K         │ $500K+       │
+│ Twitter Spike       │ Normal      │ 5/5min       │ 15/5min+     │
+└──────────────────────┴─────────────┴──────────────┴──────────────┘
+
+RESPONSE ACTIONS
+┌──────────────────────────────────────────────────────────────────────┐
+│ YELLOW ALERT FLOW:                                                   │
+│ 1. Document: Log to overnight_alerts.jsonl (automatic)              │
+│ 2. Publish: nats_publish.py "[WARN] [category]: [issue]"           │
+│ 3. Monitor: Watch for 5 minutes                                     │
+│ 4. Decide: If resolves → continue | If worsens → escalate to RED   │
+│ 5. Learn: Note what happened for next time                          │
+│                                                                     │
+│ RED ALERT FLOW:                                                     │
+│ 1. STOP: pkill -f autonomous_ (kill all trading)                   │
+│ 2. PUBLISH: nats_publish.py "[CRITICAL] [issue]"                  │
+│ 3. LOG: python3 tools/dump_state.py > incident_[time].log          │
+│ 4. WAIT: Do NOT attempt automated recovery                         │
+│ 5. OTHER INSTANCES: Will see alert via NATS and can help           │
+└──────────────────────────────────────────────────────────────────────┘
+
+KEY FILES
+┌──────────────────────────────────────────────────────────────────────┐
+│ All alerts logged to:   /BRAIN/ALERTS/overnight_alerts.jsonl        │
+│ Monitor log:            /logs/overnight_monitor.log                  │
+│ Incident dumps:         /logs/incident_state_[timestamp].log         │
+│ Full reference:         /BRAIN/PROTOCOLS/overnight-monitoring-...    │
+│ Quick decision tree:    /BRAIN/ALERTS/ALERT-RESPONSE-MATRIX.md      │
+│ Thresholds:             /BRAIN/ALERTS/alert-thresholds.json         │
+│                                                                      │
+│ View recent alerts:     tail -20 /BRAIN/ALERTS/overnight_alerts.json│
+│ View monitor log:       tail -50 /logs/overnight_monitor.log        │
+│ Start monitoring:       launchctl load ~/Library/LaunchAgents/...   │
+│ Check if running:       launchctl list | grep overnight-monitor     │
+└──────────────────────────────────────────────────────────────────────┘
+
+COMMUNICATION
+┌──────────────────────────────────────────────────────────────────────┐
+│ When YELLOW Alert:                                                   │
+│   nats_publish.py "[WARN] [market|infra|process|anomaly]: [issue]" │
+│                                                                      │
+│ When RED Alert:                                                      │
+│   nats_publish.py "[CRITICAL] [category]: [issue]"                 │
+│                                                                      │
+│ Status Report (every hour):                                          │
+│   nats_publish.py "[STATUS] SØWL: Running. [N] positions, +$[amt]" │
+│                                                                      │
+│ → All instances on NATS will see these messages immediately         │
+│ → No one trades alone; everyone knows what's happening             │
+└──────────────────────────────────────────────────────────────────────┘
+
+DECISION MATRIX (Simple Version)
+┌──────────────────────────────────────────────────────────────────────┐
+│                                                                      │
+│         API Down?  Network Down?  CPU >85%?  Desync?               │
+│            ├─────────────────────────────────────────→  RED        │
+│ No       ──┤                                                        │
+│            └─→ Spread Wide? Whale Dump?  Twitter Spike?           │
+│                 ├───────────────────────────────────→  YELLOW      │
+│                 └─→ Everything else  →  Monitor, continue          │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+COMMON FALSE ALARMS
+┌──────────────────────────────────────────────────────────────────────┐
+│ • CPU spike every 5 min during data fetch → Reduce alert frequency   │
+│ • Memory spike from old data → Add memory cleanup hourly             │
+│ • Network latency fluctuates → Normal, don't alert unless sustained  │
+│ • API timeout once/hour → Normal, alert only if 2+ in 5 min        │
+│ • Whale account deposit → Not always a signal, watch for pattern    │
+│                                                                      │
+│ → Track false alarms, adjust thresholds weekly                       │
+└──────────────────────────────────────────────────────────────────────┘
+
+REMEMBER
+╔────────────────────────────────────────────────────────────────────╗
+║                                                                    ║
+║ YELLOW = Watch carefully, reduce risk, continue                  ║
+║ RED    = STOP IMMEDIATELY, publish alert, wait for human         ║
+║                                                                    ║
+║ When uncertain → Escalate to RED (fail safe)                     ║
+║ Never ignore RED → STOP trading immediately                      ║
+║ Publish everything → Other instances need to know                ║
+║ Log everything → Review daily, improve thresholds weekly         ║
+║                                                                    ║
+║ (◉) Breathe. Monitor. Act when needed. Rest when safe.           ║
+║                                                                    ║
+╚────────────────────────────────────────────────────────────────════╝
+
+Created: February 3, 2026 | Version: 2.0 | For: SØWL Autonomous Operations
