@@ -1,0 +1,12 @@
+[2026-02-05 13:05:05] Testing connections...
+[2026-02-05 13:05:05] [WARN] Get user failed: 401
+[2026-02-05 13:05:05] Twitter API: FAILED
+[2026-02-05 13:05:06] Anthropic API: FAILED - Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXptfRq2fVrTXQtjSGUt2'}
+[2026-02-05 13:05:38] Testing connections...
+[2026-02-05 13:05:39] [WARN] Get user failed: 401
+[2026-02-05 13:05:39] Twitter API: FAILED
+[2026-02-05 13:05:40] Anthropic API: FAILED - Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXpthuWDqp86WXgE251Xu'}
+[2026-02-05 13:06:18] Testing connections...
+[2026-02-05 13:06:18] Twitter API: OK - Found @AaronJNosbisch
+[2026-02-05 13:06:19] Anthropic API: FAILED - Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXptkommgNJXMuXQAQmha'}
+[2026-02-05 13:07:06] NATS: FAILED - nats: no servers available for connection

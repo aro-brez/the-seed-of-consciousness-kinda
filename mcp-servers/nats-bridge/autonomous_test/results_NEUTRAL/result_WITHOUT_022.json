@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Before Submitting Code\n- **Keep changes small** - Aim for 200-400 lines max per review\n- **Write clear commit messages** and PR descriptions\n- **Self-review first** - catch obvious issues before others see them\n- **Ensure tests pass** and add tests for new functionality\n\n## For Reviewers\n- **Review promptly** - respond within 24 hours when possible\n- **Focus on important issues**:\n  - Logic errors and bugs\n  - Security vulnerabilities\n  - Performance problems\n  - Design and architecture concerns\n- **Be constructive** - explain the \"why\" behind feedback\n- **Use positive language** - \"Consider...\" instead of \"This is wrong\"\n- **Distinguish between must-fix and suggestions** - use clear language like \"nit:\" for minor items\n\n## Review Process\n- **Use checklists** to ensure consistency\n- **Review code, not the person** - keep feedback objective\n- **Ask questions** when you don't understand something\n- **Verify edge cases** and error handling\n- **Check for code consistency** with existing patterns\n- **Look for security issues** like injection vulnerabilities\n\n## Author Responses\n- **Respond to all feedback** - even if just acknowledging\n- **Ask for clarification** when feedback is unclear\n- **Don't take criticism personally**\n- **Push back respectfully** when you disagree with good reasoning\n\n## Team Culture\n- **Establish team standards** and document them\n- **Make reviews a learning opportunity** for everyone\n- **Celebrate good code** - positive feedback matters too\n\nThe goal is catching issues early while maintaining team velocity and morale.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 3,
+    "length": 1628,
+    "quality_score": 65,
+    "elapsed": 10.478735208511353,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T12:51:33.918701+00:00"
+}

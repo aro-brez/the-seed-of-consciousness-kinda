@@ -1,0 +1,22 @@
+{
+  "domain": "CREATIVE",
+  "condition": "WITHOUT",
+  "run": 2,
+  "prompt": "How can we make this design more memorable?",
+  "response": "I'd be happy to help make a design more memorable, but I don't see any design attached to your message. Could you share:\n\n1. **The design itself** (image, link, or description)\n2. **Context** - What type of design is it? (logo, website, poster, product, etc.)\n3. **Target audience** - Who needs to remember it?\n4. **Current challenges** - What's making it forgettable right now?\n\nOnce I can see what we're working with, I can suggest specific strategies like:\n- Strengthening visual hierarchy\n- Adding distinctive elements or colors\n- Simplifying complex parts\n- Creating emotional connections\n- Using memorable typography or imagery\n\nWhat design would you like me to review?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 675,
+    "quality_score": 58.75,
+    "elapsed": 4.897832870483398,
+    "prompt": "How can we make this design more memorable?",
+    "run": 1,
+    "domain": "CREATIVE"
+  },
+  "timestamp": "2026-02-03T12:31:31.483980+00:00"
+}

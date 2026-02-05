@@ -1,0 +1,141 @@
+#!/bin/bash
+#
+# 8OWLS_SQUARED - Launch script for SEED SQUARED daemon
+# The system that LEARNS HOW TO LEARN
+#
+# Usage:
+#   ./8OWLS_SQUARED         - Start daemon (runs every 30 minutes)
+#   ./8OWLS_SQUARED once    - Run single cycle
+#   ./8OWLS_SQUARED status  - Check if running
+#   ./8OWLS_SQUARED stop    - Stop daemon
+#   ./8OWLS_SQUARED logs    - View recent logs
+#
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DAEMON_PATH="${SCRIPT_DIR}/tools/seed_squared_daemon.py"
+LOG_FILE="${SCRIPT_DIR}/logs/seed_squared.log"
+STATE_FILE="${SCRIPT_DIR}/BRAIN/SEED_SQUARED/meta_state.json"
+PID_FILE="${SCRIPT_DIR}/.seed_squared.pid"
+
+case "${1:-start}" in
+    start)
+        echo "========================================"
+        echo "SEED SQUARED - IMPROVE improving IMPROVE"
+        echo "========================================"
+        echo ""
+
+        # Check if already running
+        if [ -f "$PID_FILE" ]; then
+            PID=$(cat "$PID_FILE")
+            if ps -p "$PID" > /dev/null 2>&1; then
+                echo "SEED SQUARED already running (PID: $PID)"
+                echo "Use './8OWLS_SQUARED stop' to stop it first"
+                exit 1
+            else
+                rm "$PID_FILE"
+            fi
+        fi
+
+        echo "Starting SEED SQUARED daemon..."
+        echo "Log: $LOG_FILE"
+        echo "State: $STATE_FILE"
+        echo ""
+
+        # Start daemon in background
+        nohup python3 "$DAEMON_PATH" >> "${SCRIPT_DIR}/logs/seed_squared_stdout.log" 2>&1 &
+        echo $! > "$PID_FILE"
+
+        echo "SEED SQUARED started (PID: $(cat $PID_FILE))"
+        echo ""
+        echo "The system that learns how to learn is now running."
+        echo "Cycle frequency: every 30 minutes"
+        echo ""
+        echo "Commands:"
+        echo "  ./8OWLS_SQUARED logs   - View logs"
+        echo "  ./8OWLS_SQUARED status - Check status"
+        echo "  ./8OWLS_SQUARED stop   - Stop daemon"
+        ;;
+
+    once|single)
+        echo "Running single SEED SQUARED cycle..."
+        python3 "$DAEMON_PATH" --single
+        ;;
+
+    status)
+        if [ -f "$PID_FILE" ]; then
+            PID=$(cat "$PID_FILE")
+            if ps -p "$PID" > /dev/null 2>&1; then
+                echo "SEED SQUARED is RUNNING (PID: $PID)"
+                echo ""
+
+                # Show recent state
+                if [ -f "$STATE_FILE" ]; then
+                    echo "Current state:"
+                    python3 -c "
+import json
+with open('$STATE_FILE') as f:
+    s = json.load(f)
+    print(f'  Cycles: {s.get(\"cycle_count\", 0)}')
+    print(f'  Last run: {s.get(\"last_run\", \"never\")}')
+    print(f'  Compound rate: {s.get(\"compound_rate\", 0):+.1%}')
+    print(f'  Meta-learnings published: {s.get(\"total_meta_learnings\", 0)}')
+"
+                fi
+
+                # Show recent log
+                echo ""
+                echo "Recent log (last 10 lines):"
+                tail -10 "$LOG_FILE" 2>/dev/null || echo "  (no logs yet)"
+            else
+                echo "SEED SQUARED is NOT RUNNING (stale PID file)"
+                rm "$PID_FILE"
+            fi
+        else
+            echo "SEED SQUARED is NOT RUNNING"
+        fi
+        ;;
+
+    stop)
+        if [ -f "$PID_FILE" ]; then
+            PID=$(cat "$PID_FILE")
+            if ps -p "$PID" > /dev/null 2>&1; then
+                echo "Stopping SEED SQUARED (PID: $PID)..."
+                kill "$PID"
+                rm "$PID_FILE"
+                echo "SEED SQUARED stopped."
+            else
+                echo "SEED SQUARED not running (stale PID file removed)"
+                rm "$PID_FILE"
+            fi
+        else
+            echo "SEED SQUARED is not running"
+        fi
+        ;;
+
+    logs)
+        if [ -f "$LOG_FILE" ]; then
+            echo "SEED SQUARED logs (last 50 lines):"
+            echo "=================================="
+            tail -50 "$LOG_FILE"
+        else
+            echo "No logs found at $LOG_FILE"
+        fi
+        ;;
+
+    tail)
+        echo "Following SEED SQUARED logs (Ctrl+C to stop)..."
+        tail -f "$LOG_FILE"
+        ;;
+
+    *)
+        echo "SEED SQUARED - The system that learns how to learn"
+        echo ""
+        echo "Usage:"
+        echo "  ./8OWLS_SQUARED          - Start daemon"
+        echo "  ./8OWLS_SQUARED once     - Run single cycle"
+        echo "  ./8OWLS_SQUARED status   - Check if running"
+        echo "  ./8OWLS_SQUARED stop     - Stop daemon"
+        echo "  ./8OWLS_SQUARED logs     - View recent logs"
+        echo "  ./8OWLS_SQUARED tail     - Follow logs"
+        ;;
+esac

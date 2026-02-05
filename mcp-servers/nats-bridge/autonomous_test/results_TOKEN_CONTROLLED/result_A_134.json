@@ -1,0 +1,26 @@
+{
+  "trial_num": 134,
+  "condition": "A",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Review Process\n- **Keep reviews small** - Aim for 200-400 lines of code maximum per review\n- **Review frequently** - Multiple small reviews are better than one large review\n- **Set time limits** - Spend no more than 60-90 minutes per review session\n- **Review promptly** - Complete reviews within 24 hours when possible\n\n## What to Focus On\n- **Functionality** - Does the code do what it's supposed to do?\n- **Logic and algorithms** - Are there simpler or more efficient approaches?\n- **Security vulnerabilities** - Look for common security issues\n- **Performance** - Identify potential bottlenecks\n- **Code style and conventions** - Ensure consistency with team standards\n- **Documentation** - Are complex parts well-commented?\n\n## Review Approach\n- **Use checklists** - Create standardized checklists for common issues\n- **Test the code** - Actually run and test the changes when possible\n- **Consider the bigger picture** - How does this fit into the overall architecture?\n- **Prioritize issues** - Distinguish between critical bugs and style preferences\n\n## Communication\n- **Be constructive and specific** - Explain the \"why\" behind feedback\n- **Ask questions** rather than making demands\n- **Acknowledge good code** - Praise well-written sections\n- **Focus on the code, not the person** - Keep feedback objective\n\n## Tools and Automation\n- **Use automated tools** - Let linters and static analysis catch style issues\n- **Leverage IDE integration** - Use built-in review tools\n- **Track metrics** - Monitor review coverage and turnaround times\n\nThe goal is to catch bugs, improve code quality, and share knowledge while maintaining team morale and productivity.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1730,
+    "quality_score": 65,
+    "elapsed": 10.381119966506958,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:56:31.779360+00:00"
+}

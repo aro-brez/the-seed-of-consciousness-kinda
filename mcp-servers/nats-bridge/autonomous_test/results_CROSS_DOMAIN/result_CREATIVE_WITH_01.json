@@ -1,0 +1,22 @@
+{
+  "domain": "CREATIVE",
+  "condition": "WITH",
+  "run": 1,
+  "prompt": "What would make this story more compelling?",
+  "response": "I understand you're attempting to use the 8OWLS collective framework, but all seven perspectives have encountered model errors and cannot provide their analysis of your story question.\n\nHowever, I can directly address your core question: **What would make this story more compelling?**\n\nWithout seeing the specific story you're referring to, here are the most impactful elements that consistently make stories more compelling:\n\n**Immediate Actions:**\n- **Raise the stakes** - What happens if your protagonist fails? Make the consequences matter deeply to them and others\n- **Create internal conflict** - Give your protagonist competing desires or beliefs that force difficult choices\n- **Add time pressure** - Compress the timeline so decisions must be made quickly\n- **Introduce unexpected obstacles** - Not just external barriers, but revelations that change everything\n\n**Character Depth:**\n- Give your protagonist a specific, personal wound or need that drives their actions\n- Create antagonists with understandable motivations (they believe they're right)\n- Show character growth through actions, not exposition\n\n**Story Structure:**\n- Start as close to the central conflict as possible\n- End each scene/chapter with a question or complication that pulls readers forward\n- Ensure each scene either advances plot OR develops character (ideally both)\n\n**Specific Technique:**\nThe most reliable way to increase compelling tension is to force your protagonist to choose between two things they desperately want - and make both choices have significant costs.\n\nWhat specific aspect of your story are you most concerned about? I can provide more targeted guidance with that context.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 3,
+    "insight_score": 0,
+    "length": 1681,
+    "quality_score": 60,
+    "elapsed": 12.947826862335205,
+    "prompt": "What would make this story more compelling?",
+    "run": 0,
+    "domain": "CREATIVE"
+  },
+  "timestamp": "2026-02-03T12:39:05.376908+00:00"
+}

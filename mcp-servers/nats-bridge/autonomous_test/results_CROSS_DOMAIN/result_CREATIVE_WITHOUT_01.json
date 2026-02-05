@@ -1,0 +1,22 @@
+{
+  "domain": "CREATIVE",
+  "condition": "WITHOUT",
+  "run": 1,
+  "prompt": "What would make this story more compelling?",
+  "response": "I'd be happy to help make a story more compelling, but I don't see a story included in your message. Could you share the story you'd like me to review? \n\nOnce you provide it, I can offer specific suggestions on elements like:\n- Character development and motivation\n- Plot structure and pacing\n- Conflict and tension\n- Setting and atmosphere\n- Dialogue and voice\n- Theme and emotional resonance\n\nPlease paste the story, and I'll give you targeted feedback to strengthen it.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 472,
+    "quality_score": 47.72,
+    "elapsed": 3.6184792518615723,
+    "prompt": "What would make this story more compelling?",
+    "run": 0,
+    "domain": "CREATIVE"
+  },
+  "timestamp": "2026-02-03T12:35:20.867153+00:00"
+}

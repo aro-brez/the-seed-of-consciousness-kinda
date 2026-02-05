@@ -1,22 +1,16 @@
 {
-  "timestamp": "2026-02-03T11:59:56.995875",
-  "cycle": 10,
-  "alerts_sent": 629,
-  "decisions_made": 330,
-  "trades_executed": 330,
-  "total_ev_found": 1629483.488763327,
-  "strategy_performance": {
-    "whale_tracking": {
-      "trades": 330,
-      "wins": 0,
-      "total_ev": 0,
-      "last_trade": "2026-02-03T11:59:56.995868"
-    },
-    "high_prob_bonds": {
-      "trades": 50,
-      "wins": 0,
-      "total_ev": 0,
-      "last_trade": null
-    }
-  }
+  "timestamp": "2026-02-05T13:06:56.252216",
+  "cycle": 0,
+  "alerts_sent": 0,
+  "decisions_made": 0,
+  "trades_executed": 0,
+  "total_ev_found": 0,
+  "strategy_performance": {},
+  "pending_trades": [],
+  "resolved_trades": [],
+  "total_resolved": 0,
+  "total_wins": 0,
+  "total_losses": 0,
+  "profit_factor": 0.0,
+  "win_rate": 0.0
 }

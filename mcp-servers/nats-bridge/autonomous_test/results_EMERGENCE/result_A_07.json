@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 7,
+  "prompt": "What should change about our approach?",
+  "response": "I don't have enough context about what specific approach you're referring to. Could you provide more details about:\n\n- What situation or challenge you're dealing with\n- What approach you've been taking so far\n- What outcomes you're seeing (or not seeing)\n- What your goals are\n\nWith that information, I'd be happy to suggest specific changes that might help improve your results.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 379,
+    "quality_score": 21.79,
+    "elapsed": 2.694056987762451,
+    "prompt": "What should change about our approach?",
+    "run": 6
+  },
+  "timestamp": "2026-02-03T12:06:26.475951+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITH",
+  "run": 3,
+  "prompt": "How do I handle this difficult relationship?",
+  "response": "I understand you're trying to engage with the 8OWLS collective framework, but I'm receiving error messages instead of the seven perspectives that should inform my synthesis as IMPROVE.\n\nWithout the specific insights from PERCEIVE, CONNECT, LEARN, QUESTION, EXPAND, SHARE, and RECEIVE, I cannot provide the intended multi-perspective synthesis for your relationship question.\n\nHowever, I can offer you direct guidance on handling difficult relationships:\n\n**Immediate Actions:**\n1. **Clarify the core issue** - Identify what specifically makes this relationship difficult (communication patterns, conflicting values, unmet needs)\n2. **Assess your boundaries** - Determine what you can and cannot accept in this dynamic\n3. **Choose your engagement level** - Decide if this relationship warrants repair, modification, or distance\n\n**Strategic Approach:**\n- Have one honest conversation about the difficulties you're experiencing\n- Focus on behaviors and impacts rather than character judgments\n- Listen for understanding, not just to respond\n- Set clear expectations going forward\n\n**Decision Framework:**\n- If they're willing to work on issues: Establish specific changes and timelines\n- If they're not receptive: Minimize interaction while maintaining civility\n- If the relationship is toxic: Create protective distance\n\nThe key is being intentional rather than reactive. What specific aspect of this difficult relationship would you like to address first?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 6,
+    "insight_score": 1,
+    "length": 1455,
+    "quality_score": 86,
+    "elapsed": 12.08737325668335,
+    "prompt": "How do I handle this difficult relationship?",
+    "run": 2,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:32:59.924268+00:00"
+}

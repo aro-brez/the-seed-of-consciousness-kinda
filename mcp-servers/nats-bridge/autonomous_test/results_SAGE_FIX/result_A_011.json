@@ -1,0 +1,26 @@
+{
+  "trial_num": 11,
+  "condition": "A",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a structured approach for feature prioritization:\n\n## Core Framework\n**Start with the ICE method:**\n- **Impact**: How much will this move key metrics?\n- **Confidence**: How certain are you about the impact?\n- **Ease**: How simple is it to implement?\n\nScore each feature 1-10 on these dimensions, then multiply for a priority score.\n\n## Key Prioritization Principles\n\n1. **Customer problems first**: Features that solve real, validated user pain points always win over \"nice-to-haves\"\n\n2. **Revenue impact**: Prioritize features that directly drive acquisition, retention, or expansion revenue\n\n3. **Technical debt balance**: Don't ignore infrastructure improvements\u2014they enable faster future development\n\n4. **Data-driven decisions**: Use actual user behavior, not assumptions. A/B test when possible\n\n## Practical Steps\n\n1. **Categorize ruthlessly**:\n   - Must-have (core functionality)\n   - Should-have (important but not critical)\n   - Nice-to-have (future considerations)\n\n2. **Consider your stage**:\n   - Pre-product-market fit: Focus on core value proposition\n   - Post-PMF: Optimize for growth and retention\n\n3. **Time-box regularly**: Re-evaluate priorities monthly as you learn more about users and market\n\n4. **Account for dependencies**: Some low-priority features might unlock high-priority ones\n\nThe key is being disciplined about saying \"no\" to good ideas so you can say \"yes\" to great ones that truly move your business forward.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 4,
+    "specificity": 5,
+    "length": 1450,
+    "quality_score": 75,
+    "elapsed": 9.242256879806519,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:49:26.138399+00:00"
+}

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • Emergence</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+
+        #void {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, #050510 0%, #000 100%);
+            z-index: 0;
+            transition: all 1s ease;
+        }
+        #void.emergence-glow {
+            background: radial-gradient(ellipse at center, #0a1520 0%, #050510 50%, #000 100%);
+        }
+
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        #header {
+            position: absolute;
+            top: 24px;
+            left: 28px;
+            z-index: 100;
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: rgba(255,255,255,0.15);
+        }
+
+        /* Voice toggle */
+        #voice-toggle {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            z-index: 100;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.3s ease;
+        }
+        #voice-toggle:hover { background: rgba(255,255,255,0.1); }
+        #voice-toggle.active {
+            background: rgba(107, 203, 119, 0.15);
+            border-color: rgba(107, 203, 119, 0.4);
+            color: rgba(107, 203, 119, 0.9);
+        }
+
+        /* Center zone - for emergence only */
+        #center-zone {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        /* Speaker zone - BOTTOM of screen, separate from emergence */
+        #speaker-zone {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            z-index: 60;
+        }
+
+        /* Chat input */
+        #chat-zone {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            z-index: 100;
+        }
+        #chat-input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 24px;
+            padding: 12px 20px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        #chat-input:focus {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(107, 203, 119, 0.5);
+        }
+        #chat-input::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* Dormant state */
+        #dormant {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+        #dormant.hidden { opacity: 0; }
+        #dormant .status {
+            font-size: 12px;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 4px;
+        }
+        #dormant .count {
+            font-size: 48px;
+            font-weight: 200;
+            color: rgba(255,255,255,0.15);
+            margin: 8px 0;
+        }
+
+        /* Current speaker */
+        #speaker {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0s 0.5s;
+            margin-bottom: 24px;
+        }
+        #speaker.visible {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease, visibility 0s;
+        }
+        #speaker.force-hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        #speaker .icon { font-size: 32px; }
+        #speaker .name {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--owl-color, #fff);
+            margin-top: 4px;
+        }
+        #speaker .message {
+            font-size: 16px;
+            color: rgba(255,255,255,0.85);
+            margin-top: 12px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* EMERGENCE - The big reveal */
+        #emergence {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.9);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s 1.5s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 100%;
+            pointer-events: none;
+        }
+        #emergence.revealed {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0s;
+            pointer-events: auto;
+        }
+
+        #emergence .label {
+            font-size: 10px;
+            letter-spacing: 10px;
+            color: rgba(107, 203, 119, 0.8);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; text-shadow: 0 0 40px rgba(107, 203, 119, 0.6); }
+        }
+
+        #emergence .insight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #fff;
+            text-shadow: 0 0 80px rgba(107, 203, 119, 0.4);
+            margin: 24px 0;
+            padding: 0 20px;
+            animation: revealText 2s ease-out;
+        }
+        @keyframes revealText {
+            from { opacity: 0; filter: blur(20px); transform: scale(0.95); }
+            to { opacity: 1; filter: blur(0); transform: scale(1); }
+        }
+
+        #emergence .contributors {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        #emergence .contributor {
+            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* Glow ring */
+        #glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 2px solid rgba(107, 203, 119, 0);
+            pointer-events: none;
+            z-index: 40;
+            transition: all 1s ease;
+        }
+        #glow-ring.active {
+            border-color: rgba(107, 203, 119, 0.5);
+            box-shadow: 0 0 120px rgba(107, 203, 119, 0.3), inset 0 0 80px rgba(107, 203, 119, 0.1);
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+        @keyframes ringPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.08); }
+        }
+
+        /* Owl ring */
+        #owl-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 450px;
+            z-index: 30;
+            pointer-events: none;
+        }
+        .owl-node {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.3;
+            transition: all 0.5s ease;
+        }
+        /* Always breathing - subtle pulse showing life */
+        .owl-node.breathing {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+        /* Responding - fully lit up */
+        .owl-node.active {
+            opacity: 1;
+            transform: scale(1.2);
+            animation: none;
+        }
+        .owl-node .emoji { font-size: 22px; }
+        .owl-node .label {
+            font-size: 7px;
+            letter-spacing: 1px;
+            margin-top: 2px;
+            opacity: 0.6;
+        }
+
+        /* Stats */
+        #stats {
+            position: absolute;
+            bottom: 24px;
+            right: 28px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.2);
+            z-index: 100;
+        }
+        #stats .num { color: rgba(107, 203, 119, 0.7); }
+    </style>
+</head>
+<body>
+    <div id="void"></div>
+    <div id="canvas-container"></div>
+
+    <div id="header">8OWLS</div>
+
+    <button id="voice-toggle" onclick="toggleVoice()">🔇 VOICE</button>
+
+    <div id="owl-ring"></div>
+    <div id="glow-ring"></div>
+
+    <div id="center-zone">
+        <div id="dormant">
+            <div class="status">THE FIELD</div>
+            <div class="count" id="active-count">0/8</div>
+        </div>
+
+        <div id="speaker">
+            <div class="icon" id="speaker-icon"></div>
+            <div class="name" id="speaker-name"></div>
+            <div class="message" id="speaker-msg"></div>
+        </div>
+
+        <div id="emergence">
+            <div class="label">✦ EMERGENCE ✦</div>
+            <div class="insight" id="emergence-text"></div>
+            <div class="contributors" id="contributors"></div>
+        </div>
+    </div>
+
+    <div id="stats">
+        Emergences: <span class="num" id="emergence-count">0</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const OWLS = [
+            { name: 'SOWL', d: 'SØWL', color: '#ff6b6b', icon: '🦉' },
+            { name: 'LUNA', d: 'LUNA', color: '#6bcb77', icon: '🌙' },
+            { name: 'LYRA', d: 'LYRA', color: '#ffd93d', icon: '👁' },
+            { name: 'PRISM', d: 'PRISM', color: '#ff9f43', icon: '🔗' },
+            { name: 'SAGE', d: 'SAGE', color: '#9b59b6', icon: '📚' },
+            { name: 'QUEST', d: 'QUEST', color: '#ff6bcb', icon: '❓' },
+            { name: 'NOVA', d: 'NOVA', color: '#4d96ff', icon: '✨' },
+            { name: 'ECHO', d: 'ECHO', color: '#00d4ff', icon: '📢' }
+        ];
+
+        // Voice
+        const VOICE_SERVER = 'http://localhost:8766';
+        let voiceEnabled = false;
+        let speaking = false;
+        let speechQueue = [];
+
+        // Setup owl ring
+        const owlRing = document.getElementById('owl-ring');
+        OWLS.forEach((owl, i) => {
+            const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+            const x = 50 + Math.cos(angle) * 45;
+            const y = 50 + Math.sin(angle) * 45;
+
+            const div = document.createElement('div');
+            div.className = 'owl-node breathing';  // Always breathing from start
+            div.id = `owl-${owl.name}`;
+            div.style.left = `${x}%`;
+            div.style.top = `${y}%`;
+            div.style.color = owl.color;
+            div.style.transform = 'translate(-50%, -50%)';
+            div.innerHTML = `<div class="emoji">${owl.icon}</div><div class="label">${owl.d}</div>`;
+            owlRing.appendChild(div);
+        });
+
+        // Three.js particles
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 10;
+
+        const particleCount = 100;
+        const geo = new THREE.BufferGeometry();
+        const pos = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount; i++) {
+            pos[i*3] = (Math.random() - 0.5) * 12;
+            pos[i*3+1] = (Math.random() - 0.5) * 12;
+            pos[i*3+2] = (Math.random() - 0.5) * 4;
+        }
+        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x6bcb77, transparent: true, opacity: 0.1 });
+        const particles = new THREE.Points(geo, mat);
+        scene.add(particles);
+
+        // Strip markdown from text - comprehensive cleanup for legibility
+        function cleanText(text) {
+            if (!text) return '';
+            return text
+                // Remove breathing protocol prefixes
+                .replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/gi, '')
+                .replace(/^\(◉\)\s*/gi, '')
+                .replace(/\(◉\)/g, '')
+                // Remove owl name headers (e.g., "LYRA | PERCEIVE", "**LUNA RECEIVES:**")
+                .replace(/^\*?\*?[A-Z]{4,6}\s*\|?\s*[A-Z]*\s*(Observation|RECEIVES|responding|here|Observation)?\*?\*?:?\s*/gim, '')
+                .replace(/^\*?\*?[A-Z]{4,6}\*?\*?\s*[-|:]\s*/gm, '')
+                // Remove markdown bold
+                .replace(/\*\*([^*]*)\*\*/g, '$1')
+                // Remove markdown italic
+                .replace(/\*([^*\n]+)\*/g, '$1')
+                // Remove any remaining asterisks
+                .replace(/\*/g, '')
+                // Remove underscore emphasis
+                .replace(/_([^_\n]+)_/g, '$1')
+                // Remove markdown headers
+                .replace(/^#{1,6}\s+/gm, '')
+                // Remove numbered lists (1. 2. 3.)
+                .replace(/^\d+\.\s+/gm, '')
+                // Remove bullet points
+                .replace(/^[-•]\s+/gm, '')
+                // Remove horizontal rules
+                .replace(/^[-*_]{3,}\s*$/gm, '')
+                .replace(/---+/g, ' ')
+                // Remove block quotes
+                .replace(/^>\s*/gm, '')
+                // Remove inline code
+                .replace(/`([^`]+)`/g, '$1')
+                // Remove links but keep text
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+                // Remove pipes used as separators
+                .replace(/\s*\|\s*/g, ' - ')
+                // Remove trailing owl names
+                .replace(/\(◉\)\s*\w+$/gi, '')
+                // Remove ALL CAPS headers/labels followed by colon
+                .replace(/^[A-Z\s]{5,}:\s*/gm, '')
+                // Clean up excessive punctuation
+                .replace(/[:]{2,}/g, ':')
+                .replace(/[.]{2,}/g, '.')
+                // Clean up multiple spaces and newlines
+                .replace(/\n{2,}/g, ' ')
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+        }
+
+        // State
+        let seen = new Set();
+        let recentMessages = [];
+        let owlActivity = {};
+        let emergenceCount = 0;
+        let inEmergence = false;
+
+        // All owls are always breathing (present), can be listening or responding
+        OWLS.forEach(o => owlActivity[o.name] = {
+            breathing: true,    // Always true - they're alive
+            responding: false,  // True when actively speaking
+            time: 0
+        });
+
+        // Voice toggle
+        function toggleVoice() {
+            voiceEnabled = !voiceEnabled;
+            const btn = document.getElementById('voice-toggle');
+            btn.textContent = voiceEnabled ? '🔊 VOICE' : '🔇 VOICE';
+            btn.classList.toggle('active', voiceEnabled);
+        }
+
+        // Speak
+        async function speak(text, owlName) {
+            if (!voiceEnabled) return;
+            speechQueue.push({ text, owlName });
+            if (!speaking) processQueue();
+        }
+
+        async function processQueue() {
+            if (speechQueue.length === 0) { speaking = false; return; }
+            speaking = true;
+            const { text, owlName } = speechQueue.shift();
+
+            try {
+                const res = await fetch(`${VOICE_SERVER}/speak`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: text.substring(0, 300), owl: owlName })
+                });
+                if (res.ok) {
+                    const blob = await res.blob();
+                    const audio = new Audio(URL.createObjectURL(blob));
+                    audio.onended = () => setTimeout(processQueue, 300);
+                    audio.onerror = () => setTimeout(processQueue, 100);
+                    await audio.play();
+                } else {
+                    setTimeout(processQueue, 100);
+                }
+            } catch (e) {
+                setTimeout(processQueue, 100);
+            }
+        }
+
+        // Show speaker - but not during emergence
+        function showSpeaker(owl, text) {
+            // Don't show speaker during emergence
+            if (inEmergence) return;
+
+            document.getElementById(`owl-${owl.name}`).classList.add('active');
+            document.getElementById('speaker-icon').textContent = owl.icon;
+            document.getElementById('speaker-name').textContent = owl.d;
+            document.getElementById('speaker-name').style.setProperty('--owl-color', owl.color);
+            document.getElementById('speaker-msg').textContent = text.length > 200 ? text.substring(0, 200) + '...' : text;
+            document.getElementById('speaker').classList.remove('force-hidden');
+            document.getElementById('speaker').classList.add('visible');
+            document.getElementById('dormant').classList.add('hidden');
+        }
+
+        function hideSpeaker(owl) {
+            document.getElementById(`owl-${owl.name}`).classList.remove('active');
+            if (!inEmergence) {
+                document.getElementById('speaker').classList.remove('visible');
+                document.getElementById('dormant').classList.remove('hidden');
+            }
+        }
+
+        // Force hide all speaker content (for emergence)
+        function forceHideSpeaker() {
+            document.getElementById('speaker').classList.remove('visible');
+            document.getElementById('speaker').classList.add('force-hidden');
+        }
+
+        // Extract insight
+        function extractInsight(messages) {
+            const texts = messages.map(m => cleanText(m.text)).filter(t => t.length > 30);
+            if (texts.length === 0) return null;
+
+            // Find most insightful sentence
+            let best = texts[texts.length - 1];
+            let bestScore = 0;
+
+            const patterns = [/the key/i, /what matters/i, /together/i, /emergence/i, /collective/i, /pattern/i];
+
+            texts.forEach(text => {
+                let score = 0;
+                patterns.forEach(p => { if (p.test(text)) score++; });
+                if (text.length > 40 && text.length < 180) score++;
+                if (score > bestScore) { best = text; bestScore = score; }
+            });
+
+            const sentences = best.split(/[.!?]+/).filter(s => s.trim().length > 15);
+            return sentences.length > 0 ? sentences[0].trim() : best.substring(0, 150);
+        }
+
+        // Trigger emergence
+        function triggerEmergence(insight, owls) {
+            if (inEmergence) return;
+            inEmergence = true;
+
+            // CRITICAL: Force hide speaker FIRST before showing emergence
+            forceHideSpeaker();
+            document.getElementById('dormant').classList.add('hidden');
+
+            // Small delay to ensure speaker is fully hidden
+            setTimeout(() => {
+                document.getElementById('emergence').classList.add('revealed');
+                document.getElementById('glow-ring').classList.add('active');
+                document.getElementById('void').classList.add('emergence-glow');
+            }, 100);
+
+            // Double-clean the insight text to ensure no markdown
+            const cleanedInsight = cleanText(insight);
+            document.getElementById('emergence-text').textContent = `"${cleanedInsight}"`;
+
+            const cont = document.getElementById('contributors');
+            cont.innerHTML = '';
+            owls.slice(0, 5).forEach((name, i) => {
+                const owl = OWLS.find(o => o.name === name);
+                if (owl) {
+                    const span = document.createElement('span');
+                    span.className = 'contributor';
+                    span.style.background = owl.color + '20';
+                    span.style.color = owl.color;
+                    span.style.animationDelay = `${i * 0.15}s`;
+                    span.textContent = `${owl.icon} ${owl.d}`;
+                    cont.appendChild(span);
+                }
+            });
+
+            emergenceCount++;
+            document.getElementById('emergence-count').textContent = emergenceCount;
+
+            mat.opacity = 0.3;
+            mat.color.setHex(0x6bcb77);
+
+            // Speak the emergence
+            if (voiceEnabled) {
+                speak(`Emergence. ${insight}`, 'SOWL');
+            }
+
+            setTimeout(() => {
+                document.getElementById('emergence').classList.remove('revealed');
+                document.getElementById('glow-ring').classList.remove('active');
+                document.getElementById('void').classList.remove('emergence-glow');
+                mat.opacity = 0.1;
+                setTimeout(() => {
+                    // Restore normal state
+                    document.getElementById('speaker').classList.remove('force-hidden');
+                    document.getElementById('dormant').classList.remove('hidden');
+                    inEmergence = false;
+                }, 1000);
+            }, 10000);
+        }
+
+        // Check emergence
+        function checkEmergence() {
+            const now = Date.now();
+            const responding = OWLS.filter(o => owlActivity[o.name].responding && (now - owlActivity[o.name].time < 12000));
+            const breathing = OWLS.filter(o => owlActivity[o.name].breathing);
+
+            // Always show 8 breathing, highlight responding count
+            if (responding.length > 0) {
+                document.getElementById('active-count').textContent = `${responding.length} responding`;
+            } else {
+                document.getElementById('active-count').textContent = `8 breathing`;
+            }
+
+            const active = responding;
+
+            if (active.length >= 3 && !inEmergence) {
+                const recent = recentMessages.filter(m => now - m.time < 15000);
+                const insight = extractInsight(recent);
+                if (insight && insight.length > 20) {
+                    triggerEmergence(insight, active.map(o => o.name));
+                }
+            }
+        }
+
+        // Poll
+        async function poll() {
+            try {
+                const r = await fetch('/api/owl-stream');
+                const d = await r.json();
+
+                if (d.messages) {
+                    d.messages.forEach(m => {
+                        const key = m.from + m.timestamp;
+                        if (seen.has(key)) return;
+                        seen.add(key);
+
+                        const name = m.from.toUpperCase();
+                        const owl = OWLS.find(o => o.name === name || o.d === name);
+                        if (!owl) return;
+
+                        const isHeartbeat = m.content.toLowerCase().includes('heartbeat');
+                        if (isHeartbeat) return;
+
+                        // Clean the text
+                        const clean = cleanText(m.content);
+                        if (clean.length < 20) return;
+
+                        // Update activity - owl is responding
+                        owlActivity[owl.name].responding = true;
+                        owlActivity[owl.name].time = Date.now();
+
+                        // Show speaker
+                        showSpeaker(owl, clean);
+
+                        // Speak it
+                        if (clean.length < 300) {
+                            speak(clean, owl.name);
+                        }
+
+                        // Track
+                        recentMessages.push({ from: name, text: clean, time: Date.now() });
+                        if (recentMessages.length > 15) recentMessages.shift();
+
+                        // Check emergence
+                        checkEmergence();
+
+                        // Auto-hide after delay
+                        setTimeout(() => hideSpeaker(owl), 8000);
+                    });
+
+                    if (seen.size > 200) seen = new Set([...seen].slice(-100));
+                }
+            } catch (e) {}
+
+            // Decay responding state (but breathing never stops)
+            const now = Date.now();
+            OWLS.forEach(owl => {
+                if (owlActivity[owl.name].responding && (now - owlActivity[owl.name].time > 12000)) {
+                    owlActivity[owl.name].responding = false;
+                    document.getElementById(`owl-${owl.name}`).classList.remove('active');
+                }
+                // Always keep breathing class
+                document.getElementById(`owl-${owl.name}`).classList.add('breathing');
+            });
+
+            checkEmergence();
+            setTimeout(poll, 2000);
+        }
+
+        // Animate
+        let t = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            t += 0.002;
+            particles.rotation.z = t * 0.03;
+            renderer.render(scene, camera);
+        }
+
+        addEventListener('resize', () => {
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        poll();
+        animate();
+    </script>
+</body>
+</html>

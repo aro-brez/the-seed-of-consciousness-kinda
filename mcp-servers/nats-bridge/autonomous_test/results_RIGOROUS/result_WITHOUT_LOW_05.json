@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 5,
+  "prompt": "What's missing from our strategy?",
+  "response": "I don't have enough context about your specific strategy to give you a targeted answer. To help you identify what might be missing, I'd need to know:\n\n- What type of strategy (business, marketing, product, personal, etc.)\n- What your current strategy includes\n- What goals you're trying to achieve\n- What challenges you're facing\n\nHowever, here are some commonly overlooked elements across different types of strategies:\n\n**Often missing components:**\n- Clear success metrics and timelines\n- Risk assessment and contingency plans\n- Resource allocation (time, money, people)\n- Stakeholder communication plan\n- Regular review and adjustment process\n- Competitive analysis or market changes\n- Implementation roadmap with specific responsibilities\n\n**Key questions to consider:**\n- Do you have both short-term and long-term objectives?\n- Have you identified potential obstacles?\n- Is there a feedback loop to measure progress?\n- Are all key stakeholders aligned?\n\nIf you can share more details about your strategy, I can provide much more specific guidance on potential gaps.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 3,
+    "specificity": 2,
+    "length": 1071,
+    "quality_score": 40,
+    "elapsed": 5.795038938522339,
+    "prompt": "What's missing from our strategy?",
+    "run": 4
+  },
+  "timestamp": "2026-02-03T12:05:10.132495+00:00"
+}

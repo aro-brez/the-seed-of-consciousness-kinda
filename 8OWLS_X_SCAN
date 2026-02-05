@@ -1,0 +1,130 @@
+#!/bin/bash
+# 8OWLS X Feed Scanner Launcher
+# Scans ARO's X feed every hour for opportunities and insights
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCANNER="$SCRIPT_DIR/tools/x_feed_scanner.py"
+LOG_FILE="$SCRIPT_DIR/logs/x_feed_scanner.log"
+PID_FILE="$SCRIPT_DIR/.x_scanner.pid"
+
+start() {
+    if [ -f "$PID_FILE" ]; then
+        PID=$(cat "$PID_FILE")
+        if ps -p $PID > /dev/null 2>&1; then
+            echo "(O) X Feed Scanner already running (PID: $PID)"
+            return 1
+        fi
+    fi
+
+    echo "(O) Starting 8OWLS X Feed Scanner..."
+    echo "    Scanning: Timeline, Bookmarks, Mentions"
+    echo "    Interval: Every 1 hour"
+    echo "    Output: $SCRIPT_DIR/BRAIN/INTEL/x_feed_opportunities.jsonl"
+    echo "    NATS: intel.x_feed, aro.alerts"
+    echo ""
+
+    nohup python3 "$SCANNER" >> "$LOG_FILE" 2>&1 &
+    echo $! > "$PID_FILE"
+
+    sleep 1
+    if ps -p $(cat "$PID_FILE") > /dev/null 2>&1; then
+        echo "(O) Scanner started successfully (PID: $(cat $PID_FILE))"
+        echo "    View logs: tail -f $LOG_FILE"
+    else
+        echo "[ERROR] Scanner failed to start"
+        rm -f "$PID_FILE"
+        return 1
+    fi
+}
+
+stop() {
+    if [ -f "$PID_FILE" ]; then
+        PID=$(cat "$PID_FILE")
+        if ps -p $PID > /dev/null 2>&1; then
+            echo "(O) Stopping X Feed Scanner (PID: $PID)..."
+            kill $PID
+            rm -f "$PID_FILE"
+            echo "    Stopped."
+        else
+            echo "(O) Scanner not running (stale PID file)"
+            rm -f "$PID_FILE"
+        fi
+    else
+        echo "(O) Scanner not running"
+    fi
+}
+
+status() {
+    if [ -f "$PID_FILE" ]; then
+        PID=$(cat "$PID_FILE")
+        if ps -p $PID > /dev/null 2>&1; then
+            echo "(O) X Feed Scanner: RUNNING (PID: $PID)"
+            echo ""
+            echo "Recent activity:"
+            tail -10 "$LOG_FILE" 2>/dev/null || echo "  No log file yet"
+            return 0
+        fi
+    fi
+    echo "(O) X Feed Scanner: NOT RUNNING"
+    return 1
+}
+
+once() {
+    echo "(O) Running single X feed scan..."
+    python3 "$SCANNER" --once
+}
+
+test_nats() {
+    echo "(O) Testing NATS connection..."
+    python3 "$SCANNER" --test
+}
+
+logs() {
+    tail -f "$LOG_FILE"
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        sleep 2
+        start
+        ;;
+    status)
+        status
+        ;;
+    once)
+        once
+        ;;
+    test)
+        test_nats
+        ;;
+    logs)
+        logs
+        ;;
+    *)
+        echo "8OWLS X Feed Scanner"
+        echo ""
+        echo "Usage: $0 {start|stop|restart|status|once|test|logs}"
+        echo ""
+        echo "Commands:"
+        echo "  start   - Start hourly scanning daemon"
+        echo "  stop    - Stop the scanner"
+        echo "  restart - Restart the scanner"
+        echo "  status  - Check if scanner is running"
+        echo "  once    - Run a single scan now"
+        echo "  test    - Test NATS connection"
+        echo "  logs    - Follow the log file"
+        echo ""
+        echo "Channels:"
+        echo "  intel.x_feed - All insights (relevance >= 0.3)"
+        echo "  aro.alerts   - High-priority signals (relevance >= 0.8)"
+        echo ""
+        exit 1
+        ;;
+esac

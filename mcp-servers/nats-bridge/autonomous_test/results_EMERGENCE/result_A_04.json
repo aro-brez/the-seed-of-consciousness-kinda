@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 4,
+  "prompt": "What would make users love this product?",
+  "response": "I'd be happy to help you think about what would make users love a product, but I don't have information about which specific product you're referring to. \n\nTo give you meaningful insights, could you tell me:\n- What product are you asking about?\n- Who are the target users?\n- What problem does it solve?\n\nThat said, here are some universal principles that tend to make users love products:\n\n**Core Value Delivery:**\n- Solves a real, painful problem effectively\n- Makes something difficult feel easy or effortless\n- Saves significant time, money, or frustration\n\n**User Experience:**\n- Intuitive to use from the first interaction\n- Fast and reliable performance\n- Anticipates user needs and flows\n\n**Emotional Connection:**\n- Makes users feel smart, capable, or accomplished\n- Aligns with their values or identity\n- Creates moments of delight or surprise\n\n**Ongoing Value:**\n- Gets better with use (learns preferences, builds data)\n- Regular updates that add meaningful value\n- Strong community or ecosystem\n\nIf you share details about your specific product, I can give much more targeted advice about what would resonate with your particular users.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1147,
+    "quality_score": 61,
+    "elapsed": 6.4792492389678955,
+    "prompt": "What would make users love this product?",
+    "run": 3
+  },
+  "timestamp": "2026-02-03T12:13:19.644504+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 14,
+  "condition": "A",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "A software startup should prioritize features using a systematic approach that balances user needs, business goals, and resource constraints:\n\n## Start with your core value proposition\n- **Identify the one thing** your product does better than anyone else\n- Build the minimal set of features that delivers this core value first\n- Resist feature creep that dilutes your main strength\n\n## Use a scoring framework\n**RICE Method** (Reach \u00d7 Impact \u00d7 Confidence \u00f7 Effort):\n- **Reach**: How many users will this affect?\n- **Impact**: How much will it improve their experience?\n- **Confidence**: How sure are you about reach/impact estimates?\n- **Effort**: How much development time is required?\n\n## Gather the right data\n- **User feedback**: Direct requests, support tickets, user interviews\n- **Usage analytics**: What features are actually being used?\n- **Market research**: What do competitors offer? What's missing?\n- **Business metrics**: Which features drive retention, revenue, or growth?\n\n## Apply practical filters\n1. **Must-have vs. nice-to-have**: Focus on features users can't live without\n2. **Technical feasibility**: Consider your team's current capabilities\n3. **Time to market**: Prioritize features that can ship quickly and show progress\n4. **Dependency mapping**: Some features unlock others - build foundations first\n\n## Common prioritization pitfalls to avoid\n- Building features only you want (not users)\n- Over-engineering early features\n- Ignoring technical debt\n- Following competitors instead of user needs\n\nStart with a simple scoring system, iterate based on real user feedback, and be willing to kill features that don't deliver value.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 4,
+    "length": 1658,
+    "quality_score": 65,
+    "elapsed": 9.1892249584198,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:50:35.686071+00:00"
+}

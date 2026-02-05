@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "with",
+  "run": 3,
+  "prompt": "What's next?",
+  "response": "I notice that all seven perspective modules encountered errors when trying to analyze your question \"What's next?\" - it appears there was a model availability issue (404 errors for claude-haiku-4-20250514).\n\nWithout the benefit of those specialized perspectives, I can still provide a direct response to your open-ended question:\n\n**What's next depends on context, but here's a framework:**\n\n**Immediate next steps:**\n- Clarify what domain you're asking about (career, project, personal growth, etc.)\n- Assess your current situation and available resources\n- Identify the most pressing priority or opportunity\n\n**General approach:**\n1. **Define the scope** - What specific area needs your next move?\n2. **Evaluate options** - What possibilities are realistically available?\n3. **Choose based on impact** - Which option creates the most meaningful progress?\n4. **Take action** - Start with the smallest viable step forward\n\n**If you meant \"What's next for this conversation?\":**\n- You could rephrase your question more specifically\n- Ask about a particular challenge or decision you're facing\n- Or we could troubleshoot why the perspective modules aren't functioning\n\nWhat would be most helpful - exploring a specific \"what's next\" scenario, or would you prefer to try the multi-perspective analysis again with a more targeted question?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1335,
+    "quality_score": 45,
+    "elapsed": 12.667715072631836,
+    "prompt": "What's next?",
+    "run": 2,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:33:45.616450+00:00"
+}

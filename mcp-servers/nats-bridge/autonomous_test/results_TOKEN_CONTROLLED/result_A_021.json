@@ -1,0 +1,26 @@
+{
+  "trial_num": 21,
+  "condition": "A",
+  "prompt": "How do effective teams handle disagreements?",
+  "response": "Effective teams handle disagreements through several key practices:\n\n**Create psychological safety**: Team members feel comfortable expressing dissenting views without fear of retaliation or judgment. Leaders model this by welcoming different perspectives and showing vulnerability.\n\n**Focus on the issue, not the person**: Disagreements target ideas, processes, or decisions rather than becoming personal attacks. Teams use phrases like \"I see it differently\" rather than \"You're wrong.\"\n\n**Listen actively**: Members genuinely try to understand opposing viewpoints by asking clarifying questions, paraphrasing what they heard, and avoiding immediate rebuttals.\n\n**Establish ground rules**: Teams set clear norms for how disagreements will be handled - like no interrupting, time limits for discussion, or requiring data to support positions.\n\n**Seek to understand before being understood**: Team members explore the reasoning behind different positions and look for underlying needs or concerns that might not be immediately obvious.\n\n**Use structured decision-making processes**: When disagreements arise, teams employ frameworks like pros/cons lists, criteria-based evaluation, or \"disagree and commit\" protocols to move forward constructively.\n\n**Leverage diverse perspectives**: Rather than seeing disagreement as a problem, effective teams recognize it often leads to better solutions by surfacing blind spots and generating more creative options.\n\n**Know when to escalate**: Teams recognize when they need outside help, additional information, or higher-level decision-making authority to resolve significant disagreements.\n\nThe key is treating disagreement as a natural part of collaboration that, when handled well, strengthens both relationships and outcomes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1770,
+    "quality_score": 50,
+    "elapsed": 8.63197112083435,
+    "prompt": "How do effective teams handle disagreements?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:18:05.300919+00:00"
+}

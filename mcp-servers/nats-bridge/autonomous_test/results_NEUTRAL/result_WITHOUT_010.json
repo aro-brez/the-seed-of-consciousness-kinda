@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a practical framework for feature prioritization in software startups:\n\n## Start with Core Value Proposition\n- **Identify your primary user problem**: Focus on the 1-2 most critical pain points you're solving\n- **Build the minimum viable core**: Features that directly address this problem come first\n- **Avoid feature creep**: Resist adding \"nice-to-haves\" until core functionality is solid\n\n## Use Data-Driven Prioritization\n**Customer feedback weighted by:**\n- Revenue impact (current and potential customers)\n- Frequency of requests\n- User segment importance\n\n**Development considerations:**\n- Implementation effort/complexity\n- Technical dependencies\n- Risk level\n\n## Apply the ICE Framework\nScore each feature 1-10 on:\n- **Impact**: How much will this move key metrics?\n- **Confidence**: How sure are you about the impact?\n- **Ease**: How simple is it to implement?\n\n## Prioritization Order\n1. **Critical bugs/security issues** (always first)\n2. **Core functionality gaps** that prevent user success\n3. **High-impact, low-effort wins** (quick victories)\n4. **Strategic features** that differentiate from competitors\n5. **Enhancement requests** from key customers\n\n## Key Principles\n- **Ship fast, iterate faster**: Get features to users quickly for validation\n- **Say no often**: Most feature requests should be declined or deferred\n- **Focus on retention over acquisition**: Features that keep users engaged trump those that attract new ones\n- **Measure everything**: Track feature usage and impact post-launch\n\nThe goal is sustainable growth, not feature completeness.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1583,
+    "quality_score": 65,
+    "elapsed": 10.340456008911133,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T12:48:57.128264+00:00"
+}

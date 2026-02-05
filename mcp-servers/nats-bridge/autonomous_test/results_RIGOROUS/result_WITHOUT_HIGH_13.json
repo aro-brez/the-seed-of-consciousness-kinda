@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 13,
+  "prompt": "Explain the difference between eventually consistent and strongly consistent distributed systems.",
+  "response": "## Strong Consistency\n\nIn strongly consistent systems, all nodes see the same data at the same time. When a write operation completes, any subsequent read from any node will return that updated value immediately.\n\n**Key characteristics:**\n- Immediate consistency across all nodes\n- Reads always return the most recent write\n- Often requires coordination/locking between nodes\n- Higher latency due to synchronization overhead\n- May sacrifice availability during network partitions (per CAP theorem)\n\n**Example:** Traditional RDBMS with ACID properties, or systems like Apache Kafka with `acks=all`.\n\n## Eventual Consistency\n\nIn eventually consistent systems, nodes may temporarily have different views of the data, but they will converge to the same state given enough time without new updates.\n\n**Key characteristics:**\n- Temporary inconsistencies are acceptable\n- All nodes will eventually converge to the same state\n- No guarantees on *when* consistency will be achieved\n- Lower latency since operations don't wait for cross-node coordination\n- Remains available during network partitions\n\n**Example:** DNS, Amazon DynamoDB (default mode), Cassandra, or social media feed updates.\n\n## Trade-offs Summary\n\n**Choose Strong Consistency when:**\n- Data accuracy is critical (financial transactions, inventory)\n- Application can tolerate higher latency\n- Temporary unavailability is acceptable\n\n**Choose Eventual Consistency when:**\n- High availability and low latency are priorities\n- Temporary inconsistencies won't break the application\n- You can handle conflicts at the application level\n\nThe choice often depends on your specific use case and whether you can design your application to work with temporary inconsistencies.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "length": 1723,
+    "quality_score": 37,
+    "elapsed": 9.877802848815918,
+    "prompt": "Explain the difference between eventually consistent and strongly consistent distributed systems.",
+    "run": 12
+  },
+  "timestamp": "2026-02-03T12:00:07.021080+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I don't have enough information about your current strategy to identify specific gaps. To give you a meaningful analysis, I'd need to understand:\n\n**About your strategy:**\n- What are your key strategic priorities and goals?\n- What market/industry are you in?\n- What stage is your company (early startup, growth, established)?\n\n**About your current approach:**\n- How do you currently acquire and retain customers?\n- What metrics are you tracking and optimizing for?\n- Where are you focusing your resources (product, marketing, sales, etc.)?\n\n**Common strategy gaps I often see:**\n- **Market validation**: Not enough direct customer feedback or testing assumptions\n- **Clear positioning**: Trying to serve everyone instead of a specific segment\n- **Resource allocation**: Spreading efforts too thin vs. focusing on highest-impact activities\n- **Measurement**: Tracking vanity metrics instead of actionable business metrics\n- **Competitive awareness**: Not understanding how competitors are winning/losing\n\nIf you can share some details about your business and current approach, I can give you a much more targeted assessment of potential blind spots or missing elements.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1168,
+    "quality_score": 36,
+    "elapsed": 7.419506788253784,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:11:11.177211+00:00"
+}

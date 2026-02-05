@@ -1,0 +1,379 @@
+{
+  "subreddits": [
+    "artificial",
+    "MachineLearning",
+    "LocalLLaMA"
+  ],
+  "total_posts": 15,
+  "posts": [
+    {
+      "id": "1qvq0xe",
+      "title": "Bashing Ollama isn\u2019t just a pleasure, it\u2019s a duty",
+      "author": "jacek2023",
+      "selftext": "",
+      "url": "https://i.redd.it/ad5zhvq0nhhg1.png",
+      "score": 855,
+      "upvote_ratio": 0.95,
+      "num_comments": 164,
+      "created_utc": 1770215388.0,
+      "created": "2026-02-04T15:29:48",
+      "flair": "Funny",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qvq0xe/bashing_ollama_isnt_just_a_pleasure_its_a_duty/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qwboqn",
+      "title": "Google Research announces Sequential Attention: Making AI models leaner and faster without sacrificing accuracy",
+      "author": "Fear_ltself",
+      "selftext": "",
+      "url": "https://research.google/blog/sequential-attention-making-ai-models-leaner-and-faster-without-sacrificing-accuracy/",
+      "score": 315,
+      "upvote_ratio": 0.97,
+      "num_comments": 21,
+      "created_utc": 1770266225.0,
+      "created": "2026-02-05T05:37:05",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qwboqn/google_research_announces_sequential_attention/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qwbmct",
+      "title": "Qwen3-Coder-Next on RTX 5060 Ti 16 GB - Some numbers",
+      "author": "bobaburger",
+      "selftext": "About 2 weeks ago, I posted about running GLM-4.7-Flash on 16 GB of VRAM here www.reddit.com/r/LocalLLaMA/comments/1qlanzn/glm47flashreap_on_rtx_5060_ti_16_gb_200k_context/. \nAnd here we go, today, let's squeeze an even bigger model into the poor rig.\n\nHardware:\n- AMD Ryzen 7 7700X\n- RAM 32 GB DDR5-6000\n- RTX 5060 Ti 16 GB\n\nModel: [unsloth/Qwen3-Coder-Next-GGUF Q3_K_M](https://huggingface.co/unsloth/Qwen3-Coder-Next-GGUF?show_file_info=Qwen3-Coder-Next-Q3_K_M.gguf)\n\nLlama.cpp version: [llama.cpp",
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1qwbmct/qwen3codernext_on_rtx_5060_ti_16_gb_some_numbers/",
+      "score": 139,
+      "upvote_ratio": 0.99,
+      "num_comments": 61,
+      "created_utc": 1770266029.0,
+      "created": "2026-02-05T05:33:49",
+      "flair": "Discussion",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qwbmct/qwen3codernext_on_rtx_5060_ti_16_gb_some_numbers/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1mpk2va",
+      "title": "Announcing LocalLlama discord server &amp; bot!",
+      "author": "HOLUPREDICTIONS",
+      "selftext": "INVITE: https://discord.gg/rC922KfEwj\n\nThere used to be one old discord server for the subreddit but it was deleted by the previous mod.\n\nWhy?\nThe subreddit has grown to 500k users - inevitably, some users like a niche community with more technical discussion and fewer memes (even if relevant).\n\nWe have a discord bot to test out open source models.\n\nBetter contest and events organization.\n\nBest for quick questions or showcasing your rig!",
+      "url": "https://www.reddit.com/gallery/1mpk2va",
+      "score": 120,
+      "upvote_ratio": 0.84,
+      "num_comments": 65,
+      "created_utc": 1755127265.0,
+      "created": "2025-08-14T01:21:05",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1mpk2va/announcing_localllama_discord_server_bot/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qvn7o5",
+      "title": "Alibaba releases Qwen3-Coder-Next to rival OpenAI, Anthropic",
+      "author": "app1310",
+      "selftext": "",
+      "url": "https://www.marktechpost.com/2026/02/03/qwen-team-releases-qwen3-coder-next-an-open-weight-language-model-designed-specifically-for-coding-agents-and-local-development/",
+      "score": 25,
+      "upvote_ratio": 0.87,
+      "num_comments": 11,
+      "created_utc": 1770207996.0,
+      "created": "2026-02-04T13:26:36",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/artificial/comments/1qvn7o5/alibaba_releases_qwen3codernext_to_rival_openai/",
+      "awards": 0,
+      "source_subreddit": "artificial"
+    },
+    {
+      "id": "1qvs8q6",
+      "title": "The 18-month gap between frontier and open-source AI models has shrunk to 6 months - what this means",
+      "author": "hungry-for-things",
+      "selftext": "Ran a real-world test this week: Gemma 3 12B vs paid frontier models across actual business workflows.\n\nThe honest assessment? 90% of tasks: no meaningful difference. 5%: frontier models worth it (pay-per-use). 5%: neither quite there yet.\n\nThis matches the data - open models are catching up fast. The article explores:\n\n\\- Why the \"gasoline doesn't matter\" - only if it powers your task\n\n\\- The shift from \"one model to rule them all\" to specialized local models\n\n\\- Why even AGI will eventually be",
+      "url": "https://old.reddit.com/r/artificial/comments/1qvs8q6/the_18month_gap_between_frontier_and_opensource/",
+      "score": 23,
+      "upvote_ratio": 0.76,
+      "num_comments": 9,
+      "created_utc": 1770220482.0,
+      "created": "2026-02-04T16:54:42",
+      "flair": "Computing",
+      "permalink": "https://reddit.com/r/artificial/comments/1qvs8q6/the_18month_gap_between_frontier_and_opensource/",
+      "awards": 0,
+      "source_subreddit": "artificial"
+    },
+    {
+      "id": "1qvknmg",
+      "title": "'We're actively embracing generative AI,' Take-Two boss says, after previously expressing skepticism: 'We have hundreds of pilots and implementations across our company' | CEO Strauss Zelnick says generative AI remains a tool for enabling creators to do bigger and better things",
+      "author": "ControlCAD",
+      "selftext": "",
+      "url": "https://www.pcgamer.com/software/ai/were-actively-embracing-generative-ai-take-two-boss-says-after-previously-expressing-skepticism-we-have-hundreds-of-pilots-and-implementations-across-our-company/",
+      "score": 21,
+      "upvote_ratio": 0.78,
+      "num_comments": 8,
+      "created_utc": 1770199481.0,
+      "created": "2026-02-04T11:04:41",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/artificial/comments/1qvknmg/were_actively_embracing_generative_ai_taketwo/",
+      "awards": 0,
+      "source_subreddit": "artificial"
+    },
+    {
+      "id": "1qwhthi",
+      "title": "\u2018In the end, you feel blank\u2019: India\u2019s female workers watching hours of abusive content to train AI",
+      "author": "tekz",
+      "selftext": "",
+      "url": "https://www.theguardian.com/global-development/2026/feb/05/in-the-end-you-feel-blank-indias-female-workers-watching-hours-of-abusive-content-to-train-ai",
+      "score": 19,
+      "upvote_ratio": 0.95,
+      "num_comments": 1,
+      "created_utc": 1770287454.0,
+      "created": "2026-02-05T11:30:54",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/artificial/comments/1qwhthi/in_the_end_you_feel_blank_indias_female_workers/",
+      "awards": 0,
+      "source_subreddit": "artificial"
+    },
+    {
+      "id": "1qwazn3",
+      "title": "[D] Some ACL 2025 papers not indexed by Google Scholar",
+      "author": "FlanTricky8908",
+      "selftext": "I have this problem with my paper, where the arXiv version is in Google Scholar but not the ACL proceedings version. I looked up and found that there is at least one other paper with the same problem:\n\n[https://aclanthology.org/2025.findings-acl.91/](https://aclanthology.org/2025.findings-acl.91/)\n\n[https://aclanthology.org/2025.acl-long.1112](https://aclanthology.org/2025.acl-long.1112)\n\nDoes anyone else have the same problem? What could be the reason?",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1qwazn3/d_some_acl_2025_papers_not_indexed_by_google/",
+      "score": 18,
+      "upvote_ratio": 0.91,
+      "num_comments": 10,
+      "created_utc": 1770264226.0,
+      "created": "2026-02-05T05:03:46",
+      "flair": "Discussion",
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1qwazn3/d_some_acl_2025_papers_not_indexed_by_google/",
+      "awards": 0,
+      "source_subreddit": "MachineLearning"
+    },
+    {
+      "id": "1qwgyrn",
+      "title": "Best \"Deep research\" for local LLM in 2026 - platforms/tools/interface/setups",
+      "author": "liviuberechet",
+      "selftext": "I've been using the **Deep research** function from ChatGPT quite a lot since it came out.\n\nI love it, but every month I use the limit in the first 2-3 days... so I was wondering if anyone else has any tips or setups they use for running something similar to Deep research -- on local LLM.\n\nI have a decent setup of 3x3090, so I can run big-ish models (gpt-oss-120b or GLM Air) at VRAM speed or 30b models in Q8 (if precision is more important for deep research).\n\nI've been using OpenWebUI + local S",
+      "url": "https://i.redd.it/ffio9l5h0nhg1.png",
+      "score": 18,
+      "upvote_ratio": 0.92,
+      "num_comments": 12,
+      "created_utc": 1770284358.0,
+      "created": "2026-02-05T10:39:18",
+      "flair": "Question | Help",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qwgyrn/best_deep_research_for_local_llm_in_2026/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qrrayn",
+      "title": "[D] Monthly Who's Hiring and Who wants to be Hired?",
+      "author": "AutoModerator",
+      "selftext": "**For Job Postings** please use this template\n\n&gt;Hiring: \\[Location\\], Salary:\\[\\], \\[Remote | Relocation\\], \\[Full Time | Contract | Part Time\\]    and \\[Brief overview, what you're looking for\\]\n\n**For Those looking for jobs** please use this template\n\n&gt;Want to be Hired: \\[Location\\], Salary Expectation:\\[\\], \\[Remote | Relocation\\], \\[Full Time | Contract | Part Time\\]  Resume: \\[Link to resume\\] and \\[Brief overview, what you're looking for\\]\n\n&amp;#x200B;\n\nPlease remember that this com",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1qrrayn/d_monthly_whos_hiring_and_who_wants_to_be_hired/",
+      "score": 14,
+      "upvote_ratio": 0.95,
+      "num_comments": 6,
+      "created_utc": 1769830232.0,
+      "created": "2026-01-31T04:30:32",
+      "flair": "Discussion",
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1qrrayn/d_monthly_whos_hiring_and_who_wants_to_be_hired/",
+      "awards": 0,
+      "source_subreddit": "MachineLearning"
+    },
+    {
+      "id": "1qwbb6v",
+      "title": "[R] External validation keeps killing my ML models (lab-generated vs external lab data) \u2014 looking for academic collaborators",
+      "author": "Big-Shopping2444",
+      "selftext": "Hey folks,\n\nI\u2019m working on an ML/DL project involving **1D biological signal data** (spectral-like signals). I\u2019m running into a problem that I *know* exists in theory but is brutal in practice \u2014 **external validation collapse**.\n\nHere\u2019s the situation:\n\n* When I train/test within the same dataset (80/20 split, k-fold CV), performance is consistently strong\n   * PCA + LDA \u2192 good separation\n   * Classical ML \u2192 solid metrics\n   * DL \u2192 also performs well\n* The moment I test on **truly external data**",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1qwbb6v/r_external_validation_keeps_killing_my_ml_models/",
+      "score": 11,
+      "upvote_ratio": 0.73,
+      "num_comments": 26,
+      "created_utc": 1770265142.0,
+      "created": "2026-02-05T05:19:02",
+      "flair": "Research",
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1qwbb6v/r_external_validation_keeps_killing_my_ml_models/",
+      "awards": 0,
+      "source_subreddit": "MachineLearning"
+    },
+    {
+      "id": "1qtjnbc",
+      "title": "[D] Self-Promotion Thread",
+      "author": "AutoModerator",
+      "selftext": "Please post your personal projects, startups, product placements, collaboration needs, blogs etc.\n\nPlease mention the payment and pricing requirements for products and services.\n\nPlease do not post link shorteners, link aggregator websites , or auto-subscribe links.\n\n\\--\n\nAny abuse of trust will lead to bans.\n\nEncourage others who create new posts for questions to post here instead!\n\nThread will stay alive until next one so keep posting after the date in the title.\n\n\\--\n\nMeta: This is an experim",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1qtjnbc/d_selfpromotion_thread/",
+      "score": 3,
+      "upvote_ratio": 0.67,
+      "num_comments": 7,
+      "created_utc": 1770002121.0,
+      "created": "2026-02-02T04:15:21",
+      "flair": "Discussion",
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1qtjnbc/d_selfpromotion_thread/",
+      "awards": 0,
+      "source_subreddit": "MachineLearning"
+    },
+    {
+      "id": "1qwhkcg",
+      "title": "[P] CRAFT: thinking agent for image generation and edit",
+      "author": "Worldly-Ant-6889",
+      "selftext": "We operate an infrastructure startup focused on large-scale image and video generation.  \nBecause we run these models in real production pipelines we repeatedly encounter the same issues:\n\n* fragile prompt following\n* broken composition in long or constrained prompts\n* hallucinated objects and incorrect text rendering\n* manual, ad-hoc iteration loops to \u201cfix\u201d generations\n\nThe underlying models are strong. The failure mode is not model capacity, but the lack of *explicit reasoning and verificatio",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1qwhkcg/p_craft_thinking_agent_for_image_generation_and/",
+      "score": 3,
+      "upvote_ratio": 0.67,
+      "num_comments": 3,
+      "created_utc": 1770286552.0,
+      "created": "2026-02-05T11:15:52",
+      "flair": "Research",
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1qwhkcg/p_craft_thinking_agent_for_image_generation_and/",
+      "awards": 0,
+      "source_subreddit": "MachineLearning"
+    },
+    {
+      "id": "1qwbjhx",
+      "title": "Simple Machine Learning Testing Tools Guide",
+      "author": "adrianmatuguina",
+      "selftext": "",
+      "url": "https://aivolut.com/blog/simple-machine-learning-testing-tools-guide/",
+      "score": 0,
+      "upvote_ratio": 0.5,
+      "num_comments": 0,
+      "created_utc": 1770265800.0,
+      "created": "2026-02-05T05:30:00",
+      "flair": "Tutorial",
+      "permalink": "https://reddit.com/r/artificial/comments/1qwbjhx/simple_machine_learning_testing_tools_guide/",
+      "awards": 0,
+      "source_subreddit": "artificial"
+    }
+  ],
+  "tech_mentions": {
+    "models": [
+      [
+        "llama",
+        3
+      ],
+      [
+        "qwen",
+        2
+      ],
+      [
+        "gpt",
+        1
+      ]
+    ],
+    "companies": [
+      [
+        "google",
+        2
+      ],
+      [
+        "openai",
+        1
+      ],
+      [
+        "anthropic",
+        1
+      ],
+      [
+        "meta",
+        1
+      ],
+      [
+        "huggingface",
+        1
+      ]
+    ],
+    "concepts": [
+      [
+        "agi",
+        2
+      ],
+      [
+        "rag",
+        2
+      ],
+      [
+        "reasoning",
+        1
+      ]
+    ],
+    "tools": [
+      [
+        "gguf",
+        1
+      ],
+      [
+        "ollama",
+        1
+      ]
+    ]
+  },
+  "hot_topics": [
+    {
+      "id": "1mpk2va",
+      "title": "Announcing LocalLlama discord server &amp; bot!",
+      "author": "HOLUPREDICTIONS",
+      "selftext": "INVITE: https://discord.gg/rC922KfEwj\n\nThere used to be one old discord server for the subreddit but it was deleted by the previous mod.\n\nWhy?\nThe subreddit has grown to 500k users - inevitably, some users like a niche community with more technical discussion and fewer memes (even if relevant).\n\nWe have a discord bot to test out open source models.\n\nBetter contest and events organization.\n\nBest for quick questions or showcasing your rig!",
+      "url": "https://www.reddit.com/gallery/1mpk2va",
+      "score": 120,
+      "upvote_ratio": 0.84,
+      "num_comments": 65,
+      "created_utc": 1755127265.0,
+      "created": "2025-08-14T01:21:05",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1mpk2va/announcing_localllama_discord_server_bot/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qwboqn",
+      "title": "Google Research announces Sequential Attention: Making AI models leaner and faster without sacrificing accuracy",
+      "author": "Fear_ltself",
+      "selftext": "",
+      "url": "https://research.google/blog/sequential-attention-making-ai-models-leaner-and-faster-without-sacrificing-accuracy/",
+      "score": 315,
+      "upvote_ratio": 0.97,
+      "num_comments": 21,
+      "created_utc": 1770266225.0,
+      "created": "2026-02-05T05:37:05",
+      "flair": "News",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qwboqn/google_research_announces_sequential_attention/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qwbmct",
+      "title": "Qwen3-Coder-Next on RTX 5060 Ti 16 GB - Some numbers",
+      "author": "bobaburger",
+      "selftext": "About 2 weeks ago, I posted about running GLM-4.7-Flash on 16 GB of VRAM here www.reddit.com/r/LocalLLaMA/comments/1qlanzn/glm47flashreap_on_rtx_5060_ti_16_gb_200k_context/. \nAnd here we go, today, let's squeeze an even bigger model into the poor rig.\n\nHardware:\n- AMD Ryzen 7 7700X\n- RAM 32 GB DDR5-6000\n- RTX 5060 Ti 16 GB\n\nModel: [unsloth/Qwen3-Coder-Next-GGUF Q3_K_M](https://huggingface.co/unsloth/Qwen3-Coder-Next-GGUF?show_file_info=Qwen3-Coder-Next-Q3_K_M.gguf)\n\nLlama.cpp version: [llama.cpp",
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1qwbmct/qwen3codernext_on_rtx_5060_ti_16_gb_some_numbers/",
+      "score": 139,
+      "upvote_ratio": 0.99,
+      "num_comments": 61,
+      "created_utc": 1770266029.0,
+      "created": "2026-02-05T05:33:49",
+      "flair": "Discussion",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qwbmct/qwen3codernext_on_rtx_5060_ti_16_gb_some_numbers/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    },
+    {
+      "id": "1qvq0xe",
+      "title": "Bashing Ollama isn\u2019t just a pleasure, it\u2019s a duty",
+      "author": "jacek2023",
+      "selftext": "",
+      "url": "https://i.redd.it/ad5zhvq0nhhg1.png",
+      "score": 855,
+      "upvote_ratio": 0.95,
+      "num_comments": 164,
+      "created_utc": 1770215388.0,
+      "created": "2026-02-04T15:29:48",
+      "flair": "Funny",
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1qvq0xe/bashing_ollama_isnt_just_a_pleasure_its_a_duty/",
+      "awards": 0,
+      "source_subreddit": "LocalLLaMA"
+    }
+  ],
+  "fetched_at": "2026-02-05T13:04:13.490885"
+}

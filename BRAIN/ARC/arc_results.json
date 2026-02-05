@@ -1,0 +1,1106 @@
+{
+  "runs": [],
+  "summary": {},
+  "comparisons": [
+    {
+      "comparison": {
+        "timestamp": "2026-02-05T11:31:52.982026",
+        "num_puzzles": 3,
+        "single_agent": {
+          "correct": 0,
+          "accuracy": 0.0,
+          "avg_time": 0.6559512615203857
+        },
+        "emergence_8owls": {
+          "correct": 0,
+          "accuracy": 0.0,
+          "avg_time": 3.301673332850138,
+          "avg_emergence_quality": 0.5602
+        },
+        "improvement_percent": 0.0,
+        "d_effect": 0.0
+      },
+      "single_results": [
+        {
+          "task_id": "c8cbb738",
+          "correct": false,
+          "predicted": null,
+          "expected": [
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              1,
+              8,
+              8,
+              8,
+              8,
+              8,
+              1
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ]
+          ],
+          "time_seconds": 0.6888759136199951,
+          "mode": "single",
+          "emergence_quality": 0.0,
+          "agent_contributions": {},
+          "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYGmJi1qyU4AG7LYXb'}"
+        },
+        {
+          "task_id": "a85d4709",
+          "correct": false,
+          "predicted": null,
+          "expected": [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              4
+            ]
+          ],
+          "time_seconds": 0.6363756656646729,
+          "mode": "single",
+          "emergence_quality": 0.0,
+          "agent_contributions": {},
+          "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYZnVnsZbg2ok4QGG8'}"
+        },
+        {
+          "task_id": "8e1813be",
+          "correct": false,
+          "predicted": null,
+          "expected": [
+            [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "time_seconds": 0.6426022052764893,
+          "mode": "single",
+          "emergence_quality": 0.0,
+          "agent_contributions": {},
+          "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYq1HpzY3tiHiXAzVg'}"
+        }
+      ],
+      "emergence_results": [
+        {
+          "task_id": "c8cbb738",
+          "correct": false,
+          "predicted": [
+            [
+              0
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              1,
+              8,
+              8,
+              8,
+              8,
+              8,
+              1
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ]
+          ],
+          "time_seconds": 3.3375160694122314,
+          "mode": "emergence",
+          "emergence_quality": 0.5602,
+          "agent_contributions": {
+            "LYRA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYL9i3g6DffeMTWfxX'}",
+            "PRISM": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYMaXZ283Cdt4o31mP'}",
+            "SAGE": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYPZavqUXfAHThSLPZ'}",
+            "QUEST": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYQvwcyQRSHcpbEN1G'}",
+            "NOVA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYSK3KRKKQXVEEgcMr'}",
+            "ECHO": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYTfQ2HAZ1Q9ioWHh9'}",
+            "LUNA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYUzXAPwvqm4FAu7mo'}",
+            "SOWL": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYWypksEYQBVE5aciw'}"
+          },
+          "error": null
+        },
+        {
+          "task_id": "a85d4709",
+          "correct": false,
+          "predicted": [
+            [
+              0
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              4
+            ]
+          ],
+          "time_seconds": 2.930047035217285,
+          "mode": "emergence",
+          "emergence_quality": 0.5602,
+          "agent_contributions": {
+            "LYRA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYcWDJxFtXgHi39Cia'}",
+            "PRISM": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYdzkSFaTrrJZWDP4H'}",
+            "SAGE": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYfPbLtoWQpKQDFnNY'}",
+            "QUEST": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYgkSqqApKrjo6xjpH'}",
+            "NOVA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYi4pujr8tyKXnoDEP'}",
+            "ECHO": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYjRw3SbNauYery2Lp'}",
+            "LUNA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYkm3rBrCrebdsRn7w'}",
+            "SOWL": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYn5vGCRYEExBdcxHR'}"
+          },
+          "error": null
+        },
+        {
+          "task_id": "8e1813be",
+          "correct": false,
+          "predicted": [
+            [
+              0
+            ]
+          ],
+          "expected": [
+            [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "time_seconds": 3.6374568939208984,
+          "mode": "emergence",
+          "emergence_quality": 0.5602,
+          "agent_contributions": {
+            "LYRA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYsmUtN7StaDVx7ew6'}",
+            "PRISM": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYu5cGZGnzq91yLArY'}",
+            "SAGE": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYvQUwepUwjJ9hpb6d'}",
+            "QUEST": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYwp4jqQSAojUzxeCk'}",
+            "NOVA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmYyKbZCkFXogAfKKNY'}",
+            "ECHO": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmZ2KgSz6WkSmybTte8'}",
+            "LUNA": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmZ4GkgJJJeWSpjEkv6'}",
+            "SOWL": "Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CXpmZ5wDMhgj82MTJFGzB'}"
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "comparison": {
+        "timestamp": "2026-02-05T12:39:35.145770",
+        "num_puzzles": 3,
+        "single_agent": {
+          "correct": 2,
+          "accuracy": 0.6666666666666666,
+          "avg_time": 13.575371742248535
+        },
+        "emergence_8owls": {
+          "correct": 0,
+          "accuracy": 0.0,
+          "avg_time": 11.695945978164673,
+          "avg_emergence_quality": 0.8811749999999999
+        },
+        "improvement_percent": -100.0,
+        "d_effect": -0.6666666666666666
+      },
+      "single_results": [
+        {
+          "task_id": "a85d4709",
+          "correct": true,
+          "predicted": [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              4
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              4
+            ]
+          ],
+          "time_seconds": 9.082890272140503,
+          "mode": "single",
+          "emergence_quality": 0.0,
+          "agent_contributions": {},
+          "error": null
+        },
+        {
+          "task_id": "c8cbb738",
+          "correct": false,
+          "predicted": [
+            [
+              1,
+              8,
+              2,
+              8,
+              1
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              3,
+              8,
+              8,
+              8,
+              6
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              3,
+              8,
+              2,
+              8,
+              6
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              1,
+              8,
+              8,
+              8,
+              8,
+              8,
+              1
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ]
+          ],
+          "time_seconds": 14.69261884689331,
+          "mode": "single",
+          "emergence_quality": 0.0,
+          "agent_contributions": {},
+          "error": null
+        },
+        {
+          "task_id": "8e1813be",
+          "correct": true,
+          "predicted": [
+            [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "expected": [
+            [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "time_seconds": 16.950606107711792,
+          "mode": "single",
+          "emergence_quality": 0.0,
+          "agent_contributions": {},
+          "error": null
+        }
+      ],
+      "emergence_results": [
+        {
+          "task_id": "a85d4709",
+          "correct": false,
+          "predicted": [
+            [
+              4,
+              4,
+              4
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              4
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              4
+            ]
+          ],
+          "time_seconds": 10.786361932754517,
+          "mode": "emergence",
+          "emergence_quality": 0.871225,
+          "agent_contributions": {
+            "LYRA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdfaUVu1ChhRPGWkRF'}",
+            "PRISM": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdgyp8APVBSYfXR7fA'}",
+            "SAGE": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdiYa5gRKaowdeEaAe'}",
+            "QUEST": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdjtSBKzWnQ1P3F458'}",
+            "NOVA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdmEo5SMuKHfwANChU'}",
+            "ECHO": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdnaQiRjQ4SvsYTyiU'}",
+            "LUNA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprdozz6RopTH7n3jMcR'}",
+            "SOWL": "Looking at the training examples, I need to identify the pattern that maps input configurations to output colors.\n\nLet me analyze each example:\n\nExample 1: \nInput: diagonal from top-right to bottom-left\nOutput: rows are all 3, 4, 2\n\nExample 2:\nInput: vertical line on right\nOutput: all rows are 3\n\nExample 3: \nInput: alternating pattern (5 in positions [0,0], [1,1], [2,0])\nOutput: rows are 2, 4, 2\n\nExample 4:\nInput: middle column pattern with right shift in row 1\nOutput: rows are 4, 3, 4\n\nThe pattern appears to be based on the position/configuration of the \"5\" symbols, where each distinct configuration maps to a specific sequence of row colors.\n\nFor the test input:\n```\n. . 5\n5 . .\n. 5 .\n```\n\nThis has 5s at positions [0,2], [1,0], [2,1] - which forms a different diagonal pattern than Example 1.\n\nComparing to the examples, this configuration most closely resembles the alternating/scattered pattern similar to Example 3, but in a different arrangement. Based on the systematic mapping I observe, this configuration should map to:\n\n[[4, 4, 4], [2, 2, 2], [4, 4, 4]]"
+          },
+          "error": null
+        },
+        {
+          "task_id": "c8cbb738",
+          "correct": false,
+          "predicted": [
+            [
+              1,
+              8,
+              2,
+              8,
+              2
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              1,
+              8,
+              2,
+              8,
+              2
+            ],
+            [
+              3,
+              8,
+              8,
+              6,
+              6
+            ],
+            [
+              3,
+              8,
+              8,
+              6,
+              6
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              1,
+              8,
+              8,
+              8,
+              8,
+              8,
+              1
+            ],
+            [
+              2,
+              8,
+              8,
+              8,
+              8,
+              8,
+              2
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              3,
+              8,
+              6,
+              1,
+              6,
+              8,
+              3
+            ]
+          ],
+          "time_seconds": 12.130450010299683,
+          "mode": "emergence",
+          "emergence_quality": 0.889675,
+          "agent_contributions": {
+            "LYRA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprfYXsKdrCb7PaG8bvD'}",
+            "PRISM": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprfaC5gUkdLxjKWGznv'}",
+            "SAGE": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprfbXhJ7udF7kkm7D3J'}",
+            "QUEST": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprfcu3jKgfFXt7a87Dm'}",
+            "NOVA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprfeEB5BMdBw2QKPGnc'}",
+            "ECHO": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprffZYKBQ3TCJJzvn79'}",
+            "LUNA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprfgwtBHDUrHdZBJnNs'}",
+            "SOWL": "Looking at the training examples, I need to identify the pattern for transforming the input grid to the output grid.\n\nFrom the examples, I can see:\n1. The input grids contain mostly one background color with scattered non-background colored cells\n2. The output is always a 5x5 grid (in examples 1 and 3) or 3x3 grid (in example 2)\n3. The non-background cells from the input appear to be arranged in a specific pattern in the output\n\nLet me analyze the test input:\n- Background color: 8\n- Non-background cells and their positions:\n  - 1 at (2,6), (5,3), (5,9), (8,6)\n  - 2 at (6,11), (6,17), (8,11), (8,17)\n  - 3 at (9,3), (9,9), (15,3), (15,9)\n  - 6 at (10,14), (10,16), (16,14), (16,16)\n\nLooking at the pattern, these non-background cells seem to form rectangular regions. The output appears to be constructed by finding the bounding box of these patterns and creating a compressed representation.\n\nAnalyzing the positions:\n- The 1's form a pattern around rows 2-8, columns 3-9\n- The 2's are at rows 6-8, columns 11-17\n- The 3's are at rows 9-15, columns 3-9\n- The 6's are at rows 10-16, columns 14-16\n\nBased on the pattern from the examples, the output should be a 5x5 grid that captures the essential structure of these non-background elements.\n\n[[1,8,2,8,2],\n [8,8,8,8,8],\n [1,8,2,8,2],\n [3,8,8,6,6],\n [3,8,8,6,6]]"
+          },
+          "error": null
+        },
+        {
+          "task_id": "8e1813be",
+          "correct": false,
+          "predicted": [
+            [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "expected": [
+            [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "time_seconds": 12.17102599143982,
+          "mode": "emergence",
+          "emergence_quality": 0.882625,
+          "agent_contributions": {
+            "LYRA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhhWBETJ2ye6n7tYZf'}",
+            "PRISM": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhiwFNe356ZsgB4vUt'}",
+            "SAGE": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhkUmDLovjkTNATVRy'}",
+            "QUEST": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhnBhuiovGiKho6cqm'}",
+            "NOVA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhou9Ecvac2qLhDPZ2'}",
+            "ECHO": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhqG1EBeNL6CRPNech'}",
+            "LUNA": "Error: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011CXprhrgaGL2PiypFQ8kbT'}",
+            "SOWL": "Looking at the training examples, I need to identify the pattern for extracting and arranging colored segments.\n\nFrom the examples, I can see:\n1. Full horizontal lines (spanning the entire width) are identified\n2. Partial horizontal segments are also identified\n3. The output arranges these segments vertically in order of their first appearance from top to bottom\n4. Each segment is trimmed to its actual length (removing trailing dots)\n\nFor the test input, scanning from top to bottom:\n\nRow 0: `2 2 2 2 2 2 2` (partial segment, length 7)\nRow 3: `3 3 3 3 3 3 3` (partial segment, length 7) \nRow 6: `8 8 8 8 8 8 8` (partial segment, length 7)\nRow 9: `4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4` (full line, length 19)\nRow 12: `6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6` (full line, length 19)\nRow 15: `1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1` (full line, length 19)\nRow 18: `7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7` (full line, length 19)\n\nThe central `5 5 5` rectangle is ignored as it doesn't form a horizontal line pattern.\n\n[[2,2,2,2,2,2,2],[3,3,3,3,3,3,3],[8,8,8,8,8,8,8],[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]]"
+          },
+          "error": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "context": "WITH",
+  "clarity": "HIGH",
+  "run": 13,
+  "prompt": "Write a Python function that calculates Kelly Criterion position size given win_rate and odds.",
+  "response": "Here's a robust Python function for Kelly Criterion position sizing with built-in validation and risk management:\n\n```python\ndef kelly_criterion(win_rate, odds, bankroll=1.0, fractional_kelly=1.0, max_bet=0.25, min_bet=0.0):\n    \"\"\"\n    Calculate Kelly Criterion position size for betting/investment decisions.\n    \n    Args:\n        win_rate (float): Probability of winning (0 to 1)\n        odds (float): Odds received on winning bet (e.g., 2.0 for even money)\n        bankroll (float): Total bankroll size (default: 1.0 for fraction calculation)\n        fractional_kelly (float): Fraction of full Kelly to bet (0 to 1, default: 1.0)\n        max_bet (float): Maximum bet as fraction of bankroll (default: 0.25)\n        min_bet (float): Minimum bet threshold (default: 0.0)\n    \n    Returns:\n        dict: {\n            'fraction': float,          # Fraction of bankroll to bet\n            'amount': float,            # Absolute amount to bet\n            'kelly_pct': float,         # Raw Kelly percentage\n            'is_favorable': bool,       # Whether bet has positive expectation\n            'expected_growth': float    # Expected logarithmic growth rate\n        }\n    \n    Raises:\n        ValueError: If parameters are outside valid ranges\n    \"\"\"\n    \n    # Input validation\n    if not (0 <= win_rate <= 1):\n        raise ValueError(\"win_rate must be between 0 and 1\")\n    if odds <= 0:\n        raise ValueError(\"odds must be positive\")\n    if bankroll <= 0:\n        raise ValueError(\"bankroll must be positive\")\n    if not (0 <= fractional_kelly <= 1):\n        raise ValueError(\"fractional_kelly must be between 0 and 1\")\n    if not (0 <= max_bet <= 1):\n        raise ValueError(\"max_bet must be between 0 and 1\")\n    if min_bet < 0:\n        raise ValueError(\"min_bet cannot be negative\")\n    \n    # Calculate Kelly percentage\n    # Kelly formula: f* = (bp - q) / b\n    # where b = odds - 1, p = win_rate, q = 1 - win_rate\n    lose_rate = 1 - win_rate\n    net_odds = odds - 1  # Net odds (profit per unit bet)\n    \n    if net_odds <= 0:\n        # No positive expected value possible\n        return {\n            'fraction': 0.0,\n            'amount': 0.0,\n            'kelly_pct': 0.0,\n            'is_favorable': False,\n            'expected_growth': float('-inf')\n        }\n    \n    # Raw Kelly fraction\n    kelly_fraction = (win_rate * net_odds - lose_rate) / net_odds\n    \n    # Check if bet is favorable\n    is_favorable = kelly_fraction > 0\n    \n    if not is_favorable:\n        return {\n            'fraction': 0.0,\n            'amount': 0.0,\n            'kelly_pct': kelly_fraction * 100,\n            'is_favorable': False,\n            'expected_growth': win_rate * np.log(1) + lose_rate * np.log(1) if 'np' in globals() else 0\n        }\n    \n    # Apply fractional Kelly\n    adjusted_fraction = kelly_fraction * fractional_kelly\n    \n    # Apply position sizing constraints\n    final_fraction = max(min_bet, min(adjusted_fraction, max_bet))\n    \n    # Calculate expected growth rate\n    if final_fraction > 0:\n        try:\n            import math\n            expected_growth = (win_rate * math.log(1 + final_fraction * net_odds) + \n                             lose_rate * math.log(1 - final_fraction))\n        except ImportError:\n            expected_growth = None\n    else:\n        expected_growth = 0.0\n    \n    return {\n        'fraction': final_fraction,\n        '",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "length": 3386,
+    "quality_score": 79,
+    "elapsed": 17.45307230949402,
+    "prompt": "Write a Python function that calculates Kelly Criterion position size given win_rate and odds.",
+    "run": 12
+  },
+  "timestamp": "2026-02-03T12:03:56.539081+00:00"
+}

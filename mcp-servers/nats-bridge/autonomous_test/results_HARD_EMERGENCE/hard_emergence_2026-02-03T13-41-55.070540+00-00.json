@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-02-03T13:41:55.070540+00:00",
+  "correct_answer": "EMERGENCE_WORKS",
+  "results": [
+    {
+      "type": "single_agent_all_info",
+      "tokens": 1387,
+      "score": 50,
+      "max_score": 100,
+      "percentage": 50.0,
+      "is_correct": false,
+      "checks": [
+        "Exact answer found: NO",
+        "Letters correct: 15/15 (30/30)",
+        "Showed process: YES",
+        "Understood order: YES"
+      ],
+      "owl_count": 1
+    },
+    {
+      "type": "8_owls",
+      "n_owls": 8,
+      "iterations": 2,
+      "total_tokens": 198,
+      "score": 50,
+      "max_score": 100,
+      "percentage": 50.0,
+      "is_correct": false,
+      "checks": [
+        "Exact answer found: NO",
+        "Letters correct: 15/15 (30/30)",
+        "Showed process: YES",
+        "Understood order: YES"
+      ],
+      "owl_count": 8
+    },
+    {
+      "type": "6_owls",
+      "n_owls": 6,
+      "iterations": 2,
+      "total_tokens": 165,
+      "score": 50,
+      "max_score": 100,
+      "percentage": 50.0,
+      "is_correct": false,
+      "checks": [
+        "Exact answer found: NO",
+        "Letters correct: 15/15 (30/30)",
+        "Showed process: YES",
+        "Understood order: YES"
+      ],
+      "owl_count": 6
+    },
+    {
+      "type": "4_owls",
+      "n_owls": 4,
+      "iterations": 2,
+      "total_tokens": 162,
+      "score": 50,
+      "max_score": 100,
+      "percentage": 50.0,
+      "is_correct": false,
+      "checks": [
+        "Exact answer found: NO",
+        "Letters correct: 15/15 (30/30)",
+        "Showed process: YES",
+        "Understood order: YES"
+      ],
+      "owl_count": 4
+    }
+  ],
+  "emergence_indicated": false
+}

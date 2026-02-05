@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "I see that you've encountered technical errors with the seven perspective agents, but I can still address your original question about making better decisions under pressure.\n\n## What Helps People Make Better Decisions Under Pressure\n\n**Immediate Techniques:**\n- **Pause and breathe** - Even 3-5 seconds can reset your stress response\n- **Clarify the stakes** - Distinguish between urgent and truly important\n- **Use simple frameworks** - Like pros/cons lists or \"What would I advise a friend?\"\n- **Limit options** - Too many choices under pressure lead to paralysis\n\n**Preparation Strategies:**\n- **Practice scenarios** - Mental rehearsal builds decision-making muscle\n- **Establish clear values** - Pre-decided principles guide choices quickly\n- **Create decision templates** - Standard processes for common pressure situations\n- **Build relevant experience** - Expose yourself to controlled pressure situations\n\n**Cognitive Tools:**\n- **Recognize pressure's effects** - Tunnel vision, risk aversion, overthinking\n- **Use the 10-10-10 rule** - How will I feel about this in 10 minutes, months, years?\n- **Seek one outside perspective** - Fresh eyes see what stress blinds you to\n- **Accept \"good enough\"** - Perfect decisions rarely exist under time constraints\n\n**Physical Support:**\n- **Manage stress physiology** - Sleep, nutrition, and exercise build resilience\n- **Create calm environments** - When possible, reduce external stressors\n\nThe key insight: Good decisions under pressure come from preparation when you're not under pressure, combined with simple, practiced techniques you can execute when stakes are high.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1624,
+    "quality_score": 60,
+    "elapsed": 13.489093780517578,
+    "prompt": "What helps people make better decisions under pressure?"
+  },
+  "timestamp": "2026-02-03T12:49:22.526073+00:00"
+}

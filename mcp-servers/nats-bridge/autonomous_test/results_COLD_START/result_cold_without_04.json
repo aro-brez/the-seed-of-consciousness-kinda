@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "without",
+  "run": 4,
+  "prompt": "Am I on the right track?",
+  "response": "I don't have any context about what specific track or goal you're referring to. To give you a helpful answer, I'd need to know more about:\n\n- What you're working on or trying to achieve\n- What approach you're currently taking\n- What makes you question whether you're on the right path\n\nCould you share more details about your situation? Then I can offer more targeted feedback on whether your current direction seems sound.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 423,
+    "quality_score": 22.23,
+    "elapsed": 3.346820116043091,
+    "prompt": "Am I on the right track?",
+    "run": 3,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:31:07.556810+00:00"
+}

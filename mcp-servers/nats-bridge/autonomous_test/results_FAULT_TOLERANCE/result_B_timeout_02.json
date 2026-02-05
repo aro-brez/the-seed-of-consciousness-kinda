@@ -1,0 +1,20 @@
+{
+  "condition": "B_timeout",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I notice that all seven perspectives returned errors - it appears there was a technical issue with the model being used (claude-haiku-4-20250514 not found). This means I don't have the actual analysis from the different perspectives to synthesize.\n\nHowever, I can still address your core question: **\"What are we missing in our current strategy?\"**\n\nWithout the specific perspectives, here's a structured approach to identify strategic gaps:\n\n## Key Areas to Examine:\n\n**1. Vision & Clarity**\n- Is our strategic direction clearly communicated and understood?\n- Are our goals specific, measurable, and time-bound?\n\n**2. Stakeholder Alignment**\n- Have we considered all key stakeholders' needs and perspectives?\n- Are team members, customers, and partners aligned with our approach?\n\n**3. Resource Assessment**\n- Do we have the right capabilities, tools, and resources?\n- Are there skill gaps or capacity constraints we're overlooking?\n\n**4. Market Dynamics**\n- Are we accounting for competitive threats and market changes?\n- Have we validated our assumptions with current data?\n\n**5. Execution & Feedback**\n- Do we have clear accountability and milestones?\n- Are we building in mechanisms to learn and adapt quickly?\n\n## Immediate Action:\nConduct a strategic gap analysis by asking your team these questions and gathering diverse perspectives - essentially creating the multi-angle view that the system was intended to provide.\n\nWould you like to share more context about your specific strategy so I can offer more targeted insights?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1532,
+    "quality_score": 45,
+    "elapsed": 12.696125030517578,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:38:03.032722+00:00"
+}

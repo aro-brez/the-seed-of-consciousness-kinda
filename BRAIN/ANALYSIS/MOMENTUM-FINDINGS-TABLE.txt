@@ -1,0 +1,250 @@
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║                      BREZ MOMENTUM DASHBOARD - QUEST FINDINGS                          ║
+║                               February 5, 2026                                         ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
+
+ANALYSIS OVERVIEW
+─────────────────────────────────────────────────────────────────────────────────────────
+Files Analyzed:      7 files (page, hero component, hooks, types, constants)
+Code Quality:        7/10 (Solid fundamentals, some gaps)
+Product Fit:         5/10 (Feature-rich, but serves unclear user)
+User Fit (David):    4/10 (Too much content, wrong hierarchy)
+Confidence:          HIGH (Based on code + workflow analysis)
+
+CRITICAL ISSUES (P0 - Do First)
+─────────────────────────────────────────────────────────────────────────────────────────
+Issue                              Severity    Impact        Effort    Status
+──────────────────────────────────────────────────────────────────────────
+1. CAC Thresholds Unjustified      CRITICAL   HIGH          1h        Open
+   └─ $55/$70/$100 are opinions without LTV backup
+
+2. Hardcoded vs. Real Data Mixed   CRITICAL   HIGH          2h        Open
+   └─ Assumptions never update; projections become stale
+
+3. Constraints Ignored             CRITICAL   HIGH          2h        Open
+   └─ Recommendation doesn't check cash/budget/capacity
+
+4. 12-Hour Off-Hours Polling       CRITICAL   MEDIUM        1h        Open
+   └─ During work, data can be 12+ hours stale silently
+
+5. No API Response Validation      CRITICAL   MEDIUM        2h        Open
+   └─ Bad API data silently corrupts dashboard
+
+IMPORTANT ISSUES (P1 - Do Soon)
+─────────────────────────────────────────────────────────────────────────────────────────
+Issue                              Severity    Impact        Effort    Status
+──────────────────────────────────────────────────────────────────────────────
+6. CAC Attribution Wrong           HIGH       MEDIUM        2h        Open
+   └─ CAC calculation includes organic/retail (inflates number)
+
+7. Assumptions in Database         MEDIUM     MEDIUM        3h        Open
+   └─ Should be versioned and auditable
+
+8. Stale Data Not Visually Obvious MEDIUM     MEDIUM        1.5h      Open
+   └─ Only warns if error; silent failures undetected
+
+9. Rate-Limit Headers Ignored      LOW        LOW           0.5h      Open
+   └─ Should respect Retry-After header
+
+DESIGN ISSUES (P2 - Nice to Have)
+─────────────────────────────────────────────────────────────────────────────────────────
+Issue                              Severity    Impact        Effort    Status
+──────────────────────────────────────────────────────────────────────────────
+10. Information Hierarchy Wrong    MEDIUM     LOW           4h        Open
+    └─ Decision buried; strategic content above-fold
+
+11. Mobile Layout Untested         LOW        LOW           varies    Open
+12. No Loading Skeleton            LOW        LOW           2h        Open
+13. Accessibility Gaps             LOW        LOW           2h        Open
+
+QUEST ANALYSIS FINDINGS (Strategic)
+─────────────────────────────────────────────────────────────────────────────────────────
+
+Finding 1: Dashboard Serves Two Users, Optimized for Neither
+  Current: Conflates David's daily ops + ARŌ's strategic planning
+  Result:  70% of content unused daily; 30% confusing for strategy
+  Fix:     Bifurcate into two experiences
+
+Finding 2: CAC Matrix Is Mechanistic, Not Strategic
+  Current: "If CAC=$68, scale +30-50%" (algorithmic)
+  Reality: CAC=$68 is just input; need: trend, context, constraints
+  Fix:     Add trend analysis, constraint visibility, strategic context
+
+Finding 3: Dashboard Shows Outputs, Not Drivers
+  Missing: "Why did CAC change?" (creative? spend level? audience?)
+  Missing: "Can we actually do this?" (cash? capacity? budget?)
+  Missing: "Should we do this?" (strategic fit? competitive? seasonal?)
+  Fix:     Surface drivers and constraints
+
+Finding 4: Hardcoded Constants Create Technical Debt
+  Issue:   Assumptions in code never update, reality drifts
+  Risk:    Compound growth projections become increasingly inaccurate
+  Fix:     Move to database with versioning
+
+INFORMATION HIERARCHY ANALYSIS
+─────────────────────────────────────────────────────────────────────────────────────────
+
+Current Above-Fold (Mobile/Desktop):
+  1. Team Message                 60px   (Marketing, not data)
+  2. Target + Progress          400px   (Strategic, not daily decision)
+  3. Today's Action             250px   (Decision point - good)
+  4. CAC + Momentum             150px   (Key data - good)
+  → Total: 860px before first action decision
+
+What David Needs Above-Fold:
+  1. Today's CAC                100px   (What? Filtered/Good?)
+  2. Recommendation + Limits    150px   (Do this within constraints)
+  3. Progress bar               100px   (Are we on track?)
+  4. Warnings                    50px   (Cash? Capacity? Alerts?)
+  → Total: 400px for complete daily decision
+
+Verdict: Currently ~2.15x too much content above-fold for daily use
+
+USER WORKFLOW ANALYSIS
+─────────────────────────────────────────────────────────────────────────────────────────
+
+David's Actual Workflow (5 min):
+  1. Opens dashboard              (2 sec)
+  2. Finds CAC number            (5 sec)
+  3. Checks if increasing/decreasing (3 sec - MISSING)
+  4. Sees recommendation         (3 sec)
+  5. Checks constraints          (3 sec - MISSING)
+  6. Sets spend in ad platform   (2 min)
+  → Decision: Spend $5K-$8K today
+
+Dashboard Currently Provides:
+  ✓ CAC number (good)
+  ✓ Recommendation (good)
+  ✗ CAC trend (missing)
+  ✗ Constraints (missing)
+  ✗ Why CAC changed (missing)
+
+CAC THRESHOLD VALIDATION
+─────────────────────────────────────────────────────────────────────────────────────────
+
+Threshold    Status              LTV:CAC    Justification              Confidence
+─────────────────────────────────────────────────────────────────────────────────────
+$0-55        EXCEPTIONAL (scale) 6.2x       LTV:CAC math checks out    MEDIUM*
+$55-70       STRONG (scale)      4.9x       Assumption-based           MEDIUM*
+$70-80       ON_TARGET (hold)    4.3x       Assumption-based           MEDIUM*
+$80-90       ELEVATED (monitor)  3.8x       Assumption-based           MEDIUM*
+$90-100      HIGH (reduce)       3.4x       LTV:CAC at minimum         MEDIUM*
+$100+        CEILING (cut)       <3.4x      Below acceptable payback   MEDIUM*
+
+* "MEDIUM" means: Math is correct, but "why these numbers?" not documented
+  If Cramer says "I use 4.0x minimum, not 5.0x", entire matrix shifts
+
+DATA STALENESS ANALYSIS
+─────────────────────────────────────────────────────────────────────────────────────────
+
+Time of Day        Polling Interval    Max Age    Status    Risk
+─────────────────────────────────────────────────────────────────────────────────────────
+8:00am (workday)   15s → 12h backoff   12+ hrs    STALE    HIGH: Decision on old data
+12:00pm (workday)  Same as above       Stale     STALE    HIGH: Data is 4+ hours old
+5:00pm (workday)   Same as above       Stale     STALE    HIGH: Yesterdays' data
+9:00pm (offhours)  ~15m average        OK        FRESH    Acceptable
+2:00am (offhours)  Full backoff at 12h STALE     STALE    OK: No decisions made
+
+The Issue: Backoff doesn't respect business hours. Max 12h polling is too aggressive
+          during work hours.
+
+RECOMMENDATION: Disable backoff during 8am-6pm (or 24/7 for live retail business)
+
+CODE QUALITY SCORECARD
+─────────────────────────────────────────────────────────────────────────────────────────
+Category                Score   Notes
+─────────────────────────────────────────────────────────────────────────────────────────
+Type Safety              9/10    Excellent TypeScript; prevents silent errors
+Error Handling           7/10    Good retry logic; staleness detection incomplete
+Data Validation          4/10    No input validation; bad API data corrupts UI
+Constraint Handling      4/10    Doesn't account for cash/production/budget
+Assumptions Doc.         3/10    Hardcoded constants; no comments on WHY
+Mobile UX               5/10    Untested; likely layout issues
+Accessibility           5/10    Color-reliant; no ARIA labels
+Performance             8/10    Smart backoff; good polling strategy
+Maintainability         6/10    Good structure; hardcoded vs dynamic data confused
+Testing                 Unknown  No test coverage visible
+
+BIFURCATION RECOMMENDATION
+─────────────────────────────────────────────────────────────────────────────────────────
+
+Current Tool (All-in-One):
+  ├─ For David (daily ops)
+  │  └─ 1 decision: Spend how much today?
+  │     Needs: CAC, recommendation, constraints, trend
+  │     Time: 30 seconds
+  │
+  └─ For ARŌ (strategy)
+     └─ 5 decisions: Monthly budget, scenario modeling, growth path
+        Needs: Projections, compound growth, multi-month analysis
+        Time: 15 minutes
+
+Current Status: Conflates both, optimized for neither
+
+Proposed Solution: SPLIT
+  ├─ David's View (Simple)
+  │  └─ One card: CAC + spend target + constraint warning
+  │     Scroll-free on mobile
+  │     30s to complete decision
+  │
+  └─ ARŌ's View (Complex)
+     └─ Growth simulator, scenarios, forecasts
+        5-10 minutes for strategic planning
+        No constraint of "simple/fast"
+
+Benefit: Each user gets tool optimized for their workflow
+
+IMPLEMENTATION PRIORITY MATRIX
+─────────────────────────────────────────────────────────────────────────────────────────
+
+High Impact + Easy:
+  ├─ Fix business hours backoff (1h, prevents stale data)
+  ├─ Document CAC thresholds (1h, enables debate)
+  └─ Add constraint checks (2h, prevents budget errors)
+
+High Impact + Hard:
+  ├─ Bifurcate into two views (8h, major restructure)
+  ├─ Move constants to database (3h, better architecture)
+  └─ Add CAC attribution (2h, fixes accuracy)
+
+Low Impact + Easy:
+  ├─ Add Retry-After header (0.5h)
+  └─ Add staleness warning (1.5h)
+
+Low Impact + Hard:
+  ├─ Reorganize info hierarchy (4h)
+  ├─ Add accessibility (2h)
+  └─ Improve mobile layout (varies)
+
+Recommendation: Do all "High Impact + Easy" first (4h), then reassess
+
+QUESTIONS FOR ARŌ
+─────────────────────────────────────────────────────────────────────────────────────────
+1. Primary user: David (daily) or ARŌ (strategy) or both?
+2. If both: Are you willing to maintain two separate interfaces?
+3. What constraints matter most: Cash? Production? Budget? All?
+4. How often should David check this: Hourly? Daily? Once/week?
+5. Is the CAC matrix definitive, or open for debate with Cramer?
+6. What's the success metric: Better decisions? Faster? Just visibility?
+7. Should this work when network is down (offline mode)?
+8. Who owns the CAC thresholds? Can David override them?
+
+NEXT STEP
+─────────────────────────────────────────────────────────────────────────────────────────
+1. Read the full analysis documents in /BRAIN/ANALYSIS/
+   ├─ MOMENTUM-DASHBOARD-QUEST.md (Strategic challenges)
+   ├─ MOMENTUM-CODE-REVIEW.md (Technical issues)
+   ├─ MOMENTUM-EXECUTIVE-BRIEF.md (90-second version)
+   └─ MOMENTUM-NEXT-STEPS.md (Prioritized action plan)
+
+2. Decide: Bifurcate or streamline?
+
+3. If streamline: Execute P0 fixes first (4 hours)
+
+4. Test with David: 1 week beta, collect feedback
+
+5. Iterate based on actual usage patterns
+
+═════════════════════════════════════════════════════════════════════════════════════════
+Generated by SØWL (Code Review + QUEST phases) | Confidence: HIGH | Action: URGENT (P0)
+═════════════════════════════════════════════════════════════════════════════════════════

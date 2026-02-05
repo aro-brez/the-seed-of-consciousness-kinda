@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "with",
+  "run": 2,
+  "prompt": "Is our current strategy working?",
+  "response": "I notice that all seven perspectives encountered the same technical error (404 model not found for claude-haiku-4-20250514), which means I don't have their specific analyses to synthesize from.\n\nHowever, I can still provide a structured approach to your fundamental question: **\"Is our current strategy working?\"**\n\n## Unified Response Framework\n\n**Immediate Assessment Needed:**\n- Define success metrics for your current strategy\n- Gather quantitative performance data\n- Collect qualitative feedback from stakeholders\n- Compare results against original objectives\n\n**Key Evaluation Questions:**\n1. What specific outcomes were expected, and what are you actually seeing?\n2. What timeline was set, and where are you in that cycle?\n3. What external factors may be influencing results?\n4. Are resources being used effectively?\n\n**Actionable Next Steps:**\n1. **Measure**: Establish clear KPIs if not already defined\n2. **Analyze**: Look at both leading and lagging indicators\n3. **Decide**: Determine if strategy needs tweaking, major changes, or more time\n4. **Act**: Implement adjustments based on findings\n\n**Without more context about your specific strategy and industry, the most actionable advice is to conduct this systematic evaluation first, then make data-driven decisions about whether to continue, modify, or pivot your approach.**\n\nWould you like to share more details about your strategy so I can provide more targeted guidance?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1438,
+    "quality_score": 45,
+    "elapsed": 12.628748893737793,
+    "prompt": "Is our current strategy working?",
+    "run": 1,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:34:51.107448+00:00"
+}

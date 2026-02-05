@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a practical approach for feature prioritization at a software startup:\n\n## Start with these fundamentals:\n- **Core value proposition first** - Build the minimum features that deliver your primary user benefit\n- **User research over assumptions** - Talk to actual users/prospects, don't guess at priorities\n- **Technical feasibility assessment** - Consider development complexity and resource constraints\n\n## Use a scoring framework:\nEvaluate each feature on:\n- **Impact** - How much will this move key metrics?\n- **Confidence** - How sure are you about the impact?\n- **Effort** - Time and resources required\n- **Strategic fit** - Does this align with your vision and market position?\n\n## Prioritize ruthlessly:\n- **Say no more than yes** - Most features seem important but aren't\n- **Focus on user workflows**, not isolated features\n- **Consider technical debt** - Sometimes infrastructure work enables faster feature development later\n- **Time-box decisions** - Don't endlessly debate; set deadlines for prioritization reviews\n\n## Startup-specific considerations:\n- **Revenue impact** - Prioritize features that directly drive paying customers\n- **Competitive moats** - Focus on differentiation, not just feature parity\n- **Learning opportunities** - Sometimes build features primarily to validate assumptions\n- **Resource reality** - You likely have 1-3 developers, so choose carefully\n\nThe key is being systematic while staying flexible enough to pivot based on user feedback and market changes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "length": 1505,
+    "quality_score": 60,
+    "elapsed": 9.584055185317993,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T12:47:17.882359+00:00"
+}

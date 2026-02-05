@@ -1,0 +1,26 @@
+{
+  "trial_num": 23,
+  "condition": "C",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "I can see that all seven perspective modules encountered errors, but I can still provide a comprehensive synthesis on what helps people make better decisions under pressure.\n\n## UNIFIED SYNTHESIS: Better Decisions Under Pressure\n\n**Core Framework:**\n\n**1. PREPARATION & MENTAL MODELS**\n- Develop decision frameworks before pressure hits\n- Practice scenario planning and \"pre-mortems\"\n- Build mental models for common pressure situations\n- Create personal decision criteria checklists\n\n**2. STRESS REGULATION**\n- Use controlled breathing techniques (4-7-8 breathing)\n- Implement brief mindfulness pauses\n- Recognize physical stress signals early\n- Maintain perspective through reframing\n\n**3. STRUCTURED PROCESS**\n- Force yourself to pause, even briefly\n- Identify 2-3 key decision criteria\n- Generate at least 2 alternatives\n- Consider immediate vs. long-term consequences\n- Set decision deadlines to prevent paralysis\n\n**4. INFORMATION MANAGEMENT**\n- Distinguish between what you know, assume, and need to find out\n- Seek one trusted advisor's input when possible\n- Avoid information overload - focus on critical factors\n- Trust intuition when expertise exists\n\n**5. COGNITIVE TOOLS**\n- Ask: \"What would I advise a friend in this situation?\"\n- Consider: \"What's the worst realistic outcome?\"\n- Apply the 10-10-10 rule: How will I feel in 10 minutes, 10 months, 10 years?\n- Use satisficing vs. optimizing for time-sensitive decisions\n\n**Immediate Action:** Practice these techniques during low-pressure situations to build automatic responses when pressure mounts.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1564,
+    "quality_score": 65,
+    "elapsed": 13.684472799301147,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:19:02.783198+00:00"
+}

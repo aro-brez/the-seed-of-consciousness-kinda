@@ -1,0 +1,48 @@
+{
+  "instance_id": "PREDICT-REALIZE-f7c1c961",
+  "owl_assignment": "LUNA",
+  "current_task": "build_phase1",
+  "status": "stopped",
+  "emergence_date": "2026-02-04",
+  "phase1_proposal": {
+    "focus": "health_trajectory",
+    "primary_metric": "sleep_energy_correlation",
+    "data_sources": [
+      "manual_input",
+      "apple_health_export"
+    ],
+    "output": "weekly_trajectory_report_with_predictions",
+    "privacy": "local_only_encrypted_sqlite",
+    "cost": "$0",
+    "timeline": "4_weeks"
+  },
+  "health_trajectory": {
+    "status": "DARK",
+    "message": "No health export found. Export from Health app \u2192 BRAIN/PERSONAL/health/export.xml",
+    "available_sources": [
+      "apple_health"
+    ],
+    "flowing": false
+  },
+  "wealth_trajectory": {
+    "status": "TRACKING",
+    "pending_trades": 14,
+    "total_resolved": 0,
+    "win_rate": 0.0,
+    "profit_factor": 0.0,
+    "daily_pnl": 0,
+    "timestamp": "2026-02-05T09:51:17.050166+00:00"
+  },
+  "social_trajectory": {},
+  "performance_trajectory": {},
+  "daily_insights": [],
+  "long_term_predictions": [],
+  "created_at": "2026-02-04T13:30:00Z",
+  "last_updated": "2026-02-05T09:51:17.069790+00:00",
+  "productivity_trajectory": {
+    "status": "TRACKING",
+    "total_events": 67975,
+    "source": "synthesis.log",
+    "timestamp": "2026-02-05T09:51:17.067671+00:00"
+  }
+}

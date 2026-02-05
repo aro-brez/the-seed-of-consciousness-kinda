@@ -1,0 +1,20 @@
+{
+  "condition": "C",
+  "condition_name": "Isolated",
+  "prompt_idx": 4,
+  "prompt": "If you had to bet $5K on one strategic direction, what would the collective wisdom recommend?",
+  "response": "Without knowing your specific context, I'd lean toward **investing in your own skill development** - particularly in areas that combine human creativity with AI literacy.\n\nThe collective wisdom across domains consistently points to a few meta-principles:\n\n**Highest probability bet:** Develop capabilities that become *more* valuable as AI advances - complex problem-solving, emotional intelligence, creative synthesis, and the ability to work effectively with AI tools. This has asymmetric upside regardless of which specific technologies win.\n\n**Why this beats other $5K bets:**\n- Market index funds are solid but capped at market returns\n- Individual stocks/crypto are essentially gambling at this scale\n- Most business ventures need more capital to meaningfully compete\n- Real estate requires much more capital for meaningful positions\n\n**Specific allocation I'd consider:**\n- $3K on intensive learning (coding + AI tools, or deep expertise in your field)\n- $1.5K on building something small but real (product, service, content)\n- $500 on strategic networking/relationships\n\nThe key insight: In uncertain times, bet on increasing your own option value rather than trying to predict specific outcomes. Skills compound, create opportunities, and can't be easily taken away.\n\nWhat's your current situation? That would help me give more targeted advice within this framework.",
+  "analysis": {
+    "pattern_recognition": 2,
+    "emergent_synthesis": 8,
+    "actionable_specificity": 0,
+    "wisdom_judgment": 6,
+    "hedge_penalty": 1,
+    "quality_score": 14,
+    "length": 1375,
+    "elapsed": 9.618011236190796,
+    "prompt": "If you had to bet $5K on one strategic direction, what would the collective wisdom recommend?",
+    "prompt_idx": 4
+  },
+  "timestamp": "2026-02-03T12:21:39.874724+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "condition": "C_no_question",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice that all six perspectives encountered technical errors and couldn't provide their analyses due to a model availability issue. However, I can still address your fundamental question about resource allocation.\n\n## Where to Invest Limited Resources: A Synthesis\n\n**Core Principle:** Focus on high-impact, sustainable investments that create compounding returns.\n\n### Priority Framework:\n\n1. **Foundation First**\n   - Invest in capabilities that enable future opportunities\n   - Build systems and processes that scale\n   - Develop core competencies before diversifying\n\n2. **Risk-Adjusted Returns**\n   - Balance quick wins with long-term investments\n   - Diversify across time horizons (30% immediate, 50% medium-term, 20% long-term)\n   - Consider opportunity costs of each allocation\n\n3. **Strategic Alignment**\n   - Ensure investments support your primary mission/goals\n   - Look for synergies between different resource allocations\n   - Maintain flexibility to pivot when conditions change\n\n### Immediate Action Steps:\n- **Audit current resources** (time, money, people, attention)\n- **Identify your biggest constraint** and invest to remove it\n- **Test small** before making large commitments\n- **Measure and iterate** based on results\n\nThe key insight across all perspectives would likely be: *Invest where you have the greatest leverage and learning potential, while maintaining enough reserves to adapt to changing circumstances.*\n\nWhat specific type of resources and context are you working with? This would help provide more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1557,
+    "quality_score": 82,
+    "elapsed": 13.071166753768921,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:36:23.306941+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue consistently** - If you can't reproduce it reliably, gather more data first\n- **Define the problem precisely** - \"It's slow\" vs \"API response times increased from 200ms to 2s for user authentication\"\n- **Gather relevant logs, metrics, and error messages** before diving into code\n\n## Use systematic isolation\n- **Divide and conquer** - Break the system into components and test each independently\n- **Check recent changes** - What was deployed, configured, or modified recently?\n- **Validate assumptions** - Don't assume external services, databases, or networks are working correctly\n\n## Apply structured investigation\n- **Follow the data flow** - Trace inputs through each system component\n- **Use binary search** - Eliminate half the possibilities with each test\n- **Add targeted logging/monitoring** if existing observability is insufficient\n- **Document your findings** as you go - failed hypotheses are valuable\n\n## Leverage tools effectively\n- **Debuggers** for step-through analysis\n- **Profilers** for performance issues\n- **Network analyzers** for connectivity problems\n- **Distributed tracing** for microservices\n\n## Maintain perspective\n- **Take breaks** when stuck - fresh eyes often spot obvious issues\n- **Collaborate** - explain the problem to colleagues (rubber duck debugging)\n- **Consider multiple root causes** - complex systems often have cascading failures\n\nThe key is being methodical rather than randomly changing things and hoping for the best.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 2,
+    "length": 1584,
+    "quality_score": 65,
+    "elapsed": 9.794063091278076,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T13:05:21.496641+00:00"
+}

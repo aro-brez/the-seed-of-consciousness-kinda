@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "Several key factors help people make better decisions under pressure:\n\n**Mental preparation and practice**\n- Rehearsing scenarios beforehand so responses become more automatic\n- Building experience through simulation or gradual exposure to pressure situations\n\n**Structured decision-making processes**\n- Using frameworks like \"stop, think, act\" to slow down impulsive reactions\n- Breaking complex decisions into smaller, manageable components\n- Having pre-established criteria for important decisions\n\n**Stress management techniques**\n- Deep breathing or brief mindfulness to reduce physiological stress responses\n- Physical fitness, which improves stress resilience\n- Getting adequate sleep and nutrition as foundational support\n\n**Information strategies**\n- Focusing on the most critical information rather than trying to process everything\n- Having key data readily accessible and well-organized\n- Consulting trusted advisors when time permits\n\n**Cognitive tools**\n- Recognizing common pressure-induced biases (like tunnel vision or rushing)\n- Using checklists for complex decisions\n- Setting clear priorities beforehand so trade-offs are easier to make\n\n**Environmental factors**\n- Creating physical spaces that minimize distractions\n- Having reliable communication systems\n- Building supportive team dynamics where pressure is shared\n\nThe most effective approach typically combines several of these elements, with mental preparation and structured processes being particularly powerful for consistent improvement.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1518,
+    "quality_score": 45,
+    "elapsed": 8.549787044525146,
+    "prompt": "What helps people make better decisions under pressure?"
+  },
+  "timestamp": "2026-02-03T13:07:56.508700+00:00"
+}

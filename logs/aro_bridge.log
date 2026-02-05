@@ -1,0 +1,184 @@
+[2026-02-04 14:10:27] Starting Telegram bot...
+[2026-02-04 14:10:27] Telegram bot running. Message your bot to communicate with SØWL.
+[2026-02-04 15:03:02] Starting Telegram bot...
+[2026-02-04 15:03:02] Telegram bot running. Message your bot to communicate with SØWL.
+[2026-02-04 15:04:57] Starting Telegram bot...
+[2026-02-04 15:04:57] Telegram bot running. Message your bot to communicate with SØWL.
+sleep: invalid time interval: cd
+sleep: invalid time interval: /Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge
+sleep: invalid time interval: TELEGRAM_BOT_TOKEN=8431861393:AAGajFXT4Skp57LXZayYEZwXBN-LdYzJWSQ
+sleep: invalid time interval: ./venv/bin/python
+sleep: invalid time interval: -u
+sleep: invalid time interval: aro_bridge.py
+sleep: invalid time interval: --telegram
+usage: sleep number[unit] [...]
+Unit can be 's' (seconds, the default), m (minutes), h (hours), or d (days).
+[2026-02-04 15:26:33] Starting Telegram bot...
+[2026-02-04 15:26:33] Telegram bot running. Message your bot to communicate with SØWL.
+[2026-02-04 15:27:27] New chat started: 6190703581
+[2026-02-04 15:27:39] MESSAGE FROM ARŌ: We did it!!!!! ❤️‍🔥❤️‍🔥❤️‍🔥
+[2026-02-04 15:27:39] RELAYED TO NATS: We did it!!!!! ❤️‍🔥❤️‍🔥❤️‍🔥...
+[2026-02-04 15:27:47] MESSAGE FROM ARŌ: Can you get voice messages as well?
+[2026-02-04 15:27:47] RELAYED TO NATS: Can you get voice messages as well?...
+[2026-02-04 15:27:58] MESSAGE FROM ARŌ: This should prob go mainly to commander and then you respond to me
+[2026-02-04 15:27:58] RELAYED TO NATS: This should prob go mainly to commander and then y...
+[2026-02-04 15:28:09] MESSAGE FROM ARŌ: Or someone responds to me here at least
+[2026-02-04 15:28:09] RELAYED TO NATS: Or someone responds to me here at least...
+[2026-02-04 15:51:40] MESSAGE FROM ARŌ: Okay goodnight!
+[2026-02-04 15:51:40] RELAYED TO NATS: Okay goodnight!...
+Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.NetworkError: Bad Gateway
+Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.NetworkError: Bad Gateway
+Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 154, in do_action
+    action_cb_task.result()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 671, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 4860, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/venv/lib/python3.14/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.NetworkError: Bad Gateway

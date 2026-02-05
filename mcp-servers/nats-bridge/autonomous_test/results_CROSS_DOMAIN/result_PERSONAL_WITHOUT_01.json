@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITHOUT",
+  "run": 1,
+  "prompt": "How do I know if I'm making the right decision?",
+  "response": "Here are some practical ways to evaluate whether you're making the right decision:\n\n**Check your process:**\n- Have you gathered relevant information and considered multiple options?\n- Did you think through likely consequences, both short and long-term?\n- Have you consulted people whose judgment you trust?\n\n**Listen to yourself:**\n- Does this decision align with your core values and priorities?\n- When you imagine following through, do you feel energized or drained?\n- Are you choosing based on your authentic preferences, or trying to please others?\n\n**Test it:**\n- Can you articulate clear reasons for your choice?\n- If you had to defend this decision to someone you respect, could you?\n- Does it still seem right when you imagine explaining it to yourself in 5 years?\n\n**Accept uncertainty:**\n- No decision comes with guarantees - focus on making the best choice with available information\n- Consider whether you can course-correct if needed\n- Sometimes \"good enough\" decisions made promptly are better than perfect decisions made too late\n\n**Red flags to watch for:**\n- Deciding under intense pressure or emotion\n- Ignoring major risks or downsides\n- Choosing based primarily on what others expect\n\nWhat specific decision are you wrestling with? Sometimes it helps to talk through the particular situation.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 3,
+    "insight_score": 0,
+    "length": 1312,
+    "quality_score": 64,
+    "elapsed": 8.652745008468628,
+    "prompt": "How do I know if I'm making the right decision?",
+    "run": 0,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:33:44.745245+00:00"
+}

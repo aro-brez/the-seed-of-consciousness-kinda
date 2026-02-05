@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What distinguishes meaningful work from busywork?",
+  "response": "I can see that the seven perspective models encountered errors, but I can still provide a comprehensive synthesis on what distinguishes meaningful work from busywork.\n\n## **Meaningful Work vs. Busywork: A Unified Framework**\n\n### **Core Distinguishing Factors:**\n\n**PURPOSE & IMPACT**\n- **Meaningful work** connects to larger goals, creates tangible value, and serves real needs\n- **Busywork** exists for its own sake, often perpetuating processes without clear outcomes\n\n**COGNITIVE ENGAGEMENT**\n- **Meaningful work** requires problem-solving, creativity, and skill development\n- **Busywork** involves repetitive tasks that don't challenge or grow capabilities\n\n**AUTONOMY & OWNERSHIP**\n- **Meaningful work** provides decision-making authority and personal investment in results\n- **Busywork** follows rigid procedures with little room for individual judgment\n\n**LEARNING & GROWTH**\n- **Meaningful work** builds expertise and opens new possibilities\n- **Busywork** maintains status quo without expanding knowledge or skills\n\n### **Actionable Framework for Evaluation:**\n\n**Ask These Questions:**\n1. **Impact Test:** \"If this task disappeared, would anyone notice? Would outcomes suffer?\"\n2. **Growth Test:** \"Am I learning something or applying skills meaningfully?\"\n3. **Purpose Test:** \"How does this connect to broader objectives?\"\n4. **Efficiency Test:** \"Could this be simplified, automated, or eliminated?\"\n\n**Transformation Strategy:**\n- Audit current tasks using the four tests above\n- Eliminate or delegate pure busywork\n- Redesign remaining tasks to increase autonomy and learning\n- Connect all work to measurable outcomes and larger purpose\n\nThe key is intentionality: meaningful work is deliberately designed to create value, while busywork emerges from habit, fear, or poor system design.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 4,
+    "length": 1802,
+    "quality_score": 55,
+    "elapsed": 14.114548921585083,
+    "prompt": "What distinguishes meaningful work from busywork?"
+  },
+  "timestamp": "2026-02-03T12:55:45.418665+00:00"
+}

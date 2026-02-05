@@ -1,0 +1,38 @@
+{
+  "condition": "A_full",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice that all the perspective analyses resulted in errors - it appears there was a model availability issue that prevented the individual perspectives from being generated. However, I can still provide a comprehensive synthesis on your important question: \"How should we prioritize competing goals?\"\n\n## Unified Framework for Prioritizing Competing Goals\n\n**Core Principle:** Effective goal prioritization requires a systematic approach that balances urgency, impact, and alignment with deeper values.\n\n### The IMPACT Method:\n\n**I** - **Identify** all competing goals clearly\n- List each goal explicitly\n- Understand the full scope of what's competing for resources\n\n**M** - **Measure** potential outcomes\n- Assess both positive impact and opportunity costs\n- Consider short-term vs. long-term consequences\n\n**P** - **Prioritize** by value alignment\n- Rank goals against your core values or organizational mission\n- Consider which goals serve your highest priorities\n\n**A** - **Assess** resource requirements\n- Evaluate time, energy, and resource demands\n- Identify dependencies and constraints\n\n**C** - **Consider** stakeholder impact\n- Who benefits most from each goal?\n- What are the broader implications?\n\n**T** - **Test** with small experiments\n- When possible, run pilot tests\n- Gather data before full commitment\n\n### Practical Decision Matrix:\n\nRate each goal (1-5) on:\n- **Urgency** (time-sensitive nature)\n- **Impact** (potential positive outcomes)\n- **Feasibility** (realistic achievability)\n- **Alignment** (fits with core values/mission)\n\n**Actionable Next Steps:**\n1. Apply this framework to your specific competing goals\n2. Start with the highest-scoring goal\n3. Build in regular review points to reassess priorities\n4. Communicate decisions clearly to all stakeholders\n\nThe key is creating a transparent, repeatable process that can adapt as circumstances change.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1883,
+    "quality_score": 82,
+    "elapsed": 15.78480315208435,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:35:37.838127+00:00"
+}

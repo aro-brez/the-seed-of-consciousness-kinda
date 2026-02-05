@@ -1,0 +1,26 @@
+{
+  "trial_num": 1,
+  "condition": "C",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "I can see that the individual perspective analyses encountered technical errors, but I can still synthesize a comprehensive response to your important question about making better decisions under pressure.\n\n## What Helps People Make Better Decisions Under Pressure\n\n**Immediate Strategies:**\n- **Pause and breathe** - Even 3-5 seconds of controlled breathing activates the prefrontal cortex\n- **Narrow your focus** - Identify the 2-3 most critical factors rather than trying to process everything\n- **Use simple frameworks** - Apply pre-established decision models (pros/cons, \"10-10-10 rule\") to structure thinking quickly\n\n**Preparation-Based Approaches:**\n- **Scenario planning** - Practice decision-making in simulated high-pressure situations\n- **Develop mental models** - Build pattern recognition for common decision types in your field\n- **Create decision trees** - Establish \"if-then\" protocols for predictable pressure situations\n\n**Cognitive Techniques:**\n- **Externalize the problem** - Write down key points or speak them aloud to reduce mental load\n- **Seek diverse input quickly** - Consult 1-2 trusted advisors when time permits\n- **Consider opportunity costs** - Ask \"What am I giving up?\" to clarify true trade-offs\n\n**Physiological Support:**\n- **Manage stress responses** - Regular exercise and sleep improve cognitive resilience under pressure\n- **Maintain energy** - Proper nutrition prevents decision fatigue during critical moments\n\nThe key insight is that better decisions under pressure come from both in-the-moment techniques and long-term preparation that builds your capacity to think clearly when stakes are high.\n\nWhat specific high-pressure decision contexts are you most interested in improving?",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1728,
+    "quality_score": 65,
+    "elapsed": 13.87953519821167,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:13:21.099553+00:00"
+}

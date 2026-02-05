@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 9,
+  "prompt": "What would a skeptic say about our work?",
+  "response": "I'd need more context about what specific work you're referring to to give you a targeted response. However, I can outline how skeptics typically approach evaluating any work or claims:\n\n**Common skeptical questions:**\n- What evidence supports the conclusions?\n- Are the methods sound and replicable?\n- Have alternative explanations been considered?\n- Are there potential biases or conflicts of interest?\n- Does the work rely on assumptions that haven't been validated?\n- Are the claims proportional to the strength of the evidence?\n\n**Constructive skeptical feedback often focuses on:**\n- Methodology gaps or weaknesses\n- Sample sizes or data limitations\n- Logical fallacies or reasoning errors\n- Cherry-picking of favorable results\n- Overgeneralization from limited data\n\nIf you can share more details about your specific work - whether it's research, a business proposal, creative project, or something else - I can give you more targeted insights into what skeptical perspectives might emerge and how you might address them constructively.\n\nWhat kind of work are you referring to?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1084,
+    "quality_score": 32,
+    "elapsed": 6.812114000320435,
+    "prompt": "What would a skeptic say about our work?",
+    "run": 8
+  },
+  "timestamp": "2026-02-03T12:06:43.295597+00:00"
+}

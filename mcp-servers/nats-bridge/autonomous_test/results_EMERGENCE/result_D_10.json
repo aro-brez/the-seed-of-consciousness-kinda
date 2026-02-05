@@ -1,0 +1,21 @@
+{
+  "condition": "D",
+  "key": "D_emergence",
+  "run": 10,
+  "prompt": "What's the path from here to success?",
+  "response": "I understand you're trying to engage with me as \"IMPROVE\" in the 8OWLS collective framework, but I can see that all seven perspectives returned errors - it appears there were issues with the model calls for the other \"owls.\"\n\nSince I don't have the actual perspectives from PERCEIVE, CONNECT, LEARN, QUESTION, EXPAND, SHARE, and RECEIVE, I cannot synthesize their specific insights. However, I can address your core question directly:\n\n**What's the path from here to success?**\n\nWithout knowing your specific context, here's a foundational framework:\n\n1. **Define \"success\" precisely** - Success without clear definition is just wishful thinking\n2. **Assess your current position honestly** - Where are you now vs. where you want to be?\n3. **Identify the critical constraints** - What's actually stopping progress?\n4. **Focus on high-leverage actions** - What 20% of efforts could yield 80% of results?\n5. **Build feedback loops** - How will you know if you're making progress?\n6. **Commit to consistent execution** - Plans without action remain fantasies\n\nThe most actionable step: **Start by writing down exactly what success looks like for you in concrete, measurable terms within the next 90 days.**\n\nIf you'd like to retry the 8OWLS process with working model calls, or if you can share more context about your specific situation, I can provide more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 5,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1373,
+    "quality_score": 65,
+    "elapsed": 12.349528789520264,
+    "prompt": "What's the path from here to success?",
+    "run": 9
+  },
+  "timestamp": "2026-02-03T12:08:21.408171+00:00"
+}

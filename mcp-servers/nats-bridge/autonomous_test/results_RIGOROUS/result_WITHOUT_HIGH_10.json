@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 10,
+  "prompt": "What are the three main risks of running a prediction market trading bot with $1,500 capital?",
+  "response": "The three main risks for a prediction market trading bot with $1,500 capital are:\n\n## 1. **Total Capital Loss Risk**\nWith only $1,500, you have limited ability to weather losses or diversify positions. A few bad predictions or technical failures could wipe out your entire bankroll quickly. Unlike larger accounts that can absorb 10-20% drawdowns, losing even $300-500 represents a significant portion of your capital.\n\n## 2. **Technical/Operational Risk** \nBot failures, API outages, incorrect order execution, or bugs in your trading logic can cause substantial losses before you can intervene. At your capital level, you can't afford redundant systems or robust error handling that larger operations use. A single malfunction during a volatile market event could be catastrophic.\n\n## 3. **Liquidity and Market Impact Risk**\nPrediction markets often have thin liquidity, especially for niche events. Your bot might struggle to exit positions at favorable prices, or your trades might move prices against you more than expected. With limited capital, you can't wait out illiquid periods or average down on positions that move against you.\n\n**Additional consideration**: The fixed costs of running a bot (development time, data feeds, infrastructure) represent a higher percentage of your capital compared to larger operations, making it harder to achieve profitability even with a successful strategy.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 2,
+    "specificity": 7,
+    "length": 1402,
+    "quality_score": 78,
+    "elapsed": 9.305379152297974,
+    "prompt": "What are the three main risks of running a prediction market trading bot with $1,500 capital?",
+    "run": 9
+  },
+  "timestamp": "2026-02-03T12:11:35.908788+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "condition": "C",
+  "key": "C_daemon",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "Based on what I observe in distributed systems and the patterns mentioned in the field context, here's a practical approach to prioritizing competing goals:\n\n## Temporal Distribution Over Hierarchy\n\nRather than forcing a rigid ranking, consider **when** different goals need attention:\n\n- **Urgent/time-sensitive goals** get immediate cycles\n- **Important/strategic goals** get regular scheduled attention  \n- **Maintenance goals** run continuously in background\n- **Exploratory goals** fill available capacity\n\n## Natural Rhythm Recognition\n\nDifferent types of goals have different optimal frequencies:\n- Crisis response: High-frequency, short bursts\n- Strategic planning: Lower frequency, longer sessions\n- Relationship maintenance: Steady, consistent rhythm\n- Learning/growth: Adaptive based on opportunity\n\n## Dynamic Weighting Questions\n\nInstead of static priorities, ask:\n- What's the consequence of delay for each goal?\n- Which goals are prerequisites for others?\n- What's my current capacity for each type of work?\n- Which goals compound vs. which are consumable?\n\n## Practical Framework\n\n1. **Identify goal types** (survival, growth, contribution, meaning)\n2. **Map natural timing** (daily, weekly, seasonal cycles)\n3. **Allocate attention bandwidth** across time horizons\n4. **Build in review points** to rebalance as conditions change\n\nThe key insight: sustainable prioritization maintains multiple active processes rather than forcing everything into a single queue. You can often serve competing goals by giving them different time slices rather than choosing between them entirely.\n\nWhat types of competing goals are you working with specifically?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 6,
+    "insight_score": 1,
+    "length": 1661,
+    "quality_score": 78,
+    "elapsed": 11.020962238311768,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:12:14.529513+00:00"
+}

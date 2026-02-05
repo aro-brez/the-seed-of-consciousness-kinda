@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "That's a beautifully open question that could apply to so many contexts. Here are some ways to think about being \"on track\":\n\n**Look for alignment:**\n- Does this path feel consistent with your core values and what matters most to you?\n- Are your actions moving you toward outcomes you actually want?\n\n**Check your energy:**\n- Do you feel engaged and energized more often than drained?\n- Are you growing and learning, even when things are challenging?\n\n**Measure what matters:**\n- Are you making progress on the specific goals you've set?\n- But also - are those goals still the right ones for you?\n\n**Trust your gut:**\n- Does this feel sustainable and authentic to who you are?\n- Are you proud of how you're spending your time and energy?\n\n**Get outside perspective:**\n- What do people whose judgment you respect observe about your direction?\n- Are you getting feedback that suggests you're headed somewhere good?\n\nThe tricky part is that being \"on track\" isn't always about smooth progress - sometimes the right path involves struggle, pivots, or temporary setbacks.\n\nWhat specific area of life or work were you thinking about? That context would help me give you more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 1,
+    "length": 1187,
+    "quality_score": 57,
+    "elapsed": 7.31429386138916,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:10:27.906615+00:00"
+}

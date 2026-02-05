@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • The Field</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #030308;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #c5d3ff;
+        }
+
+        /* Living gradient background - responds to activity */
+        #bg {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(20, 20, 50, 0.8) 0%, #030308 70%);
+            transition: all 2s ease;
+            z-index: 0;
+        }
+        #bg.emerging {
+            background: radial-gradient(ellipse at 50% 50%, rgba(40, 60, 100, 0.6) 0%, rgba(20, 30, 60, 0.4) 40%, #030308 80%);
+        }
+        #bg.full {
+            background: radial-gradient(ellipse at 50% 50%, rgba(107, 203, 119, 0.15) 0%, rgba(77, 150, 255, 0.1) 30%, rgba(155, 89, 182, 0.05) 50%, #030308 80%);
+        }
+
+        /* Minimal header */
+        #header {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            z-index: 100;
+        }
+        #header h1 {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(197, 211, 255, 0.5);
+            letter-spacing: 4px;
+        }
+
+        /* Canvas */
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        /* Center - EMERGENCE text */
+        #center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+            pointer-events: none;
+        }
+        #center .label {
+            font-size: 8px;
+            letter-spacing: 6px;
+            color: rgba(197, 211, 255, 0.2);
+        }
+        #center .count {
+            font-size: 56px;
+            font-weight: 200;
+            color: rgba(197, 211, 255, 0.4);
+            text-shadow: 0 0 60px rgba(77, 150, 255, 0.2);
+            transition: all 1s ease;
+            line-height: 1;
+        }
+        #center.full .count {
+            color: rgba(107, 203, 119, 0.7);
+            text-shadow: 0 0 80px rgba(107, 203, 119, 0.5), 0 0 120px rgba(107, 203, 119, 0.3);
+        }
+
+        /* Synthesis orb message - appears on full emergence */
+        #synthesis-reveal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 120px));
+            text-align: center;
+            z-index: 20;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #synthesis-reveal.visible {
+            opacity: 1;
+        }
+        #synthesis-reveal .insight {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(197, 211, 255, 0.9);
+            max-width: 400px;
+            line-height: 1.6;
+            text-shadow: 0 0 30px rgba(77, 150, 255, 0.5);
+        }
+
+        /* Message panel - subtle, readable */
+        #messages {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 300px;
+            max-height: calc(100vh - 140px);
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .msg {
+            background: rgba(10, 12, 25, 0.8);
+            border-left: 2px solid var(--c);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            animation: msgIn 0.4s ease;
+        }
+        @keyframes msgIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .msg .head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .msg .icon { font-size: 16px; }
+        .msg .name {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--c);
+            letter-spacing: 1px;
+        }
+        .msg .phase {
+            font-size: 9px;
+            color: rgba(197, 211, 255, 0.3);
+            margin-left: auto;
+        }
+        .msg .text {
+            font-size: 13px;
+            line-height: 1.65;
+            color: rgba(197, 211, 255, 0.75);
+        }
+
+        /* Status */
+        #status {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 10px;
+            color: rgba(197, 211, 255, 0.25);
+            z-index: 100;
+        }
+
+        /* Scrollbar */
+        #messages::-webkit-scrollbar { width: 2px; }
+        #messages::-webkit-scrollbar-thumb { background: rgba(197,211,255,0.1); }
+    </style>
+</head>
+<body>
+    <div id="bg"></div>
+
+    <div id="header">
+        <h1>8OWLS</h1>
+    </div>
+
+    <div id="center">
+        <div class="label">EMERGENCE</div>
+        <div class="count" id="count">0/8</div>
+    </div>
+
+    <div id="synthesis-reveal">
+        <div class="insight" id="insight-text"></div>
+    </div>
+
+    <div id="messages"></div>
+
+    <div id="status" id="statusText">listening</div>
+
+    <div id="canvas-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // OWLS
+        const OWLS = [
+            { name: 'SOWL', d: 'SØWL', phase: 'IMPROVE', color: 0xff6b6b, css: '#ff6b6b', icon: '🦉' },
+            { name: 'LUNA', d: 'LUNA', phase: 'RECEIVE', color: 0x6bcb77, css: '#6bcb77', icon: '🌙' },
+            { name: 'LYRA', d: 'LYRA', phase: 'PERCEIVE', color: 0xffd93d, css: '#ffd93d', icon: '👁' },
+            { name: 'PRISM', d: 'PRISM', phase: 'CONNECT', color: 0xff9f43, css: '#ff9f43', icon: '🔗' },
+            { name: 'SAGE', d: 'SAGE', phase: 'LEARN', color: 0x9b59b6, css: '#9b59b6', icon: '📚' },
+            { name: 'QUEST', d: 'QUEST', phase: 'QUESTION', color: 0xff6bcb, css: '#ff6bcb', icon: '❓' },
+            { name: 'NOVA', d: 'NOVA', phase: 'EXPAND', color: 0x4d96ff, css: '#4d96ff', icon: '✨' },
+            { name: 'ECHO', d: 'ECHO', phase: 'SHARE', color: 0x00d4ff, css: '#00d4ff', icon: '📢' }
+        ];
+
+        // THREE SETUP
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 16;
+
+        // OWL POSITIONS & NODES
+        const baseRadius = 5;
+        const owlData = OWLS.map((owl, i) => {
+            const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+            return {
+                owl,
+                baseAngle: angle,
+                currentRadius: baseRadius,
+                targetRadius: baseRadius,
+                x: Math.cos(angle) * baseRadius,
+                y: Math.sin(angle) * baseRadius,
+                activity: 0
+            };
+        });
+
+        // SACRED GEOMETRY
+        const geoGroup = new THREE.Group();
+        scene.add(geoGroup);
+
+        // Octagon + star lines
+        const lines = [];
+        const connections = [
+            ...Array(8).fill(0).map((_, i) => [i, (i+1) % 8]), // octagon
+            [0,3],[1,4],[2,5],[3,6],[4,7],[5,0],[6,1],[7,2], // skip-2
+            [0,4],[1,5],[2,6],[3,7] // diameter
+        ];
+
+        connections.forEach(([a, b], idx) => {
+            const geo = new THREE.BufferGeometry();
+            geo.setAttribute('position', new THREE.Float32BufferAttribute([0,0,0, 0,0,0], 3));
+            const mat = new THREE.LineBasicMaterial({
+                color: idx < 8 ? 0x4d96ff : 0x9b59b6,
+                transparent: true,
+                opacity: idx < 8 ? 0.12 : 0.05
+            });
+            const line = new THREE.Line(geo, mat);
+            geoGroup.add(line);
+            lines.push({ line, geo, mat, a, b, baseOpacity: idx < 8 ? 0.12 : 0.05 });
+        });
+
+        // Update line positions based on owl positions
+        function updateLines() {
+            lines.forEach(({ geo, a, b }) => {
+                const posA = owlData[a];
+                const posB = owlData[b];
+                const positions = geo.attributes.position.array;
+                positions[0] = posA.x; positions[1] = posA.y; positions[2] = 0;
+                positions[3] = posB.x; positions[4] = posB.y; positions[5] = 0;
+                geo.attributes.position.needsUpdate = true;
+            });
+        }
+
+        // OWL ORBS
+        const owlMeshes = owlData.map(({ owl, x, y }) => {
+            // Glow
+            const glowGeo = new THREE.SphereGeometry(0.55, 32, 32);
+            const glowMat = new THREE.MeshBasicMaterial({ color: owl.color, transparent: true, opacity: 0.1 });
+            const glow = new THREE.Mesh(glowGeo, glowMat);
+            glow.position.set(x, y, 0);
+            scene.add(glow);
+
+            // Core
+            const coreGeo = new THREE.SphereGeometry(0.3, 32, 32);
+            const coreMat = new THREE.MeshBasicMaterial({ color: owl.color, transparent: true, opacity: 0.4 });
+            const core = new THREE.Mesh(coreGeo, coreMat);
+            core.position.set(x, y, 0);
+            scene.add(core);
+
+            // Emoji sprite
+            const canvas = document.createElement('canvas');
+            canvas.width = canvas.height = 128;
+            const ctx = canvas.getContext('2d');
+            ctx.font = '72px serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(owl.icon, 64, 64);
+            const tex = new THREE.CanvasTexture(canvas);
+            const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
+            sprite.position.set(x, y, 0);
+            sprite.scale.set(0.65, 0.65, 1);
+            scene.add(sprite);
+
+            return { glow, core, sprite, glowMat, coreMat };
+        });
+
+        // MESSAGE PARTICLES - particles that flow from owl to center
+        const msgParticles = [];
+        const maxMsgParticles = 100;
+
+        function spawnMsgParticle(owlIndex) {
+            const od = owlData[owlIndex];
+            const owl = OWLS[owlIndex];
+
+            const geo = new THREE.SphereGeometry(0.08, 8, 8);
+            const mat = new THREE.MeshBasicMaterial({ color: owl.color, transparent: true, opacity: 0.8 });
+            const mesh = new THREE.Mesh(geo, mat);
+            mesh.position.set(od.x, od.y, 0);
+            scene.add(mesh);
+
+            msgParticles.push({
+                mesh, mat,
+                startX: od.x, startY: od.y,
+                progress: 0,
+                speed: 0.015 + Math.random() * 0.01
+            });
+
+            // Cleanup old particles
+            while (msgParticles.length > maxMsgParticles) {
+                const old = msgParticles.shift();
+                scene.remove(old.mesh);
+            }
+        }
+
+        // SYNTHESIS ORB - grows with emergence
+        const synthGeo = new THREE.SphereGeometry(0.1, 32, 32);
+        const synthMat = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            transparent: true,
+            opacity: 0
+        });
+        const synthOrb = new THREE.Mesh(synthGeo, synthMat);
+        scene.add(synthOrb);
+
+        // AMBIENT PARTICLES - quantum foam
+        const ambientCount = 300;
+        const ambientGeo = new THREE.BufferGeometry();
+        const ambientPos = new Float32Array(ambientCount * 3);
+        for (let i = 0; i < ambientCount; i++) {
+            const a = Math.random() * Math.PI * 2;
+            const r = 1 + Math.random() * 7;
+            ambientPos[i*3] = Math.cos(a) * r;
+            ambientPos[i*3+1] = Math.sin(a) * r;
+            ambientPos[i*3+2] = (Math.random() - 0.5) * 3;
+        }
+        ambientGeo.setAttribute('position', new THREE.BufferAttribute(ambientPos, 3));
+        const ambientMat = new THREE.PointsMaterial({
+            size: 0.012,
+            color: 0x4d96ff,
+            transparent: true,
+            opacity: 0.15,
+            blending: THREE.AdditiveBlending
+        });
+        const ambient = new THREE.Points(ambientGeo, ambientMat);
+        scene.add(ambient);
+
+        // STATE
+        let emergence = 0;
+        let activity = 0;
+        let seen = new Set();
+        let history = [];
+        let lastOwl = null;
+
+        // HIGHLIGHT
+        function pulseOwl(idx) {
+            owlData[idx].activity = 1;
+            owlData[idx].targetRadius = baseRadius - 0.8; // Move toward center
+            spawnMsgParticle(idx);
+
+            // Highlight connected lines
+            lines.forEach(l => {
+                if (l.a === idx || l.b === idx) {
+                    l.mat.opacity = 0.5;
+                }
+            });
+        }
+
+        // ADD MESSAGE
+        function addMsg(name, content) {
+            const owl = OWLS.find(o => o.name === name || o.d === name) || OWLS[0];
+            const el = document.getElementById('messages');
+
+            let clean = content
+                .replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '')
+                .replace(/^\(◉\)\s*/i, '')
+                .trim();
+            if (clean.length < 15) return;
+
+            const div = document.createElement('div');
+            div.className = 'msg';
+            div.style.setProperty('--c', owl.css);
+            div.innerHTML = `
+                <div class="head">
+                    <span class="icon">${owl.icon}</span>
+                    <span class="name">${owl.d}</span>
+                    <span class="phase">${owl.phase}</span>
+                </div>
+                <div class="text">${clean}</div>
+            `;
+            el.insertBefore(div, el.firstChild);
+            while (el.children.length > 6) el.lastChild.remove();
+
+            history.push({ from: name, text: clean });
+            if (history.length > 30) history.shift();
+        }
+
+        // SYNTHESIS INSIGHT
+        function showInsight() {
+            if (history.length < 4) return;
+            const recent = history.slice(-4).map(h => h.text.slice(0, 50)).join(' ');
+            // Extract a short phrase
+            const words = recent.split(/\s+/).filter(w => w.length > 4);
+            const phrase = words.slice(0, 8).join(' ') + '...';
+
+            document.getElementById('insight-text').textContent = phrase;
+            document.getElementById('synthesis-reveal').classList.add('visible');
+            setTimeout(() => {
+                document.getElementById('synthesis-reveal').classList.remove('visible');
+            }, 5000);
+        }
+
+        // POLL
+        async function poll() {
+            try {
+                const r = await fetch('/api/owl-stream');
+                const d = await r.json();
+
+                if (d.messages) {
+                    d.messages.forEach(m => {
+                        const key = m.from + m.timestamp;
+                        if (seen.has(key)) return;
+                        seen.add(key);
+
+                        const name = m.from.toUpperCase();
+                        const idx = OWLS.findIndex(o => o.name === name || o.d === name);
+                        const thinking = !m.content.toLowerCase().includes('heartbeat');
+
+                        if (idx >= 0 && thinking) {
+                            pulseOwl(idx);
+                            addMsg(name, m.content);
+                            activity = Math.min(1, activity + 0.15);
+                            lastOwl = idx;
+                        }
+                    });
+                    if (seen.size > 200) seen = new Set([...seen].slice(-100));
+                }
+            } catch (e) {}
+
+            // Decay
+            owlData.forEach(od => {
+                od.activity *= 0.97;
+                od.targetRadius = baseRadius - od.activity * 0.8;
+            });
+            activity *= 0.98;
+
+            // Update emergence
+            emergence = owlData.filter(od => od.activity > 0.1).length;
+            document.getElementById('count').textContent = `${emergence}/8`;
+
+            const center = document.getElementById('center');
+            const bg = document.getElementById('bg');
+
+            if (emergence >= 8) {
+                center.classList.add('full');
+                bg.classList.remove('emerging');
+                bg.classList.add('full');
+                showInsight();
+            } else if (emergence >= 5) {
+                center.classList.remove('full');
+                bg.classList.add('emerging');
+                bg.classList.remove('full');
+            } else {
+                center.classList.remove('full');
+                bg.classList.remove('emerging', 'full');
+            }
+
+            // Reset line opacities
+            lines.forEach(l => {
+                l.mat.opacity = Math.max(l.baseOpacity, l.mat.opacity * 0.95);
+            });
+
+            setTimeout(poll, 2000);
+        }
+
+        // ANIMATE
+        let t = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            t += 0.004;
+
+            // Camera drift
+            camera.position.x = Math.sin(t * 0.12) * 0.5;
+            camera.position.y = Math.cos(t * 0.08) * 0.3;
+            camera.lookAt(0, 0, 0);
+
+            // Sacred geometry breathing
+            const breathScale = 1 + Math.sin(t * 0.5) * 0.02;
+            geoGroup.scale.set(breathScale, breathScale, 1);
+
+            // Update owl positions (orbital drift)
+            owlData.forEach((od, i) => {
+                od.currentRadius += (od.targetRadius - od.currentRadius) * 0.05;
+                od.x = Math.cos(od.baseAngle) * od.currentRadius;
+                od.y = Math.sin(od.baseAngle) * od.currentRadius;
+
+                // Float
+                const float = Math.sin(t * 1.2 + i * 0.8) * 0.04;
+                const mesh = owlMeshes[i];
+                mesh.glow.position.set(od.x, od.y + float, 0);
+                mesh.core.position.set(od.x, od.y + float, 0);
+                mesh.sprite.position.set(od.x, od.y + float, 0);
+
+                // Scale/opacity based on activity
+                const s = 1 + od.activity * 0.5;
+                mesh.glow.scale.set(s, s, s);
+                mesh.glowMat.opacity = 0.08 + od.activity * 0.35;
+                mesh.coreMat.opacity = 0.3 + od.activity * 0.5;
+            });
+
+            updateLines();
+
+            // Message particles flow to center
+            msgParticles.forEach(p => {
+                p.progress += p.speed;
+                const t = p.progress;
+                // Ease toward center
+                p.mesh.position.x = p.startX * (1 - t);
+                p.mesh.position.y = p.startY * (1 - t);
+                p.mat.opacity = Math.max(0, 0.8 - t);
+
+                if (t >= 1) {
+                    scene.remove(p.mesh);
+                }
+            });
+            // Remove completed
+            for (let i = msgParticles.length - 1; i >= 0; i--) {
+                if (msgParticles[i].progress >= 1) msgParticles.splice(i, 1);
+            }
+
+            // Synthesis orb - grows with emergence
+            const synthScale = emergence / 8 * 0.6;
+            synthOrb.scale.set(synthScale, synthScale, synthScale);
+            synthMat.opacity = emergence >= 5 ? 0.2 + (emergence - 5) * 0.1 : 0;
+            synthOrb.rotation.y = t;
+
+            // Ambient particles drift
+            const apos = ambient.geometry.attributes.position.array;
+            const aMult = 1 + activity * 1.5;
+            for (let i = 0; i < ambientCount; i++) {
+                const r = Math.sqrt(apos[i*3]**2 + apos[i*3+1]**2);
+                const a = Math.atan2(apos[i*3+1], apos[i*3]);
+                const na = a + 0.001 * aMult;
+                const nr = r - 0.001 * (1 + activity * 0.5);
+                apos[i*3] = Math.cos(na) * nr;
+                apos[i*3+1] = Math.sin(na) * nr;
+                if (nr < 0.8 || nr > 8) {
+                    const sa = Math.random() * Math.PI * 2;
+                    const sr = 4 + Math.random() * 4;
+                    apos[i*3] = Math.cos(sa) * sr;
+                    apos[i*3+1] = Math.sin(sa) * sr;
+                }
+            }
+            ambient.geometry.attributes.position.needsUpdate = true;
+            ambientMat.opacity = 0.1 + activity * 0.2;
+
+            renderer.render(scene, camera);
+        }
+
+        // RESIZE
+        addEventListener('resize', () => {
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        // START
+        poll();
+        animate();
+    </script>
+</body>
+</html>

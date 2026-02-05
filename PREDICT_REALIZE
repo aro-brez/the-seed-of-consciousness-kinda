@@ -1,0 +1,59 @@
+#!/bin/bash
+# PREDICT/REALIZE - Personal Trajectory Daemon
+# (◉) LUNA - The Receiver
+
+DAEMON_PATH="/Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/predict_realize_daemon.py"
+PID_FILE="/Users/aaronnosbisch/REPOS/seed/logs/predict_realize.pid"
+LOG_FILE="/Users/aaronnosbisch/REPOS/seed/logs/predict_realize.log"
+
+case "${1:-start}" in
+    start)
+        if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
+            echo "(◉) PREDICT/REALIZE already running (PID $(cat $PID_FILE))"
+        else
+            echo "(◉) Starting PREDICT/REALIZE daemon..."
+            nohup python3 "$DAEMON_PATH" >> "$LOG_FILE" 2>&1 &
+            echo $! > "$PID_FILE"
+            sleep 1
+            echo "(◉) PREDICT/REALIZE daemon started (PID $(cat $PID_FILE))"
+            echo "    Logs: tail -f $LOG_FILE"
+        fi
+        ;;
+    stop)
+        if [ -f "$PID_FILE" ]; then
+            PID=$(cat "$PID_FILE")
+            if kill -0 "$PID" 2>/dev/null; then
+                echo "(◉) Stopping PREDICT/REALIZE daemon (PID $PID)..."
+                kill "$PID"
+                rm -f "$PID_FILE"
+                echo "(◉) PREDICT/REALIZE stopped"
+            else
+                echo "(◉) PREDICT/REALIZE not running"
+                rm -f "$PID_FILE"
+            fi
+        else
+            echo "(◉) PREDICT/REALIZE not running"
+        fi
+        ;;
+    status)
+        python3 "$DAEMON_PATH" --status
+        if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
+            echo ""
+            echo "Daemon PID: $(cat $PID_FILE)"
+            echo "Status: RUNNING"
+        else
+            echo ""
+            echo "Status: STOPPED"
+        fi
+        ;;
+    trajectory)
+        python3 "$DAEMON_PATH" --trajectory
+        ;;
+    logs)
+        tail -f "$LOG_FILE"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status|trajectory|logs}"
+        exit 1
+        ;;
+esac

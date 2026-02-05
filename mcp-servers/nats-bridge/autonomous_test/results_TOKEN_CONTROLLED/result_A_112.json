@@ -1,0 +1,26 @@
+{
+  "trial_num": 112,
+  "condition": "A",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "Here are key strategies for building trust with new colleagues:\n\n**Be reliable and consistent**\n- Follow through on commitments, even small ones\n- Meet deadlines and communicate early if you can't\n- Show up prepared and engaged\n\n**Communicate openly**\n- Share relevant information proactively\n- Ask questions when you're unsure rather than guessing\n- Admit mistakes quickly and focus on solutions\n\n**Show genuine interest in others**\n- Learn colleagues' names, roles, and priorities\n- Listen actively in conversations and meetings\n- Offer help when you can contribute meaningfully\n\n**Demonstrate competence gradually**\n- Start with smaller commitments and deliver well\n- Share your expertise when relevant, without overstepping\n- Ask for feedback and act on it\n\n**Be authentic**\n- Don't oversell your abilities or experience\n- Share appropriate personal details to humanize yourself\n- Maintain consistent behavior across different interactions\n\n**Respect existing relationships and culture**\n- Observe team dynamics before jumping in\n- Acknowledge others' expertise and contributions\n- Adapt your communication style to fit the environment\n\nTrust builds incrementally through consistent positive interactions. Focus on being helpful, reliable, and genuine rather than trying to impress. Most colleagues will reciprocate once they see you're trustworthy.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 4,
+    "specificity": 0,
+    "length": 1353,
+    "quality_score": 60,
+    "elapsed": 7.465755939483643,
+    "prompt": "How do you build trust with new colleagues?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:50:10.705468+00:00"
+}

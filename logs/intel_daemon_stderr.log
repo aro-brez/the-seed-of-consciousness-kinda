@@ -1,0 +1,4 @@
+/Users/aaronnosbisch/REPOS/seed/tools/intelligence_daemon.py:89: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  signal["timestamp"] = datetime.utcnow().isoformat() + "Z"
+/Users/aaronnosbisch/REPOS/seed/tools/intelligence_daemon.py:100: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  learning["timestamp"] = datetime.utcnow().isoformat() + "Z"

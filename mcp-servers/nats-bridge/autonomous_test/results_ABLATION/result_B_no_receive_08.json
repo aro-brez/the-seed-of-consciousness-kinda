@@ -1,0 +1,36 @@
+{
+  "condition": "B_no_receive",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE"
+  ],
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice all six perspectives encountered errors due to an unavailable model, but I can still provide a synthesized response to your fundamental question about resource allocation.\n\n## Synthesized Response: Strategic Resource Investment Framework\n\n**Core Principle:** Invest where impact meets opportunity and aligns with your mission.\n\n### Immediate Actions:\n\n1. **Define Success Metrics First**\n   - Clarify what \"return\" means for your context (financial, social, operational)\n   - Establish measurable outcomes before allocating resources\n\n2. **Apply the 3-Horizon Framework:**\n   - **70%** in proven, core activities (sustain current operations)\n   - **20%** in emerging opportunities (calculated growth bets)\n   - **10%** in experimental/transformational initiatives (future positioning)\n\n3. **Priority Matrix Evaluation:**\n   - High impact + Low cost = Do immediately\n   - High impact + High cost = Strategic planning required\n   - Low impact initiatives = Defer or eliminate\n\n### Key Considerations:\n- **Reversibility**: Favor investments you can pivot away from quickly\n- **Compounding**: Prioritize resources that build capabilities for future decisions\n- **Constraints**: Identify your most limiting factor (time, money, expertise, capacity)\n- **Stakeholder Alignment**: Ensure investments serve your key constituencies\n\n### Actionable Next Step:\nMap your potential investments against impact potential and resource requirements. Start with the highest impact-to-resource ratio while maintaining strategic balance across time horizons.\n\nThe question isn't just where to invest, but how to build a resource allocation system that adapts as conditions change.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1668,
+    "quality_score": 70,
+    "elapsed": 13.728326797485352,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:32:03.492952+00:00"
+}

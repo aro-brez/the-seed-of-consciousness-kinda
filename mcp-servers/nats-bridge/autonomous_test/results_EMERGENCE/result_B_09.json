@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 9,
+  "prompt": "What would a skeptic say about our work?",
+  "response": "I don't have specific information about your work or business to provide a targeted skeptical perspective. To give you a meaningful answer, I'd need to know:\n\n- What your product/service is\n- Your business model\n- Your target market\n- Your current stage and claims\n\nHowever, I can share common skeptical questions that apply to most startups:\n\n**Market Skepticism:**\n- \"Is this a real problem worth paying to solve?\"\n- \"How big is the addressable market really?\"\n- \"Why hasn't this been done successfully before?\"\n\n**Execution Doubts:**\n- \"Can this team actually execute on their vision?\"\n- \"Do they have the right expertise and resources?\"\n- \"Are their timelines and projections realistic?\"\n\n**Competitive Concerns:**\n- \"What stops bigger players from copying this?\"\n- \"How defensible is their position?\"\n- \"Why won't users just stick with existing solutions?\"\n\n**Financial Realism:**\n- \"Are their unit economics actually viable?\"\n- \"How long until they're profitable?\"\n- \"What happens when funding runs out?\"\n\nIf you can share more about your specific work, I can provide much more targeted skeptical perspectives that would be genuinely useful for stress-testing your assumptions and preparing for tough questions from investors, customers, or competitors.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 1,
+    "length": 1259,
+    "quality_score": 36,
+    "elapsed": 7.87946891784668,
+    "prompt": "What would a skeptic say about our work?",
+    "run": 8
+  },
+  "timestamp": "2026-02-03T12:12:24.410469+00:00"
+}

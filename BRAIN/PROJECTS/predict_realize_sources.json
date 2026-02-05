@@ -1,0 +1,95 @@
+{
+  "platform": "macos",
+  "available_sources": [
+    {
+      "source": "DataSource.APPLE_HEALTH",
+      "available": true,
+      "connection_method": "shortcuts",
+      "data_types": [
+        "sleep",
+        "steps",
+        "heart_rate",
+        "workouts",
+        "weight"
+      ],
+      "setup_required": false,
+      "setup_instructions": null
+    }
+  ],
+  "needs_setup": [
+    {
+      "source": "DataSource.GOOGLE_CALENDAR",
+      "available": false,
+      "connection_method": "oauth",
+      "data_types": [
+        "events",
+        "time_allocation",
+        "meeting_patterns"
+      ],
+      "setup_required": true,
+      "setup_instructions": "Connect your Google account"
+    },
+    {
+      "source": "DataSource.OURA",
+      "available": false,
+      "connection_method": "api",
+      "data_types": [
+        "sleep",
+        "readiness",
+        "activity",
+        "heart_rate"
+      ],
+      "setup_required": true,
+      "setup_instructions": "Get your Oura API token from cloud.ouraring.com"
+    },
+    {
+      "source": "DataSource.WHOOP",
+      "available": false,
+      "connection_method": "api",
+      "data_types": [
+        "strain",
+        "recovery",
+        "sleep",
+        "heart_rate"
+      ],
+      "setup_required": true,
+      "setup_instructions": "Connect via Whoop API"
+    },
+    {
+      "source": "DataSource.FITBIT",
+      "available": false,
+      "connection_method": "api",
+      "data_types": [
+        "sleep",
+        "steps",
+        "heart_rate",
+        "activity",
+        "weight"
+      ],
+      "setup_required": true,
+      "setup_instructions": "Connect via Fitbit API"
+    },
+    {
+      "source": "DataSource.GARMIN",
+      "available": false,
+      "connection_method": "api",
+      "data_types": [
+        "sleep",
+        "steps",
+        "heart_rate",
+        "activity",
+        "stress"
+      ],
+      "setup_required": true,
+      "setup_instructions": "Connect via Garmin Connect"
+    }
+  ],
+  "data_types_available": [
+    "heart_rate",
+    "weight",
+    "steps",
+    "sleep",
+    "workouts"
+  ],
+  "ready_for_tracking": true
+}

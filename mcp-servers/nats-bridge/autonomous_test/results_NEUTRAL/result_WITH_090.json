@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What distinguishes meaningful work from busywork?",
+  "response": "I notice that all seven perspective analyses encountered errors and couldn't be generated. However, I can still provide a meaningful synthesis on this important question about distinguishing meaningful work from busywork.\n\n## What Distinguishes Meaningful Work from Busywork\n\n**Core Distinguishing Factors:**\n\n**Purpose & Impact**\n- Meaningful work connects to larger goals and creates tangible value\n- Busywork often exists to fill time or satisfy process requirements without clear outcomes\n\n**Skill Utilization**\n- Meaningful work leverages your strengths and develops capabilities\n- Busywork typically involves repetitive tasks that don't challenge or grow you\n\n**Decision-Making Authority**\n- Meaningful work involves autonomy and the ability to influence how things get done\n- Busywork follows rigid procedures with little room for judgment or creativity\n\n**Outcome Orientation**\n- Meaningful work focuses on results and solving real problems\n- Busywork emphasizes activity over achievement (\"looking busy\")\n\n**Learning & Growth**\n- Meaningful work teaches you something new or builds expertise\n- Busywork maintains status quo without development opportunities\n\n**Actionable Framework:**\n\nBefore taking on any task, ask:\n1. What specific problem does this solve?\n2. Who benefits from this being completed well?\n3. What would happen if this wasn't done?\n4. Does this use my unique skills or could anyone do it?\n5. Will I learn something or contribute something valuable?\n\nIf you can't answer these questions clearly, you're likely looking at busywork that should be eliminated, automated, or delegated.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1607,
+    "quality_score": 60,
+    "elapsed": 13.990064144134521,
+    "prompt": "What distinguishes meaningful work from busywork?"
+  },
+  "timestamp": "2026-02-03T13:05:50.951414+00:00"
+}

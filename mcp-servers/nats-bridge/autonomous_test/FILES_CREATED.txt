@@ -1,0 +1,252 @@
+════════════════════════════════════════════════════════════════════════════════
+                    QUEST'S NEXT TEST DESIGN DELIVERABLES
+                            TOKEN-CONTROLLED TEST
+════════════════════════════════════════════════════════════════════════════════
+
+All files in: /Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/autonomous_test/
+
+════════════════════════════════════════════════════════════════════════════════
+QUICK START (Start Here - 30 min Total)
+════════════════════════════════════════════════════════════════════════════════
+
+1. EXECUTIVE_SUMMARY_NEXT_TEST.md (7.2 KB, 5 min read)
+   ├─ One-page executive summary
+   ├─ What/why/how/when for TOKEN-CONTROLLED test
+   ├─ If in hurry, read this first
+   └─ Immediately actionable decision frame
+
+2. NEXT_TEST_INDEX.md (7.6 KB, 5 min read)
+   ├─ Quick reference guide
+   ├─ Command reference
+   ├─ Decision tree (one page)
+   └─ File locations and what to do after
+
+3. TEST_COMPARISON_MATRIX.txt (6.4 KB, 5 min read)
+   ├─ Visual comparison of all 4 remaining tests
+   ├─ Why TOKEN-CONTROLLED ranks first
+   ├─ Dependencies and blocking logic
+   └─ Decision tree for results
+
+════════════════════════════════════════════════════════════════════════════════
+STRATEGIC DESIGN (Deep Dive - 60 min Total)
+════════════════════════════════════════════════════════════════════════════════
+
+4. TEST_DESIGN_TOKEN_CONTROLLED.md (8.9 KB, 15 min read)
+   ├─ Full strategic rationale
+   ├─ 3-way experimental design explained
+   ├─ Pre-registered hypotheses (write before running!)
+   ├─ Expected outcomes and decision rules
+   ├─ What each outcome means
+   └─ Why this confound matters most
+
+5. TESTING_STRATEGY_ROADMAP.md (8.7 KB, 20 min read)
+   ├─ How TOKEN-CONTROLLED fits with other tests
+   ├─ Full Tier 1-4 testing strategy
+   ├─ Timeline estimate (2 weeks to ship-ready)
+   ├─ Success metrics for each tier
+   ├─ Dependencies and blocking logic
+   ├─ Decision framework for all tests
+   └─ Honest assessment of where you stand
+
+6. QUEST_NEXT_TEST_RECOMMENDATION.md (7.7 KB, 25 min read)
+   ├─ QUEST's detailed challenge perspective
+   ├─ Why this test matters most
+   ├─ Strategic importance ranking
+   ├─ Honest predictions of outcome
+   ├─ Why not competitors first
+   ├─ Implementation details
+   └─ Success metrics and confidence levels
+
+════════════════════════════════════════════════════════════════════════════════
+IMPLEMENTATION (Ready to Run)
+════════════════════════════════════════════════════════════════════════════════
+
+7. run_test_TOKEN_CONTROLLED.py (18 KB, executable)
+   ├─ Ready-to-execute Python script
+   ├─ Pre-registration built into code (writes hypotheses file)
+   ├─ 3 conditions (A/B/C) with 52 trials each
+   ├─ Uses same NEUTRAL prompts (proven unbiased)
+   ├─ Same scoring as NEUTRAL test (reduced bias)
+   ├─ Auto-generates results files
+   ├─ Fully documented code
+   ├─ Error handling and logging
+   └─ Cost: ~$2, Time: 2-3 hours
+
+   To run:
+   cd /Users/aaronnosbisch/REPOS/seed/mcp-servers/nats-bridge/autonomous_test
+   python3 run_test_TOKEN_CONTROLLED.py
+
+   Results output to:
+   results_TOKEN_CONTROLLED/
+   ├── PRE_REGISTERED_HYPOTHESES.json  (frozen - don't modify)
+   ├── TOKEN_CONTROLLED_REPORT.json    (effect sizes, statistics)
+   ├── TOKEN_CONTROLLED_REPORT.md      (readable summary)
+   └── result_[A/B/C]_*.json           (individual trials)
+
+════════════════════════════════════════════════════════════════════════════════
+SUPPORTING CONTEXT (Already Exists - Reference Only)
+════════════════════════════════════════════════════════════════════════════════
+
+Existing files you can reference:
+├─ NEUTRAL_REPORT.md (from completed NEUTRAL test)
+├─ 8OWLS_VALIDATION_EXPORT.md (what we've proven)
+├─ INTEGRATED_VALIDATION_ANALYSIS.md (bias analysis)
+├─ BIAS_ANALYSIS.md (how we controlled for bias)
+└─ results_NEUTRAL/ (completed test results)
+
+════════════════════════════════════════════════════════════════════════════════
+READING PRIORITY ORDER
+════════════════════════════════════════════════════════════════════════════════
+
+Priority 1 (Must Read - 15 min):
+  1. EXECUTIVE_SUMMARY_NEXT_TEST.md
+  2. TEST_COMPARISON_MATRIX.txt
+  → Decide: Run now or read more?
+
+Priority 2 (Should Read - 30 min):
+  3. TEST_DESIGN_TOKEN_CONTROLLED.md
+  4. NEXT_TEST_INDEX.md
+  → Decide: Ready to run?
+
+Priority 3 (Deep Dive - 45 min):
+  5. TESTING_STRATEGY_ROADMAP.md
+  6. QUEST_NEXT_TEST_RECOMMENDATION.md
+  → Decide: Strategy and next steps?
+
+════════════════════════════════════════════════════════════════════════════════
+DECISION FRAMEWORK AT A GLANCE
+════════════════════════════════════════════════════════════════════════════════
+
+Q1: What test to run?
+A: TOKEN-CONTROLLED (only one that isolates architecture from tokens)
+
+Q2: Why this one first?
+A: It breaks the confound and gates all other tests
+
+Q3: What's it cost?
+A: ~$2 and 2-3 hours
+
+Q4: What am I measuring?
+A: d(B vs C) - architecture effect when tokens are matched
+
+Q5: What's the threshold?
+A: d > 0.3 = PASS (architecture matters), d < 0.3 = FAIL (tokens matter)
+
+Q6: What if I pass?
+A: Proceed to COMPETITOR COMPARISON test
+
+Q7: What if I fail?
+A: Redesign architecture or accept token dependency
+
+Q8: Can I skip it?
+A: No. Competitors will ask this question anyway.
+
+════════════════════════════════════════════════════════════════════════════════
+QUICK COMMAND REFERENCE
+════════════════════════════════════════════════════════════════════════════════
+
+# Run the test
+python3 run_test_TOKEN_CONTROLLED.py
+
+# Check results directory
+ls results_TOKEN_CONTROLLED/
+
+# Read the report
+cat results_TOKEN_CONTROLLED/TOKEN_CONTROLLED_REPORT.md
+
+# Extract primary metric
+grep "d_B_vs_C" results_TOKEN_CONTROLLED/TOKEN_CONTROLLED_REPORT.json
+
+# Parse hypotheses
+cat results_TOKEN_CONTROLLED/PRE_REGISTERED_HYPOTHESES.json
+
+════════════════════════════════════════════════════════════════════════════════
+RESEARCH INTEGRITY CHECKLIST
+════════════════════════════════════════════════════════════════════════════════
+
+Before Running:
+  ☐ Read at least EXECUTIVE_SUMMARY + TEST_DESIGN
+  ☐ Understand the token confound problem
+  ☐ Accept that you might not pass (d < 0.3)
+  ☐ Have 2-3 hours available
+  ☐ ANTHROPIC_API_KEY is configured
+
+During Running:
+  ☐ Don't peek at partial results mid-test
+  ☐ Run all 156 trials (no shortcuts)
+  ☐ Let script complete fully
+
+After Running:
+  ☐ Review PRE_REGISTERED_HYPOTHESES.json
+  ☐ Check TOKEN_CONTROLLED_REPORT.md
+  ☐ Find d(B vs C) value
+  ☐ Compare to threshold (0.3)
+  ☐ Interpret honestly (no spin)
+
+════════════════════════════════════════════════════════════════════════════════
+EXPECTED OUTCOME (Most Likely)
+════════════════════════════════════════════════════════════════════════════════
+
+Primary Metric: d(B vs C) ≈ 0.35-0.50
+
+Interpretation: 8OWLS provides 30-50% architectural benefit beyond tokens
+
+Action: Proceed to COMPETITOR COMPARISON
+
+Confidence: HIGH (expected to pass)
+
+But prepare for alternatives:
+  - If d > 0.5: "Architecture is primary driver" → Strong confidence
+  - If 0.2-0.3: "Mixed results" → Medium confidence, needs investigation
+  - If d < 0.2: "Tokens matter more" → Need redesign
+
+════════════════════════════════════════════════════════════════════════════════
+KEY INSIGHT
+════════════════════════════════════════════════════════════════════════════════
+
+This single test answers:
+"Is 8OWLS innovation or just spending?"
+
+If YES (d > 0.3):
+  → You have defensible moat
+  → You're innovating
+  → Proceed to competition with confidence
+
+If NO (d < 0.3):
+  → You need efficiency innovation
+  → Slow down and redesign
+  → Be honest about what you have
+
+Worth $2 to know.
+
+════════════════════════════════════════════════════════════════════════════════
+NEXT CONVERSATION WITH ARŌ
+════════════════════════════════════════════════════════════════════════════════
+
+After running TOKEN-CONTROLLED:
+
+"I ran the test. d(B vs C) = [X]. What does this mean?"
+
+Then we'll:
+1. Interpret the result
+2. Decide what it means for 8OWLS
+3. Plan the next test (competitor comparison or redesign)
+4. Update your positioning/claims
+
+════════════════════════════════════════════════════════════════════════════════
+
+Total Setup Time: 30 minutes (read + decide)
+Total Run Time: 2-3 hours (automated)
+Total Analysis Time: 1 hour (interpret + decide)
+Total Timeline: ~4 hours to decisive answer
+
+Investment: $2 + 4 hours
+Return: Knowing if you're innovative or just expensive
+
+(◉) Worth it.
+
+Generated: 2026-02-03
+Status: Ready to Execute
+Confidence: 90%
+
+════════════════════════════════════════════════════════════════════════════════

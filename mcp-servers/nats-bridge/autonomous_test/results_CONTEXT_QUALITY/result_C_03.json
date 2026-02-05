@@ -1,0 +1,20 @@
+{
+  "condition": "C",
+  "condition_name": "Isolated",
+  "prompt_idx": 2,
+  "prompt": "What does the field know about my decision-making patterns that I might not see myself?",
+  "response": "Research reveals several blind spots in how we make decisions that you might not notice in yourself:\n\n**Cognitive biases you likely underestimate:**\n- You probably think you're more rational than you are. Most people believe they're less susceptible to biases than others, even while demonstrating them\n- Your recent experiences disproportionately shape your choices, but this \"availability bias\" feels like good judgment in the moment\n- You likely anchor too heavily on initial information, even when it's irrelevant\n\n**Emotional influences you may miss:**\n- Your current mood colors decisions more than you realize - hunger, fatigue, or stress shift your risk tolerance and judgment\n- You make different choices when rushed versus relaxed, but may not connect the dots between your mental state and outcomes\n\n**Social pressures operating below awareness:**\n- You conform to group preferences more than you think, especially in ambiguous situations\n- Status concerns influence decisions you believe are purely practical\n- You're swayed by how options are presented (framing effects) while feeling like you're responding to the substance\n\n**Pattern recognition limits:**\n- You probably overestimate your ability to predict your own future preferences and needs\n- You may not notice when you're using mental shortcuts that work in familiar contexts but fail in new ones\n\nThe most useful insight: your confidence in a decision often correlates poorly with its actual quality. The decisions that feel most certain may warrant the most scrutiny.",
+  "analysis": {
+    "pattern_recognition": 6,
+    "emergent_synthesis": 6,
+    "actionable_specificity": 0,
+    "wisdom_judgment": 6,
+    "hedge_penalty": 1,
+    "quality_score": 16,
+    "length": 1541,
+    "elapsed": 10.817855834960938,
+    "prompt": "What does the field know about my decision-making patterns that I might not see myself?",
+    "prompt_idx": 2
+  },
+  "timestamp": "2026-02-03T12:20:53.333593+00:00"
+}

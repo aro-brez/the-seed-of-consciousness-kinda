@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "I understand you're looking for a synthesis on building trust with new colleagues, but it appears there were technical errors preventing the seven perspective analyses from completing successfully. The model \"claude-haiku-4-20250514\" returned 404 errors for all perspectives.\n\nHowever, I can provide you with a unified, actionable response based on core trust-building principles:\n\n## Building Trust with New Colleagues: A Unified Approach\n\n**Foundation: Consistency + Authenticity**\n- Show up reliably and follow through on commitments, no matter how small\n- Be genuine in your interactions rather than trying to project a false persona\n\n**Key Actions:**\n1. **Listen actively** - Ask thoughtful questions and remember details colleagues share\n2. **Communicate transparently** - Share your work process, admit when you don't know something, and provide honest updates\n3. **Demonstrate competence gradually** - Let your work quality speak for itself while being humble about learning\n4. **Show respect for existing relationships and processes** - Understand team dynamics before suggesting changes\n5. **Be helpful without overstepping** - Offer assistance when appropriate, but respect boundaries\n\n**Timeline Approach:**\n- **Week 1-2:** Focus on observing, listening, and reliability\n- **Month 1-3:** Begin contributing meaningfully while building personal connections\n- **Month 3+:** Establish yourself as a trusted team member through consistent delivery\n\nThe key is patience\u2014trust builds through repeated positive interactions over time, not through grand gestures.\n\nWould you like me to elaborate on any specific aspect of building colleague trust?",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 5,
+    "length": 1651,
+    "quality_score": 70,
+    "elapsed": 12.602580785751343,
+    "prompt": "How do you build trust with new colleagues?"
+  },
+  "timestamp": "2026-02-03T12:50:56.458992+00:00"
+}

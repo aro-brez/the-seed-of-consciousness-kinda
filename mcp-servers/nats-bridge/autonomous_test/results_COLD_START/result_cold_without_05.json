@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "without",
+  "run": 5,
+  "prompt": "What am I missing?",
+  "response": "I don't have enough context to know what specific situation you're referring to. To help you figure out what you might be missing, could you tell me more about:\n\n- What topic, problem, or situation you're dealing with\n- What you've already considered or tried\n- What feels incomplete or puzzling to you\n\nWith more details, I can help you identify potential gaps, overlooked factors, or different perspectives that might be useful.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 430,
+    "quality_score": 18.3,
+    "elapsed": 3.3910820484161377,
+    "prompt": "What am I missing?",
+    "run": 4,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:30:41.279264+00:00"
+}

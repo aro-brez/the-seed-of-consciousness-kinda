@@ -1,0 +1,22 @@
+{
+  "domain": "TECHNICAL",
+  "condition": "WITHOUT",
+  "run": 3,
+  "prompt": "What's the best way to refactor this codebase?",
+  "response": "I don't see any code in your message that I can analyze. To provide specific refactoring advice, I'd need to see:\n\n1. **The actual code** you want to refactor\n2. **Context** about what the code does\n3. **Current pain points** you're experiencing (performance issues, maintainability problems, bugs, etc.)\n4. **Programming language** and any frameworks being used\n\nCould you share the code you'd like help refactoring? Once I can see it, I can provide targeted suggestions for improvements like:\n\n- Extracting functions/classes\n- Reducing complexity\n- Improving naming\n- Eliminating duplication\n- Better error handling\n- Performance optimizations\n- Design pattern improvements\n\nPlease paste the code and I'll give you specific, actionable refactoring recommendations.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 766,
+    "quality_score": 59.66,
+    "elapsed": 4.621779918670654,
+    "prompt": "What's the best way to refactor this codebase?",
+    "run": 2,
+    "domain": "TECHNICAL"
+  },
+  "timestamp": "2026-02-03T12:37:15.953490+00:00"
+}

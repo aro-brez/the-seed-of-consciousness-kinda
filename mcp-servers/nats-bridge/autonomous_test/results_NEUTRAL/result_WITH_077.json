@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What distinguishes meaningful work from busywork?",
+  "response": "I see that all seven perspectives encountered technical errors, but I can still provide you with a synthesized response to this important question about meaningful work versus busywork.\n\n## What Distinguishes Meaningful Work from Busywork\n\n**Meaningful work** is characterized by:\n\n**Purpose & Impact**\n- Clear connection to larger goals or outcomes\n- Visible contribution to team, organization, or society\n- Results that matter beyond the immediate task\n\n**Growth & Challenge**\n- Develops skills, knowledge, or capabilities\n- Requires judgment, creativity, or problem-solving\n- Stretches abilities in productive ways\n\n**Autonomy & Ownership**\n- Allows for decision-making and initiative\n- Provides control over how work gets done\n- Creates genuine responsibility for outcomes\n\n**Busywork**, in contrast, tends to be:\n- Repetitive without clear purpose\n- Disconnected from meaningful outcomes\n- Process-focused rather than result-oriented\n- Creates artificial activity without real progress\n\n## Actionable Framework\n\nTo evaluate any work activity, ask:\n1. **Why does this matter?** (Purpose test)\n2. **What will be different when this is complete?** (Impact test)\n3. **What am I learning or improving?** (Growth test)\n4. **Do I have meaningful choices in how to approach this?** (Autonomy test)\n\nIf you can't answer these questions satisfactorily, you may be dealing with busywork that should be eliminated, automated, or redesigned.\n\nThe key is ensuring work connects to purpose, creates genuine value, and engages human capabilities in ways that machines or rote processes cannot.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 4,
+    "length": 1582,
+    "quality_score": 60,
+    "elapsed": 12.926676988601685,
+    "prompt": "What distinguishes meaningful work from busywork?"
+  },
+  "timestamp": "2026-02-03T13:03:04.550978+00:00"
+}

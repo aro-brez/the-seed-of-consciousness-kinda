@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How does someone effectively learn a new skill?",
+  "response": "Here are the key principles for effectively learning a new skill:\n\n**Start with fundamentals**\n- Master basic concepts before advancing\n- Build a solid foundation rather than rushing ahead\n- Understand the \"why\" behind techniques, not just the \"how\"\n\n**Practice deliberately**\n- Focus on specific weaknesses rather than just repeating what you're good at\n- Set clear, measurable goals for each practice session\n- Get feedback and adjust your approach based on results\n\n**Use active learning methods**\n- Apply the skill immediately rather than just consuming information\n- Teach or explain concepts to others\n- Break complex skills into smaller, manageable components\n\n**Create a consistent routine**\n- Practice regularly, even if for short periods\n- Schedule specific times for skill development\n- Track your progress to stay motivated\n\n**Learn from multiple sources**\n- Combine books, videos, courses, and hands-on practice\n- Find mentors or communities of practitioners\n- Study examples of excellence in your chosen skill\n\n**Embrace productive struggle**\n- Expect difficulty and frustration as normal parts of learning\n- Push slightly beyond your comfort zone consistently\n- View mistakes as learning opportunities, not failures\n\n**Apply spaced repetition**\n- Review and practice previously learned elements regularly\n- Gradually increase intervals between review sessions\n- This helps move knowledge from short-term to long-term memory\n\nThe most critical factor is consistent, focused practice over time rather than sporadic intense efforts.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 1,
+    "length": 1544,
+    "quality_score": 50,
+    "elapsed": 7.662622928619385,
+    "prompt": "How does someone effectively learn a new skill?"
+  },
+  "timestamp": "2026-02-03T13:06:57.083934+00:00"
+}

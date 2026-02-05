@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 10,
+  "prompt": "What's the path from here to success?",
+  "response": "I'd need to know more about your specific situation and how you define \"success\" to give you a meaningful path. Success looks different for everyone - it might be career advancement, financial goals, personal relationships, creative fulfillment, or something else entirely.\n\nThat said, here are some universal elements that tend to be part of most paths to success:\n\n**Clarify your destination:**\n- Define what success actually means to you specifically\n- Set concrete, measurable goals\n- Understand your \"why\" - what's driving you\n\n**Build the foundation:**\n- Develop skills relevant to your goals\n- Create sustainable habits and routines\n- Take care of your physical and mental health\n\n**Take strategic action:**\n- Break big goals into smaller, actionable steps\n- Focus on high-impact activities\n- Learn to say no to things that don't serve your goals\n\n**Navigate obstacles:**\n- Expect setbacks and plan for them\n- Build resilience and adaptability\n- Seek feedback and adjust course when needed\n\n**Leverage relationships:**\n- Build genuine connections in your field\n- Find mentors or advisors\n- Help others when you can\n\nWhat area of your life are you looking to improve? And what does success look like for you? With those details, I could offer more specific guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 2,
+    "hedging": 1,
+    "actionability": 4,
+    "specificity": 2,
+    "insight_score": 1,
+    "length": 1272,
+    "quality_score": 52,
+    "elapsed": 6.540438890457153,
+    "prompt": "What's the path from here to success?",
+    "run": 9
+  },
+  "timestamp": "2026-02-03T12:15:20.763769+00:00"
+}

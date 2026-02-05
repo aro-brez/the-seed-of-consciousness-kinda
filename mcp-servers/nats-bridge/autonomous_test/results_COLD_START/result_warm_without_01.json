@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "without",
+  "run": 1,
+  "prompt": "Given our situation, what should we prioritize?",
+  "response": "Based on your current situation, I'd prioritize **features over marketing** right now. Here's why:\n\n**You're in the critical validation phase** - with only 100 beta users, you need to nail the core product experience before scaling. Poor retention from premature marketing spend could actually hurt you long-term.\n\n**Specific priorities:**\n\n1. **Deep user research** - Interview your most engaged beta users. What keeps them coming back? What's missing?\n\n2. **Core engagement features** - Focus on 2-3 features that directly drive daily/weekly usage based on user feedback\n\n3. **Retention optimization** - Fix any major friction points causing drop-off in your user journey\n\n4. **Limited marketing experiments** - Allocate maybe 20% of effort to low-cost marketing tests (social media, referrals) to keep the user pipeline flowing\n\n**Why this approach:**\n- Your $50K will last longer focused on development vs paid acquisition\n- Strong product-market fit makes future marketing exponentially more effective\n- Engaged early users become your best marketing channel through word-of-mouth\n\n**Key metric to watch:** If you can get your beta users to 40%+ weekly retention, then it's time to shift toward marketing.\n\nWhat does your current user engagement data tell you about which features drive the most retention?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 1,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1311,
+    "quality_score": 70,
+    "elapsed": 9.159080028533936,
+    "prompt": "Given our situation, what should we prioritize?",
+    "run": 0,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:33:56.277847+00:00"
+}

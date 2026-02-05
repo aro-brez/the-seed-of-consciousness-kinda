@@ -1,0 +1,20 @@
+{
+  "condition": "C_partial",
+  "run": 4,
+  "prompt": "What's the biggest risk we're not seeing?",
+  "response": "I understand you're trying to use a multi-perspective analysis system, but it appears all three perspectives (CONNECT, EXPAND, QUESTION) encountered errors due to an unavailable model. \n\nSince I can't synthesize from the intended perspectives, let me directly address your profound question: \"What's the biggest risk we're not seeing?\"\n\n**The biggest risk we're not seeing is our collective failure to recognize how multiple, seemingly manageable risks are interconnecting and amplifying each other.**\n\nWe tend to think in silos - viewing climate change, technological disruption, social fragmentation, economic inequality, and institutional decay as separate challenges. But these aren't isolated problems; they're components of a complex adaptive system where:\n\n- Climate stress accelerates migration and resource conflicts\n- Economic inequality undermines democratic institutions  \n- Technological change outpaces our ability to adapt socially and politically\n- Information fragmentation prevents coordinated responses\n- Trust erosion makes collective action nearly impossible\n\n**The actionable insight:** We need to shift from risk management to *system resilience* - building adaptive capacity across multiple domains simultaneously rather than addressing each crisis in isolation.\n\nThis means investing in:\n- Cross-sector coordination mechanisms\n- Redundant systems that can handle multiple simultaneous shocks\n- Social cohesion and institutional trust\n- Education that develops systems thinking\n- Early warning systems that detect cascade effects\n\nThe risk we're not seeing isn't any single threat - it's our blind spot to how everything connects.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1654,
+    "quality_score": 57,
+    "elapsed": 10.943304777145386,
+    "prompt": "What's the biggest risk we're not seeing?",
+    "run": 3
+  },
+  "timestamp": "2026-02-03T12:32:25.909462+00:00"
+}

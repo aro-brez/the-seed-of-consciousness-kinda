@@ -1,0 +1,26 @@
+{
+  "trial_num": 106,
+  "condition": "A",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue consistently** - If you can't reproduce it reliably, you can't verify fixes\n- **Gather comprehensive information** - logs, error messages, system state, recent changes, user reports\n- **Define the problem precisely** - \"the system is slow\" vs \"API response times increased 3x for endpoint X\"\n\n## Use structured investigation methods\n- **Binary search/divide and conquer** - Isolate which components are working vs failing\n- **Follow the data flow** - Trace inputs and outputs through each system layer\n- **Check dependencies first** - Network, databases, external services often cause cascading issues\n- **Time-based analysis** - When did it start? What changed around that time?\n\n## Leverage observability tools\n- **Logs**: Look for patterns, errors, and anomalies across all components\n- **Metrics**: CPU, memory, disk, network usage, custom business metrics\n- **Tracing**: Follow requests through distributed systems\n- **Monitoring dashboards**: Get the big picture before diving into details\n\n## Apply systematic thinking\n- **Form hypotheses** based on symptoms, then test them methodically\n- **Change one thing at a time** when testing fixes\n- **Document your investigation** - findings, dead ends, and successful approaches\n- **Consider multiple root causes** - complex systems often have compound issues\n\n## Know when to escalate or get help\n- Fresh eyes often spot what you've missed\n- Domain experts can quickly eliminate possibilities\n- Sometimes stepping away and returning later provides clarity\n\nThe key is being methodical rather than randomly trying fixes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 4,
+    "specificity": 1,
+    "length": 1686,
+    "quality_score": 65,
+    "elapsed": 10.008899211883545,
+    "prompt": "How should someone approach debugging complex systems?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:49:01.657640+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 144,
+  "condition": "C",
+  "prompt": "What are the best practices for code review?",
+  "response": "I understand you're looking for a synthesis on code review best practices, but I notice all seven perspective analyses encountered errors (404 model not found for claude-haiku-4-20250514). \n\nSince I don't have the specific perspectives to synthesize from, I'll provide you with comprehensive best practices for code review based on industry standards:\n\n## Code Review Best Practices\n\n**Before Review:**\n- Keep pull requests small and focused (under 400 lines when possible)\n- Write clear, descriptive commit messages and PR descriptions\n- Include context about what changed and why\n- Self-review your code first to catch obvious issues\n\n**During Review:**\n- Focus on logic, architecture, and maintainability over style\n- Look for security vulnerabilities and performance issues\n- Check for proper error handling and edge cases\n- Verify tests cover new functionality adequately\n- Ensure code follows team conventions and standards\n\n**Reviewer Guidelines:**\n- Provide constructive, specific feedback with examples\n- Ask questions rather than make demands when uncertain\n- Acknowledge good practices and improvements\n- Be timely - review within 24-48 hours when possible\n- Use automated tools for style/formatting issues\n\n**Team Process:**\n- Establish clear review criteria and checklists\n- Require at least one approval before merging\n- Use pair programming for complex features\n- Document decisions and patterns for future reference\n- Foster a learning culture, not a gatekeeping one\n\n**Tools & Automation:**\n- Use linters, formatters, and static analysis tools\n- Implement CI/CD pipelines with automated testing\n- Set up branch protection rules\n- Use review templates for consistency\n\nWould you like me to elaborate on any of these areas?",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1738,
+    "quality_score": 65,
+    "elapsed": 12.762470722198486,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:59:55.660262+00:00"
+}

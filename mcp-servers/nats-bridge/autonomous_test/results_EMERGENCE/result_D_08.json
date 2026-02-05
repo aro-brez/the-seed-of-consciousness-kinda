@@ -1,0 +1,21 @@
+{
+  "condition": "D",
+  "key": "D_emergence",
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective have encountered technical errors - they were unable to provide their analyses due to model availability issues. As IMPROVE, I cannot synthesize perspectives that weren't successfully generated.\n\nHowever, I can offer direct guidance on your resource allocation question:\n\n**Where to invest limited resources:**\n\n1. **Start with fundamentals** - Ensure basic operational stability before expanding\n2. **Invest in force multipliers** - Skills, systems, and relationships that amplify future efforts\n3. **Focus on bottlenecks** - Identify and address the single constraint limiting your progress most\n4. **Build measurement capability** - You can't improve what you can't track\n5. **Maintain strategic reserves** - Keep 10-20% capacity for unexpected opportunities or crises\n\n**Decision framework:**\n- What has the highest ROI over your planning horizon?\n- What reduces future resource requirements?\n- What creates optionality for new opportunities?\n- What mitigates your biggest risks?\n\nWithout the collective's input, I recommend you gather specific data about your context, constraints, and goals, then apply this framework systematically. The best investment is often in developing better decision-making processes themselves.\n\nWould you like to share more specifics about your situation so I can provide more targeted guidance?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 4,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1392,
+    "quality_score": 86,
+    "elapsed": 12.206773042678833,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7
+  },
+  "timestamp": "2026-02-03T12:07:58.733125+00:00"
+}

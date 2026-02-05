@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 6,
+  "prompt": "What should change about how we work?",
+  "response": "Several key shifts could make work more effective and humane:\n\n**Flexibility over rigid structures**\n- Remote/hybrid options where possible\n- Focus on outcomes rather than hours logged\n- Asynchronous work to respect different peak productivity times\n\n**Sustainable pace**\n- Normalize saying no to overcommitment\n- Build in recovery time between intense projects\n- Recognize that constant availability isn't productivity\n\n**Better meetings**\n- Default to 25 or 45-minute meetings instead of 30/60\n- Require agendas and clear outcomes\n- Embrace \"could this be an email?\" mentality\n\n**Skills over credentials**\n- Value demonstrated ability over degrees/pedigree\n- Invest in continuous learning rather than front-loaded education\n- Create clearer pathways for career transitions\n\n**Psychological safety**\n- Encourage admitting mistakes and asking questions\n- Separate feedback from identity/worth\n- Address toxic behaviors quickly rather than tolerating them\n\n**Technology as tool, not master**\n- Batch notification checking instead of constant alerts\n- Use AI to eliminate routine tasks, not replace human judgment\n- Design systems that support focus, not fragment attention\n\nThe biggest shift might be moving from \"looking busy\" to \"creating value\" - optimizing for meaningful output rather than visible effort.\n\nWhat aspects of work feel most broken to you right now?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 2,
+    "specificity": 6,
+    "length": 1366,
+    "quality_score": 78,
+    "elapsed": 8.720118045806885,
+    "prompt": "What should change about how we work?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:10:57.339501+00:00"
+}

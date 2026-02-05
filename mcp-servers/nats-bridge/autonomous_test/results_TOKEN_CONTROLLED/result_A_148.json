@@ -1,0 +1,26 @@
+{
+  "trial_num": 148,
+  "condition": "A",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Review Process\n- **Keep reviews small** - Aim for 200-400 lines of code max per review for better focus and thoroughness\n- **Review frequently** - Conduct reviews within 24 hours to maintain momentum and context\n- **Use checklists** - Create standardized checklists covering functionality, security, performance, and style\n- **Set clear expectations** - Define what reviewers should focus on and acceptance criteria\n\n## What to Review\n- **Functionality** - Does the code do what it's supposed to do?\n- **Logic and algorithms** - Are there simpler or more efficient approaches?\n- **Error handling** - Are edge cases and potential failures addressed?\n- **Security** - Look for vulnerabilities, input validation, authentication issues\n- **Performance** - Identify potential bottlenecks or inefficient operations\n- **Code style** - Consistency with team standards and readability\n\n## Communication\n- **Be constructive** - Focus on the code, not the person (\"This function could be simplified\" vs \"You wrote this wrong\")\n- **Explain the \"why\"** - Don't just point out issues, explain the reasoning\n- **Ask questions** - Use \"What do you think about...\" instead of making demands\n- **Acknowledge good work** - Point out clever solutions and improvements\n\n## Tools and Automation\n- **Use pull request tools** (GitHub, GitLab, Bitbucket) for structured reviews\n- **Automate style checks** - Use linters and formatters to catch basic issues\n- **Run automated tests** before human review to catch obvious bugs\n\n## Team Culture\n- **Make it a learning opportunity** for both reviewer and author\n- **Don't skip reviews** even for \"small\" changes\n- **Rotate reviewers** to spread knowledge and avoid bottlenecks",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 3,
+    "length": 1761,
+    "quality_score": 60,
+    "elapsed": 11.145977020263672,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T14:01:59.114051+00:00"
+}

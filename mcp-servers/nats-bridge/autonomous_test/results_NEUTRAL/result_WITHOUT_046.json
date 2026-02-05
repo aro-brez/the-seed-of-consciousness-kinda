@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue reliably** - If you can't reproduce it, you can't fix it\n- **Gather comprehensive information** - logs, error messages, system state, user actions that triggered the problem\n- **Define the problem clearly** - \"the system is slow\" vs \"API response times increased from 200ms to 2s for user search queries\"\n\n## Use structured investigation methods\n- **Divide and conquer** - Isolate components to narrow down where the issue originates\n- **Follow the data flow** - Trace inputs and outputs through each system component\n- **Check recent changes** - Look at deployments, configuration updates, or environmental changes\n- **Start with the most likely suspects** - Common failure points, recently modified code, external dependencies\n\n## Leverage your tools effectively\n- **Use debugging tools systematically** - debuggers, profilers, monitoring dashboards, tracing tools\n- **Add targeted logging/instrumentation** - But be strategic about placement to avoid noise\n- **Create minimal test cases** - Strip away complexity to isolate the core issue\n\n## Apply logical reasoning\n- **Form and test hypotheses** - \"If X is the cause, then I should see Y\"\n- **Avoid confirmation bias** - Don't just look for evidence that supports your initial theory\n- **Document your findings** - Keep track of what you've tested and eliminated\n\n## Know when to step back\n- **Take breaks** when stuck - Fresh perspective often reveals overlooked details\n- **Collaborate with colleagues** - Rubber duck debugging or fresh eyes can be invaluable\n- **Consider the broader context** - Sometimes the \"bug\" is actually working as designed, but the design needs to change\n\nThe key is being methodical while staying flexible enough to follow unexpected leads.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 2,
+    "length": 1839,
+    "quality_score": 65,
+    "elapsed": 13.067087173461914,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:56:39.537677+00:00"
+}

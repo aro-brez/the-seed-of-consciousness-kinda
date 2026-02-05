@@ -1,0 +1,36 @@
+{
+  "condition": "B_no_receive",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE"
+  ],
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice there's a technical issue - all 6 perspective modules returned 404 errors, likely due to an unavailable model. However, I can still provide a thoughtful synthesis for your question: \"What's the most important thing to focus on right now?\"\n\n## Unified Response\n\nWithout the specific context of your situation, the most universally important thing to focus on right now is **clarity about your immediate priorities**.\n\nHere's an actionable framework:\n\n### 1. **Present Moment Assessment**\n- What demands your attention in the next 24-48 hours?\n- What has the highest stakes if left unaddressed?\n- What aligns with your core values and long-term goals?\n\n### 2. **Energy and Impact Matrix**\nFocus on what gives you:\n- High impact with your available energy\n- Forward momentum rather than reactive scrambling\n- A sense of control and progress\n\n### 3. **Immediate Next Step**\nInstead of trying to solve everything, identify the single next action that will:\n- Reduce uncertainty\n- Create positive momentum\n- Address the most pressing concern\n\nThe meta-answer is often: **Focus on focusing itself** - taking 10-15 minutes to clearly define what matters most in your current context, then committing fully to that priority.\n\nWhat specific area of your life or work is prompting this question? That would help provide more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1341,
+    "quality_score": 86,
+    "elapsed": 11.964513063430786,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:43:47.746806+00:00"
+}

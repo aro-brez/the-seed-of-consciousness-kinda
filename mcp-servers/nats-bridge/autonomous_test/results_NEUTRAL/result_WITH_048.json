@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "I notice that all seven perspective modules encountered errors (404 - model not found), but I can still provide you with a comprehensive synthesis on building trust with new colleagues based on the core question.\n\n## Building Trust with New Colleagues: A Unified Approach\n\n**Immediate Actions:**\n- **Be consistent** in your words and actions from day one\n- **Listen actively** during introductions and early conversations\n- **Follow through** on any commitments, no matter how small\n- **Ask thoughtful questions** about their work and perspectives\n\n**Ongoing Trust-Building Strategies:**\n- **Demonstrate reliability** by meeting deadlines and being punctual\n- **Show vulnerability** by admitting when you don't know something\n- **Offer help** before being asked, especially during your learning period\n- **Respect boundaries** and different working styles\n- **Be transparent** about your background, goals, and challenges\n\n**Communication Fundamentals:**\n- Share credit generously and take responsibility for mistakes\n- Provide honest, constructive feedback when appropriate\n- Keep confidences and avoid workplace gossip\n- Express appreciation for their guidance and expertise\n\n**Long-term Relationship Building:**\n- Find common ground beyond work tasks\n- Show genuine interest in their professional development\n- Be patient - trust builds gradually through consistent positive interactions\n- Maintain professionalism while being authentically yourself\n\nTrust is earned through consistent, reliable behavior over time. Focus on being genuine, competent, and supportive, and strong working relationships will naturally develop.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 1,
+    "length": 1626,
+    "quality_score": 50,
+    "elapsed": 12.172696828842163,
+    "prompt": "How do you build trust with new colleagues?"
+  },
+  "timestamp": "2026-02-03T12:57:06.657135+00:00"
+}

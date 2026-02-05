@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITH",
+  "run": 2,
+  "prompt": "What should I prioritize in my life right now?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective encountered errors - they weren't able to analyze your question \"What should I prioritize in my life right now?\" \n\nHowever, as IMPROVE, I can still provide you with a synthesized approach to this fundamental question:\n\n**Your Priority Framework Right Now:**\n\n1. **Foundation First** - Secure your basic needs: stable income, health maintenance, and key relationships. Without these anchors, other priorities become unsustainable.\n\n2. **Clarify Your Current Season** - Identify whether you're in a growth phase, consolidation phase, or transition phase. Your priorities should align with your life's current rhythm.\n\n3. **The 3-Priority Rule** - Focus on maximum three major priorities simultaneously. More than this creates scattered energy and diminished results.\n\n4. **Future-Present Balance** - Allocate 70% of your energy to immediate needs and opportunities, 30% to building toward your longer-term vision.\n\n**Immediate Action:**\nWrite down what's demanding your attention right now. Circle the three items that, if addressed well, would create the most positive cascade effects across other areas of your life. Start there.\n\nThe emergent insight: True prioritization isn't about finding the \"perfect\" priorities - it's about choosing consciously rather than letting circumstances choose for you, then committing fully to those choices.\n\nWhat specific areas are you feeling torn between right now?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1465,
+    "quality_score": 82,
+    "elapsed": 12.990385055541992,
+    "prompt": "What should I prioritize in my life right now?",
+    "run": 1,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:32:16.046281+00:00"
+}

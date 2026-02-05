@@ -1,0 +1,26 @@
+{
+  "trial_num": 4,
+  "condition": "C",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "I understand you're looking for me to synthesize perspectives on decision-making under pressure, but I notice that all seven analytical perspectives returned error messages (404 errors related to a Claude model that appears unavailable).\n\nSince I don't have the specific analyses from those perspectives, I'll provide a direct, evidence-based response to your original question:\n\n## What Helps People Make Better Decisions Under Pressure\n\n**Immediate Techniques:**\n- **Pause and breathe**: Even 3-5 seconds of controlled breathing activates clearer thinking\n- **Clarify the core issue**: Ask \"What is the actual decision I need to make right now?\"\n- **Identify non-negotiables**: What outcomes are absolutely unacceptable?\n\n**Preparation Strategies:**\n- **Pre-commitment frameworks**: Establish decision criteria before pressure hits\n- **Scenario planning**: Practice responses to likely high-pressure situations\n- **Build relevant expertise**: Domain knowledge reduces cognitive load under stress\n\n**Cognitive Tools:**\n- **Limit options**: Too many choices increase paralysis; narrow to 2-3 viable alternatives\n- **Use the 10-10-10 rule**: How will I feel about this decision in 10 minutes, 10 months, 10 years?\n- **Seek one trusted advisor**: Get a single, high-quality external perspective\n\n**Physiological Support:**\n- **Manage stress response**: Regular exercise and sleep improve decision-making resilience\n- **Stay hydrated and fed**: Basic physical needs significantly impact cognitive performance\n\nThe key is combining preparation (building frameworks ahead of time) with simple, practiced techniques that can be deployed when pressure peaks.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 5,
+    "length": 1651,
+    "quality_score": 55,
+    "elapsed": 13.914495944976807,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:14:21.667188+00:00"
+}

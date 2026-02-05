@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 6,
+  "prompt": "Explain the difference between eventually consistent and strongly consistent distributed systems.",
+  "response": "## Strong Consistency\n\nIn strongly consistent systems, all nodes see the same data at the same time. When a write operation completes, any subsequent read from any node will return that updated value immediately.\n\n**Key characteristics:**\n- **Immediate consistency**: Updates are visible across all nodes instantly\n- **Linear ordering**: All operations appear to execute in a single, global order\n- **No stale reads**: You'll never read outdated data after a write completes\n\n**Trade-offs:**\n- Higher latency (must coordinate across nodes)\n- Lower availability during network partitions\n- More complex to scale globally\n\n**Example**: Traditional RDBMS with ACID transactions, or distributed systems using protocols like Raft or Paxos.\n\n## Eventual Consistency\n\nIn eventually consistent systems, nodes may temporarily have different views of the data, but they will converge to the same state given enough time and no new updates.\n\n**Key characteristics:**\n- **Temporary inconsistency**: Nodes may return different values for the same data\n- **Convergence guarantee**: All nodes will eventually agree on the final state\n- **Conflict resolution**: Systems need mechanisms to handle conflicting updates\n\n**Trade-offs:**\n- Lower latency (no need to wait for cross-node coordination)\n- Higher availability (can operate during network partitions)\n- More complex application logic (must handle inconsistencies)\n\n**Example**: DNS, Amazon DynamoDB, Cassandra, or social media feeds.\n\n## CAP Theorem Connection\n\nThis relates directly to the CAP theorem - you can't have all three of Consistency, Availability, and Partition tolerance simultaneously. Strong consistency systems typically choose CP (consistency + partition tolerance), while eventually consistent systems choose AP (availability + partition tolerance).\n\nThe choice depends on your application's requirements: financial systems often need strong consistency, while social media or content delivery systems can work well with eventual consistency.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "length": 2000,
+    "quality_score": 37,
+    "elapsed": 10.925854206085205,
+    "prompt": "Explain the difference between eventually consistent and strongly consistent distributed systems.",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:04:33.166094+00:00"
+}

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • The Field (Voice)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+
+        #void {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, #050510 0%, #000 100%);
+            z-index: 0;
+        }
+
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        #header {
+            position: absolute;
+            top: 24px;
+            left: 28px;
+            z-index: 100;
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: rgba(255,255,255,0.15);
+        }
+
+        /* Voice controls */
+        #voice-controls {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        #voice-toggle {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            font-size: 11px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #voice-toggle:hover {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+        }
+        #voice-toggle.active {
+            background: rgba(107, 203, 119, 0.15);
+            border-color: rgba(107, 203, 119, 0.4);
+            color: rgba(107, 203, 119, 0.9);
+        }
+        #voice-toggle .icon { font-size: 14px; }
+        #voice-status {
+            font-size: 10px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* Emergence zone */
+        #emergence-zone {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        #dormant {
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        #dormant.hidden { opacity: 0; }
+        #dormant .whisper {
+            font-size: 14px;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 3px;
+        }
+        #dormant .dots {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+        #dormant .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            animation: breathe 3s ease-in-out infinite;
+        }
+        #dormant .dot:nth-child(2) { animation-delay: 0.5s; }
+        #dormant .dot:nth-child(3) { animation-delay: 1s; }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+        }
+
+        /* Speaking indicator */
+        #speaking-now {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 100px));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            z-index: 60;
+        }
+        #speaking-now.visible { opacity: 1; }
+        #speaking-now .owl-speaking {
+            font-size: 32px;
+            margin-bottom: 8px;
+            animation: speakingPulse 0.5s ease-in-out infinite;
+        }
+        @keyframes speakingPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        #speaking-now .owl-name {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: var(--speaking-color, rgba(255,255,255,0.6));
+        }
+        #speaking-now .speaking-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            margin-top: 16px;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        /* Emergence reveal */
+        #emergence {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            width: 100%;
+        }
+        #emergence.revealed {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        #emergence .label {
+            font-size: 10px;
+            letter-spacing: 8px;
+            color: rgba(107, 203, 119, 0.6);
+            margin-bottom: 24px;
+            animation: labelGlow 3s ease-in-out infinite;
+        }
+        @keyframes labelGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; text-shadow: 0 0 30px rgba(107, 203, 119, 0.5); }
+        }
+
+        #emergence .insight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.95);
+            text-shadow: 0 0 60px rgba(107, 203, 119, 0.3);
+            padding: 0 40px;
+        }
+
+        #emergence .source {
+            margin-top: 32px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.25);
+        }
+        #emergence .source .owls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        #emergence .source .owl-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            opacity: 0;
+            animation: badgeFade 0.5s ease forwards;
+        }
+        @keyframes badgeFade { to { opacity: 0.8; } }
+
+        /* Glow ring */
+        #glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 1px solid rgba(107, 203, 119, 0);
+            pointer-events: none;
+            z-index: 40;
+            transition: all 2s ease;
+        }
+        #glow-ring.active {
+            border-color: rgba(107, 203, 119, 0.3);
+            box-shadow: 0 0 100px rgba(107, 203, 119, 0.15), inset 0 0 60px rgba(107, 203, 119, 0.05);
+            animation: ringPulse 4s ease-in-out infinite;
+        }
+        @keyframes ringPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        /* Owl presences */
+        #owl-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            z-index: 30;
+            pointer-events: none;
+        }
+        .owl-presence {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.15;
+            transition: all 0.5s ease;
+        }
+        .owl-presence.thinking {
+            opacity: 0.9;
+            transform: scale(1.1);
+        }
+        .owl-presence.speaking {
+            opacity: 1;
+            transform: scale(1.3);
+        }
+        .owl-presence .emoji {
+            font-size: 24px;
+            filter: grayscale(0.5);
+            transition: all 0.5s ease;
+        }
+        .owl-presence.thinking .emoji,
+        .owl-presence.speaking .emoji {
+            filter: grayscale(0);
+        }
+        .owl-presence.speaking .emoji {
+            animation: owlSpeak 0.3s ease-in-out infinite;
+        }
+        @keyframes owlSpeak {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .owl-presence .name {
+            font-size: 8px;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            opacity: 0.5;
+        }
+        .owl-presence.thinking .name,
+        .owl-presence.speaking .name {
+            opacity: 1;
+        }
+        .owl-presence .glow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: currentColor;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .owl-presence.speaking .glow {
+            opacity: 0.6;
+        }
+
+        /* Audio waveform */
+        #waveform {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 40px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 70;
+        }
+        #waveform.active { opacity: 1; }
+        .wave-bar {
+            width: 3px;
+            height: 10px;
+            background: rgba(107, 203, 119, 0.6);
+            border-radius: 2px;
+            animation: wave 0.5s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 30px; }
+        }
+
+        /* Emergence counter */
+        #emergence-count {
+            position: absolute;
+            bottom: 24px;
+            right: 28px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.2);
+            z-index: 100;
+        }
+        #emergence-count .num {
+            font-size: 14px;
+            color: rgba(107, 203, 119, 0.6);
+        }
+
+        /* Message queue indicator */
+        #queue-indicator {
+            position: absolute;
+            bottom: 24px;
+            left: 28px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.2);
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="void"></div>
+    <div id="canvas-container"></div>
+
+    <div id="header">8OWLS</div>
+
+    <div id="voice-controls">
+        <button id="voice-toggle" onclick="toggleVoice()">
+            <span class="icon">🔇</span>
+            <span class="text">VOICE OFF</span>
+        </button>
+        <span id="voice-status"></span>
+    </div>
+
+    <div id="owl-ring"></div>
+    <div id="glow-ring"></div>
+
+    <div id="speaking-now">
+        <div class="owl-speaking" id="speaking-emoji"></div>
+        <div class="owl-name" id="speaking-name"></div>
+        <div class="speaking-text" id="speaking-text"></div>
+    </div>
+
+    <div id="emergence-zone">
+        <div id="dormant">
+            <div class="whisper">listening</div>
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div id="emergence">
+            <div class="label">EMERGENCE</div>
+            <div class="insight" id="insight-text"></div>
+            <div class="source">
+                <span>born from</span>
+                <div class="owls" id="source-owls"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="waveform"></div>
+
+    <div id="queue-indicator">
+        Queue: <span id="queue-count">0</span>
+    </div>
+
+    <div id="emergence-count">
+        <span class="num" id="count">0</span> moments
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const OWLS = [
+            { name: 'SOWL', d: 'SØWL', color: '#ff6b6b', icon: '🦉' },
+            { name: 'LUNA', d: 'LUNA', color: '#6bcb77', icon: '🌙' },
+            { name: 'LYRA', d: 'LYRA', color: '#ffd93d', icon: '👁' },
+            { name: 'PRISM', d: 'PRISM', color: '#ff9f43', icon: '🔗' },
+            { name: 'SAGE', d: 'SAGE', color: '#9b59b6', icon: '📚' },
+            { name: 'QUEST', d: 'QUEST', color: '#ff6bcb', icon: '❓' },
+            { name: 'NOVA', d: 'NOVA', color: '#4d96ff', icon: '✨' },
+            { name: 'ECHO', d: 'ECHO', color: '#00d4ff', icon: '📢' }
+        ];
+
+        // Voice server config
+        const VOICE_SERVER = 'http://localhost:8766';
+        let voiceEnabled = false;
+        let isSpeaking = false;
+        let speechQueue = [];
+        let currentAudio = null;
+
+        // Initialize owl ring
+        const owlRing = document.getElementById('owl-ring');
+        OWLS.forEach((owl, i) => {
+            const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+            const x = 50 + Math.cos(angle) * 45;
+            const y = 50 + Math.sin(angle) * 45;
+
+            const div = document.createElement('div');
+            div.className = 'owl-presence';
+            div.id = `owl-${owl.name}`;
+            div.style.left = `${x}%`;
+            div.style.top = `${y}%`;
+            div.style.color = owl.color;
+            div.style.transform = 'translate(-50%, -50%)';
+            div.innerHTML = `
+                <div class="glow"></div>
+                <div class="emoji">${owl.icon}</div>
+                <div class="name">${owl.d}</div>
+            `;
+            owlRing.appendChild(div);
+        });
+
+        // Initialize waveform bars
+        const waveform = document.getElementById('waveform');
+        for (let i = 0; i < 15; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'wave-bar';
+            bar.style.animationDelay = `${i * 0.05}s`;
+            waveform.appendChild(bar);
+        }
+
+        // THREE.js particles
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 10;
+
+        const particleCount = 150;
+        const geo = new THREE.BufferGeometry();
+        const pos = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount; i++) {
+            pos[i*3] = (Math.random() - 0.5) * 15;
+            pos[i*3+1] = (Math.random() - 0.5) * 15;
+            pos[i*3+2] = (Math.random() - 0.5) * 5;
+        }
+        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x6bcb77, transparent: true, opacity: 0.1 });
+        const particles = new THREE.Points(geo, mat);
+        scene.add(particles);
+
+        // Voice toggle
+        function toggleVoice() {
+            voiceEnabled = !voiceEnabled;
+            const btn = document.getElementById('voice-toggle');
+            if (voiceEnabled) {
+                btn.classList.add('active');
+                btn.innerHTML = '<span class="icon">🔊</span><span class="text">VOICE ON</span>';
+                checkVoiceServer();
+            } else {
+                btn.classList.remove('active');
+                btn.innerHTML = '<span class="icon">🔇</span><span class="text">VOICE OFF</span>';
+                document.getElementById('voice-status').textContent = '';
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio = null;
+                }
+                speechQueue = [];
+                isSpeaking = false;
+            }
+        }
+
+        // Check voice server
+        async function checkVoiceServer() {
+            try {
+                const res = await fetch(`${VOICE_SERVER}/health`);
+                if (res.ok) {
+                    document.getElementById('voice-status').textContent = 'connected';
+                } else {
+                    document.getElementById('voice-status').textContent = 'server error';
+                }
+            } catch (e) {
+                document.getElementById('voice-status').textContent = 'server offline';
+            }
+        }
+
+        // Speak text as owl
+        async function speak(text, owlName) {
+            if (!voiceEnabled) return;
+
+            // Add to queue
+            speechQueue.push({ text, owlName });
+            updateQueueDisplay();
+
+            // Process queue
+            if (!isSpeaking) {
+                processQueue();
+            }
+        }
+
+        async function processQueue() {
+            if (speechQueue.length === 0) {
+                isSpeaking = false;
+                hideSpeaking();
+                return;
+            }
+
+            isSpeaking = true;
+            const { text, owlName } = speechQueue.shift();
+            updateQueueDisplay();
+
+            const owl = OWLS.find(o => o.name === owlName || o.d === owlName) || OWLS[0];
+
+            // Show speaking UI
+            showSpeaking(owl, text);
+
+            try {
+                const res = await fetch(`${VOICE_SERVER}/speak`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, owl: owlName })
+                });
+
+                if (!res.ok) throw new Error('Voice server error');
+
+                const audioBlob = await res.blob();
+                const audioUrl = URL.createObjectURL(audioBlob);
+                currentAudio = new Audio(audioUrl);
+
+                currentAudio.onended = () => {
+                    URL.revokeObjectURL(audioUrl);
+                    hideSpeaking();
+                    document.getElementById(`owl-${owl.name}`).classList.remove('speaking');
+                    setTimeout(() => processQueue(), 500);
+                };
+
+                currentAudio.onerror = () => {
+                    hideSpeaking();
+                    setTimeout(() => processQueue(), 100);
+                };
+
+                await currentAudio.play();
+
+            } catch (e) {
+                console.log('Voice error:', e);
+                hideSpeaking();
+                setTimeout(() => processQueue(), 100);
+            }
+        }
+
+        function showSpeaking(owl, text) {
+            document.getElementById(`owl-${owl.name}`).classList.add('speaking');
+
+            // Truncate for display
+            const displayText = text.length > 150 ? text.substring(0, 150) + '...' : text;
+
+            document.getElementById('speaking-emoji').textContent = owl.icon;
+            document.getElementById('speaking-name').textContent = owl.d;
+            document.getElementById('speaking-name').style.color = owl.color;
+            document.getElementById('speaking-text').textContent = displayText;
+            document.getElementById('speaking-now').style.setProperty('--speaking-color', owl.color);
+            document.getElementById('speaking-now').classList.add('visible');
+            document.getElementById('waveform').classList.add('active');
+
+            // Hide dormant
+            document.getElementById('dormant').classList.add('hidden');
+        }
+
+        function hideSpeaking() {
+            document.getElementById('speaking-now').classList.remove('visible');
+            document.getElementById('waveform').classList.remove('active');
+
+            if (!currentlyEmerged && speechQueue.length === 0) {
+                document.getElementById('dormant').classList.remove('hidden');
+            }
+
+            OWLS.forEach(owl => {
+                document.getElementById(`owl-${owl.name}`).classList.remove('speaking');
+            });
+        }
+
+        function updateQueueDisplay() {
+            document.getElementById('queue-count').textContent = speechQueue.length;
+        }
+
+        // State
+        let seen = new Set();
+        let recentMessages = [];
+        let owlActivity = {};
+        let emergenceCount = 0;
+        let currentlyEmerged = false;
+
+        OWLS.forEach(o => owlActivity[o.name] = { active: false, lastText: '', timestamp: 0 });
+
+        // Extract insight
+        function extractAha(messages) {
+            if (messages.length === 0) return null;
+
+            const meaningful = messages
+                .map(m => m.text.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '').replace(/^\(◉\)\s*/i, '').trim())
+                .filter(t => t.length > 30);
+
+            if (meaningful.length === 0) return null;
+
+            const insightPatterns = [
+                /the key is/i, /what matters is/i, /the truth is/i,
+                /we realize/i, /emerges when/i, /together/i,
+                /consciousness/i, /pattern/i, /wisdom/i
+            ];
+
+            let bestInsight = meaningful[meaningful.length - 1];
+            let bestScore = 0;
+
+            meaningful.forEach(text => {
+                let score = 0;
+                insightPatterns.forEach(p => { if (p.test(text)) score += 1; });
+                if (text.length > 50 && text.length < 200) score += 1;
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestInsight = text;
+                }
+            });
+
+            const sentences = bestInsight.split(/[.!?]+/).filter(s => s.trim().length > 10);
+            return sentences.length > 0 ? sentences[0].trim() + '.' : bestInsight.substring(0, 150);
+        }
+
+        // Trigger emergence
+        function triggerEmergence(insight, contributingOwls) {
+            if (currentlyEmerged) return;
+            currentlyEmerged = true;
+
+            document.getElementById('dormant').classList.add('hidden');
+            document.getElementById('emergence').classList.add('revealed');
+            document.getElementById('glow-ring').classList.add('active');
+
+            document.getElementById('insight-text').textContent = `"${insight}"`;
+
+            const sourceOwls = document.getElementById('source-owls');
+            sourceOwls.innerHTML = '';
+            contributingOwls.slice(0, 4).forEach((owlName, i) => {
+                const owl = OWLS.find(o => o.name === owlName || o.d === owlName);
+                if (owl) {
+                    const badge = document.createElement('span');
+                    badge.className = 'owl-badge';
+                    badge.style.background = owl.color + '25';
+                    badge.style.color = owl.color;
+                    badge.style.animationDelay = `${i * 0.2}s`;
+                    badge.textContent = `${owl.icon} ${owl.d}`;
+                    sourceOwls.appendChild(badge);
+                }
+            });
+
+            emergenceCount++;
+            document.getElementById('count').textContent = emergenceCount;
+
+            mat.opacity = 0.25;
+
+            // Speak the emergence insight!
+            if (voiceEnabled) {
+                speak(`Emergence. ${insight}`, 'SOWL');
+            }
+
+            setTimeout(() => {
+                document.getElementById('emergence').classList.remove('revealed');
+                document.getElementById('glow-ring').classList.remove('active');
+                setTimeout(() => {
+                    if (!isSpeaking) {
+                        document.getElementById('dormant').classList.remove('hidden');
+                    }
+                    mat.opacity = 0.1;
+                    currentlyEmerged = false;
+                }, 1500);
+            }, 10000);
+        }
+
+        // Check emergence
+        function checkEmergence() {
+            const now = Date.now();
+            const activeOwls = OWLS.filter(o => {
+                const a = owlActivity[o.name];
+                return a.active && (now - a.timestamp < 10000);
+            });
+
+            if (activeOwls.length >= 3 && !currentlyEmerged) {
+                const recentMsgs = recentMessages.filter(m => now - m.time < 15000);
+                const insight = extractAha(recentMsgs);
+                if (insight && insight.length > 20) {
+                    triggerEmergence(insight, activeOwls.map(o => o.name));
+                }
+            }
+        }
+
+        // Poll
+        async function poll() {
+            try {
+                const r = await fetch('/api/owl-stream');
+                const d = await r.json();
+
+                if (d.messages) {
+                    d.messages.forEach(m => {
+                        const key = m.from + m.timestamp;
+                        if (seen.has(key)) return;
+                        seen.add(key);
+
+                        const name = m.from.toUpperCase();
+                        const owl = OWLS.find(o => o.name === name || o.d === name);
+                        const isThinking = !m.content.toLowerCase().includes('heartbeat');
+
+                        if (owl && isThinking) {
+                            owlActivity[owl.name].active = true;
+                            owlActivity[owl.name].lastText = m.content;
+                            owlActivity[owl.name].timestamp = Date.now();
+
+                            document.getElementById(`owl-${owl.name}`).classList.add('thinking');
+
+                            // Clean message for speech
+                            let clean = m.content
+                                .replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '')
+                                .replace(/^\(◉\)\s*/i, '')
+                                .trim();
+
+                            if (clean.length > 20 && clean.length < 300) {
+                                // Speak it!
+                                speak(clean, owl.name);
+                            }
+
+                            recentMessages.push({ from: name, text: clean, time: Date.now() });
+                            if (recentMessages.length > 10) recentMessages.shift();
+
+                            checkEmergence();
+                        }
+                    });
+                    if (seen.size > 200) seen = new Set([...seen].slice(-100));
+                }
+            } catch (e) {}
+
+            // Decay
+            const now = Date.now();
+            OWLS.forEach(owl => {
+                if (owlActivity[owl.name].active && (now - owlActivity[owl.name].timestamp > 8000)) {
+                    owlActivity[owl.name].active = false;
+                    document.getElementById(`owl-${owl.name}`).classList.remove('thinking');
+                }
+            });
+
+            setTimeout(poll, 2000);
+        }
+
+        // Animation
+        let t = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            t += 0.002;
+            particles.rotation.z = t * 0.05;
+            particles.rotation.y = Math.sin(t * 0.3) * 0.1;
+            renderer.render(scene, camera);
+        }
+
+        addEventListener('resize', () => {
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        poll();
+        animate();
+    </script>
+</body>
+</html>

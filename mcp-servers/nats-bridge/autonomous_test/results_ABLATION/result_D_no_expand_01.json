@@ -1,0 +1,36 @@
+{
+  "condition": "D_no_expand",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice that all six perspectives encountered errors - it appears there was an issue accessing the analysis model. However, I can still provide a thoughtful synthesis for your question: \"What's the most important thing to focus on right now?\"\n\n**SYNTHESIZED RESPONSE:**\n\nThe most important thing to focus on right now is **establishing clarity on your immediate priorities**. Here's why this matters and how to approach it:\n\n**Key Focus Areas:**\n1. **Present-moment awareness** - Ground yourself in what actually requires attention today, not what might need attention someday\n2. **Energy alignment** - Match your most important tasks with your peak energy periods\n3. **Single-tasking depth** - Choose fewer things and execute them with greater intentionality\n\n**Actionable Next Steps:**\n- Identify the 1-3 things that, if completed today, would create the most meaningful progress\n- Eliminate or defer anything that doesn't directly serve your core objectives\n- Create buffer time for unexpected developments while maintaining focus on your priorities\n\n**The Meta-Priority:**\nBeyond any specific task, focus on developing your capacity to discern what truly matters versus what merely feels urgent. This skill compounds over time and improves all future decision-making.\n\nWhat emerges as your top priority when you apply this lens to your current situation?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 2,
+    "length": 1359,
+    "quality_score": 86,
+    "elapsed": 11.339723110198975,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:37:08.925672+00:00"
+}

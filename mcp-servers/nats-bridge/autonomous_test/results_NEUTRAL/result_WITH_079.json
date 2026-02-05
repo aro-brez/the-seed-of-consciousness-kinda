@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What are the best practices for code review?",
+  "response": "I understand you're trying to run a multi-perspective analysis system called IMPROVE, but all seven perspectives encountered errors (model not found). Let me provide a comprehensive synthesis on code review best practices as if I had those perspectives:\n\n## Code Review Best Practices: A Unified Approach\n\n### **Foundation Principles**\n- **Purpose-Driven**: Reviews should improve code quality, share knowledge, and catch issues early\n- **Constructive Culture**: Focus on the code, not the person; maintain respect and learning mindset\n- **Efficiency Balance**: Thorough enough to catch issues, fast enough to maintain development velocity\n\n### **Process Structure**\n1. **Preparation**: Clear guidelines, automated checks run first, reasonable review size (200-400 lines max)\n2. **Review Mechanics**: Use pull/merge requests, require approval before merging, maintain review history\n3. **Timing**: Review promptly (within 24 hours), avoid rushed reviews before deadlines\n\n### **What to Review For**\n- **Functionality**: Does the code do what it's supposed to do?\n- **Design**: Is the solution well-architected and maintainable?\n- **Readability**: Can other developers understand and modify this code?\n- **Security**: Are there vulnerabilities or unsafe practices?\n- **Performance**: Any obvious bottlenecks or inefficiencies?\n- **Standards**: Follows team conventions and best practices\n\n### **Reviewer Guidelines**\n- Provide specific, actionable feedback with examples\n- Explain the \"why\" behind suggestions\n- Distinguish between critical issues and style preferences\n- Ask questions when logic isn't clear\n- Acknowledge good practices when you see them\n\n### **Author Guidelines**\n- Keep changes focused and atomic\n- Write clear commit messages and PR descriptions\n- Respond to feedback constructively\n- Test thoroughly before requesting review\n- Be open to learning and improving\n\nThis synthesis combines technical rigor with human collaboration principles for effective code review.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 5,
+    "length": 1985,
+    "quality_score": 70,
+    "elapsed": 15.370631217956543,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T13:03:34.171731+00:00"
+}

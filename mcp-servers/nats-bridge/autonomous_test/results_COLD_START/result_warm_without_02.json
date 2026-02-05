@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "without",
+  "run": 2,
+  "prompt": "Is our current strategy working?",
+  "response": "Based on what you've shared, your strategy shows promising early signs but needs refinement:\n\n**What's working:**\n- You secured 100 beta users, which proves there's initial interest\n- You're tracking the right metrics (engagement, retention, NPS)\n- Your team size and capital are appropriate for this validation stage\n\n**What needs attention:**\n- You haven't shared the actual numbers for your key metrics, which makes it hard to assess true product-market fit\n- The features vs. marketing dilemma suggests you may not have clear data showing which lever drives better results\n\n**To determine if your strategy is truly working, you need:**\n\n1. **Benchmark your metrics**: What are your current engagement/retention rates? Industry benchmarks for companion apps typically see 20-30% Day 7 retention and 40%+ weekly active usage.\n\n2. **Analyze user behavior**: Are people using core features repeatedly? What's driving the most engagement?\n\n3. **Test your PMF hypothesis**: Can you identify a clear user segment that finds your app genuinely valuable (not just novel)?\n\nMy recommendation: Spend 2 weeks diving deep into your existing user data before deciding on features vs. marketing. If engagement is strong but retention is weak, focus on features. If retention is good but growth is stalling, lean toward marketing.\n\nWhat are your actual engagement and retention numbers looking like?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1387,
+    "quality_score": 45,
+    "elapsed": 9.742777109146118,
+    "prompt": "Is our current strategy working?",
+    "run": 1,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:32:34.688244+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 99,
+  "condition": "A",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "Several key factors help people make better decisions under pressure:\n\n**Mental preparation:**\n- Practicing scenarios beforehand so responses become more automatic\n- Developing clear decision-making frameworks to follow when stressed\n- Building experience in similar high-pressure situations\n\n**Stress management:**\n- Taking slow, deep breaths to activate the parasympathetic nervous system\n- Using brief mindfulness techniques to center attention\n- Recognizing physical stress signals and actively countering them\n\n**Cognitive strategies:**\n- Breaking complex decisions into smaller, manageable parts\n- Focusing on the most critical information and ignoring distractions\n- Setting clear priorities beforehand so you know what matters most\n- Using time limits appropriately - sometimes a quick decision is better than a perfect one\n\n**Environmental factors:**\n- Having trusted advisors or team members to consult when possible\n- Creating checklists or protocols for common pressure situations\n- Reducing unnecessary external stressors in the environment\n\n**Physical preparation:**\n- Maintaining good sleep, nutrition, and fitness to support cognitive function\n- Staying hydrated and managing energy levels\n- Taking brief pauses when possible to reset mentally\n\nThe most effective approach often combines several of these elements, particularly mental preparation and stress management techniques that can be quickly deployed when pressure mounts.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1446,
+    "quality_score": 40,
+    "elapsed": 7.831484794616699,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:46:51.896536+00:00"
+}

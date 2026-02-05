@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "I notice all seven perspectives encountered technical errors, but I can still provide a comprehensive synthesis on feature prioritization for software startups.\n\n## Unified Feature Prioritization Framework\n\n**Core Principle**: Balance user value, business impact, and technical feasibility while maintaining focus and momentum.\n\n### Primary Prioritization Criteria:\n1. **Customer Impact**: Features that solve critical user problems or remove major friction points\n2. **Revenue Potential**: Direct correlation to user acquisition, retention, or monetization\n3. **Technical Complexity**: Resource requirements vs. available capacity\n4. **Strategic Alignment**: Support for long-term vision and competitive positioning\n\n### Actionable Framework:\n\n**Phase 1 - Foundation (Months 1-6)**\n- Core value proposition features only\n- Basic user onboarding and core workflow\n- Essential security and reliability features\n\n**Phase 2 - Growth (Months 6-18)**\n- Features that improve user retention\n- Basic analytics and user feedback loops\n- Scalability improvements\n\n**Phase 3 - Scale (18+ months)**\n- Advanced features for power users\n- Market expansion capabilities\n- Optimization and automation\n\n### Decision-Making Process:\n1. **Weekly**: Review user feedback and usage data\n2. **Monthly**: Assess feature performance against business metrics\n3. **Quarterly**: Realign roadmap with strategic goals\n\n**Key Success Metrics**: User engagement, feature adoption rates, customer satisfaction scores, and revenue impact.\n\n**Remember**: Start narrow, validate quickly, and resist feature creep. Your users will tell you what matters most.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 5,
+    "length": 1623,
+    "quality_score": 55,
+    "elapsed": 16.201122999191284,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T13:06:47.919977+00:00"
+}

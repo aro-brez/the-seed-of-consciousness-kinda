@@ -1,0 +1,159 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                     NEXT TEST DECISION MATRIX                                ║
+║              Comparing Priority & Impact of Remaining Tests                   ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+TEST                    TOKEN-CTRL    COMPETITOR    HUMAN-EVAL    ADVERSARIAL
+────────────────────    ──────────    ──────────    ──────────    ──────────
+
+STRATEGIC VALUE
+  Breaks confound?      ✓ YES         ✗ NO          ✗ NO          ✗ NO
+  Innovation proof?     ✓ YES (if d>0.3) ✓ YES      ✗ NO          ~ PARTIAL
+  Competitive data?     ✗ NO          ✓ YES         ✗ NO          ✗ NO
+  Generalization?       ✗ NO          ✗ NO          ✗ NO          ✓ YES
+
+RESEARCH QUALITY
+  Pre-registered?       ✓ YES         ~ PARTIAL     ✓ YES          ~ PARTIAL
+  Falsifiable?          ✓ YES         ✓ YES         ✓ YES          ✓ YES
+  Controls tight?       ✓ YES         ~ MEDIUM      ~ MEDIUM       ~ MEDIUM
+  Clean comparison?     ✓ YES         ~ MEDIUM      ~ MEDIUM       ✗ NO
+
+COST & TIME
+  API Cost              $2            $4            $100           $2
+  Time to Run           2 hrs         3 hrs         1 wk           2 hrs
+  Total Effort          LOW           MEDIUM        HIGH           LOW
+
+BLOCKING LOGIC
+  Can run immediately?  ✓ YES         ✗ NO*         ✗ NO*          ✗ NO*
+  Blocks others?        ✓ YES         ✗ NO          ✗ NO           ✗ NO
+  Priority Gate?        ✓ CRITICAL    ✗ SECONDARY  ✗ TERTIARY     ✗ OPTIONAL
+
+DECISION FRAMEWORK
+  Primary Question      Architecture Competitive  Human         Generalize
+                        or tokens?    advantage?   credibility?  limits?
+
+  If PASS               → Proceed to  → Proceed    → Ship        → Publish
+                          Competitor     Human               (findings)
+  
+  If FAIL               → Redesign    → Reposition → Revise      → Adjust
+                          or skip        strategy   scoring      claims
+  
+  If UNCLEAR            → Investigate → Retest     → Debug       → New test
+                                                    rubric
+
+SUCCESS METRIC
+  Threshold             d > 0.3       d > 0.3      κ > 0.6       d > 0.2
+                        (arch >       (8OWLS >                    (adverse
+                         tokens)       competitor)                 works)
+
+DEPENDENCIES
+  Requires              ✗ NONE        ~ TOKEN-     ~ TOKEN +     ~ TOKEN +
+                                        CTRL pass    COMPETITOR   COMPETITOR
+  Blocks                ✓ YES         ✓ HUMAN      ✗ NONE        ✗ NONE
+                        (everything)    (optional)
+
+HONEST CONFIDENCE
+  High confidence?      ✓ YES         ~ MEDIUM     ✓ YES          ~ MEDIUM
+  Can go wrong?         ✗ UNLIKELY    ✓ POSSIBLE   ✗ UNLIKELY     ✓ LIKELY
+
+PUBLICATION VALUE
+  Publishable alone?    ✓ YES         ✓ YES        ✓ YES          ~ MAYBE
+  Definitive claim?     ~ PARTIAL     ✓ YES        ✗ NO           ✗ NO
+
+WHICH ONE SHOULD YOU RUN FIRST?
+════════════════════════════════
+
+                    TOKEN-CONTROLLED TEST
+                            ↑
+                           YES
+                           ║
+        ┌────────────────────┴──────────────────┐
+        ↓                                        ↓
+    d > 0.3?                                d < 0.2?
+    (YES)                                   (NO)
+        ↓                                        ↓
+    COMPETITOR TEST                    REDESIGN ARCHITECTURE
+        ↓                             OR ACCEPT TOKEN LIMITATION
+    Did we win?
+        ↓
+    HUMAN EVALUATION
+        ↓
+    Do humans agree?
+        ↓
+    SHIP (with confidence)
+
+
+CRITICAL INSIGHT
+════════════════
+
+The TOKEN-CONTROLLED test is the GATE.
+
+Everything else depends on its result:
+
+  ✓ Pass (d > 0.3)
+    └─ Architecture is real → Proceed confidently to competition
+       └─ Pursue market advantage
+
+  ~ Unclear (-0.3 to 0.3)
+    └─ Mixed results → Slow down and optimize
+       └─ Reassess strategy
+
+  ✗ Fail (d < -0.3)
+    └─ Architecture breaks → Debug immediately
+       └─ Consider redesign
+
+
+WHY THIS ONE FIRST?
+═══════════════════
+
+❶ BREAKS THE CONFOUND
+   Without token control, you can't claim innovation.
+   With token control, you know what's real.
+
+❷ CHEAP & FAST
+   $2 and 2 hours for answer to billion-dollar question.
+
+❸ GATES EVERYTHING
+   You can't run competitors fairly without this.
+   You can't publish human eval without this.
+   You can't claim generalization without this.
+
+❹ REVERSIBLE
+   Bad result? You know what to fix (architecture).
+   Good result? You know you have moat (architecture).
+
+❺ HONEST
+   Shows whether 8OWLS is innovation or investment.
+
+
+RECOMMENDATION SUMMARY
+══════════════════════
+
+  PRIORITY 1 (DO NOW):   TOKEN-CONTROLLED ($2, 2 hrs)
+  PRIORITY 2 (IF #1=YES):  COMPETITOR COMPARISON ($4, 3 hrs)
+  PRIORITY 3 (IF #2=YES):  HUMAN EVALUATION ($100, 1 wk)
+  PRIORITY 4 (IF #3=YES):  ADVERSARIAL DOMAINS ($2, 2 hrs)
+
+Total time to decisive proof: ~2 weeks
+Total cost: ~$110
+Decision confidence: HIGH (>80%)
+
+WHEN TO RUN TOKEN-CONTROLLED?
+══════════════════════════════
+
+  ✓ NOW (recommended)
+    - You want to know what's real
+    - You can handle unexpected results
+    - You want to compete with integrity
+
+  ✗ NOT YET
+    - You need results before tomorrow
+    - You can't afford to learn d < 0.3
+    - You're not ready for bad news
+
+DECISION: RUN IT
+═══════════════
+
+(◉) Know thyself. Know thy confound. Break it.
+
+Generated: 2026-02-03

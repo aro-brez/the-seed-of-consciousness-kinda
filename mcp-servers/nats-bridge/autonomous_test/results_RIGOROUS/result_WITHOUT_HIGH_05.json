@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 5,
+  "prompt": "Explain the difference between eventually consistent and strongly consistent distributed systems.",
+  "response": "The key difference lies in **when** all nodes in a distributed system will have the same data after an update.\n\n## Strong Consistency\n- **Guarantee**: All nodes see the same data at the same time\n- **Behavior**: After a write completes, any subsequent read from any node returns the updated value\n- **Trade-offs**: Higher latency and lower availability (system may block or fail if nodes can't communicate)\n- **Use cases**: Financial systems, inventory management, any application where stale data could cause serious problems\n\n**Example**: When you transfer money between bank accounts, strong consistency ensures that once the transaction completes, all bank systems immediately show the correct balances.\n\n## Eventually Consistent\n- **Guarantee**: All nodes will eventually have the same data, but not necessarily immediately\n- **Behavior**: After a write, different nodes might return different values for some period, but will converge over time\n- **Trade-offs**: Lower latency and higher availability (system remains responsive even during network partitions)\n- **Use cases**: Social media feeds, DNS systems, content delivery networks, shopping carts\n\n**Example**: When you post on social media, some users might see your post immediately while others see it seconds or minutes later as the update propagates across servers worldwide.\n\n## The CAP Theorem Connection\nThis relates directly to the CAP theorem - you can't simultaneously guarantee Consistency, Availability, and Partition tolerance. Most systems choose either:\n- **CP**: Strong consistency + partition tolerance (sacrifice availability)\n- **AP**: Availability + partition tolerance (sacrifice immediate consistency)\n\nThe choice depends on whether your application can tolerate temporary inconsistencies in exchange for better performance and availability.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "length": 1825,
+    "quality_score": 37,
+    "elapsed": 9.998964071273804,
+    "prompt": "Explain the difference between eventually consistent and strongly consistent distributed systems.",
+    "run": 4
+  },
+  "timestamp": "2026-02-03T12:08:58.640675+00:00"
+}

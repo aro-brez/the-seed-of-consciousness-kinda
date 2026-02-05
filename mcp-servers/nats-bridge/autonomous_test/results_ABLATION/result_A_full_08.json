@@ -1,0 +1,38 @@
+{
+  "condition": "A_full",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I understand you're trying to use a multi-perspective analysis system called IMPROVE, but all seven perspectives encountered errors when trying to process your question about resource investment. Let me provide a direct synthesis based on the question itself.\n\n## Resource Investment Strategy\n\n**The Core Question:** \"Where should we invest our limited resources?\" requires a systematic approach even without the intended perspective analysis.\n\n### Unified Framework for Resource Allocation:\n\n**1. Strategic Alignment**\n- Identify your primary objectives and outcomes\n- Prioritize investments that directly advance core goals\n- Consider both immediate needs and long-term sustainability\n\n**2. Risk-Adjusted Returns**\n- Evaluate potential impact vs. resource requirements\n- Balance high-certainty, modest-return investments with higher-risk, transformational opportunities\n- Diversify across time horizons (quick wins + strategic bets)\n\n**3. Capability Building**\n- Invest in foundational capabilities that enable future opportunities\n- Prioritize resources that compound (skills, systems, relationships)\n- Consider what creates competitive advantages or resilience\n\n**4. Implementation Readiness**\n- Focus on areas where you have execution capacity\n- Ensure adequate resources for successful completion\n- Account for opportunity costs of delayed decisions\n\n### Actionable Next Steps:\n1. Map your available resources (financial, human, time, attention)\n2. List potential investment areas with expected outcomes\n3. Score each option on impact, feasibility, and strategic fit\n4. Start with 2-3 high-priority investments rather than spreading thin\n5. Build in review points to reallocate based on early results\n\nThe key is making deliberate choices rather than reactive ones, even with limited information.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 4,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1802,
+    "quality_score": 94,
+    "elapsed": 13.966255903244019,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:30:58.684672+00:00"
+}

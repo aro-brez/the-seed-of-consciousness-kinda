@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I don't have context about what strategy you're referring to or what your goals are. To give you meaningful insights about potential gaps, I'd need to understand:\n\n- What type of strategy (business, marketing, product, personal, etc.)\n- Your current objectives\n- What you've tried so far\n- What challenges you're facing\n\nHowever, here are some common strategic blind spots I often see:\n\n**Typical gaps to consider:**\n- **Customer perspective**: Are you solving the right problem for the right people?\n- **Resource allocation**: Are you spreading efforts too thin vs. focusing on high-impact areas?\n- **Feedback loops**: Do you have systems to quickly learn what's working/not working?\n- **Competition/market shifts**: Are you accounting for how the landscape is changing?\n- **Internal capabilities**: Are there skill or capacity gaps limiting execution?\n- **Measurement**: Are you tracking the metrics that actually matter for your goals?\n\nCould you share more about your specific situation? I'd be happy to provide more targeted suggestions once I understand what you're working on.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 1,
+    "length": 1083,
+    "quality_score": 57,
+    "elapsed": 6.00457501411438,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:06:34.481991+00:00"
+}

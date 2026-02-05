@@ -1,0 +1,26 @@
+{
+  "trial_num": 124,
+  "condition": "A",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Several key principles make software architecture maintainable:\n\n## Clear Separation of Concerns\n- **Single Responsibility**: Each component handles one specific aspect of functionality\n- **Loose Coupling**: Components depend minimally on each other's internal details\n- **High Cohesion**: Related functionality is grouped together logically\n\n## Well-Defined Boundaries\n- **Layer Separation**: Clear distinction between presentation, business logic, and data layers\n- **Interface Contracts**: Explicit APIs that define how components interact\n- **Domain Boundaries**: Business concepts are properly encapsulated and separated\n\n## Consistency and Standards\n- **Coding Standards**: Uniform naming conventions, formatting, and patterns\n- **Architectural Patterns**: Consistent use of established patterns (MVC, microservices, etc.)\n- **Technology Stack**: Coherent choice of frameworks and tools\n\n## Documentation and Communication\n- **Architecture Documentation**: Up-to-date diagrams, decision records, and system overviews\n- **Code Documentation**: Clear comments explaining complex business logic and design decisions\n- **Knowledge Sharing**: Team understanding of architectural decisions and trade-offs\n\n## Testability and Observability\n- **Automated Testing**: Unit, integration, and end-to-end tests that verify behavior\n- **Monitoring**: Logging, metrics, and tracing to understand system behavior\n- **Error Handling**: Graceful failure modes and clear error messages\n\n## Flexibility for Change\n- **Modular Design**: Components can be modified or replaced independently\n- **Configuration Management**: External configuration for environment-specific settings\n- **Dependency Management**: Clear, minimal, and well-managed external dependencies\n\nThese principles work together to create systems that teams can understand, modify, and extend reliably over time.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1863,
+    "quality_score": 40,
+    "elapsed": 8.460023164749146,
+    "prompt": "What makes software architecture maintainable?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:54:27.491409+00:00"
+}

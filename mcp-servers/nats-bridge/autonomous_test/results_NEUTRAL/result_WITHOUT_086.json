@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a framework for prioritizing features in a software startup:\n\n## Core Prioritization Framework\n\n**Use a scoring system combining:**\n- **Customer Impact** (1-10): How many users benefit and how significantly\n- **Business Value** (1-10): Revenue potential, retention, competitive advantage\n- **Implementation Cost** (1-10, inverted): Technical complexity, time, resources needed\n\n## Key Principles\n\n1. **Solve core problems first** - Focus on features that address your primary value proposition\n2. **Follow user feedback patterns** - Track what users request most frequently and urgently\n3. **Consider your stage**:\n   - Early stage: Features that prove product-market fit\n   - Growth stage: Features that drive retention and expansion\n   - Scale stage: Features that improve efficiency and margins\n\n## Practical Steps\n\n1. **Categorize ruthlessly**:\n   - Must-have (core functionality)\n   - Should-have (clear user demand)\n   - Could-have (nice additions)\n   - Won't-have (this iteration)\n\n2. **Time-box decisions** - Set feature freeze dates and stick to them\n\n3. **Validate before building** - Use prototypes, user interviews, or beta tests\n\n4. **Monitor post-launch** - Track usage metrics to validate prioritization decisions\n\n## Red Flags to Avoid\n- Building features only leadership wants\n- Adding complexity without clear user demand\n- Competing on features rather than core value\n- Ignoring technical debt indefinitely\n\nStart with features that maximize learning about your users while delivering clear value.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 5,
+    "length": 1523,
+    "quality_score": 70,
+    "elapsed": 9.110156059265137,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T13:05:00.588203+00:00"
+}

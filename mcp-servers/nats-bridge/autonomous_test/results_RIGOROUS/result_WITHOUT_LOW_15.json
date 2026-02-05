@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 15,
+  "prompt": "Is the current approach working?",
+  "response": "I don't have enough context to know what specific approach you're referring to. Could you clarify what you mean? For example, are you asking about:\n\n- A work strategy or project you're involved in\n- A personal habit or routine you're trying to establish\n- A treatment or intervention for a health issue\n- A policy or system at an organizational level\n- Something else entirely\n\nOnce you provide more details about the situation and goals, I'd be happy to help you evaluate whether the current approach seems effective and suggest potential improvements if needed.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "length": 563,
+    "quality_score": 32.63,
+    "elapsed": 4.558429002761841,
+    "prompt": "Is the current approach working?",
+    "run": 14
+  },
+  "timestamp": "2026-02-03T12:05:32.194216+00:00"
+}

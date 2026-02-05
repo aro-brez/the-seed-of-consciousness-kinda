@@ -1174,14 +1174,31 @@
             speakWithWebSpeech(text, normalizedName);
         }
 
-        // Audio queue for sequential playback - one voice at a time
+        // UNIFIED AUDIO CONTROLLER - prevents ALL overlap
+        // One voice. One queue. No static.
+        let currentAudioElement = null;
         let audioQueue = [];
         let isPlaying = false;
+
+        function stopAllAudio() {
+            // Stop current HTML5 audio
+            if (currentAudioElement) {
+                currentAudioElement.pause();
+                currentAudioElement.src = '';
+                currentAudioElement = null;
+            }
+            // Stop Web Speech API
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+            }
+        }
 
         async function processAudioQueue() {
             if (isPlaying || audioQueue.length === 0) return;
 
             isPlaying = true;
+            stopAllAudio(); // CRITICAL: Clear any lingering audio first
+
             const { text, normalizedName } = audioQueue.shift();
 
             try {
@@ -1211,19 +1228,34 @@
             }
 
             const audioBlob = await response.blob();
+
+            // Validate audio blob - reject if too small (might be error/static)
+            if (audioBlob.size < 1000) {
+                console.warn('Audio too small, likely invalid:', audioBlob.size);
+                throw new Error('Audio blob too small');
+            }
+
             const audioUrl = URL.createObjectURL(audioBlob);
             const audio = new Audio(audioUrl);
 
+            // Track for cleanup
+            currentAudioElement = audio;
+
             return new Promise((resolve, reject) => {
                 audio.onended = () => {
+                    currentAudioElement = null;
                     URL.revokeObjectURL(audioUrl);
                     resolve();
                 };
                 audio.onerror = () => {
+                    currentAudioElement = null;
                     URL.revokeObjectURL(audioUrl);
                     reject(new Error('Audio playback failed'));
                 };
-                audio.play().catch(reject);
+                audio.play().catch((e) => {
+                    currentAudioElement = null;
+                    reject(e);
+                });
             });
         }
 
@@ -1236,13 +1268,28 @@
             processAudioQueue();
         }
 
-        // Web Speech API fallback
+        // Web Speech API fallback - with unified queue to prevent overlap
+        let webSpeechQueue = [];
+        let webSpeechPlaying = false;
+
         function speakWithWebSpeech(text, normalizedName) {
             if (!('speechSynthesis' in window)) {
                 console.warn('Speech synthesis not supported');
                 return;
             }
 
+            // Queue instead of playing directly
+            webSpeechQueue.push({ text, normalizedName });
+            processWebSpeechQueue();
+        }
+
+        function processWebSpeechQueue() {
+            if (webSpeechPlaying || webSpeechQueue.length === 0) return;
+
+            webSpeechPlaying = true;
+            stopAllAudio(); // CRITICAL: Use unified controller to stop ALL audio
+
+            const { text, normalizedName } = webSpeechQueue.shift();
             const owlConfig = OWLS[normalizedName];
 
             const utterance = new SpeechSynthesisUtterance(text);
@@ -1254,7 +1301,7 @@
             }
 
             // Apply owl-specific pitch and rate from config
-            const voiceConfig = owlConfig.voice || {};
+            const voiceConfig = owlConfig?.voice || {};
             utterance.pitch = voiceConfig.pitch || 1.0;
             utterance.rate = voiceConfig.rate || 1.0;
 
@@ -1267,6 +1314,16 @@
                 pitch: utterance.pitch,
                 rate: utterance.rate
             });
+
+            utterance.onend = () => {
+                webSpeechPlaying = false;
+                processWebSpeechQueue(); // Process next in queue
+            };
+
+            utterance.onerror = () => {
+                webSpeechPlaying = false;
+                processWebSpeechQueue(); // Continue on error
+            };
 
             speechSynthesis.speak(utterance);
         }

@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Review Process\n- **Review small, focused changes** - Aim for 200-400 lines max per review\n- **Review frequently** - Don't let changes pile up\n- **Set clear expectations** - Define what reviewers should focus on\n- **Use checklists** - Ensure consistency across reviews\n\n## What to Review\n- **Functionality** - Does the code do what it's supposed to do?\n- **Logic and algorithms** - Are they correct and efficient?\n- **Code style and standards** - Follow team conventions\n- **Security vulnerabilities** - Look for common security issues\n- **Error handling** - Are edge cases and errors properly handled?\n- **Tests** - Are there adequate tests? Do they pass?\n- **Documentation** - Are complex parts well-documented?\n\n## Reviewer Guidelines\n- **Be constructive, not critical** - Focus on the code, not the person\n- **Explain the \"why\"** - Don't just point out issues, explain reasoning\n- **Suggest solutions** - Offer alternatives when possible\n- **Ask questions** - \"Could we simplify this?\" rather than \"This is too complex\"\n- **Acknowledge good code** - Positive feedback motivates\n\n## Author Guidelines\n- **Self-review first** - Review your own code before submitting\n- **Write clear descriptions** - Explain what changed and why\n- **Respond promptly** - Address feedback quickly\n- **Don't take it personally** - Reviews improve code quality\n- **Test thoroughly** - Ensure code works before review\n\n## Tools and Automation\n- Use automated linting and formatting tools\n- Implement CI/CD checks before human review\n- Choose review tools that fit your workflow (GitHub, GitLab, etc.)\n\nThe goal is catching bugs early, sharing knowledge, and maintaining code quality while keeping the process efficient and collaborative.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "length": 1781,
+    "quality_score": 55,
+    "elapsed": 10.058406114578247,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T13:01:07.784671+00:00"
+}

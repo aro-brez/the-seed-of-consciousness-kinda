@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What distinguishes meaningful work from busywork?",
+  "response": "Meaningful work creates genuine value and connects to larger purposes, while busywork fills time without producing real outcomes.\n\nKey distinctions:\n\n**Purpose and impact**\n- Meaningful work addresses real problems or needs\n- Busywork exists primarily to appear productive or fill requirements\n\n**Skill utilization**\n- Meaningful work engages your abilities and often stretches them\n- Busywork typically involves routine tasks that underuse your capabilities\n\n**Autonomy and decision-making**\n- Meaningful work gives you some control over how you approach problems\n- Busywork follows rigid procedures with little room for judgment\n\n**Clear outcomes**\n- Meaningful work has measurable results that matter to someone\n- Busywork's outcomes are often unclear or serve no real function\n\n**Connection to larger goals**\n- Meaningful work fits into a bigger picture you can understand\n- Busywork feels disconnected from any meaningful objective\n\n**Personal growth**\n- Meaningful work teaches you something or builds capabilities\n- Busywork leaves you unchanged\n\nThe same task can be either, depending on context. Filing paperwork is busywork if it's just following protocol, but meaningful if it directly enables important decisions or protects people's rights.\n\nThe key test: If the work disappeared tomorrow, would anyone actually be worse off?",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1338,
+    "quality_score": 45,
+    "elapsed": 8.557461977005005,
+    "prompt": "What distinguishes meaningful work from busywork?"
+  },
+  "timestamp": "2026-02-03T12:51:06.517994+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What distinguishes meaningful work from busywork?",
+  "response": "Meaningful work has several key distinguishing characteristics:\n\n**Purpose and Impact**\n- Creates tangible value for others or advances important goals\n- Has clear connections to outcomes that matter\n- Solves real problems rather than artificial ones\n\n**Skill Development**\n- Challenges your abilities and promotes growth\n- Builds transferable knowledge and capabilities\n- Requires judgment, creativity, or expertise\n\n**Autonomy and Ownership**\n- Gives you some control over how tasks are completed\n- Allows for personal input and decision-making\n- Makes you accountable for meaningful results\n\n**Strategic Alignment**\n- Connects to larger organizational or personal objectives\n- Contributes to priorities that actually matter\n- Moves important initiatives forward\n\nBusywork, by contrast, tends to be:\n- Activity for activity's sake\n- Repetitive tasks that don't build skills\n- Work that could be eliminated without real consequence\n- Assignments that feel disconnected from any larger purpose\n\nThe same task can feel meaningful or like busywork depending on context. Filing reports feels meaningful when it enables important decisions; it feels like busywork when it's done \"because we've always done it\" with no clear beneficiary.\n\nThe key test: If you disappeared tomorrow, would anyone actually miss the specific value you were creating, or just the fact that tasks were getting checked off?",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1395,
+    "quality_score": 40,
+    "elapsed": 8.727649927139282,
+    "prompt": "What distinguishes meaningful work from busywork?"
+  },
+  "timestamp": "2026-02-03T12:54:19.309138+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 7,
+  "prompt": "Is the current approach working?",
+  "response": "I don't have enough context to know what specific approach you're referring to. Could you clarify what you're asking about? For example:\n\n- A work project or strategy you're implementing?\n- A personal habit or routine you're trying to establish?\n- A broader policy or system you're observing?\n- A problem-solving method you're using?\n\nOnce you provide more details about the situation and approach in question, I can help you evaluate whether it's working and suggest ways to assess or improve it.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "length": 497,
+    "quality_score": 35.97,
+    "elapsed": 4.182485818862915,
+    "prompt": "Is the current approach working?",
+    "run": 6
+  },
+  "timestamp": "2026-02-03T12:00:59.372874+00:00"
+}

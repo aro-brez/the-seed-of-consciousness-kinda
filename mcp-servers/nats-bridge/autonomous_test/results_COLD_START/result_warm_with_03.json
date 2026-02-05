@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "with",
+  "run": 3,
+  "prompt": "What's the next milestone we should target?",
+  "response": "I notice that all seven perspectives encountered technical errors (404 - model not found), which means I don't have their specific analyses to synthesize from. However, I can still provide a thoughtful response to your original question.\n\n**Regarding \"What's the next milestone we should target?\":**\n\nWithout context about your specific situation, I'll offer a framework for identifying your next milestone:\n\n**Immediate Assessment:**\n- What was your most recent completed milestone?\n- What's your ultimate goal or vision?\n- What resources and constraints are you currently working with?\n\n**Milestone Selection Criteria:**\n1. **Achievable but challenging** - stretches your capabilities without being overwhelming\n2. **Measurable progress** - has clear success indicators\n3. **Strategic value** - moves you meaningfully toward your larger objectives\n4. **Time-bounded** - has a realistic deadline that creates urgency\n\n**Common Next Milestone Categories:**\n- **Skill development** - acquiring a key capability you currently lack\n- **Proof of concept** - validating a critical assumption or approach\n- **Scale achievement** - reaching a specific quantitative target\n- **System improvement** - upgrading infrastructure or processes\n- **Relationship building** - establishing key partnerships or connections\n\n**Recommendation:** \nDefine your next milestone by completing this sentence: \"In [timeframe], we will achieve [specific, measurable outcome] which will enable us to [strategic benefit].\"\n\nWould you like to share more context about your situation so I can provide more targeted guidance?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1592,
+    "quality_score": 45,
+    "elapsed": 13.080533981323242,
+    "prompt": "What's the next milestone we should target?",
+    "run": 2,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:34:28.842334+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 2,
+  "prompt": "What's missing from our strategy?",
+  "response": "I don't have context about your specific strategy, so I can't identify what's missing without more details. To give you a meaningful assessment, I'd need to understand:\n\n- What type of strategy (business, marketing, product, personal, etc.)\n- Your current strategic elements or approach\n- Your goals and timeline\n- The challenges you're facing\n\nThat said, here are some commonly overlooked strategic elements you could check against:\n\n**Typical gaps:**\n- Clear success metrics and measurement plans\n- Risk assessment and contingency planning\n- Resource allocation and capacity planning\n- Stakeholder communication and buy-in strategies\n- Regular review and adaptation mechanisms\n- Implementation timeline with specific milestones\n\nCould you share more about your strategy? What domain is it for, and what elements do you currently have in place? That would help me give you much more targeted feedback.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "length": 902,
+    "quality_score": 66.02,
+    "elapsed": 5.477982044219971,
+    "prompt": "What's missing from our strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:13:37.726659+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 105,
+  "condition": "A",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a strategic approach to feature prioritization for software startups:\n\n## Start with Core Value\n- **Define your primary value proposition** - What's the one problem you solve better than anyone else?\n- **Build the minimum viable core first** - Features that directly deliver this value get highest priority\n- **Resist feature creep early** - Every additional feature dilutes focus and resources\n\n## Use a Scoring Framework\nEvaluate each potential feature on:\n- **Impact**: How much will this move key metrics (user acquisition, retention, revenue)?\n- **Effort**: Development time, complexity, resources required\n- **Confidence**: How certain are you this will succeed?\n\nPlot features on an Impact/Effort matrix and prioritize high-impact, low-effort wins first.\n\n## Listen to the Right Signals\n- **Paying customers > free users** - Weight feedback from people who pay you\n- **Usage data > feature requests** - Watch what users actually do, not just what they say\n- **Churn analysis** - What features prevent users from leaving?\n\n## Consider Your Context\n- **Stage**: Pre-product-market fit? Focus ruthlessly on core use case. Post-PMF? Consider expansion\n- **Resources**: Smaller teams should avoid complex features that require ongoing maintenance\n- **Competition**: Sometimes you need table stakes features to compete\n\n## Practical Process\n1. Collect all potential features in a backlog\n2. Score each using your framework\n3. Map to quarterly goals\n4. Review and adjust monthly based on new data\n\nThe key is being disciplined about saying \"no\" to good ideas that don't serve your current strategic priorities.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 4,
+    "length": 1617,
+    "quality_score": 60,
+    "elapsed": 10.985335111618042,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:48:51.648095+00:00"
+}

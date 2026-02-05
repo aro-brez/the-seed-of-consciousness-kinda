@@ -1,0 +1,20 @@
+{
+  "condition": "D_garbage",
+  "run": 6,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice that all seven perspective analyses encountered technical errors (404 model not found), so I don't have their specific insights to synthesize. However, I can address your fundamental question about resource allocation directly.\n\n**Unified Response: Strategic Resource Investment Framework**\n\nWhen facing limited resources, invest based on this hierarchy:\n\n**1. Foundation First**\n- Secure basic operational stability\n- Maintain core capabilities that generate your primary value\n- Ensure you can survive short-term disruptions\n\n**2. Highest ROI Opportunities**\n- Identify initiatives with measurable, near-term returns\n- Focus on improvements to existing successful processes\n- Prioritize solutions to your most expensive current problems\n\n**3. Strategic Growth**\n- Invest in capabilities that compound over time\n- Develop advantages that are hard for competitors to replicate\n- Build systems that can scale without proportional resource increases\n\n**4. Risk Mitigation**\n- Diversify critical dependencies\n- Create backup plans for essential functions\n- Maintain enough flexibility to pivot when needed\n\n**Actionable Framework:**\n1. List all potential investments\n2. Score each on: urgency, potential impact, resource requirements, and strategic alignment\n3. Start with the highest-scoring options that you can afford\n4. Set clear success metrics and timeline checkpoints\n5. Be prepared to reallocate based on early results\n\nThe key is balancing immediate needs with future opportunities while maintaining the flexibility to adapt as circumstances change.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1564,
+    "quality_score": 86,
+    "elapsed": 12.809702157974243,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:35:56.521797+00:00"
+}

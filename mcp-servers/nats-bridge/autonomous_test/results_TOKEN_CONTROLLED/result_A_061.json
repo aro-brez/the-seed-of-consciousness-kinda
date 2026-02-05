@@ -1,0 +1,26 @@
+{
+  "trial_num": 61,
+  "condition": "A",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "Here are key ways to build trust with new colleagues:\n\n**Be reliable and consistent**\n- Follow through on commitments, even small ones\n- Meet deadlines and communicate proactively if you can't\n- Show up prepared for meetings and conversations\n\n**Demonstrate competence gradually**\n- Focus on doing your assigned work well before taking on extra\n- Ask thoughtful questions that show you're engaged\n- Admit when you don't know something rather than guessing\n\n**Show genuine interest in others**\n- Learn colleagues' names, roles, and working styles\n- Ask about their projects and challenges (without being intrusive)\n- Listen actively and remember what people tell you\n\n**Be transparent in your communication**\n- Share relevant information openly\n- Acknowledge mistakes quickly and focus on solutions\n- Be clear about your capabilities and bandwidth\n\n**Respect workplace culture and boundaries**\n- Observe how things work before suggesting changes\n- Honor existing relationships and processes\n- Match the communication style and formality level of your team\n\n**Offer help appropriately**\n- Look for small ways to be useful without overstepping\n- Share knowledge or resources when relevant\n- Support team goals even when tasks aren't directly yours\n\nTrust builds through consistent small actions over time, not grand gestures. Focus on being dependable, competent, and genuine in your daily interactions.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 0,
+    "length": 1400,
+    "quality_score": 55,
+    "elapsed": 8.464954853057861,
+    "prompt": "How do you build trust with new colleagues?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:33:06.409949+00:00"
+}

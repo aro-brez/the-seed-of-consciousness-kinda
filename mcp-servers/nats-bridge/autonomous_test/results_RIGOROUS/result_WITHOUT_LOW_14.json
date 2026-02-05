@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 14,
+  "prompt": "Is the current approach working?",
+  "response": "I don't have enough context to know what specific approach you're referring to. Could you clarify what situation, strategy, or method you're asking about?\n\nOnce you provide that context, I can help you evaluate whether it's working by looking at relevant metrics, outcomes, or indicators of success. I'm happy to help analyze the effectiveness of whatever approach you have in mind.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 382,
+    "quality_score": 18.82,
+    "elapsed": 3.6953370571136475,
+    "prompt": "Is the current approach working?",
+    "run": 13
+  },
+  "timestamp": "2026-02-03T12:05:02.336406+00:00"
+}

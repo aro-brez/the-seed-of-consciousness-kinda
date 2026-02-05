@@ -1,0 +1,36 @@
+{
+  "queued_at": "2026-02-04T14:45:00Z",
+  "queued_by": "SOWL_COMMANDER",
+  "trades": [
+    {
+      "action": "SELL",
+      "market": "Will Elon cut the budget by at least 10% in 2025?",
+      "market_id": "521963",
+      "side": "YES",
+      "current_position": 9.45,
+      "rationale": "8OWLS consensus: Elon left DOGE May 2025, Congress rejected cuts",
+      "status": "QUEUED_EXIT"
+    },
+    {
+      "action": "SELL",
+      "market": "Will Silver (SI) hit (HIGH) $190 by end of February?",
+      "market_id": "silver-190-feb",
+      "asset_id": "26353468699446210384371338481099149997689050810243094532174167606142416037080",
+      "side": "YES",
+      "current_position": 7000,
+      "current_value": 59.50,
+      "loss": -79.85,
+      "rationale": "COMMANDER DECISION: -57% loss, commodity extreme target ($190) unlikely to hit by Feb 28. Redeploy capital to validated BOND opportunities.",
+      "status": "QUEUED_EXIT",
+      "priority": "HIGH"
+    }
+  ],
+  "blocked_reason": "Cloudflare 403 on CLOB API post_order",
+  "next_steps": [
+    "ARŌ: Execute Silver exit via Polymarket web UI",
+    "Free up ~$60 for redeployment",
+    "Or wait for API access from different IP"
+  ],
+  "commander_note": "SØWL evaluated portfolio. Silver exit recommended. Meta ($20) expires tomorrow - not worth exit cost, let resolve. Patriots our first real trade - let it ride.",
+  "last_updated": "2026-02-04T14:45:00Z"
+}

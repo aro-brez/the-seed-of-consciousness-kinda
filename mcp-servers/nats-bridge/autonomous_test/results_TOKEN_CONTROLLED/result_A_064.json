@@ -1,0 +1,26 @@
+{
+  "trial_num": 64,
+  "condition": "A",
+  "prompt": "How do effective teams handle disagreements?",
+  "response": "Effective teams handle disagreements through several key practices:\n\n**Create psychological safety**\n- Establish that disagreement is welcome and expected\n- Focus on ideas, not personalities\n- Ensure everyone feels safe to voice dissenting opinions\n\n**Use structured discussion methods**\n- Give each person time to present their perspective fully\n- Ask clarifying questions before responding\n- Summarize different viewpoints to ensure understanding\n\n**Focus on shared goals**\n- Remind the team of common objectives\n- Frame disagreements as different paths to the same destination\n- Evaluate options based on how well they serve team goals\n\n**Gather evidence and data**\n- Move beyond opinions to examine facts\n- Test assumptions underlying different positions\n- Use objective criteria for decision-making when possible\n\n**Practice active listening**\n- Listen to understand, not to respond\n- Acknowledge valid points from all sides\n- Ask questions that help uncover underlying concerns\n\n**Establish clear decision-making processes**\n- Define who has final authority when consensus isn't reached\n- Set time limits for discussion to prevent endless debate\n- Use techniques like \"disagree and commit\" when needed\n\n**Follow up constructively**\n- Check in after implementing decisions\n- Learn from outcomes to improve future discussions\n- Address any lingering tensions privately if needed\n\nThe strongest teams view disagreement as a tool for better solutions, not a threat to team harmony.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1483,
+    "quality_score": 45,
+    "elapsed": 8.604209184646606,
+    "prompt": "How do effective teams handle disagreements?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:34:11.410415+00:00"
+}

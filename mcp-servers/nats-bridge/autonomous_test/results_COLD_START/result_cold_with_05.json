@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "with",
+  "run": 5,
+  "prompt": "What am I missing?",
+  "response": "I notice all seven perspective analysis modules failed due to a model availability error (claude-haiku-4-20250514 not found). This means I don't have their specific insights to synthesize from.\n\nHowever, regarding your original question \"What am I missing?\" - this is actually quite revealing in itself:\n\n**What you're missing right now:**\n- The intended multi-perspective analysis that should have provided seven different angles on your question\n- Specific context about what domain or situation you're asking about\n- A clear reference point for what \"complete\" would look like\n\n**Actionable synthesis:**\n1. **Reframe your question** - \"What am I missing?\" is too broad without context. Try: \"What am I missing in [specific situation/project/decision]?\"\n\n2. **Use the IMPROVE framework manually** - Even without the automated analysis, you can ask yourself:\n   - PERCEIVE: What facts am I not seeing?\n   - CONNECT: What relationships am I overlooking?\n   - LEARN: What knowledge gaps do I have?\n   - QUESTION: What assumptions am I not challenging?\n   - EXPAND: What possibilities am I not considering?\n   - SHARE: Whose input haven't I sought?\n   - RECEIVE: What feedback am I not hearing?\n\n3. **Specify your domain** - Are you missing something in work, relationships, a project, a decision, or personal growth?\n\nThe system failure itself suggests you might be missing: **clarity of context and backup planning when primary systems fail**.\n\nWhat specific area would you like to explore what you might be missing?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1516,
+    "quality_score": 62,
+    "elapsed": 13.424235105514526,
+    "prompt": "What am I missing?",
+    "run": 4,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:33:22.612739+00:00"
+}

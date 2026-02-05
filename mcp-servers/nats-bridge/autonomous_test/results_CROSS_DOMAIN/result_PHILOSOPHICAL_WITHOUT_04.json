@@ -1,0 +1,22 @@
+{
+  "domain": "PHILOSOPHICAL",
+  "condition": "WITHOUT",
+  "run": 4,
+  "prompt": "How should we make ethical decisions?",
+  "response": "Here are key principles for making ethical decisions:\n\n**Consider multiple perspectives:**\n- Think beyond your immediate interests to how decisions affect others\n- Ask whose voices might be missing from your consideration\n- Examine both short-term and long-term consequences\n\n**Apply ethical frameworks:**\n- **Consequences**: What outcomes will this produce? Will it reduce harm and increase wellbeing?\n- **Duties/rights**: Does this respect people's fundamental rights and dignity?\n- **Character**: What would a person of good character do? What virtues does this embody?\n\n**Gather relevant information:**\n- Get the facts before deciding\n- Acknowledge uncertainty and your knowledge limitations\n- Consider expert perspectives when appropriate\n\n**Check your reasoning:**\n- Identify your assumptions and biases\n- Test whether you'd accept others making similar decisions\n- Consider if you could publicly defend your reasoning\n\n**Practical steps:**\n- Define the ethical issue clearly\n- Generate multiple options, not just obvious ones\n- Consult trusted advisors when possible\n- Start with smaller decisions to build good judgment\n- Learn from outcomes to improve future decisions\n\n**Accept complexity:**\n- Recognize that ethical decisions often involve competing values\n- Perfect solutions may not exist\n- Sometimes you must choose the \"least bad\" option\n\nThe goal isn't perfection but thoughtful, principled decision-making that you can stand behind.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 1,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1449,
+    "quality_score": 57,
+    "elapsed": 9.381739139556885,
+    "prompt": "How should we make ethical decisions?",
+    "run": 3,
+    "domain": "PHILOSOPHICAL"
+  },
+  "timestamp": "2026-02-03T12:33:26.997332+00:00"
+}

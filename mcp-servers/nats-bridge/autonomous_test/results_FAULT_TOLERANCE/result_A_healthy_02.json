@@ -1,0 +1,20 @@
+{
+  "condition": "A_healthy",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I notice that all seven perspective modules encountered errors - they appear to be trying to access a model that's unavailable (claude-haiku-4-20250514). This means I don't have the individual perspective analyses to synthesize from.\n\nHowever, I can still address your core question: \"What are we missing in our current strategy?\"\n\n**SYNTHESIS WITHOUT THE MODULES:**\n\nSince I don't have access to the specific perspective analyses, I'll provide a direct framework for identifying strategic gaps:\n\n**Key Areas to Examine:**\n\n1. **Blind Spots Assessment**: What assumptions are we making that haven't been tested?\n\n2. **Stakeholder Voice**: Are we hearing from all affected parties, especially those who might disagree with our approach?\n\n3. **Environmental Scanning**: What external changes (market, technology, regulatory) are we not fully accounting for?\n\n4. **Resource Reality Check**: Are we being honest about our actual capabilities versus our aspirations?\n\n5. **Feedback Loops**: Do we have mechanisms to detect when our strategy isn't working before it's too late?\n\n**Immediate Action:**\nWithout the benefit of the multiple perspectives that should have been generated, I'd recommend:\n- Conducting a strategic gap analysis with your team\n- Seeking external viewpoints from advisors or customers\n- Running scenario planning exercises to test your strategy against different futures\n\nWould you like me to help you work through any of these areas specifically, or would you prefer to troubleshoot the perspective system so we can get the full multi-angle analysis?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1568,
+    "quality_score": 70,
+    "elapsed": 12.811241149902344,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:30:57.204971+00:00"
+}

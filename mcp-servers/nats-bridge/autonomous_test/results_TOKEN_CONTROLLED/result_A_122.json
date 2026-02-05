@@ -1,0 +1,26 @@
+{
+  "trial_num": 122,
+  "condition": "A",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "Here are key strategies for building trust with new colleagues:\n\n**Be reliable and consistent**\n- Follow through on commitments, even small ones\n- Meet deadlines and communicate early if you can't\n- Show up prepared and engaged in meetings\n\n**Communicate openly and honestly**\n- Share relevant information transparently\n- Admit when you don't know something rather than guessing\n- Ask questions to show genuine interest in their work\n\n**Demonstrate competence gradually**\n- Focus on doing your current responsibilities well before taking on more\n- Offer help within your expertise area\n- Share credit for successes and take responsibility for mistakes\n\n**Show respect for existing relationships and processes**\n- Observe team dynamics before making suggestions for changes\n- Acknowledge others' expertise and experience\n- Ask \"How have you handled this before?\" rather than immediately proposing new approaches\n\n**Be authentically interested in others**\n- Learn names and remember personal details people share\n- Ask about their projects and challenges\n- Listen more than you speak in early interactions\n\n**Maintain professional boundaries**\n- Be friendly but not overly familiar too quickly\n- Respect confidentiality\n- Avoid office gossip or complaints about previous workplaces\n\nTrust builds through consistent positive interactions over time, so focus on being dependable in small ways rather than trying to make a big impression immediately.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 0,
+    "length": 1445,
+    "quality_score": 55,
+    "elapsed": 8.218265771865845,
+    "prompt": "How do you build trust with new colleagues?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:54:04.461638+00:00"
+}

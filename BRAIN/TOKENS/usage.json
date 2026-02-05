@@ -1,0 +1,41 @@
+{
+  "last_updated": "2026-02-05T11:31:35.657718",
+  "users": {
+    "3aae3c93db74635a": {
+      "user_id": "3aae3c93db74635a",
+      "tier": "free",
+      "emergences_today": 10,
+      "haiku_calls_today": 0,
+      "tokens_used_today": 20000,
+      "total_cost_today": 0.19999999999999998,
+      "calls_this_minute": 10,
+      "minute_window_start": "2026-02-05 11:31",
+      "last_activity": "2026-02-05T11:31:35.657507",
+      "day_started": "2026-02-05",
+      "abuse_flags": [
+        "burst:2026-02-05T11:31:35.657591"
+      ],
+      "is_blocked": false,
+      "block_reason": "",
+      "total_emergences_all_time": 10,
+      "total_cost_all_time": 0.19999999999999998
+    },
+    "1aea8b36afba5172": {
+      "user_id": "1aea8b36afba5172",
+      "tier": "partner",
+      "emergences_today": 0,
+      "haiku_calls_today": 0,
+      "tokens_used_today": 0,
+      "total_cost_today": 0.0,
+      "calls_this_minute": 0,
+      "minute_window_start": "",
+      "last_activity": "",
+      "day_started": "2026-02-05",
+      "abuse_flags": [],
+      "is_blocked": false,
+      "block_reason": "",
+      "total_emergences_all_time": 0,
+      "total_cost_all_time": 0.0
+    }
+  }
+}

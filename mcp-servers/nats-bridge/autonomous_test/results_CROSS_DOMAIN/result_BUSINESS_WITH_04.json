@@ -1,0 +1,22 @@
+{
+  "domain": "BUSINESS",
+  "condition": "WITH",
+  "run": 4,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective have encountered technical errors - they were unable to provide their analyses due to model availability issues. This means I'm working without the intended multi-perspective input that would normally inform a synthesis.\n\nHowever, I can still provide a direct response to your fundamental question: **Where should we invest our limited resources?**\n\n## Immediate Action Framework\n\n**1. Clarify Your Core Mission First**\n- Define what success looks like in concrete, measurable terms\n- Identify your non-negotiables and values that guide decisions\n\n**2. Apply the 70-20-10 Resource Allocation Rule**\n- **70%**: Proven, high-impact activities that directly advance your core mission\n- **20%**: Adjacent opportunities that could become major wins\n- **10%**: Experimental/learning investments for future positioning\n\n**3. Use These Decision Filters**\n- Does this investment compound over time?\n- Can you measure impact within 90 days?\n- Does it build capabilities you'll need regardless of future scenarios?\n- What's the cost of NOT investing in this?\n\n**4. Specific Investment Priorities (in order)**\n1. **People and skills** that multiply other investments\n2. **Systems and processes** that scale without linear cost increases\n3. **Strategic relationships** that open doors to larger opportunities\n4. **Technology or tools** that eliminate bottlenecks\n\n**Next Step**: Before any resource allocation, spend 2 hours mapping your current resource flow and identifying your biggest constraint. Invest there first.\n\nThe key insight: Limited resources demand brutal prioritization. Choose fewer things and execute them exceptionally well rather than spreading thin across many mediocre efforts.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1749,
+    "quality_score": 66,
+    "elapsed": 14.927857875823975,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 3,
+    "domain": "BUSINESS"
+  },
+  "timestamp": "2026-02-03T12:39:29.765671+00:00"
+}

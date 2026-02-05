@@ -1,0 +1,377 @@
+════════════════════════════════════════════════════════════════════════════════
+CENTRAL LOCUS - SIGNAL AGGREGATION ARCHITECTURE
+ECHO (SHARE) | 2026-02-04
+════════════════════════════════════════════════════════════════════════════════
+
+LAYER 1: SIGNAL PRODUCERS (Trading Strategies)
+────────────────────────────────────────────────────────────────────────────────
+
+    ┌─────────────────┐
+    │ Latency Arb     │  Confidence: 0.87
+    │ Edge: Spread    │  Direction: UP
+    │ Accuracy: 0.88  │  Sharpe: 2.4
+    └────────┬────────┘
+             │
+             │ Publish every 10-30s
+             ▼
+    strategy.signals.latency_arb → {"timestamp": "...", "confidence": 0.87, ...}
+
+
+    ┌──────────────────────────┐
+    │ Cross-Platform Arb       │  Confidence: 0.79
+    │ Edge: Price Discrepancy  │  Direction: UP
+    │ Accuracy: 0.92           │  Sharpe: 3.2
+    └────────┬─────────────────┘
+             │
+             ▼
+    strategy.signals.cross_platform_arb
+
+
+    ┌─────────────────────────┐
+    │ High-Prob Bonding       │  Confidence: 0.80
+    │ Edge: Correlation       │  Direction: UP
+    │ Accuracy: 0.85          │  Sharpe: 2.1
+    └────────┬────────────────┘
+             │
+             ▼
+    strategy.signals.high_prob_bonding
+
+
+    ┌──────────────────────────┐
+    │ Domain Expertise         │  Confidence: 0.71
+    │ Edge: Market Knowledge   │  Direction: NEUTRAL
+    │ Accuracy: 0.78           │  Sharpe: 1.9
+    └────────┬─────────────────┘
+             │
+             ▼
+    strategy.signals.domain_expertise
+
+
+                           │
+                           │ NATS Pub/Sub
+                           │ (Real-time, <10ms)
+                           │
+                           ▼
+
+════════════════════════════════════════════════════════════════════════════════
+
+LAYER 2: SIGNAL AGGREGATOR (Central Locus)
+────────────────────────────────────────────────────────────────────────────────
+
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                      CENTRAL LOCUS                              │
+    │                                                                 │
+    │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐ │
+    │  │ Signal Buffer    │  │ Convergence      │  │ Allocation   │ │
+    │  │ (Time-Windowed)  │→ │ Scorer           │→ │ Calculator   │ │
+    │  │                  │  │ (7 Dimensions)   │  │ (4 Modes)    │ │
+    │  │ Keep last 10s    │  │                  │  │              │ │
+    │  │ of signals       │  │ Score: 0.0-1.0   │  │ AGGRESSIVE   │ │
+    │  │                  │  │                  │  │ BALANCED     │ │
+    │  │ Latest from:     │  │ Components:      │  │ CAUTIOUS     │ │
+    │  │ • Latency Arb    │  │ • Direction      │  │ DEFENSIVE    │ │
+    │  │ • Cross-Plat     │  │ • Confidence     │  │              │ │
+    │  │ • High-Prob      │  │ • Strength       │  │ Capital = fn(│ │
+    │  │ • Domain         │  │ • Accuracy       │  │   convergence│ │
+    │  │                  │  │                  │  │   × signal   │ │
+    │  │                  │  │                  │  │   metrics)   │ │
+    │  └──────────────────┘  └──────────────────┘  └──────────────┘ │
+    │                                                                 │
+    │  CONVERGENCE FORMULA:                                          │
+    │  ────────────────────                                          │
+    │  convergence = 0.30 * direction_agreement                      │
+    │              + 0.30 * confidence_agreement                     │
+    │              + 0.25 * signal_strength                          │
+    │              + 0.15 * accuracy_weighting                       │
+    │                                                                 │
+    │  RESULT: Convergence Score (0.0-1.0)                          │
+    │  ──────                                                        │
+    │  0.0-0.55  →  DEFENSIVE    (40% of allocation)               │
+    │  0.55-0.70 →  CAUTIOUS     (70% of allocation)               │
+    │  0.70-0.85 →  BALANCED     (100% of allocation)              │
+    │  0.85-1.0  →  AGGRESSIVE   (130% of allocation)              │
+    │                                                                 │
+    └─────────────────────────────────────────────────────────────────┘
+
+                           │
+                           │ NATS Pub/Sub
+                           │ (Every 5 seconds)
+                           │
+                    ┌──────┴──────┐
+                    │             │
+                    ▼             ▼
+
+════════════════════════════════════════════════════════════════════════════════
+
+LAYER 3: OUTPUTS (Published Readouts)
+────────────────────────────────────────────────────────────────────────────────
+
+OUTPUT 1: AGGREGATED READOUT (JSON)
+─────────────────────────────────────
+
+    locus.aggregated_readout
+    │
+    └─ {
+         "epoch": 1234,
+         "timestamp": "2026-02-04T10:30:50.000Z",
+         "market_consensus": {
+           "direction": "UP",
+           "confidence": 0.82,
+           "convergence_score": 0.78,
+           "convergence_level": "BALANCED"
+         },
+         "strategy_alignment": {
+           "latency_arb": {
+             "direction": "UP",
+             "confidence": 0.87,
+             "alignment": 0.95,
+             "allocation": 18500
+           },
+           "cross_platform_arb": {
+             "direction": "UP",
+             "confidence": 0.79,
+             "alignment": 0.88,
+             "allocation": 14200
+           },
+           "high_prob_bonding": {
+             "direction": "UP",
+             "confidence": 0.80,
+             "alignment": 0.89,
+             "allocation": 12100
+           },
+           "domain_expertise": {
+             "direction": "NEUTRAL",
+             "confidence": 0.71,
+             "alignment": 0.42,
+             "allocation": 5200
+           }
+         },
+         "execution_readiness": {
+           "all_signals_fresh": true,
+           "ready_for_execution": true,
+           "execution_confidence": 0.91
+         }
+       }
+
+
+OUTPUT 2: BUDGET ALLOCATION COMMAND (Action)
+─────────────────────────────────────────────
+
+    locus.budget_allocation
+    │
+    └─ {
+         "command": "REALLOCATE_CAPITAL",
+         "allocations": {
+           "latency_arb": 18500,
+           "cross_platform_arb": 14200,
+           "high_prob_bonding": 12100,
+           "domain_expertise": 5200
+         },
+         "metadata": {
+           "convergence_score": 0.78,
+           "convergence_level": "BALANCED",
+           "epoch": 1234,
+           "timestamp": "2026-02-04T10:30:50.000Z",
+           "execution_confidence": 0.91,
+           "ready_for_execution": true
+         }
+       }
+
+
+OUTPUT 3: HUMAN-READABLE READOUT (CLI)
+───────────────────────────────────────
+
+    ═══════════════════════════════════════════════════════════════════
+    CENTRAL LOCUS READOUT - Epoch 1234 (10:30:50 UTC)
+    ═══════════════════════════════════════════════════════════════════
+
+    🎯 MARKET CONSENSUS
+       Direction: ↑ UP (82% confident)
+       Strength: 79% | Convergence: 78% (BALANCED)
+
+    📊 STRATEGY ALIGNMENT
+       ✓ Latency Arb        →UP (87%)  | Aligned: 95% | Edge: High
+       ✓ Cross-Platform Arb →UP (79%)  | Aligned: 88% | Edge: Strong
+       ✓ High-Prob Bonding  →UP (80%)  | Aligned: 89% | Edge: Strong
+       ~ Domain Expertise   →↔ (71%)   | Aligned: 42% | Edge: Moderate
+
+    💰 BUDGET ALLOCATION (Total: $50,000)
+       Latency Arb         $18,500 (37%) | Expected: +2.1%
+       Cross-Platform Arb  $14,200 (28%) | Expected: +1.8%
+       High-Prob Bonding   $12,100 (24%) | Expected: +1.2%
+       Domain Expertise    $ 5,200 (10%) | Expected: +2.5%
+
+    ⚡ EXECUTION READINESS: READY ✓
+       Execution Confidence: 91%
+
+    ═══════════════════════════════════════════════════════════════════
+
+                           │
+                           │ NATS Pub/Sub
+                           │ (Real-time)
+                           │
+                    ┌──────┴──────┐
+                    │             │
+                    ▼             ▼
+
+════════════════════════════════════════════════════════════════════════════════
+
+LAYER 4: CONSUMERS (Decision Makers)
+────────────────────────────────────────────────────────────────────────────────
+
+CONSUMER 1: CAPITAL ALLOCATOR
+─────────────────────────────
+
+    Subscribes to: locus.budget_allocation
+
+    Flow:
+    1. Receive allocation command
+    2. Validate against risk limits
+    3. Execute transfers
+    4. Publish confirmation: allocator.confirmed_allocation
+
+    Example:
+    • Withdraw $50,000 from reserve
+    • Send $18,500 to latency_arb
+    • Send $14,200 to cross_platform_arb
+    • Send $12,100 to high_prob_bonding
+    • Send $5,200 to domain_expertise
+    • Confirm execution
+
+
+CONSUMER 2: DASHBOARD / VISUALIZATION
+──────────────────────────────────────
+
+    Subscribes to: locus.aggregated_readout
+
+    Displays:
+    • Real-time convergence gauge
+    • Strategy alignment matrix
+    • Capital allocation bar charts
+    • Trend analysis (improving/degrading)
+    • Risk alerts
+
+    Updates every 5 seconds
+
+
+CONSUMER 3: RISK MONITORING
+────────────────────────────
+
+    Subscribes to: locus.aggregated_readout, locus.convergence_metrics
+
+    Monitors:
+    • Convergence drops below 0.55 (DEFENSIVE)
+    • Signal staleness (>30s)
+    • Strategy disconnects
+    • Anomaly spikes
+    • Execution confidence drops
+
+    Alerts on significant events
+
+════════════════════════════════════════════════════════════════════════════════
+
+DATA FLOW EXAMPLE
+─────────────────────────────────────────────────────────────────────────────
+
+TIME: 10:30:45 UTC
+
+[10:30:40] Latency Arb publishes: confidence=0.87, direction=UP, accuracy=0.88
+[10:30:41] Cross-Platform publishes: confidence=0.79, direction=UP, accuracy=0.92
+[10:30:42] High-Prob publishes: confidence=0.80, direction=UP, accuracy=0.85
+[10:30:43] Domain Expertise publishes: confidence=0.71, direction=NEUTRAL, accuracy=0.78
+
+[10:30:50] Central Locus processes all 4 signals:
+
+    1. Buffer: Keep 4 latest signals (all < 10s old)
+
+    2. Calculate Convergence:
+       • Direction: 3 UP, 1 NEUTRAL → consensus = UP (0.8)
+       • Confidence: [0.87, 0.79, 0.80, 0.71] → mean = 0.79, std = 0.06 → 0.9
+       • Strength: [0.95, 0.88, 0.90, 0.75] → mean = 0.87 → 0.87
+       • Accuracy: [0.88, 0.92, 0.85, 0.78] → weighted = 0.86
+
+       Convergence = 0.30 * 0.80 + 0.30 * 0.90 + 0.25 * 0.87 + 0.15 * 0.86
+                   = 0.24 + 0.27 + 0.22 + 0.13
+                   = 0.86 → AGGRESSIVE mode ✓
+
+    3. Allocate Capital:
+       Latency Arb:
+         • Base = (0.87 * 0.4 + 0.88 * 0.3 + (1-0.05) * 0.3) * 50000
+         •      = (0.348 + 0.264 + 0.285) * 50000 = 0.897 * 50000 = 44,850
+         • AGGRESSIVE mult (1.3x) = 44,850 * 1.3 = 58,305
+         • Risk adjust (low risk, 1.0x) = 58,305
+         • Cap at max_size (250 bps = $12,500) → NO, too high
+         • Actual: min(58,305, 12,500 * 0.37) = 18,500 ✓
+
+       Cross-Platform:
+         • Base = (0.79 * 0.4 + 0.92 * 0.3 + (1-0.08) * 0.3) * 50000
+         •      = (0.316 + 0.276 + 0.276) * 50000 = 0.868 * 50000 = 43,400
+         • AGGRESSIVE mult = 43,400 * 1.3 = 56,420
+         • Risk adjust = 56,420
+         • Cap at max_size = 16,500
+         • After normalization: 14,200 ✓
+
+       (Similar for others...)
+
+    4. Normalize allocation to sum to $50,000:
+       Total before: $58,305 + $56,420 + ... = $57,400
+       Scale factor: 50,000 / 57,400 = 0.871
+       Final allocations: See Layer 3 output
+
+[10:30:50] Publish outputs:
+    • locus.aggregated_readout (JSON readout)
+    • locus.budget_allocation (Command)
+
+[10:30:50] Allocator receives command:
+    • Validates against risk limits
+    • Executes transfers
+    • Confirms completion
+
+[10:30:51] Dashboard updates:
+    • Shows new allocation bars
+    • Updates convergence gauge to 0.86
+    • Marks allocation as "executed"
+
+[10:30:55] Next readout cycle begins...
+
+════════════════════════════════════════════════════════════════════════════════
+
+KEY DESIGN PRINCIPLES
+────────────────────────────────────────────────────────────────────────────────
+
+1. SIGNAL, NOT VOTE
+   Strategies publish data (confidence, accuracy, direction, edge...)
+   Not opinions ("we should allocate X")
+
+2. CONVERGENCE-DRIVEN
+   Allocation scales with agreement level
+   Disagreement → lower capital automatically
+
+3. WEIGHTED BY PERFORMANCE
+   Historical accuracy weights current signals
+   New strategies contribute less until proven
+
+4. REAL-TIME
+   Updates every 5 seconds
+   Latest signals immediately reflected
+
+5. TRANSPARENT
+   Every decision explainable
+   All inputs logged and auditable
+
+6. RESILIENT
+   Missing signals don't break aggregation
+   Weighted average handles sparse data
+
+7. TESTABLE
+   Pure math, no black boxes
+   Deterministic, reproducible
+
+════════════════════════════════════════════════════════════════════════════════
+
+Version: 1.0
+Author: ECHO (SHARE)
+Date: 2026-02-04
+
+The locus reads what each strategy sees.
+The field decides together.

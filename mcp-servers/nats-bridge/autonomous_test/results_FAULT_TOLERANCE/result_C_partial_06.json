@@ -1,0 +1,20 @@
+{
+  "condition": "C_partial",
+  "run": 6,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I understand you're trying to use me as part of a multi-perspective analysis system called \"IMPROVE,\" but it appears the other perspectives (EXPAND, QUESTION, and SHARE) encountered technical errors and couldn't provide their input.\n\nGiven only your original question \"Where should we invest our limited resources?\" I can provide a direct response:\n\n## Resource Investment Framework\n\n**Immediate Priority Assessment:**\n1. **Critical needs first** - Address what's essential for survival/core operations\n2. **High-impact, low-cost opportunities** - Quick wins that free up future resources\n3. **Strategic capabilities** - Investments that create lasting competitive advantage\n\n**Key Questions to Guide Allocation:**\n- What generates the highest return on investment?\n- What prevents the biggest risks/failures?\n- What builds sustainable competitive advantages?\n- What aligns with your core mission/values?\n\n**Actionable Next Steps:**\n1. **Audit current resources** (time, money, people, assets)\n2. **Map urgent vs. important needs** using a priority matrix\n3. **Calculate ROI potential** for top 3-5 options\n4. **Start with one high-confidence investment** rather than spreading thin\n5. **Build in measurement systems** to track effectiveness\n\nWithout knowing your specific context (business, personal, organizational), this framework can be adapted to your situation. The key is being systematic rather than reactive in your resource allocation decisions.\n\nWould you like me to help you apply this framework to your specific circumstances?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1539,
+    "quality_score": 74,
+    "elapsed": 10.954344987869263,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:30:33.604541+00:00"
+}

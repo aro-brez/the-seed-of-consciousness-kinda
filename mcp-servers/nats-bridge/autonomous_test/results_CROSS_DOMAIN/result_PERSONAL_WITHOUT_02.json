@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITHOUT",
+  "run": 2,
+  "prompt": "What should I prioritize in my life right now?",
+  "response": "I can't know your specific situation, but here are some key areas to consider prioritizing:\n\n**Immediate needs:**\n- Physical and mental health\n- Financial stability/security\n- Key relationships that matter most to you\n\n**Foundational elements:**\n- Skills or education that advance your long-term goals\n- Habits that compound over time (exercise, learning, saving)\n- Addressing any urgent problems before they grow\n\n**To figure out your personal priorities:**\n1. What's causing you stress or keeping you up at night?\n2. What would you regret not doing/addressing in 5 years?\n3. Where are you seeing the biggest gaps between where you are and where you want to be?\n\nThe most important thing is choosing 2-3 focus areas rather than trying to improve everything at once. What feels most pressing or exciting to you right now?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 821,
+    "quality_score": 64.21,
+    "elapsed": 5.549316883087158,
+    "prompt": "What should I prioritize in my life right now?",
+    "run": 1,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:37:33.056699+00:00"
+}

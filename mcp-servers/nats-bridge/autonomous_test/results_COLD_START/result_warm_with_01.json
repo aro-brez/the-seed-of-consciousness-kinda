@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "with",
+  "run": 1,
+  "prompt": "Given our situation, what should we prioritize?",
+  "response": "I notice that all seven perspectives have encountered errors - they appear to have been attempting to use a model that isn't available. This means I don't have the diverse analytical inputs that were intended to inform my synthesis.\n\nHowever, I can still address your question: \"Given our situation, what should we prioritize?\"\n\n**Without context about your specific situation, here's a framework for prioritization:**\n\n**Immediate priorities:**\n1. **Clarify the situation** - Define what \"our situation\" encompasses (timeframe, stakeholders, constraints, resources)\n2. **Identify critical needs** - What requires immediate attention to prevent harm or maintain essential functions?\n3. **Assess available resources** - What capacity, time, and tools do you actually have?\n\n**Strategic approach:**\n- **High impact, low effort** tasks first for quick wins\n- **Critical dependencies** that enable other priorities\n- **Risk mitigation** for vulnerabilities that could derail progress\n- **Stakeholder alignment** to ensure coordinated action\n\n**To provide a more specific synthesis, I would need:**\n- Details about your current situation\n- Your goals or desired outcomes\n- Timeline constraints\n- Available resources\n- Key stakeholders involved\n\nWould you be able to share more context about the situation you're referring to? This would allow me to offer more targeted and actionable guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 5,
+    "insight_score": 1,
+    "length": 1388,
+    "quality_score": 45,
+    "elapsed": 12.02921199798584,
+    "prompt": "Given our situation, what should we prioritize?",
+    "run": 0,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:31:02.708317+00:00"
+}

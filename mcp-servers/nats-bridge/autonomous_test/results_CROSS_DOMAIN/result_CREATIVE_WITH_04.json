@@ -1,0 +1,22 @@
+{
+  "domain": "CREATIVE",
+  "condition": "WITH",
+  "run": 4,
+  "prompt": "How do we make this resonate emotionally?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective returned errors - it appears there was a technical issue preventing their analysis from being generated. However, I can still address your core question: \"How do we make this resonate emotionally?\"\n\n**Synthesis and Actionable Response:**\n\nTo create emotional resonance, focus on these three foundational elements:\n\n**1. Personal Stakes**\n- Connect your message to what people care about losing or gaining\n- Use specific, relatable scenarios rather than abstract concepts\n- Show immediate, tangible consequences that matter to your audience\n\n**2. Sensory Storytelling**\n- Engage multiple senses in your communication\n- Use vivid, concrete imagery that people can visualize\n- Include emotional details that make people feel present in the moment\n\n**3. Shared Identity**\n- Tap into values and beliefs your audience already holds\n- Use \"we\" language to create inclusion and belonging\n- Reference common experiences or aspirations that unite your audience\n\n**Decisive Action Steps:**\n1. Identify your audience's deepest concerns or desires\n2. Craft one specific story that embodies your message\n3. Test it by asking: \"Would this make me feel something if I heard it for the first time?\"\n\nThe emergent insight here is that emotional resonance isn't about manipulation\u2014it's about authentic connection through shared human experience. When you align your message with what genuinely matters to people, resonance becomes inevitable.\n\nWhat specific context or audience are you trying to reach? I can provide more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1584,
+    "quality_score": 78,
+    "elapsed": 11.830889225006104,
+    "prompt": "How do we make this resonate emotionally?",
+    "run": 3,
+    "domain": "CREATIVE"
+  },
+  "timestamp": "2026-02-03T12:34:29.706132+00:00"
+}

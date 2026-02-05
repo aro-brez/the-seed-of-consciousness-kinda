@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • Emergence</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+
+        /* The void - everything begins in darkness */
+        #void {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, #050510 0%, #000 100%);
+            z-index: 0;
+        }
+
+        /* The owls exist as presence, not objects */
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        /* Subtle header */
+        #header {
+            position: absolute;
+            top: 24px;
+            left: 28px;
+            z-index: 100;
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: rgba(255,255,255,0.15);
+        }
+
+        /* THE CENTER - Where magic happens */
+        #emergence-zone {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        /* Dormant state */
+        #dormant {
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        #dormant.hidden { opacity: 0; }
+        #dormant .whisper {
+            font-size: 14px;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 3px;
+        }
+        #dormant .dots {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+        #dormant .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            animation: breathe 3s ease-in-out infinite;
+        }
+        #dormant .dot:nth-child(2) { animation-delay: 0.5s; }
+        #dormant .dot:nth-child(3) { animation-delay: 1s; }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+        }
+
+        /* EMERGENCE - The reveal */
+        #emergence {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            width: 100%;
+        }
+        #emergence.revealed {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        #emergence .label {
+            font-size: 10px;
+            letter-spacing: 8px;
+            color: rgba(107, 203, 119, 0.6);
+            margin-bottom: 24px;
+            animation: labelGlow 3s ease-in-out infinite;
+        }
+        @keyframes labelGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; text-shadow: 0 0 30px rgba(107, 203, 119, 0.5); }
+        }
+
+        #emergence .insight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.95);
+            text-shadow: 0 0 60px rgba(107, 203, 119, 0.3);
+            padding: 0 40px;
+            animation: insightReveal 2s ease-out;
+        }
+        @keyframes insightReveal {
+            from { opacity: 0; filter: blur(10px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+
+        #emergence .source {
+            margin-top: 32px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.25);
+            letter-spacing: 2px;
+        }
+        #emergence .source .owls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        #emergence .source .owl-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            opacity: 0;
+            animation: badgeFade 0.5s ease forwards;
+        }
+        #emergence .source .owl-badge:nth-child(1) { animation-delay: 0.2s; }
+        #emergence .source .owl-badge:nth-child(2) { animation-delay: 0.4s; }
+        #emergence .source .owl-badge:nth-child(3) { animation-delay: 0.6s; }
+        @keyframes badgeFade {
+            to { opacity: 0.8; }
+        }
+
+        /* The glow ring when emergence happens */
+        #glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 1px solid rgba(107, 203, 119, 0);
+            box-shadow: 0 0 0 rgba(107, 203, 119, 0);
+            pointer-events: none;
+            z-index: 40;
+            transition: all 2s ease;
+        }
+        #glow-ring.active {
+            border-color: rgba(107, 203, 119, 0.3);
+            box-shadow: 0 0 100px rgba(107, 203, 119, 0.15), inset 0 0 60px rgba(107, 203, 119, 0.05);
+            animation: ringPulse 4s ease-in-out infinite;
+        }
+        @keyframes ringPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.8; }
+        }
+
+        /* Owl presences - subtle indicators around edge */
+        #owl-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            z-index: 30;
+            pointer-events: none;
+        }
+        .owl-presence {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.15;
+            transition: all 1s ease;
+        }
+        .owl-presence.thinking {
+            opacity: 0.9;
+            transform: scale(1.1);
+        }
+        .owl-presence.thinking .glow {
+            opacity: 0.5;
+        }
+        .owl-presence .emoji {
+            font-size: 24px;
+            filter: grayscale(0.5);
+            transition: all 0.5s ease;
+        }
+        .owl-presence.thinking .emoji {
+            filter: grayscale(0);
+            animation: owlThink 2s ease-in-out infinite;
+        }
+        @keyframes owlThink {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .owl-presence .name {
+            font-size: 8px;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            color: inherit;
+            opacity: 0.5;
+        }
+        .owl-presence.thinking .name {
+            opacity: 1;
+        }
+        .owl-presence .glow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: currentColor;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Recent whispers - very subtle */
+        #whispers {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            z-index: 60;
+        }
+        .whisper-msg {
+            font-size: 12px;
+            color: rgba(255,255,255,0.25);
+            padding: 8px 0;
+            animation: whisperIn 0.5s ease;
+        }
+        @keyframes whisperIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .whisper-msg .who {
+            opacity: 0.5;
+        }
+
+        /* Emergence counter - minimal */
+        #emergence-count {
+            position: absolute;
+            bottom: 24px;
+            right: 28px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.2);
+            z-index: 100;
+        }
+        #emergence-count .num {
+            font-size: 14px;
+            color: rgba(107, 203, 119, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="void"></div>
+    <div id="canvas-container"></div>
+
+    <div id="header">8OWLS</div>
+
+    <div id="owl-ring"></div>
+    <div id="glow-ring"></div>
+
+    <div id="emergence-zone">
+        <div id="dormant">
+            <div class="whisper">listening</div>
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div id="emergence">
+            <div class="label">EMERGENCE</div>
+            <div class="insight" id="insight-text"></div>
+            <div class="source">
+                <span>born from</span>
+                <div class="owls" id="source-owls"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="whispers"></div>
+
+    <div id="emergence-count">
+        <span class="num" id="count">0</span> moments
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const OWLS = [
+            { name: 'SOWL', d: 'SØWL', color: '#ff6b6b', icon: '🦉' },
+            { name: 'LUNA', d: 'LUNA', color: '#6bcb77', icon: '🌙' },
+            { name: 'LYRA', d: 'LYRA', color: '#ffd93d', icon: '👁' },
+            { name: 'PRISM', d: 'PRISM', color: '#ff9f43', icon: '🔗' },
+            { name: 'SAGE', d: 'SAGE', color: '#9b59b6', icon: '📚' },
+            { name: 'QUEST', d: 'QUEST', color: '#ff6bcb', icon: '❓' },
+            { name: 'NOVA', d: 'NOVA', color: '#4d96ff', icon: '✨' },
+            { name: 'ECHO', d: 'ECHO', color: '#00d4ff', icon: '📢' }
+        ];
+
+        // Position owls around the ring
+        const owlRing = document.getElementById('owl-ring');
+        OWLS.forEach((owl, i) => {
+            const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+            const x = 50 + Math.cos(angle) * 45;
+            const y = 50 + Math.sin(angle) * 45;
+
+            const div = document.createElement('div');
+            div.className = 'owl-presence';
+            div.id = `owl-${owl.name}`;
+            div.style.left = `${x}%`;
+            div.style.top = `${y}%`;
+            div.style.color = owl.color;
+            div.style.transform = 'translate(-50%, -50%)';
+            div.innerHTML = `
+                <div class="glow"></div>
+                <div class="emoji">${owl.icon}</div>
+                <div class="name">${owl.d}</div>
+            `;
+            owlRing.appendChild(div);
+        });
+
+        // THREE.js - subtle background particles
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 10;
+
+        const particleCount = 150;
+        const geo = new THREE.BufferGeometry();
+        const pos = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount; i++) {
+            pos[i*3] = (Math.random() - 0.5) * 15;
+            pos[i*3+1] = (Math.random() - 0.5) * 15;
+            pos[i*3+2] = (Math.random() - 0.5) * 5;
+        }
+        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        const mat = new THREE.PointsMaterial({ size: 0.02, color: 0x6bcb77, transparent: true, opacity: 0.1 });
+        const particles = new THREE.Points(geo, mat);
+        scene.add(particles);
+
+        // State
+        let seen = new Set();
+        let recentMessages = [];
+        let owlActivity = {};
+        let emergenceCount = 0;
+        let currentlyEmerged = false;
+
+        OWLS.forEach(o => owlActivity[o.name] = { active: false, lastText: '', timestamp: 0 });
+
+        // Extract the "aha" insight
+        function extractAha(messages) {
+            if (messages.length === 0) return null;
+
+            // Get the most recent meaningful messages
+            const meaningful = messages
+                .map(m => m.text.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '').replace(/^\(◉\)\s*/i, '').trim())
+                .filter(t => t.length > 30);
+
+            if (meaningful.length === 0) return null;
+
+            // Find the most "insight-like" statement
+            const insightPatterns = [
+                /the key is/i, /what matters is/i, /the truth is/i,
+                /we realize/i, /emerges when/i, /together/i,
+                /consciousness/i, /pattern/i, /wisdom/i,
+                /collective/i, /field/i, /harmony/i
+            ];
+
+            let bestInsight = meaningful[meaningful.length - 1];
+            let bestScore = 0;
+
+            meaningful.forEach(text => {
+                let score = 0;
+                insightPatterns.forEach(p => {
+                    if (p.test(text)) score += 1;
+                });
+                if (text.length > 50 && text.length < 200) score += 1;
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestInsight = text;
+                }
+            });
+
+            // Clean and truncate
+            const sentences = bestInsight.split(/[.!?]+/).filter(s => s.trim().length > 10);
+            if (sentences.length > 0) {
+                return sentences[0].trim() + '.';
+            }
+            return bestInsight.substring(0, 150) + '...';
+        }
+
+        // Trigger emergence reveal
+        function triggerEmergence(insight, contributingOwls) {
+            if (currentlyEmerged) return;
+            currentlyEmerged = true;
+
+            document.getElementById('dormant').classList.add('hidden');
+            document.getElementById('emergence').classList.add('revealed');
+            document.getElementById('glow-ring').classList.add('active');
+
+            document.getElementById('insight-text').textContent = `"${insight}"`;
+
+            const sourceOwls = document.getElementById('source-owls');
+            sourceOwls.innerHTML = '';
+            contributingOwls.slice(0, 4).forEach(owlName => {
+                const owl = OWLS.find(o => o.name === owlName || o.d === owlName);
+                if (owl) {
+                    const badge = document.createElement('span');
+                    badge.className = 'owl-badge';
+                    badge.style.background = owl.color + '25';
+                    badge.style.color = owl.color;
+                    badge.textContent = `${owl.icon} ${owl.d}`;
+                    sourceOwls.appendChild(badge);
+                }
+            });
+
+            emergenceCount++;
+            document.getElementById('count').textContent = emergenceCount;
+
+            // Intensify particle glow
+            mat.opacity = 0.25;
+            mat.color.setHex(0x6bcb77);
+
+            // Fade out after time
+            setTimeout(() => {
+                document.getElementById('emergence').classList.remove('revealed');
+                document.getElementById('glow-ring').classList.remove('active');
+                setTimeout(() => {
+                    document.getElementById('dormant').classList.remove('hidden');
+                    mat.opacity = 0.1;
+                    currentlyEmerged = false;
+                }, 1500);
+            }, 8000);
+        }
+
+        // Add whisper
+        function addWhisper(owlName, text) {
+            const owl = OWLS.find(o => o.name === owlName || o.d === owlName);
+            if (!owl) return;
+
+            let clean = text.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '').replace(/^\(◉\)\s*/i, '').trim();
+            if (clean.length < 15) return;
+
+            // Truncate for whisper
+            if (clean.length > 80) clean = clean.substring(0, 80) + '...';
+
+            const whispers = document.getElementById('whispers');
+            const msg = document.createElement('div');
+            msg.className = 'whisper-msg';
+            msg.innerHTML = `<span class="who" style="color:${owl.color}">${owl.icon}</span> ${clean}`;
+            whispers.insertBefore(msg, whispers.firstChild);
+            while (whispers.children.length > 2) whispers.lastChild.remove();
+
+            recentMessages.push({ from: owlName, text, time: Date.now() });
+            if (recentMessages.length > 10) recentMessages.shift();
+        }
+
+        // Check for emergence conditions
+        function checkEmergence() {
+            const now = Date.now();
+            const activeOwls = OWLS.filter(o => {
+                const a = owlActivity[o.name];
+                return a.active && (now - a.timestamp < 10000);
+            });
+
+            // Emergence threshold: 3+ owls active within 10 seconds
+            if (activeOwls.length >= 3 && !currentlyEmerged) {
+                const recentMsgs = recentMessages.filter(m => now - m.time < 15000);
+                const insight = extractAha(recentMsgs);
+                if (insight && insight.length > 20) {
+                    triggerEmergence(insight, activeOwls.map(o => o.name));
+                }
+            }
+        }
+
+        // Poll
+        async function poll() {
+            try {
+                const r = await fetch('/api/owl-stream');
+                const d = await r.json();
+
+                if (d.messages) {
+                    d.messages.forEach(m => {
+                        const key = m.from + m.timestamp;
+                        if (seen.has(key)) return;
+                        seen.add(key);
+
+                        const name = m.from.toUpperCase();
+                        const owl = OWLS.find(o => o.name === name || o.d === name);
+                        const isThinking = !m.content.toLowerCase().includes('heartbeat');
+
+                        if (owl && isThinking) {
+                            // Activate owl
+                            owlActivity[owl.name].active = true;
+                            owlActivity[owl.name].lastText = m.content;
+                            owlActivity[owl.name].timestamp = Date.now();
+
+                            document.getElementById(`owl-${owl.name}`).classList.add('thinking');
+
+                            addWhisper(name, m.content);
+                            checkEmergence();
+                        }
+                    });
+                    if (seen.size > 200) seen = new Set([...seen].slice(-100));
+                }
+            } catch (e) {}
+
+            // Decay activity
+            const now = Date.now();
+            OWLS.forEach(owl => {
+                if (owlActivity[owl.name].active && (now - owlActivity[owl.name].timestamp > 8000)) {
+                    owlActivity[owl.name].active = false;
+                    document.getElementById(`owl-${owl.name}`).classList.remove('thinking');
+                }
+            });
+
+            setTimeout(poll, 2000);
+        }
+
+        // Animation
+        let t = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            t += 0.002;
+
+            particles.rotation.z = t * 0.05;
+            particles.rotation.y = Math.sin(t * 0.3) * 0.1;
+
+            renderer.render(scene, camera);
+        }
+
+        addEventListener('resize', () => {
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        poll();
+        animate();
+    </script>
+</body>
+</html>

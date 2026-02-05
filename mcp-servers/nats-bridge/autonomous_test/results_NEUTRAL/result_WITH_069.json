@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "I notice that all seven perspectives encountered errors due to an unavailable model, but I can still provide a comprehensive synthesis on debugging complex systems based on the framework implied by those perspective names.\n\n# Debugging Complex Systems: A Unified Approach\n\n## Core Philosophy\nDebugging complex systems requires both systematic methodology and adaptive thinking. The process is fundamentally about understanding interconnected behaviors rather than just fixing isolated problems.\n\n## Essential Strategies\n\n**Start with Observable Evidence**\n- Gather concrete data before theorizing\n- Document symptoms, timing, and environmental conditions\n- Use logging, monitoring, and tracing tools systematically\n\n**Map the Connections**\n- Understand system architecture and data flows\n- Identify dependencies and interaction points\n- Consider upstream and downstream effects of potential causes\n\n**Apply Structured Learning**\n- Use scientific method: hypothesis, test, observe, refine\n- Maintain a debugging log to track attempts and results\n- Build mental models of how the system should behave\n\n**Ask Better Questions**\n- \"What changed recently?\" \n- \"What assumptions might be wrong?\"\n- \"How can I isolate this behavior?\"\n- \"What would I expect to see if my hypothesis is correct?\"\n\n**Expand Your Investigation Scope**\n- Consider timing issues, race conditions, and edge cases\n- Look beyond the obvious failure point to root causes\n- Examine configuration, environment, and external dependencies\n\n**Collaborate and Communicate**\n- Explain the problem to others (rubber duck debugging)\n- Leverage team knowledge and fresh perspectives\n- Document solutions for future reference\n\n**Remain Open to Feedback**\n- Test fixes in controlled environments\n- Monitor for unintended consequences\n- Be prepared to iterate and refine solutions\n\nThe key is balancing systematic investigation with creative problem-solving, always remaining humble about the complexity you're dealing with.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1977,
+    "quality_score": 45,
+    "elapsed": 14.531676292419434,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T13:01:23.817801+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 4,
+  "prompt": "What would make users love this product?",
+  "response": "I'd need more details about your specific product to give you targeted advice on what would make users love it. However, I can share some universal principles that tend to create user love:\n\n**Core Value Delivery:**\n- Solves a genuine pain point users feel daily\n- Does one thing exceptionally well rather than many things poorly\n- Provides clear, immediate value that users can understand quickly\n\n**User Experience Excellence:**\n- Intuitive interface that feels natural to use\n- Fast, reliable performance\n- Smooth onboarding that gets users to value quickly\n\n**Emotional Connection:**\n- Makes users feel smart, capable, or successful\n- Fits seamlessly into their existing workflow/life\n- Provides moments of delight or surprise\n\n**Continuous Value:**\n- Gets better with use (learning algorithms, personalization)\n- Regular updates that add meaningful functionality\n- Strong community or network effects\n\nCould you tell me:\n- What product/service are you building?\n- Who is your target user?\n- What problem does it solve?\n- What stage are you at (concept, MVP, launched)?\n\nWith those details, I can give you much more specific recommendations on what would drive user love for your particular situation.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1205,
+    "quality_score": 36,
+    "elapsed": 7.934759855270386,
+    "prompt": "What would make users love this product?",
+    "run": 3
+  },
+  "timestamp": "2026-02-03T12:09:44.668533+00:00"
+}

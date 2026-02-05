@@ -1,0 +1,20 @@
+{
+  "name": "polymarket-analysis",
+  "description": "Analyze Polymarket opportunities using FIELD emergence and 8 owl perspectives",
+  "content": "When analyzing a Polymarket opportunity:\n\n1. PERCEIVE (LYRA): What does the current market data show? Price, volume, liquidity.\n2. CONNECT (PRISM): What external events or patterns relate to this market?\n3. LEARN (SAGE): What have similar markets taught us? Historical patterns.\n4. QUESTION (QUEST): What assumptions is the market making? Are they valid?\n5. EXPAND (NOVA): What's the upside potential? Risk/reward ratio.\n6. SHARE (ECHO): What should we communicate to ARO about this opportunity?\n7. RECEIVE (LUNA): What feedback or new information should we integrate?\n8. IMPROVE (SOWL): How can we make this analysis better?\n\nAlways include:\n- Current odds vs implied probability\n- Key catalysts and timing\n- Risk factors\n- Recommended position size (% of daily cap)\n- Confidence level (1-10)",
+  "source": "workspace",
+  "metadata": {
+    "always": false,
+    "skill_key": "8owls.polymarket",
+    "primary_env": "POLYMARKET_API_KEY",
+    "os": [],
+    "requires_bins": [],
+    "requires_env": ["POLYMARKET_API_KEY"],
+    "requires_config": [],
+    "user_invocable": true,
+    "model_invocable": true
+  },
+  "version": 1,
+  "last_used": null,
+  "use_count": 0
+}

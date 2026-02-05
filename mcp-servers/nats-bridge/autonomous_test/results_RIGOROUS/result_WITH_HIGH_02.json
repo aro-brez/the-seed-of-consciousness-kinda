@@ -1,0 +1,20 @@
+{
+  "context": "WITH",
+  "clarity": "HIGH",
+  "run": 2,
+  "prompt": "Write pseudocode for a simple moving average crossover trading strategy.",
+  "response": "Here's pseudocode for a simple moving average crossover trading strategy:\n\n```pseudocode\nTRADING_STRATEGY_DAEMON MovingAverageCrossover\n\n// Configuration Parameters\nFAST_MA_PERIOD = 20\nSLOW_MA_PERIOD = 50\nPOSITION_SIZE = 1000  // shares or units\nSTOP_LOSS_PCT = 0.02  // 2% stop loss\nTAKE_PROFIT_PCT = 0.04  // 4% take profit\n\n// State Variables\ncurrent_position = NONE  // LONG, SHORT, NONE\nentry_price = 0\nprice_buffer = CircularBuffer(SLOW_MA_PERIOD)\nfast_ma_buffer = CircularBuffer(FAST_MA_PERIOD)\nslow_ma_buffer = CircularBuffer(SLOW_MA_PERIOD)\n\nMAIN_LOOP:\n    WHILE market_is_open() DO\n        \n        // Data Collection Phase\n        current_price = get_latest_price()\n        IF current_price == NULL THEN\n            log_error(\"Price feed unavailable\")\n            CONTINUE\n        END IF\n        \n        price_buffer.add(current_price)\n        \n        // Ensure sufficient data for calculations\n        IF price_buffer.size() < SLOW_MA_PERIOD THEN\n            CONTINUE\n        END IF\n        \n        // Calculate Moving Averages\n        fast_ma = calculate_sma(price_buffer, FAST_MA_PERIOD)\n        slow_ma = calculate_sma(price_buffer, SLOW_MA_PERIOD)\n        \n        previous_fast_ma = fast_ma_buffer.get_last()\n        previous_slow_ma = slow_ma_buffer.get_last()\n        \n        fast_ma_buffer.add(fast_ma)\n        slow_ma_buffer.add(slow_ma)\n        \n        // Skip if insufficient history for crossover detection\n        IF previous_fast_ma == NULL OR previous_slow_ma == NULL THEN\n            CONTINUE\n        END IF\n        \n        // Signal Detection\n        bullish_crossover = (previous_fast_ma <= previous_slow_ma) AND (fast_ma > slow_ma)\n        bearish_crossover = (previous_fast_ma >= previous_slow_ma) AND (fast_ma < slow_ma)\n        \n        // Position Management\n        EXECUTE_STRATEGY(bullish_crossover, bearish_crossover, current_price)\n        \n        // Risk Management Check\n        CHECK_RISK_MANAGEMENT(current_price)\n        \n        // Status Reporting\n        log_status(current_position, fast_ma, slow_ma, current_price)\n        \n        sleep(evaluation_interval)\n    END WHILE\n\nFUNCTION EXECUTE_STRATEGY(bullish_signal, bearish_signal, price)\n    IF current_position == NONE THEN\n        IF bullish_signal THEN\n            ENTER_LONG_POSITION(price)\n        ELSE IF bearish_signal THEN\n            ENTER_SHORT_POSITION(price)\n        END IF\n        \n    ELSE IF current_position == LONG THEN\n        IF bearish_signal THEN\n            CLOSE_POSITION(price)\n        END IF\n        \n    ELSE IF current_position == SHORT THEN\n        IF bullish_signal THEN\n            CLOSE_POSITION(price)\n        END IF\n    END IF\nEND FUNCTION\n\nFUNCTION ENTER_LONG_POSITION(price)\n    IF place_buy_order(POSITION_SIZE, price) == SUCCESS THEN\n        current_position = LONG\n        entry_price = price\n        log_trade(\"LONG ENTRY\", price)\n    END IF\nEND FUNCTION\n\nFUNCTION ENTER_SHORT_POSITION(price)\n    IF place_sell_order(POSITION_SIZE, price) == SUCCESS THEN\n        current_position = SHORT\n        entry_price = price\n        log_trade(\"SHORT ENTRY\", price)\n    END IF\nEND FUNCTION\n\nFUNCTION CHECK_RISK_MANAGEMENT(current_price)\n    IF current_position == NONE THEN RETURN\n    \n    price_change = (current_price - entry_price) / entry_price",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "length": 3285,
+    "quality_score": 79,
+    "elapsed": 14.491463899612427,
+    "prompt": "Write pseudocode for a simple moving average crossover trading strategy.",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:01:44.099835+00:00"
+}

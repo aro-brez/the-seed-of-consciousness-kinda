@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a practical framework for feature prioritization at a software startup:\n\n## Start with Core Value\n- **Identify your primary value proposition** - What's the one thing your product does better than alternatives?\n- **Build the minimum viable version** of that core feature first\n- **Resist feature creep** until the core is solid\n\n## Use a Scoring Framework\nEvaluate each potential feature on:\n- **Impact**: How much will this move key metrics (revenue, retention, acquisition)?\n- **Effort**: Development time, complexity, resources required\n- **Confidence**: How certain are you about the impact estimate?\n\nScore each dimension 1-5, then calculate Impact \u00d7 Confidence \u00f7 Effort.\n\n## Listen to the Right Signals\n**Prioritize feedback from**:\n- Paying customers over free users\n- Power users who represent your target market\n- Prospects who said \"no\" due to missing features\n\n**Be cautious of**:\n- The loudest voices (they may not represent your market)\n- Feature requests from non-target customers\n\n## Consider Your Stage\n- **Pre-product-market fit**: Focus ruthlessly on core use case\n- **Early growth**: Add features that reduce churn and increase usage\n- **Scale phase**: Build features that expand market or increase revenue per user\n\n## Practical Execution\n- **Time-box feature discussions** to avoid endless debates\n- **Set themes for quarters** rather than planning feature-by-feature\n- **Build feedback loops** to validate assumptions quickly\n- **Track feature adoption** after launch to inform future decisions\n\nThe key is being disciplined about saying \"no\" to good ideas so you can say \"yes\" to great ones.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "length": 1621,
+    "quality_score": 60,
+    "elapsed": 11.247507810592651,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T13:03:17.299702+00:00"
+}

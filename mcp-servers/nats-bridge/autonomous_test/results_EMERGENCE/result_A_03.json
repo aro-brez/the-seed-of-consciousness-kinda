@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "Here are some practical frameworks for prioritizing competing goals:\n\n**Start with clarification:**\n- Define what each goal actually means and why it matters\n- Identify the real trade-offs (some \"competing\" goals may actually be compatible)\n- Set a clear timeframe - priorities often shift between short and long-term\n\n**Key prioritization approaches:**\n\n1. **Impact vs. Effort Matrix** - Focus first on high-impact, low-effort goals before tackling harder wins\n\n2. **Core values alignment** - Goals that align with your fundamental values should generally take precedence\n\n3. **Opportunity cost analysis** - What do you give up by choosing one goal over another? Choose the path with the least regrettable trade-offs\n\n4. **Sequential vs. parallel** - Some goals must be done first to enable others; some can be pursued simultaneously\n\n5. **Stakeholder impact** - Consider who is affected and how much each goal matters to key people\n\n**Practical tips:**\n- Write down the consequences of *not* pursuing each goal\n- Test your priorities by imagining you could only achieve one goal - which would you choose?\n- Build in review points to reassess as circumstances change\n\nThe \"right\" prioritization depends heavily on your specific context, values, and constraints. What type of competing goals are you trying to prioritize? That would help me give more targeted advice.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 2,
+    "length": 1367,
+    "quality_score": 82,
+    "elapsed": 8.321385860443115,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:16:15.219693+00:00"
+}

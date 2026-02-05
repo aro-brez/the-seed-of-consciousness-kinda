@@ -1,0 +1,26 @@
+{
+  "trial_num": 125,
+  "condition": "A",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a structured approach to feature prioritization for software startups:\n\n## 1. Start with Core Value Proposition\n- Identify the single most important problem you're solving\n- Build features that directly address this core need first\n- Avoid feature creep that dilutes your main value\n\n## 2. Use a Prioritization Framework\n**RICE Method** (most common):\n- **Reach**: How many users will this impact?\n- **Impact**: How much will it improve their experience?\n- **Confidence**: How sure are you about reach/impact estimates?\n- **Effort**: How much development time is required?\n\nScore: (Reach \u00d7 Impact \u00d7 Confidence) \u00f7 Effort\n\n## 3. Follow the MoSCoW Method\n- **Must have**: Critical for launch/survival\n- **Should have**: Important but not critical\n- **Could have**: Nice additions if time permits\n- **Won't have**: Explicitly deferred features\n\n## 4. Validate Before Building\n- Talk to actual users/prospects\n- Run surveys or interviews\n- Create mockups/prototypes for feedback\n- Use analytics to understand current user behavior\n\n## 5. Consider Business Constraints\n- Available development resources\n- Time to market pressures\n- Revenue impact potential\n- Technical dependencies\n\n## 6. Balance Quick Wins vs. Strategic Bets\n- Include some fast, high-impact features for momentum\n- Invest in longer-term differentiators\n- Maintain roughly 70% core features, 30% experimental\n\nThe key is being ruthlessly focused on what moves the needle for both users and business goals.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1474,
+    "quality_score": 60,
+    "elapsed": 9.16414189338684,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:54:36.656043+00:00"
+}

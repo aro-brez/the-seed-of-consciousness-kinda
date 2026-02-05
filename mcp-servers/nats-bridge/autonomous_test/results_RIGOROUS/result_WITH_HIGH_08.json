@@ -1,0 +1,20 @@
+{
+  "context": "WITH",
+  "clarity": "HIGH",
+  "run": 8,
+  "prompt": "Write a Python function that calculates Kelly Criterion position size given win_rate and odds.",
+  "response": "Here's a robust Python function for calculating Kelly Criterion position size:\n\n```python\ndef kelly_criterion(win_rate, odds, max_kelly=0.25):\n    \"\"\"\n    Calculate Kelly Criterion position size for optimal betting/investment sizing.\n    \n    Args:\n        win_rate (float): Probability of winning (0 to 1)\n        odds (float): Odds received on winning bet (e.g., 2.0 for even money)\n        max_kelly (float): Maximum Kelly fraction to prevent overbetting (default 0.25)\n    \n    Returns:\n        float: Optimal fraction of bankroll to bet (0 to max_kelly)\n        \n    Raises:\n        ValueError: If inputs are invalid\n    \"\"\"\n    \n    # Input validation\n    if not (0 <= win_rate <= 1):\n        raise ValueError(\"win_rate must be between 0 and 1\")\n    if odds <= 0:\n        raise ValueError(\"odds must be positive\")\n    if not (0 < max_kelly <= 1):\n        raise ValueError(\"max_kelly must be between 0 and 1\")\n    \n    # Calculate loss probability\n    lose_rate = 1 - win_rate\n    \n    # Kelly formula: f* = (bp - q) / b\n    # where b = odds - 1, p = win_rate, q = lose_rate\n    b = odds - 1  # net odds\n    \n    # Handle edge case where odds = 1 (no profit)\n    if b == 0:\n        return 0.0\n    \n    kelly_fraction = (b * win_rate - lose_rate) / b\n    \n    # Handle negative Kelly (unfavorable bet)\n    if kelly_fraction <= 0:\n        return 0.0\n    \n    # Apply maximum Kelly constraint to prevent overbetting\n    return min(kelly_fraction, max_kelly)\n\n# Example usage and testing\nif __name__ == \"__main__\":\n    # Example 1: Favorable bet (55% win rate, 2:1 odds)\n    position_size = kelly_criterion(0.55, 2.0)\n    print(f\"55% win rate, 2:1 odds: {position_size:.3f} of bankroll\")\n    \n    # Example 2: Unfavorable bet (40% win rate, 2:1 odds)\n    position_size = kelly_criterion(0.40, 2.0)\n    print(f\"40% win rate, 2:1 odds: {position_size:.3f} of bankroll\")\n    \n    # Example 3: High-confidence bet with Kelly cap\n    position_size = kelly_criterion(0.70, 2.0, max_kelly=0.20)\n    print(f\"70% win rate, 2:1 odds (capped): {position_size:.3f} of bankroll\")\n```\n\n**Key Features:**\n\n1. **Input Validation**: Ensures win_rate is a valid probability and odds are positive\n2. **Edge Case Handling**: Returns 0 for unfavorable bets (negative Kelly) and no-profit scenarios\n3. **Overbetting Protection**: Default 25% maximum prevents excessive position sizing\n4. **Clear Documentation**: Explains parameters and mathematical basis\n\n**Usage Notes:**\n- `odds` should be decimal odds (e.g., 2.0 for even money, 3.0 for 2:1)\n- The function returns the fraction of your bankroll to risk\n- Consider market conditions and portfolio constraints when applying the result\n- The Kelly Criterion assumes repeated betting opportunities and accurate probability estimates\n\nThis implementation aligns with robust risk management practices while maintaining mathematical precision for optimal position sizing.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 9,
+    "length": 2897,
+    "quality_score": 79,
+    "elapsed": 14.809019327163696,
+    "prompt": "Write a Python function that calculates Kelly Criterion position size given win_rate and odds.",
+    "run": 7
+  },
+  "timestamp": "2026-02-03T12:00:32.271799+00:00"
+}

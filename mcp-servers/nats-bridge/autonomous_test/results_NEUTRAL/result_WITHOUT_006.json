@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "Here are key strategies to build trust with new colleagues:\n\n**Be reliable and consistent**\n- Follow through on commitments, even small ones\n- Meet deadlines and communicate proactively if delays arise\n- Show up prepared and engaged in meetings\n\n**Practice transparency**\n- Admit when you don't know something rather than bluffing\n- Share relevant information and context with your team\n- Be upfront about your work style and preferences\n\n**Show genuine interest in others**\n- Ask thoughtful questions about their roles and perspectives\n- Listen actively without immediately jumping to solutions\n- Remember personal details they share\n\n**Demonstrate competence gradually**\n- Focus on doing quality work rather than overselling yourself\n- Ask for help when needed - it shows self-awareness, not weakness\n- Offer assistance in your areas of strength\n\n**Be respectful of existing dynamics**\n- Observe team culture before suggesting major changes\n- Acknowledge others' expertise and contributions\n- Avoid speaking negatively about previous workplaces\n\n**Communicate clearly**\n- Be direct but diplomatic in your communication\n- Respond promptly to messages and requests\n- Ask clarifying questions rather than making assumptions\n\nTrust builds over time through consistent small actions rather than grand gestures. Focus on being dependable and authentic, and relationships will develop naturally.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1390,
+    "quality_score": 45,
+    "elapsed": 7.334784030914307,
+    "prompt": "How do you build trust with new colleagues?"
+  },
+  "timestamp": "2026-02-03T12:48:07.882279+00:00"
+}

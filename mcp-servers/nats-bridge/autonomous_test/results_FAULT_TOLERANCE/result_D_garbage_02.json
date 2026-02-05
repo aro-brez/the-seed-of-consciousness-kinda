@@ -1,0 +1,20 @@
+{
+  "condition": "D_garbage",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I notice that all 7 perspective analyses returned errors (404 - model not found), so I don't have the intended multi-perspective input to synthesize from. However, I can address your core question directly:\n\n**\"What are we missing in our current strategy?\"**\n\nWithout knowing your specific context, here's a systematic approach to identify strategic gaps:\n\n## Key Areas to Examine:\n\n**1. External Blindspots**\n- Market shifts you haven't accounted for\n- Competitor moves you're not tracking\n- Customer needs that are evolving faster than your response\n\n**2. Internal Gaps**\n- Skills/capabilities you assume you have but may be outdated\n- Communication breakdowns between teams\n- Resource allocation mismatches with stated priorities\n\n**3. Time Horizon Misalignment**\n- Over-focusing on short-term metrics at expense of long-term positioning\n- Under-investing in future capabilities while current ones erode\n\n**4. Stakeholder Perspectives**\n- Voices not being heard in strategy formation\n- Implementation challenges from front-line teams not reaching decision-makers\n\n## Immediate Action:\nConduct a \"pre-mortem\" exercise: Imagine your strategy fails in 12 months. What would be the most likely causes? Those are probably what you're missing right now.\n\nWould you like me to help you drill down into any of these areas with your specific context?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1344,
+    "quality_score": 66,
+    "elapsed": 12.020634174346924,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:37:15.822909+00:00"
+}

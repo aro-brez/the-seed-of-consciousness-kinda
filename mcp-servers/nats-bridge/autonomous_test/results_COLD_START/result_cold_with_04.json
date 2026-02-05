@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "with",
+  "run": 4,
+  "prompt": "Am I on the right track?",
+  "response": "I notice that all seven perspectives you've referenced returned 404 errors, indicating they couldn't be processed due to a model availability issue. Without the actual analysis from PERCEIVE, CONNECT, LEARN, QUESTION, EXPAND, SHARE, and RECEIVE, I can't synthesize their insights.\n\nHowever, I can address your core question: **\"Am I on the right track?\"**\n\nTo provide you with actionable guidance, I need to understand:\n\n1. **What track are you referring to?** (A project, career path, learning goal, relationship, etc.)\n2. **What specific outcomes or progress markers are you measuring against?**\n3. **What doubts or uncertainties prompted this question?**\n\n**Immediate actionable steps:**\n\n- **Define your destination**: Clarify what \"right track\" means for your specific situation\n- **Assess current progress**: List concrete evidence of movement toward your goal\n- **Identify concerns**: What specifically makes you question your path?\n- **Seek specific feedback**: Ask trusted advisors about observable progress, not just feelings\n\nIf you can share more context about what you're working toward and what's making you question your direction, I can provide much more targeted and useful guidance.\n\nWhat specific area of your life or work is prompting this \"right track\" question?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 1283,
+    "quality_score": 41,
+    "elapsed": 11.593905210494995,
+    "prompt": "Am I on the right track?",
+    "run": 3,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:32:59.019990+00:00"
+}

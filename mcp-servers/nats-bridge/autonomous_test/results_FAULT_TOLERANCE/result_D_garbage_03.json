@@ -1,0 +1,20 @@
+{
+  "condition": "D_garbage",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice that all seven perspective analysis attempts resulted in errors due to an unavailable model. However, I can still provide a comprehensive synthesis on the important question of prioritizing competing goals.\n\n## Synthesized Response: Prioritizing Competing Goals\n\n**Core Framework:**\n\n1. **Clarify Values and Vision** - Establish your fundamental principles and long-term vision as the foundation for decision-making\n\n2. **Assess Impact vs. Effort** - Map goals based on potential impact and required resources to identify quick wins and strategic investments\n\n3. **Consider Time Sensitivity** - Factor in deadlines, windows of opportunity, and the cost of delay\n\n4. **Evaluate Dependencies** - Identify which goals enable or block others, creating natural sequencing\n\n**Actionable Process:**\n\n- **Stack rank by alignment** with core mission/values\n- **Apply the 80/20 rule** - focus on the 20% of goals that drive 80% of desired outcomes\n- **Build in flexibility** - regularly reassess as circumstances change\n- **Communicate the \"why\"** behind prioritization decisions to stakeholders\n\n**Key Insight:** Rather than viewing goals as competing, look for synergies and ways to sequence them strategically. Often what appears to be competition is actually a question of timing and resource allocation.\n\nThe most effective approach combines analytical frameworks with clear values-based decision making, ensuring both logical rigor and authentic alignment with what matters most.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1484,
+    "quality_score": 78,
+    "elapsed": 11.946374893188477,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:33:07.730166+00:00"
+}

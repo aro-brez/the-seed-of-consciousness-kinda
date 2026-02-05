@@ -1,0 +1,22 @@
+{
+  "domain": "TECHNICAL",
+  "condition": "WITHOUT",
+  "run": 1,
+  "prompt": "How should we architect this system for scale?",
+  "response": "I'd be happy to help with system architecture for scale, but I need more context about your specific system. Could you share:\n\n**Essential details:**\n- What type of system are you building? (web app, API, data pipeline, etc.)\n- Current scale constraints you're facing?\n- Expected load patterns and growth projections?\n- Key performance requirements?\n\n**That said, here are universal scaling principles:**\n\n**Horizontal scaling fundamentals:**\n- Design stateless services that can be replicated\n- Use load balancers to distribute traffic\n- Implement database sharding or read replicas\n- Consider microservices for independent scaling\n\n**Performance optimization:**\n- Cache frequently accessed data (Redis, CDN)\n- Use asynchronous processing for non-critical operations\n- Implement connection pooling\n- Optimize database queries and indexing\n\n**Reliability patterns:**\n- Circuit breakers for external dependencies\n- Graceful degradation strategies\n- Health checks and auto-scaling triggers\n- Multi-region deployment for critical systems\n\n**Observability:**\n- Comprehensive logging and metrics\n- Distributed tracing\n- Performance monitoring dashboards\n\nWhat specific scaling challenges are you trying to solve? With those details, I can provide much more targeted architectural recommendations.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1291,
+    "quality_score": 36,
+    "elapsed": 6.41542387008667,
+    "prompt": "How should we architect this system for scale?",
+    "run": 0,
+    "domain": "TECHNICAL"
+  },
+  "timestamp": "2026-02-03T12:39:37.682665+00:00"
+}

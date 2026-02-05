@@ -1,0 +1,26 @@
+{
+  "condition": "E_minimal",
+  "phases": [
+    "PERCEIVE"
+  ],
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice there's an error in the input you've provided - the \"PERCEIVE\" perspective shows a 404 error rather than actual analysis content. Without the actual perspective analysis, I cannot properly synthesize insights about resource investment allocation.\n\nTo provide you with a meaningful response about where to invest limited resources, I would need:\n\n1. **Context about your situation** - What type of organization/individual are you? What are your goals?\n2. **Resource constraints** - What specific resources are limited (money, time, people, etc.)?\n3. **Available options** - What investment opportunities are you considering?\n4. **Success metrics** - How do you define successful resource allocation?\n\nIf you can share the actual analytical perspective that was intended, or provide the context above, I can offer a synthesized, actionable response about optimal resource investment strategies.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 901,
+    "quality_score": 61.01,
+    "elapsed": 6.833317756652832,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7,
+    "phases": [
+      "PERCEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:40:01.248104+00:00"
+}

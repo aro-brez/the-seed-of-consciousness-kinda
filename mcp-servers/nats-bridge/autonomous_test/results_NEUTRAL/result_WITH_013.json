@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "I notice that all seven perspective analyses encountered errors due to a model availability issue. However, I can still provide a comprehensive synthesis on debugging complex systems based on the framework implied by those perspective names.\n\n## **Unified Approach to Debugging Complex Systems**\n\n### **Foundation: Systematic Observation & Understanding**\n- **Start with the whole system**: Map out components, dependencies, and data flows before diving into specifics\n- **Reproduce the problem consistently**: Create controlled conditions to isolate variables\n- **Document everything**: Keep detailed logs of symptoms, hypotheses, and attempted solutions\n\n### **Strategic Methodology**\n1. **Perceive accurately**: Gather objective data through monitoring, logging, and measurement rather than assumptions\n2. **Connect patterns**: Look for relationships between symptoms, timing, and system states\n3. **Learn systematically**: Research similar issues, consult documentation, and understand underlying principles\n4. **Question assumptions**: Challenge initial hypotheses and consider alternative explanations\n\n### **Tactical Execution**\n- **Divide and conquer**: Break complex systems into smaller, testable components\n- **Use the scientific method**: Form hypotheses, design experiments, test incrementally\n- **Leverage tools**: Employ debuggers, profilers, network analyzers, and monitoring systems appropriate to your domain\n- **Work backward from symptoms**: Trace errors to their root causes rather than treating surface manifestations\n\n### **Collaborative Elements**\n- **Share findings**: Document discoveries for team members and future reference\n- **Seek diverse perspectives**: Fresh eyes often spot what you've missed\n- **Receive feedback**: Be open to alternative approaches and solutions\n\n### **Key Principles**\n- **Patience over speed**: Rushing often creates more problems\n- **Evidence over intuition**: Let data guide decisions\n- **Prevention over reaction**: Build debugging capabilities into systems from the start\n\nThis approach combines systematic observation, methodical analysis, and collaborative problem-solving to tackle complex system issues effectively.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 4,
+    "length": 2178,
+    "quality_score": 60,
+    "elapsed": 13.87271499633789,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:49:37.900235+00:00"
+}

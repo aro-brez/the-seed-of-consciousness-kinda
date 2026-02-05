@@ -1,0 +1,36 @@
+{
+  "condition": "C_no_question",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "I notice that all the perspective analyses returned errors - it appears there were technical issues with the model endpoints. However, I can still synthesize a meaningful response to your fundamental question: \"How do we know if we're on the right track?\"\n\n## Unified Response: Navigating Your Path Forward\n\n**The Challenge of Direction**\nThis question touches the heart of human uncertainty - whether in personal growth, relationships, career, or life decisions, we often lack clear external validation that we're moving in the right direction.\n\n**Multi-Dimensional Assessment Framework**\n\n**Internal Compass:**\n- Are you growing in ways that feel authentic to your values?\n- Do you feel energized or drained by your current path?\n- Are you learning and developing capabilities that matter to you?\n\n**External Indicators:**\n- Are you creating positive impact for others?\n- Do trusted advisors see progress in you?\n- Are doors opening or consistently closing?\n\n**Forward Momentum:**\n- Can you see measurable progress, even if gradual?\n- Are you building on previous efforts rather than starting over repeatedly?\n- Do setbacks feel like temporary obstacles rather than permanent roadblocks?\n\n**Actionable Next Steps:**\n1. Define 2-3 specific metrics that would indicate progress in your context\n2. Establish regular check-ins (weekly/monthly) to assess these indicators\n3. Seek feedback from people whose judgment you trust\n4. Adjust course based on data, not just feelings\n\nThe \"right track\" isn't about perfection - it's about conscious, values-aligned movement toward outcomes that matter to you and others you serve.\n\nWhat specific area of your life or work prompted this question?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1684,
+    "quality_score": 66,
+    "elapsed": 12.398439168930054,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:34:02.232148+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "condition": "E_empty",
+  "run": 6,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice that all seven perspectives returned errors - it appears there was a technical issue with the model endpoints that prevented the IMPROVE framework from generating the individual perspective analyses.\n\nHowever, I can still address your fundamental question: **\"Where should we invest our limited resources?\"**\n\n## Synthesized Response\n\nWithout the specific perspective analyses, I'll provide a structured approach to resource allocation decisions:\n\n### Immediate Assessment Framework\n1. **Define your objectives clearly** - What outcomes are you trying to achieve?\n2. **Inventory your actual resources** - Time, money, people, capabilities\n3. **Map high-impact opportunities** - Where can resources create the most value?\n\n### Investment Priority Matrix\n- **High Impact + Low Cost**: Invest immediately\n- **High Impact + High Cost**: Plan strategically, seek funding/partnerships\n- **Low Impact + Low Cost**: Consider if capacity allows\n- **Low Impact + High Cost**: Avoid or defer\n\n### Key Principles for Resource Allocation\n- **Focus over diversification**: Better to excel in fewer areas than spread thin\n- **Build on existing strengths**: Leverage what's already working\n- **Consider opportunity cost**: What are you NOT doing by choosing this path?\n- **Plan for learning**: Allocate resources to gather data for better future decisions\n\n### Actionable Next Step\nStart by clearly defining what \"success\" looks like for your specific situation, then map your top 3-5 opportunities against available resources using the priority matrix above.\n\nWould you like to share more context about your specific resource allocation challenge so I can provide more targeted guidance?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1681,
+    "quality_score": 53,
+    "elapsed": 13.793203115463257,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:31:25.630260+00:00"
+}

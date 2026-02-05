@@ -1,0 +1,20 @@
+{
+  "condition": "A_healthy",
+  "run": 6,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I understand you're presenting me with a synthesis scenario, but I notice that all 7 perspectives returned error messages (404 errors indicating the model \"claude-haiku-4-20250514\" wasn't found). This means I don't have any actual perspective content to synthesize.\n\nHowever, I can address your original question: \"Where should we invest our limited resources?\"\n\nWithout the specific perspectives that were intended to inform this synthesis, I can offer a general framework for resource allocation decisions:\n\n**Key Considerations for Resource Investment:**\n\n1. **Strategic Alignment** - Invest where it advances your core mission and long-term objectives\n2. **Return Potential** - Prioritize areas with highest impact relative to investment required\n3. **Risk Assessment** - Balance high-potential opportunities with prudent risk management\n4. **Capability Building** - Invest in developing competencies that create sustainable advantages\n5. **Time Sensitivity** - Consider which opportunities are time-critical vs. those that can wait\n6. **Stakeholder Value** - Focus on investments that benefit your key stakeholders most significantly\n\n**Actionable Next Steps:**\n- Define clear success metrics for each potential investment area\n- Conduct a resource audit to understand true capacity constraints\n- Create a decision matrix weighing impact, feasibility, and strategic fit\n- Plan for iterative investment with regular review points\n\nIf you can provide the actual perspective content that was meant to be analyzed, I'd be happy to synthesize those specific insights into a more tailored response.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1597,
+    "quality_score": 86,
+    "elapsed": 13.32762598991394,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:35:11.342940+00:00"
+}

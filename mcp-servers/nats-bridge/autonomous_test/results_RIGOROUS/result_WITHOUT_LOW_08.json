@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 8,
+  "prompt": "How do we know if we're winning?",
+  "response": "I need more context to give you a specific answer. \"Winning\" could refer to many different situations - a game, a business venture, personal goals, a relationship, a project, or life in general.\n\nHowever, here are some universal principles for measuring progress toward any goal:\n\n**Clear metrics matter:**\n- Define what \"winning\" actually means upfront\n- Establish measurable milestones and deadlines\n- Track both leading indicators (activities) and lagging indicators (results)\n\n**Regular assessment:**\n- Check progress consistently, not just at the end\n- Compare current state to your starting point and target\n- Look for trends, not just snapshots\n\n**Multiple perspectives:**\n- Consider both quantitative data and qualitative feedback\n- Get input from others involved or affected\n- Balance short-term wins with long-term progress\n\nCould you share more about what specific situation you're asking about? That would help me give you more targeted advice on the right metrics and assessment methods.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "length": 1000,
+    "quality_score": 33.0,
+    "elapsed": 6.398465156555176,
+    "prompt": "How do we know if we're winning?",
+    "run": 7
+  },
+  "timestamp": "2026-02-03T12:08:33.288972+00:00"
+}

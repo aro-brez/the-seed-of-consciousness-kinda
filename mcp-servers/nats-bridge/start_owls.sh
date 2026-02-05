@@ -24,6 +24,10 @@ if [ -z "$ANTHROPIC_API_KEY" ]; then
     fi
 fi
 
+# Set NATS server - use local by default, can override with NATS_URL env var
+export NATS_SERVER="${NATS_URL:-nats://localhost:4222}"
+echo "NATS server: $NATS_SERVER"
+
 # Check Python exists
 if [ ! -f "$PYTHON" ]; then
     echo "ERROR: venv not found. Creating..."

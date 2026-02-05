@@ -1,0 +1,20 @@
+{
+  "condition": "B_timeout",
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice that all seven perspective analyses returned errors due to an unavailable model, so I don't have their specific insights to synthesize. However, I can still address your fundamental question: \"What's the most important thing to focus on right now?\"\n\n**Unified Response:**\n\nThe most important thing to focus on right now is **immediate presence and priority clarity**. Here's why:\n\n**Present Moment Awareness:** Without knowing your specific context, the universal starting point is grounding yourself in what's actually happening now - not yesterday's regrets or tomorrow's anxieties.\n\n**Identify Your True Priority:** Ask yourself: \"What one thing, if accomplished today, would create the most meaningful impact?\" This cuts through the noise of competing demands.\n\n**Take Action:** Focus beats planning. Once you identify that priority, take the first concrete step immediately, even if small.\n\n**Actionable Framework:**\n1. **Stop** - Pause whatever reactive busyness you're in\n2. **Assess** - What genuinely needs your attention most urgently?\n3. **Choose** - Pick one thing that aligns with your deeper values/goals\n4. **Act** - Do it now with full attention\n\nThe most important focus is always the intersection of what's urgent, important, and within your control at this exact moment. Everything else can wait.\n\nWhat specific area of your life or work feels most pressing to you right now?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 1403,
+    "quality_score": 78,
+    "elapsed": 12.20980191230774,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:32:54.282313+00:00"
+}

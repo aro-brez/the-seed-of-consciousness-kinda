@@ -1,0 +1,22 @@
+{
+  "domain": "BUSINESS",
+  "condition": "WITHOUT",
+  "run": 2,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "Here's a practical framework for prioritizing competing goals:\n\n**1. Clarify what matters most**\n- Identify your core values and long-term vision\n- Distinguish between urgent and truly important goals\n- Consider which goals align with your fundamental principles\n\n**2. Assess impact and feasibility**\n- Which goals will create the most meaningful change?\n- What resources (time, money, energy) does each require?\n- Which have the highest probability of success?\n\n**3. Look for connections**\n- Can any goals be pursued simultaneously?\n- Do some goals naturally support or enable others?\n- Which create positive momentum for future objectives?\n\n**4. Consider timing**\n- Are there natural sequences or dependencies?\n- Do external factors make certain goals more timely?\n- Which have firm deadlines versus flexible timelines?\n\n**5. Make conscious trade-offs**\n- Accept that you can't do everything at once\n- Choose what to defer, not just what to pursue\n- Build in regular review points to reassess priorities\n\n**6. Start with clarity on scope**\n- Are you prioritizing personal goals, team objectives, or organizational strategy?\n- Different contexts may require different weighting of factors\n\nThe key is being intentional rather than reactive, and remembering that good prioritization often means saying \"not now\" to good opportunities so you can say \"yes\" to great ones.\n\nWhat specific competing goals are you trying to balance?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1427,
+    "quality_score": 74,
+    "elapsed": 8.102303981781006,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 1,
+    "domain": "BUSINESS"
+  },
+  "timestamp": "2026-02-03T12:35:15.747247+00:00"
+}

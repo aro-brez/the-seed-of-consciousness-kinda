@@ -1,0 +1,36 @@
+{
+  "condition": "B_no_receive",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE"
+  ],
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice that all six perspective analyses resulted in errors due to an unavailable model, so I don't have their specific insights to synthesize. However, I can provide a unified, actionable response to your question about prioritizing competing goals based on established frameworks and principles.\n\n## Unified Approach to Prioritizing Competing Goals\n\n**1. Clarify Your Core Values & Mission**\n- Identify your fundamental purpose and non-negotiable values\n- Use these as your North Star when goals conflict\n- Ask: \"Which goal best serves our ultimate purpose?\"\n\n**2. Apply Multi-Criteria Decision Framework**\n- **Impact**: Which goal creates the most significant positive outcome?\n- **Urgency**: What are the time-sensitive consequences of delay?\n- **Resources**: Which goals can you realistically achieve with available resources?\n- **Alignment**: How well does each goal support your broader strategy?\n\n**3. Use the Eisenhower Matrix**\n- **Do First**: High impact + urgent\n- **Schedule**: High impact + not urgent\n- **Delegate**: Low impact + urgent\n- **Eliminate**: Low impact + not urgent\n\n**4. Consider Stakeholder Impact**\n- Map who is affected by each goal\n- Weight the needs of primary vs. secondary stakeholders\n- Look for win-win solutions that serve multiple constituencies\n\n**5. Test for Interdependencies**\n- Identify goals that enable or block others\n- Sequence goals to create positive momentum\n- Consider which goals compound benefits over time\n\n**Actionable Next Steps:**\n1. List all competing goals explicitly\n2. Score each on impact, urgency, and alignment (1-10)\n3. Calculate weighted priorities\n4. Choose 2-3 top priorities maximum\n5. Set clear success metrics and review cycles\n\nThe key is accepting that perfect optimization isn't possible\u2014aim for \"good enough\" decisions that move you forward rather than paralysis from over-analysis.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1860,
+    "quality_score": 70,
+    "elapsed": 14.105597257614136,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:36:47.705012+00:00"
+}

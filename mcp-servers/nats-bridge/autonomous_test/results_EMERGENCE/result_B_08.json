@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I'd need more context about your specific situation to give you targeted advice, but here's a framework to help you decide:\n\n**First, clarify these key details:**\n- What stage is your business? (pre-revenue, early revenue, scaling)\n- What's your current biggest constraint? (users, revenue, product quality, team)\n- How much runway do you have?\n- What does your data show about user behavior/satisfaction?\n\n**General resource allocation priorities by stage:**\n\n**Early stage (pre-product-market fit):**\n- 70% on product development and user research\n- 20% on acquiring early users for feedback\n- 10% on essential infrastructure\n\n**Growth stage (post-product-market fit):**\n- 40-50% on user acquisition and marketing\n- 30% on product improvement and new features\n- 20% on team and operations\n\n**Use this decision framework:**\n1. **Impact vs Effort**: Prioritize high-impact, low-effort initiatives first\n2. **Bottleneck analysis**: Invest where you're most constrained\n3. **Revenue proximity**: Favor investments closer to generating revenue\n4. **Reversibility**: Prefer reversible decisions when uncertain\n\nWhat stage are you at, and what specific areas are you considering for investment? I can give you more targeted guidance with those details.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 1,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1247,
+    "quality_score": 41,
+    "elapsed": 8.412250995635986,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7
+  },
+  "timestamp": "2026-02-03T12:11:01.756019+00:00"
+}

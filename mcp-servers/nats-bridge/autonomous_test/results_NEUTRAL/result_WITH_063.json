@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What are the best practices for code review?",
+  "response": "I notice that all seven perspectives encountered errors and couldn't provide their analysis. However, I can still provide you with a comprehensive synthesis on code review best practices based on established industry knowledge.\n\n## Unified Code Review Best Practices\n\n### **Pre-Review Foundation**\n- **Clear Standards**: Establish coding standards, style guides, and review criteria upfront\n- **Automated Checks**: Use linters, formatters, and automated testing to catch basic issues before human review\n- **Small, Focused Changes**: Keep pull requests small (typically <400 lines) for more effective review\n\n### **Review Process**\n- **Timely Reviews**: Aim to review within 24-48 hours to maintain development momentum\n- **Multiple Reviewers**: Use at least 2 reviewers for critical code; distribute review load across the team\n- **Structured Approach**: Review for functionality, readability, maintainability, security, and performance\n\n### **Communication Excellence**\n- **Constructive Feedback**: Focus on the code, not the person; suggest improvements rather than just pointing out problems\n- **Explain Reasoning**: Provide context for requested changes, especially for junior developers\n- **Ask Questions**: Use questions to guide learning rather than making demands\n\n### **Technical Focus Areas**\n- **Logic and Correctness**: Verify the code solves the intended problem\n- **Security Vulnerabilities**: Check for common security issues (SQL injection, XSS, etc.)\n- **Performance Implications**: Consider scalability and efficiency\n- **Code Maintainability**: Assess readability, documentation, and future extensibility\n\n### **Cultural Integration**\n- **Learning Opportunity**: Treat reviews as knowledge sharing sessions\n- **Psychological Safety**: Create an environment where team members feel safe receiving feedback\n- **Continuous Improvement**: Regularly retrospect on the review process itself\n\nThis synthesis provides actionable guidance that teams can implement immediately to improve their code review effectiveness and team collaboration.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 4,
+    "length": 2053,
+    "quality_score": 70,
+    "elapsed": 13.825698137283325,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T13:00:01.408113+00:00"
+}

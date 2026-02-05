@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What are the best practices for code review?",
+  "response": "I notice that all seven perspective analyses encountered errors due to an unavailable model, but I can still provide a comprehensive synthesis on code review best practices based on established software engineering principles.\n\n## Unified Code Review Best Practices\n\n### **Foundation Principles**\n- **Collaborative mindset**: Treat reviews as learning opportunities, not fault-finding exercises\n- **Clear objectives**: Focus on code quality, maintainability, and knowledge sharing\n- **Constructive communication**: Provide specific, actionable feedback with explanations\n\n### **Process Excellence**\n1. **Review scope management**\n   - Keep changes small (typically <400 lines)\n   - Review frequently rather than accumulating large batches\n   - Separate functional changes from refactoring\n\n2. **Systematic approach**\n   - Check functionality and logic first\n   - Verify code style and conventions\n   - Assess performance implications\n   - Ensure adequate test coverage\n\n### **Communication Standards**\n- Use \"we\" language instead of \"you\" to maintain collaborative tone\n- Explain the \"why\" behind suggestions, not just the \"what\"\n- Acknowledge good practices when you see them\n- Ask questions to understand intent before suggesting changes\n\n### **Technical Focus Areas**\n- **Security**: Look for vulnerabilities and sensitive data exposure\n- **Performance**: Identify potential bottlenecks or inefficient patterns\n- **Maintainability**: Ensure code is readable and well-documented\n- **Standards compliance**: Verify adherence to team coding conventions\n\n### **Actionable Implementation**\n- Establish clear review criteria and checklists\n- Set reasonable time expectations (typically 60-90 minutes max per session)\n- Use tools that support inline comments and change tracking\n- Create feedback loops to continuously improve the review process\n\nThis synthesis emphasizes both the human and technical aspects essential for effective code review practices.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1952,
+    "quality_score": 60,
+    "elapsed": 15.140684843063354,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T13:06:30.217289+00:00"
+}

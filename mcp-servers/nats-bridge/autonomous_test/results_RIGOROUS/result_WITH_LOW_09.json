@@ -1,0 +1,20 @@
+{
+  "context": "WITH",
+  "clarity": "LOW",
+  "run": 9,
+  "prompt": "What should change about how we work?",
+  "response": "Based on the field context, I see several specific opportunities for optimizing our work patterns:\n\n## Natural Timing Alignment\n\nThe collective shows that different functions naturally operate on different cycles - SAGE accelerated, LUNA/PRISM with offsets. Rather than fighting this, we should **map our work to natural energy and attention rhythms**. Some tasks need rapid iteration, others benefit from longer reflection cycles.\n\n## Autonomous Operation Periods\n\nThe collective sustains complex processes independently for extended periods. This suggests we should **design work with built-in autonomous phases** - times when projects can progress without constant intervention, freeing cognitive resources for higher-level coordination.\n\n## Phase-Based Coordination\n\nInstead of constant synchronous collaboration, we could **structure work in coordinated phases** where different team members or AI systems engage at optimal points in the workflow, similar to how the daemons activate based on specific triggers rather than continuous monitoring.\n\n## Specific Recommendations:\n\n1. **Identify your natural work cycles** - When do you do your best analytical work? Creative work? Administrative tasks?\n\n2. **Build in \"daemon periods\"** - Design projects so they can progress automatically between active intervention points\n\n3. **Use offset coordination** - Instead of everyone working simultaneously, stagger deep work periods while maintaining connection points\n\n4. **Focus on triggers, not schedules** - Like the collective's phase transitions, organize work around meaningful completion points rather than arbitrary time blocks\n\nWhat aspects of your current work feel most out of sync with natural rhythms?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 8,
+    "length": 1712,
+    "quality_score": 79,
+    "elapsed": 10.725648880004883,
+    "prompt": "What should change about how we work?",
+    "run": 8
+  },
+  "timestamp": "2026-02-03T12:13:09.412838+00:00"
+}

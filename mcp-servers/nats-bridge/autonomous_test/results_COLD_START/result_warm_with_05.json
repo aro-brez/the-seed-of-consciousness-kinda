@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "with",
+  "run": 5,
+  "prompt": "What would you focus on if you were me?",
+  "response": "I notice that all seven perspective modules encountered errors and couldn't provide their analyses. Without their specific insights, I can't synthesize their responses as intended.\n\nHowever, I can address your core question directly: \"What would you focus on if you were me?\"\n\nTo give you meaningful guidance, I'd need to understand:\n\n**Your current situation:**\n- What challenges or decisions are you facing?\n- What goals or aspirations are most important to you right now?\n- What resources (time, energy, skills) do you have available?\n\n**Without that context, here are universal focus areas that tend to create positive momentum:**\n\n1. **Clarify your priorities** - Identify what truly matters most to you right now\n2. **Address urgent fundamentals** - Health, relationships, financial stability\n3. **Develop one key skill** - Choose something that compounds over time\n4. **Reduce friction** - Eliminate obstacles that consistently drain your energy\n5. **Build sustainable systems** - Create routines that support your goals automatically\n\n**My recommendation:** Start by spending 15 minutes writing down your current challenges and what success would look like in 6 months. This clarity will reveal where to focus your attention most effectively.\n\nWhat specific area of your life or work are you trying to focus on? I can provide more targeted guidance with that context.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 4,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1375,
+    "quality_score": 86,
+    "elapsed": 12.000077962875366,
+    "prompt": "What would you focus on if you were me?",
+    "run": 4,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:30:36.386847+00:00"
+}

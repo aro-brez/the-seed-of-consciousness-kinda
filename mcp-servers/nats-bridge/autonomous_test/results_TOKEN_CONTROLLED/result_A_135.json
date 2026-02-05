@@ -1,0 +1,26 @@
+{
+  "trial_num": 135,
+  "condition": "A",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with information gathering\n- **Reproduce the issue** consistently if possible\n- **Document symptoms** precisely - what's happening vs. what should happen\n- **Collect logs, metrics, and error messages** from all relevant components\n- **Understand the system architecture** and data flow\n\n## Apply systematic investigation\n- **Isolate the problem scope** - which components, timeframes, or conditions are affected\n- **Form hypotheses** based on symptoms and system knowledge\n- **Test one variable at a time** to avoid confounding factors\n- **Work backwards from the failure point** through the system chain\n\n## Use effective debugging strategies\n- **Binary search approach** - systematically eliminate half the possibilities at each step\n- **Check recent changes** - deployments, configuration updates, data changes\n- **Verify assumptions** - don't assume components work as documented\n- **Look for patterns** in timing, frequency, or affected users/data\n\n## Leverage tools and techniques\n- **Use monitoring and observability tools** to trace requests across systems\n- **Enable detailed logging** in suspect areas (temporarily if needed)\n- **Create minimal test cases** that trigger the issue\n- **Pair debug** with colleagues who know different parts of the system\n\n## Maintain discipline\n- **Document your investigation** to avoid repeating dead ends\n- **Take breaks** when stuck to maintain fresh perspective\n- **Fix the root cause**, not just symptoms\n- **Verify the fix** doesn't introduce new issues\n\nThe key is being methodical rather than randomly trying fixes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1635,
+    "quality_score": 50,
+    "elapsed": 10.191848039627075,
+    "prompt": "How should someone approach debugging complex systems?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:56:41.972051+00:00"
+}

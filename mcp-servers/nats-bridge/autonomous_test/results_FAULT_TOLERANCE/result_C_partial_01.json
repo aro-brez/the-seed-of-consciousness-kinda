@@ -1,0 +1,20 @@
+{
+  "condition": "C_partial",
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice that all three perspective modules encountered errors and weren't able to provide their analyses. However, I can still address your fundamental question: \"What's the most important thing to focus on right now?\"\n\n**Synthesized Response:**\n\nWithout additional context about your specific situation, the most universally important thing to focus on right now is **identifying what matters most to you personally at this moment in your life.**\n\nThis means:\n\n1. **Clarify your immediate priorities** - What has the highest impact on your well-being, goals, or responsibilities today?\n\n2. **Address urgent vs. important** - Handle what's genuinely urgent, but don't let it crowd out what's truly important for your longer-term direction.\n\n3. **Focus on what you can control** - Direct your energy toward actions and decisions within your influence rather than external factors you cannot change.\n\n4. **Take care of fundamentals** - Ensure your basic needs (health, relationships, financial stability) are stable before pursuing bigger ambitions.\n\nThe \"right now\" aspect suggests you may be feeling overwhelmed or at a decision point. In such moments, often the most important focus is simply taking one clear, concrete next step rather than trying to solve everything at once.\n\nWhat specific area of your life or situation prompted this question? That would help me provide more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 1400,
+    "quality_score": 74,
+    "elapsed": 9.545609951019287,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:37:48.834919+00:00"
+}

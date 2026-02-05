@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture has several key characteristics:\n\n## Clear Separation of Concerns\n- Each component has a single, well-defined responsibility\n- Business logic is separated from infrastructure concerns\n- User interface is decoupled from data processing\n\n## Loose Coupling\n- Components depend on interfaces/abstractions rather than concrete implementations\n- Changes in one module don't cascade through the entire system\n- Dependencies flow in one direction when possible\n\n## High Cohesion\n- Related functionality is grouped together\n- Components have focused, coherent purposes\n- Internal elements work together toward a common goal\n\n## Consistent Patterns and Conventions\n- Standardized naming conventions and coding styles\n- Consistent error handling approaches\n- Predictable project structure and organization\n\n## Comprehensive Documentation\n- Architecture decisions are recorded with rationale\n- API documentation stays current\n- System diagrams and component relationships are documented\n\n## Testability\n- Components can be tested in isolation\n- Clear boundaries enable unit and integration testing\n- Test coverage provides confidence for changes\n\n## Modularity\n- System is broken into manageable, replaceable pieces\n- Well-defined interfaces between modules\n- Ability to modify or replace components independently\n\n## Observability\n- Logging, monitoring, and debugging capabilities are built-in\n- System behavior is visible and traceable\n- Performance bottlenecks can be identified\n\nThe goal is creating a system where developers can understand, modify, and extend the codebase efficiently without introducing bugs or breaking existing functionality.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1673,
+    "quality_score": 40,
+    "elapsed": 8.28911304473877,
+    "prompt": "What makes software architecture maintainable?"
+  },
+  "timestamp": "2026-02-03T13:07:20.205338+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "context": "WITH",
+  "clarity": "HIGH",
+  "run": 1,
+  "prompt": "List five specific metrics to track for a weather-based prediction market strategy.",
+  "response": "Here are five specific metrics to track for a weather-based prediction market strategy:\n\n## 1. **Temperature Deviation Accuracy (TDA)**\nTrack the absolute difference between predicted and actual temperatures across 24-hour, 72-hour, and 7-day windows. Calculate rolling 30-day accuracy percentages to identify seasonal performance patterns and model drift.\n\n## 2. **Precipitation Probability Calibration Score**\nMeasure how well probability estimates match actual rainfall outcomes using the Brier Score. For example, when the market prices rain at 70% probability, it should actually rain ~7 out of 10 times across similar predictions.\n\n## 3. **Market Liquidity Depth**\nMonitor bid-ask spreads and order book depth across different weather events. Track average daily trading volume and time-to-execution for orders of various sizes to ensure sufficient market participation for accurate price discovery.\n\n## 4. **Extreme Weather Event Detection Rate**\nMeasure true positive/false positive rates for high-impact weather events (storms, heat waves, cold snaps) that typically create the highest market volatility and profit opportunities.\n\n## 5. **Cross-Regional Correlation Tracking**\nMonitor how weather patterns in connected geographic regions affect prediction accuracy. Track correlation coefficients between regional weather systems to identify spillover effects that could impact position sizing and hedging strategies.\n\n**Monitoring Frequency**: Update metrics 1-2 every 6 hours (matching weather forecast cycles), metrics 3-5 daily, with all metrics compiled into weekly performance dashboards.\n\nThis aligns with systematic monitoring protocols while capturing the multi-dimensional nature of weather market dynamics.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1726,
+    "quality_score": 79,
+    "elapsed": 11.190640211105347,
+    "prompt": "List five specific metrics to track for a weather-based prediction market strategy.",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:07:26.335366+00:00"
+}

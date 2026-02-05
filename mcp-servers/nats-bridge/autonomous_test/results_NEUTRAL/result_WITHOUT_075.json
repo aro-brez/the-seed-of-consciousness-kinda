@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How do effective teams handle disagreements?",
+  "response": "Effective teams handle disagreements through several key practices:\n\n**Create psychological safety**\n- Establish norms where dissenting views are welcomed, not punished\n- Focus on ideas, not personalities\n- Encourage \"thinking out loud\" and questioning assumptions\n\n**Use structured discussion methods**\n- Give everyone a chance to speak before decisions are made\n- Ask clarifying questions to understand different perspectives\n- Separate idea generation from evaluation\n\n**Focus on shared goals**\n- Remind the team of common objectives when tensions rise\n- Frame disagreements as \"how do we best achieve our goal?\" rather than \"who's right?\"\n- Use data and evidence to guide decisions when possible\n\n**Practice productive conflict behaviors**\n- Address issues directly rather than avoiding them\n- Listen actively to understand, not just to respond\n- Acknowledge valid points in opposing views before presenting counterarguments\n\n**Establish clear decision-making processes**\n- Define who has final authority when consensus isn't possible\n- Set time limits for discussion to prevent endless debate\n- Document decisions and reasoning for future reference\n\n**Manage emotions effectively**\n- Take breaks when discussions become heated\n- Use \"I\" statements to express concerns\n- Separate the person from the position they're advocating\n\nThe strongest teams view disagreement as a tool for better decision-making, not as something to avoid or suppress.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1447,
+    "quality_score": 45,
+    "elapsed": 8.0222749710083,
+    "prompt": "How do effective teams handle disagreements?"
+  },
+  "timestamp": "2026-02-03T13:02:35.072025+00:00"
+}

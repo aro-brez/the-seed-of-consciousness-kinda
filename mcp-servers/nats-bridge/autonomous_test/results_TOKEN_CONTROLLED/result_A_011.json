@@ -1,0 +1,26 @@
+{
+  "trial_num": 11,
+  "condition": "A",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue** consistently before diving into fixes\n- **Gather comprehensive information**: logs, error messages, system state, user actions that triggered the problem\n- **Define the expected vs. actual behavior** clearly\n\n## Use a structured methodology\n- **Divide and conquer**: Isolate components to narrow down where the problem originates\n- **Follow the data flow**: Trace how information moves through the system\n- **Check boundaries**: Look at interfaces between components, network calls, database connections\n- **Binary search approach**: Eliminate half the possibilities at each step\n\n## Leverage the right tools\n- **Logging**: Add strategic log statements if they don't exist\n- **Debuggers**: Step through code execution when possible\n- **Monitoring tools**: Use system metrics, profilers, and network analyzers\n- **Version control**: Compare against working versions\n\n## Apply critical thinking\n- **Question assumptions**: The problem might not be where you think it is\n- **Look for patterns**: Does it happen at specific times, with certain inputs, or under particular conditions?\n- **Consider recent changes**: What was modified before the issue appeared?\n- **Think about edge cases**: Complex systems often fail at boundaries\n\n## Document and validate\n- **Keep detailed notes** of what you've tested and ruled out\n- **Test your fix thoroughly** before deploying\n- **Understand the root cause**, not just the symptom\n\nThe key is being methodical rather than jumping to conclusions based on hunches.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1615,
+    "quality_score": 50,
+    "elapsed": 9.709170818328857,
+    "prompt": "How should someone approach debugging complex systems?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:15:20.967487+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "condition": "E_minimal",
+  "phases": [
+    "PERCEIVE"
+  ],
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice there's an error in the perspective data you've provided - it shows a 404 error for a Claude model that doesn't exist. Without any actual perspectives to synthesize, I can't perform my role as IMPROVE the synthesizer.\n\nHowever, I can address your underlying question directly: **What's the most important thing to focus on right now?**\n\nThe most important thing to focus on right now is **what's immediately in front of you that you have control over**. This means:\n\n1. **Identify your most pressing priority** - the one task or decision that will have the biggest positive impact if completed today\n2. **Remove distractions** - put away devices, close unnecessary tabs, create focused work environment  \n3. **Take the next concrete action** - not planning or preparing, but actually doing the work\n4. **Stay present** - when your mind wanders to past regrets or future anxieties, gently redirect to the current moment and task\n\nWithout knowing your specific situation, this framework applies universally: focus on what's urgent AND important, within your sphere of influence, right now.\n\nIf you'd like to run this question through IMPROVE properly, please provide the actual perspective analyses rather than error messages.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1233,
+    "quality_score": 82,
+    "elapsed": 8.477568864822388,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0,
+    "phases": [
+      "PERCEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:32:56.096399+00:00"
+}

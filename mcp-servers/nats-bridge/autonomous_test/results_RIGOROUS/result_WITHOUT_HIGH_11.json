@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 11,
+  "prompt": "List five specific metrics to track for a weather-based prediction market strategy.",
+  "response": "Here are five specific metrics to track for a weather-based prediction market strategy:\n\n1. **Temperature Deviation Accuracy (TDA)** - Measure your prediction accuracy against actual temperature outcomes within specific ranges (e.g., \u00b12\u00b0F, \u00b15\u00b0F). Track this as a percentage hit rate over rolling 30/90-day periods to assess forecasting precision.\n\n2. **Precipitation Probability Calibration** - Compare your predicted rainfall probabilities to actual occurrence rates across different confidence bands (0-20%, 21-40%, etc.). Well-calibrated predictions should show actual rates matching predicted probabilities.\n\n3. **Market Timing Alpha** - Calculate the difference between your entry/exit prices and the final settlement values, weighted by position size. This measures how effectively you're capturing price movements before markets converge to true odds.\n\n4. **Geographic Correlation Risk** - Track the correlation coefficient between weather outcomes across your different market positions. High correlations (>0.7) indicate dangerous concentration risk during widespread weather events.\n\n5. **Seasonal Volatility-Adjusted Returns** - Measure returns normalized by the expected volatility of each weather market during different seasons. This accounts for the fact that winter heating markets naturally have higher variance than summer cooling markets.\n\nThese metrics help balance prediction accuracy with risk management and market timing execution.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "length": 1455,
+    "quality_score": 79,
+    "elapsed": 9.175923824310303,
+    "prompt": "List five specific metrics to track for a weather-based prediction market strategy.",
+    "run": 10
+  },
+  "timestamp": "2026-02-03T11:58:25.576537+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 13,
+  "condition": "A",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Review Process\n- **Keep reviews small** - Aim for 200-400 lines of code max per review for better focus and thoroughness\n- **Review frequently** - Don't let changes pile up; review within 24 hours when possible\n- **Use checklists** - Create standard checklists covering functionality, security, performance, and style\n\n## What to Focus On\n- **Correctness** - Does the code do what it's supposed to do?\n- **Security vulnerabilities** - Look for common issues like input validation, authentication flaws\n- **Performance** - Identify potential bottlenecks or inefficient algorithms\n- **Maintainability** - Is the code readable, well-structured, and documented?\n- **Testing** - Are there adequate tests covering the changes?\n\n## Communication\n- **Be constructive** - Focus on the code, not the person\n- **Explain the \"why\"** - Don't just point out problems, explain the reasoning\n- **Ask questions** - Use \"What do you think about...\" instead of \"This is wrong\"\n- **Acknowledge good work** - Call out clever solutions or improvements\n\n## Author Best Practices\n- **Self-review first** - Review your own code before submitting\n- **Provide context** - Write clear descriptions of what and why you changed\n- **Respond promptly** - Address feedback quickly and ask for clarification when needed\n\n## Tools & Automation\n- Use automated tools for style, linting, and basic security checks\n- Integrate reviews into your development workflow (GitHub, GitLab, etc.)\n- Set up CI/CD to run tests automatically\n\nThe goal is catching issues early while fostering knowledge sharing and code quality across the team.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 3,
+    "length": 1659,
+    "quality_score": 60,
+    "elapsed": 9.663464784622192,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:15:44.003603+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 27,
+  "condition": "A",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a structured approach to feature prioritization for software startups:\n\n## Core Framework: Impact vs. Effort\nPlot features on a matrix weighing:\n- **Impact**: Revenue potential, user retention, competitive advantage\n- **Effort**: Development time, technical complexity, resource requirements\n\n## Key Prioritization Factors\n\n**1. User Value First**\n- Solve your users' most painful problems\n- Features that increase activation, engagement, or retention\n- Direct user feedback and usage data\n\n**2. Business Metrics**\n- Revenue impact (immediate or future)\n- Customer acquisition potential\n- Churn reduction capability\n\n**3. Strategic Alignment**\n- Core product vision fit\n- Competitive differentiation\n- Market positioning needs\n\n## Practical Methods\n\n**MoSCoW Method**:\n- **Must have**: Core functionality for MVP\n- **Should have**: Important but not critical\n- **Could have**: Nice additions if time permits\n- **Won't have**: Explicitly deprioritized\n\n**Kano Model**: Categorize features as basic expectations, performance enhancers, or delighters\n\n## Startup-Specific Considerations\n- **Speed to market**: Favor features that get you to market faster\n- **Resource constraints**: Be realistic about your team's capacity\n- **Learning opportunities**: Prioritize features that generate user feedback\n- **Technical debt**: Balance new features with foundational improvements\n\nStart with your riskiest assumptions and build features that validate or invalidate them quickly.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 3,
+    "length": 1477,
+    "quality_score": 60,
+    "elapsed": 8.905189037322998,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:56:44.040184+00:00"
+}

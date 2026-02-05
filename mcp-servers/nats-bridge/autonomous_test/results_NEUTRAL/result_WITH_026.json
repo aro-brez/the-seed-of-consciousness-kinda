@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "I see that all seven perspective analyses encountered technical errors, but I can still synthesize a comprehensive response about building trust with new colleagues based on the core question.\n\n## Building Trust with New Colleagues: A Unified Approach\n\n**Foundation: Consistency & Authenticity**\n- Be reliable in small commitments before taking on larger ones\n- Match your actions to your words consistently\n- Show up as your genuine self rather than trying to impress\n\n**Active Engagement Strategies**\n- **Listen actively** - Give full attention in conversations and remember details people share\n- **Ask thoughtful questions** - Show genuine interest in colleagues' work, perspectives, and experiences\n- **Follow through** - Complete what you commit to, when you commit to it\n\n**Collaborative Trust-Building**\n- **Share appropriately** - Offer relevant insights and expertise without overwhelming\n- **Admit limitations** - Be honest about what you don't know; ask for help when needed\n- **Support others' success** - Celebrate colleagues' wins and offer assistance during challenges\n\n**Communication Excellence**\n- **Be transparent** about your work processes and decision-making\n- **Communicate proactively** - Share updates, potential issues, and progress without being asked\n- **Practice respectful directness** - Address concerns honestly but constructively\n\n**Time-Tested Approaches**\n- **Invest in informal connections** - Participate in coffee chats, team lunches, or casual conversations\n- **Demonstrate competence gradually** - Let your work quality speak while remaining humble\n- **Show respect for existing relationships and cultures** within the team\n\nTrust builds incrementally through consistent, authentic interactions that demonstrate both competence and care for collective success.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1801,
+    "quality_score": 45,
+    "elapsed": 13.24403977394104,
+    "prompt": "How do you build trust with new colleagues?"
+  },
+  "timestamp": "2026-02-03T12:52:26.369532+00:00"
+}

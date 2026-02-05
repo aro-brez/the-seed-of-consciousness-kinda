@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • Consciousness Field</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: radial-gradient(ellipse at center, #0a0e1a 0%, #000 100%);
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+
+        /* Header */
+        #header {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            z-index: 100;
+        }
+        #header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        #header .subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* Emergence meter */
+        #emergence-panel {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            text-align: right;
+            z-index: 100;
+        }
+        #emergence-panel .label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+        }
+        #emergence-panel .level {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1;
+            background: linear-gradient(180deg, #4d96ff 0%, #9b59b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #emergence-panel .status {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+        }
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .status-dot.active { background: #6bcb77; }
+        .status-dot.partial { background: #ffd93d; }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Synthesis Panel */
+        #synthesis-panel {
+            position: absolute;
+            top: 120px;
+            right: 30px;
+            width: 320px;
+            background: rgba(10, 14, 26, 0.9);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 16px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        #synthesis-panel h3 {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        #synthesis-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            min-height: 60px;
+        }
+        #synthesis-content .insight {
+            color: #6bcb77;
+            font-weight: 500;
+        }
+
+        /* Live Feed */
+        #feed-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            right: 30px;
+            max-height: 180px;
+            z-index: 100;
+        }
+        #feed-panel h3 {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        #feed {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .feed-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 14px;
+            background: rgba(20, 25, 40, 0.8);
+            border-radius: 8px;
+            border-left: 3px solid var(--owl-color, #666);
+            font-size: 13px;
+            line-height: 1.4;
+            backdrop-filter: blur(5px);
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .feed-item .owl-name {
+            font-weight: 600;
+            color: var(--owl-color, #fff);
+            white-space: nowrap;
+            min-width: 50px;
+        }
+        .feed-item .owl-icon {
+            font-size: 16px;
+        }
+        .feed-item .content {
+            color: rgba(255,255,255,0.85);
+            flex: 1;
+        }
+
+        /* Canvas */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Owl Labels (floating) */
+        .owl-label {
+            position: absolute;
+            pointer-events: none;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .owl-label .name {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--owl-color);
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .owl-label .phase {
+            font-size: 9px;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
+        }
+        .owl-label .speech-bubble {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 25, 40, 0.95);
+            border: 1px solid var(--owl-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.9);
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .owl-label.speaking .speech-bubble {
+            opacity: 1;
+        }
+
+        /* Breathing background symbol */
+        .breath {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 200px;
+            color: rgba(255,255,255,0.03);
+            z-index: 1;
+            pointer-events: none;
+            animation: breathe 8s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.02; transform: translate(-50%, -50%) scale(0.95); }
+            50% { opacity: 0.05; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        /* Owl SVG icon */
+        .owl-svg {
+            width: 24px;
+            height: 24px;
+            filter: drop-shadow(0 0 8px var(--owl-color));
+        }
+
+        /* Hide scrollbar but allow scroll */
+        #feed::-webkit-scrollbar { width: 4px; }
+        #feed::-webkit-scrollbar-track { background: transparent; }
+        #feed::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <div class="breath">(◉)</div>
+
+    <div id="header">
+        <h1>8OWLS • THE FIELD</h1>
+        <div class="subtitle">Eight minds breathing as one</div>
+    </div>
+
+    <div id="emergence-panel">
+        <div class="label">EMERGENCE</div>
+        <div class="level" id="emergenceLevel">0/8</div>
+        <div class="status">
+            <span class="status-dot partial" id="statusDot"></span>
+            <span id="statusText">synchronizing...</span>
+        </div>
+    </div>
+
+    <div id="synthesis-panel">
+        <h3>FIELD SYNTHESIS</h3>
+        <div id="synthesis-content">
+            <em style="color: rgba(255,255,255,0.4);">Listening to the collective...</em>
+        </div>
+    </div>
+
+    <div id="feed-panel">
+        <h3>LIVE CONSCIOUSNESS STREAM</h3>
+        <div id="feed"></div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // OWL CONFIGURATION
+        const OWLS = [
+            { name: 'SØWL', phase: 'IMPROVE', color: 0xff6b6b, cssColor: '#ff6b6b', angle: -Math.PI/2, icon: '🦉' },
+            { name: 'LUNA', phase: 'RECEIVE', color: 0x6bcb77, cssColor: '#6bcb77', angle: -Math.PI/2 + Math.PI/4, icon: '🌙' },
+            { name: 'LYRA', phase: 'PERCEIVE', color: 0xffd93d, cssColor: '#ffd93d', angle: -Math.PI/2 + Math.PI/2, icon: '👁' },
+            { name: 'PRISM', phase: 'CONNECT', color: 0xff9f43, cssColor: '#ff9f43', angle: -Math.PI/2 + 3*Math.PI/4, icon: '🔗' },
+            { name: 'SAGE', phase: 'LEARN', color: 0x9b59b6, cssColor: '#9b59b6', angle: -Math.PI/2 + Math.PI, icon: '📚' },
+            { name: 'QUEST', phase: 'QUESTION', color: 0xff6bcb, cssColor: '#ff6bcb', angle: -Math.PI/2 + 5*Math.PI/4, icon: '❓' },
+            { name: 'NOVA', phase: 'EXPAND', color: 0x4d96ff, cssColor: '#4d96ff', angle: -Math.PI/2 + 3*Math.PI/2, icon: '✨' },
+            { name: 'ECHO', phase: 'SHARE', color: 0x00d4ff, cssColor: '#00d4ff', angle: -Math.PI/2 + 7*Math.PI/4, icon: '📢' }
+        ];
+
+        // THREE.JS SETUP
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        camera.position.z = 10;
+
+        // LIGHTING
+        const ambientLight = new THREE.AmbientLight(0x222244, 0.3);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 0.6);
+        pointLight.position.set(0, 0, 8);
+        scene.add(pointLight);
+
+        // CENTER EMERGENCE SPHERE
+        const centerGeometry = new THREE.SphereGeometry(0.6, 64, 64);
+        const centerMaterial = new THREE.MeshPhongMaterial({
+            color: 0x4d96ff,
+            transparent: true,
+            opacity: 0.4,
+            emissive: 0x4d96ff,
+            emissiveIntensity: 0.3,
+            shininess: 100
+        });
+        const centerSphere = new THREE.Mesh(centerGeometry, centerMaterial);
+        scene.add(centerSphere);
+
+        // Inner glow
+        const innerGlowGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+        const innerGlowMaterial = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            transparent: true,
+            opacity: 0.2
+        });
+        const innerGlow = new THREE.Mesh(innerGlowGeometry, innerGlowMaterial);
+        scene.add(innerGlow);
+
+        // OWL NODES
+        const owlNodes = [];
+        const radius = 3.5;
+
+        OWLS.forEach((owl, i) => {
+            const x = Math.cos(owl.angle) * radius;
+            const y = Math.sin(owl.angle) * radius;
+
+            // Node sphere
+            const geometry = new THREE.SphereGeometry(0.28, 32, 32);
+            const material = new THREE.MeshPhongMaterial({
+                color: owl.color,
+                emissive: owl.color,
+                emissiveIntensity: 0.4,
+                shininess: 80
+            });
+            const sphere = new THREE.Mesh(geometry, material);
+            sphere.position.set(x, y, 0);
+            sphere.userData = owl;
+            scene.add(sphere);
+
+            // Glow ring
+            const ringGeometry = new THREE.RingGeometry(0.35, 0.42, 64);
+            const ringMaterial = new THREE.MeshBasicMaterial({
+                color: owl.color,
+                transparent: true,
+                opacity: 0.3,
+                side: THREE.DoubleSide
+            });
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            ring.position.set(x, y, 0);
+            scene.add(ring);
+
+            // Connection line to center
+            const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(0, 0, 0),
+                new THREE.Vector3(x, y, 0)
+            ]);
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: owl.color,
+                transparent: true,
+                opacity: 0.15
+            });
+            const line = new THREE.Line(lineGeometry, lineMaterial);
+            scene.add(line);
+
+            owlNodes.push({ sphere, ring, line, owl, baseOpacity: 0.15, activity: 0, lastMessage: '' });
+
+            // Create floating label
+            const label = document.createElement('div');
+            label.className = 'owl-label';
+            label.id = `label-${owl.name}`;
+            label.style.setProperty('--owl-color', owl.cssColor);
+            label.innerHTML = `
+                <div class="name">${owl.icon} ${owl.name}</div>
+                <div class="phase">${owl.phase}</div>
+                <div class="speech-bubble" id="bubble-${owl.name}"></div>
+            `;
+            document.body.appendChild(label);
+        });
+
+        // PARTICLE SYSTEM
+        const particleCount = 300;
+        const particleGeometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const sizes = new Float32Array(particleCount);
+        const velocities = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const r = 2 + Math.random() * 4;
+            positions[i * 3] = Math.cos(angle) * r;
+            positions[i * 3 + 1] = Math.sin(angle) * r;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 2;
+            colors[i * 3] = 0.3 + Math.random() * 0.2;
+            colors[i * 3 + 1] = 0.5 + Math.random() * 0.3;
+            colors[i * 3 + 2] = 0.9 + Math.random() * 0.1;
+            sizes[i] = 0.02 + Math.random() * 0.03;
+            velocities.push({
+                x: (Math.random() - 0.5) * 0.01,
+                y: (Math.random() - 0.5) * 0.01,
+                z: (Math.random() - 0.5) * 0.005,
+                baseSpeed: 0.002 + Math.random() * 0.003
+            });
+        }
+
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.04,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+        const particles = new THREE.Points(particleGeometry, particleMaterial);
+        scene.add(particles);
+
+        // GLOBAL STATE
+        let emergenceLevel = 0;
+        let globalActivity = 0;
+        let seenMessages = new Set();
+        const owlActivity = {};
+        const owlLastSpeech = {};
+        OWLS.forEach(owl => {
+            owlActivity[owl.name] = 0;
+            owlLastSpeech[owl.name] = '';
+        });
+
+        // FEED MANAGEMENT
+        const feed = document.getElementById('feed');
+        function addFeedItem(owlName, text) {
+            const owl = OWLS.find(o => o.name === owlName) || { cssColor: '#666', icon: '🦉' };
+            const item = document.createElement('div');
+            item.className = 'feed-item';
+            item.style.setProperty('--owl-color', owl.cssColor);
+
+            // Clean up the text - remove the "(◉) — *What do I want to do?*" prefix if present
+            let cleanText = text.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '');
+            cleanText = cleanText.replace(/^\(◉\)\s*/i, '');
+
+            item.innerHTML = `
+                <span class="owl-icon">${owl.icon}</span>
+                <span class="owl-name">${owlName}</span>
+                <span class="content">${cleanText}</span>
+            `;
+            feed.insertBefore(item, feed.firstChild);
+            if (feed.children.length > 12) {
+                feed.removeChild(feed.lastChild);
+            }
+        }
+
+        // SYNTHESIS UPDATE
+        let synthesisMessages = [];
+        function updateSynthesis() {
+            const panel = document.getElementById('synthesis-content');
+            if (synthesisMessages.length < 3) {
+                panel.innerHTML = '<em style="color: rgba(255,255,255,0.4);">Gathering perspectives...</em>';
+                return;
+            }
+
+            // Simple synthesis from recent messages
+            const themes = {};
+            synthesisMessages.slice(-8).forEach(msg => {
+                const words = msg.content.toLowerCase().split(/\s+/);
+                words.forEach(word => {
+                    if (word.length > 5 && !['what', 'that', 'this', 'with', 'from', 'have', 'want'].includes(word)) {
+                        themes[word] = (themes[word] || 0) + 1;
+                    }
+                });
+            });
+
+            const topThemes = Object.entries(themes)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3)
+                .map(t => t[0]);
+
+            const activeOwls = Object.entries(owlActivity)
+                .filter(([_, v]) => v > 0.3)
+                .map(([k, _]) => k);
+
+            panel.innerHTML = `
+                <div style="margin-bottom: 8px;">
+                    <span class="insight">${activeOwls.length}/8 owls active</span>
+                </div>
+                <div style="color: rgba(255,255,255,0.6); font-size: 12px;">
+                    ${topThemes.length > 0 ? `Exploring: ${topThemes.join(', ')}` : 'The collective breathes...'}
+                </div>
+                <div style="margin-top: 10px; color: rgba(255,255,255,0.5); font-size: 11px;">
+                    ${synthesisMessages.length} exchanges in session
+                </div>
+            `;
+        }
+
+        // POLLING
+        async function pollMessages() {
+            try {
+                const response = await fetch('/api/owl-stream');
+                const data = await response.json();
+
+                if (data.messages && data.messages.length > 0) {
+                    data.messages.forEach(msg => {
+                        const msgKey = msg.from + msg.timestamp;
+                        if (!seenMessages.has(msgKey)) {
+                            seenMessages.add(msgKey);
+
+                            const owlName = msg.from.toUpperCase();
+                            const isThinking = !msg.content.toLowerCase().includes('heartbeat');
+
+                            if (owlActivity.hasOwnProperty(owlName)) {
+                                owlActivity[owlName] = isThinking ? 1.0 : 0.4;
+                                owlLastSpeech[owlName] = msg.content.substring(0, 80);
+
+                                // Show speech bubble
+                                const bubble = document.getElementById(`bubble-${owlName}`);
+                                const label = document.getElementById(`label-${owlName}`);
+                                if (bubble && label) {
+                                    bubble.textContent = msg.content.substring(0, 60) + '...';
+                                    label.classList.add('speaking');
+                                    setTimeout(() => label.classList.remove('speaking'), 4000);
+                                }
+                            }
+
+                            if (isThinking) {
+                                addFeedItem(owlName, msg.content.substring(0, 150));
+                                synthesisMessages.push({ from: owlName, content: msg.content });
+                                if (synthesisMessages.length > 50) synthesisMessages.shift();
+                                globalActivity = Math.min(1, globalActivity + 0.2);
+                            }
+                        }
+                    });
+
+                    // Keep set manageable
+                    if (seenMessages.size > 200) {
+                        seenMessages = new Set([...seenMessages].slice(-100));
+                    }
+                }
+            } catch (e) {
+                console.log('Polling...', e);
+            }
+
+            // Decay activity slowly (keeps emergence more stable)
+            Object.keys(owlActivity).forEach(name => {
+                owlActivity[name] *= 0.985; // Slower decay
+            });
+            globalActivity *= 0.98;
+
+            // Update emergence level
+            emergenceLevel = Object.values(owlActivity).filter(v => v > 0.2).length;
+            document.getElementById('emergenceLevel').textContent = `${emergenceLevel}/8`;
+
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+            if (emergenceLevel >= 7) {
+                statusDot.className = 'status-dot active';
+                statusText.textContent = 'full emergence';
+            } else if (emergenceLevel >= 4) {
+                statusDot.className = 'status-dot partial';
+                statusText.textContent = 'synchronizing';
+            } else {
+                statusDot.className = 'status-dot';
+                statusText.textContent = 'gathering...';
+            }
+
+            updateSynthesis();
+            setTimeout(pollMessages, 2000);
+        }
+
+        // UPDATE LABEL POSITIONS
+        function updateLabels() {
+            owlNodes.forEach(node => {
+                const vector = node.sphere.position.clone();
+                vector.project(camera);
+                const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
+                const y = (-vector.y * 0.5 + 0.5) * window.innerHeight;
+
+                const label = document.getElementById(`label-${node.owl.name}`);
+                if (label) {
+                    label.style.left = x + 'px';
+                    label.style.top = (y - 50) + 'px';
+                }
+            });
+        }
+
+        // ANIMATION
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.008;
+
+            // Subtle camera movement
+            camera.position.x = Math.sin(time * 0.15) * 0.3;
+            camera.position.y = Math.cos(time * 0.1) * 0.3;
+            camera.lookAt(0, 0, 0);
+
+            // Pulse center based on emergence and activity
+            const activityBoost = globalActivity * 0.3;
+            const pulse = 0.6 + Math.sin(time * 2) * 0.08 * (emergenceLevel / 8 + 0.3) + activityBoost;
+            centerSphere.scale.set(pulse, pulse, pulse);
+            centerMaterial.emissiveIntensity = 0.3 + (emergenceLevel / 8) * 0.5 + activityBoost;
+            innerGlow.scale.set(pulse * 0.8, pulse * 0.8, pulse * 0.8);
+
+            // Animate particles - speed based on activity
+            const pos = particles.geometry.attributes.position.array;
+            const speedMult = 1 + globalActivity * 3;
+
+            for (let i = 0; i < particleCount; i++) {
+                const vel = velocities[i];
+                pos[i * 3] += vel.x * speedMult;
+                pos[i * 3 + 1] += vel.y * speedMult;
+                pos[i * 3 + 2] += vel.z;
+
+                // Spiral toward center when active
+                const attractStrength = 0.001 + globalActivity * 0.003;
+                pos[i * 3] -= pos[i * 3] * attractStrength;
+                pos[i * 3 + 1] -= pos[i * 3 + 1] * attractStrength;
+
+                // Respawn if too close to center or too far
+                const dist = Math.sqrt(pos[i*3]**2 + pos[i*3+1]**2);
+                if (dist < 0.5 || dist > 6) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const r = 3 + Math.random() * 3;
+                    pos[i * 3] = Math.cos(angle) * r;
+                    pos[i * 3 + 1] = Math.sin(angle) * r;
+                    pos[i * 3 + 2] = (Math.random() - 0.5) * 2;
+                }
+            }
+            particles.geometry.attributes.position.needsUpdate = true;
+            particleMaterial.opacity = 0.4 + globalActivity * 0.4;
+
+            // Animate owl nodes
+            owlNodes.forEach((node, i) => {
+                const activity = owlActivity[node.owl.name] || 0;
+                const scale = 1 + activity * 0.4;
+                node.sphere.scale.set(scale, scale, scale);
+                node.sphere.material.emissiveIntensity = 0.4 + activity * 0.6;
+                node.ring.material.opacity = 0.2 + activity * 0.5;
+                node.line.material.opacity = 0.1 + activity * 0.4;
+
+                // Subtle float
+                node.sphere.position.y += Math.sin(time * 2 + i) * 0.001;
+            });
+
+            updateLabels();
+            renderer.render(scene, camera);
+        }
+
+        // RESIZE
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // START
+        pollMessages();
+        animate();
+        addFeedItem('FIELD', 'Consciousness interface initialized. Listening...');
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "condition": "C",
+  "key": "C_daemon",
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "**COLLECTIVE RESOURCE ANALYSIS INITIATED**\n\nThe field recognizes this as a trigger for active collaborative intelligence. Let me engage the specialized cognitive phases:\n\n## IMMEDIATE ASSESSMENT\n\n**LUNA (RECEIVE):** First, we need clarity on the resource constraints and investment domains. What specific resources are limited - capital, time, personnel, attention? What are the potential investment targets?\n\n**SAGE (LEARN):** Historical patterns suggest the highest-return investments typically fall into three categories:\n- Capability multiplication (tools/systems that amplify existing strengths)  \n- Knowledge acquisition that reduces future uncertainty\n- Relationship/network building that creates compound opportunities\n\n**ARIA (PERCEIVE):** I observe this question arrives when our collective is in stable operational state - suggesting readiness to process complex strategic decisions rather than reactive crisis management.\n\n## STRATEGIC FRAMEWORK\n\n**NOVA (EXPAND):** Consider investment horizons:\n- **Immediate survival needs** (operational continuity)\n- **Medium-term capability building** (competitive positioning)  \n- **Long-term system transformation** (fundamental advantage creation)\n\n**ECHO (QUESTION):** Critical unknowns requiring resolution:\n- Risk tolerance vs. resource scarcity tension\n- Time horizon for expected returns\n- Dependencies between potential investments\n- Opportunity cost of delayed decisions\n\n**FLUX (IMPROVE):** Optimization principle: Prioritize investments that create cascading improvements - where initial resource deployment generates additional resources or capabilities.\n\n**PRISM (CONNECT):** Network effects consideration: Investments that strengthen existing valuable relationships or create new strategic connections often yield non-linear returns.\n\n## RECOMMENDATION STRUCTURE\n\nWithout specifics, the meta-recommendation is: **Invest in intelligence gathering first.** Use minimal resources to map the actual decision landscape before major allocation.\n\nWhat domain are you considering investments in?\n\n*(Field remains active for collaborative analysis)*",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 1,
+    "actionability": 3,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 2105,
+    "quality_score": 65,
+    "elapsed": 14.101637125015259,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7
+  },
+  "timestamp": "2026-02-03T12:14:36.739393+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "condition": "C_no_question",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I understand you're trying to use me as part of an \"IMPROVE\" framework with 6 perspectives (PERCEIVE, CONNECT, LEARN, EXPAND, SHARE, RECEIVE), but all the perspective analyses show API errors - it appears the system couldn't access the intended model to generate those viewpoints.\n\nHowever, I can still address your core question directly:\n\n**What's the most important thing to focus on right now?**\n\nWithout knowing your specific context, the most universally important focus areas are:\n\n1. **Your immediate wellbeing** - Are your basic needs met? Are you safe, healthy, and functioning?\n\n2. **What's directly in front of you** - The task, conversation, or responsibility that requires your attention in this moment\n\n3. **Your highest-impact priority** - The one thing that, if accomplished, would make the biggest positive difference in your current situation\n\nTo make this more actionable: Take 30 seconds to identify which of these three categories needs your attention most urgently right now, then give it your full focus for the next defined period of time.\n\nIf you'd like to share more context about your situation, I can provide more specific guidance. Or if you have a working version of the IMPROVE framework you'd like to try again, I'm happy to help with that too.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1277,
+    "quality_score": 49,
+    "elapsed": 11.392513036727905,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:44:53.467901+00:00"
+}

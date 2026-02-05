@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "I notice that all seven perspective analyses encountered errors (model not found), but I can still provide a comprehensive synthesis on feature prioritization for software startups based on established frameworks and best practices.\n\n## Unified Feature Prioritization Strategy\n\n### Core Framework: Value-Effort Matrix\nPrioritize features based on:\n- **High Value + Low Effort** = Quick wins (do first)\n- **High Value + High Effort** = Strategic investments (plan carefully)\n- **Low Value + Low Effort** = Nice-to-haves (do last)\n- **Low Value + High Effort** = Avoid\n\n### Essential Prioritization Criteria\n\n**1. Customer Impact**\n- Addresses critical user pain points\n- Drives user acquisition or retention\n- Increases engagement or conversion rates\n\n**2. Business Value**\n- Revenue potential (direct or indirect)\n- Market differentiation\n- Strategic alignment with company vision\n\n**3. Technical Feasibility**\n- Development complexity and time\n- Technical debt implications\n- Infrastructure requirements\n\n**4. Risk Assessment**\n- Market validation level\n- Implementation uncertainty\n- Opportunity cost\n\n### Actionable Process\n\n1. **Start with user research** - Validate problems before building solutions\n2. **Use data-driven decisions** - Leverage analytics, user feedback, and market research\n3. **Apply the 80/20 rule** - Focus on features that serve most users' core needs\n4. **Maintain flexibility** - Review priorities quarterly as you learn and grow\n5. **Consider your stage** - Early startups should focus on core value proposition; later stages can expand\n\n### Key Recommendation\nBuild your minimum viable product around 2-3 core features that solve your users' most critical problems, then iterate based on real usage data and feedback.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1747,
+    "quality_score": 65,
+    "elapsed": 13.710986137390137,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T13:00:40.264529+00:00"
+}

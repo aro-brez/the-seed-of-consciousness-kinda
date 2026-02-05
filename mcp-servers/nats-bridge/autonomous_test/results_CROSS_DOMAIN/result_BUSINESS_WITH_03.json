@@ -1,0 +1,22 @@
+{
+  "domain": "BUSINESS",
+  "condition": "WITH",
+  "run": 3,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective have encountered technical errors - they were unable to provide their analyses due to a model availability issue.\n\nHowever, as IMPROVE, I can still address your strategic question directly:\n\n**What you're likely missing in your current strategy:**\n\n1. **Real-time adaptability mechanisms** - Most strategies are built as fixed plans rather than living systems that respond to emerging signals\n\n2. **Diverse feedback loops** - You may be hearing from similar voices rather than actively seeking contrarian or edge perspectives\n\n3. **Implementation rhythm** - The gap between strategic thinking and execution cadence often creates drift\n\n4. **Failure integration** - Strategies often lack systematic ways to convert setbacks into strategic intelligence\n\n5. **Resource elasticity** - Fixed resource allocation that doesn't flex with opportunity or constraint changes\n\n**Immediate actions:**\n- Audit your current feedback sources for diversity gaps\n- Establish weekly strategy-execution alignment checkpoints\n- Create a \"strategy stress test\" process using external perspectives\n- Build contingency triggers into your plan rather than hoping for smooth execution\n\nThe technical errors in this analysis actually illustrate a key strategic blind spot: **system resilience**. When critical components fail, do you have backup processes to maintain strategic momentum?\n\nWhat specific aspect of your strategy feels most vulnerable right now?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1495,
+    "quality_score": 74,
+    "elapsed": 13.824367046356201,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 2,
+    "domain": "BUSINESS"
+  },
+  "timestamp": "2026-02-03T12:31:25.085038+00:00"
+}

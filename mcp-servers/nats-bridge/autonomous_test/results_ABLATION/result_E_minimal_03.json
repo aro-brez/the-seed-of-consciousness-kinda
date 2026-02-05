@@ -1,0 +1,26 @@
+{
+  "condition": "E_minimal",
+  "phases": [
+    "PERCEIVE"
+  ],
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice there's an error in the input you've provided - it appears there was an issue accessing the perspective that was supposed to analyze the question about prioritizing competing goals.\n\nHowever, I can provide a direct response to your original question: **How should we prioritize competing goals?**\n\nHere's a unified, actionable approach:\n\n## Framework for Prioritizing Competing Goals\n\n**1. Clarify the Stakes**\n- Identify what's truly at risk with each goal\n- Distinguish between urgent and important objectives\n- Map potential consequences of not pursuing each goal\n\n**2. Apply Strategic Filters**\n- **Impact**: Which goals create the most meaningful long-term value?\n- **Feasibility**: What can realistically be achieved given current resources?\n- **Alignment**: Which goals best serve your core mission/values?\n- **Dependencies**: Which goals enable or block others?\n\n**3. Use Decision Tools**\n- Weight goals by importance (1-10 scale)\n- Consider timeframes - some goals may be sequential rather than competing\n- Apply the 80/20 rule - focus on goals that drive 80% of desired outcomes\n\n**4. Make Trade-offs Explicit**\n- Acknowledge what you're choosing NOT to pursue\n- Set clear boundaries and communicate them\n- Build in regular review points to reassess priorities\n\n**Key Principle**: Perfect prioritization is impossible, but consistent application of clear criteria makes decisions defendable and adjustable.\n\nWould you like me to apply this framework to specific competing goals you're facing?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1511,
+    "quality_score": 82,
+    "elapsed": 9.120513916015625,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2,
+    "phases": [
+      "PERCEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:32:38.957055+00:00"
+}

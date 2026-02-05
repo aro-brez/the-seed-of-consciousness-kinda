@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "without",
+  "run": 1,
+  "prompt": "What should I do?",
+  "response": "I'd be happy to help, but I need more context about your situation. Could you share what specific decision, problem, or challenge you're facing? The more details you provide about:\n\n- What's happening in your situation\n- What options you're considering\n- What's making this decision difficult\n- What outcome you're hoping for\n\nThe more tailored and useful guidance I can offer you.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 381,
+    "quality_score": 21.81,
+    "elapsed": 3.707058906555176,
+    "prompt": "What should I do?",
+    "run": 0,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:31:12.765217+00:00"
+}

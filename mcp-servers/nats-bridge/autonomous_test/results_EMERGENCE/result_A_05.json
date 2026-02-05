@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 5,
+  "prompt": "What's the biggest risk we're not seeing?",
+  "response": "I think the biggest unseen risk might be our collective loss of institutional trust and shared epistemological foundations - basically, our ability to agree on what's true or how to determine truth.\n\nThis manifests as:\n- Declining trust in expertise, science, and democratic institutions\n- Information fragmentation where people inhabit completely different factual universes\n- Erosion of shared methods for resolving disputes about reality\n\nThis is dangerous because almost every other major challenge we face - climate change, pandemics, AI governance, economic inequality - requires coordinated collective action based on shared understanding of facts. Without that foundation, we become unable to respond effectively to threats we can see coming.\n\nThe risk compounds because it's self-reinforcing: as institutions fail to address visible problems (partly due to this epistemological breakdown), trust erodes further, making future coordination even harder.\n\nOther candidates for \"biggest unseen risk\":\n- Ecological tipping points we haven't identified yet\n- Cascading infrastructure failures in our hyper-connected systems\n- Unintended consequences of AI development happening faster than governance\n\nBut I lean toward the epistemological crisis because it's both a risk multiplier and something we're actively living through without fully grasping its implications.\n\nWhat's your sense of the risks that keep you up at night?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1429,
+    "quality_score": 49,
+    "elapsed": 9.2571280002594,
+    "prompt": "What's the biggest risk we're not seeing?",
+    "run": 4
+  },
+  "timestamp": "2026-02-03T12:13:50.262375+00:00"
+}

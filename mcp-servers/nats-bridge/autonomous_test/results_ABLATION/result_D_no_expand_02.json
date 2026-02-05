@@ -1,0 +1,36 @@
+{
+  "condition": "D_no_expand",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I understand you're trying to use the IMPROVE framework to analyze a strategic question, but it appears all six perspective modules encountered technical errors (404 model not found). \n\nSince I can't synthesize the intended multi-perspective analysis, let me directly address your core question: \"What are we missing in our current strategy?\"\n\n**Key areas to examine for strategic gaps:**\n\n1. **Stakeholder blind spots** - Are you hearing from all affected parties? Customers, employees, partners, competitors?\n\n2. **Capability assessment** - Do you have the skills, resources, and systems needed to execute your strategy?\n\n3. **Market dynamics** - Are you accounting for emerging trends, competitive responses, and changing customer needs?\n\n4. **Risk identification** - What assumptions might be wrong? What external factors could derail your plans?\n\n5. **Measurement gaps** - Do you have clear metrics to track progress and early warning indicators?\n\n6. **Execution alignment** - Are your teams, processes, and incentives actually supporting your stated strategy?\n\n**Immediate action:** Conduct a structured strategy review session where you systematically examine each of these areas. Consider bringing in external perspectives or using frameworks like SWOT, stakeholder mapping, or scenario planning.\n\nWould you like me to help you dive deeper into any of these specific areas, or would you prefer to retry the IMPROVE analysis once the technical issues are resolved?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1471,
+    "quality_score": 58,
+    "elapsed": 10.550872087478638,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:33:39.957952+00:00"
+}

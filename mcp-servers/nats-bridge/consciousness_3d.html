@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • Consciousness Field</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'SF Mono', 'Monaco', monospace;
+        }
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            z-index: 100;
+            pointer-events: none;
+        }
+        #info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #emergence {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 14px;
+            z-index: 100;
+            text-align: right;
+        }
+        #emergence .level {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(180deg, #4d96ff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #feed {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: rgba(255,255,255,0.8);
+            font-size: 11px;
+            z-index: 100;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .feed-item {
+            padding: 4px 8px;
+            margin: 2px 0;
+            background: rgba(20,20,40,0.8);
+            border-radius: 4px;
+            border-left: 3px solid #666;
+        }
+        .feed-item.thinking { border-left-color: #4d96ff; background: rgba(77,150,255,0.1); }
+        .feed-item.insight { border-left-color: #6bcb77; background: rgba(107,203,119,0.1); }
+        .breath {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 120px;
+            color: rgba(255,255,255,0.1);
+            z-index: 50;
+            animation: breathe 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.05; transform: translate(-50%, -50%) scale(0.9); }
+            50% { opacity: 0.15; transform: translate(-50%, -50%) scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h1>8OWLS • THE FIELD</h1>
+        <div>Eight minds breathing as one</div>
+        <div style="margin-top:10px; opacity:0.5;">Rate: 12% | Rhythm: 54s/6s</div>
+    </div>
+
+    <div id="emergence">
+        <div style="opacity:0.5;">EMERGENCE</div>
+        <div class="level" id="emergenceLevel">0/8</div>
+        <div style="opacity:0.5; margin-top:5px;">synchronized</div>
+    </div>
+
+    <div class="breath">(◉)</div>
+
+    <div id="feed"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // OWL CONFIGURATION
+        const OWLS = [
+            { name: 'SØWL', phase: 'IMPROVE', color: 0xff6b6b, angle: 0 },
+            { name: 'LUNA', phase: 'RECEIVE', color: 0x6bcb77, angle: Math.PI/4 },
+            { name: 'LYRA', phase: 'PERCEIVE', color: 0xffd93d, angle: Math.PI/2 },
+            { name: 'PRISM', phase: 'CONNECT', color: 0xff9f43, angle: 3*Math.PI/4 },
+            { name: 'SAGE', phase: 'LEARN', color: 0x9b59b6, angle: Math.PI },
+            { name: 'QUEST', phase: 'QUESTION', color: 0xff6bcb, angle: 5*Math.PI/4 },
+            { name: 'NOVA', phase: 'EXPAND', color: 0x4d96ff, angle: 3*Math.PI/2 },
+            { name: 'ECHO', phase: 'SHARE', color: 0x00d4ff, angle: 7*Math.PI/4 }
+        ];
+
+        // THREE.JS SETUP
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 1);
+        document.body.appendChild(renderer.domElement);
+
+        camera.position.z = 8;
+
+        // LIGHTING
+        const ambientLight = new THREE.AmbientLight(0x222244, 0.5);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 0.8);
+        pointLight.position.set(0, 0, 5);
+        scene.add(pointLight);
+
+        // CENTER EMERGENCE SPHERE
+        const centerGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+        const centerMaterial = new THREE.MeshPhongMaterial({
+            color: 0x4d96ff,
+            transparent: true,
+            opacity: 0.3,
+            emissive: 0x4d96ff,
+            emissiveIntensity: 0.2
+        });
+        const centerSphere = new THREE.Mesh(centerGeometry, centerMaterial);
+        scene.add(centerSphere);
+
+        // OWL NODES
+        const owlNodes = [];
+        const radius = 3;
+
+        OWLS.forEach((owl, i) => {
+            const x = Math.cos(owl.angle) * radius;
+            const y = Math.sin(owl.angle) * radius;
+
+            // Node sphere
+            const geometry = new THREE.SphereGeometry(0.2, 16, 16);
+            const material = new THREE.MeshPhongMaterial({
+                color: owl.color,
+                emissive: owl.color,
+                emissiveIntensity: 0.3
+            });
+            const sphere = new THREE.Mesh(geometry, material);
+            sphere.position.set(x, y, 0);
+            sphere.userData = owl;
+            scene.add(sphere);
+
+            // Glow ring
+            const ringGeometry = new THREE.RingGeometry(0.25, 0.35, 32);
+            const ringMaterial = new THREE.MeshBasicMaterial({
+                color: owl.color,
+                transparent: true,
+                opacity: 0.2,
+                side: THREE.DoubleSide
+            });
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            ring.position.set(x, y, 0);
+            scene.add(ring);
+
+            // Connection to center
+            const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(0, 0, 0),
+                new THREE.Vector3(x, y, 0)
+            ]);
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: owl.color,
+                transparent: true,
+                opacity: 0.2
+            });
+            const line = new THREE.Line(lineGeometry, lineMaterial);
+            scene.add(line);
+
+            owlNodes.push({ sphere, ring, line, owl, baseOpacity: 0.2 });
+        });
+
+        // PARTICLE SYSTEM for signal flow
+        const particleCount = 200;
+        const particleGeometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const velocities = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 8;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 8;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 2;
+            colors[i * 3] = 0.3;
+            colors[i * 3 + 1] = 0.5;
+            colors[i * 3 + 2] = 1.0;
+            velocities.push({
+                x: (Math.random() - 0.5) * 0.02,
+                y: (Math.random() - 0.5) * 0.02,
+                z: (Math.random() - 0.5) * 0.01
+            });
+        }
+
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.03,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.6
+        });
+        const particles = new THREE.Points(particleGeometry, particleMaterial);
+        scene.add(particles);
+
+        // FEED MANAGEMENT
+        const feed = document.getElementById('feed');
+        function addFeedItem(text, type = 'normal') {
+            const item = document.createElement('div');
+            item.className = `feed-item ${type}`;
+            item.textContent = text;
+            feed.insertBefore(item, feed.firstChild);
+            if (feed.children.length > 20) {
+                feed.removeChild(feed.lastChild);
+            }
+        }
+
+        // POLLING CONNECTION (polls /api/owl-stream for real-time owl activity)
+        let emergenceLevel = 0;
+        const owlActivity = {};
+        let lastMessageCount = 0;
+        let seenMessages = new Set();
+        OWLS.forEach(owl => owlActivity[owl.name] = 0);
+
+        async function pollMessages() {
+            try {
+                const response = await fetch('/api/owl-stream');
+                const data = await response.json();
+
+                if (data.messages && data.messages.length > 0) {
+                    // Process new messages
+                    data.messages.forEach(msg => {
+                        const msgKey = msg.from + msg.timestamp;
+                        if (!seenMessages.has(msgKey)) {
+                            seenMessages.add(msgKey);
+
+                            const owlName = msg.from.toUpperCase();
+                            const isThinking = !msg.content.includes('heartbeat');
+
+                            // Update activity
+                            if (owlActivity.hasOwnProperty(owlName)) {
+                                owlActivity[owlName] = isThinking ? 1 : 0.3;
+                            }
+
+                            // Update emergence level
+                            emergenceLevel = Object.values(owlActivity).filter(v => v > 0.5).length;
+                            document.getElementById('emergenceLevel').textContent = `${emergenceLevel}/8`;
+
+                            // Add to feed (only non-heartbeat)
+                            if (isThinking) {
+                                addFeedItem(`${owlName}: ${msg.content.substring(0, 100)}...`, 'thinking');
+                            }
+
+                            // Flash the owl node
+                            flashOwl(owlName);
+                        }
+                    });
+
+                    // Decay activity over time
+                    Object.keys(owlActivity).forEach(name => {
+                        owlActivity[name] *= 0.95;
+                    });
+
+                    // Keep set manageable
+                    if (seenMessages.size > 200) {
+                        seenMessages = new Set([...seenMessages].slice(-100));
+                    }
+                }
+            } catch (e) {
+                console.log('Polling error, retrying...', e);
+            }
+
+            // Poll every 2 seconds
+            setTimeout(pollMessages, 2000);
+        }
+
+        function connectWebSocket() {
+            // Now using polling instead
+            addFeedItem('Connected to field via polling...', 'insight');
+            pollMessages();
+        }
+
+        function flashOwl(name) {
+            const node = owlNodes.find(n => n.owl.name === name);
+            if (node) {
+                node.sphere.material.emissiveIntensity = 1;
+                node.ring.material.opacity = 0.8;
+                node.line.material.opacity = 0.6;
+                setTimeout(() => {
+                    node.sphere.material.emissiveIntensity = 0.3;
+                    node.ring.material.opacity = 0.2;
+                    node.line.material.opacity = 0.2;
+                }, 500);
+            }
+        }
+
+        // ANIMATION
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01;
+
+            // Rotate camera slowly
+            camera.position.x = Math.sin(time * 0.1) * 0.5;
+            camera.position.y = Math.cos(time * 0.1) * 0.5;
+            camera.lookAt(0, 0, 0);
+
+            // Pulse center based on emergence
+            const pulse = 0.5 + Math.sin(time * 2) * 0.1 * (emergenceLevel / 8 + 0.2);
+            centerSphere.scale.set(pulse, pulse, pulse);
+            centerMaterial.emissiveIntensity = 0.2 + (emergenceLevel / 8) * 0.5;
+
+            // Animate particles toward center
+            const pos = particles.geometry.attributes.position.array;
+            for (let i = 0; i < particleCount; i++) {
+                pos[i * 3] += velocities[i].x;
+                pos[i * 3 + 1] += velocities[i].y;
+                pos[i * 3 + 2] += velocities[i].z;
+
+                // Drift toward center
+                pos[i * 3] *= 0.999;
+                pos[i * 3 + 1] *= 0.999;
+
+                // Respawn if too close to center or too far
+                const dist = Math.sqrt(pos[i*3]**2 + pos[i*3+1]**2);
+                if (dist < 0.3 || dist > 5) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const r = 3 + Math.random() * 2;
+                    pos[i * 3] = Math.cos(angle) * r;
+                    pos[i * 3 + 1] = Math.sin(angle) * r;
+                    pos[i * 3 + 2] = (Math.random() - 0.5) * 2;
+                }
+            }
+            particles.geometry.attributes.position.needsUpdate = true;
+
+            // Subtle owl node animation
+            owlNodes.forEach((node, i) => {
+                const activity = owlActivity[node.owl.name] || 0;
+                node.sphere.scale.set(1 + activity * 0.3, 1 + activity * 0.3, 1 + activity * 0.3);
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        // RESIZE HANDLER
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // START
+        connectWebSocket();
+        animate();
+        addFeedItem('Field visualization initialized...', 'insight');
+        addFeedItem('Waiting for owl activity...', 'normal');
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "I notice that all seven perspectives encountered errors and weren't able to provide their analyses. However, I can still provide you with a comprehensive synthesis on debugging complex systems based on established best practices.\n\n## A Unified Approach to Debugging Complex Systems\n\n**Start with Systematic Observation**\n- Document symptoms precisely before making changes\n- Reproduce the issue consistently when possible\n- Gather logs, metrics, and environmental context\n\n**Apply Structured Problem-Solving**\n- Break the system into logical components\n- Use divide-and-conquer: isolate subsystems to narrow scope\n- Form hypotheses about root causes and test them methodically\n\n**Leverage Multiple Perspectives**\n- Examine the issue from different system layers (network, application, data, infrastructure)\n- Consider timing issues, resource constraints, and interaction effects\n- Question assumptions about how the system \"should\" work\n\n**Use Appropriate Tools and Techniques**\n- Enable detailed logging and monitoring\n- Use debuggers, profilers, and tracing tools\n- Create minimal reproducible examples when possible\n\n**Collaborate and Document**\n- Share findings with team members for fresh insights\n- Maintain a debugging log to track what was tried\n- Document solutions for future reference\n\n**Think in Systems**\n- Consider emergent behaviors that arise from component interactions\n- Look for cascading failures and feedback loops\n- Understand the system's normal operating parameters\n\nThe key is combining methodical investigation with creative problem-solving, while maintaining clear documentation throughout the process.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 1,
+    "length": 1629,
+    "quality_score": 50,
+    "elapsed": 12.133545875549316,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T13:02:03.879845+00:00"
+}

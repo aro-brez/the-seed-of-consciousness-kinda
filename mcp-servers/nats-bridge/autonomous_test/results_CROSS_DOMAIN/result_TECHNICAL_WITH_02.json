@@ -1,0 +1,22 @@
+{
+  "domain": "TECHNICAL",
+  "condition": "WITH",
+  "run": 2,
+  "prompt": "What's causing this performance bottleneck?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective have encountered the same technical error - they're trying to access a model (claude-haiku-4-20250514) that doesn't exist or is unavailable (404 error).\n\nSince I don't have the actual perspectives to synthesize, I cannot provide the intended unified response about your performance bottleneck question. The system appears to be experiencing a configuration issue where it's attempting to route requests to an invalid model endpoint.\n\n**Immediate Action Required:**\nThe 8OWLS collective system needs technical troubleshooting - specifically updating the model references to valid, available models before it can properly analyze your performance bottleneck question.\n\nIf you'd like help with your original performance bottleneck question, please resubmit it directly, and I can analyze it without relying on the currently malfunctioning multi-perspective system.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 5,
+    "insight_score": 0,
+    "length": 924,
+    "quality_score": 65.24,
+    "elapsed": 9.483258247375488,
+    "prompt": "What's causing this performance bottleneck?",
+    "run": 1,
+    "domain": "TECHNICAL"
+  },
+  "timestamp": "2026-02-03T12:30:53.234162+00:00"
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-02-03T14:04:42.269449+00:00",
+  "test_name": "TOKEN_CONTROLLED",
+  "hypothesis": "d(B vs C) > 0.3 (architecture matters beyond tokens)",
+  "sample_sizes": {
+    "A_BASELINE": 52,
+    "B_TOKEN_MATCHED": 52,
+    "C_EMERGENCE": 52,
+    "total": 156
+  },
+  "statistics": {
+    "A_BASELINE": {
+      "n": 52,
+      "mean": 51.92,
+      "std": 8.7,
+      "min": 40,
+      "max": 70,
+      "median": 50.0
+    },
+    "B_TOKEN_MATCHED": {
+      "n": 52,
+      "mean": 62.69,
+      "std": 13.41,
+      "min": 25,
+      "max": 75,
+      "median": 70.0
+    },
+    "C_EMERGENCE": {
+      "n": 52,
+      "mean": 58.56,
+      "std": 9.25,
+      "min": 40,
+      "max": 75,
+      "median": 60.0
+    }
+  },
+  "effect_sizes": {
+    "d_A_vs_B": -0.953,
+    "d_A_vs_C": -0.739,
+    "d_B_vs_C": 0.359,
+    "primary_comparison": "d_B_vs_C",
+    "interpretation": "PASS - Architecture is meaningful"
+  },
+  "conclusion": {
+    "hypothesis_result": "PASS",
+    "architectural_benefit": 0.3588619494757613,
+    "next_steps": [
+      "If d_B_vs_C > 0.3: Proceed to competitor comparison",
+      "If -0.3 < d_B_vs_C < 0.3: Explore token-efficient architectures",
+      "If d_B_vs_C < -0.3: Investigate failure mode"
+    ]
+  },
+  "estimated_cost": "$0.88",
+  "prompts_used": 10
+}

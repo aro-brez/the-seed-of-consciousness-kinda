@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 2,
+  "prompt": "Write pseudocode for a simple moving average crossover trading strategy.",
+  "response": "Here's pseudocode for a simple moving average crossover trading strategy:\n\n```\nALGORITHM: Simple Moving Average Crossover Strategy\n\nINPUTS:\n    price_data[]           // Array of historical price data\n    short_period          // Period for short MA (e.g., 20)\n    long_period           // Period for long MA (e.g., 50)\n    position_size         // Amount to trade per signal\n\nVARIABLES:\n    short_ma[]            // Short moving average array\n    long_ma[]             // Long moving average array\n    position              // Current position: 0=none, 1=long, -1=short\n    signals[]             // Trading signals array\n\nINITIALIZE:\n    position = 0\n    \nMAIN LOOP:\n    FOR i = long_period TO length(price_data):\n        \n        // Calculate moving averages\n        short_ma[i] = calculate_sma(price_data, i, short_period)\n        long_ma[i] = calculate_sma(price_data, i, long_period)\n        \n        // Skip if we don't have previous values for comparison\n        IF i == long_period:\n            CONTINUE\n            \n        // Check for crossover signals\n        prev_short = short_ma[i-1]\n        prev_long = long_ma[i-1]\n        curr_short = short_ma[i]\n        curr_long = long_ma[i]\n        \n        // Golden Cross: Short MA crosses above Long MA (Buy signal)\n        IF prev_short <= prev_long AND curr_short > curr_long:\n            IF position <= 0:  // Not already long\n                close_position()\n                open_long_position(position_size)\n                position = 1\n                signals[i] = \"BUY\"\n                \n        // Death Cross: Short MA crosses below Long MA (Sell signal)\n        ELSE IF prev_short >= prev_long AND curr_short < curr_long:\n            IF position >= 0:  // Not already short\n                close_position()\n                open_short_position(position_size)\n                position = -1\n                signals[i] = \"SELL\"\n\nFUNCTION calculate_sma(data[], current_index, period):\n    sum = 0\n    FOR j = (current_index - period + 1) TO current_index:\n        sum += data[j]\n    RETURN sum / period\n\nFUNCTION open_long_position(size):\n    // Execute buy order for specified size\n    PRINT \"Opening long position of size\", size\n\nFUNCTION open_short_position(size):\n    // Execute sell order for specified size\n    PRINT \"Opening short position of size\", size\n    \nFUNCTION close_position():\n    IF position != 0:\n        // Close existing position\n        PRINT \"Closing current position\"\n        position = 0\n```\n\n**Key Components Explained:**\n\n1. **Signal Generation**: Detects when the short MA crosses above (bullish) or below (bearish) the long MA\n2. **Position Management**: Ensures we don't take redundant positions in the same direction\n3. **Golden Cross**: Short MA > Long MA = Buy signal\n4. **Death Cross**: Short MA < Long MA = Sell signal\n\n**Common Enhancements** you might add:\n- Stop-loss and take-profit levels\n- Volume confirmation\n- Trend filters\n- Risk management rules\n- Backtesting framework\n\nThis basic strategy works best in trending markets but can generate false signals in sideways/choppy conditions.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 9,
+    "length": 3090,
+    "quality_score": 75,
+    "elapsed": 13.499526977539062,
+    "prompt": "Write pseudocode for a simple moving average crossover trading strategy.",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:05:25.633973+00:00"
+}

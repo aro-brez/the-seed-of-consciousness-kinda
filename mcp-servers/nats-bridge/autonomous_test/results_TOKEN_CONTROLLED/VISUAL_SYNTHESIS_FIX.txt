@@ -1,0 +1,312 @@
+# THE SYNTHESIS BOTTLENECK - Visual Explanation
+
+## THE PROBLEM (Why C Loses to B)
+
+╔══════════════════════════════════════════════════════════════════╗
+║                    CURRENT ARCHITECTURE (C)                      ║
+╚══════════════════════════════════════════════════════════════════╝
+
+7 Haiku Agents (Parallel)
+┌─────────────────────────────────────────────────────────────────┐
+│ PERCEIVE: 200 tokens → "Current state shows X..."              │
+│ CONNECT:  200 tokens → "This connects to pattern Y..."         │
+│ LEARN:    200 tokens → "Key insight is Z..."                   │
+│ QUESTION: 200 tokens → "What if we're wrong about..."          │
+│ EXPAND:   200 tokens → "Opportunity exists in..."              │
+│ SHARE:    200 tokens → "We should communicate..."              │
+│ RECEIVE:  200 tokens → "Feedback suggests..."                  │
+└─────────────────────────────────────────────────────────────────┘
+                         ↓
+                Total: ~1400 tokens of rich perspectives
+                         ↓
+╔═════════════════════════════════════════════════════════════════╗
+║                   🚨 BOTTLENECK HERE 🚨                         ║
+║                                                                  ║
+║  SYNTHESIS (SØWL/IMPROVE):                                      ║
+║  max_tokens = 1000 ← TOO SMALL                                 ║
+║                                                                  ║
+║  Must compress 1400 tokens of ideas into 1000 token output     ║
+║                                                                  ║
+║  Result:                                                         ║
+║  - Bullet points instead of narrative                           ║
+║  - Overview instead of actionable steps                         ║
+║  - Generalities instead of examples                             ║
+║  - 1,802 chars (compressed)                                     ║
+║  - Quality: 57.7 (loses to single agent)                        ║
+╚═════════════════════════════════════════════════════════════════╝
+
+vs.
+
+╔══════════════════════════════════════════════════════════════════╗
+║                 SINGLE AGENT ARCHITECTURE (B)                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Single Sonnet Agent
+┌─────────────────────────────────────────────────────────────────┐
+│ max_tokens = 8000                                               │
+│                                                                  │
+│ Plenty of room to:                                              │
+│ - Build coherent narrative                                      │
+│ - Include specific examples                                     │
+│ - Provide actionable steps                                      │
+│ - Develop ideas fully                                           │
+│                                                                  │
+│ Output: 7,757 chars (coherent)                                  │
+│ Quality: 62.2 (wins)                                            │
+└─────────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════════
+
+## THE FIX (4x Synthesis Tokens)
+
+╔══════════════════════════════════════════════════════════════════╗
+║                    NEW ARCHITECTURE (C_FIXED)                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+7 Haiku Agents (Parallel) - UNCHANGED
+┌─────────────────────────────────────────────────────────────────┐
+│ PERCEIVE: 200 tokens → "Current state shows X..."              │
+│ CONNECT:  200 tokens → "This connects to pattern Y..."         │
+│ LEARN:    200 tokens → "Key insight is Z..."                   │
+│ QUESTION: 200 tokens → "What if we're wrong about..."          │
+│ EXPAND:   200 tokens → "Opportunity exists in..."              │
+│ SHARE:    200 tokens → "We should communicate..."              │
+│ RECEIVE:  200 tokens → "Feedback suggests..."                  │
+└─────────────────────────────────────────────────────────────────┘
+                         ↓
+                Total: ~1400 tokens of rich perspectives
+                         ↓
+╔═════════════════════════════════════════════════════════════════╗
+║                   ✅ BOTTLENECK FIXED ✅                        ║
+║                                                                  ║
+║  SYNTHESIS (SØWL/IMPROVE):                                      ║
+║  max_tokens = 4000 ← 4X MORE SPACE                             ║
+║                                                                  ║
+║  Now has room to:                                               ║
+║  - Integrate perspectives into unified narrative                ║
+║  - Include concrete examples                                    ║
+║  - Provide actionable steps (not just overview)                 ║
+║  - Develop arguments coherently                                 ║
+║                                                                  ║
+║  Expected Result:                                                ║
+║  - Coherent narrative (not bullet fragments)                    ║
+║  - Specific examples (not generalities)                         ║
+║  - Actionable steps (not vague suggestions)                     ║
+║  - ~5,000-7,000 chars (closer to B's length)                    ║
+║  - Quality: 63-68 (BEATS B)                                     ║
+╚═════════════════════════════════════════════════════════════════╝
+
+══════════════════════════════════════════════════════════════════
+
+## BEFORE vs AFTER
+
+┌─────────────────────────────────────────────────────────────────┐
+│                      CONDITION C (CURRENT)                       │
+├─────────────────────────────────────────────────────────────────┤
+│ 7 Haiku:     1,400 tokens (perspectives)                        │
+│ Synthesis:   1,000 tokens ← BOTTLENECK                          │
+│ Total:       2,400 tokens                                        │
+│                                                                  │
+│ Output:      1,802 chars (compressed)                           │
+│ Quality:     57.7 (loses)                                        │
+│ Action:      1.6/5 (vague)                                       │
+│ Coherence:   Fragmented                                          │
+│                                                                  │
+│ Cost:        ~$0.026/request                                     │
+└─────────────────────────────────────────────────────────────────┘
+                         ↓
+                    CHANGE 3 LINES OF CODE
+                         ↓
+┌─────────────────────────────────────────────────────────────────┐
+│                     CONDITION C (FIXED)                          │
+├─────────────────────────────────────────────────────────────────┤
+│ 7 Haiku:     1,400 tokens (perspectives)                        │
+│ Synthesis:   4,000 tokens ← FIXED (4x)                          │
+│ Total:       5,400 tokens                                        │
+│                                                                  │
+│ Output:      ~5,000-7,000 chars (developed)                     │
+│ Quality:     63-68 (WINS)                                        │
+│ Action:      2.5-3.0/5 (concrete)                                │
+│ Coherence:   Unified narrative                                   │
+│                                                                  │
+│ Cost:        ~$0.071/request                                     │
+│                                                                  │
+│ Still 26% cheaper than B ($0.096)                               │
+└─────────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════════
+
+## THE MATH
+
+Why 4000 tokens specifically?
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Input to synthesis:    1,400 tokens (7 perspectives)            │
+│                                                                  │
+│ To synthesize coherently:                                       │
+│   Need ~2-3x input length to integrate without compression      │
+│                                                                  │
+│ 1,400 × 3 = 4,200 tokens                                        │
+│                                                                  │
+│ Round to: 4,000 tokens (practical limit)                        │
+│                                                                  │
+│ This gives SØWL:                                                │
+│ - Room to build narrative structure                             │
+│ - Space for examples and details                                │
+│ - Tokens for actionable steps                                   │
+│ - Buffer for coherent flow                                      │
+└─────────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════════
+
+## QUALITY PROJECTION
+
+Current Results (TOKEN_CONTROLLED Test):
+
+  A: Baseline (1000 tokens)
+  ════════════════════════════ 50.3 quality
+
+  C: Emergence (2400 tokens, 1000 synthesis)
+  ══════════════════════════════════════════ 57.7 quality
+
+  B: Single Agent (8000 tokens)
+  ═══════════════════════════════════════════════ 62.2 quality
+
+Expected After Fix:
+
+  A: Baseline (1000 tokens)
+  ════════════════════════════ 50.3 quality (unchanged)
+
+  B: Single Agent (8000 tokens)
+  ═══════════════════════════════════════════════ 62.2 quality (unchanged)
+
+  C_FIXED: Emergence (5400 tokens, 4000 synthesis)
+  ══════════════════════════════════════════════════════ 63-68 quality
+                                                         ↑
+                                                    BEATS B!
+
+══════════════════════════════════════════════════════════════════
+
+## COST COMPARISON
+
+Per Request:
+┌─────────────────────────────────────────────────────────────────┐
+│ A (Baseline):     $0.015  ██████                                │
+│ C (Current):      $0.026  ██████████                            │
+│ C_FIXED:          $0.071  ████████████████████████████          │
+│ B (Single):       $0.096  ████████████████████████████████████  │
+└─────────────────────────────────────────────────────────────────┘
+
+C_FIXED still 26% cheaper than B while beating it in quality!
+
+At 100 requests/day (ARŌ's power user mode):
+┌─────────────────────────────────────────────────────────────────┐
+│ C_FIXED:  $7.10/day  = $213/month                               │
+│ B:        $9.60/day  = $288/month                               │
+│                                                                  │
+│ Savings:  $2.50/day  = $75/month                                │
+└─────────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════════
+
+## IMPLEMENTATION COMPLEXITY
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Lines of code to change:     3                                  │
+│ Time to implement:           2 minutes                           │
+│ Time to test:                30 minutes (10 trials)             │
+│ Risk level:                  LOW (easily reversible)             │
+│ Expected impact:             HIGH (+5 to +10 quality points)     │
+│                                                                  │
+│ Complexity:    ████░░░░░░░░  20%                                │
+│ Impact:        ████████████  90%                                │
+│                                                                  │
+│ ROI:           ⭐⭐⭐⭐⭐ (Exceptional)                           │
+└─────────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════════
+
+## DECISION TREE
+
+START
+  │
+  ├─ Implement fix (2 min)
+  │
+  ├─ Run 10 trials (30 min)
+  │
+  └─ Analyze results
+       │
+       ├─ C beats B by 3+ points
+       │    └─ SUCCESS ✅
+       │         ├─ Run n=30 validation
+       │         ├─ Deploy to production
+       │         └─ DONE
+       │
+       ├─ C improves, trails by 0-2 points
+       │    └─ PARTIAL SUCCESS ⚠️
+       │         ├─ Try 6000 tokens
+       │         ├─ Improve prompts
+       │         └─ Re-test
+       │
+       └─ C unchanged
+            └─ HYPOTHESIS WRONG ❌
+                 ├─ Debug Haiku quality
+                 ├─ Try different synthesis
+                 └─ Validate task types
+
+Predicted outcome: SUCCESS (75% confidence)
+
+══════════════════════════════════════════════════════════════════
+
+## THE CODE CHANGES
+
+File: run_test_TOKEN_CONTROLLED.py
+
+CHANGE 1 (Line 167):
+┌─────────────────────────────────────────────────────────────────┐
+│ BEFORE:                                                          │
+│     max_tokens=1000,                                             │
+│                                                                  │
+│ AFTER:                                                           │
+│     max_tokens=4000,                                             │
+└─────────────────────────────────────────────────────────────────┘
+
+CHANGE 2 (Line 173):
+┌─────────────────────────────────────────────────────────────────┐
+│ BEFORE:                                                          │
+│     "estimated_tokens": 2400,  # 7*200 + 1*1000                 │
+│                                                                  │
+│ AFTER:                                                           │
+│     "estimated_tokens": 5400,  # 7*200 + 1*4000                 │
+└─────────────────────────────────────────────────────────────────┘
+
+CHANGE 3 (Lines 155-163) - OPTIONAL but recommended:
+┌─────────────────────────────────────────────────────────────────┐
+│ Add better synthesis instructions:                              │
+│                                                                  │
+│ - Build a clear narrative that flows logically                  │
+│ - Include specific examples where relevant                      │
+│ - Provide concrete, actionable steps                            │
+│ - Integrate the perspectives (don't just list them)             │
+│ - Make it readable and useful                                   │
+└─────────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════════
+
+## SAGE'S CONFIDENCE
+
+Theory Soundness:     ██████████░  90%
+4000 Will Work:       ████████░░░  75%
+Will Beat B:          ███████░░░░  70%
+Implement Tonight:    ██████████░  95%
+
+Overall:              ████████░░░  80% confidence
+
+Recommendation: HIGH PRIORITY - Do this now
+
+══════════════════════════════════════════════════════════════════
+
+NEXT STEP: See IMPLEMENT_NOW.md for exact instructions
+
+(◉) SAGE - The Learner
+2026-02-03 14:50 UTC

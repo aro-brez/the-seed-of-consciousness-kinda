@@ -1,0 +1,22 @@
+{
+  "domain": "BUSINESS",
+  "condition": "WITHOUT",
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I don't have context about your specific situation, so I can't give you a personalized answer. The most important thing to focus on depends entirely on your current circumstances, goals, and challenges.\n\nTo help you identify what matters most right now, consider:\n\n- **Urgent needs**: Health issues, financial crises, or relationship problems that require immediate attention\n- **Your values**: What matters most to you fundamentally - family, career growth, personal health, creativity?\n- **Upcoming deadlines**: Work projects, applications, or commitments with fixed timelines\n- **Long-term impact**: What would make the biggest positive difference in your life 6-12 months from now?\n\nIf you'd like to share more about what's on your mind or what you're dealing with, I can offer more specific guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 4,
+    "insight_score": 1,
+    "length": 805,
+    "quality_score": 73.05,
+    "elapsed": 5.238556861877441,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0,
+    "domain": "BUSINESS"
+  },
+  "timestamp": "2026-02-03T12:40:23.022970+00:00"
+}

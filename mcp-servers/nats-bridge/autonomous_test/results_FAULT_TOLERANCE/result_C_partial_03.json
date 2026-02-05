@@ -1,0 +1,20 @@
+{
+  "condition": "C_partial",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice that all three perspectives returned errors (404 - model not found), so I don't have the specific analyses from RECEIVE, SHARE, and EXPAND to synthesize. However, I can provide a unified, actionable response to your important question about prioritizing competing goals.\n\n## How to Prioritize Competing Goals: A Synthesized Framework\n\n**1. Clarify Core Values & Mission**\n- Identify your fundamental values and primary mission\n- Use these as your north star for decision-making\n- Goals aligned with core values take priority\n\n**2. Apply the Impact-Effort Matrix**\n- Map goals by potential impact (high/low) vs effort required (high/low)\n- Prioritize high-impact, low-effort goals first\n- Consider high-impact, high-effort goals as strategic investments\n\n**3. Consider Time Horizons**\n- Balance short-term wins with long-term vision\n- Ensure some goals deliver immediate value while others build future capacity\n- Avoid sacrificing long-term success for short-term gains\n\n**4. Stakeholder Analysis**\n- Identify who is affected by each goal\n- Weight goals based on stakeholder importance and impact\n- Consider both internal and external stakeholder needs\n\n**5. Resource Reality Check**\n- Honestly assess available resources (time, money, people, skills)\n- Choose goals that are achievable with current or obtainable resources\n- Build resource acquisition into your goal prioritization\n\n**Actionable Next Steps:**\n1. List all competing goals\n2. Score each goal on impact, alignment with values, and resource requirements\n3. Create a priority matrix\n4. Start with your top 2-3 goals to maintain focus\n5. Regularly review and adjust priorities as circumstances change\n\nWould you like me to help you apply this framework to your specific competing goals?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1757,
+    "quality_score": 74,
+    "elapsed": 12.740933895111084,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:34:47.865401+00:00"
+}

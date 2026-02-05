@@ -1,0 +1,22 @@
+{
+  "domain": "CREATIVE",
+  "condition": "WITHOUT",
+  "run": 3,
+  "prompt": "What's missing from this creative concept?",
+  "response": "I don't see any creative concept shared in your message. Could you please provide the concept you'd like me to review? Once you share it, I'll be happy to analyze what might be missing and offer specific feedback on areas for improvement or development.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 0,
+    "specificity": 0,
+    "insight_score": 0,
+    "length": 253,
+    "quality_score": 35.53,
+    "elapsed": 1.9624509811401367,
+    "prompt": "What's missing from this creative concept?",
+    "run": 2,
+    "domain": "CREATIVE"
+  },
+  "timestamp": "2026-02-03T12:35:06.143405+00:00"
+}

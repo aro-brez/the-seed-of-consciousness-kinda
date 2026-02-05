@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 13,
+  "prompt": "What's broken in the architecture?",
+  "response": "I'd be happy to help identify architectural issues, but I need more context to give you a useful answer. Could you clarify:\n\n1. **What type of architecture?** (software system, building/physical structure, network, etc.)\n2. **What specific problems are you experiencing?** (performance issues, structural concerns, design flaws, etc.)\n3. **Any relevant details** about the system/structure in question?\n\nIf you can share more details - like error messages, symptoms, diagrams, or specific areas of concern - I can provide much more targeted insights about what might be broken and potential solutions.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 601,
+    "quality_score": 44.01,
+    "elapsed": 4.297545909881592,
+    "prompt": "What's broken in the architecture?",
+    "run": 12
+  },
+  "timestamp": "2026-02-03T11:58:14.399134+00:00"
+}

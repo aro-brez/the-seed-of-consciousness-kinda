@@ -1,0 +1,20 @@
+{
+  "condition": "C_partial",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I can see that all three perspectives encountered errors (404 model not found), so I don't have any actual analysis to synthesize from your intended multi-perspective approach.\n\nHowever, I can address your original question directly: **\"What are we missing in our current strategy?\"**\n\nTo provide a meaningful response, I'd need more context about:\n\n**What strategy specifically** - Business? Product? Marketing? Personal development?\n\n**Key areas to generally examine when strategy feels incomplete:**\n\n1. **Stakeholder blind spots** - Are we considering all affected parties?\n2. **Implementation gaps** - Do we have clear execution paths?\n3. **Measurement systems** - How will we know if it's working?\n4. **Risk assessment** - What could derail our efforts?\n5. **Resource allocation** - Do we have what we need to succeed?\n6. **Timeline realism** - Are our expectations achievable?\n7. **Feedback loops** - How do we adapt as we learn?\n\n**To get a proper synthesis in the future:**\n- Ensure the analysis models are available and properly configured\n- Provide more context about the specific strategy in question\n- Include current performance data or challenges you're facing\n\nWould you like to reframe the question with more specific context so I can provide targeted strategic insights?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1288,
+    "quality_score": 49,
+    "elapsed": 10.696582078933716,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:38:58.566661+00:00"
+}

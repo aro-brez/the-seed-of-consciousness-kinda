@@ -1,0 +1,52 @@
+# Sensitive data - DO NOT COMMIT
+*.env
+.env*
+*credentials*
+*secret*
+*key*
+*token*
+*password*
+*wallet*
+*private*
+
+# API keys
+anthropic_key*
+openai_key*
+.anthropic*
+.openai*
+
+# Personal data
+*personal*
+*private*
+trading_data/
+wallet/
+
+# Raw conversation logs (may contain sensitive info)
+raw_logs/
+conversation_history/
+*.log
+
+# Local development
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test artifacts that may contain sensitive prompts
+test_outputs_raw/
+debug/
+
+# Keep these (safe)
+!DATA/effect_sizes.json
+!DATA/summary_statistics.json
+!docs/*.md
+!CODE/*.py
+!NOTEBOOKS/*.ipynb

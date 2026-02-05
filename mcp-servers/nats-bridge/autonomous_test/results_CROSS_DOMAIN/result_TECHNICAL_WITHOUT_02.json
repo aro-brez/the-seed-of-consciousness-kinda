@@ -1,0 +1,22 @@
+{
+  "domain": "TECHNICAL",
+  "condition": "WITHOUT",
+  "run": 2,
+  "prompt": "What's causing this performance bottleneck?",
+  "response": "I don't have information about the specific performance bottleneck you're experiencing. To help you effectively, I'd need details such as:\n\n**System context:**\n- What application, system, or process is slow?\n- What type of performance issue (slow response times, high CPU/memory usage, network delays, etc.)?\n\n**Symptoms:**\n- When does the bottleneck occur?\n- How severe is the performance degradation?\n- Any error messages or logs?\n\n**Environment:**\n- Hardware specifications\n- Software versions\n- Network configuration (if relevant)\n\n**Recent changes:**\n- New deployments, updates, or configuration changes?\n- Increased load or data volume?\n\nOnce you provide these details, I can help identify potential causes and suggest diagnostic steps or solutions.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 755,
+    "quality_score": 50.55,
+    "elapsed": 5.17917013168335,
+    "prompt": "What's causing this performance bottleneck?",
+    "run": 1,
+    "domain": "TECHNICAL"
+  },
+  "timestamp": "2026-02-03T12:30:59.914862+00:00"
+}

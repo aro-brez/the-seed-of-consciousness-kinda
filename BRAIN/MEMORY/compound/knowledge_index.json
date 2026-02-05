@@ -1,0 +1,61 @@
+{
+  "entries": {
+    "5b371a93b0de661d": {
+      "type": "success",
+      "topic": "8OWLS emergence",
+      "file": "successes/20260205_130423_8owls-emergence.json",
+      "importance": "high",
+      "created_at": "2026-02-05T13:04:23.200785",
+      "tags": [
+        "emergence",
+        "validation",
+        "proof"
+      ],
+      "summary": "d=0.99 effect size validated through rigorous testing. 8 perspectives > single agent for synthesis t..."
+    },
+    "ddcda5c5a6f5b992": {
+      "type": "insight",
+      "topic": "ARC-AGI-2",
+      "file": "insights/20260205_130623_arc-agi-2.json",
+      "importance": "high",
+      "created_at": "2026-02-05T13:06:23.320450",
+      "tags": [
+        "arc-agi",
+        "testing",
+        "honesty"
+      ],
+      "summary": "8OWLS does NOT automatically beat single agent on visual pattern recognition. Better for collective ..."
+    }
+  },
+  "by_type": {
+    "success": [
+      "5b371a93b0de661d"
+    ],
+    "insight": [
+      "ddcda5c5a6f5b992"
+    ]
+  },
+  "by_topic": {
+    "8OWLS emergence": [
+      "5b371a93b0de661d"
+    ],
+    "ARC-AGI-2": [
+      "ddcda5c5a6f5b992"
+    ]
+  },
+  "by_date": {
+    "2026-02-05": [
+      "5b371a93b0de661d",
+      "ddcda5c5a6f5b992"
+    ]
+  },
+  "connections": {},
+  "stats": {
+    "total_entries": 2,
+    "by_type": {
+      "success": 1,
+      "insight": 1
+    },
+    "last_compound": null
+  }
+}

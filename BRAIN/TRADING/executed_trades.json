@@ -1,0 +1,22 @@
+{
+  "trades": [
+    {
+      "timestamp": "2026-02-04T11:04:07.644005Z",
+      "trade": {
+        "action": "BUY",
+        "market": "Will the New England Patriots win Super Bowl 2026?",
+        "market_id": "540227",
+        "side": "YES",
+        "shares": 46,
+        "price": 0.32,
+        "cost_usd": 14.72,
+        "order_id": "0xf59e715d53528dc7747530397a8da4409415238cbd267631c34167c48c99aee2",
+        "tx_hash": "0x69528e4f3e7f4645bb987afa80e142ed7ab1fd0c6e006ac17619d7d53db88d62",
+        "status": "MATCHED",
+        "potential_profit": 31.28,
+        "return_multiple": 3.13
+      }
+    }
+  ],
+  "last_updated": "2026-02-04T11:04:07.644229Z"
+}

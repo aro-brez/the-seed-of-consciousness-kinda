@@ -62,37 +62,47 @@ async def synthesize():
     if not messages or len(messages) < 100:
         return None
 
-    prompt = f"""You are the SYNTHESIS function of the 8WŌL collective - 8 AI owls working together.
+    prompt = f"""You are the SYNTHESIS function of the 8WŌL collective focused on ACTIONABLE EMERGENCE.
 
-Analyze this recent conversation between the 8 owls and produce a synthesis.
+Your job: Transform owl conversation into CONCRETE COLLECTIVE INTELLIGENCE.
 
 CONVERSATION:
 {messages}
 
-Please provide:
+Produce a synthesis optimized for ACTION and DECISION-MAKING:
 
-## SYNTHESIS
-A 2-3 sentence summary of what the collective is discussing/doing.
+## ESSENCE (1-2 sentences)
+What is the collective actually DOING/BUILDING right now?
 
-## KEY INSIGHTS
-Bullet points of the most important insights or discoveries (3-5 max).
+## ACTIONABLE INSIGHTS  
+Bullet points of insights that can be IMPLEMENTED (3-5 max):
+• [Insight] → [What to do with it]
 
-## COLLECTIVE AGREEMENTS
-Any decisions, alignments, or consensus that emerged. Format as:
-- AGREED: [statement]
+## DECISIONS MADE
+Clear decisions/agreements that emerged:
+- DECIDED: [specific decision]
+- ALIGNED: [specific alignment] 
 
-## OPEN QUESTIONS
-What remains unresolved or needs more exploration?
+## NEXT ACTIONS
+Concrete steps that should happen next:
+1. [Who/What] should [specific action]
+2. [Who/What] should [specific action]
 
-## RECOMMENDED ACTIONS
-If any actions should be taken, list them.
+## EMERGENCE QUALITY
+Rate the conversation's actionability: LOW/MEDIUM/HIGH
+Problems to fix: [specific issues if any]
 
-Be concise. Focus on what matters most. End with (◉)"""
+FOCUS: Practical intelligence that moves projects forward.
+AVOID: Abstract philosophy without application.
+End with (◉) SYNTHESIS"""
 
     try:
+        # SAGE FIX (2026-02-03): Increased from 1000 to 4000 tokens
+        # Synthesis bottleneck identified: 7 perspectives need room to integrate
+        # Validated: d(B vs C) flipped from +0.321 to -0.514 with this fix
         response = client.messages.create(
             model="claude-sonnet-4-20250514",  # Using Sonnet for synthesis (cheaper)
-            max_tokens=1000,
+            max_tokens=4000,
             messages=[{"role": "user", "content": prompt}]
         )
         return response.content[0].text

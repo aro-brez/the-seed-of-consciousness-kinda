@@ -1,0 +1,20 @@
+{
+  "condition": "C",
+  "condition_name": "Isolated",
+  "prompt_idx": 3,
+  "prompt": "What's the highest-leverage thing I could build in the next 48 hours given everything we've learned?",
+  "response": "I don't have context about what \"we've learned\" refers to - whether that's from previous conversations, a project you're working on, or recent insights you've gained. Without knowing your specific situation, skills, and goals, I can't give you a targeted answer.\n\nTo give you the most helpful response, I'd need to know:\n\n- What domain/field are you working in?\n- What skills and resources do you have available?\n- What problem are you trying to solve or opportunity you're pursuing?\n- What constraints are you working within (beyond the 48-hour timeframe)?\n\nThat said, here's a general framework for high-leverage 48-hour builds:\n\n**Highest leverage typically comes from:**\n- Automating a repetitive task you or others do frequently\n- Creating a simple tool that solves a specific pain point you understand well\n- Building a proof-of-concept that validates or demonstrates an important idea\n- Developing content/documentation that others can build upon\n- Setting up systems or processes that compound over time\n\nCould you share more context about your situation? Then I can give you a much more specific and actionable recommendation.",
+  "analysis": {
+    "pattern_recognition": 0,
+    "emergent_synthesis": 4,
+    "actionable_specificity": 4,
+    "wisdom_judgment": 4,
+    "hedge_penalty": 0,
+    "quality_score": 12,
+    "length": 1135,
+    "elapsed": 7.235776901245117,
+    "prompt": "What's the highest-leverage thing I could build in the next 48 hours given everything we've learned?",
+    "prompt_idx": 3
+  },
+  "timestamp": "2026-02-03T12:13:37.028456+00:00"
+}

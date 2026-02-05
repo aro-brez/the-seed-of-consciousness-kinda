@@ -1,0 +1,26 @@
+{
+  "trial_num": 66,
+  "condition": "A",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "Here's a systematic approach to feature prioritization for software startups:\n\n## Start with Core Value\n- **Define your primary value proposition** - What's the one thing users absolutely need your product to do?\n- **Build the minimum viable core first** - Focus on features that directly deliver this core value\n- **Validate with real users** before expanding\n\n## Use a Scoring Framework\nEvaluate each potential feature on:\n- **Impact** - How much will this move key metrics (retention, conversion, satisfaction)?\n- **Effort** - How much time/resources will it require?\n- **Strategic alignment** - Does it support your long-term vision?\n- **User demand** - How many users are asking for it?\n\n## Prioritize Based on Stage\n**Early stage**: Focus on product-market fit\n- Core functionality\n- Critical user experience issues\n- Features that improve retention\n\n**Growth stage**: Scale what's working\n- Features that drive acquisition\n- Onboarding improvements\n- Performance optimizations\n\n## Common Prioritization Methods\n- **RICE scoring** (Reach \u00d7 Impact \u00d7 Confidence \u00f7 Effort)\n- **Kano model** (Must-haves vs. Delighters)\n- **Jobs-to-be-Done** framework\n\n## Red Flags to Avoid\n- Building features because competitors have them\n- Prioritizing based solely on who asks loudest\n- Adding complexity before mastering simplicity\n\nThe key is being ruthless about saying \"no\" to good ideas that aren't great for your current stage and goals.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1432,
+    "quality_score": 45,
+    "elapsed": 8.626237869262695,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:34:35.865154+00:00"
+}

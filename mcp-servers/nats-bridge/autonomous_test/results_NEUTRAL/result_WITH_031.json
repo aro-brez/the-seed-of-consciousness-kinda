@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "I understand you're asking about feature prioritization for a software startup, though it appears the multi-perspective analysis system you intended to use encountered technical errors.\n\nLet me provide a direct, actionable synthesis on this critical startup question:\n\n## Feature Prioritization Framework for Software Startups\n\n**1. Customer-First Validation**\n- Start with actual user problems, not assumptions\n- Prioritize features that solve your core value proposition\n- Use customer interviews and usage data over internal opinions\n\n**2. Impact vs. Effort Matrix**\n- High impact, low effort = immediate priorities\n- High impact, high effort = strategic roadmap items\n- Low impact items = parking lot for later consideration\n\n**3. Revenue-Focused Lens**\n- Features that directly drive user acquisition\n- Features that improve retention and reduce churn\n- Features that enable monetization or upselling\n\n**4. Technical Debt Balance**\n- Don't sacrifice all maintenance for new features\n- Reserve 20-30% capacity for infrastructure improvements\n- Consider scalability implications of each feature\n\n**5. Competitive Reality Check**\n- Table stakes features you must have\n- Differentiation opportunities that set you apart\n- Areas where you can acceptably lag behind\n\n**Practical Process:**\n1. Maintain a scored backlog using the above criteria\n2. Review priorities monthly, not daily\n3. Say \"no\" to 80% of feature requests\n4. Ship the minimum viable version first, iterate based on usage\n\nThe key insight: Early-stage startups should ruthlessly focus on features that prove product-market fit rather than building comprehensive feature sets.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 4,
+    "specificity": 5,
+    "length": 1640,
+    "quality_score": 75,
+    "elapsed": 13.345070123672485,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T12:53:29.585147+00:00"
+}

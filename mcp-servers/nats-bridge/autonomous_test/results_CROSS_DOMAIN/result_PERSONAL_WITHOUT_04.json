@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITHOUT",
+  "run": 4,
+  "prompt": "What's holding me back from growth?",
+  "response": "I don't have enough information about your specific situation to identify what's holding you back, but I can share some common growth barriers people face:\n\n**Internal barriers:**\n- Fear of failure or success\n- Perfectionism that prevents starting\n- Fixed mindset (\"I can't change\")\n- Comfort zone attachment\n- Lack of clear goals or direction\n\n**External barriers:**\n- Limited resources (time, money, skills)\n- Unsupportive environment or relationships\n- Lack of mentorship or guidance\n- Overwhelming options without focus\n\n**Behavioral patterns:**\n- Procrastination or inconsistent action\n- Not learning from setbacks\n- Comparing yourself to others constantly\n- Avoiding feedback or difficult conversations\n\nTo get more specific insight, consider asking yourself:\n- What specific area of growth are you focused on?\n- What have you tried that didn't work?\n- What fears come up when you think about moving forward?\n- What would you attempt if failure wasn't possible?\n\nWhat resonates most with your situation? If you share more details about your specific growth goals and challenges, I can offer more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1120,
+    "quality_score": 28,
+    "elapsed": 8.183197021484375,
+    "prompt": "What's holding me back from growth?",
+    "run": 3,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:35:02.679393+00:00"
+}

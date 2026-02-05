@@ -1,0 +1,20 @@
+{
+  "condition": "A_healthy",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice that all seven perspectives encountered errors and couldn't provide their analyses due to a model availability issue. However, I can still address your important question about prioritizing competing goals.\n\n## How to Prioritize Competing Goals\n\n**Start with clarity and values:**\n- Define each goal explicitly and understand why it matters\n- Identify your core values and non-negotiables\n- Assess the time sensitivity and consequences of delay for each goal\n\n**Use structured evaluation:**\n- Apply frameworks like impact vs. effort matrices\n- Consider both short-term urgency and long-term importance\n- Evaluate resource requirements and opportunity costs\n\n**Look for synergies and trade-offs:**\n- Identify goals that can complement each other\n- Recognize where pursuing one goal might undermine another\n- Seek creative solutions that serve multiple objectives\n\n**Make decisions with incomplete information:**\n- Accept that perfect prioritization isn't always possible\n- Start with your best assessment and adjust as you learn\n- Build in review points to reassess priorities\n\n**Key principle:** Effective prioritization isn't about finding the \"perfect\" order\u2014it's about making thoughtful choices aligned with your values, being transparent about trade-offs, and remaining adaptive as circumstances change.\n\nWhat specific competing goals are you trying to prioritize? I can provide more targeted guidance with context.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1428,
+    "quality_score": 61,
+    "elapsed": 11.22956395149231,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:34:23.381235+00:00"
+}

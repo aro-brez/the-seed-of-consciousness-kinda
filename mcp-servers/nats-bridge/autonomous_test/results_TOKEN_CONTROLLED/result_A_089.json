@@ -1,0 +1,26 @@
+{
+  "trial_num": 89,
+  "condition": "A",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "Several key factors help people make better decisions under pressure:\n\n**Preparation and Practice**\n- Having clear decision-making frameworks ready beforehand\n- Practicing scenarios through simulations or mental rehearsal\n- Developing domain expertise so responses become more automatic\n\n**Stress Management**\n- Deep breathing or brief mindfulness techniques to calm the nervous system\n- Physical fitness, which improves stress resilience\n- Getting adequate sleep and nutrition to maintain cognitive function\n\n**Cognitive Strategies**\n- Breaking complex decisions into smaller, manageable parts\n- Using checklists or structured processes to avoid overlooking key factors\n- Setting time limits to prevent overthinking when appropriate\n\n**Perspective Techniques**\n- Taking a brief pause when possible to step back from immediate emotions\n- Considering long-term consequences, not just immediate outcomes\n- Asking \"What would I advise someone else in this situation?\"\n\n**Environmental Factors**\n- Seeking input from trusted advisors when time allows\n- Removing unnecessary distractions\n- Having reliable information sources readily available\n\n**Experience and Reflection**\n- Learning from past high-pressure situations\n- Regularly reviewing decisions to identify patterns and improve\n\nThe most effective approach combines several of these elements, with preparation and stress management being particularly crucial since they build the foundation for clear thinking when stakes are high.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1484,
+    "quality_score": 50,
+    "elapsed": 8.211724042892456,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:42:38.068204+00:00"
+}

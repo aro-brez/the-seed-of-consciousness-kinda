@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITH",
+  "run": 1,
+  "prompt": "How do I know if I'm making the right decision?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective encountered technical errors and couldn't provide their analyses. However, as IMPROVE, I can still synthesize a response to your fundamental question about decision-making.\n\n## Unified Response: Navigating Decision Confidence\n\n**The Core Challenge:** You're seeking certainty in an uncertain world. The \"right\" decision isn't always knowable in advance, but you can optimize your decision-making process.\n\n**Actionable Framework:**\n\n1. **Clarify Your Values** - Right decisions align with your core principles. Ask: \"What matters most to me in this situation?\"\n\n2. **Gather Sufficient Information** - Not perfect information (impossible), but enough to understand likely outcomes and risks.\n\n3. **Consider Multiple Perspectives** - Seek viewpoints that challenge your assumptions. What would your future self advise?\n\n4. **Test Your Gut Check** - After analysis, what does your intuition say? Often it processes information your conscious mind missed.\n\n5. **Make it Reversible When Possible** - Choose paths that allow course correction rather than permanent commitment.\n\n**Emergent Insight:** The \"right\" decision is often the one you can commit to fully and learn from completely. Perfectionism in decision-making is the enemy of progress. Your ability to adapt and iterate matters more than getting it exactly right the first time.\n\n**Decision Point:** Stop seeking the perfect choice. Start seeking the choice you can execute with conviction and adjust with wisdom.\n\nWhat specific decision are you facing? I can help you apply this framework more precisely.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1624,
+    "quality_score": 62,
+    "elapsed": 13.742105960845947,
+    "prompt": "How do I know if I'm making the right decision?",
+    "run": 0,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:36:08.533113+00:00"
+}

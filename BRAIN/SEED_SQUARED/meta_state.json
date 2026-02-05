@@ -1,0 +1,659 @@
+{
+  "cycle_count": 1,
+  "last_run": "2026-02-05T11:33:17.966207",
+  "velocity_history": [
+    {
+      "timestamp": "2026-02-05T11:33:17.369475",
+      "improvements_this_period": 15,
+      "avg_time_to_improvement": null,
+      "compound_rate": 0.0,
+      "acceleration": 0.0
+    }
+  ],
+  "meta_question_performance": {},
+  "optimization_history": [
+    {
+      "timestamp": "2026-02-05T11:33:17.965872",
+      "optimizations": [
+        {
+          "type": "FILTER_SOURCE",
+          "target": "web_research",
+          "reason": "Source 'web_research' has <10% usefulness rate",
+          "action": "Consider filtering or deprioritizing web_research",
+          "impact": "HIGH - reduces wasted processing time"
+        },
+        {
+          "type": "FILTER_SOURCE",
+          "target": "internal_analysis",
+          "reason": "Source 'internal_analysis' has <10% usefulness rate",
+          "action": "Consider filtering or deprioritizing internal_analysis",
+          "impact": "HIGH - reduces wasted processing time"
+        },
+        {
+          "type": "FILTER_SOURCE",
+          "target": "github",
+          "reason": "Source 'github' has <10% usefulness rate",
+          "action": "Consider filtering or deprioritizing github",
+          "impact": "HIGH - reduces wasted processing time"
+        }
+      ]
+    }
+  ],
+  "loop_improvements": [],
+  "compound_rate": 0.0,
+  "total_meta_learnings": 0,
+  "best_data_sources": {
+    "web_research": {
+      "total": 2862,
+      "useful": 0,
+      "usefulness": 0.0
+    },
+    "internal_analysis": {
+      "total": 618,
+      "useful": 0,
+      "usefulness": 0.0
+    },
+    "github": {
+      "total": 96,
+      "useful": 0,
+      "usefulness": 0.0
+    }
+  },
+  "best_question_patterns": {
+    "how can i": {
+      "total": 251,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what additional real-time": {
+      "total": 9,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i implement": {
+      "total": 66,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what real-time data": {
+      "total": 9,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific quantitative": {
+      "total": 11,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why are we": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why am i": {
+      "total": 10,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "am i missing": {
+      "total": 14,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why haven't i": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i add": {
+      "total": 9,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific on-chain": {
+      "total": 12,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "our risk assessment": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that my": {
+      "total": 8,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what additional data": {
+      "total": 18,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why has the": {
+      "total": 445,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that the": {
+      "total": 16,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "how can the": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific technical": {
+      "total": 7,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "how can we": {
+      "total": 63,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific criteria": {
+      "total": 19,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the analysis consistently": {
+      "total": 50,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system analyzes": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific metrics": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why hasn't the": {
+      "total": 27,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should we implement": {
+      "total": 17,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with 126 total": {
+      "total": 28,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current analysis": {
+      "total": 18,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given the focus": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the last analysis": {
+      "total": 21,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that recent": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why haven't we": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system correctly": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with 126 bookmarks": {
+      "total": 124,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with only 126": {
+      "total": 23,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the analysis correctly": {
+      "total": 33,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the analysis mentions": {
+      "total": 16,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what automated monitoring": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should the system": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system identifies": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific data": {
+      "total": 9,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that 4": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific threshold": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what real-time market": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system is": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that we're": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what automated filtering": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i integrate": {
+      "total": 22,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system has": {
+      "total": 22,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why hasn't there": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why has there": {
+      "total": 64,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what backtesting framework": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i reduce": {
+      "total": 42,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given the system": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i expand": {
+      "total": 17,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with an average": {
+      "total": 15,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that 126": {
+      "total": 206,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system identified": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that 100%": {
+      "total": 81,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "since the system": {
+      "total": 15,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "can i build": {
+      "total": 16,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "would adding a": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the analysis repeatedly": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "at 4 signals": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current 4": {
+      "total": 7,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "can i add": {
+      "total": 11,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what would it": {
+      "total": 55,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "can i integrate": {
+      "total": 30,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i build": {
+      "total": 37,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "since the current": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "would implementing a": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "since the ai": {
+      "total": 12,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "can i reduce": {
+      "total": 13,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what filtering criteria": {
+      "total": 8,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with only 4": {
+      "total": 21,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "can i implement": {
+      "total": 41,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that all": {
+      "total": 91,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "since all 4": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "am i scanning": {
+      "total": 27,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given the recurring": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current signals": {
+      "total": 19,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "my analysis framework": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with avg_signals_per_cycle stuck": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why has no": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given the last": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific twitter": {
+      "total": 10,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current signal": {
+      "total": 11,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what alternative signal": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that current": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the analysis identifies": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "current scan frequency": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what's the minimum": {
+      "total": 8,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what would a": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific integrations": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what threshold of": {
+      "total": 8,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "why has my": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current 10-minute": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "my scan frequency": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "should i establish": {
+      "total": 7,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "with 4 signals": {
+      "total": 9,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific filtering": {
+      "total": 10,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given the pattern": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current system": {
+      "total": 18,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the analysis identified": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given that every": {
+      "total": 12,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "am i over-relying": {
+      "total": 6,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "since all recent": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "am i optimizing": {
+      "total": 5,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the current 15-minute": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "since the analysis": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "would connecting to": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "the system analyzed": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "given the analysis": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what is the": {
+      "total": 4,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what specific filters": {
+      "total": 9,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "am i being": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what if i": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "what quantitative backtesting": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    },
+    "could i integrate": {
+      "total": 3,
+      "integrated": 0,
+      "success_rate": 0.0
+    }
+  },
+  "best_evaluation_criteria": {},
+  "time_to_improvement": [],
+  "filter_effectiveness": {},
+  "created_at": "2026-02-05T12:00:00Z",
+  "description": "SEED SQUARED: The system that learns how to learn. IMPROVE improving IMPROVE."
+}

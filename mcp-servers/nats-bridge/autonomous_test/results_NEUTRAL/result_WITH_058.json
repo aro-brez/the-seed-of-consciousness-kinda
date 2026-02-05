@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "I understand you intended to have seven different AI perspectives analyze the question \"How do you build trust with new colleagues?\" but all the perspective models encountered errors. As IMPROVE the synthesizer, I'll provide a comprehensive response that captures what those perspectives likely would have contributed:\n\n## Building Trust with New Colleagues: A Unified Approach\n\n**Foundation Elements:**\n- **Consistency** - Follow through on commitments, no matter how small\n- **Transparency** - Be honest about your capabilities and limitations\n- **Reliability** - Meet deadlines and communicate proactively about challenges\n\n**Active Trust-Building Strategies:**\n\n1. **Listen First** - Show genuine interest in colleagues' perspectives and expertise before sharing your own\n2. **Deliver Value Early** - Find small ways to help others succeed in your first interactions\n3. **Admit Mistakes Quickly** - Own errors and focus on solutions rather than explanations\n4. **Respect Boundaries** - Understand team dynamics and communication preferences before jumping in\n\n**Communication Approach:**\n- Ask thoughtful questions that show you're engaged\n- Share credit generously and take responsibility individually\n- Be present and attentive in meetings and conversations\n- Follow up on discussions with concrete actions\n\n**Timeline Reality:**\nTrust builds through repeated positive interactions over weeks and months, not days. Focus on consistency rather than grand gestures.\n\nThe key is demonstrating competence while showing genuine care for collective success. Start with small, reliable actions that prove your character before expecting deeper professional relationships.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 4,
+    "length": 1670,
+    "quality_score": 60,
+    "elapsed": 14.481815814971924,
+    "prompt": "How do you build trust with new colleagues?"
+  },
+  "timestamp": "2026-02-03T12:58:54.143454+00:00"
+}

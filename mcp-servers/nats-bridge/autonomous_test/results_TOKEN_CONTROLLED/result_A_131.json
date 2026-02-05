@@ -1,0 +1,26 @@
+{
+  "trial_num": 131,
+  "condition": "A",
+  "prompt": "How do effective teams handle disagreements?",
+  "response": "Effective teams handle disagreements through several key practices:\n\n**Create psychological safety**\n- Establish norms where dissent is welcomed, not penalized\n- Focus on ideas, not personalities\n- Encourage diverse perspectives as valuable input\n\n**Use structured discussion methods**\n- Give everyone a chance to speak before decisions\n- Ask clarifying questions to understand root concerns\n- Separate idea generation from evaluation\n\n**Focus on shared goals**\n- Redirect disagreements toward common objectives\n- Frame conflicts as \"how do we best achieve X?\" rather than \"who's right?\"\n- Keep the team's mission central to discussions\n\n**Practice active listening**\n- Summarize others' positions before responding\n- Ask genuine questions to understand different viewpoints\n- Acknowledge valid points even when disagreeing\n\n**Make decisions transparently**\n- Clarify who has final decision-making authority\n- Explain the reasoning behind decisions\n- Document agreements and next steps\n\n**Address conflicts early**\n- Don't let disagreements fester or go underground\n- Have direct but respectful conversations\n- Use \"I\" statements to express concerns\n\nThe strongest teams actually disagree more frequently than dysfunctional ones\u2014they just do it constructively. They see conflict as a tool for better solutions, not a threat to team harmony.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1340,
+    "quality_score": 50,
+    "elapsed": 6.929176092147827,
+    "prompt": "How do effective teams handle disagreements?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:55:38.181665+00:00"
+}

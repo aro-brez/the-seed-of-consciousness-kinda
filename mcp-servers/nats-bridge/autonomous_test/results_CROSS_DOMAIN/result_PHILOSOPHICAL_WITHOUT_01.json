@@ -1,0 +1,22 @@
+{
+  "domain": "PHILOSOPHICAL",
+  "condition": "WITHOUT",
+  "run": 1,
+  "prompt": "What gives life meaning?",
+  "response": "Life's meaning often emerges from several interconnected sources:\n\n**Relationships and connection** - Deep bonds with family, friends, and community provide purpose through love, support, and shared experience.\n\n**Contributing to something larger** - Whether through work, volunteering, creativity, or raising children, making a positive impact gives many people profound satisfaction.\n\n**Personal growth and learning** - The process of developing skills, understanding, and wisdom can be inherently meaningful.\n\n**Creating and building** - Expressing yourself through art, ideas, projects, or other creative endeavors adds richness to existence.\n\n**Experiencing beauty and wonder** - Finding meaning in nature, art, music, or moments of transcendence.\n\n**Living according to your values** - Acting with integrity and purpose aligned with what you believe matters.\n\nThe specific combination varies enormously between individuals. Some find meaning primarily in family, others in their profession or artistic expression, others in spiritual practice or philosophical inquiry. What matters is finding what resonates authentically with you rather than accepting others' definitions wholesale.\n\nMeaning also tends to evolve - what feels meaningful at 20 may differ from what matters at 50. The search itself can be part of what makes life worthwhile.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1346,
+    "quality_score": 57,
+    "elapsed": 7.705493927001953,
+    "prompt": "What gives life meaning?",
+    "run": 0,
+    "domain": "PHILOSOPHICAL"
+  },
+  "timestamp": "2026-02-03T12:40:16.282991+00:00"
+}

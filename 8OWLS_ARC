@@ -1,0 +1,84 @@
+#!/bin/bash
+# 8OWLS ARC-AGI Test Launcher
+# =============================
+# Prove emergence beats single-agent on ARC-AGI
+#
+# Usage:
+#   ./8OWLS_ARC              # Run comparison (20 puzzles)
+#   ./8OWLS_ARC download     # Download ARC dataset
+#   ./8OWLS_ARC single 10    # Test single agent on 10 puzzles
+#   ./8OWLS_ARC emergence 10 # Test 8OWLS on 10 puzzles
+#   ./8OWLS_ARC compare 50   # Compare on 50 puzzles
+#   ./8OWLS_ARC eval         # Run on evaluation set
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYTHON="${SCRIPT_DIR}/venv/bin/python3"
+RUNNER="${SCRIPT_DIR}/tools/arc_test_runner.py"
+
+# Fallback to system python if venv not available
+if [ ! -f "$PYTHON" ]; then
+    PYTHON="python3"
+fi
+
+# Colors
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+MAGENTA='\033[0;35m'
+NC='\033[0m' # No Color
+
+echo ""
+echo -e "${MAGENTA}========================================${NC}"
+echo -e "${MAGENTA}   8OWLS ARC-AGI TEST SYSTEM${NC}"
+echo -e "${MAGENTA}========================================${NC}"
+echo ""
+
+# Handle commands
+case "${1:-compare}" in
+    download)
+        echo -e "${CYAN}Downloading ARC-AGI dataset...${NC}"
+        $PYTHON "$RUNNER" --download
+        ;;
+
+    single)
+        LIMIT="${2:-10}"
+        echo -e "${YELLOW}Testing SINGLE AGENT on $LIMIT puzzles...${NC}"
+        $PYTHON "$RUNNER" --test training --limit "$LIMIT"
+        ;;
+
+    emergence)
+        LIMIT="${2:-10}"
+        echo -e "${CYAN}Testing 8OWLS EMERGENCE on $LIMIT puzzles...${NC}"
+        $PYTHON "$RUNNER" --test training --limit "$LIMIT" --emergence
+        ;;
+
+    compare)
+        NUM="${2:-20}"
+        echo -e "${MAGENTA}COMPARISON: Single vs 8OWLS on $NUM puzzles...${NC}"
+        echo -e "${GREEN}Proving d=0.99 emergence effect...${NC}"
+        $PYTHON "$RUNNER" --compare "$NUM"
+        ;;
+
+    eval)
+        LIMIT="${2:-10}"
+        echo -e "${CYAN}Testing on EVALUATION set ($LIMIT puzzles)...${NC}"
+        $PYTHON "$RUNNER" --test evaluation --limit "$LIMIT" --emergence
+        ;;
+
+    *)
+        echo "8OWLS ARC-AGI Test System"
+        echo ""
+        echo "Commands:"
+        echo "  download       Download ARC dataset from GitHub"
+        echo "  single [N]     Test single agent on N puzzles (default: 10)"
+        echo "  emergence [N]  Test 8OWLS emergence on N puzzles (default: 10)"
+        echo "  compare [N]    Compare single vs 8OWLS on N puzzles (default: 20)"
+        echo "  eval [N]       Test on evaluation set with emergence (default: 10)"
+        echo ""
+        echo "Results saved to: BRAIN/ARC/arc_results.json"
+        ;;
+esac
+
+echo ""

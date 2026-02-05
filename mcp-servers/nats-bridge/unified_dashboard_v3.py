@@ -837,6 +837,74 @@ class DashboardHandler(SimpleHTTPRequestHandler):
             messages_html = '\n'.join(dashboard_data["messages"]) or '<div class="empty">Listening...</div>'
             self.wfile.write(json.dumps({"messages": messages_html}).encode())
 
+        elif self.path == '/api/owl-stream':
+            # JSON endpoint for 3D visualization
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+
+            # Parse recent messages from log - FIXED to handle multi-line messages
+            messages = []
+            try:
+                raw_log = get_tail(MESSAGE_LOG, 200)  # Read more lines
+                lines = raw_log.split('\n')
+
+                current_msg = None
+                current_content = []
+
+                for line in lines:
+                    # Check if this is a new message header: [timestamp] [channel] NAME: content
+                    is_header = False
+                    matched_owl = None
+
+                    if line.startswith('[20') and '[owl.' in line:
+                        for owl in OWLS:
+                            name = owl["name"]
+                            if f'] {name}:' in line:
+                                is_header = True
+                                matched_owl = owl
+                                break
+
+                    if is_header and matched_owl:
+                        # Save previous message if exists
+                        if current_msg and current_content:
+                            full_content = '\n'.join(current_content).strip()
+                            if len(full_content) > 15:  # Skip empty/short
+                                current_msg["content"] = full_content[:500]
+                                messages.append(current_msg)
+
+                        # Start new message
+                        name = matched_owl["name"]
+                        timestamp = ""
+                        try:
+                            ts_start = line.find('[20')
+                            ts_end = line.find(']', ts_start)
+                            if ts_start >= 0 and ts_end > ts_start:
+                                timestamp = line[ts_start+1:ts_end]
+                        except (ValueError, IndexError):
+                            pass
+
+                        first_content = line.split(f'{name}:', 1)[-1].strip()
+                        current_msg = {"from": name, "timestamp": timestamp}
+                        current_content = [first_content] if first_content else []
+
+                    elif current_msg and line.strip():
+                        # Continuation of current message
+                        current_content.append(line.strip())
+
+                # Don't forget the last message
+                if current_msg and current_content:
+                    full_content = '\n'.join(current_content).strip()
+                    if len(full_content) > 15:
+                        current_msg["content"] = full_content[:500]
+                        messages.append(current_msg)
+
+            except Exception as e:
+                print(f"[DASHBOARD_V3] Error parsing messages: {e}")
+
+            self.wfile.write(json.dumps({"messages": messages[-20:]}).encode())
+
         else:
             super().do_GET()
 

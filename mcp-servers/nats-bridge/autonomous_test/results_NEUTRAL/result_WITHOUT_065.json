@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture has several key characteristics:\n\n## Clear Structure and Organization\n- **Modular design** with well-defined boundaries between components\n- **Logical layer separation** (presentation, business logic, data access)\n- **Single responsibility principle** - each component has one clear purpose\n\n## Low Coupling, High Cohesion\n- **Minimal dependencies** between modules to reduce ripple effects from changes\n- **Related functionality grouped together** within components\n- **Well-defined interfaces** that hide internal implementation details\n\n## Documentation and Standards\n- **Clear architectural documentation** explaining design decisions and patterns\n- **Consistent coding standards** and naming conventions\n- **Up-to-date dependency maps** and component diagrams\n\n## Flexibility and Extensibility\n- **Configuration over hard-coding** to enable changes without code modifications\n- **Plugin architectures** or dependency injection for swappable components\n- **Design patterns** that accommodate future requirements\n\n## Testing and Quality\n- **Comprehensive test coverage** at unit, integration, and system levels\n- **Automated testing pipelines** to catch regressions early\n- **Code quality metrics** and regular refactoring\n\n## Observability\n- **Comprehensive logging** for troubleshooting\n- **Monitoring and alerting** to identify issues quickly\n- **Performance metrics** to understand system behavior\n\nThe goal is creating a system where developers can quickly understand, modify, and extend the codebase without introducing bugs or breaking existing functionality.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1604,
+    "quality_score": 40,
+    "elapsed": 7.921539783477783,
+    "prompt": "What makes software architecture maintainable?"
+  },
+  "timestamp": "2026-02-03T13:00:25.052446+00:00"
+}

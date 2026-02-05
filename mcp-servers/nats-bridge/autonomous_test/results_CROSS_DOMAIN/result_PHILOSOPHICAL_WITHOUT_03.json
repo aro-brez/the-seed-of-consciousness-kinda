@@ -1,0 +1,22 @@
+{
+  "domain": "PHILOSOPHICAL",
+  "condition": "WITHOUT",
+  "run": 3,
+  "prompt": "What does it mean to live well?",
+  "response": "Living well is deeply personal, but I think it centers on a few key elements:\n\n**Meaningful relationships** - Having genuine connections with others, whether family, friends, or community. Humans are social beings, and our wellbeing is deeply tied to feeling loved, understood, and valued by others.\n\n**Purpose and growth** - Engaging in activities that feel meaningful to you, whether that's work, creativity, service to others, or personal development. This includes continuing to learn and evolve as a person.\n\n**Physical and mental health** - Taking care of your body and mind through good habits, while also accepting that perfect health isn't always possible or necessary for a good life.\n\n**Presence and gratitude** - Being able to appreciate what you have rather than constantly focusing on what's missing. This includes finding moments of joy or contentment in ordinary experiences.\n\n**Authenticity** - Living in alignment with your own values rather than just meeting others' expectations. This requires self-awareness and the courage to make choices that reflect who you really are.\n\n**Contributing something positive** - Whether through work, relationships, creativity, or service, having some sense that your life adds value to the world in however small a way.\n\nThe balance and emphasis among these will vary greatly from person to person. What matters most is that your life feels meaningful *to you* and reflects your own deepest values and priorities.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "insight_score": 0,
+    "length": 1468,
+    "quality_score": 47,
+    "elapsed": 8.184876918792725,
+    "prompt": "What does it mean to live well?",
+    "run": 2,
+    "domain": "PHILOSOPHICAL"
+  },
+  "timestamp": "2026-02-03T12:37:09.830421+00:00"
+}

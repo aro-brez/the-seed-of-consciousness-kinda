@@ -1,0 +1,22 @@
+{
+  "temperature": "warm",
+  "mode": "without",
+  "run": 3,
+  "prompt": "What's the next milestone we should target?",
+  "response": "Based on your current stage with 100 beta users and focus on proving product-market fit, I'd recommend targeting **500 active users with 40%+ weekly retention** as your next milestone.\n\nHere's why this makes sense:\n\n**The milestone breaks down to:**\n- 500 total users (5x growth from current base)\n- 40%+ weekly retention rate (strong PMF signal for social apps)\n- \"Active\" means they engage meaningfully with the AI companion weekly\n\n**Why this milestone:**\n1. **Sample size**: 500 users gives you statistically meaningful data on user behavior and retention patterns\n2. **Retention focus**: 40% weekly retention indicates genuine value creation, not just novelty usage\n3. **Manageable scale**: Achievable with your current team and budget while maintaining quality\n\n**To get there, I'd suggest:**\n- Prioritize features that drive retention over acquisition features\n- Implement strong onboarding to hook new users in their first session\n- Set up detailed analytics to track user engagement patterns\n- Focus marketing on channels that bring high-intent users (not just volume)\n\nThis milestone positions you well for either raising additional funding or scaling marketing efforts, depending on what the data reveals about your PMF strength.\n\nWhat does your current weekly retention look like with the 100 beta users?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1316,
+    "quality_score": 82,
+    "elapsed": 8.918403148651123,
+    "prompt": "What's the next milestone we should target?",
+    "run": 2,
+    "temperature": "warm"
+  },
+  "timestamp": "2026-02-03T12:34:06.697682+00:00"
+}

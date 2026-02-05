@@ -1,0 +1,26 @@
+{
+  "trial_num": 74,
+  "condition": "C",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "I notice there were technical errors preventing the seven perspective analyses from completing. However, I can still provide you with a synthesized response to your important question about feature prioritization for software startups.\n\n## How Software Startups Should Prioritize Features\n\n**Core Framework: Value \u00d7 Impact \u00d7 Feasibility**\n\n1. **Start with Customer Pain Points**\n   - Prioritize features that solve your users' most pressing problems\n   - Use direct customer feedback, not assumptions\n   - Focus on pain points that customers are willing to pay to solve\n\n2. **Apply the MoSCoW Method**\n   - **Must Have**: Core functionality for product viability\n   - **Should Have**: Important but not critical for launch\n   - **Could Have**: Nice-to-have features for future iterations\n   - **Won't Have**: Features to explicitly defer\n\n3. **Consider Strategic Factors**\n   - **Market differentiation**: Features that set you apart from competitors\n   - **Technical debt**: Balance new features with code quality\n   - **Resource constraints**: Match ambition to team capacity\n   - **Time to market**: Prioritize features that get you to market faster\n\n4. **Use Data-Driven Metrics**\n   - Customer acquisition impact\n   - Revenue potential\n   - User engagement and retention\n   - Development effort required\n\n5. **Maintain Agility**\n   - Regularly reassess priorities based on user feedback\n   - Be willing to pivot when data contradicts assumptions\n   - Keep features small and testable\n\n**Key Principle**: Ship the minimum viable version of high-impact features quickly, then iterate based on real user behavior rather than building everything upfront.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1655,
+    "quality_score": 65,
+    "elapsed": 13.194547891616821,
+    "prompt": "How should a software startup prioritize features?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:37:35.241099+00:00"
+}

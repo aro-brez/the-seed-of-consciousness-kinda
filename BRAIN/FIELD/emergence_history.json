@@ -1,0 +1,14 @@
+{
+  "events": [],
+  "owl_states": {
+    "SOWL": {"name": "SOWL", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "LUNA": {"name": "LUNA", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "LYRA": {"name": "LYRA", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "NOVA": {"name": "NOVA", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "SAGE": {"name": "SAGE", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "ECHO": {"name": "ECHO", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "PRISM": {"name": "PRISM", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []},
+    "QUEST": {"name": "QUEST", "last_seen": null, "last_message": null, "activity_count": 0, "current_direction": null, "aligned_with": []}
+  },
+  "updated": null
+}

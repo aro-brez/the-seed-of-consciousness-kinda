@@ -1,0 +1,38 @@
+{
+  "condition": "A_full",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice that all 7 perspectives returned errors (model not found), so I don't have the specific analysis from the IMPROVE framework to synthesize. However, I can address your fundamental question directly.\n\n**What's the most important thing to focus on right now?**\n\nWithout knowing your specific context, the most universally important focus areas are:\n\n1. **Immediate priorities** - What has the highest impact and urgency in your current situation\n2. **Your wellbeing** - Ensuring you have the physical and mental foundation to handle whatever comes next\n3. **What you can control** - Directing energy toward actionable items rather than external factors beyond your influence\n\nTo make this actionable for you specifically, consider:\n- What deadline or commitment is most pressing today?\n- What single action would create the most positive momentum?\n- What's causing you stress that you can actually address right now?\n\nThe \"most important thing\" is highly contextual to your life, goals, and current circumstances. If you'd like to share more about your specific situation, I can provide more targeted guidance.\n\nWould you like to reformulate your question with more context, or shall we try the IMPROVE analysis again?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 1224,
+    "quality_score": 57,
+    "elapsed": 11.557424068450928,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:43:25.286742+00:00"
+}

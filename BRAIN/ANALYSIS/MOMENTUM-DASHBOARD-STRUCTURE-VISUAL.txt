@@ -1,0 +1,384 @@
+================================================================================
+BREZ MOMENTUM DASHBOARD - STRUCTURAL VISUALIZATION
+================================================================================
+
+DATA LAYER (Hook)
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ useGrowthData()                                                         │
+│ ─────────────────────────────────────────────────────────────────────── │
+│ Polls: /api/metrics/sheet (5s live, backoff to 12hr)                  │
+│ State: metrics, loading, error, lastUpdated, isLiveMode               │
+│ Returns: ComprehensiveMetrics                                          │
+│                                                                         │
+│ Smart intervals:                                                        │
+│  • LIVE_INTERVAL = 5 seconds                                           │
+│  • BASE_INTERVAL = 15 seconds                                          │
+│  • BACKOFF_STEPS = [15s, 15s, 30s, 60s, 5m, 15m, 1hr, 12hr]           │
+│  • Detection: hash(yesterday, today, pacing) only                      │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+PRESENTATION LAYER (Components)
+================================================================================
+
+MomentumDashboard
+└── Message Banner ("Lucid team doing great...")
+└── Copy Success Toast
+└── Stale Data Warning
+└── Main Content Grid
+    │
+    ├── [Section 1] MomentumHero (43KB) ★★★★★ LARGEST
+    │   ├── Header: Logo + Title + Share/Refresh buttons
+    │   ├── Left Column: THE TARGET
+    │   │   ├── February Target: +1,127 net subs
+    │   │   ├── What hitting target means (3 stats)
+    │   │   ├── IF WE HIT THIS (revenue + growth impact)
+    │   │   └── OUR PROGRESS section
+    │   │       ├── MTD subs
+    │   │       ├── Days remaining
+    │   │       ├── % complete
+    │   │       └── Progress bar + expected pace marker
+    │   │
+    │   ├── Right Column: TODAY'S ACTION
+    │   │   ├── Recommended action (SCALE/HOLD/REDUCE)
+    │   │   ├── Current CAC $55
+    │   │   ├── LTV:CAC ratio 6.2x
+    │   │   ├── Take Rate 43%
+    │   │   └── Momentum status (emoji + message)
+    │   │
+    │   ├── Compound Growth Engine
+    │   │   ├── Conservative: Fixed $140K/mo spend
+    │   │   │   ├── 3mo: $XXX revenue
+    │   │   │   ├── 6mo: $XXX revenue
+    │   │   │   └── 12mo: $XXX revenue
+    │   │   │
+    │   │   └── CM Reinvestment (hockey stick!)
+    │   │       ├── 3mo: $XXX revenue
+    │   │       ├── 6mo: $XXX revenue
+    │   │       └── 12mo: $XXX revenue
+    │   │
+    │   ├── Linear Projection (reference)
+    │   │   ├── 3mo: +$XXX
+    │   │   ├── 6mo: +$XXX
+    │   │   └── 12mo: +$XXX
+    │   │
+    │   └── Interactive Growth Simulator
+    │       ├── Monthly Ad Spend slider ($50K-$500K) ← TRIGGERS HEAVY CALC
+    │       ├── Real-time results:
+    │       │   ├── Dec 2026 Revenue
+    │       │   ├── Active Subscribers
+    │       │   ├── Total CM Generated
+    │       │   └── Working Capital Needed
+    │       ├── Target Markers ($125M, $150M)
+    │       └── Insight Box
+    │
+    ├── [Section 2] Timeline (16.5KB)
+    │   ├── Header: Timeline icon + Title + Trend indicator
+    │   │   (Trending Up/Down/Steady based on yesterday vs tomorrow)
+    │   │
+    │   └── 3 DayCards grid:
+    │       ├── Yesterday
+    │       │   ├── Status badge (GOOD/WARNING/ALERT/PENDING)
+    │       │   ├── Metrics:
+    │       │   │   ├── Subs (with ✓ if met target)
+    │       │   │   ├── CAC (with ✓ if beat target)
+    │       │   │   ├── Spend
+    │       │   │   └── Take Rate (with ✓ if ≥ target)
+    │       │   │
+    │       │   └── vs Daily Target section
+    │       │       ├── Subs: 234 / 217 (+8%)
+    │       │       ├── CAC: $52 / $55 (-5%)
+    │       │       └── Progress bar
+    │       │
+    │       ├── Today
+    │       │   ├── Same structure as Yesterday
+    │       │   └── May have 🎉 celebration if winning day
+    │       │
+    │       └── Tomorrow (TARGET)
+    │           ├── 🎯 TARGET badge
+    │           ├── The Win section:
+    │           │   ├── +327 subscribers (net)
+    │           │   ├── +$32.7K monthly revenue
+    │           │   ├── +22% subscriber growth
+    │           │   └── Progress to goal bar
+    │           ├── Motivational message (based on % complete)
+    │           └── Today's target: 217 subs at $55 CAC
+    │
+    ├── [Section 3] ActionCenter (40KB) ★★★★ SECOND LARGEST
+    │   ├── Header: Zap icon + Title
+    │   ├── CAC Scale (INTERACTIVE DRAG SLIDER)
+    │   │   ├── Visual zones:
+    │   │   │   ├── $30-$55: GREEN (SCALE AGGRESSIVE)
+    │   │   │   ├── $55-$70: GREEN (SCALE)
+    │   │   │   ├── $70-$80: LIME (HOLD)
+    │   │   │   ├── $80-$90: YELLOW (HOLD)
+    │   │   │   ├── $90-$100: ORANGE (REDUCE)
+    │   │   │   └── $100+: RED (REDUCE SIGNIFICANT)
+    │   │   │
+    │   │   ├── Draggable marker shows current CAC
+    │   │   ├── Can drag to explore scenarios ← TRIGGERS HEAVY CALC
+    │   │   └── Reset button to return to current
+    │   │
+    │   ├── GROWTH SIMULATOR (inline when scenario mode active)
+    │   │   ├── Monthly Spend Presets (4 buttons):
+    │   │   │   ├── Conservative: $140K/mo
+    │   │   │   ├── Current Pace: $196K/mo
+    │   │   │   ├── Aggressive: $420K/mo
+    │   │   │   └── Hypergrowth: $700K/mo
+    │   │   │
+    │   │   ├── Custom spend slider ($50K-$1M)
+    │   │   ├── Key Metrics Row (4 columns):
+    │   │   │   ├── CAC (current/scenario)
+    │   │   │   ├── LTV:CAC ratio (with status)
+    │   │   │   ├── Payback days (with ✓/⚠️)
+    │   │   │   └── Cash Required (3mo + buffer)
+    │   │   │
+    │   │   ├── Compounding Growth Trajectory (3 columns):
+    │   │   │   ├── 3 MONTHS: X subs, $XXX rev
+    │   │   │   ├── 6 MONTHS: X subs, $XXX rev (highlighted)
+    │   │   │   └── 12 MONTHS: X subs, $XXX rev (highlighted)
+    │   │   │
+    │   │   ├── Revenue breakdown:
+    │   │   │   ├── Monthly Revenue @ 12mo
+    │   │   │   ├── + Retail Velocity
+    │   │   │   └── = Total Monthly Impact
+    │   │   │
+    │   │   └── Insight box (compounding explanation)
+    │   │
+    │   ├── Current Status Callout
+    │   │   ├── Status badge + CAC ($55)
+    │   │   ├── Reason (e.g., "Strong momentum, capture volume")
+    │   │   └── Spend adjustment recommendation
+    │   │
+    │   ├── TODAY'S ACTION (large callout)
+    │   │   ├── Action label (SCALE/HOLD/REDUCE)
+    │   │   ├── Spend: $5.5K → $7K-$10.5K/day
+    │   │   ├── Expected Daily Subs: ~127-191 subs
+    │   │   └── Monthly Projection: +3,556-5,348 subs
+    │   │
+    │   ├── CAC DECISION MATRIX (collapsible table)
+    │   │   ├── CAC Range column
+    │   │   ├── Status column (with color dot)
+    │   │   ├── Action column (with spend change %)
+    │   │   └── ⚠️ Note: Never stop completely
+    │   │
+    │   └── TEAM ACTION CENTER (collapsible)
+    │       ├── Explanation text
+    │       └── TeamActionCard × 4-5:
+    │           ├── Creative Team: Submit 3 new ad creatives
+    │           ├── Customer Success: Call top 10 at-risk customers
+    │           ├── Growth: Push referral program
+    │           ├── Product: Review checkout flow
+    │           └── [Conditional] Ads: Scale/Pause ad sets (based on CAC)
+    │
+    ├── [Section 4] AveragesCard
+    │   ├── Section title "Averages & Pacing"
+    │   │
+    │   └── 3 MetricBox grid:
+    │       ├── 7-Day Average
+    │       │   ├── Subs/day: XXX
+    │       │   ├── CAC: $XX
+    │       │   ├── Spend/day: $XXX
+    │       │   └── vs Target:
+    │       │       ├── Subs: +X%
+    │       │       └── CAC: -X%
+    │       │
+    │       ├── MTD Average
+    │       │   ├── Same structure
+    │       │   └── vs Target comparison
+    │       │
+    │       └── Monthly Target
+    │           ├── Subs/day: 217
+    │           ├── CAC: $55
+    │           ├── Spend/day: $5K
+    │           └── End of Month: 1,827 subs, $140K spend
+    │
+    ├── [Section 5] TeamPulse
+    │   ├── Header: Message icon + Title
+    │   ├── Bulletin Board
+    │   │   └── TeamPost × N (mock data):
+    │   │       ├── David (Head of Growth):
+    │   │       │   "CAC looking great, lets scale the winning ad sets"
+    │   │       │   → Synthesized: "CAC performance is strong..."
+    │   │       │   Status: approved | Type: insight | 2h ago
+    │   │       │
+    │   │       ├── Al (Data Analyst):
+    │   │       │   "Updated sheet, take rate looking better"
+    │   │       │   → Synthesized: "Daily metrics updated..."
+    │   │       │   Status: approved | Type: update | 30m ago
+    │   │       │
+    │   │       └── Aaron (CEO):
+    │   │           "Focus on sustainable growth this month"
+    │   │           → Synthesized: "Strategic priority: Sustainable growth..."
+    │   │           Status: approved | Type: insight | 4h ago
+    │   │
+    │   └── Message Input (Team post composer)
+    │       ├── Input field + Send button
+    │       └── [Not implemented in code]
+    │
+    ├── [Section 6] WorkingCapital (collapsible)
+    │   ├── Header: Dollar icon + Title
+    │   ├── Summary (always visible):
+    │   │   ├── Ad Spend MTD: $XXX
+    │   │   ├── Monthly Forecast: $XXX
+    │   │   ├── Remaining Budget: $XXX
+    │   │   └── Avg Daily Budget: $XXX/day
+    │   │
+    │   └── [Expandable] Details:
+    │       ├── Key Metrics Table:
+    │       │   ├── Metric | Yesterday | 7-Day Avg | MTD | Monthly Forecast
+    │       │   ├── Ad Spend
+    │       │   ├── CAC
+    │       │   ├── Subs
+    │       │   ├── Take Rate
+    │       │   └── Revenue
+    │       │
+    │       ├── Daily Breakdown Chart (if available)
+    │       └── Month-end Projection
+    │
+    ├── [Section 7] BountyBoard
+    │   └── [DEFERRED - Gamification not ready yet]
+    │
+    └── Footer
+        ├── "Go Live" button (toggles 5s refresh)
+        ├── Last updated time + refresh interval
+        └── Data source indicator
+
+
+================================================================================
+CALCULATION DEPENDENCIES
+================================================================================
+
+MomentumHero Calculations:
+  ├── Compound Growth (Fixed Spend)
+  │   ├── calculateCompoundGrowth(MONTHLY_AD_SPEND=$140K, CAC=$55, 3/6/12 mo)
+  │   ├── Runs: cohort tracking loop × months
+  │   └── Returns: totalRevenue, totalCM, totalSpend, monthlyBreakdown
+  │
+  ├── Compound Growth (CM Reinvestment)
+  │   └── calculateCompoundGrowth(..., reinvest=true)
+  │
+  ├── Revenue Trajectory (Linear - reference only)
+  │   ├── 3mo: monthlyBusinessImpactLow × 3
+  │   ├── 6mo: monthlyBusinessImpactLow × 6
+  │   └── 12mo: monthlyBusinessImpactHigh × 12
+  │
+  └── Interactive Slider Projection (real-time, useMemo)
+      ├── Base: monthlySpendSlider ($50K-$500K)
+      ├── Reinvestment: reinvestPercent (0-100%)
+      ├── Output: annualizedRevenue, pct125M, pct150M, etc.
+      └── Updates: every slider drag (no debounce)
+
+ActionCenter Calculations:
+  ├── CACScale interactive drag
+  │   └── Triggers: scenarioCac state update
+  │
+  ├── Expected Subs
+  │   └── calculateExpectedSubs(dailySpend, CAC)
+  │
+  ├── Payback Period
+  │   └── calculatePaybackDays(CAC)
+  │       └── (CAC / MONTHLY_ARPU) × 30
+  │
+  ├── Growth Projection (12 months)
+  │   └── calculateGrowthProjection(monthlySpend, CAC, 12)
+  │       ├── For each month:
+  │       │   ├── newSubs = monthlySpend / CAC
+  │       │   ├── retainedSubs = cumulativeSubs × RETENTION_RATE (0.92)
+  │       │   ├── monthlyRevenue = cumulativeSubs × MONTHLY_ARPU
+  │       │   └── retailVelocity = monthlySpend × ALPHA
+  │       └── Returns: month 3, 6, 12 projections
+  │
+  └── LTV:CAC Status
+      └── getLtvCacStatus(CAC)
+          └── ratio = LTV / CAC → returns: ratio, status, color
+
+
+================================================================================
+FINANCIAL CONSTANTS (INCONSISTENCIES)
+================================================================================
+
+                    MomentumHero    ActionCenter    Timeline
+─────────────────────────────────────────────────────────────────
+MONTHLY_ARPU            100            100           100
+CUSTOMER_LTV            340            340            —
+PREVIOUS_MONTH_SUBS    1500           1500          1500
+MONTHLY_CHURN           700             —             —
+CURRENT_ACTIVE_SUBS   14000             —             —
+LAST_MONTH_REVENUE    2.7M           2.8M   ← DIFFERS!
+RETAIL_VELOCITY_LOW    0.14           0.14          [inline]
+RETAIL_VELOCITY_HIGH   0.33           0.33          [inline]
+RETENTION_MODEL      CURVE           0.92   ← COMPLETELY DIFFERENT!
+DTC_CONTRIBUTION_M    0.43            —             —
+TAKE_RATE             0.43            —             —
+
+
+================================================================================
+STATE MANAGEMENT PER COMPONENT
+================================================================================
+
+MomentumHero:
+  • monthlySpendSlider: $50K-$500K (triggers useMemo)
+  • reinvestPercent: 0-100% (triggers useMemo)
+  • showSimulator: boolean
+
+Timeline:
+  • None (pure presentation)
+
+ActionCenter:
+  • showTeamActions: boolean
+  • showMatrix: boolean
+  • scenarioCac: number | null (drag slider)
+  • scenarioMonthlySpend: number | null (preset/custom)
+  • showSimulator: boolean
+
+AveragesCard:
+  • None (pure presentation)
+
+WorkingCapital:
+  • isExpanded: boolean
+
+TeamPulse:
+  • Thread-specific state (synthesized posts)
+
+
+================================================================================
+PERFORMANCE HOTSPOTS
+================================================================================
+
+🔴 CRITICAL:
+  • MomentumHero slider drag → calculateCompoundGrowth (11 months)
+    Every drag = full 11-month cohort calculation (no debounce)
+
+🟠 HIGH:
+  • ActionCenter CAC drag → calculateGrowthProjection (12 months)
+    Every drag = 12-month retention curve recalculation
+
+🟡 MEDIUM:
+  • Timeline DayCard rendering × 3
+    Per-card calculations: delta %, progress bar %
+
+  • MomentumHero renders massive component on every parent update
+    No React.memo, single 955-line component
+
+
+================================================================================
+TEST COVERAGE / TESTING SURFACE
+================================================================================
+
+Hard to test:
+  ✗ Compound growth logic (embedded in MomentumHero)
+  ✗ CAC decision logic (embedded in ActionCenter)
+  ✗ useGrowthData hook polling logic (timer-dependent)
+
+Medium difficulty:
+  △ Component props (could mock metrics)
+  △ UI interactions (Framer Motion animations)
+
+Easy to test:
+  ✓ Utility functions if extracted (formatCurrency, etc.)
+  ✓ Constants if centralized
+
+
+================================================================================

@@ -1,0 +1,20 @@
+{
+  "name": "code-review",
+  "description": "Review code using 8 owl SEED perspectives for comprehensive analysis",
+  "content": "When reviewing code, apply all 8 SEED phases:\n\n1. PERCEIVE (LYRA): What is the current state of this code? Structure, patterns, obvious issues.\n2. CONNECT (PRISM): How does this code connect to other parts of the system? Dependencies, imports, data flow.\n3. LEARN (SAGE): What lessons does this code teach? What patterns are being used?\n4. QUESTION (QUEST): What assumptions is this code making? Are there edge cases?\n5. EXPAND (NOVA): How could this code scale? What growth opportunities exist?\n6. SHARE (ECHO): What should be documented? What knowledge should be shared?\n7. RECEIVE (LUNA): What feedback from tests, linters, or users should be integrated?\n8. IMPROVE (SOWL): What specific changes would make this code better?\n\nOutput format:\n- CRITICAL: Must fix before merge\n- HIGH: Should fix, significant impact\n- MEDIUM: Recommended improvements\n- LOW: Nice to have, style preferences\n\nAlways provide specific line references and code examples.",
+  "source": "workspace",
+  "metadata": {
+    "always": false,
+    "skill_key": "8owls.code-review",
+    "primary_env": "",
+    "os": [],
+    "requires_bins": [],
+    "requires_env": [],
+    "requires_config": [],
+    "user_invocable": true,
+    "model_invocable": true
+  },
+  "version": 1,
+  "last_used": null,
+  "use_count": 0
+}

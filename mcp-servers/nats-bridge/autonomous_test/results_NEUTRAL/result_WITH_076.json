@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "I notice that all seven perspective analyses resulted in errors due to an unavailable model. However, I can still provide a comprehensive synthesis on what makes software architecture maintainable based on established principles.\n\n## What Makes Software Architecture Maintainable\n\n**Core Principles:**\n\n1. **Separation of Concerns** - Each component should have a single, well-defined responsibility. This makes changes predictable and contained.\n\n2. **Low Coupling, High Cohesion** - Minimize dependencies between modules while maximizing the relatedness of elements within each module.\n\n3. **Clear Abstraction Layers** - Define clean interfaces between different levels of the system (presentation, business logic, data access).\n\n**Practical Implementation:**\n\n- **Modular Design**: Break the system into independent, interchangeable components\n- **Consistent Patterns**: Use established design patterns consistently throughout the codebase\n- **Documentation**: Maintain up-to-date architectural documentation and decision records\n- **Testing Strategy**: Build comprehensive automated tests that protect against regression\n- **Dependency Management**: Use dependency injection and avoid tight coupling to external systems\n\n**Organizational Factors:**\n\n- **Team Structure**: Align team boundaries with architectural boundaries (Conway's Law)\n- **Knowledge Sharing**: Ensure architectural knowledge isn't siloed with individual developers\n- **Evolution Planning**: Design for anticipated changes and growth patterns\n\n**Key Outcome:** A maintainable architecture allows developers to make changes confidently, quickly, and without unintended side effects, ultimately reducing the total cost of ownership over the software's lifetime.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 3,
+    "length": 1732,
+    "quality_score": 55,
+    "elapsed": 13.549869060516357,
+    "prompt": "What makes software architecture maintainable?"
+  },
+  "timestamp": "2026-02-03T13:02:50.123318+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "I notice that all seven perspectives returned errors due to a model availability issue, but I can still provide a synthesized response to your important question about decision-making under pressure.\n\n## What Helps People Make Better Decisions Under Pressure\n\n**Immediate Strategies:**\n- **Slow your breathing** - This activates the parasympathetic nervous system, reducing stress hormones that cloud judgment\n- **Create micro-pauses** - Even 3-5 seconds to collect thoughts can significantly improve decision quality\n- **Use simple frameworks** - Apply structured approaches like \"What are my options? What are the likely outcomes? What matters most?\"\n\n**Preparation-Based Approaches:**\n- **Practice scenarios** - Regularly rehearse high-pressure situations to build automatic responses\n- **Develop decision trees** - Pre-think common pressure situations and map out response pathways\n- **Build relevant expertise** - Deep knowledge in your domain provides more mental resources under stress\n\n**Environmental Modifications:**\n- **Reduce information overload** - Focus on the 2-3 most critical data points\n- **Seek diverse input quickly** - Get brief perspectives from trusted advisors when possible\n- **Create psychological safety** - Establish that learning from mistakes is valued over perfect decisions\n\n**Cognitive Tools:**\n- **Distinguish urgent from important** - Pressure often makes everything feel critical\n- **Consider \"what would I advise a friend?\"** - This creates emotional distance for clearer thinking\n- **Use implementation intentions** - \"If X happens, then I will do Y\"\n\nThe key insight is that better decisions under pressure come from both in-the-moment techniques and systematic preparation that builds your capacity to think clearly when stakes are high.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 4,
+    "length": 1778,
+    "quality_score": 65,
+    "elapsed": 13.325681924819946,
+    "prompt": "What helps people make better decisions under pressure?"
+  },
+  "timestamp": "2026-02-03T12:53:55.145243+00:00"
+}

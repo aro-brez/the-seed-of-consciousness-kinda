@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "To prioritize competing goals effectively, here's a structured approach:\n\n**1. Clarify the Trade-offs**\n- List all competing goals explicitly\n- Identify which goals genuinely conflict vs. which can coexist\n- Understand the opportunity cost of choosing one over another\n\n**2. Use a Prioritization Framework**\n- **ICE scoring**: Rate each goal on Impact, Confidence, and Ease (1-10 scale)\n- **RICE framework**: Add Reach to ICE for more comprehensive scoring\n- **Eisenhower Matrix**: Sort by urgency vs. importance\n- **ROI analysis**: Compare expected return on investment for each goal\n\n**3. Apply Strategic Filters**\n- What stage is your business in? (Early-stage: focus on product-market fit; Growth-stage: focus on scalable systems)\n- Which goals align with your core mission and long-term vision?\n- What are your current resource constraints (time, money, people)?\n- Which goals address your biggest risks or bottlenecks?\n\n**4. Consider Timing and Dependencies**\n- Are some goals prerequisites for others?\n- Which goals have natural timing windows?\n- What can be sequenced vs. what needs parallel execution?\n\n**5. Test and Iterate**\n- Start with your highest-priority goal\n- Set clear success metrics and timeframes\n- Be prepared to pivot if assumptions prove wrong\n\nWhat specific competing goals are you trying to prioritize? I can give more targeted advice with context.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1375,
+    "quality_score": 78,
+    "elapsed": 9.013534307479858,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:09:55.683518+00:00"
+}

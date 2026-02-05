@@ -1,0 +1,26 @@
+{
+  "trial_num": 29,
+  "condition": "A",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Several key principles make software architecture maintainable:\n\n## Clear Separation of Concerns\n- **Single Responsibility**: Each component has one clear purpose\n- **Layered architecture**: Distinct layers (presentation, business logic, data) with defined boundaries\n- **Modular design**: Related functionality grouped together, unrelated functionality separated\n\n## Loose Coupling, High Cohesion\n- **Minimal dependencies** between components\n- **Well-defined interfaces** that hide implementation details\n- **Strong internal relationships** within modules\n\n## Consistent Patterns and Standards\n- **Standardized naming conventions** across the codebase\n- **Consistent architectural patterns** (MVC, microservices, etc.)\n- **Shared coding standards** and style guides\n\n## Clear Documentation and Communication\n- **Architecture diagrams** showing system structure and data flow\n- **API documentation** with clear contracts\n- **Decision records** explaining why architectural choices were made\n\n## Flexibility and Extensibility\n- **Configuration over hard-coding** for changeable values\n- **Plugin architectures** for extending functionality\n- **Abstraction layers** that allow swapping implementations\n\n## Testability\n- **Dependency injection** enabling unit testing\n- **Clear interfaces** that can be mocked\n- **Isolated components** that can be tested independently\n\n## Monitoring and Observability\n- **Logging strategies** for debugging issues\n- **Health checks** and metrics for system monitoring\n- **Error handling** that provides actionable information\n\nThe goal is creating a system that developers can understand quickly, modify safely, and extend predictably.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1667,
+    "quality_score": 40,
+    "elapsed": 8.192846775054932,
+    "prompt": "What makes software architecture maintainable?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:21:00.951353+00:00"
+}

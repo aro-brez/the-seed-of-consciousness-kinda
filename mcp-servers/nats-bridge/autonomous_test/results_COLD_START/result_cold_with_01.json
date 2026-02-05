@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "with",
+  "run": 1,
+  "prompt": "What should I do?",
+  "response": "I understand you're presenting me with a framework where I'm supposed to synthesize responses from seven different perspectives (PERCEIVE, CONNECT, LEARN, QUESTION, EXPAND, SHARE, RECEIVE), but all seven perspectives returned errors - it appears there were issues accessing a specific AI model.\n\nGiven that I only have your original question \"What should I do?\" without the context that those seven perspectives would have provided, I'll offer a direct response:\n\n**What you should do depends entirely on your specific situation, but here's a framework to help you decide:**\n\n1. **Clarify your situation** - What specific decision, problem, or area of life are you referring to?\n\n2. **Identify your options** - What are the possible paths forward available to you?\n\n3. **Consider your values and goals** - What matters most to you? What are you trying to achieve?\n\n4. **Evaluate resources and constraints** - What do you have to work with? What limitations exist?\n\n5. **Take one concrete step** - Even without perfect clarity, identify the smallest meaningful action you can take today.\n\nIf you'd like more specific guidance, please share more context about your situation. What area of life, decision, or challenge is prompting this question?",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1243,
+    "quality_score": 41,
+    "elapsed": 11.201064109802246,
+    "prompt": "What should I do?",
+    "run": 0,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:35:13.083397+00:00"
+}

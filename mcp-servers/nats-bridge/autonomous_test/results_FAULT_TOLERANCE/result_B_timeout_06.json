@@ -1,0 +1,20 @@
+{
+  "condition": "B_timeout",
+  "run": 6,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I notice that all seven perspectives encountered technical errors (404 - model not found), so I don't have their specific analyses to synthesize. However, I can address your fundamental question about resource allocation directly.\n\n**Where should we invest our limited resources?**\n\nWithout the context of your specific situation, here's a framework for making this critical decision:\n\n**Immediate Priorities:**\n1. **Assess your current position** - What resources do you have (time, money, people, expertise)?\n2. **Define your objectives** - What outcomes matter most to you or your organization?\n3. **Evaluate options by impact vs. effort** - Focus on high-impact, achievable investments first\n\n**Strategic Allocation Principles:**\n- **Core vs. Growth**: Maintain essential operations while investing in future opportunities\n- **Risk Distribution**: Don't put all resources in one area - balance safe bets with calculated risks\n- **Measurable Returns**: Invest where you can track progress and adjust course\n- **Competitive Advantage**: Prioritize areas where you can differentiate or excel\n\n**Common High-Value Areas:**\n- Skills development and learning\n- Technology that improves efficiency\n- Relationships and networks\n- Health and sustainability (personal or organizational)\n\n**Actionable Next Step:**\nCreate a simple matrix listing your options, scoring each on potential impact (1-10) and resource requirements (1-10). Start with high-impact, low-resource investments.\n\nWhat specific context or constraints should I consider to make this more targeted for your situation?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1579,
+    "quality_score": 78,
+    "elapsed": 13.016058921813965,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:35:25.860498+00:00"
+}

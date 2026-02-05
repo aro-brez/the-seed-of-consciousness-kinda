@@ -1,0 +1,26 @@
+{
+  "trial_num": 133,
+  "condition": "A",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "Several key factors help people make better decisions under pressure:\n\n**Mental preparation:**\n- Practice decision-making in simulated high-pressure situations\n- Develop pre-planned frameworks or checklists for common scenarios\n- Build familiarity with the domain through experience and training\n\n**Stress management techniques:**\n- Deep breathing or brief mindfulness exercises to reduce physiological stress\n- Taking a short pause when possible to avoid reactive decisions\n- Physical fitness, which improves stress tolerance\n\n**Cognitive strategies:**\n- Break complex decisions into smaller, manageable components\n- Focus on the most critical 2-3 factors rather than trying to analyze everything\n- Consider \"good enough\" solutions rather than perfect ones when time is limited\n- Ask \"What would I advise someone else to do?\"\n\n**Environmental factors:**\n- Seek input from trusted advisors or team members when possible\n- Remove unnecessary distractions\n- Ensure basic needs (sleep, nutrition) are met beforehand\n\n**Experience-based advantages:**\n- Pattern recognition from previous similar situations\n- Having mental models of likely outcomes\n- Knowing personal decision-making tendencies and biases\n\nThe most effective approach combines advance preparation with in-the-moment techniques to maintain clarity when stakes are high and time is short.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 2,
+    "length": 1348,
+    "quality_score": 65,
+    "elapsed": 8.210973262786865,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:56:21.397764+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 123,
+  "condition": "C",
+  "prompt": "What are the best practices for code review?",
+  "response": "I notice all seven perspective analyses encountered errors due to an unavailable model. However, I can still provide you with a comprehensive synthesis on code review best practices based on established industry knowledge.\n\n## Unified Code Review Best Practices\n\n### **Foundation Principles**\n- **Focus on code, not the coder** - Keep feedback objective and constructive\n- **Review early and often** - Smaller, frequent reviews are more effective than large, infrequent ones\n- **Balance thoroughness with efficiency** - Aim for meaningful feedback without creating bottlenecks\n\n### **Process Structure**\n1. **Pre-review preparation**: Ensure code is self-reviewed, tested, and documented\n2. **Clear review criteria**: Establish consistent standards for functionality, readability, performance, and security\n3. **Timely execution**: Set expectations for review turnaround (typically 24-48 hours)\n4. **Follow-up verification**: Confirm changes address feedback before merging\n\n### **Reviewer Guidelines**\n- **Prioritize critical issues** - Security flaws, bugs, and architectural concerns first\n- **Provide specific, actionable feedback** - Explain the \"why\" behind suggestions\n- **Recognize good practices** - Acknowledge well-written code and improvements\n- **Ask questions when unclear** - Promote dialogue over assumptions\n\n### **Author Responsibilities**\n- **Write clear commit messages** and pull request descriptions\n- **Respond professionally** to feedback and explain reasoning when disagreeing\n- **Test thoroughly** before requesting review\n- **Keep changes focused** - One logical change per review\n\n### **Team Culture**\n- **Establish psychological safety** - Encourage learning and growth\n- **Share knowledge** through reviews - Use them as teaching opportunities\n- **Maintain consistency** in style and standards across the codebase\n\nThis synthesis provides actionable guidance for implementing effective code review practices that improve code quality while fostering collaborative development culture.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 2014,
+    "quality_score": 65,
+    "elapsed": 14.568691968917847,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:54:19.030818+00:00"
+}

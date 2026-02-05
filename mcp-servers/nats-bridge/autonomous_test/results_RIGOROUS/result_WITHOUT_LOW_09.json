@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "LOW",
+  "run": 9,
+  "prompt": "What would success look like?",
+  "response": "I'd need more context to give you a specific answer about what success would look like for your particular situation. Success means very different things depending on what you're referring to - a project, career goal, relationship, business venture, personal development, etc.\n\nThat said, I can offer some general principles for defining success:\n\n**Clear, measurable outcomes**: What specific results would indicate you've achieved your goal?\n\n**Timeline**: By when would you want to see these results?\n\n**Personal fulfillment**: Does it align with your values and bring satisfaction?\n\n**Sustainable progress**: Can you maintain and build upon this success?\n\n**Impact**: What positive effect would this success have on you and others?\n\nCould you share more details about what area of life or specific goal you're thinking about? That would help me give you a much more useful and tailored response about what success might look like in your situation.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 952,
+    "quality_score": 28.52,
+    "elapsed": 5.47597074508667,
+    "prompt": "What would success look like?",
+    "run": 8
+  },
+  "timestamp": "2026-02-03T12:11:04.816184+00:00"
+}

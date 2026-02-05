@@ -1,0 +1,26 @@
+{
+  "trial_num": 6,
+  "condition": "A",
+  "prompt": "How does someone effectively learn a new skill?",
+  "response": "Here are the key principles for effectively learning a new skill:\n\n**Start with fundamentals**\n- Learn the basic principles and foundational concepts first\n- Don't rush to advanced techniques before mastering the basics\n\n**Practice deliberately**\n- Focus on specific weaknesses rather than just repeating what you're already good at\n- Set clear, measurable goals for each practice session\n- Seek immediate feedback to correct mistakes quickly\n\n**Use active learning**\n- Engage with the material rather than passively consuming it\n- Explain concepts to others or teach what you've learned\n- Ask questions and test your understanding regularly\n\n**Break it down**\n- Divide complex skills into smaller, manageable components\n- Master one piece at a time before combining them\n- Create a logical progression from simple to complex\n\n**Embrace productive failure**\n- Make mistakes in a safe environment where you can learn from them\n- View errors as information, not judgment\n- Push slightly beyond your comfort zone consistently\n\n**Be consistent**\n- Regular, shorter practice sessions often work better than long, infrequent ones\n- Establish a routine that you can maintain\n- Focus on building the habit, not just the hours\n\n**Find quality instruction**\n- Learn from experts who can model correct technique\n- Get personalized feedback when possible\n- Use multiple learning resources (books, videos, mentors)\n\nThe key is combining focused practice with patience\u2014most valuable skills take time to develop properly.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1506,
+    "quality_score": 50,
+    "elapsed": 7.900155305862427,
+    "prompt": "How does someone effectively learn a new skill?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:14:36.817005+00:00"
+}

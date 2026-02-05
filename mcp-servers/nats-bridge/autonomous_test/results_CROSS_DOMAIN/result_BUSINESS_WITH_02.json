@@ -1,0 +1,22 @@
+{
+  "domain": "BUSINESS",
+  "condition": "WITH",
+  "run": 2,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective encountered errors and couldn't provide their analyses. However, as IMPROVE, I can still synthesize a unified response to \"How should we prioritize competing goals?\" based on what these perspectives would likely contribute:\n\n## Unified Framework for Prioritizing Competing Goals\n\n**Core Principle:** Use a multi-dimensional evaluation that balances immediate impact with long-term sustainability.\n\n**Actionable Framework:**\n\n1. **Map the Landscape** (PERCEIVE perspective)\n   - List all competing goals explicitly\n   - Identify their interdependencies and conflicts\n   - Assess current resource constraints\n\n2. **Evaluate Impact Chains** (CONNECT perspective)  \n   - Determine which goals create positive cascades for others\n   - Identify goals that block or enable multiple objectives\n   - Consider stakeholder alignment across goals\n\n3. **Apply Learning Filters** (LEARN perspective)\n   - Prioritize goals that build organizational/personal capabilities\n   - Weight options that generate valuable feedback loops\n   - Consider reversibility - favor goals that don't close off future options\n\n4. **Strategic Decision Points:**\n   - **Urgency vs. Importance:** Handle urgent/important first, then important/non-urgent\n   - **Resource Efficiency:** Prioritize goals with highest value-to-effort ratios\n   - **Strategic Alignment:** Weight goals that advance your core mission most directly\n\n**Emergent Insight:** The most effective prioritization comes not from ranking goals in isolation, but from identifying the minimal set of goals that, when achieved, create conditions for other goals to become easier or self-fulfilling.\n\n**Immediate Action:** Start with goals that expand your capacity to achieve other goals.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1778,
+    "quality_score": 78,
+    "elapsed": 14.295756816864014,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 1,
+    "domain": "BUSINESS"
+  },
+  "timestamp": "2026-02-03T12:38:42.679918+00:00"
+}

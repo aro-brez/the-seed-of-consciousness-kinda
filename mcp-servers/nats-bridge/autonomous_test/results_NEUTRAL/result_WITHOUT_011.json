@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue consistently** - If you can't reproduce it reliably, gather more information about when/how it occurs\n- **Define the problem precisely** - Write down exactly what's happening vs. what should happen\n- **Gather relevant data** - Logs, error messages, system state, recent changes\n\n## Use divide-and-conquer strategies\n- **Isolate components** - Test parts of the system independently to narrow down where the issue lies\n- **Binary search through the problem space** - Systematically eliminate half the possibilities at each step\n- **Work backwards from the symptom** - Trace the error from where you observe it to its root cause\n\n## Apply systematic investigation\n- **Check recent changes first** - Most bugs are introduced by recent modifications\n- **Verify assumptions** - Question what you think you know about how the system works\n- **Use logging strategically** - Add targeted logging to trace execution flow and data state\n- **Leverage debugging tools** - Profilers, debuggers, monitoring dashboards specific to your system\n\n## Maintain good practices\n- **Document your investigation** - Keep notes on what you've tried and ruled out\n- **Take breaks** - Fresh perspective often reveals overlooked issues\n- **Collaborate** - Explain the problem to others; they may spot what you missed\n- **Fix root causes, not just symptoms** - Ensure your solution addresses why the problem occurred\n\nThe key is being methodical while remaining flexible enough to follow unexpected leads.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1591,
+    "quality_score": 50,
+    "elapsed": 8.905384063720703,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:49:07.535263+00:00"
+}

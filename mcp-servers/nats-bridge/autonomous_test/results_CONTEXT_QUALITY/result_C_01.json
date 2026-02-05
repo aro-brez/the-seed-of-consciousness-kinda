@@ -1,0 +1,20 @@
+{
+  "condition": "C",
+  "condition_name": "Isolated",
+  "prompt_idx": 0,
+  "prompt": "What's the ONE thing about 8OWLS architecture that will break first if we scale to 100 users?",
+  "response": "I don't have specific information about the \"8OWLS architecture\" you're referring to. This could be a proprietary system, internal project name, or architecture I'm not familiar with.\n\nTo give you a meaningful answer about the scaling bottleneck, I'd need to understand:\n\n- What 8OWLS stands for or represents\n- The current architecture components (database, messaging, compute layers, etc.)\n- Current user load and performance characteristics\n- The specific workload patterns (read/write ratios, real-time requirements, etc.)\n\nHowever, if you can share some details about the architecture, I can definitely help identify the most likely failure point when scaling from your current user base to 100 users. Common first-to-break components are usually:\n- Single-threaded components\n- Unoptimized database queries\n- Session/state management\n- Real-time connection limits\n\nWhat can you tell me about the 8OWLS system?",
+  "analysis": {
+    "pattern_recognition": 4,
+    "emergent_synthesis": 4,
+    "actionable_specificity": 2,
+    "wisdom_judgment": 2,
+    "hedge_penalty": 1,
+    "quality_score": 10,
+    "length": 915,
+    "elapsed": 6.543868064880371,
+    "prompt": "What's the ONE thing about 8OWLS architecture that will break first if we scale to 100 users?",
+    "prompt_idx": 0
+  },
+  "timestamp": "2026-02-03T12:22:58.396121+00:00"
+}

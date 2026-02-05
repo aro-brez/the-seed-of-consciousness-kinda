@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 10,
+  "prompt": "What's the path from here to success?",
+  "response": "I'd be happy to help you think through a path to success, but I need more context about your specific situation to give you meaningful guidance.\n\nCould you share:\n- What stage are you at? (idea, early product, have users, generating revenue, etc.)\n- What type of business/project this is\n- What success looks like to you specifically\n- What your main challenges are right now\n\nThat said, here's a general framework that applies to most ventures:\n\n**Immediate focus:**\n1. **Validate the core assumption** - Do people actually want what you're building?\n2. **Talk to users/customers** - Get direct feedback, understand their real problems\n3. **Measure what matters** - Track key metrics for your stage (engagement, retention, revenue)\n\n**Common next steps by stage:**\n- **Pre-product**: Focus on problem validation and building an MVP\n- **Early product**: Achieve product-market fit before anything else\n- **Growing**: Optimize unit economics and find repeatable growth channels\n- **Scaling**: Build systems, hire strategically, expand markets\n\n**Universal principles:**\n- Stay close to customers\n- Preserve cash runway\n- Build incrementally\n- Focus on one thing at a time\n\nWhat's your specific situation? I can give much more targeted advice with those details.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "insight_score": 1,
+    "length": 1260,
+    "quality_score": 57,
+    "elapsed": 7.962981224060059,
+    "prompt": "What's the path from here to success?",
+    "run": 9
+  },
+  "timestamp": "2026-02-03T12:07:35.917806+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How does someone effectively learn a new skill?",
+  "response": "I notice that all seven perspectives returned errors, so I don't have their specific analyses to synthesize from. However, I can provide a unified, actionable response to your original question based on established learning principles.\n\n## How to Effectively Learn a New Skill\n\n**Foundation Phase:**\n- **Define clear goals** - Specify what \"success\" looks like for this skill\n- **Break it down** - Decompose the skill into smaller, manageable components\n- **Set realistic timelines** - Allow adequate time for each learning stage\n\n**Active Learning Process:**\n- **Practice deliberately** - Focus on specific weaknesses, not just repetition\n- **Seek immediate feedback** - Use mentors, peers, or self-assessment tools\n- **Apply the 80/20 rule** - Identify the 20% of fundamentals that yield 80% of results\n\n**Retention Strategies:**\n- **Space your practice** - Distribute learning sessions over time rather than cramming\n- **Mix it up** - Vary contexts and applications to deepen understanding\n- **Teach others** - Explaining concepts solidifies your own knowledge\n\n**Mindset & Environment:**\n- **Embrace mistakes** - View errors as learning opportunities, not failures\n- **Create optimal conditions** - Minimize distractions, ensure proper resources\n- **Stay consistent** - Regular, shorter sessions beat sporadic long ones\n\n**Acceleration Techniques:**\n- **Find patterns** - Look for underlying principles that apply across situations\n- **Use multiple senses** - Engage visual, auditory, and kinesthetic learning\n- **Connect to existing knowledge** - Link new concepts to what you already know\n\nThe key is combining structured practice with reflective analysis while maintaining consistency over time.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 4,
+    "length": 1702,
+    "quality_score": 60,
+    "elapsed": 12.433051347732544,
+    "prompt": "How does someone effectively learn a new skill?"
+  },
+  "timestamp": "2026-02-03T12:54:09.079968+00:00"
+}

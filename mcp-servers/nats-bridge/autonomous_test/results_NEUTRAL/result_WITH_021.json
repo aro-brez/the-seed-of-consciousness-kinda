@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "What are the best practices for code review?",
+  "response": "I notice all seven perspective analyses encountered errors due to an unavailable model. However, I can still provide a comprehensive synthesis on code review best practices based on established industry knowledge.\n\n## Code Review Best Practices: A Unified Approach\n\n### **Core Principles**\n- **Constructive Focus**: Review code, not the coder. Frame feedback as suggestions for improvement rather than criticism.\n- **Clear Objectives**: Ensure reviews check for functionality, readability, maintainability, security, and adherence to standards.\n- **Timely Process**: Aim for reviews within 24 hours to maintain development momentum.\n\n### **Review Structure**\n1. **Pre-Review Preparation**\n   - Author provides clear description of changes and context\n   - Automated tests pass before human review\n   - Self-review by author to catch obvious issues\n\n2. **Review Execution**\n   - Start with understanding the overall approach before diving into details\n   - Check for logic errors, edge cases, and potential bugs\n   - Verify code follows team conventions and style guides\n   - Assess readability and documentation quality\n\n3. **Feedback Delivery**\n   - Use \"we\" language instead of \"you\" (\"We could improve this by...\")\n   - Provide specific examples and explanations\n   - Distinguish between must-fix issues and suggestions\n   - Acknowledge good practices when you see them\n\n### **Actionable Guidelines**\n- **Limit review size**: Keep changes under 400 lines when possible\n- **Use checklists**: Maintain consistency across reviews\n- **Foster learning**: Explain the \"why\" behind feedback\n- **Balance thoroughness with efficiency**: Don't over-optimize trivial code\n\nThis synthesis emphasizes both technical rigor and human collaboration to create an effective review culture.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1774,
+    "quality_score": 60,
+    "elapsed": 13.91894817352295,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T12:51:21.938338+00:00"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.8owls.xfeedscanner</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/aaronnosbisch/REPOS/seed/tools/x_feed_scanner.py</string>
+        <string>--once</string>
+    </array>
+
+    <key>StartInterval</key>
+    <integer>3600</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/aaronnosbisch/REPOS/seed/logs/x_feed_scanner_stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/aaronnosbisch/REPOS/seed/logs/x_feed_scanner_stderr.log</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/aaronnosbisch/REPOS/seed</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>NATS_SERVER</key>
+        <string>nats://192.168.5.108:4222</string>
+    </dict>
+</dict>
+</plist>

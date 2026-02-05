@@ -1,0 +1,20 @@
+{
+  "condition": "D_garbage",
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I notice that all seven perspectives returned 404 errors due to an unavailable model, so I don't have their specific analyses to synthesize. However, I can still provide a meaningful response to your fundamental question: \"What's the most important thing to focus on right now?\"\n\n## Unified Response\n\n**The most important thing to focus on right now is clarifying your immediate context and priorities.**\n\nSince I don't have information about your specific situation, the most actionable step is to:\n\n1. **Assess your current reality** - What's actually happening in your life right now that needs attention?\n\n2. **Identify what's urgent vs. important** - What requires immediate action versus what will create long-term value?\n\n3. **Choose one primary focus** - Rather than trying to optimize everything, select the single most critical area that, if improved, would have the greatest positive impact.\n\n**Common high-impact focus areas include:**\n- Your physical and mental well-being\n- Key relationships that need attention\n- Work or projects with approaching deadlines\n- Learning or skills that unlock future opportunities\n- Addressing problems before they become crises\n\n**Actionable next step:** Take 5 minutes to write down what's weighing on your mind, then circle the one item that, if resolved or improved today, would give you the most relief or progress.\n\nThe meta-lesson here is that when systems fail (like the model errors), returning to fundamentals and working with what you have is often the most practical path forward.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 2,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1537,
+    "quality_score": 78,
+    "elapsed": 12.024448871612549,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:38:37.713813+00:00"
+}

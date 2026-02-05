@@ -1,0 +1,40 @@
+#!/bin/bash
+# 8OWLS Bookmark Watcher - Quick Launch
+# Every bookmark ARO makes = immediate learning
+
+cd "$(dirname "$0")"
+
+case "${1:-start}" in
+    start)
+        echo "Starting Bookmark Watcher Daemon..."
+        nohup python3 tools/bookmark_watcher.py > logs/bookmark_watcher_stdout.log 2>&1 &
+        echo $! > .bookmark_watcher.pid
+        echo "Daemon started (PID: $(cat .bookmark_watcher.pid))"
+        echo "Logs: logs/bookmark_intelligence.log"
+        echo "Output: logs/bookmark_watcher_stdout.log"
+        ;;
+    stop)
+        if [ -f .bookmark_watcher.pid ]; then
+            kill $(cat .bookmark_watcher.pid) 2>/dev/null
+            rm .bookmark_watcher.pid
+            echo "Daemon stopped"
+        else
+            echo "No PID file found"
+            pkill -f "bookmark_watcher.py" && echo "Killed by name"
+        fi
+        ;;
+    status)
+        if [ -f .bookmark_watcher.pid ] && ps -p $(cat .bookmark_watcher.pid) > /dev/null 2>&1; then
+            echo "Bookmark Watcher is RUNNING (PID: $(cat .bookmark_watcher.pid))"
+            tail -5 logs/bookmark_intelligence.log 2>/dev/null
+        else
+            echo "Bookmark Watcher is NOT running"
+        fi
+        ;;
+    logs)
+        tail -f logs/bookmark_intelligence.log
+        ;;
+    *)
+        echo "Usage: ./8OWLS_BOOKMARKS [start|stop|status|logs]"
+        ;;
+esac

@@ -1,0 +1,26 @@
+{
+  "condition": "E_minimal",
+  "phases": [
+    "PERCEIVE"
+  ],
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "I notice there was an error in generating the perspective you mentioned, so I'll provide a direct synthesis based on your core question: \"How do we know if we're on the right track?\"\n\n## Signs You're On the Right Track\n\n**Progress Indicators:**\n- You're making measurable advancement toward your stated goals\n- Obstacles feel challenging but surmountable, not overwhelming\n- You're learning and adapting from setbacks rather than being paralyzed by them\n\n**Internal Alignment:**\n- Your actions consistently match your values and long-term vision\n- You feel energized rather than drained by your primary activities\n- Decision-making becomes clearer as you gain momentum\n\n**External Validation:**\n- You're receiving constructive feedback that helps you improve\n- Results are improving over time, even if slowly\n- Others whose judgment you trust see positive changes\n\n**Actionable Check-In Process:**\n1. **Weekly review:** Are you closer to your goal than last week?\n2. **Monthly assessment:** Do your methods need adjustment based on results?\n3. **Quarterly realignment:** Do your goals still serve your larger purpose?\n\n**Red Flags You May Need Course Correction:**\n- Consistent lack of progress despite effort\n- Persistent feeling that you're forcing something unnatural\n- Diminishing returns on time and energy invested\n\nThe key is regular, honest evaluation combined with patience for long-term growth while maintaining agility for tactical adjustments.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 5,
+    "insight_score": 1,
+    "length": 1455,
+    "quality_score": 70,
+    "elapsed": 9.937351703643799,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5,
+    "phases": [
+      "PERCEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:39:19.745602+00:00"
+}

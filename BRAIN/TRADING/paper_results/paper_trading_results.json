@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-03T12:00:32.705352",
+  "timestamp": "2026-02-05T13:06:38.936445",
   "strategies": {
     "weather_structural": {
       "trades": 0,
@@ -10,215 +10,215 @@
       "last_trades": []
     },
     "whale_tracking": {
-      "trades": 124,
-      "wins": 67,
-      "losses": 57,
-      "win_rate": 0.54,
-      "pnl": 2310,
+      "trades": 5712,
+      "wins": 3166,
+      "losses": 2546,
+      "win_rate": 0.554,
+      "pnl": 113580,
       "last_trades": [
         {
-          "timestamp": "2026-02-03T11:58:31.007142",
+          "timestamp": "2026-02-05T13:04:37.245045",
           "market": "Will Trump deport 250,000-500,000 people? (Vol: $1",
           "side": "NO",
-          "price": 0.12050000000000005,
+          "price": 0.10450000000000004,
           "size": 30,
           "outcome": "win",
           "pnl": 60
         },
         {
-          "timestamp": "2026-02-03T11:59:31.866283",
-          "market": "Will Trump deport less than 250,000? (Vol: $1,037,",
+          "timestamp": "2026-02-05T13:05:38.142768",
+          "market": "Will Trump deport less than 250,000? (Vol: $1,049,",
           "side": "YES",
-          "price": 0.0225,
+          "price": 0.0445,
+          "size": 30,
+          "outcome": "win",
+          "pnl": 60
+        },
+        {
+          "timestamp": "2026-02-05T13:05:38.142828",
+          "market": "Will Trump deport 250,000-500,000 people? (Vol: $1",
+          "side": "NO",
+          "price": 0.10450000000000004,
+          "size": 30,
+          "outcome": "win",
+          "pnl": 60
+        },
+        {
+          "timestamp": "2026-02-05T13:06:38.936152",
+          "market": "Will Trump deport less than 250,000? (Vol: $1,049,",
+          "side": "YES",
+          "price": 0.0445,
+          "size": 30,
+          "outcome": "win",
+          "pnl": 60
+        },
+        {
+          "timestamp": "2026-02-05T13:06:38.936209",
+          "market": "Will Trump deport 250,000-500,000 people? (Vol: $1",
+          "side": "NO",
+          "price": 0.10450000000000004,
           "size": 30,
           "outcome": "loss",
           "pnl": -30
-        },
-        {
-          "timestamp": "2026-02-03T11:59:31.866338",
-          "market": "Will Trump deport 250,000-500,000 people? (Vol: $1",
-          "side": "NO",
-          "price": 0.12050000000000005,
-          "size": 30,
-          "outcome": "win",
-          "pnl": 60
-        },
-        {
-          "timestamp": "2026-02-03T12:00:32.705042",
-          "market": "Will Trump deport less than 250,000? (Vol: $1,037,",
-          "side": "YES",
-          "price": 0.0225,
-          "size": 30,
-          "outcome": "loss",
-          "pnl": -30
-        },
-        {
-          "timestamp": "2026-02-03T12:00:32.705094",
-          "market": "Will Trump deport 250,000-500,000 people? (Vol: $1",
-          "side": "NO",
-          "price": 0.12050000000000005,
-          "size": 30,
-          "outcome": "win",
-          "pnl": 60
         }
       ]
     },
     "cross_platform_arb": {
-      "trades": 56,
-      "wins": 56,
+      "trades": 2561,
+      "wins": 2561,
       "losses": 0,
       "win_rate": 1.0,
-      "pnl": 200.8,
+      "pnl": 8962.18,
       "last_trades": [
         {
-          "timestamp": "2026-02-03T11:58:31.007188",
-          "market": "ARB: Will Trump deport 250,000-500,... (spread: 3.",
-          "side": "ARB",
-          "price": 0.9628794813158478,
-          "size": 100,
-          "outcome": "win",
-          "pnl": 3.7120518684152226
-        },
-        {
-          "timestamp": "2026-02-03T11:58:31.007223",
-          "market": "ARB: Will Trump deport 500,000-750,... (spread: 3.",
-          "side": "ARB",
-          "price": 0.9663452984959651,
-          "size": 100,
-          "outcome": "win",
-          "pnl": 3.3654701504034934
-        },
-        {
-          "timestamp": "2026-02-03T11:59:31.866381",
+          "timestamp": "2026-02-05T12:58:31.974301",
           "market": "ARB: Will Trump deport 500,000-750,... (spread: 2.",
           "side": "ARB",
-          "price": 0.9758777060017438,
+          "price": 0.9757983231871432,
           "size": 100,
           "outcome": "win",
-          "pnl": 2.412229399825616
+          "pnl": 2.4201676812856787
         },
         {
-          "timestamp": "2026-02-03T12:00:32.705135",
+          "timestamp": "2026-02-05T13:00:33.661301",
+          "market": "ARB: Will Trump deport less than 25... (spread: 4.",
+          "side": "ARB",
+          "price": 0.9509525969836353,
+          "size": 100,
+          "outcome": "win",
+          "pnl": 4.904740301636467
+        },
+        {
+          "timestamp": "2026-02-05T13:01:34.521440",
           "market": "ARB: Will Trump deport less than 25... (spread: 3.",
           "side": "ARB",
-          "price": 0.9635646709281904,
+          "price": 0.969364769079695,
           "size": 100,
           "outcome": "win",
-          "pnl": 3.6435329071809575
+          "pnl": 3.0635230920304957
         },
         {
-          "timestamp": "2026-02-03T12:00:32.705170",
-          "market": "ARB: Will Trump deport 500,000-750,... (spread: 4.",
+          "timestamp": "2026-02-05T13:04:37.245087",
+          "market": "ARB: Will Trump deport less than 25... (spread: 2.",
           "side": "ARB",
-          "price": 0.9533618258458099,
+          "price": 0.9767068084310354,
           "size": 100,
           "outcome": "win",
-          "pnl": 4.663817415419014
+          "pnl": 2.329319156896459
+        },
+        {
+          "timestamp": "2026-02-05T13:06:38.936252",
+          "market": "ARB: Will Trump deport less than 25... (spread: 3.",
+          "side": "ARB",
+          "price": 0.9690435338469815,
+          "size": 100,
+          "outcome": "win",
+          "pnl": 3.0956466153018503
         }
       ]
     },
     "gabagool_arb": {
-      "trades": 32,
-      "wins": 32,
+      "trades": 1645,
+      "wins": 1645,
       "losses": 0,
       "win_rate": 1.0,
-      "pnl": 83.78,
+      "pnl": 4270.97,
       "last_trades": [
         {
-          "timestamp": "2026-02-03T11:49:23.377390",
+          "timestamp": "2026-02-05T13:01:34.521476",
           "market": "GABAGOOL: Will Trump deport less than 25...",
           "side": "PAIR",
-          "price": 0.9782614294424378,
+          "price": 0.9538086399341185,
           "size": 75,
           "outcome": "win",
-          "pnl": 1.6303927918171701
+          "pnl": 3.4643520049411127
         },
         {
-          "timestamp": "2026-02-03T11:52:25.929403",
-          "market": "GABAGOOL: Will Trump deport 250,000-500,...",
-          "side": "PAIR",
-          "price": 0.9755466520288675,
-          "size": 75,
-          "outcome": "win",
-          "pnl": 1.8340010978349388
-        },
-        {
-          "timestamp": "2026-02-03T11:54:27.649759",
+          "timestamp": "2026-02-05T13:02:35.352166",
           "market": "GABAGOOL: Will Trump deport less than 25...",
           "side": "PAIR",
-          "price": 0.9746792963499776,
+          "price": 0.9779075539592379,
           "size": 75,
           "outcome": "win",
-          "pnl": 1.899052773751676
+          "pnl": 1.6569334530571582
         },
         {
-          "timestamp": "2026-02-03T11:57:30.176292",
-          "market": "GABAGOOL: Will Trump deport 250,000-500,...",
+          "timestamp": "2026-02-05T13:03:36.215950",
+          "market": "GABAGOOL: Will Trump deport less than 25...",
           "side": "PAIR",
-          "price": 0.9681091092773783,
+          "price": 0.9791425628838927,
           "size": 75,
           "outcome": "win",
-          "pnl": 2.391816804196631
+          "pnl": 1.5643077837080512
         },
         {
-          "timestamp": "2026-02-03T12:00:32.705204",
-          "market": "GABAGOOL: Will Trump deport 250,000-500,...",
+          "timestamp": "2026-02-05T13:04:37.245124",
+          "market": "GABAGOOL: Will Trump deport less than 25...",
           "side": "PAIR",
-          "price": 0.9728547510969727,
+          "price": 0.9630445633533288,
           "size": 75,
           "outcome": "win",
-          "pnl": 2.0358936677270414
+          "pnl": 2.7716577485003437
+        },
+        {
+          "timestamp": "2026-02-05T13:04:37.245156",
+          "market": "GABAGOOL: Will Trump deport 250,000-500,...",
+          "side": "PAIR",
+          "price": 0.9733023208491504,
+          "size": 75,
+          "outcome": "win",
+          "pnl": 2.002325936313719
         }
       ]
     },
     "spike_detection": {
-      "trades": 60,
-      "wins": 30,
-      "losses": 30,
-      "win_rate": 0.5,
-      "pnl": -600.0,
+      "trades": 2806,
+      "wins": 1703,
+      "losses": 1103,
+      "win_rate": 0.607,
+      "pnl": -10060.0,
       "last_trades": [
         {
-          "timestamp": "2026-02-03T11:57:30.176326",
-          "market": "SPIKE: Will Trump deport 250,000-500,...",
+          "timestamp": "2026-02-05T13:00:33.661339",
+          "market": "SPIKE: Will Trump deport less than 25...",
           "side": "FADE",
-          "price": 0.8795,
+          "price": 0.0445,
           "size": 40,
           "outcome": "win",
           "pnl": 20.0
         },
         {
-          "timestamp": "2026-02-03T11:58:31.007259",
-          "market": "SPIKE: Will Trump deport 250,000-500,...",
+          "timestamp": "2026-02-05T13:04:37.245188",
+          "market": "SPIKE: Will Trump deport less than 25...",
           "side": "FADE",
-          "price": 0.8795,
+          "price": 0.0445,
+          "size": 40,
+          "outcome": "win",
+          "pnl": 20.0
+        },
+        {
+          "timestamp": "2026-02-05T13:04:37.245220",
+          "market": "SPIKE: Will Trump deport 750,000-1,00...",
+          "side": "FADE",
+          "price": 0.008,
           "size": 40,
           "outcome": "loss",
           "pnl": -40
         },
         {
-          "timestamp": "2026-02-03T11:58:31.007292",
-          "market": "SPIKE: Will Trump deport 750,000-1,00...",
+          "timestamp": "2026-02-05T13:06:38.936294",
+          "market": "SPIKE: Will Trump deport less than 25...",
           "side": "FADE",
-          "price": 0.0095,
+          "price": 0.0445,
           "size": 40,
-          "outcome": "win",
-          "pnl": 20.0
+          "outcome": "loss",
+          "pnl": -40
         },
         {
-          "timestamp": "2026-02-03T11:59:31.866422",
-          "market": "SPIKE: Will Trump deport 1,000,000-1,...",
+          "timestamp": "2026-02-05T13:06:38.936330",
+          "market": "SPIKE: Will Trump deport 250,000-500,...",
           "side": "FADE",
-          "price": 0.0065,
-          "size": 40,
-          "outcome": "win",
-          "pnl": 20.0
-        },
-        {
-          "timestamp": "2026-02-03T12:00:32.705239",
-          "market": "SPIKE: Will Trump deport 1,000,000-1,...",
-          "side": "FADE",
-          "price": 0.0065,
+          "price": 0.8955,
           "size": 40,
           "outcome": "loss",
           "pnl": -40
@@ -226,56 +226,56 @@
       ]
     },
     "high_prob_bonds": {
-      "trades": 62,
-      "wins": 62,
-      "losses": 0,
-      "win_rate": 1.0,
-      "pnl": 140.51,
+      "trades": 2856,
+      "wins": 2762,
+      "losses": 94,
+      "win_rate": 0.967,
+      "pnl": 680.41,
       "last_trades": [
         {
-          "timestamp": "2026-02-03T11:56:29.321699",
+          "timestamp": "2026-02-05T13:02:35.352205",
           "market": "BOND: Will Trump deport less than 25...",
           "side": "NO",
-          "price": 0.9775,
+          "price": 0.9555,
           "size": 100,
           "outcome": "win",
-          "pnl": 2.3017902813299296
+          "pnl": 4.657247514390361
         },
         {
-          "timestamp": "2026-02-03T11:57:30.176360",
+          "timestamp": "2026-02-05T13:03:36.215991",
           "market": "BOND: Will Trump deport less than 25...",
           "side": "NO",
-          "price": 0.9775,
+          "price": 0.9555,
           "size": 100,
           "outcome": "win",
-          "pnl": 2.3017902813299296
+          "pnl": 4.657247514390361
         },
         {
-          "timestamp": "2026-02-03T11:58:31.007324",
+          "timestamp": "2026-02-05T13:04:37.245253",
           "market": "BOND: Will Trump deport less than 25...",
           "side": "NO",
-          "price": 0.9775,
+          "price": 0.9555,
           "size": 100,
           "outcome": "win",
-          "pnl": 2.3017902813299296
+          "pnl": 4.657247514390361
         },
         {
-          "timestamp": "2026-02-03T11:59:31.866457",
+          "timestamp": "2026-02-05T13:05:38.142879",
           "market": "BOND: Will Trump deport less than 25...",
           "side": "NO",
-          "price": 0.9775,
+          "price": 0.9555,
           "size": 100,
           "outcome": "win",
-          "pnl": 2.3017902813299296
+          "pnl": 4.657247514390361
         },
         {
-          "timestamp": "2026-02-03T12:00:32.705269",
+          "timestamp": "2026-02-05T13:06:38.936364",
           "market": "BOND: Will Trump deport less than 25...",
           "side": "NO",
-          "price": 0.9775,
+          "price": 0.9555,
           "size": 100,
           "outcome": "win",
-          "pnl": 2.3017902813299296
+          "pnl": 4.657247514390361
         }
       ]
     },

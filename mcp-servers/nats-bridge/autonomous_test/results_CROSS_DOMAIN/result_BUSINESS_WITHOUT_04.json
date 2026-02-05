@@ -1,0 +1,22 @@
+{
+  "domain": "BUSINESS",
+  "condition": "WITHOUT",
+  "run": 4,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I'd need more context to give you specific advice, but here's a framework for thinking about resource allocation:\n\n**Key questions to consider:**\n- What are your primary goals (growth, stability, impact, etc.)?\n- What's your risk tolerance and timeline?\n- What resources are we talking about (money, time, people, equipment)?\n\n**General principles:**\n1. **High-impact, achievable opportunities first** - Look for areas where modest investment can yield significant returns\n2. **Core competencies** - Invest in what you do best or what's essential to your mission\n3. **Future-oriented bets** - Allocate some resources to emerging opportunities, even if uncertain\n4. **Risk diversification** - Don't put everything in one basket\n\n**Common high-value areas:**\n- Skills development and education\n- Technology that increases efficiency\n- Relationships and networks\n- Prevention rather than fixing problems later\n\nCould you share more about your specific situation - whether this is personal finance, business strategy, organizational planning, or something else? That would help me give more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 1105,
+    "quality_score": 37,
+    "elapsed": 6.09229302406311,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 3,
+    "domain": "BUSINESS"
+  },
+  "timestamp": "2026-02-03T12:33:34.591043+00:00"
+}

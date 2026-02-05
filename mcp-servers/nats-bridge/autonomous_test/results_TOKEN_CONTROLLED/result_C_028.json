@@ -1,0 +1,26 @@
+{
+  "trial_num": 28,
+  "condition": "C",
+  "prompt": "How do you build trust with new colleagues?",
+  "response": "I notice that all seven perspectives encountered technical errors, but I can still synthesize a comprehensive response about building trust with new colleagues based on the framework implied by those perspective names.\n\n## Building Trust with New Colleagues: A Unified Approach\n\n**Immediate Actions:**\n- **Be genuinely present** in interactions - listen actively and show authentic interest in others as people, not just coworkers\n- **Follow through consistently** on small commitments to establish reliability from day one\n- **Share appropriately** about yourself while respecting professional boundaries\n\n**Relationship Building:**\n- **Find common ground** through shared interests, values, or professional goals\n- **Offer help proactively** without expecting immediate reciprocation\n- **Ask thoughtful questions** that show you value others' expertise and perspectives\n\n**Ongoing Trust Development:**\n- **Admit when you don't know something** rather than pretending - vulnerability builds credibility\n- **Give credit generously** and take responsibility for mistakes openly\n- **Be consistent** in your communication style and work quality across all relationships\n\n**Communication Strategies:**\n- **Match your words with actions** - trust erodes quickly when there's inconsistency\n- **Respect confidentiality** absolutely - being trustworthy with information is fundamental\n- **Address conflicts directly but diplomatically** when they arise\n\n**Long-term Foundation:**\n- **Invest time in informal interactions** - coffee chats, lunch conversations, brief check-ins\n- **Demonstrate competence gradually** while remaining humble and open to feedback\n- **Show up as your authentic self** consistently rather than trying to be what you think others want\n\nTrust builds through accumulated small positive interactions over time, not grand gestures.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1845,
+    "quality_score": 45,
+    "elapsed": 13.053027153015137,
+    "prompt": "How do you build trust with new colleagues?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:20:52.758102+00:00"
+}

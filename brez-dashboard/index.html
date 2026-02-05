@@ -49,6 +49,46 @@
                     <span class="sync-dot"></span>
                     <span>8OWLS Synced</span>
                 </div>
+                <button class="notification-btn" onclick="openNotificationsModal()" title="Notifications">
+                    <span class="notification-icon">🔔</span>
+                    <span class="notification-badge" id="notificationBadge">3</span>
+                </button>
+                <div class="team-presence-indicators">
+                    <div class="presence-indicator online" data-member-id="aaron" title="Aaron is online - Working on dashboard">
+                        <div class="presence-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                        <div class="presence-activity">📊</div>
+                        <div class="presence-status"></div>
+                        <div class="presence-cursor" style="display: none;"></div>
+                    </div>
+                    <div class="presence-indicator online focus" data-member-id="sarah" title="Sarah is online - Focus mode: Onboarding flow">
+                        <div class="presence-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                        <div class="presence-activity">🎯</div>
+                        <div class="presence-status"></div>
+                        <div class="presence-cursor" style="display: none;"></div>
+                        <div class="focus-timer" title="Focus session: 45min remaining">45m</div>
+                    </div>
+                    <div class="presence-indicator away" data-member-id="mike" title="Mike is away - Last seen 30 min ago">
+                        <div class="presence-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);">M</div>
+                        <div class="presence-activity">📈</div>
+                        <div class="presence-status"></div>
+                        <div class="presence-cursor" style="display: none;"></div>
+                    </div>
+                    <div class="presence-indicator online ai" data-member-id="luna" title="LUNA AI is active - Processing insights">
+                        <div class="presence-avatar" style="background: linear-gradient(135deg, #8533fc, #65cdd8);">L</div>
+                        <div class="presence-activity">🤖</div>
+                        <div class="presence-status"></div>
+                        <div class="presence-cursor" style="display: none;"></div>
+                        <div class="ai-processing-indicator" title="AI is processing data">⚡</div>
+                    </div>
+                    <div class="team-presence-summary">
+                        <span class="presence-count">4 online</span>
+                        <span class="presence-divider">•</span>
+                        <span class="active-sessions">2 active</span>
+                    </div>
+                    <button class="add-collaborator-btn" onclick="inviteTeamMember()" title="Invite team member">
+                        <span>+</span>
+                    </button>
+                </div>
                 <button class="btn btn-primary" onclick="openSynthesisModal()">
                     <span class="btn-icon">&#10024;</span>
                     Request Synthesis
@@ -58,38 +98,603 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Stats Row -->
+            <!-- Enhanced Stats Row with Real-time Updates -->
             <section class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-icon subscribers"></div>
+                <div class="stat-card enhanced-metric" data-metric="total">
+                    <div class="stat-icon subscribers">
+                        <div class="metric-pulse"></div>
+                        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
                     <div class="stat-content">
                         <span class="stat-label">Total Subscribers</span>
                         <span class="stat-value" id="totalSubscribers">0</span>
-                        <span class="stat-change positive" id="totalChange">+0 today</span>
+                        <div class="stat-details">
+                            <span class="stat-change positive" id="totalChange">+0 today</span>
+                            <div class="stat-trend" id="totalTrend">
+                                <span class="trend-indicator up">↗</span>
+                                <span class="trend-percentage">+2.3%</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="metric-sparkline" id="totalSparkline"></div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon weekly"></div>
+
+                <div class="stat-card enhanced-metric" data-metric="weekly">
+                    <div class="stat-icon weekly">
+                        <div class="metric-pulse"></div>
+                        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
+                    </div>
                     <div class="stat-content">
                         <span class="stat-label">This Week</span>
                         <span class="stat-value" id="weeklyNet">+0</span>
-                        <span class="stat-change" id="weeklyGoal">Goal: +100</span>
+                        <div class="stat-details">
+                            <span class="stat-change" id="weeklyGoal">Goal: +100</span>
+                            <div class="progress-mini" id="weeklyProgressMini">
+                                <div class="progress-mini-fill" style="width: 0%"></div>
+                                <span class="progress-mini-text">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-comparison">
+                        <span class="comparison-label">vs last week</span>
+                        <span class="comparison-value positive" id="weeklyComparison">+23%</span>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon monthly"></div>
+
+                <div class="stat-card enhanced-metric" data-metric="monthly">
+                    <div class="stat-icon monthly">
+                        <div class="metric-pulse"></div>
+                        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="6"></line>
+                            <line x1="12" y1="18" x2="12" y2="22"></line>
+                            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                            <line x1="2" y1="12" x2="6" y2="12"></line>
+                            <line x1="18" y1="12" x2="22" y2="12"></line>
+                            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                        </svg>
+                    </div>
                     <div class="stat-content">
                         <span class="stat-label">This Month</span>
                         <span class="stat-value" id="monthlyNet">+0</span>
-                        <span class="stat-change" id="monthlyGoal">Goal: +500</span>
+                        <div class="stat-details">
+                            <span class="stat-change" id="monthlyGoal">Goal: +500</span>
+                            <div class="progress-mini" id="monthlyProgressMini">
+                                <div class="progress-mini-fill" style="width: 0%"></div>
+                                <span class="progress-mini-text">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-comparison">
+                        <span class="comparison-label">avg daily</span>
+                        <span class="comparison-value" id="dailyAverage">+12</span>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon streak"></div>
+
+                <div class="stat-card enhanced-metric" data-metric="advanced">
+                    <div class="stat-icon streak">
+                        <div class="metric-pulse"></div>
+                        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                    </div>
                     <div class="stat-content">
-                        <span class="stat-label">Positive Streak</span>
-                        <span class="stat-value" id="positiveStreak">0</span>
-                        <span class="stat-change">consecutive days</span>
+                        <span class="stat-label">Growth Velocity</span>
+                        <span class="stat-value velocity-metric" id="growthVelocity">0.0x</span>
+                        <div class="stat-details">
+                            <span class="stat-change streak-info" id="streakInfo">0 day streak</span>
+                            <div class="velocity-indicator" id="velocityIndicator">
+                                <div class="velocity-bar"></div>
+                                <span class="velocity-label">Accelerating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-kpis">
+                        <div class="mini-kpi">
+                            <span class="kpi-label">CAC</span>
+                            <span class="kpi-value" id="cacMetric">$24</span>
+                        </div>
+                        <div class="mini-kpi">
+                            <span class="kpi-label">LTV</span>
+                            <span class="kpi-value" id="ltvMetric">$180</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced KPI Dashboard with Economics Integration -->
+            <section class="kpi-dashboard">
+                <div class="card kpi-overview-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <span class="title-icon">💰</span>
+                            Economic Performance Dashboard
+                        </h3>
+                        <div class="kpi-controls">
+                            <div class="kpi-view-selector">
+                                <button class="kpi-view-btn active" data-view="financial">Financial</button>
+                                <button class="kpi-view-btn" data-view="operational">Operational</button>
+                                <button class="kpi-view-btn" data-view="forecasting">Forecast</button>
+                            </div>
+                            <div class="kpi-timeframe-selector">
+                                <button class="kpi-timeframe-btn active" data-timeframe="24h">24H</button>
+                                <button class="kpi-timeframe-btn" data-timeframe="7d">7D</button>
+                                <button class="kpi-timeframe-btn" data-timeframe="30d">30D</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Financial KPIs View -->
+                    <div class="kpi-view active" id="financialView">
+                        <div class="kpi-grid economics-grid">
+                            <div class="kpi-item economics-kpi">
+                                <div class="kpi-header">
+                                    <span class="kpi-title">Total Revenue</span>
+                                    <div class="kpi-trend positive">
+                                        <span class="trend-icon">▲</span>
+                                        <span>+15.2%</span>
+                                    </div>
+                                </div>
+                                <div class="kpi-value-large" id="totalRevenue">$42.8K</div>
+                                <div class="kpi-sparkline-container">
+                                    <canvas class="kpi-sparkline" id="revenueSparkline" width="80" height="24"></canvas>
+                                </div>
+                                <div class="kpi-comparison">
+                                    <span class="comparison-period">ARR: </span>
+                                    <span class="comparison-change positive" id="arrValue">$513.6K</span>
+                                </div>
+                                <div class="economics-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">MRR</span>
+                                        <span class="breakdown-value">$28.4K</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">One-time</span>
+                                        <span class="breakdown-value">$14.4K</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kpi-item economics-kpi">
+                                <div class="kpi-header">
+                                    <span class="kpi-title">Gross Profit Margin</span>
+                                    <div class="kpi-trend positive">
+                                        <span class="trend-icon">▲</span>
+                                        <span>+2.1%</span>
+                                    </div>
+                                </div>
+                                <div class="kpi-value-large" id="grossMargin">78.5%</div>
+                                <div class="kpi-sparkline-container">
+                                    <canvas class="kpi-sparkline" id="marginSparkline" width="80" height="24"></canvas>
+                                </div>
+                                <div class="kpi-comparison">
+                                    <span class="comparison-period">profit: </span>
+                                    <span class="comparison-change positive" id="grossProfit">$33.6K</span>
+                                </div>
+                                <div class="economics-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">COGS</span>
+                                        <span class="breakdown-value">$9.2K</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Target</span>
+                                        <span class="breakdown-value">75%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kpi-item economics-kpi">
+                                <div class="kpi-header">
+                                    <span class="kpi-title">Unit Economics (LTV/CAC)</span>
+                                    <div class="kpi-trend positive">
+                                        <span class="trend-icon">▲</span>
+                                        <span>+0.8</span>
+                                    </div>
+                                </div>
+                                <div class="kpi-value-large" id="ltvCacRatio">7.3x</div>
+                                <div class="kpi-sparkline-container">
+                                    <canvas class="kpi-sparkline" id="unitEconomicsSparkline" width="80" height="24"></canvas>
+                                </div>
+                                <div class="kpi-comparison">
+                                    <span class="comparison-period">payback: </span>
+                                    <span class="comparison-change positive" id="paybackPeriod">4.2 mo</span>
+                                </div>
+                                <div class="economics-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">LTV</span>
+                                        <span class="breakdown-value">$178</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">CAC</span>
+                                        <span class="breakdown-value">$24</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kpi-item economics-kpi">
+                                <div class="kpi-header">
+                                    <span class="kpi-title">Burn Rate</span>
+                                    <div class="kpi-trend negative">
+                                        <span class="trend-icon">▲</span>
+                                        <span>+$2.1K</span>
+                                    </div>
+                                </div>
+                                <div class="kpi-value-large burn-rate" id="burnRate">$18.7K</div>
+                                <div class="kpi-sparkline-container">
+                                    <canvas class="kpi-sparkline" id="burnSparkline" width="80" height="24"></canvas>
+                                </div>
+                                <div class="kpi-comparison">
+                                    <span class="comparison-period">runway: </span>
+                                    <span class="comparison-change warning" id="runway">18.5 mo</span>
+                                </div>
+                                <div class="economics-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">OpEx</span>
+                                        <span class="breakdown-value">$15.1K</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">CapEx</span>
+                                        <span class="breakdown-value">$3.6K</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kpi-item economics-kpi">
+                                <div class="kpi-header">
+                                    <span class="kpi-title">Cash Flow</span>
+                                    <div class="kpi-trend positive">
+                                        <span class="trend-icon">▲</span>
+                                        <span>+$8.3K</span>
+                                    </div>
+                                </div>
+                                <div class="kpi-value-large cash-flow" id="cashFlow">+$14.9K</div>
+                                <div class="kpi-sparkline-container">
+                                    <canvas class="kpi-sparkline" id="cashFlowSparkline" width="80" height="24"></canvas>
+                                </div>
+                                <div class="kpi-comparison">
+                                    <span class="comparison-period">balance: </span>
+                                    <span class="comparison-change positive" id="cashBalance">$347K</span>
+                                </div>
+                                <div class="economics-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Operating</span>
+                                        <span class="breakdown-value">+$12.4K</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Investing</span>
+                                        <span class="breakdown-value">+$2.5K</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kpi-item economics-kpi">
+                                <div class="kpi-header">
+                                    <span class="kpi-title">Revenue Growth Rate</span>
+                                    <div class="kpi-trend positive">
+                                        <span class="trend-icon">▲</span>
+                                        <span>+3.2%</span>
+                                    </div>
+                                </div>
+                                <div class="kpi-value-large growth-rate" id="revenueGrowthRate">32.8%</div>
+                                <div class="kpi-sparkline-container">
+                                    <canvas class="kpi-sparkline" id="growthRateSparkline" width="80" height="24"></canvas>
+                                </div>
+                                <div class="kpi-comparison">
+                                    <span class="comparison-period">target: </span>
+                                    <span class="comparison-change positive">25.0%</span>
+                                </div>
+                                <div class="economics-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">MoM</span>
+                                        <span class="breakdown-value">12.3%</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">YoY</span>
+                                        <span class="breakdown-value">186%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operational KPIs View -->
+                    <div class="kpi-view" id="operationalView">
+                        <div class="kpi-grid
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Conversion Rate</span>
+                                <div class="kpi-trend positive">
+                                    <span class="trend-icon">▲</span>
+                                    <span>+0.8%</span>
+                                </div>
+                            </div>
+                            <div class="kpi-value-large" id="conversionRate">4.2%</div>
+                            <div class="kpi-sparkline-container">
+                                <canvas class="kpi-sparkline" id="conversionSparkline" width="80" height="24"></canvas>
+                            </div>
+                            <div class="kpi-comparison">
+                                <span class="comparison-period">vs 7d avg: </span>
+                                <span class="comparison-change positive">+0.3%</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Churn Rate</span>
+                                <div class="kpi-trend negative">
+                                    <span class="trend-icon">▼</span>
+                                    <span>-0.2%</span>
+                                </div>
+                            </div>
+                            <div class="kpi-value-large" id="churnRate">3.1%</div>
+                            <div class="kpi-sparkline-container">
+                                <canvas class="kpi-sparkline" id="churnSparkline" width="80" height="24"></canvas>
+                            </div>
+                            <div class="kpi-comparison">
+                                <span class="comparison-period">target: </span>
+                                <span class="comparison-change positive">5.0%</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Monthly Recurring Revenue</span>
+                                <div class="kpi-trend positive">
+                                    <span class="trend-icon">▲</span>
+                                    <span>+12.3%</span>
+                                </div>
+                            </div>
+                            <div class="kpi-value-large" id="mrrValue">$28.4K</div>
+                            <div class="kpi-sparkline-container">
+                                <canvas class="kpi-sparkline" id="mrrSparkline" width="80" height="24"></canvas>
+                            </div>
+                            <div class="kpi-comparison">
+                                <span class="comparison-period">growth: </span>
+                                <span class="comparison-change positive">$3.1K</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-item">
+                            <div class="kpi-header">
+                                <span class="kpi-title">User Acquisition Cost</span>
+                                <div class="kpi-trend positive">
+                                    <span class="trend-icon">▼</span>
+                                    <span>-8.5%</span>
+                                </div>
+                            </div>
+                            <div class="kpi-value-large" id="uacValue">$24.50</div>
+                            <div class="kpi-sparkline-container">
+                                <canvas class="kpi-sparkline" id="uacSparkline" width="80" height="24"></canvas>
+                            </div>
+                            <div class="kpi-comparison">
+                                <span class="comparison-period">LTV ratio: </span>
+                                <span class="comparison-change positive">7.3:1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BRIX/GULD Economic Dashboard -->
+            <section class="brix-guld-section">
+                <div class="card economics-overview-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <span class="title-icon">💰</span>
+                            8OWLS Economic Portfolio
+                        </h3>
+                        <div class="economics-controls">
+                            <div class="refresh-status">
+                                <span class="refresh-indicator"></span>
+                                <span id="lastRefresh">Updated 1m ago</span>
+                            </div>
+                            <button class="btn btn-small" onclick="refreshEconomics()">🔄 Refresh</button>
+                            <button class="btn btn-small" onclick="openTransactionHistory()">📊 History</button>
+                        </div>
+                    </div>
+
+                    <!-- Token Balance Overview -->
+                    <div class="token-balances">
+                        <div class="balance-card brix-card">
+                            <div class="balance-header">
+                                <div class="token-info">
+                                    <div class="token-icon brix-icon">💎</div>
+                                    <div class="token-details">
+                                        <span class="token-name">BRIX</span>
+                                        <span class="token-description">Universal Time Token</span>
+                                    </div>
+                                </div>
+                                <div class="balance-change positive">
+                                    <span class="change-icon">▲</span>
+                                    <span class="change-value">+12.5%</span>
+                                </div>
+                            </div>
+                            <div class="balance-amount">
+                                <span class="token-balance" id="brixBalance">847.3</span>
+                                <span class="token-symbol">BRIX</span>
+                            </div>
+                            <div class="balance-usd">
+                                $<span id="brixUsdValue">11,014.90</span> USD
+                            </div>
+                            <div class="token-actions">
+                                <button class="token-action-btn" onclick="openSendModal('BRIX')" title="Send BRIX">📤</button>
+                                <button class="token-action-btn" onclick="openReceiveModal('BRIX')" title="Receive BRIX">📥</button>
+                                <button class="token-action-btn" onclick="openConvertModal('BRIX')" title="Convert to USD">💱</button>
+                            </div>
+                        </div>
+
+                        <div class="balance-card guld-card">
+                            <div class="balance-header">
+                                <div class="token-info">
+                                    <div class="token-icon guld-icon">🏆</div>
+                                    <div class="token-details">
+                                        <span class="token-name">GULD</span>
+                                        <span class="token-description">Equity Token</span>
+                                    </div>
+                                </div>
+                                <div class="balance-change positive">
+                                    <span class="change-icon">▲</span>
+                                    <span class="change-value">+8.7%</span>
+                                </div>
+                            </div>
+                            <div class="balance-amount">
+                                <span class="token-balance" id="guldBalance">234.8</span>
+                                <span class="token-symbol">GULD</span>
+                            </div>
+                            <div class="balance-usd">
+                                $<span id="guldUsdValue">4,696.00</span> USD
+                            </div>
+                            <div class="token-actions">
+                                <button class="token-action-btn disabled" onclick="openSendModal('GULD')" title="GULD transfers locked for 90 days">🔒</button>
+                                <button class="token-action-btn" onclick="openReceiveModal('GULD')" title="Receive GULD">📥</button>
+                                <button class="token-action-btn" onclick="viewEquityDetails()" title="View Equity Details">📋</button>
+                            </div>
+                        </div>
+
+                        <div class="balance-card portfolio-summary">
+                            <div class="balance-header">
+                                <div class="token-info">
+                                    <div class="token-icon portfolio-icon">📊</div>
+                                    <div class="token-details">
+                                        <span class="token-name">Total Portfolio</span>
+                                        <span class="token-description">Combined Value</span>
+                                    </div>
+                                </div>
+                                <div class="balance-change positive">
+                                    <span class="change-icon">▲</span>
+                                    <span class="change-value" id="portfolioChange">+11.2%</span>
+                                </div>
+                            </div>
+                            <div class="balance-amount">
+                                <span class="token-balance portfolio-value">$<span id="totalPortfolioValue">15,710.90</span></span>
+                            </div>
+                            <div class="portfolio-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">BRIX (70.1%)</span>
+                                    <span class="breakdown-value">$11,014.90</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">GULD (29.9%)</span>
+                                    <span class="breakdown-value">$4,696.00</span>
+                                </div>
+                            </div>
+                            <div class="token-actions">
+                                <button class="token-action-btn" onclick="openPortfolioAnalytics()" title="Portfolio Analytics">📈</button>
+                                <button class="token-action-btn" onclick="openRebalanceModal()" title="Rebalance Portfolio">⚖️</button>
+                                <button class="token-action-btn" onclick="exportPortfolioReport()" title="Export Report">📋</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Transactions -->
+                    <div class="recent-transactions">
+                        <div class="transactions-header">
+                            <h4 class="transactions-title">Recent Activity</h4>
+                            <button class="btn btn-small" onclick="viewAllTransactions()">View All</button>
+                        </div>
+                        <div class="transactions-list" id="transactionsList">
+                            <div class="transaction-item">
+                                <div class="transaction-icon earned">💎</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-description">Earned BRIX for dashboard optimization</div>
+                                    <div class="transaction-meta">
+                                        <span class="transaction-time">2 hours ago</span>
+                                        <span class="transaction-source">BILD Project #2847</span>
+                                    </div>
+                                </div>
+                                <div class="transaction-amount positive">
+                                    +45.2 BRIX
+                                </div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon received">🏆</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-description">GULD dividend payment</div>
+                                    <div class="transaction-meta">
+                                        <span class="transaction-time">1 day ago</span>
+                                        <span class="transaction-source">BREZ Project Equity</span>
+                                    </div>
+                                </div>
+                                <div class="transaction-amount positive">
+                                    +12.4 GULD
+                                </div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon sent">📤</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-description">Sent BRIX to team member</div>
+                                    <div class="transaction-meta">
+                                        <span class="transaction-time">3 days ago</span>
+                                        <span class="transaction-source">To: Sarah (Growth Team)</span>
+                                    </div>
+                                </div>
+                                <div class="transaction-amount negative">
+                                    -25.0 BRIX
+                                </div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon converted">💱</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-description">Converted BRIX to USD</div>
+                                    <div class="transaction-meta">
+                                        <span class="transaction-time">5 days ago</span>
+                                        <span class="transaction-source">Rate: $13.00 per BRIX</span>
+                                    </div>
+                                </div>
+                                <div class="transaction-amount negative">
+                                    -100.0 BRIX
+                                </div>
+                                <div class="transaction-amount positive secondary">
+                                    +$1,300.00 USD
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Economic Insights -->
+                    <div class="economic-insights">
+                        <div class="insights-header">
+                            <h4 class="insights-title">8OWLS Economic Insights</h4>
+                            <div class="insights-time">Based on 30-day activity</div>
+                        </div>
+                        <div class="insights-grid">
+                            <div class="insight-item">
+                                <div class="insight-icon">📈</div>
+                                <div class="insight-content">
+                                    <div class="insight-title">Earning Velocity</div>
+                                    <div class="insight-value positive">+23% increase</div>
+                                    <div class="insight-description">Your BRIX earning rate has accelerated significantly</div>
+                                </div>
+                            </div>
+                            
+                            <div class="insight-item">
+                                <div class="insight-icon">🎯</div>
+                                <div class="insight-content">
+                                    <div class="insight-title">Portfolio Optimization</div>
+                                    <div class="insight-value neutral">Consider rebalancing</div>
+                                    <div class="insight-description">70% BRIX / 30% GULD ratio is slightly above optimal</div>
+                                </div>
+                            </div>
+                            
+                            <div class="insight-item">
+                                <div class="insight-icon">⏰</div>
+                                <div class="insight-content">
+                                    <div class="insight-title">GULD Unlock Schedule</div>
+                                    <div class="insight-value warning">67 days remaining</div>
+                                    <div class="insight-description">Next GULD unlock: 156.3 GULD available for transfer</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -196,40 +801,432 @@
                         </div>
                     </div>
 
-                    <!-- Team Activity -->
+                    <!-- Enhanced Team Collaboration -->
                     <div class="card team-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <span class="title-icon">&#128101;</span>
-                                Team Activity
+                                Team Workspace
                             </h3>
-                            <button class="btn btn-small" onclick="openTeamModal()">+ Add Task</button>
-                        </div>
-                        <div class="team-list" id="teamList">
-                            <div class="team-member">
-                                <div class="member-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
-                                <div class="member-info">
-                                    <span class="member-name">Aaron</span>
-                                    <span class="member-task">Setting up growth dashboard</span>
+                            <div class="team-header-actions">
+                                <div class="workspace-selector">
+                                    <select id="workspaceSelector" onchange="switchWorkspace(this.value)">
+                                        <option value="workspace1">Q1 Growth Sprint</option>
+                                        <option value="all">All Projects</option>
+                                    </select>
                                 </div>
-                                <span class="member-status active">Active</span>
+                                <button class="btn btn-small" onclick="openTeamChatModal()">💬 Chat</button>
+                                <button class="btn btn-small" onclick="openTaskModal()">+ Task</button>
+                                <button class="btn btn-small" onclick="openCollaborativeSessionModal()">🎥 Session</button>
+                                <button class="btn btn-small" onclick="openWorkspaceModal()">⚙️</button>
+                            </div>
+                        </div>
+
+                        <!-- Real-time Activity Banner -->
+                        <div class="realtime-activity-banner" id="realtimeActivityBanner">
+                            <div class="activity-pulse"></div>
+                            <div class="activity-text">
+                                <strong>Sarah</strong> is updating onboarding wireframes
+                                <span class="activity-time">now</span>
+                            </div>
+                            <button class="activity-join-btn" onclick="joinCollaborativeSession('onboarding-wireframes')">Join</button>
+                        </div>
+
+                        <!-- Enhanced Team Performance Dashboard -->
+                        <div class="team-performance-dashboard">
+                            <div class="team-stats">
+                                <div class="team-stat">
+                                    <span class="team-stat-value" id="activeMembers">3</span>
+                                    <span class="team-stat-label">Active</span>
+                                    <div class="team-stat-trend positive">+1</div>
+                                </div>
+                                <div class="team-stat">
+                                    <span class="team-stat-value" id="openTasks">8</span>
+                                    <span class="team-stat-label">Tasks</span>
+                                    <div class="team-stat-trend neutral">±0</div>
+                                </div>
+                                <div class="team-stat">
+                                    <span class="team-stat-value" id="completedToday">3</span>
+                                    <span class="team-stat-label">Completed</span>
+                                    <div class="team-stat-trend positive">+2</div>
+                                </div>
+                                <div class="team-stat">
+                                    <span class="team-stat-value" id="teamVelocity">12.5</span>
+                                    <span class="team-stat-label">Velocity</span>
+                                    <div class="team-stat-trend positive">+3.2</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Team Productivity Insights -->
+                            <div class="productivity-insights">
+                                <div class="productivity-insight">
+                                    <div class="insight-icon">🚀</div>
+                                    <div class="insight-content">
+                                        <span class="insight-label">Peak Performance</span>
+                                        <span class="insight-value">2-4 PM daily</span>
+                                    </div>
+                                </div>
+                                <div class="productivity-insight">
+                                    <div class="insight-icon">⚡</div>
+                                    <div class="insight-content">
+                                        <span class="insight-label">Collaboration Score</span>
+                                        <span class="insight-value">92/100</span>
+                                    </div>
+                                </div>
+                                <div class="productivity-insight">
+                                    <div class="insight-icon">📊</div>
+                                    <div class="insight-content">
+                                        <span class="insight-label">Weekly Goal Progress</span>
+                                        <span class="insight-value">78%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Real-time Collaboration Map -->
+                            <div class="collaboration-map">
+                                <div class="map-header">
+                                    <h4>Live Collaboration Map</h4>
+                                    <div class="map-refresh">
+                                        <span class="refresh-dot"></span>
+                                        <span>Live</span>
+                                    </div>
+                                </div>
+                                <div class="collaboration-network">
+                                    <div class="collaboration-node central" data-member="aaron" title="Aaron - Dashboard optimization">
+                                        <div class="node-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                        <div class="node-connections">
+                                            <div class="connection active" data-target="sarah"></div>
+                                            <div class="connection active" data-target="luna"></div>
+                                        </div>
+                                    </div>
+                                    <div class="collaboration-node" data-member="sarah" title="Sarah - Onboarding wireframes">
+                                        <div class="node-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                                        <div class="node-activity-pulse"></div>
+                                    </div>
+                                    <div class="collaboration-node" data-member="mike" title="Mike - Data analysis">
+                                        <div class="node-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);">M</div>
+                                    </div>
+                                    <div class="collaboration-node ai" data-member="luna" title="LUNA - AI insights generation">
+                                        <div class="node-avatar" style="background: linear-gradient(135deg, #8533fc, #65cdd8);">L</div>
+                                        <div class="ai-processing-ring"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Workspace Selector -->
+                        <div class="workspace-management">
+                            <div class="workspace-header">
+                                <h4>Active Workspaces</h4>
+                                <button class="btn btn-small" onclick="createWorkspace()">+ New Workspace</button>
+                            </div>
+                            <div class="workspace-list">
+                                <div class="workspace-item active" data-workspace="workspace1">
+                                    <div class="workspace-info">
+                                        <div class="workspace-name">Q1 Growth Sprint</div>
+                                        <div class="workspace-meta">
+                                            <span class="workspace-members">3 members</span>
+                                            <span class="workspace-tasks">5 tasks</span>
+                                            <span class="workspace-progress">78% complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="workspace-status">
+                                        <div class="workspace-activity-indicator active"></div>
+                                        <div class="workspace-members-preview">
+                                            <div class="member-mini-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                            <div class="member-mini-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                                            <div class="member-mini-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);">M</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="workspace-item" data-workspace="workspace2">
+                                    <div class="workspace-info">
+                                        <div class="workspace-name">Product Roadmap Planning</div>
+                                        <div class="workspace-meta">
+                                            <span class="workspace-members">2 members</span>
+                                            <span class="workspace-tasks">3 tasks</span>
+                                            <span class="workspace-progress">45% complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="workspace-status">
+                                        <div class="workspace-activity-indicator idle"></div>
+                                        <div class="workspace-members-preview">
+                                            <div class="member-mini-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                            <div class="member-mini-avatar" style="background: linear-gradient(135deg, #8533fc, #65cdd8);">L</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Tabs for Different Views -->
+                        <div class="team-tabs">
+                            <button class="team-tab active" data-tab="tasks">Tasks</button>
+                            <button class="team-tab" data-tab="members">Members</button>
+                            <button class="team-tab" data-tab="activity">Activity</button>
+                            <button class="team-tab" data-tab="goals">Goals</button>
+                        </div>
+
+                        <!-- Tasks Tab Content -->
+                        <div class="team-tab-content active" id="tasksTab">
+                            <div class="task-management-header">
+                                <div class="task-filters">
+                                    <button class="filter-btn active" onclick="updateTaskList('all')">All</button>
+                                    <button class="filter-btn" onclick="updateTaskList('todo')">To Do</button>
+                                    <button class="filter-btn" onclick="updateTaskList('in-progress')">In Progress</button>
+                                    <button class="filter-btn" onclick="updateTaskList('review')">Review</button>
+                                    <button class="filter-btn" onclick="updateTaskList('done')">Done</button>
+                                </div>
+                                <div class="task-views">
+                                    <button class="view-btn active" data-view="list" title="List View">📋</button>
+                                    <button class="view-btn" data-view="kanban" title="Kanban Board">📊</button>
+                                    <button class="view-btn" data-view="calendar" title="Calendar View">📅</button>
+                                </div>
+                            </div>
+                            <div class="task-list" id="taskList">
+                                <!-- Tasks will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Members Tab Content -->
+                        <div class="team-tab-content" id="membersTab">
+                            <div class="team-list" id="teamList">
+                                <!-- Team members will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Activity Tab Content -->  
+                        <div class="team-tab-content" id="activityTab">
+                            <div class="activity-feed" id="activityFeed">
+                                <!-- Activity feed will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Enhanced Goals Tab Content -->
+                        <div class="team-tab-content" id="goalsTab">
+                            <div class="collaborative-goals">
+                                <div class="goals-header">
+                                    <h4>Team Goals & Milestones</h4>
+                                    <div class="goals-actions">
+                                        <button class="btn btn-small" onclick="openGoalModal()">+ Add Goal</button>
+                                        <button class="btn btn-small" onclick="openMilestoneModal()">🎯 Milestone</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sprint Goals -->
+                                <div class="sprint-goals">
+                                    <div class="sprint-header">
+                                        <span class="sprint-title">Q1 Sprint Goals</span>
+                                        <span class="sprint-duration">12 days remaining</span>
+                                    </div>
+                                    <div class="sprint-progress-overview">
+                                        <div class="sprint-progress-bar">
+                                            <div class="sprint-progress-fill" style="width: 68%"></div>
+                                        </div>
+                                        <span class="sprint-progress-text">68% complete (4 of 6 goals)</span>
+                                    </div>
+                                </div>
+
+                                <!-- Individual Goals -->
+                                <div class="goals-grid">
+                                    <div class="collaborative-goal">
+                                        <div class="goal-header">
+                                            <div class="goal-title-section">
+                                                <span class="goal-label">Weekly Growth Target</span>
+                                                <div class="goal-assignees">
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);" title="Aaron">A</div>
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);" title="Sarah">S</div>
+                                                </div>
+                                            </div>
+                                            <span class="goal-value">+78 / +100</span>
+                                        </div>
+                                        <div class="goal-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 78%"></div>
+                                            </div>
+                                            <span class="progress-text">78%</span>
+                                        </div>
+                                        <div class="goal-footer">
+                                            <span class="goal-deadline">Due in 3 days</span>
+                                            <button class="goal-action-btn" onclick="openGoalDetails('weekly-growth')" title="View Details">👁️</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="collaborative-goal">
+                                        <div class="goal-header">
+                                            <div class="goal-title-section">
+                                                <span class="goal-label">Reduce Churn Rate</span>
+                                                <div class="goal-assignees">
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);" title="Mike">M</div>
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #8533fc, #65cdd8);" title="LUNA">L</div>
+                                                </div>
+                                            </div>
+                                            <span class="goal-value">3.1% / 5.0%</span>
+                                        </div>
+                                        <div class="goal-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill success" style="width: 95%"></div>
+                                            </div>
+                                            <span class="progress-text">95%</span>
+                                        </div>
+                                        <div class="goal-footer">
+                                            <span class="goal-deadline">Ongoing</span>
+                                            <button class="goal-action-btn" onclick="openGoalDetails('churn-reduction')" title="View Details">👁️</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="collaborative-goal">
+                                        <div class="goal-header">
+                                            <div class="goal-title-section">
+                                                <span class="goal-label">Product Feature Launch</span>
+                                                <div class="goal-assignees">
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);" title="Aaron">A</div>
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);" title="Sarah">S</div>
+                                                    <div class="assignee-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);" title="Mike">M</div>
+                                                </div>
+                                            </div>
+                                            <span class="goal-value">Phase 2</span>
+                                        </div>
+                                        <div class="goal-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 45%"></div>
+                                            </div>
+                                            <span class="progress-text">45%</span>
+                                        </div>
+                                        <div class="goal-footer">
+                                            <span class="goal-deadline">Due Feb 25</span>
+                                            <button class="goal-action-btn" onclick="openGoalDetails('feature-launch')" title="View Details">👁️</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Team Milestone Timeline -->
+                                <div class="milestone-section">
+                                    <div class="milestone-title">Upcoming Milestones</div>
+                                    <div class="milestone-timeline">
+                                        <div class="milestone-item active">
+                                            <div class="milestone-marker"></div>
+                                            <div class="milestone-content">
+                                                <div class="milestone-name">Dashboard Beta Launch</div>
+                                                <div class="milestone-date">February 15, 2024</div>
+                                            </div>
+                                            <div class="milestone-assignees">
+                                                <div class="milestone-assignee" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);" title="Aaron">A</div>
+                                                <div class="milestone-assignee" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);" title="Sarah">S</div>
+                                            </div>
+                                        </div>
+                                        <div class="milestone-item">
+                                            <div class="milestone-marker"></div>
+                                            <div class="milestone-content">
+                                                <div class="milestone-name">User Feedback Integration</div>
+                                                <div class="milestone-date">February 22, 2024</div>
+                                            </div>
+                                            <div class="milestone-assignees">
+                                                <div class="milestone-assignee" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);" title="Mike">M</div>
+                                            </div>
+                                        </div>
+                                        <div class="milestone-item completed">
+                                            <div class="milestone-marker"></div>
+                                            <div class="milestone-content">
+                                                <div class="milestone-name">Analytics Implementation</div>
+                                                <div class="milestone-date">February 10, 2024</div>
+                                            </div>
+                                            <div class="milestone-assignees">
+                                                <div class="milestone-assignee" style="background: linear-gradient(135deg, #8533fc, #65cdd8);" title="LUNA">L</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>ass="team-stat-value" id="completedToday">5</span>
+                                <span class="team-stat-label">Done Today</span>
+                            </div>
+                        </div>
+
+                        <!-- Team Tabs -->
+                        <div class="team-tabs">
+                            <button class="team-tab active" data-tab="members" onclick="switchTeamTab('members')">Members</button>
+                            <button class="team-tab" data-tab="tasks" onclick="switchTeamTab('tasks')">Tasks</button>
+                            <button class="team-tab" data-tab="activity" onclick="switchTeamTab('activity')">Activity</button>
+                        </div>
+
+                        <!-- Team Members Tab -->
+                        <div class="team-tab-content active" id="membersTab">
+                            <div class="team-list" id="teamList">
+                                <div class="team-member">
+                                    <div class="member-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                    <div class="member-info">
+                                        <span class="member-name">Aaron</span>
+                                        <div class="member-details">
+                                            <span class="member-role">Growth Lead</span>
+                                            <span class="member-task">Dashboard optimization</span>
+                                        </div>
+                                    </div>
+                                    <div class="member-actions">
+                                        <span class="member-status online">Online</span>
+                                        <button class="member-action-btn" onclick="openMemberProfile('aaron')" title="View Profile">👤</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tasks Tab -->
+                        <div class="team-tab-content" id="tasksTab">
+                            <div class="task-filters">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="todo">To Do</button>
+                                <button class="filter-btn" data-filter="in-progress">In Progress</button>
+                                <button class="filter-btn" data-filter="done">Done</button>
+                            </div>
+                            <div class="task-list" id="taskList">
+                                <!-- Tasks will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Activity Feed Tab -->
+                        <div class="team-tab-content" id="activityTab">
+                            <div class="activity-feed" id="activityFeed">
+                                <div class="activity-item">
+                                    <div class="activity-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                    <div class="activity-content">
+                                        <span class="activity-text"><strong>Aaron</strong> completed task "Setup growth metrics"</span>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                                    <div class="activity-content">
+                                        <span class="activity-text"><strong>Sarah</strong> added new subscriber data</span>
+                                        <span class="activity-time">4 hours ago</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Goals Section -->
+            <!-- Enhanced Collaborative Goals Section -->
             <section class="goals-section">
                 <div class="card goals-card">
-                    <h3 class="card-title">
-                        <span class="title-icon">&#127919;</span>
-                        Growth Goals
-                    </h3>
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <span class="title-icon">&#127919;</span>
+                            Team Goals & Milestones
+                        </h3>
+                        <button class="btn btn-small" onclick="openGoalModal()">+ Add Goal</button>
+                    </div>
+                    
+                    <!-- Goals Grid -->
                     <div class="goals-grid">
                         <div class="goal-item">
                             <div class="goal-header">
-                                <span class="goal-label">Weekly Target</span>
+                                <div class="goal-title-section">
+                                    <span class="goal-label">Weekly Target</span>
+                                    <div class="goal-assignees">
+                                        <div class="assignee-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);" title="Aaron">A</div>
+                                        <div class="assignee-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);" title="Sarah">S</div>
+                                    </div>
+                                </div>
                                 <span class="goal-value">+100 subscribers</span>
                             </div>
                             <div class="goal-progress">
@@ -238,10 +1235,21 @@
                                 </div>
                                 <span class="progress-text" id="weeklyProgressText">0%</span>
                             </div>
+                            <div class="goal-footer">
+                                <span class="goal-deadline">5 days left</span>
+                                <button class="goal-action-btn" onclick="addGoalComment('weekly')">💬</button>
+                            </div>
                         </div>
+                        
                         <div class="goal-item">
                             <div class="goal-header">
-                                <span class="goal-label">Monthly Target</span>
+                                <div class="goal-title-section">
+                                    <span class="goal-label">Monthly Target</span>
+                                    <div class="goal-assignees">
+                                        <div class="assignee-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);" title="Aaron">A</div>
+                                        <div class="assignee-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);" title="Mike">M</div>
+                                    </div>
+                                </div>
                                 <span class="goal-value">+500 subscribers</span>
                             </div>
                             <div class="goal-progress">
@@ -250,10 +1258,20 @@
                                 </div>
                                 <span class="progress-text" id="monthlyProgressText">0%</span>
                             </div>
+                            <div class="goal-footer">
+                                <span class="goal-deadline">18 days left</span>
+                                <button class="goal-action-btn" onclick="addGoalComment('monthly')">💬</button>
+                            </div>
                         </div>
+                        
                         <div class="goal-item">
                             <div class="goal-header">
-                                <span class="goal-label">Churn Rate Target</span>
+                                <div class="goal-title-section">
+                                    <span class="goal-label">Churn Rate Target</span>
+                                    <div class="goal-assignees">
+                                        <div class="assignee-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);" title="Sarah">S</div>
+                                    </div>
+                                </div>
                                 <span class="goal-value">&lt; 5%</span>
                             </div>
                             <div class="goal-progress">
@@ -261,6 +1279,44 @@
                                     <div class="progress-fill success" id="churnProgress" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-text" id="churnProgressText">3.2%</span>
+                            </div>
+                            <div class="goal-footer">
+                                <span class="goal-deadline">On track</span>
+                                <button class="goal-action-btn" onclick="addGoalComment('churn')">💬</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Timeline -->
+                    <div class="milestone-section">
+                        <h4 class="milestone-title">Upcoming Milestones</h4>
+                        <div class="milestone-timeline">
+                            <div class="milestone-item completed">
+                                <div class="milestone-marker"></div>
+                                <div class="milestone-content">
+                                    <span class="milestone-name">Dashboard Launch</span>
+                                    <span class="milestone-date">Jan 15</span>
+                                </div>
+                                <div class="milestone-assignee" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                            </div>
+                            <div class="milestone-item active">
+                                <div class="milestone-marker"></div>
+                                <div class="milestone-content">
+                                    <span class="milestone-name">First 1K Subscribers</span>
+                                    <span class="milestone-date">Jan 30</span>
+                                </div>
+                                <div class="milestone-assignees">
+                                    <div class="milestone-assignee" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                                    <div class="milestone-assignee" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker"></div>
+                                <div class="milestone-content">
+                                    <span class="milestone-name">Onboarding Optimization</span>
+                                    <span class="milestone-date">Feb 15</span>
+                                </div>
+                                <div class="milestone-assignee" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);">M</div>
                             </div>
                         </div>
                     </div>
@@ -360,27 +1416,645 @@
         </div>
     </div>
 
-    <!-- Team Task Modal -->
-    <div class="modal" id="teamModal">
-        <div class="modal-backdrop" onclick="closeTeamModal()"></div>
+    <!-- Enhanced Task Modal -->
+    <div class="modal" id="taskModal">
+        <div class="modal-backdrop" onclick="closeTaskModal()"></div>
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Add Team Task</h2>
-                <button class="modal-close" onclick="closeTeamModal()">&times;</button>
+                <h2>Create New Task</h2>
+                <button class="modal-close" onclick="closeTaskModal()">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="input-group">
-                    <label>Team Member</label>
-                    <input type="text" id="memberName" placeholder="Name">
+                    <label>Task Title</label>
+                    <input type="text" id="taskTitle" placeholder="What needs to be done?">
                 </div>
                 <div class="input-group">
-                    <label>Current Task</label>
-                    <input type="text" id="memberTask" placeholder="What are they working on?">
+                    <label>Description</label>
+                    <textarea id="taskDescription" placeholder="Optional details..." rows="3"></textarea>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Assign To</label>
+                        <select id="taskAssignee">
+                            <option value="">Select member...</option>
+                            <option value="aaron">Aaron</option>
+                            <option value="sarah">Sarah</option>
+                            <option value="mike">Mike</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Priority</label>
+                        <select id="taskPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Due Date</label>
+                    <input type="date" id="taskDueDate">
+                </div>
+                <div class="task-tags">
+                    <label>Tags</label>
+                    <div class="tag-input">
+                        <input type="text" id="taskTags" placeholder="growth, marketing, analysis">
+                        <small>Separate with commas</small>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeTeamModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="addTeamMember()">Add</button>
+                <button class="btn btn-secondary" onclick="closeTaskModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="createTask()">Create Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Team Chat Modal -->
+    <div class="modal" id="teamChatModal">
+        <div class="modal-backdrop" onclick="closeTeamChatModal()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Team Chat</h2>
+                <div class="chat-header-info">
+                    <span class="online-count">3 members online</span>
+                    <div class="chat-channels">
+                        <select id="chatChannelSelector" onchange="switchChatChannel(this.value)">
+                            <option value="general">General</option>
+                            <option value="growth">Growth Team</option>
+                            <option value="tasks">Task Updates</option>
+                            <option value="announcements">Announcements</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="modal-close" onclick="closeTeamChatModal()">&times;</button>
+            </div>
+            <div class="modal-body chat-body">
+                <!-- Typing Indicators -->
+                <div class="typing-indicators" id="typingIndicators" style="display: none;">
+                    <div class="typing-indicator">
+                        <div class="typing-avatar" id="typingAvatar"></div>
+                        <div class="typing-text">
+                            <span id="typingUser">Sarah</span> is typing...
+                            <div class="typing-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-message">
+                        <div class="message-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-author">Aaron</span>
+                                <span class="message-time">10:45 AM</span>
+                                <span class="message-status read">✓✓</span>
+                            </div>
+                            <div class="message-text">Just updated the growth metrics dashboard. We're seeing great traction!</div>
+                            <div class="message-reactions">
+                                <button class="reaction-btn" onclick="addReaction('msg1', '🎉')" data-count="2">🎉 2</button>
+                                <button class="reaction-btn" onclick="addReaction('msg1', '👍')" data-count="1">👍 1</button>
+                                <button class="add-reaction-btn" onclick="showReactionPicker('msg1')">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <div class="message-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-author">Sarah</span>
+                                <span class="message-time">10:52 AM</span>
+                                <span class="message-status delivered">✓</span>
+                            </div>
+                            <div class="message-text">
+                                Excellent! The conversion rate improvements are really showing. Should we increase our ad spend?
+                                <div class="message-mentions">
+                                    <span class="mention">@Aaron</span>
+                                </div>
+                            </div>
+                            <div class="message-actions">
+                                <button class="message-action-btn" onclick="replyToMessage('msg2')">Reply</button>
+                                <button class="message-action-btn" onclick="editMessage('msg2')">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-message system-message">
+                        <div class="system-icon">🔔</div>
+                        <div class="system-text">
+                            <strong>LUNA AI</strong> joined the conversation
+                            <span class="system-time">11:15 AM</span>
+                        </div>
+                    </div>
+                    <div class="chat-message ai-message">
+                        <div class="message-avatar" style="background: linear-gradient(135deg, #8533fc, #65cdd8);">L</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-author">LUNA AI</span>
+                                <span class="ai-badge">AI</span>
+                                <span class="message-time">11:16 AM</span>
+                            </div>
+                            <div class="message-text">
+                                Based on current growth patterns, increasing ad spend by 15% on Tuesdays could yield 23% more conversions. I've prepared a detailed analysis.
+                                <div class="ai-insight-attachment">
+                                    <div class="attachment-icon">📊</div>
+                                    <div class="attachment-info">
+                                        <span class="attachment-name">Tuesday_Ad_Analysis.pdf</span>
+                                        <span class="attachment-size">2.4 MB</span>
+                                    </div>
+                                    <button class="attachment-download">↓</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <!-- Smart Suggestions -->
+                    <div class="smart-suggestions" id="smartSuggestions" style="display: none;">
+                        <div class="suggestion-header">Smart suggestions:</div>
+                        <button class="suggestion-btn" onclick="applySuggestion('Schedule team meeting for Q1 planning')">
+                            📅 Schedule team meeting for Q1 planning
+                        </button>
+                        <button class="suggestion-btn" onclick="applySuggestion('Create task: Analyze Tuesday ad performance')">
+                            ✅ Create task: Analyze Tuesday ad performance
+                        </button>
+                    </div>
+                    
+                    <div class="chat-input-wrapper">
+                        <div class="input-with-mentions">
+                            <input type="text" id="chatMessageInput" placeholder="Type a message..." 
+                                   onkeypress="handleChatKeypress(event)" 
+                                   oninput="handleChatInput(event)"
+                                   onfocus="showSmartSuggestions()">
+                            <div class="mention-dropdown" id="mentionDropdown" style="display: none;"></div>
+                        </div>
+                        <button class="send-btn" onclick="sendChatMessage()">
+                            <span>➤</span>
+                        </button>
+                    </div>
+                    <div class="chat-tools">
+                        <button class="chat-tool-btn" onclick="attachFile()" title="Attach file">📎</button>
+                        <button class="chat-tool-btn" onclick="showEmojiPicker()" title="Add emoji">😊</button>
+                        <button class="chat-tool-btn" onclick="mentionTeamMember()" title="Mention someone">@</button>
+                        <button class="chat-tool-btn" onclick="createTaskFromChat()" title="Create task">✅</button>
+                        <button class="chat-tool-btn" onclick="shareScreen()" title="Share screen">📺</button>
+                    </div>
+                    <div class="file-preview" id="filePreview" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Member Profile Modal -->
+    <div class="modal" id="memberProfileModal">
+        <div class="modal-backdrop" onclick="closeMemberProfileModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Member Profile</h2>
+                <button class="modal-close" onclick="closeMemberProfileModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-content" id="profileContent">
+                    <!-- Profile will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goal Creation Modal -->
+    <div class="modal" id="goalModal">
+        <div class="modal-backdrop" onclick="closeGoalModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Team Goal</h2>
+                <button class="modal-close" onclick="closeGoalModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>Goal Title</label>
+                    <input type="text" id="goalTitle" placeholder="e.g., Increase weekly signups">
+                </div>
+                <div class="input-group">
+                    <label>Description</label>
+                    <textarea id="goalDescription" placeholder="What exactly do we want to achieve?" rows="3"></textarea>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Target Value</label>
+                        <input type="number" id="goalTarget" placeholder="100">
+                    </div>
+                    <div class="input-group">
+                        <label>Unit</label>
+                        <select id="goalUnit">
+                            <option value="subscribers">Subscribers</option>
+                            <option value="percentage">Percentage</option>
+                            <option value="conversions">Conversions</option>
+                            <option value="revenue">Revenue ($)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Due Date</label>
+                        <input type="date" id="goalDueDate">
+                    </div>
+                    <div class="input-group">
+                        <label>Priority</label>
+                        <select id="goalPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Assign Team Members</label>
+                    <div class="member-checkboxes">
+                        <label class="member-checkbox">
+                            <input type="checkbox" name="goalMembers" value="aaron">
+                            <div class="checkbox-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                            <span>Aaron</span>
+                        </label>
+                        <label class="member-checkbox">
+                            <input type="checkbox" name="goalMembers" value="sarah">
+                            <div class="checkbox-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                            <span>Sarah</span>
+                        </label>
+                        <label class="member-checkbox">
+                            <input type="checkbox" name="goalMembers" value="mike">
+                            <div class="checkbox-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);">M</div>
+                            <span>Mike</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeGoalModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="createGoal()">Create Goal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Modal -->
+    <div class="modal" id="notificationsModal">
+        <div class="modal-backdrop" onclick="closeNotificationsModal()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Team Notifications</h2>
+                <div class="notifications-actions">
+                    <button class="btn btn-small" onclick="markAllAsRead()">Mark all read</button>
+                    <button class="btn btn-small" onclick="openNotificationSettings()">⚙️ Settings</button>
+                </div>
+                <button class="modal-close" onclick="closeNotificationsModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Notification Filters -->
+                <div class="notification-filters">
+                    <button class="notification-filter-btn active" data-filter="all">All</button>
+                    <button class="notification-filter-btn" data-filter="mentions">Mentions</button>
+                    <button class="notification-filter-btn" data-filter="tasks">Tasks</button>
+                    <button class="notification-filter-btn" data-filter="goals">Goals</button>
+                    <button class="notification-filter-btn" data-filter="ai-insights">AI Insights</button>
+                    <button class="notification-filter-btn" data-filter="system">System</button>
+                </div>
+
+                <!-- Smart Notification Summary -->
+                <div class="notification-summary">
+                    <div class="summary-card priority-high">
+                        <div class="summary-icon">🚨</div>
+                        <div class="summary-content">
+                            <span class="summary-count">2</span>
+                            <span class="summary-label">High Priority</span>
+                        </div>
+                    </div>
+                    <div class="summary-card priority-medium">
+                        <div class="summary-icon">⚠️</div>
+                        <div class="summary-content">
+                            <span class="summary-count">5</span>
+                            <span class="summary-label">Medium Priority</span>
+                        </div>
+                    </div>
+                    <div class="summary-card mentions">
+                        <div class="summary-icon">💬</div>
+                        <div class="summary-content">
+                            <span class="summary-count">3</span>
+                            <span class="summary-label">Direct Mentions</span>
+                        </div>
+                    </div>
+                    <div class="summary-card ai-insights">
+                        <div class="summary-icon">🤖</div>
+                        <div class="summary-content">
+                            <span class="summary-count">1</span>
+                            <span class="summary-label">AI Insights</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Notifications List -->
+                <div class="notifications-list" id="notificationsList">
+                    <!-- Notifications will be populated by JavaScript -->
+                </div>
+
+                <!-- Notification Preferences Quick Access -->
+                <div class="notification-preferences">
+                    <h4>Quick Preferences</h4>
+                    <div class="preference-toggles">
+                        <label class="preference-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Desktop notifications</span>
+                        </label>
+                        <label class="preference-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Task assignments</span>
+                        </label>
+                        <label class="preference-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">AI insights</span>
+                        </label>
+                        <label class="preference-toggle">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Focus mode interruptions</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collaborative Session Modal -->
+    <div class="modal" id="collaborativeSessionModal">
+        <div class="modal-backdrop" onclick="closeCollaborativeSessionModal()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Start Collaborative Session</h2>
+                <div class="session-info">
+                    <span class="session-participants">3 available participants</span>
+                </div>
+                <button class="modal-close" onclick="closeCollaborativeSessionModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="session-types">
+                    <div class="session-type-grid">
+                        <div class="session-type" onclick="selectSessionType('screen-share')">
+                            <div class="session-icon">📺</div>
+                            <h4>Screen Share</h4>
+                            <p>Share your screen for demos and walkthroughs</p>
+                        </div>
+                        <div class="session-type" onclick="selectSessionType('whiteboard')">
+                            <div class="session-icon">✏️</div>
+                            <h4>Whiteboard</h4>
+                            <p>Collaborative brainstorming and planning</p>
+                        </div>
+                        <div class="session-type" onclick="selectSessionType('pair-programming')">
+                            <div class="session-icon">👥</div>
+                            <h4>Pair Work</h4>
+                            <p>Work together on tasks and documents</p>
+                        </div>
+                        <div class="session-type" onclick="selectSessionType('meeting')">
+                            <div class="session-icon">🎤</div>
+                            <h4>Team Meeting</h4>
+                            <p>Video call with agenda and notes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="session-setup" id="sessionSetup" style="display: none;">
+                    <div class="input-group">
+                        <label>Session Title</label>
+                        <input type="text" id="sessionTitle" placeholder="What are you working on?">
+                    </div>
+                    <div class="input-group">
+                        <label>Invite Team Members</label>
+                        <div class="member-selector">
+                            <div class="member-option">
+                                <input type="checkbox" id="invite-sarah" value="sarah" checked>
+                                <label for="invite-sarah">
+                                    <div class="member-avatar" style="background: linear-gradient(135deg, #8533fc, #ff6b9d);">S</div>
+                                    <span>Sarah</span>
+                                    <span class="member-status online">Online</span>
+                                </label>
+                            </div>
+                            <div class="member-option">
+                                <input type="checkbox" id="invite-mike" value="mike">
+                                <label for="invite-mike">
+                                    <div class="member-avatar" style="background: linear-gradient(135deg, #ffce33, #ff6b6b);">M</div>
+                                    <span>Mike</span>
+                                    <span class="member-status away">Away</span>
+                                </label>
+                            </div>
+                            <div class="member-option">
+                                <input type="checkbox" id="invite-luna" value="luna">
+                                <label for="invite-luna">
+                                    <div class="member-avatar" style="background: linear-gradient(135deg, #8533fc, #65cdd8);">L</div>
+                                    <span>LUNA AI</span>
+                                    <span class="member-status online">Active</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label>Duration</label>
+                            <select id="sessionDuration">
+                                <option value="15">15 minutes</option>
+                                <option value="30" selected>30 minutes</option>
+                                <option value="60">1 hour</option>
+                                <option value="120">2 hours</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Privacy</label>
+                            <select id="sessionPrivacy">
+                                <option value="team">Team only</option>
+                                <option value="workspace">Workspace members</option>
+                                <option value="public">Anyone can join</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeCollaborativeSessionModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="startCollaborativeSession()" id="startSessionBtn" style="display: none;">
+                    <span class="btn-icon">🚀</span>
+                    Start Session
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Details Modal -->
+    <div class="modal" id="taskDetailsModal">
+        <div class="modal-backdrop" onclick="closeTaskDetailsModal()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="taskDetailsTitle">Task Details</h2>
+                <div class="task-details-actions">
+                    <button class="btn btn-small" onclick="editTaskDetails()" id="editTaskBtn">Edit</button>
+                    <button class="btn btn-small" onclick="duplicateTask()" id="duplicateTaskBtn">Duplicate</button>
+                </div>
+                <button class="modal-close" onclick="closeTaskDetailsModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="task-details-content" id="taskDetailsContent">
+                    <!-- Task details will be populated by JavaScript -->
+                </div>
+                
+                <!-- Comments Section -->
+                <div class="task-comments-section">
+                    <h3 class="comments-title">
+                        <span>💬</span>
+                        Comments & Updates
+                        <span class="comment-count" id="commentCount">(2)</span>
+                    </h3>
+                    
+                    <div class="comments-list" id="commentsList">
+                        <!-- Comments will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="add-comment">
+                        <div class="comment-input-wrapper">
+                            <div class="comment-author-avatar" style="background: linear-gradient(135deg, #e3f98a, #65cdd8);">A</div>
+                            <div class="comment-input-container">
+                                <textarea id="commentInput" placeholder="Add a comment..." rows="3"></textarea>
+                                <div class="comment-tools">
+                                    <button class="comment-tool-btn" onclick="addCommentMention()" title="Mention teammate">@</button>
+                                    <button class="comment-tool-btn" onclick="addCommentEmoji()" title="Add emoji">😊</button>
+                                    <button class="comment-tool-btn" onclick="attachToComment()" title="Attach file">📎</button>
+                                    <button class="btn btn-primary btn-small" onclick="addComment()">Comment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workspace Management Modal -->
+    <div class="modal" id="workspaceModal">
+        <div class="modal-backdrop" onclick="closeWorkspaceModal()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Workspace Settings</h2>
+                <button class="modal-close" onclick="closeWorkspaceModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="workspace-tabs">
+                    <button class="workspace-tab active" data-tab="general" onclick="switchWorkspaceTab('general')">General</button>
+                    <button class="workspace-tab" data-tab="members" onclick="switchWorkspaceTab('members')">Members</button>
+                    <button class="workspace-tab" data-tab="collaboration" onclick="switchWorkspaceTab('collaboration')">Collaboration</button>
+                    <button class="workspace-tab" data-tab="integrations" onclick="switchWorkspaceTab('integrations')">Integrations</button>
+                </div>
+                
+                <!-- General Tab -->
+                <div class="workspace-tab-content active" id="generalTab">
+                    <div class="input-group">
+                        <label>Workspace Name</label>
+                        <input type="text" id="workspaceName" value="Q1 Growth Sprint">
+                    </div>
+                    <div class="input-group">
+                        <label>Description</label>
+                        <textarea id="workspaceDescription" rows="3">Focused workspace for Q1 growth initiatives</textarea>
+                    </div>
+                    <div class="workspace-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">8</span>
+                            <span class="stat-label">Active Tasks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Goals</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Members Tab -->
+                <div class="workspace-tab-content" id="membersTab">
+                    <div class="workspace-members-list">
+                        <!-- Members will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Collaboration Tab -->
+                <div class="workspace-tab-content" id="collaborationTab">
+                    <div class="collaboration-settings">
+                        <div class="setting-group">
+                            <label class="setting-toggle">
+                                <input type="checkbox" id="realTimeUpdates" checked>
+                                <span class="toggle-slider"></span>
+                                <span class="setting-label">Real-time Updates</span>
+                            </label>
+                            <small>Sync changes across all team members instantly</small>
+                        </div>
+                        <div class="setting-group">
+                            <label class="setting-toggle">
+                                <input type="checkbox" id="notificationsEnabled" checked>
+                                <span class="toggle-slider"></span>
+                                <span class="setting-label">Push Notifications</span>
+                            </label>
+                            <small>Get notified about task updates and mentions</small>
+                        </div>
+                        <div class="setting-group">
+                            <label class="setting-toggle">
+                                <input type="checkbox" id="autoSync" checked>
+                                <span class="toggle-slider"></span>
+                                <span class="setting-label">Auto-Sync</span>
+                            </label>
+                            <small>Automatically sync data every 30 seconds</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Integrations Tab -->
+                <div class="workspace-tab-content" id="integrationsTab">
+                    <div class="integrations-list">
+                        <div class="integration-item">
+                            <div class="integration-info">
+                                <div class="integration-icon">🦉</div>
+                                <div class="integration-details">
+                                    <span class="integration-name">8OWLS Collective</span>
+                                    <span class="integration-description">AI-powered insights and synthesis</span>
+                                </div>
+                            </div>
+                            <div class="integration-status connected">Connected</div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="integration-info">
+                                <div class="integration-icon">📊</div>
+                                <div class="integration-details">
+                                    <span class="integration-name">Growth Analytics</span>
+                                    <span class="integration-description">Real-time growth metrics</span>
+                                </div>
+                            </div>
+                            <div class="integration-status connected">Connected</div>
+                        </div>
+                        <div class="integration-item">
+                            <div class="integration-info">
+                                <div class="integration-icon">💬</div>
+                                <div class="integration-details">
+                                    <span class="integration-name">Team Chat</span>
+                                    <span class="integration-description">Integrated team communication</span>
+                                </div>
+                            </div>
+                            <div class="integration-status connected">Connected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeWorkspaceModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveWorkspaceSettings()">Save Changes</button>
             </div>
         </div>
     </div>

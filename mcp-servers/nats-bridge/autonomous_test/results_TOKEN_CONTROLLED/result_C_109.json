@@ -1,0 +1,26 @@
+{
+  "trial_num": 109,
+  "condition": "C",
+  "prompt": "What are the best practices for code review?",
+  "response": "I understand you're looking for best practices for code review, but I notice that all seven perspective analyses encountered errors (404 model not found). Let me provide a comprehensive synthesis on code review best practices based on established industry knowledge:\n\n## Code Review Best Practices - Unified Response\n\n### **Core Principles**\n- **Purpose-Driven**: Focus on code quality, knowledge sharing, and bug prevention\n- **Collaborative**: Treat reviews as team learning opportunities, not criticism\n- **Constructive**: Provide specific, actionable feedback with context\n\n### **Process Framework**\n1. **Pre-Review Setup**\n   - Keep changes small (< 400 lines when possible)\n   - Include clear commit messages and PR descriptions\n   - Run automated tests before requesting review\n\n2. **Review Execution**\n   - Review within 24 hours to maintain momentum\n   - Focus on logic, design patterns, and potential bugs first\n   - Check for code style, documentation, and maintainability second\n\n3. **Communication Standards**\n   - Use \"we\" instead of \"you\" language\n   - Explain the \"why\" behind suggestions\n   - Distinguish between blocking issues and suggestions\n\n### **Technical Focus Areas**\n- **Correctness**: Logic errors, edge cases, security vulnerabilities\n- **Design**: Architecture alignment, SOLID principles, code reusability  \n- **Performance**: Efficiency concerns, resource usage, scalability\n- **Maintainability**: Readability, documentation, test coverage\n\n### **Team Dynamics**\n- Rotate reviewers to spread knowledge\n- Set clear expectations for response times\n- Use automated tools for style/syntax to focus human attention on logic\n- Follow up on implemented feedback\n\nThis synthesis provides actionable guidance despite the technical errors in the perspective analysis system.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1795,
+    "quality_score": 65,
+    "elapsed": 13.704083919525146,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:49:40.397008+00:00"
+}

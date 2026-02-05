@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture has several key characteristics:\n\n## Clear Structure and Organization\n- **Modular design** with well-defined boundaries between components\n- **Layered architecture** that separates concerns (presentation, business logic, data)\n- **Consistent patterns** applied throughout the codebase\n\n## Low Coupling, High Cohesion\n- **Loose coupling** between modules minimizes ripple effects from changes\n- **High cohesion** within modules keeps related functionality together\n- **Clear interfaces** that hide implementation details\n\n## Understandability\n- **Self-documenting code** with meaningful names and clear structure\n- **Comprehensive documentation** for architectural decisions and complex logic\n- **Consistent coding standards** across the entire system\n\n## Flexibility and Extensibility\n- **Open/closed principle** - open for extension, closed for modification\n- **Dependency injection** to make components swappable\n- **Configuration-driven behavior** instead of hard-coded values\n\n## Testing and Quality\n- **Testable design** that supports unit, integration, and system testing\n- **Automated testing** at multiple levels\n- **Code quality tools** for static analysis and continuous monitoring\n\n## Technical Debt Management\n- **Regular refactoring** to improve code quality\n- **Architectural reviews** to catch issues early\n- **Clear technical debt tracking** and remediation plans\n\nThe most maintainable architectures balance these principles while remaining appropriate for the specific problem domain and team capabilities.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1559,
+    "quality_score": 40,
+    "elapsed": 7.669011831283569,
+    "prompt": "What makes software architecture maintainable?"
+  },
+  "timestamp": "2026-02-03T13:06:00.121816+00:00"
+}

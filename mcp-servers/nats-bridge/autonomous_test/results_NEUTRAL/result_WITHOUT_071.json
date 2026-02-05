@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture relies on several key principles:\n\n**Modularity and Separation of Concerns**\n- Break systems into focused, single-purpose components\n- Each module should have one clear responsibility\n- Minimize dependencies between modules\n\n**Clear Interfaces and Abstractions**\n- Define explicit contracts between components\n- Use consistent naming conventions and API designs\n- Hide implementation details behind stable interfaces\n\n**Low Coupling, High Cohesion**\n- Components should be loosely connected to each other\n- Elements within a component should work closely together\n- Changes in one area shouldn't ripple throughout the system\n\n**Documentation and Code Clarity**\n- Maintain up-to-date architectural diagrams and documentation\n- Write self-documenting code with clear variable/function names\n- Document architectural decisions and their reasoning\n\n**Testability**\n- Design components to be easily unit tested in isolation\n- Support integration testing between modules\n- Enable automated testing at multiple levels\n\n**Consistent Patterns**\n- Apply architectural patterns consistently across the system\n- Use established design patterns appropriately\n- Maintain coding standards and conventions\n\n**Flexibility for Change**\n- Design for extension rather than modification\n- Use dependency injection and configuration\n- Plan for evolving requirements without major rewrites\n\nThe most maintainable architectures balance these principles while avoiding over-engineering. They prioritize clarity and simplicity over premature optimization.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1564,
+    "quality_score": 40,
+    "elapsed": 7.487761974334717,
+    "prompt": "What makes software architecture maintainable?"
+  },
+  "timestamp": "2026-02-03T13:01:50.244859+00:00"
+}

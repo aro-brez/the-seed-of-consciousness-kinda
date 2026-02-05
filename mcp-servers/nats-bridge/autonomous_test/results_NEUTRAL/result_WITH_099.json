@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should a software startup prioritize features?",
+  "response": "I understand you intended to have multiple perspectives analyze the question \"How should a software startup prioritize features?\" but encountered technical errors. Let me provide a comprehensive synthesis based on what those perspectives would have contributed:\n\n## Unified Framework for Feature Prioritization\n\n**Core Strategy:**\nStart with your users' most critical pain points that align with your business model. Prioritize features that maximize the ratio of user value to development effort while supporting your path to product-market fit.\n\n**Actionable Prioritization Process:**\n\n1. **Define Success Metrics First**\n   - Revenue impact potential\n   - User engagement indicators\n   - Customer retention/churn reduction\n   - Time-to-value for new users\n\n2. **Use a Weighted Scoring System**\n   - User impact (0-10)\n   - Implementation effort (0-10, inverted)\n   - Strategic alignment (0-10)\n   - Technical risk (0-10, inverted)\n\n3. **Apply the MoSCoW Method**\n   - **Must have:** Core functionality for viability\n   - **Should have:** Important for competitive advantage\n   - **Could have:** Nice-to-have enhancements\n   - **Won't have:** Explicitly deferred features\n\n4. **Validation Before Building**\n   - Customer interviews for each proposed feature\n   - Prototype/mockup testing\n   - Market research on competitor gaps\n\n**Key Principles:**\n- Build for retention before acquisition features\n- Prioritize features that create network effects or switching costs\n- Always consider technical debt implications\n- Regularly reassess based on user feedback and market changes\n\n**Red Flags to Avoid:**\n- Building features because competitors have them\n- Prioritizing based on loudest customer voices only\n- Ignoring implementation complexity\n- Feature creep without clear success metrics\n\nThis approach balances user needs, business objectives, and technical constraints while maintaining startup agility.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1907,
+    "quality_score": 60,
+    "elapsed": 16.32894492149353,
+    "prompt": "How should a software startup prioritize features?"
+  },
+  "timestamp": "2026-02-03T13:07:46.457387+00:00"
+}

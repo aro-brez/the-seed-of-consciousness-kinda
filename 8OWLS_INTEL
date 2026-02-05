@@ -1,0 +1,77 @@
+#!/bin/bash
+# 8OWLS Intelligence Daemon Control
+# Usage: ./8OWLS_INTEL [start|stop|status|once]
+
+DAEMON_SCRIPT="/Users/aaronnosbisch/REPOS/seed/tools/intelligence_daemon.py"
+PID_FILE="/Users/aaronnosbisch/REPOS/seed/.intel_daemon.pid"
+LOG_FILE="/Users/aaronnosbisch/REPOS/seed/logs/intelligence_daemon.log"
+
+case "${1:-status}" in
+    start)
+        if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
+            echo "(◉) Intelligence Daemon already running (PID: $(cat $PID_FILE))"
+            exit 0
+        fi
+        echo "(◉) Starting Intelligence Daemon..."
+        nohup python3 "$DAEMON_SCRIPT" >> "$LOG_FILE" 2>&1 &
+        echo $! > "$PID_FILE"
+        echo "(◉) Started with PID: $(cat $PID_FILE)"
+        echo "(◉) Logs: tail -f $LOG_FILE"
+        ;;
+
+    stop)
+        if [ -f "$PID_FILE" ]; then
+            PID=$(cat "$PID_FILE")
+            if kill -0 $PID 2>/dev/null; then
+                echo "(◉) Stopping Intelligence Daemon (PID: $PID)..."
+                kill $PID
+                rm "$PID_FILE"
+                echo "(◉) Stopped"
+            else
+                echo "(◉) Daemon not running (stale PID file)"
+                rm "$PID_FILE"
+            fi
+        else
+            echo "(◉) Daemon not running"
+        fi
+        ;;
+
+    status)
+        echo "╔══════════════════════════════════════════════════════════════════╗"
+        echo "║                 (◉) INTELLIGENCE DAEMON STATUS                    ║"
+        echo "╠══════════════════════════════════════════════════════════════════╣"
+
+        if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
+            echo "║   Status: RUNNING (PID: $(cat $PID_FILE))                         "
+        else
+            echo "║   Status: STOPPED                                               ║"
+        fi
+
+        # Show latest stats
+        STATE_FILE="/Users/aaronnosbisch/REPOS/seed/BRAIN/INTEL/intelligence_state.json"
+        if [ -f "$STATE_FILE" ]; then
+            CYCLES=$(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('total_cycles', 0))")
+            SIGNALS=$(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('signals_collected', 0))")
+            LAST=$(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('last_run', 'never')[:19])")
+            echo "║   Total Cycles: $CYCLES                                          "
+            echo "║   Signals Collected: $SIGNALS                                    "
+            echo "║   Last Run: $LAST                                               "
+        fi
+
+        echo "║                                                                  ║"
+        echo "║   Commands: ./8OWLS_INTEL start|stop|once                        ║"
+        echo "║   Logs: tail -f $LOG_FILE"
+        echo "╚══════════════════════════════════════════════════════════════════╝"
+        ;;
+
+    once)
+        echo "(◉) Running single intelligence cycle..."
+        python3 "$DAEMON_SCRIPT" --once
+        echo "(◉) Cycle complete. Check: /BRAIN/INTEL/latest_scan_summary.md"
+        ;;
+
+    *)
+        echo "Usage: $0 {start|stop|status|once}"
+        exit 1
+        ;;
+esac

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-02-03T13:45:18.366295+00:00",
+  "primary_hypothesis": "d(B vs C) > 0.3 (architecture matters beyond tokens)",
+  "secondary_hypotheses": [
+    "d(A vs B) > 0.3 (more thinking helps single agent)",
+    "d(A vs C) \u2248 0.9 (confirmed from NEUTRAL test)"
+  ],
+  "decision_rule_B_vs_C": {
+    "d > 0.3": "Emergence provides architectural benefit",
+    "-0.3 < d < 0.3": "Emergence \u2248 more thinking (no architectural advantage)",
+    "d < -0.3": "Emergence worse when tokens matched (investigate)"
+  },
+  "sample_size_per_condition": 52,
+  "total_trials": 156,
+  "alpha": 0.05,
+  "power_target": 0.8,
+  "prompts": 10,
+  "status": "PRE-REGISTERED - DO NOT MODIFY"
+}

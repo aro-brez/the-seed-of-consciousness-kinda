@@ -1,0 +1,36 @@
+{
+  "condition": "D_no_expand",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 8,
+  "prompt": "Where should we invest our limited resources?",
+  "response": "I understand you're trying to use an IMPROVE framework with multiple perspectives, but I'm receiving this request without the actual analyses from those perspectives - only error messages indicating model access issues.\n\nHowever, I can still provide a synthesized approach to your core question: **\"Where should we invest our limited resources?\"**\n\n## Unified Framework for Resource Investment Decisions\n\n**Immediate Actions:**\n\n1. **Define Success Metrics First** - Before investing anywhere, clarify what you're optimizing for (ROI, growth, risk mitigation, social impact, etc.)\n\n2. **Conduct Resource Audit** - Map your current resources (financial, human, time, expertise) and their constraints\n\n3. **Apply the 3-Horizon Model:**\n   - **Horizon 1**: Maintain core operations (70% of resources)\n   - **Horizon 2**: Build emerging opportunities (20% of resources)  \n   - **Horizon 3**: Explore breakthrough innovations (10% of resources)\n\n**Decision Framework:**\n- **High Impact + Low Cost** = Immediate priority\n- **High Impact + High Cost** = Strategic planning required\n- **Low Impact + Low Cost** = Quick wins for momentum\n- **Low Impact + High Cost** = Avoid unless strategically essential\n\n**Key Questions to Answer:**\n- What creates the most value for your stakeholders?\n- Where do you have sustainable competitive advantages?\n- What investments are reversible vs. irreversible?\n- How do potential investments align with your core mission?\n\nWould you like me to help you apply this framework to your specific situation, or would you prefer to retry the IMPROVE analysis with the technical issues resolved?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 7,
+    "insight_score": 0,
+    "length": 1614,
+    "quality_score": 70,
+    "elapsed": 12.885941982269287,
+    "prompt": "Where should we invest our limited resources?",
+    "run": 7,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:43:05.067315+00:00"
+}

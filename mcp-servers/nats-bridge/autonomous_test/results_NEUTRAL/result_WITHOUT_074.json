@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What distinguishes meaningful work from busywork?",
+  "response": "Meaningful work and busywork differ in several key ways:\n\n**Purpose and impact**: Meaningful work connects to clear goals and creates tangible value - whether for customers, colleagues, or society. Busywork often exists for its own sake, with no clear beneficiary or outcome.\n\n**Skill utilization**: Meaningful work engages your abilities, knowledge, and judgment in substantive ways. Busywork typically involves repetitive tasks that don't require your full capabilities or help you grow.\n\n**Decision-making authority**: Meaningful work usually involves some autonomy - you can influence how tasks get done or what problems to solve. Busywork tends to be heavily prescribed with little room for independent thinking.\n\n**Connection to larger systems**: Meaningful work fits into a broader strategy or mission you can understand and support. Busywork often feels disconnected from any larger purpose.\n\n**Learning and growth**: Meaningful work challenges you and builds new skills or insights. Busywork rarely teaches you anything new or advances your capabilities.\n\n**Time efficiency**: Meaningful work makes productive use of time and resources. Busywork often feels like time-filling activity that could be eliminated without consequence.\n\nThe same task can shift between these categories depending on context - administrative work becomes busywork when it's excessive or poorly designed, but remains meaningful when it genuinely supports important objectives.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1461,
+    "quality_score": 45,
+    "elapsed": 8.316443920135498,
+    "prompt": "What distinguishes meaningful work from busywork?"
+  },
+  "timestamp": "2026-02-03T13:02:25.548324+00:00"
+}

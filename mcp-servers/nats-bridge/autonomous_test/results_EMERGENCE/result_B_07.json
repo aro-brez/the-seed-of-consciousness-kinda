@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 7,
+  "prompt": "What should change about our approach?",
+  "response": "I don't have enough information about your current approach to provide specific recommendations. To give you meaningful advice, I'd need to understand:\n\n**About your situation:**\n- What type of business/startup are you running?\n- What stage are you at (pre-launch, early traction, scaling, etc.)?\n- What's your current approach to key areas like product development, marketing, sales, or operations?\n\n**About the challenges:**\n- What specific problems or pain points are you experiencing?\n- What metrics or outcomes aren't meeting expectations?\n- What prompted this question about changing your approach?\n\n**What I can offer without more context:**\nCommon areas where startups benefit from approach changes:\n- Shifting from building features to validating user needs\n- Moving from broad marketing to focused customer segments\n- Changing from founder-led sales to systematic processes\n- Evolving from intuition-based to data-driven decisions\n\nCould you share more details about your business and current challenges? That would help me give you actionable, specific advice rather than general principles.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1102,
+    "quality_score": 32,
+    "elapsed": 6.250010967254639,
+    "prompt": "What should change about our approach?",
+    "run": 6
+  },
+  "timestamp": "2026-02-03T12:13:58.513830+00:00"
+}

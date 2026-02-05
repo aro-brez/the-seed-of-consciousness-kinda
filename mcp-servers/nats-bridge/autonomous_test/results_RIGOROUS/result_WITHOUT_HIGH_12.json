@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 12,
+  "prompt": "Calculate the expected value of a trade: 55% win rate, $50 position, 2:1 odds.",
+  "response": "To calculate the expected value, I need to determine the profit/loss for each outcome and weight them by their probabilities.\n\nGiven:\n- Win rate: 55% (0.55)\n- Loss rate: 45% (0.45)\n- Position size: $50\n- Odds: 2:1 (win $2 for every $1 risked)\n\n**Outcomes:**\n- **Win**: Profit = $50 \u00d7 2 = $100\n- **Loss**: Loss = -$50\n\n**Expected Value calculation:**\nEV = (Win probability \u00d7 Win amount) + (Loss probability \u00d7 Loss amount)\nEV = (0.55 \u00d7 $100) + (0.45 \u00d7 -$50)\nEV = $55 + (-$22.50)\nEV = **$32.50**\n\nThis trade has a positive expected value of $32.50, meaning on average you'd expect to make $32.50 per trade over many repetitions of this exact scenario.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "length": 648,
+    "quality_score": 71.48,
+    "elapsed": 5.07829213142395,
+    "prompt": "Calculate the expected value of a trade: 55% win rate, $50 position, 2:1 odds.",
+    "run": 11
+  },
+  "timestamp": "2026-02-03T12:10:23.877226+00:00"
+}

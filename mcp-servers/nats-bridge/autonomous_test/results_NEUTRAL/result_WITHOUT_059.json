@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue consistently** - If you can't reproduce it reliably, you can't verify your fix\n- **Gather comprehensive information** - logs, error messages, system state, recent changes, user steps\n- **Define the problem precisely** - vague problems lead to vague solutions\n\n## Use divide-and-conquer strategies\n- **Isolate components** - Test individual parts to narrow down where the issue originates\n- **Binary search the problem space** - If something worked before, find the point where it broke\n- **Follow the data flow** - Trace how information moves through your system\n\n## Leverage systematic observation\n- **Add strategic logging/instrumentation** - Make the system's internal state visible\n- **Use debuggers and profilers** - Step through code execution and monitor resource usage\n- **Monitor system metrics** - CPU, memory, network, disk I/O during problem periods\n\n## Apply logical reasoning\n- **Form hypotheses** - Based on symptoms, theorize what could cause this behavior\n- **Test hypotheses methodically** - Change one variable at a time\n- **Keep detailed notes** - Track what you've tried and what you've learned\n\n## Know when to step back\n- **Take breaks** - Fresh perspective often reveals overlooked clues\n- **Explain the problem to someone else** - Rubber duck debugging works\n- **Question assumptions** - The \"impossible\" often points to the root cause\n\nThe key is being methodical rather than randomly trying fixes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 0,
+    "length": 1539,
+    "quality_score": 55,
+    "elapsed": 11.255879878997803,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:59:06.901039+00:00"
+}

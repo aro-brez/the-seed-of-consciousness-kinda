@@ -1,0 +1,9 @@
+#!/bin/bash
+# REALIZE-IO CLI Launcher
+# Quick access to personal AI trajectory tracking
+
+# Get the script directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# Run the Python CLI
+python3 "${SCRIPT_DIR}/tools/predict_realize/cli.py" "$@"

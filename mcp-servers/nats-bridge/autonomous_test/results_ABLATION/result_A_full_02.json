@@ -1,0 +1,38 @@
+{
+  "condition": "A_full",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I can see that all seven perspective modules encountered errors when trying to analyze your question \"What are we missing in our current strategy?\" \n\nHowever, I can still provide a synthesized response by applying the IMPROVE framework directly:\n\n## What We're Missing: A Strategic Gap Analysis\n\n**Immediate Technical Issue:**\nYour system is experiencing model unavailability (404 errors for claude-haiku-4-20250514), which reveals a critical gap: **resilience in your analytical infrastructure**. When your primary analysis tools fail, you need backup systems and manual frameworks.\n\n**Strategic Blind Spots to Examine:**\n\n1. **PERCEIVE gaps**: Are you collecting the right data? Missing stakeholder voices? Overlooking market signals?\n\n2. **CONNECT gaps**: Are silos preventing information flow? Missing cross-functional collaboration?\n\n3. **LEARN gaps**: Is institutional knowledge being captured? Are you learning from failures fast enough?\n\n4. **QUESTION gaps**: Are you challenging core assumptions? Asking \"what if we're wrong?\"\n\n5. **EXPAND gaps**: Are you thinking beyond current constraints? Missing adjacent opportunities?\n\n6. **SHARE gaps**: Is critical information reaching decision-makers? Are insights actionable?\n\n7. **RECEIVE gaps**: Are you open to external feedback? Processing stakeholder input effectively?\n\n**Actionable Next Steps:**\n- Conduct a stakeholder mapping exercise to identify missing voices\n- Review your feedback loops and decision-making speed\n- Assess whether your strategy accounts for system failures (like today's technical issues)\n- Question what assumptions haven't been tested recently\n\nWhat specific strategy context would help me provide more targeted insights?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1705,
+    "quality_score": 66,
+    "elapsed": 14.199208974838257,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:41:10.640298+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 141,
+  "condition": "A",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture is characterized by several key principles:\n\n## Clear Separation of Concerns\n- Each component has a single, well-defined responsibility\n- Business logic is separated from infrastructure concerns\n- UI, data access, and business rules are kept in distinct layers\n\n## Loose Coupling & High Cohesion\n- Components depend on abstractions, not concrete implementations\n- Related functionality is grouped together\n- Changes in one area don't cascade throughout the system\n\n## Consistent Patterns & Standards\n- Uniform coding conventions and naming schemes\n- Consistent error handling and logging approaches\n- Standardized ways of solving similar problems\n\n## Clear Dependencies\n- Explicit dependency management (avoid hidden dependencies)\n- Use of dependency injection where appropriate\n- Well-defined interfaces between components\n\n## Comprehensive Documentation\n- Architecture decision records (ADRs) explaining key choices\n- Clear API documentation\n- Up-to-date diagrams showing system structure\n\n## Testability\n- Components can be tested in isolation\n- Clear boundaries that enable unit and integration testing\n- Testable interfaces and minimal external dependencies\n\n## Modularity\n- System is broken into logical, replaceable modules\n- Clear module boundaries with well-defined APIs\n- Ability to modify or replace modules without affecting others\n\n## Evolutionary Design\n- Architecture can adapt to changing requirements\n- Refactoring-friendly structure\n- Gradual improvement rather than big rewrites\n\nThe goal is code that developers can understand, modify, and extend without fear of breaking existing functionality.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1650,
+    "quality_score": 40,
+    "elapsed": 7.90774393081665,
+    "prompt": "What makes software architecture maintainable?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:58:19.871880+00:00"
+}

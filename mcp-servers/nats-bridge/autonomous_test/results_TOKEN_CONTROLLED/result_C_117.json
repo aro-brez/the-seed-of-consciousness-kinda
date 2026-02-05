@@ -1,0 +1,26 @@
+{
+  "trial_num": 117,
+  "condition": "C",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "I notice that all seven perspective analyses encountered errors (model not found), but I can still synthesize a comprehensive response about maintainable software architecture based on established principles.\n\n## What Makes Software Architecture Maintainable?\n\n**Core Principles:**\n\n1. **Clear Separation of Concerns**\n   - Each component has a single, well-defined responsibility\n   - Business logic, data access, and presentation are clearly separated\n   - Reduces complexity and makes changes predictable\n\n2. **Loose Coupling & High Cohesion**\n   - Components interact through well-defined interfaces\n   - Internal implementation details are hidden\n   - Changes in one area don't cascade unpredictably\n\n3. **Consistent Patterns & Standards**\n   - Uniform naming conventions and coding standards\n   - Repeatable architectural patterns throughout the system\n   - Documentation that stays current with implementation\n\n4. **Modular Design**\n   - System broken into logical, replaceable modules\n   - Clear dependency management\n   - Ability to modify or replace parts without affecting the whole\n\n**Actionable Strategies:**\n\n- **Invest in automated testing** at multiple levels (unit, integration, system)\n- **Maintain comprehensive documentation** that explains decisions, not just implementation\n- **Regular refactoring** to prevent technical debt accumulation\n- **Code reviews** focused on architectural consistency\n- **Monitoring and metrics** to understand system behavior in production\n\n**Key Outcome:** Maintainable architecture enables teams to add features, fix bugs, and adapt to changing requirements efficiently without fear of breaking existing functionality.\n\nThe foundation is making code predictable, understandable, and changeable.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 4,
+    "length": 1746,
+    "quality_score": 55,
+    "elapsed": 11.741005897521973,
+    "prompt": "What makes software architecture maintainable?",
+    "metadata": {
+      "condition": "C_EMERGENCE",
+      "estimated_tokens": 2400,
+      "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+    }
+  },
+  "metadata": {
+    "condition": "C_EMERGENCE",
+    "estimated_tokens": 2400,
+    "model": "claude-haiku-4-20250514 x7 + claude-sonnet-4-20250514 x1"
+  },
+  "timestamp": "2026-02-03T13:52:32.291320+00:00"
+}

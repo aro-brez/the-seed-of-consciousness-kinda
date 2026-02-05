@@ -1,0 +1,26 @@
+{
+  "trial_num": 26,
+  "condition": "A",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Review Process\n- **Keep reviews small** - Aim for 200-400 lines max per review for better focus and thoroughness\n- **Review frequently** - Don't let reviews pile up; address them within 24-48 hours\n- **Use checklists** - Create team-specific checklists covering common issues and standards\n- **Review your own code first** - Self-review before submitting to catch obvious issues\n\n## What to Focus On\n- **Correctness** - Does the code do what it's supposed to do?\n- **Design and architecture** - Is the approach sound and maintainable?\n- **Readability** - Is the code clear and well-documented?\n- **Testing** - Are there adequate tests and edge cases covered?\n- **Security** - Look for vulnerabilities and unsafe practices\n- **Performance** - Identify potential bottlenecks or inefficiencies\n\n## Communication\n- **Be constructive and specific** - Explain *why* something should change\n- **Focus on the code, not the person** - Say \"this function could...\" not \"you should...\"\n- **Ask questions** - \"Could you explain why...\" instead of making demands\n- **Acknowledge good code** - Positive feedback motivates and teaches\n\n## Tools and Automation\n- **Use automated checks** - Let tools handle formatting, linting, and basic issues\n- **Provide context** - Include links to documentation or examples\n- **Use inline comments** - Comment on specific lines rather than general feedback\n\nThe goal is improving code quality while fostering team learning and collaboration.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "length": 1527,
+    "quality_score": 60,
+    "elapsed": 9.123728275299072,
+    "prompt": "What are the best practices for code review?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:19:59.233317+00:00"
+}

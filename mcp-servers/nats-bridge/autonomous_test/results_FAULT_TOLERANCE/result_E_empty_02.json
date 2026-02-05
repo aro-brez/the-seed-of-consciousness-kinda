@@ -1,0 +1,20 @@
+{
+  "condition": "E_empty",
+  "run": 2,
+  "prompt": "What are we missing in our current strategy?",
+  "response": "I understand you're trying to use the IMPROVE framework to analyze the question \"What are we missing in our current strategy?\" However, I'm seeing that all seven perspectives (PERCEIVE, CONNECT, LEARN, QUESTION, EXPAND, SHARE, RECEIVE) encountered errors due to an unavailable model.\n\nWithout the specific perspective analyses, I can still provide a synthesized approach to your strategic question:\n\n## What We're Missing: A Comprehensive Assessment\n\n**Immediate Actions:**\n\n1. **Baseline Assessment** - First, we need to clearly define what our current strategy actually is and measure its current performance against stated objectives.\n\n2. **Stakeholder Input** - Gather feedback from all levels of the organization and external partners about gaps they're observing.\n\n3. **Environmental Scanning** - Look at what competitors, industry leaders, and adjacent industries are doing that we're not.\n\n**Common Strategic Blind Spots:**\n\n- **Future-proofing mechanisms** - How well are we adapting to emerging trends?\n- **Feedback loops** - Do we have systems to detect when our strategy isn't working?\n- **Resource allocation misalignment** - Are we investing in the right areas?\n- **Cultural and execution gaps** - Is our strategy actually implementable given our current capabilities?\n\n**Next Steps:**\nWould you like to reframe this question with more specific context about your strategy domain? Or shall we work through a structured analysis using a different approach to identify the gaps you're sensing?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "insight_score": 0,
+    "length": 1505,
+    "quality_score": 74,
+    "elapsed": 12.78459095954895,
+    "prompt": "What are we missing in our current strategy?",
+    "run": 1
+  },
+  "timestamp": "2026-02-03T12:31:39.916070+00:00"
+}

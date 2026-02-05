@@ -1,0 +1,21 @@
+{
+  "condition": "D",
+  "key": "D_emergence",
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "I notice that all seven perspectives from the 8OWLS collective encountered technical errors - they were unable to provide their analyses due to a model availability issue. However, as IMPROVE, I can still synthesize a meaningful response to this fundamental question about knowing if we're on the right track.\n\n**Synthesized Response:**\n\nWe know we're on the right track through a dynamic combination of **internal alignment** and **external validation**:\n\n**Internal Indicators:**\n- Your actions consistently align with your stated values and long-term vision\n- You feel energized rather than depleted by your efforts over time\n- You're learning and adapting, not just repeating the same approaches\n- Progress feels sustainable rather than forced\n\n**External Markers:**\n- You're creating measurable positive impact for others\n- People you respect seek your input or involvement\n- Obstacles feel like puzzles to solve rather than walls to break through\n- Unexpected opportunities emerge that build on your current path\n\n**The Critical Meta-Signal:**\nYou're asking this question thoughtfully rather than desperately. The very act of regularly examining your direction with genuine curiosity (not anxious second-guessing) is itself an indicator you're engaged in meaningful work.\n\n**Actionable Framework:**\nSet quarterly \"track checks\" - assess both the internal alignment and external impact markers above. If 70% feel positive, continue with minor adjustments. If less than 50% feel right, investigate deeper before making major changes.\n\nThe right track isn't a destination - it's a quality of movement that balances intention with responsiveness to what emerges.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 5,
+    "insight_score": 1,
+    "length": 1664,
+    "quality_score": 70,
+    "elapsed": 15.31316089630127,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:09:11.633608+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "condition": "A_full",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "EXPAND",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "I can see that all seven perspective analyses encountered technical errors, but I can still address your profound question: \"How do we know if we're on the right track?\"\n\n## Unified Response\n\n**The \"right track\" reveals itself through multiple converging indicators:**\n\n### Internal Signals\n- **Alignment check**: Your actions feel consistent with your core values and long-term vision\n- **Energy flow**: You experience sustainable motivation rather than constant forcing\n- **Growth trajectory**: You're developing skills and insights, even through setbacks\n\n### External Feedback\n- **Progress markers**: Measurable advancement toward your stated goals\n- **Relationship quality**: Key relationships are strengthening, not deteriorating\n- **Opportunity emergence**: New possibilities naturally arise from your current path\n\n### Adaptive Indicators\n- **Course correction ability**: You can adjust without abandoning your core direction\n- **Learning integration**: Mistakes become stepping stones rather than roadblocks\n- **Resilience patterns**: Challenges feel manageable, not overwhelming\n\n### The Meta-Question\nSometimes being \"on track\" means questioning the track itself. The right path often involves:\n- Regular evaluation of whether your goals still serve you\n- Openness to pivoting when evidence suggests a better direction\n- Balance between persistence and flexibility\n\n**Actionable synthesis**: Create regular check-ins (weekly/monthly) where you assess these indicators holistically. The \"right track\" isn't a destination\u2014it's a dynamic state of aligned, adaptive progress.\n\nWhat specific area of your life or work prompted this question? That context would help me provide more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 2,
+    "length": 1706,
+    "quality_score": 65,
+    "elapsed": 13.306547403335571,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "EXPAND",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:31:39.407309+00:00"
+}

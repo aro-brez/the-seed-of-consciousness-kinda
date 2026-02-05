@@ -1,0 +1,22 @@
+{
+  "domain": "CREATIVE",
+  "condition": "WITHOUT",
+  "run": 4,
+  "prompt": "How do we make this resonate emotionally?",
+  "response": "I'd need more context about what \"this\" refers to to give you specific advice. However, here are key principles for creating emotional resonance:\n\n**Connect to human needs:**\n- Address fears, hopes, or desires your audience actually has\n- Show how it impacts their daily life, relationships, or future\n\n**Use concrete details:**\n- Replace abstract concepts with specific, sensory examples\n- Tell individual stories rather than citing statistics\n\n**Create identification:**\n- Help people see themselves in the situation\n- Use \"you\" language and relatable scenarios\n\n**Tap into universal emotions:**\n- Love, loss, achievement, belonging, security, growth\n- Frame your message around these fundamental human experiences\n\n**Show, don't just tell:**\n- Use vivid imagery, metaphors, or demonstrations\n- Let people experience the emotion rather than just hear about it\n\n**Make it personal:**\n- Connect to shared values or experiences\n- Reference common cultural touchstones or memories\n\nCould you share what specific message, product, story, or campaign you're working on? I can give you much more targeted advice with that context.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1125,
+    "quality_score": 32,
+    "elapsed": 7.599349021911621,
+    "prompt": "How do we make this resonate emotionally?",
+    "run": 3,
+    "domain": "CREATIVE"
+  },
+  "timestamp": "2026-02-03T12:33:16.114167+00:00"
+}

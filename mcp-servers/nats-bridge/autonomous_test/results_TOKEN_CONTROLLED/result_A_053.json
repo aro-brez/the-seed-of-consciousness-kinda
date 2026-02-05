@@ -1,0 +1,26 @@
+{
+  "trial_num": 53,
+  "condition": "A",
+  "prompt": "How do effective teams handle disagreements?",
+  "response": "Effective teams handle disagreements through several key practices:\n\n**Create psychological safety**\n- Foster an environment where people feel safe to express differing views without fear of judgment or retaliation\n- Distinguish between the person and their ideas when discussing disagreements\n\n**Focus on the issue, not personalities**\n- Frame disagreements around problems to solve rather than who's right or wrong\n- Use \"we\" language instead of \"you\" language to maintain collaboration\n\n**Listen actively and seek understanding**\n- Ask clarifying questions to fully understand different perspectives\n- Summarize what you've heard before responding\n- Acknowledge valid points in opposing viewpoints\n\n**Use structured discussion methods**\n- Set ground rules for how disagreements will be handled\n- Give everyone a chance to speak before making decisions\n- Use techniques like \"devil's advocate\" roles to explore different angles\n\n**Look for common ground and shared goals**\n- Identify areas of agreement as a foundation for resolving differences\n- Remind the team of shared objectives and values\n- Find creative solutions that address multiple concerns\n\n**Make decisions transparently**\n- Clarify how the final decision will be made (consensus, majority vote, leader decides, etc.)\n- Explain the reasoning behind decisions\n- Document agreements so everyone understands the outcome\n\n**Follow up and learn**\n- Check in after implementing decisions to see how they're working\n- Reflect on what the team learned from the disagreement process\n\nThe best teams view disagreements as opportunities to make better decisions rather than threats to team harmony.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1652,
+    "quality_score": 45,
+    "elapsed": 8.052375078201294,
+    "prompt": "How do effective teams handle disagreements?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:29:23.309382+00:00"
+}

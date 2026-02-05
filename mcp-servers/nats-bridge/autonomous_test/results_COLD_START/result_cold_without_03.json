@@ -1,0 +1,22 @@
+{
+  "temperature": "cold",
+  "mode": "without",
+  "run": 3,
+  "prompt": "What's next?",
+  "response": "I don't have context about what you're referring to when you ask \"what's next?\" This could relate to many different situations - a project you're working on, a conversation we were having, steps in a process, or something happening in your life.\n\nCould you provide more details about what specifically you'd like to know the next steps for? That way I can give you a helpful and relevant response.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "insight_score": 0,
+    "length": 397,
+    "quality_score": 19.97,
+    "elapsed": 3.417990207672119,
+    "prompt": "What's next?",
+    "run": 2,
+    "temperature": "cold"
+  },
+  "timestamp": "2026-02-03T12:32:13.076867+00:00"
+}

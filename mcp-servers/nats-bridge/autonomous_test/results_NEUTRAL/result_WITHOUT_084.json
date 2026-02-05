@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "What are the best practices for code review?",
+  "response": "Here are the key best practices for effective code reviews:\n\n## Review Process\n- **Keep reviews small** - Aim for 200-400 lines of code maximum per review\n- **Review frequently** - Don't let code sit unreviewed for days\n- **Set clear expectations** - Define what should be reviewed and approval criteria\n- **Use checklists** - Ensure consistent coverage of important areas\n\n## What to Focus On\n- **Functionality** - Does the code do what it's supposed to do?\n- **Logic and algorithms** - Are they correct and efficient?\n- **Error handling** - Are edge cases and errors properly handled?\n- **Security vulnerabilities** - Check for common security issues\n- **Performance** - Look for obvious performance problems\n- **Code style and standards** - Consistency with team conventions\n- **Documentation** - Are comments clear and necessary?\n\n## Review Techniques\n- **Understand the context** - Read the requirements/ticket before reviewing\n- **Test the code mentally** - Walk through the logic step by step\n- **Look for patterns** - Identify repeated issues across the codebase\n- **Use automated tools** - Leverage linters, static analysis, and CI checks\n\n## Communication Best Practices\n- **Be constructive, not critical** - Focus on the code, not the person\n- **Explain the \"why\"** - Don't just point out problems, suggest solutions\n- **Ask questions** - \"Could we handle this case?\" rather than \"This is wrong\"\n- **Acknowledge good work** - Point out clever solutions and improvements\n- **Be specific** - Provide clear, actionable feedback\n\n## For Code Authors\n- **Self-review first** - Review your own code before submitting\n- **Provide context** - Write clear commit messages and PR descriptions\n- **Respond promptly** - Address feedback quickly to maintain momentum\n- **Don't take it personally** - View feedback as an opportunity to improve\n\nThe goal is to catch issues early, share knowledge, and maintain code quality while fostering a collaborative team environment.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "length": 1969,
+    "quality_score": 60,
+    "elapsed": 10.658581018447876,
+    "prompt": "What are the best practices for code review?"
+  },
+  "timestamp": "2026-02-03T13:04:34.346404+00:00"
+}

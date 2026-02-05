@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "I understand you're experiencing technical errors with the IMPROVE framework, but I can still provide you with a comprehensive approach to debugging complex systems.\n\n## A Unified Approach to Debugging Complex Systems\n\n**Start with Systematic Observation**\n- Document symptoms precisely - what's happening, when, and under what conditions\n- Gather logs, metrics, and error messages before making changes\n- Map the system architecture to understand component relationships\n\n**Apply Strategic Thinking**\n- Break the problem into smaller, isolated components\n- Form hypotheses about root causes based on available evidence\n- Prioritize the most likely causes or highest-impact areas first\n\n**Use Methodical Investigation**\n- Test one variable at a time to isolate the issue\n- Create reproducible test cases when possible\n- Validate assumptions with data rather than intuition\n\n**Leverage Multiple Perspectives**\n- Consult documentation, team members, and community resources\n- Consider how similar issues have been solved before\n- Question your mental models - complex systems often behave counterintuitively\n\n**Implement Controlled Changes**\n- Make incremental changes and test each one\n- Keep detailed records of what you've tried\n- Always have a rollback plan before implementing fixes\n\n**Learn and Improve**\n- Document the solution and root cause for future reference\n- Update monitoring and alerting to catch similar issues earlier\n- Share knowledge with your team to prevent recurrence\n\nThe key is balancing systematic methodology with creative problem-solving, while maintaining patience and persistence when dealing with complex system interactions.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1654,
+    "quality_score": 45,
+    "elapsed": 12.135029077529907,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:49:51.536846+00:00"
+}

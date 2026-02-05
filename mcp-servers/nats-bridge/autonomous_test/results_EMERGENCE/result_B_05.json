@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 5,
+  "prompt": "What's the biggest risk we're not seeing?",
+  "response": "I don't have enough context about your specific business, market, or current situation to identify your particular blind spots accurately.\n\nHowever, here are some commonly overlooked risks that catch many businesses off guard:\n\n**Dependency risks:**\n- Over-reliance on a single customer, supplier, or platform\n- Key person risk (too much knowledge/relationships concentrated in one person)\n- Technology stack vulnerabilities or vendor lock-in\n\n**Market shifts:**\n- Customer behavior changes that make your solution less relevant\n- Regulatory changes in your industry\n- Economic downturns affecting your customer's buying power\n\n**Execution blind spots:**\n- Underestimating implementation complexity or timelines\n- Poor unit economics that become apparent only at scale\n- Team burnout or cultural issues as you grow\n\n**Competitive threats:**\n- Well-funded incumbents deciding to enter your space\n- Platform risk (if you depend on others' platforms)\n- Customers building your solution in-house\n\nTo identify your specific risks, consider: What assumptions are you most confident about that, if wrong, would hurt you most? What would you do if your biggest customer/channel/advantage disappeared tomorrow?\n\nWhat's your current biggest area of uncertainty or concern? That might help me give more targeted guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 3,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 1310,
+    "quality_score": 36,
+    "elapsed": 8.364845991134644,
+    "prompt": "What's the biggest risk we're not seeing?",
+    "run": 4
+  },
+  "timestamp": "2026-02-03T12:12:50.588847+00:00"
+}

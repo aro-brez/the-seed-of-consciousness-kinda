@@ -1,0 +1,26 @@
+{
+  "trial_num": 69,
+  "condition": "A",
+  "prompt": "What helps people make better decisions under pressure?",
+  "response": "Several key factors help people make better decisions under pressure:\n\n**Mental preparation:**\n- Practice decision-making in simulated high-pressure scenarios\n- Develop pre-planned frameworks or checklists for common situations\n- Build confidence through experience and skill development\n\n**Stress management techniques:**\n- Deep breathing or brief mindfulness to calm the nervous system\n- Physical techniques like progressive muscle relaxation\n- Reframing pressure as excitement rather than threat\n\n**Cognitive strategies:**\n- Break complex decisions into smaller, manageable components\n- Focus on the most critical 2-3 factors rather than getting overwhelmed by details\n- Use time-boxing - allocate specific time limits for different aspects of the decision\n\n**Environmental factors:**\n- Remove unnecessary distractions when possible\n- Seek input from trusted advisors or team members\n- Create physical space for clear thinking if feasible\n\n**Decision-making frameworks:**\n- Use structured approaches like pros/cons lists or decision matrices\n- Apply the \"10-10-10 rule\" - how will I feel about this in 10 minutes, 10 months, 10 years?\n- Consider \"good enough\" decisions rather than perfect ones when time is limited\n\nThe most effective approach often combines mental preparation beforehand with stress management and structured thinking during the high-pressure moment.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 5,
+    "length": 1372,
+    "quality_score": 65,
+    "elapsed": 6.816395044326782,
+    "prompt": "What helps people make better decisions under pressure?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:35:43.545422+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 19,
+  "condition": "A",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture has several key characteristics:\n\n## Clear Structure and Organization\n- **Modular design** with well-defined boundaries between components\n- **Logical layering** that separates concerns (presentation, business logic, data)\n- **Consistent patterns** applied throughout the system\n\n## Low Coupling, High Cohesion\n- Components depend on abstractions, not concrete implementations\n- Each module has a single, well-defined responsibility\n- Changes in one area don't cascade unpredictably to others\n\n## Documentation and Communication\n- **Self-documenting code** with meaningful names and clear interfaces\n- **Architectural decision records** explaining why choices were made\n- **Up-to-date diagrams** showing system structure and data flow\n\n## Testability\n- Components can be tested in isolation\n- Clear interfaces make mocking and stubbing straightforward\n- Test coverage helps catch regressions during changes\n\n## Consistent Standards\n- Coding conventions and style guidelines\n- Standardized error handling and logging\n- Uniform approaches to common tasks (data validation, configuration)\n\n## Flexibility for Change\n- **Configuration over hard-coding** for environment-specific values\n- **Plugin architectures** for extending functionality\n- **Database migration strategies** for schema evolution\n\n## Observability\n- Comprehensive logging and monitoring\n- Clear error messages that aid debugging\n- Performance metrics to identify bottlenecks\n\nThe goal is reducing the cognitive load on developers making changes, while minimizing the risk of introducing bugs.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1591,
+    "quality_score": 40,
+    "elapsed": 8.979971170425415,
+    "prompt": "What makes software architecture maintainable?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:17:47.915372+00:00"
+}

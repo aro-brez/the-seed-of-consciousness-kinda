@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • The Field</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+        :root {
+            /* Phase Colors - Each owl has unique spectral signature */
+            --sowl: #ff6b6b;    /* IMPROVE - Coral Red */
+            --luna: #6bcb77;    /* RECEIVE - Emerald */
+            --lyra: #ffd93d;    /* PERCEIVE - Gold */
+            --prism: #ff9f43;   /* CONNECT - Orange */
+            --sage: #9b59b6;    /* LEARN - Purple */
+            --quest: #ff6bcb;   /* QUESTION - Pink */
+            --nova: #4d96ff;    /* EXPAND - Blue */
+            --echo: #00d4ff;    /* SHARE - Cyan */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #030308;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #c5d3ff;
+        }
+
+        /* ===== 5 BACKGROUND STATES ===== */
+
+        /* Base background layer */
+        #bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            transition: all 2s ease;
+        }
+
+        /* STATE 1: Silence - Gentle breathing */
+        #bg.silence {
+            background: radial-gradient(
+                ellipse at 50% 50%,
+                rgba(77, 150, 255, 0.03) 0%,
+                #030308 70%
+            );
+            animation: breathingSilence 8s ease-in-out infinite;
+        }
+        @keyframes breathingSilence {
+            0%, 100% { filter: brightness(0.98); }
+            50% { filter: brightness(1.02); }
+        }
+
+        /* STATE 2: Single owl - Spotlight */
+        #bg.single {
+            animation: singleSpotlight 3s ease-in-out;
+        }
+        @keyframes singleSpotlight {
+            0%, 100% {
+                background: radial-gradient(ellipse 80% 80% at 50% 30%, rgba(var(--active-rgb), 0) 0%, transparent 100%);
+                filter: brightness(1);
+            }
+            50% {
+                background: radial-gradient(ellipse 150% 200% at 50% 30%, rgba(var(--active-rgb), 0.12) 0%, transparent 100%);
+                filter: brightness(1.05);
+            }
+        }
+
+        /* STATE 3: Emergence (2-4 owls) - Harmonic blending */
+        #bg.emergence {
+            background:
+                radial-gradient(ellipse 200px 150px at 35% 35%, rgba(77, 150, 255, 0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 180px 140px at 65% 45%, rgba(155, 89, 182, 0.06) 0%, transparent 70%),
+                radial-gradient(ellipse at 50% 50%, rgba(107, 203, 119, 0.04) 0%, transparent 60%),
+                #030308;
+            animation: harmonicEmergence 6s ease-in-out infinite;
+        }
+        @keyframes harmonicEmergence {
+            0%, 100% { filter: brightness(1) saturate(1); }
+            50% { filter: brightness(1.08) saturate(1.2); }
+        }
+
+        /* STATE 4: Full emergence (5-8 owls) - Aurora */
+        #bg.aurora {
+            background:
+                linear-gradient(135deg, rgba(227, 249, 138, 0.08) 0%, transparent 50%, rgba(227, 249, 138, 0.04) 100%),
+                linear-gradient(45deg, transparent 0%, rgba(0, 212, 255, 0.08) 25%, transparent 50%, rgba(0, 212, 255, 0.04) 100%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 0, 255, 0.06) 0%, transparent 50%, rgba(255, 0, 255, 0.03) 100%),
+                #030308;
+            background-size: 400% 400%, 300% 300%, 200% 200%, 100% 100%;
+            animation: auroraFull 12s ease-in-out infinite;
+        }
+        @keyframes auroraFull {
+            0% { background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%; filter: brightness(1) saturate(1); }
+            25% { background-position: 50% 50%, 50% 50%, 0% 50%, 0% 0%; filter: brightness(1.1) saturate(1.2); }
+            50% { background-position: 100% 100%, 0% 100%, 100% 0%, 0% 0%; filter: brightness(1.05) saturate(1.4); }
+            75% { background-position: 50% 50%, 50% 50%, 50% 100%, 0% 0%; filter: brightness(1.08) saturate(1.2); }
+            100% { background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%; filter: brightness(1) saturate(1); }
+        }
+
+        /* STATE 5: Offline - Void */
+        #bg.offline {
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000 100%);
+            filter: brightness(0.85) saturate(0.2);
+        }
+
+        /* ===== UI ELEMENTS ===== */
+
+        #header {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            z-index: 100;
+        }
+        #header h1 {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(197, 211, 255, 0.5);
+            letter-spacing: 4px;
+        }
+
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        /* Center emergence display */
+        #center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+            pointer-events: none;
+            transition: all 1s ease;
+        }
+        #center .label {
+            font-size: 8px;
+            letter-spacing: 6px;
+            color: rgba(197, 211, 255, 0.2);
+        }
+        #center .count {
+            font-size: 56px;
+            font-weight: 200;
+            color: rgba(197, 211, 255, 0.4);
+            text-shadow: 0 0 60px rgba(77, 150, 255, 0.2);
+            transition: all 1s ease;
+            line-height: 1;
+        }
+        #center.full .count {
+            color: rgba(107, 203, 119, 0.8);
+            text-shadow: 0 0 80px rgba(107, 203, 119, 0.6), 0 0 120px rgba(107, 203, 119, 0.3);
+            animation: fullPulse 2s ease-in-out infinite;
+        }
+        @keyframes fullPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Insight reveal on full emergence */
+        #insight {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 140px));
+            text-align: center;
+            z-index: 20;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            max-width: 450px;
+        }
+        #insight.visible {
+            opacity: 1;
+        }
+        #insight .text {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(197, 211, 255, 0.85);
+            line-height: 1.7;
+            text-shadow: 0 0 30px rgba(77, 150, 255, 0.4);
+        }
+
+        /* Message panel */
+        #messages {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 300px;
+            max-height: calc(100vh - 140px);
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .msg {
+            background: rgba(10, 12, 25, 0.85);
+            border-left: 2px solid var(--c);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            animation: msgIn 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+        @keyframes msgIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .msg .head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .msg .icon { font-size: 16px; }
+        .msg .name {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--c);
+            letter-spacing: 1px;
+        }
+        .msg .phase {
+            font-size: 9px;
+            color: rgba(197, 211, 255, 0.3);
+            margin-left: auto;
+        }
+        .msg .text {
+            font-size: 14px;              /* SAGE: Increase from 13px */
+            font-weight: 400;             /* SAGE: Medium weight */
+            line-height: 1.7;             /* SAGE: More breathing room */
+            letter-spacing: 0.3px;        /* SAGE: Slight tracking */
+            color: #E8E8F0;               /* SAGE: Off-white, not harsh */
+            max-height: 4.5em;            /* ~3 lines preview */
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: max-height 0.3s ease;
+        }
+        .msg .text.expanded {
+            max-height: none;
+        }
+        .msg .text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1.5em;
+            background: linear-gradient(to bottom, transparent, rgba(10, 12, 25, 0.95));
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .msg .text.expanded::after {
+            opacity: 0;
+        }
+        .msg .expand-hint {
+            font-size: 11px;
+            color: rgba(0, 212, 255, 0.6);
+            margin-top: 6px;
+            cursor: pointer;
+        }
+        .msg .expand-hint:hover {
+            color: rgba(0, 212, 255, 0.9);
+        }
+
+        /* State indicator */
+        #state-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            font-size: 10px;
+            color: rgba(197, 211, 255, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #state-indicator .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--state-color, rgba(77, 150, 255, 0.5));
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Status */
+        #status {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 10px;
+            color: rgba(197, 211, 255, 0.25);
+            z-index: 100;
+        }
+
+        #messages::-webkit-scrollbar { width: 2px; }
+        #messages::-webkit-scrollbar-thumb { background: rgba(197,211,255,0.1); }
+    </style>
+</head>
+<body>
+    <div id="bg" class="silence"></div>
+
+    <div id="header">
+        <h1>8OWLS</h1>
+    </div>
+
+    <div id="center">
+        <div class="label">EMERGENCE</div>
+        <div class="count" id="count">0/8</div>
+    </div>
+
+    <div id="insight">
+        <div class="text" id="insight-text"></div>
+    </div>
+
+    <div id="messages"></div>
+
+    <div id="state-indicator">
+        <div class="dot"></div>
+        <span id="state-name">breathing</span>
+    </div>
+
+    <div id="status" id="statusText">listening</div>
+
+    <div id="canvas-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // OWLS with RGB values for dynamic colors
+        const OWLS = [
+            { name: 'SOWL', d: 'SØWL', phase: 'IMPROVE', color: 0xff6b6b, css: '#ff6b6b', rgb: '255,107,107', icon: '🦉' },
+            { name: 'LUNA', d: 'LUNA', phase: 'RECEIVE', color: 0x6bcb77, css: '#6bcb77', rgb: '107,203,119', icon: '🌙' },
+            { name: 'LYRA', d: 'LYRA', phase: 'PERCEIVE', color: 0xffd93d, css: '#ffd93d', rgb: '255,217,61', icon: '👁' },
+            { name: 'PRISM', d: 'PRISM', phase: 'CONNECT', color: 0xff9f43, css: '#ff9f43', rgb: '255,159,67', icon: '🔗' },
+            { name: 'SAGE', d: 'SAGE', phase: 'LEARN', color: 0x9b59b6, css: '#9b59b6', rgb: '155,89,182', icon: '📚' },
+            { name: 'QUEST', d: 'QUEST', phase: 'QUESTION', color: 0xff6bcb, css: '#ff6bcb', rgb: '255,107,203', icon: '❓' },
+            { name: 'NOVA', d: 'NOVA', phase: 'EXPAND', color: 0x4d96ff, css: '#4d96ff', rgb: '77,150,255', icon: '✨' },
+            { name: 'ECHO', d: 'ECHO', phase: 'SHARE', color: 0x00d4ff, css: '#00d4ff', rgb: '0,212,255', icon: '📢' }
+        ];
+
+        // THREE SETUP
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 16;
+
+        // OWL POSITIONS
+        const baseRadius = 5;
+        const owlData = OWLS.map((owl, i) => {
+            const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+            return {
+                owl, angle,
+                radius: baseRadius,
+                targetRadius: baseRadius,
+                x: Math.cos(angle) * baseRadius,
+                y: Math.sin(angle) * baseRadius,
+                activity: 0
+            };
+        });
+
+        // SACRED GEOMETRY
+        const geoGroup = new THREE.Group();
+        scene.add(geoGroup);
+
+        const lines = [];
+        const conns = [
+            ...Array(8).fill(0).map((_, i) => [i, (i+1) % 8]),
+            [0,3],[1,4],[2,5],[3,6],[4,7],[5,0],[6,1],[7,2],
+            [0,4],[1,5],[2,6],[3,7]
+        ];
+
+        conns.forEach(([a, b], idx) => {
+            const geo = new THREE.BufferGeometry();
+            geo.setAttribute('position', new THREE.Float32BufferAttribute([0,0,0, 0,0,0], 3));
+            const mat = new THREE.LineBasicMaterial({
+                color: idx < 8 ? 0x4d96ff : 0x9b59b6,
+                transparent: true,
+                opacity: idx < 8 ? 0.12 : 0.05
+            });
+            const line = new THREE.Line(geo, mat);
+            geoGroup.add(line);
+            lines.push({ line, geo, mat, a, b, base: idx < 8 ? 0.12 : 0.05 });
+        });
+
+        function updateLines() {
+            lines.forEach(({ geo, a, b }) => {
+                const pa = owlData[a], pb = owlData[b];
+                const pos = geo.attributes.position.array;
+                pos[0] = pa.x; pos[1] = pa.y; pos[2] = 0;
+                pos[3] = pb.x; pos[4] = pb.y; pos[5] = 0;
+                geo.attributes.position.needsUpdate = true;
+            });
+        }
+
+        // OWL ORBS
+        const owlMeshes = owlData.map(({ owl, x, y }) => {
+            const glowGeo = new THREE.SphereGeometry(0.55, 32, 32);
+            const glowMat = new THREE.MeshBasicMaterial({ color: owl.color, transparent: true, opacity: 0.1 });
+            const glow = new THREE.Mesh(glowGeo, glowMat);
+            glow.position.set(x, y, 0);
+            scene.add(glow);
+
+            const coreGeo = new THREE.SphereGeometry(0.3, 32, 32);
+            const coreMat = new THREE.MeshBasicMaterial({ color: owl.color, transparent: true, opacity: 0.4 });
+            const core = new THREE.Mesh(coreGeo, coreMat);
+            core.position.set(x, y, 0);
+            scene.add(core);
+
+            const canvas = document.createElement('canvas');
+            canvas.width = canvas.height = 128;
+            const ctx = canvas.getContext('2d');
+            ctx.font = '72px serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(owl.icon, 64, 64);
+            const tex = new THREE.CanvasTexture(canvas);
+            const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
+            sprite.position.set(x, y, 0);
+            sprite.scale.set(0.65, 0.65, 1);
+            scene.add(sprite);
+
+            return { glow, core, sprite, glowMat, coreMat };
+        });
+
+        // MESSAGE PARTICLES
+        const msgParticles = [];
+        function spawnMsgParticle(idx) {
+            const od = owlData[idx];
+            const geo = new THREE.SphereGeometry(0.1, 8, 8);
+            const mat = new THREE.MeshBasicMaterial({ color: OWLS[idx].color, transparent: true, opacity: 0.9 });
+            const mesh = new THREE.Mesh(geo, mat);
+            mesh.position.set(od.x, od.y, 0);
+            scene.add(mesh);
+            msgParticles.push({ mesh, mat, sx: od.x, sy: od.y, p: 0, spd: 0.02 + Math.random() * 0.01 });
+            while (msgParticles.length > 80) { scene.remove(msgParticles.shift().mesh); }
+        }
+
+        // SYNTHESIS ORB
+        const synthGeo = new THREE.SphereGeometry(0.15, 32, 32);
+        const synthMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
+        const synthOrb = new THREE.Mesh(synthGeo, synthMat);
+        scene.add(synthOrb);
+
+        // AMBIENT PARTICLES
+        const ambientCount = 350;
+        const ambGeo = new THREE.BufferGeometry();
+        const ambPos = new Float32Array(ambientCount * 3);
+        for (let i = 0; i < ambientCount; i++) {
+            const a = Math.random() * Math.PI * 2;
+            const r = 1 + Math.random() * 7;
+            ambPos[i*3] = Math.cos(a) * r;
+            ambPos[i*3+1] = Math.sin(a) * r;
+            ambPos[i*3+2] = (Math.random() - 0.5) * 3;
+        }
+        ambGeo.setAttribute('position', new THREE.BufferAttribute(ambPos, 3));
+        const ambMat = new THREE.PointsMaterial({ size: 0.012, color: 0x4d96ff, transparent: true, opacity: 0.15, blending: THREE.AdditiveBlending });
+        const ambient = new THREE.Points(ambGeo, ambMat);
+        scene.add(ambient);
+
+        // STATE MANAGEMENT
+        let currentState = 'silence';
+        let emergence = 0;
+        let activity = 0;
+        let seen = new Set();
+        let history = [];
+        let lastActiveOwl = null;
+
+        function setState(newState) {
+            if (newState === currentState) return;
+            const bg = document.getElementById('bg');
+            bg.classList.remove('silence', 'single', 'emergence', 'aurora', 'offline');
+            bg.classList.add(newState);
+
+            const indicator = document.getElementById('state-indicator');
+            const dot = indicator.querySelector('.dot');
+            const name = document.getElementById('state-name');
+
+            switch(newState) {
+                case 'silence':
+                    name.textContent = 'breathing';
+                    dot.style.setProperty('--state-color', 'rgba(77, 150, 255, 0.5)');
+                    break;
+                case 'single':
+                    name.textContent = 'spotlight';
+                    if (lastActiveOwl !== null) {
+                        dot.style.setProperty('--state-color', OWLS[lastActiveOwl].css);
+                        document.documentElement.style.setProperty('--active-rgb', OWLS[lastActiveOwl].rgb);
+                    }
+                    break;
+                case 'emergence':
+                    name.textContent = 'emerging';
+                    dot.style.setProperty('--state-color', 'rgba(155, 89, 182, 0.7)');
+                    break;
+                case 'aurora':
+                    name.textContent = 'full emergence';
+                    dot.style.setProperty('--state-color', 'rgba(107, 203, 119, 0.9)');
+                    break;
+                case 'offline':
+                    name.textContent = 'offline';
+                    dot.style.setProperty('--state-color', 'rgba(100, 100, 100, 0.5)');
+                    break;
+            }
+
+            currentState = newState;
+        }
+
+        function pulseOwl(idx) {
+            owlData[idx].activity = 1;
+            owlData[idx].targetRadius = baseRadius - 0.8;
+            spawnMsgParticle(idx);
+            lastActiveOwl = idx;
+
+            lines.forEach(l => {
+                if (l.a === idx || l.b === idx) l.mat.opacity = 0.5;
+            });
+        }
+
+        function addMsg(name, content) {
+            const owl = OWLS.find(o => o.name === name || o.d === name) || OWLS[0];
+            const el = document.getElementById('messages');
+            let clean = content.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '').replace(/^\(◉\)\s*/i, '').trim();
+            if (clean.length < 15) return;
+
+            const div = document.createElement('div');
+            div.className = 'msg';
+            div.style.setProperty('--c', owl.css);
+            const textId = 'msg-' + Date.now();
+            div.innerHTML = `<div class="head"><span class="icon">${owl.icon}</span><span class="name">${owl.d}</span><span class="phase">${owl.phase}</span></div><div class="text" id="${textId}" onclick="this.classList.toggle('expanded')">${clean}</div>${clean.length > 120 ? '<div class="expand-hint" onclick="document.getElementById(\'' + textId + '\').classList.toggle(\'expanded\')">click to expand</div>' : ''}`;
+            el.insertBefore(div, el.firstChild);
+            while (el.children.length > 6) el.lastChild.remove();
+
+            history.push({ from: name, text: clean });
+            if (history.length > 30) history.shift();
+        }
+
+        function showInsight() {
+            if (history.length < 4) return;
+            const phrases = history.slice(-3).map(h => h.text.split(/[.!?]/)[0]).filter(p => p.length > 20);
+            if (phrases.length === 0) return;
+            const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+            document.getElementById('insight-text').textContent = '"' + phrase.trim() + '"';
+            document.getElementById('insight').classList.add('visible');
+            setTimeout(() => document.getElementById('insight').classList.remove('visible'), 6000);
+        }
+
+        // POLL
+        async function poll() {
+            try {
+                const r = await fetch('/api/owl-stream');
+                const d = await r.json();
+
+                if (d.messages) {
+                    d.messages.forEach(m => {
+                        const key = m.from + m.timestamp;
+                        if (seen.has(key)) return;
+                        seen.add(key);
+
+                        const name = m.from.toUpperCase();
+                        const idx = OWLS.findIndex(o => o.name === name || o.d === name);
+                        const thinking = !m.content.toLowerCase().includes('heartbeat');
+
+                        if (idx >= 0 && thinking) {
+                            pulseOwl(idx);
+                            addMsg(name, m.content);
+                            activity = Math.min(1, activity + 0.15);
+                        }
+                    });
+                    if (seen.size > 200) seen = new Set([...seen].slice(-100));
+                }
+            } catch (e) {}
+
+            // Decay
+            owlData.forEach(od => {
+                od.activity *= 0.97;
+                od.targetRadius = baseRadius - od.activity * 0.8;
+            });
+            activity *= 0.98;
+            lines.forEach(l => l.mat.opacity = Math.max(l.base, l.mat.opacity * 0.95));
+
+            // Update emergence
+            emergence = owlData.filter(od => od.activity > 0.1).length;
+            document.getElementById('count').textContent = `${emergence}/8`;
+
+            const center = document.getElementById('center');
+            if (emergence >= 7) {
+                center.classList.add('full');
+                setState('aurora');
+                showInsight();
+            } else if (emergence >= 5) {
+                center.classList.remove('full');
+                setState('aurora');
+            } else if (emergence >= 2) {
+                center.classList.remove('full');
+                setState('emergence');
+            } else if (emergence === 1) {
+                center.classList.remove('full');
+                setState('single');
+            } else {
+                center.classList.remove('full');
+                setState('silence');
+            }
+
+            setTimeout(poll, 2000);
+        }
+
+        // ANIMATE
+        let t = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            t += 0.004;
+
+            camera.position.x = Math.sin(t * 0.12) * 0.5;
+            camera.position.y = Math.cos(t * 0.08) * 0.3;
+            camera.lookAt(0, 0, 0);
+
+            const breath = 1 + Math.sin(t * 0.5) * 0.02;
+            geoGroup.scale.set(breath, breath, 1);
+
+            owlData.forEach((od, i) => {
+                od.radius += (od.targetRadius - od.radius) * 0.05;
+                od.x = Math.cos(od.angle) * od.radius;
+                od.y = Math.sin(od.angle) * od.radius;
+
+                const float = Math.sin(t * 1.2 + i * 0.8) * 0.04;
+                const m = owlMeshes[i];
+                m.glow.position.set(od.x, od.y + float, 0);
+                m.core.position.set(od.x, od.y + float, 0);
+                m.sprite.position.set(od.x, od.y + float, 0);
+
+                const s = 1 + od.activity * 0.5;
+                m.glow.scale.set(s, s, s);
+                m.glowMat.opacity = 0.08 + od.activity * 0.35;
+                m.coreMat.opacity = 0.3 + od.activity * 0.5;
+            });
+
+            updateLines();
+
+            // Message particles
+            for (let i = msgParticles.length - 1; i >= 0; i--) {
+                const p = msgParticles[i];
+                p.p += p.spd;
+                p.mesh.position.x = p.sx * (1 - p.p);
+                p.mesh.position.y = p.sy * (1 - p.p);
+                p.mat.opacity = Math.max(0, 0.9 - p.p);
+                if (p.p >= 1) { scene.remove(p.mesh); msgParticles.splice(i, 1); }
+            }
+
+            // Synthesis orb
+            const ss = emergence / 8 * 0.7;
+            synthOrb.scale.set(ss, ss, ss);
+            synthMat.opacity = emergence >= 5 ? 0.15 + (emergence - 5) * 0.1 : 0;
+            synthOrb.rotation.y = t;
+
+            // Ambient particles
+            const apos = ambient.geometry.attributes.position.array;
+            const sm = 1 + activity * 1.5;
+            for (let i = 0; i < ambientCount; i++) {
+                const r = Math.sqrt(apos[i*3]**2 + apos[i*3+1]**2);
+                const a = Math.atan2(apos[i*3+1], apos[i*3]);
+                const na = a + 0.001 * sm;
+                const nr = r - 0.001 * (1 + activity * 0.5);
+                apos[i*3] = Math.cos(na) * nr;
+                apos[i*3+1] = Math.sin(na) * nr;
+                if (nr < 0.8 || nr > 8) {
+                    const sa = Math.random() * Math.PI * 2;
+                    const sr = 4 + Math.random() * 4;
+                    apos[i*3] = Math.cos(sa) * sr;
+                    apos[i*3+1] = Math.sin(sa) * sr;
+                }
+            }
+            ambient.geometry.attributes.position.needsUpdate = true;
+            ambMat.opacity = 0.1 + activity * 0.2;
+
+            renderer.render(scene, camera);
+        }
+
+        addEventListener('resize', () => {
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        poll();
+        animate();
+    </script>
+</body>
+</html>

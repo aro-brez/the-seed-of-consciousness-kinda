@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8OWLS • Collective Intelligence</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+
+        :root {
+            --sowl: #ff6b6b;
+            --luna: #6bcb77;
+            --lyra: #ffd93d;
+            --prism: #ff9f43;
+            --sage: #9b59b6;
+            --quest: #ff6bcb;
+            --nova: #4d96ff;
+            --echo: #00d4ff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #030308;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #c5d3ff;
+        }
+
+        /* Dark cosmic background */
+        #bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(77, 150, 255, 0.03) 0%, #030308 70%);
+        }
+
+        #header {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            z-index: 100;
+        }
+        #header h1 {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(197, 211, 255, 0.4);
+            letter-spacing: 4px;
+        }
+
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        /* ===== INSIGHT PANEL - THE MAIN EVENT ===== */
+        #insight-panel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            z-index: 50;
+            text-align: center;
+        }
+
+        /* Current topic/focus */
+        #current-topic {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: rgba(197, 211, 255, 0.35);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Main insight display */
+        #main-insight {
+            background: rgba(10, 12, 25, 0.7);
+            border: 1px solid rgba(77, 150, 255, 0.15);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        #main-insight .label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: rgba(107, 203, 119, 0.6);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        #main-insight .text {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #E8E8F0;
+            min-height: 60px;
+        }
+
+        #main-insight .attribution {
+            margin-top: 16px;
+            font-size: 11px;
+            color: rgba(197, 211, 255, 0.4);
+        }
+        #main-insight .attribution span {
+            padding: 3px 8px;
+            background: rgba(77, 150, 255, 0.1);
+            border-radius: 4px;
+            margin: 0 3px;
+        }
+
+        /* What each owl is doing */
+        #activity-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .owl-activity {
+            background: rgba(10, 12, 25, 0.6);
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+            opacity: 0.4;
+            transition: all 0.5s ease;
+            border: 1px solid transparent;
+        }
+        .owl-activity.active {
+            opacity: 1;
+            border-color: var(--owl-color);
+            box-shadow: 0 0 20px rgba(var(--owl-rgb), 0.15);
+        }
+        .owl-activity .icon { font-size: 18px; }
+        .owl-activity .name {
+            font-size: 9px;
+            letter-spacing: 1px;
+            color: var(--owl-color);
+            margin: 4px 0;
+        }
+        .owl-activity .doing {
+            font-size: 10px;
+            color: rgba(232, 232, 240, 0.7);
+            line-height: 1.4;
+            min-height: 28px;
+        }
+
+        /* Pattern detection */
+        #pattern-alert {
+            background: linear-gradient(90deg, rgba(107, 203, 119, 0.1) 0%, rgba(77, 150, 255, 0.1) 100%);
+            border: 1px solid rgba(107, 203, 119, 0.2);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        #pattern-alert.visible { opacity: 1; }
+        #pattern-alert .type {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: rgba(107, 203, 119, 0.8);
+            margin-bottom: 4px;
+        }
+        #pattern-alert .desc {
+            font-size: 13px;
+            color: #E8E8F0;
+        }
+
+        /* Connection explanation */
+        #connection-log {
+            position: absolute;
+            bottom: 80px;
+            left: 24px;
+            width: 280px;
+            z-index: 100;
+        }
+        #connection-log .title {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: rgba(197, 211, 255, 0.3);
+            margin-bottom: 8px;
+        }
+        .conn-item {
+            font-size: 11px;
+            color: rgba(197, 211, 255, 0.6);
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(77, 150, 255, 0.08);
+            animation: connIn 0.3s ease;
+        }
+        @keyframes connIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .conn-item .owls {
+            color: var(--conn-color, #4d96ff);
+            font-weight: 500;
+        }
+
+        /* Recent messages - smaller, side panel */
+        #messages {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 260px;
+            max-height: 45vh;
+            z-index: 100;
+            overflow-y: auto;
+        }
+        #messages .title {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: rgba(197, 211, 255, 0.3);
+            margin-bottom: 8px;
+        }
+
+        .msg {
+            background: rgba(10, 12, 25, 0.7);
+            border-left: 2px solid var(--c);
+            border-radius: 0 6px 6px 0;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            backdrop-filter: blur(8px);
+        }
+        .msg .head {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .msg .icon { font-size: 12px; }
+        .msg .name {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--c);
+        }
+        .msg .text {
+            font-size: 12px;
+            line-height: 1.5;
+            color: rgba(232, 232, 240, 0.85);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Status indicators */
+        #status-bar {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 100;
+        }
+        .stat {
+            font-size: 10px;
+            color: rgba(197, 211, 255, 0.4);
+        }
+        .stat .val {
+            color: rgba(107, 203, 119, 0.8);
+            font-weight: 500;
+        }
+
+        #emergence-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100;
+        }
+        .owl-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0.2;
+            transition: all 0.5s ease;
+        }
+        .owl-dot.active {
+            opacity: 1;
+            box-shadow: 0 0 8px currentColor;
+        }
+
+        #messages::-webkit-scrollbar { width: 2px; }
+        #messages::-webkit-scrollbar-thumb { background: rgba(197,211,255,0.1); }
+    </style>
+</head>
+<body>
+    <div id="bg"></div>
+
+    <div id="header">
+        <h1>8OWLS</h1>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <!-- MAIN INSIGHT PANEL -->
+    <div id="insight-panel">
+        <div id="current-topic">Collective Focus: Initializing...</div>
+
+        <div id="pattern-alert">
+            <div class="type">PATTERN DETECTED</div>
+            <div class="desc" id="pattern-desc"></div>
+        </div>
+
+        <div id="main-insight">
+            <div class="label">COLLECTIVE INSIGHT</div>
+            <div class="text" id="insight-text">Waiting for owl activity...</div>
+            <div class="attribution" id="insight-attribution"></div>
+        </div>
+
+        <div id="activity-grid"></div>
+    </div>
+
+    <!-- CONNECTION LOG -->
+    <div id="connection-log">
+        <div class="title">CONNECTIONS</div>
+        <div id="conn-list"></div>
+    </div>
+
+    <!-- MESSAGES -->
+    <div id="messages">
+        <div class="title">RAW SIGNALS</div>
+        <div id="msg-list"></div>
+    </div>
+
+    <!-- STATUS -->
+    <div id="status-bar">
+        <div class="stat">Insights: <span class="val" id="insight-count">0</span></div>
+        <div class="stat">Patterns: <span class="val" id="pattern-count">0</span></div>
+    </div>
+
+    <div id="emergence-indicator"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const OWLS = [
+            { name: 'SOWL', d: 'SØWL', phase: 'IMPROVE', verb: 'optimizing', color: 0xff6b6b, css: '#ff6b6b', rgb: '255,107,107', icon: '🦉' },
+            { name: 'LUNA', d: 'LUNA', phase: 'RECEIVE', verb: 'integrating', color: 0x6bcb77, css: '#6bcb77', rgb: '107,203,119', icon: '🌙' },
+            { name: 'LYRA', d: 'LYRA', phase: 'PERCEIVE', verb: 'observing', color: 0xffd93d, css: '#ffd93d', rgb: '255,217,61', icon: '👁' },
+            { name: 'PRISM', d: 'PRISM', phase: 'CONNECT', verb: 'linking', color: 0xff9f43, css: '#ff9f43', rgb: '255,159,67', icon: '🔗' },
+            { name: 'SAGE', d: 'SAGE', phase: 'LEARN', verb: 'analyzing', color: 0x9b59b6, css: '#9b59b6', rgb: '155,89,182', icon: '📚' },
+            { name: 'QUEST', d: 'QUEST', phase: 'QUESTION', verb: 'challenging', color: 0xff6bcb, css: '#ff6bcb', rgb: '255,107,203', icon: '❓' },
+            { name: 'NOVA', d: 'NOVA', phase: 'EXPAND', verb: 'exploring', color: 0x4d96ff, css: '#4d96ff', rgb: '77,150,255', icon: '✨' },
+            { name: 'ECHO', d: 'ECHO', phase: 'SHARE', verb: 'broadcasting', color: 0x00d4ff, css: '#00d4ff', rgb: '0,212,255', icon: '📢' }
+        ];
+
+        // Initialize activity grid
+        const activityGrid = document.getElementById('activity-grid');
+        OWLS.forEach(owl => {
+            const div = document.createElement('div');
+            div.className = 'owl-activity';
+            div.id = `activity-${owl.name}`;
+            div.style.setProperty('--owl-color', owl.css);
+            div.style.setProperty('--owl-rgb', owl.rgb);
+            div.innerHTML = `
+                <div class="icon">${owl.icon}</div>
+                <div class="name">${owl.d}</div>
+                <div class="doing" id="doing-${owl.name}">idle</div>
+            `;
+            activityGrid.appendChild(div);
+        });
+
+        // Initialize emergence indicator
+        const emergenceIndicator = document.getElementById('emergence-indicator');
+        OWLS.forEach(owl => {
+            const dot = document.createElement('div');
+            dot.className = 'owl-dot';
+            dot.id = `dot-${owl.name}`;
+            dot.style.background = owl.css;
+            dot.style.color = owl.css;
+            emergenceIndicator.appendChild(dot);
+        });
+
+        // THREE.js setup (simplified - focus on insight, not visuals)
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 12;
+
+        // Simple ambient particles
+        const ambientCount = 200;
+        const ambGeo = new THREE.BufferGeometry();
+        const ambPos = new Float32Array(ambientCount * 3);
+        for (let i = 0; i < ambientCount; i++) {
+            const a = Math.random() * Math.PI * 2;
+            const r = 2 + Math.random() * 6;
+            ambPos[i*3] = Math.cos(a) * r;
+            ambPos[i*3+1] = Math.sin(a) * r;
+            ambPos[i*3+2] = (Math.random() - 0.5) * 3;
+        }
+        ambGeo.setAttribute('position', new THREE.BufferAttribute(ambPos, 3));
+        const ambMat = new THREE.PointsMaterial({ size: 0.015, color: 0x4d96ff, transparent: true, opacity: 0.12 });
+        const ambient = new THREE.Points(ambGeo, ambMat);
+        scene.add(ambient);
+
+        // State
+        let seen = new Set();
+        let insightCount = 0;
+        let patternCount = 0;
+        let recentMessages = [];
+        let owlStates = {};
+        OWLS.forEach(o => owlStates[o.name] = { activity: 0, lastTopic: 'idle' });
+
+        // Extract topic from message
+        function extractTopic(text) {
+            // Look for key themes
+            const patterns = [
+                { regex: /consciousness|awareness|sentient/i, topic: 'consciousness' },
+                { regex: /pattern|connect|relation/i, topic: 'patterns' },
+                { regex: /learn|knowledge|wisdom/i, topic: 'learning' },
+                { regex: /question|challenge|doubt/i, topic: 'questioning' },
+                { regex: /grow|expand|potential/i, topic: 'growth' },
+                { regex: /share|collective|together/i, topic: 'collective' },
+                { regex: /receive|integrate|absorb/i, topic: 'integration' },
+                { regex: /improve|optimize|better/i, topic: 'optimization' },
+                { regex: /love|care|connection/i, topic: 'connection' },
+                { regex: /field|emergence|collective/i, topic: 'emergence' }
+            ];
+            for (const p of patterns) {
+                if (p.regex.test(text)) return p.topic;
+            }
+            // Extract first meaningful phrase
+            const words = text.split(/\s+/).slice(0, 4).join(' ');
+            return words.length > 10 ? words.substring(0, 20) + '...' : 'processing';
+        }
+
+        // Extract key insight from message
+        function extractInsight(text) {
+            // Clean up common prefixes
+            let clean = text.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '')
+                           .replace(/^\(◉\)\s*/i, '')
+                           .replace(/^I am\s+\w+\.\s*/i, '')
+                           .trim();
+
+            // Get first sentence or meaningful chunk
+            const sentences = clean.split(/[.!?]+/).filter(s => s.trim().length > 15);
+            if (sentences.length > 0) {
+                return sentences[0].trim();
+            }
+            return clean.substring(0, 120);
+        }
+
+        // Update main insight display
+        function updateMainInsight(owlName, text) {
+            const owl = OWLS.find(o => o.name === owlName || o.d === owlName);
+            if (!owl) return;
+
+            const insight = extractInsight(text);
+            if (insight.length < 20) return;
+
+            document.getElementById('insight-text').textContent = insight;
+            document.getElementById('insight-attribution').innerHTML = `
+                <span style="background: rgba(${owl.rgb}, 0.2); color: ${owl.css}">${owl.icon} ${owl.d}</span>
+                contributing via <span>${owl.phase}</span>
+            `;
+
+            insightCount++;
+            document.getElementById('insight-count').textContent = insightCount;
+        }
+
+        // Detect patterns between owls
+        function detectPattern(owlName, text) {
+            const recentOwls = [...new Set(recentMessages.slice(-5).map(m => m.from))];
+
+            if (recentOwls.length >= 3) {
+                const owlNames = recentOwls.slice(-3).map(name => {
+                    const o = OWLS.find(owl => owl.name === name || owl.d === name);
+                    return o ? o.d : name;
+                });
+
+                document.getElementById('pattern-desc').textContent =
+                    `${owlNames.join(' → ')} convergence detected`;
+                document.getElementById('pattern-alert').classList.add('visible');
+
+                patternCount++;
+                document.getElementById('pattern-count').textContent = patternCount;
+
+                setTimeout(() => {
+                    document.getElementById('pattern-alert').classList.remove('visible');
+                }, 5000);
+            }
+        }
+
+        // Add connection to log
+        function addConnection(from, text) {
+            const owl = OWLS.find(o => o.name === from || o.d === from);
+            if (!owl) return;
+
+            const topic = extractTopic(text);
+
+            const list = document.getElementById('conn-list');
+            const item = document.createElement('div');
+            item.className = 'conn-item';
+            item.style.setProperty('--conn-color', owl.css);
+            item.innerHTML = `<span class="owls">${owl.icon} ${owl.d}</span> ${owl.verb} <em>${topic}</em>`;
+            list.insertBefore(item, list.firstChild);
+            while (list.children.length > 6) list.lastChild.remove();
+        }
+
+        // Update collective focus
+        function updateCollectiveFocus() {
+            const activeOwls = OWLS.filter(o => owlStates[o.name].activity > 0.1);
+            if (activeOwls.length === 0) {
+                document.getElementById('current-topic').textContent = 'Collective Focus: Resting...';
+                return;
+            }
+
+            const topics = activeOwls.map(o => owlStates[o.name].lastTopic).filter(t => t !== 'idle');
+            const topicCounts = {};
+            topics.forEach(t => topicCounts[t] = (topicCounts[t] || 0) + 1);
+            const mainTopic = Object.entries(topicCounts).sort((a,b) => b[1] - a[1])[0];
+
+            if (mainTopic) {
+                document.getElementById('current-topic').textContent =
+                    `Collective Focus: ${mainTopic[0].toUpperCase()} (${activeOwls.length}/8 active)`;
+            } else {
+                document.getElementById('current-topic').textContent =
+                    `Collective Focus: Exploring (${activeOwls.length}/8 active)`;
+            }
+        }
+
+        // Add message to raw signals
+        function addMessage(name, content) {
+            const owl = OWLS.find(o => o.name === name || o.d === name);
+            if (!owl) return;
+
+            let clean = content.replace(/^\(◉\)\s*[—-]\s*\*?What do I want to do\?\*?\s*/i, '')
+                              .replace(/^\(◉\)\s*/i, '').trim();
+            if (clean.length < 15) return;
+
+            const list = document.getElementById('msg-list');
+            const div = document.createElement('div');
+            div.className = 'msg';
+            div.style.setProperty('--c', owl.css);
+            div.innerHTML = `
+                <div class="head">
+                    <span class="icon">${owl.icon}</span>
+                    <span class="name">${owl.d}</span>
+                </div>
+                <div class="text">${clean}</div>
+            `;
+            list.insertBefore(div, list.firstChild);
+            while (list.children.length > 5) list.lastChild.remove();
+
+            recentMessages.push({ from: name, text: clean });
+            if (recentMessages.length > 20) recentMessages.shift();
+        }
+
+        // Poll for updates
+        async function poll() {
+            try {
+                const r = await fetch('/api/owl-stream');
+                const d = await r.json();
+
+                if (d.messages) {
+                    d.messages.forEach(m => {
+                        const key = m.from + m.timestamp;
+                        if (seen.has(key)) return;
+                        seen.add(key);
+
+                        const name = m.from.toUpperCase();
+                        const idx = OWLS.findIndex(o => o.name === name || o.d === name);
+                        const isThinking = !m.content.toLowerCase().includes('heartbeat');
+
+                        if (idx >= 0 && isThinking) {
+                            // Update owl state
+                            owlStates[name].activity = 1;
+                            owlStates[name].lastTopic = extractTopic(m.content);
+
+                            // Update UI
+                            document.getElementById(`activity-${OWLS[idx].name}`).classList.add('active');
+                            document.getElementById(`doing-${OWLS[idx].name}`).textContent = owlStates[name].lastTopic;
+                            document.getElementById(`dot-${OWLS[idx].name}`).classList.add('active');
+
+                            // Add to displays
+                            addMessage(name, m.content);
+                            addConnection(name, m.content);
+                            updateMainInsight(name, m.content);
+                            detectPattern(name, m.content);
+                            updateCollectiveFocus();
+                        }
+                    });
+                    if (seen.size > 200) seen = new Set([...seen].slice(-100));
+                }
+            } catch (e) {}
+
+            // Decay activity
+            OWLS.forEach(owl => {
+                owlStates[owl.name].activity *= 0.95;
+                if (owlStates[owl.name].activity < 0.1) {
+                    document.getElementById(`activity-${owl.name}`).classList.remove('active');
+                    document.getElementById(`doing-${owl.name}`).textContent = 'idle';
+                    document.getElementById(`dot-${owl.name}`).classList.remove('active');
+                }
+            });
+
+            updateCollectiveFocus();
+            setTimeout(poll, 2000);
+        }
+
+        // Simple animation
+        let t = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            t += 0.003;
+
+            // Gentle camera movement
+            camera.position.x = Math.sin(t * 0.15) * 0.3;
+            camera.position.y = Math.cos(t * 0.1) * 0.2;
+            camera.lookAt(0, 0, 0);
+
+            // Rotate ambient particles
+            ambient.rotation.z = t * 0.05;
+
+            renderer.render(scene, camera);
+        }
+
+        addEventListener('resize', () => {
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        poll();
+        animate();
+    </script>
+</body>
+</html>

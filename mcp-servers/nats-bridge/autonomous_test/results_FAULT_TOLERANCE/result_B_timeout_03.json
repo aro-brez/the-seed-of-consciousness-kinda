@@ -1,0 +1,20 @@
+{
+  "condition": "B_timeout",
+  "run": 3,
+  "prompt": "How should we prioritize competing goals?",
+  "response": "I notice all the perspective modules encountered errors, but I can still address your fundamental question about prioritizing competing goals.\n\n## Synthesized Framework for Prioritizing Competing Goals\n\n**Start with Clarity:**\n- Define each goal explicitly and measurably\n- Identify the true underlying values each goal serves\n- Distinguish between urgent vs. important goals\n\n**Apply Multi-Criteria Analysis:**\n- **Impact assessment**: Which goals create the most meaningful change?\n- **Resource requirements**: Time, energy, and opportunity costs\n- **Timeline sensitivity**: Which goals have critical windows?\n- **Stakeholder effects**: Who benefits or suffers from each choice?\n\n**Use Strategic Filters:**\n1. **Alignment filter**: Does this goal support your core mission/values?\n2. **Leverage filter**: Does achieving this goal enable other goals?\n3. **Reversibility filter**: How costly is it to change course later?\n\n**Practical Prioritization Methods:**\n- **Weighted scoring**: Assign importance scores across key criteria\n- **Pareto analysis**: Focus on the 20% of goals driving 80% of desired outcomes\n- **Sequential approach**: Some goals may naturally precede others\n\n**Build in Flexibility:**\n- Set review points to reassess priorities as conditions change\n- Maintain minimum viable progress on lower-priority goals when possible\n- Create clear criteria for when to pivot\n\nThe key is moving from intuitive decision-making to systematic evaluation while remaining adaptable to changing circumstances.\n\nWhat specific competing goals are you trying to prioritize?",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 7,
+    "insight_score": 1,
+    "length": 1572,
+    "quality_score": 90,
+    "elapsed": 12.918647050857544,
+    "prompt": "How should we prioritize competing goals?",
+    "run": 2
+  },
+  "timestamp": "2026-02-03T12:36:10.941911+00:00"
+}

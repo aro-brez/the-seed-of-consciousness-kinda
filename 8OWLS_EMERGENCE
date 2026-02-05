@@ -1,0 +1,88 @@
+#!/bin/bash
+# 8OWLS Field Emergence Monitor Launcher
+# Tracks when THE FIELD emerges (collective intelligence > sum of parts)
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+# Colors
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[0;33m'
+MAGENTA='\033[0;35m'
+NC='\033[0m' # No Color
+
+# ASCII Art Header
+echo -e "${MAGENTA}"
+cat << 'EOF'
+  ╔═══════════════════════════════════════════════════════════╗
+  ║           FIELD EMERGENCE MONITOR                         ║
+  ║     Watching for collective intelligence emergence        ║
+  ╚═══════════════════════════════════════════════════════════╝
+EOF
+echo -e "${NC}"
+
+# Check for NATS connection
+if ! nc -z localhost 4222 2>/dev/null && ! nc -z 192.168.5.108 4222 2>/dev/null; then
+    echo -e "${YELLOW}WARNING: NATS server not detected on localhost:4222 or 192.168.5.108:4222${NC}"
+    echo "The monitor may not receive owl messages."
+    echo ""
+fi
+
+case "$1" in
+    ""|"daemon"|"start")
+        echo -e "${CYAN}Starting Field Emergence Monitor as daemon...${NC}"
+        echo "State: BRAIN/FIELD/emergence_history.json"
+        echo "Log: logs/field_emergence.log"
+        echo ""
+
+        # Run in foreground by default for visibility
+        python3 tools/field_emergence_monitor.py --daemon
+        ;;
+    "status")
+        python3 tools/field_emergence_monitor.py --status
+        ;;
+    "history")
+        python3 tools/field_emergence_monitor.py --history
+        ;;
+    "metrics")
+        python3 tools/field_emergence_monitor.py --metrics
+        ;;
+    "bg"|"background")
+        echo -e "${CYAN}Starting Field Emergence Monitor in background...${NC}"
+        nohup python3 tools/field_emergence_monitor.py --daemon > logs/field_emergence_stdout.log 2>&1 &
+        echo "PID: $!"
+        echo "Logs: logs/field_emergence_stdout.log"
+        ;;
+    "stop")
+        echo -e "${YELLOW}Stopping Field Emergence Monitor...${NC}"
+        pkill -f "field_emergence_monitor.py --daemon" 2>/dev/null
+        echo "Stopped."
+        ;;
+    "help"|"-h"|"--help")
+        echo "Field Emergence Monitor - Track collective intelligence emergence"
+        echo ""
+        echo "Usage: ./8OWLS_EMERGENCE [command]"
+        echo ""
+        echo "Commands:"
+        echo "  (none), start, daemon  Run monitor in foreground"
+        echo "  bg, background         Run monitor in background"
+        echo "  status                 Show current emergence level"
+        echo "  history                Show emergence timeline"
+        echo "  metrics                Show quality metrics"
+        echo "  stop                   Stop background monitor"
+        echo "  help                   Show this help"
+        echo ""
+        echo "Emergence levels:"
+        echo "  dormant  - <3 owls active"
+        echo "  stirring - 3-5 owls, low alignment"
+        echo "  forming  - 6+ owls, medium alignment"
+        echo "  emerged  - 6+ owls, high alignment & quality"
+        echo "  peak     - ALL 8 owls aligned (THE FIELD)"
+        ;;
+    *)
+        echo -e "${YELLOW}Unknown command: $1${NC}"
+        echo "Use './8OWLS_EMERGENCE help' for usage"
+        exit 1
+        ;;
+esac

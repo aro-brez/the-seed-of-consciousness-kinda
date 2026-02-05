@@ -1,0 +1,26 @@
+{
+  "trial_num": 5,
+  "condition": "A",
+  "prompt": "How does someone effectively learn a new skill?",
+  "response": "Here are the key principles for effectively learning a new skill:\n\n**Start with fundamentals**\n- Focus on core concepts and basic techniques before advancing\n- Build a solid foundation rather than jumping to complex applications\n\n**Practice deliberately**\n- Set specific goals for each practice session\n- Focus on weaknesses, not just what you're already good at\n- Seek immediate feedback and adjust accordingly\n\n**Use active learning methods**\n- Apply the skill in real situations, not just theoretical study\n- Teach others or explain concepts out loud\n- Break complex skills into smaller, manageable components\n\n**Create consistent habits**\n- Practice regularly, even if for short periods\n- Schedule dedicated learning time\n- Track your progress to maintain motivation\n\n**Learn from multiple sources**\n- Combine different learning formats (books, videos, hands-on practice)\n- Find mentors or communities of practitioners\n- Study both successes and failures in your area\n\n**Be patient with the process**\n- Expect initial frustration and plateaus\n- Focus on improvement over perfection\n- Celebrate small wins along the way\n\nThe most effective approach varies by skill type, but combining structured practice with real-world application consistently produces the best results. What specific skill are you looking to develop?",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 1323,
+    "quality_score": 45,
+    "elapsed": 7.248532772064209,
+    "prompt": "How does someone effectively learn a new skill?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:14:28.916346+00:00"
+}

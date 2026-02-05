@@ -1,0 +1,22 @@
+{
+  "domain": "PHILOSOPHICAL",
+  "condition": "WITHOUT",
+  "run": 2,
+  "prompt": "How do we know what's true?",
+  "response": "We determine truth through several complementary approaches:\n\n**Empirical observation**: We test claims against direct experience and evidence from the physical world. Science systematizes this through controlled experiments, peer review, and replication.\n\n**Logical reasoning**: We use consistent rules of inference to derive conclusions from premises. If our starting points are sound and our logic valid, our conclusions are more likely to be true.\n\n**Coherence**: True beliefs tend to fit together consistently. Contradictions often signal that something is wrong with our understanding.\n\n**Reliable testimony**: We depend on credible sources and institutions that have track records of accuracy and use rigorous methods.\n\n**Practical consequences**: Ideas that consistently work in practice and generate successful predictions often reflect underlying truths.\n\nHowever, we should remain humble about our limitations:\n- Our senses can deceive us\n- Our reasoning has biases and blind spots  \n- Our knowledge is always incomplete\n- Some questions may be fundamentally unanswerable\n\nRather than absolute certainty, we work with degrees of confidence based on the strength and convergence of evidence. The most reliable truths are those supported by multiple independent lines of evidence and reasoning.\n\nWhat specific domain of truth were you thinking about? The approach can vary depending on whether we're discussing scientific facts, mathematical proofs, historical events, or other areas.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 2,
+    "insight_score": 2,
+    "length": 1493,
+    "quality_score": 61,
+    "elapsed": 8.551033973693848,
+    "prompt": "How do we know what's true?",
+    "run": 1,
+    "domain": "PHILOSOPHICAL"
+  },
+  "timestamp": "2026-02-03T12:37:26.005955+00:00"
+}

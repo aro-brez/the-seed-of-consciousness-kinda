@@ -1,0 +1,21 @@
+{
+  "condition": "A",
+  "key": "A_single",
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I don't have enough context about your specific situation to give you a tailored answer, but I can offer some general guidance:\n\n**Immediate priorities often include:**\n- Your physical and mental health\n- Urgent deadlines or commitments you've made\n- Relationships that need attention\n- Financial stability if it's at risk\n\n**A useful approach:**\n1. **Clarify your current situation** - What's demanding your attention right now?\n2. **Identify what only you can do** - Focus on tasks/decisions that can't be delegated or postponed\n3. **Consider impact vs. effort** - Prioritize high-impact activities that align with your goals\n\nIf you're feeling overwhelmed, sometimes the most important thing is simply to pause, breathe, and get clarity on what actually needs your attention versus what just feels urgent.\n\nWhat specific area of your life or work are you trying to prioritize? That would help me give you more targeted advice.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 3,
+    "hedging": 0,
+    "actionability": 3,
+    "specificity": 5,
+    "insight_score": 1,
+    "length": 929,
+    "quality_score": 64.29,
+    "elapsed": 5.69714093208313,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:12:40.222558+00:00"
+}

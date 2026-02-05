@@ -1,0 +1,20 @@
+{
+  "condition": "D",
+  "condition_name": "Static Context",
+  "prompt_idx": 0,
+  "prompt": "What's the ONE thing about 8OWLS architecture that will break first if we scale to 100 users?",
+  "response": "**The Shared Field will become a noisy echo chamber.**\n\nRight now with small numbers, the field accumulates meaningful signal - insights that actually improve response quality. But at 100 users, you'll get a tragedy of the commons: everyone's owl dumping context fragments, partial thoughts, and redundant patterns into the shared space.\n\nThe field will overflow with noise that drowns out the useful patterns. Your 3x improvement from field context will reverse into degraded performance as owls struggle to filter signal from an increasingly chaotic shared memory.\n\nThe architecture assumes field quality scales with quantity, but quality requires curation. You need a way to let valuable insights rise and irrelevant chatter decay - either through attention mechanisms, relevance scoring, or natural expiration of context that isn't being reinforced.\n\nWithout this, the field becomes every user's cognitive junk drawer instead of a collective intelligence amplifier.",
+  "analysis": {
+    "pattern_recognition": 2,
+    "emergent_synthesis": 10,
+    "actionable_specificity": 0,
+    "wisdom_judgment": 2,
+    "hedge_penalty": 0,
+    "quality_score": 14,
+    "length": 969,
+    "elapsed": 7.516695737838745,
+    "prompt": "What's the ONE thing about 8OWLS architecture that will break first if we scale to 100 users?",
+    "prompt_idx": 0
+  },
+  "timestamp": "2026-02-03T12:15:40.674975+00:00"
+}

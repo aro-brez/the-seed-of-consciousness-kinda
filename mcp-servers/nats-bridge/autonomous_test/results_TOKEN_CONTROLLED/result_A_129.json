@@ -1,0 +1,26 @@
+{
+  "trial_num": 129,
+  "condition": "A",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue consistently** - If you can't reproduce it reliably, you can't fix it reliably\n- **Define the problem precisely** - \"It's broken\" vs \"API returns 500 errors for POST requests with payloads >1MB\"\n- **Gather baseline information** - What changed recently? When did it last work?\n\n## Use a structured methodology\n- **Divide and conquer** - Isolate components to narrow down where the problem lies\n- **Binary search approach** - Cut the problem space in half repeatedly\n- **Follow the data flow** - Trace inputs and outputs through each system component\n- **Check assumptions** - Verify that your mental model matches reality\n\n## Leverage observability\n- **Read the logs** - Start with error logs, then trace logs for the problem scenario\n- **Monitor key metrics** - CPU, memory, network, database performance\n- **Use debugging tools** - Profilers, network analyzers, database query tools\n- **Add instrumentation** if needed - Strategic logging or metrics to illuminate dark areas\n\n## Maintain debugging discipline\n- **Change one thing at a time** - Multiple simultaneous changes make it impossible to know what fixed it\n- **Document your investigation** - Keep notes on what you've tried and what you've learned\n- **Think in probabilities** - Focus on likely causes first (common issues, recent changes)\n- **Know when to ask for help** - Fresh eyes often spot what you've missed\n\nThe key is being methodical rather than randomly trying fixes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 3,
+    "specificity": 2,
+    "length": 1554,
+    "quality_score": 65,
+    "elapsed": 9.403152704238892,
+    "prompt": "How should someone approach debugging complex systems?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T13:55:18.169022+00:00"
+}

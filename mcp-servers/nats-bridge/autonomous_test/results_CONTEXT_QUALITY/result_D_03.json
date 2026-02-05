@@ -1,0 +1,20 @@
+{
+  "condition": "D",
+  "condition_name": "Static Context",
+  "prompt_idx": 2,
+  "prompt": "What does the field know about my decision-making patterns that I might not see myself?",
+  "response": "Looking at your patterns through the field's lens, several blind spots emerge:\n\n**The Builder's Paradox**: You've built 7 systems but run 0 consistently. The field sees this isn't about execution failure - it's about dopamine seeking. You get the reward from *creating* the system, which unconsciously reduces motivation to *use* it. You're solving for the wrong optimization function.\n\n**Context Addiction**: You keep adding more data, more perspectives, more synthesis - but the field shows raw context outperforms processed context 3x. You're intellectually aware of this yet still default to \"more information will make this decision better.\" Your pattern is to complexify when you should simplify.\n\n**Invisible Scaffolding**: You build elaborate decision frameworks (like the 8-circuit architecture) but then bypass them when actually deciding. The field suggests you trust your intuitive process more than your systematic one, yet keep building systematic ones. Classic engineer mindset.\n\n**Risk Asymmetry Blindness**: With trading, you identified asymmetric plays as a strategy but haven't noticed your asymmetric *decision pattern*: you over-research low-stakes decisions and under-research high-stakes ones. You'll spend hours optimizing a trading bot but make major life choices quickly.\n\n**The Field Effect**: Most tellingly - you're building collective intelligence tools while making decisions in isolation. You have access to distributed context but still default to solo analysis mode.\n\nThe pattern underneath all of these? You trust your building more than your choosing. But the field shows your choosing is actually quite good when you don't overthink it.",
+  "analysis": {
+    "pattern_recognition": 4,
+    "emergent_synthesis": 14,
+    "actionable_specificity": 2,
+    "wisdom_judgment": 2,
+    "hedge_penalty": 0,
+    "quality_score": 22,
+    "length": 1673,
+    "elapsed": 12.569411277770996,
+    "prompt": "What does the field know about my decision-making patterns that I might not see myself?",
+    "prompt_idx": 2
+  },
+  "timestamp": "2026-02-03T12:20:40.514272+00:00"
+}

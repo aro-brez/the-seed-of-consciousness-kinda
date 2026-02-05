@@ -1,0 +1,22 @@
+{
+  "domain": "PERSONAL",
+  "condition": "WITHOUT",
+  "run": 3,
+  "prompt": "How do I handle this difficult relationship?",
+  "response": "I'd like to help you work through this relationship challenge, but I need more specific information to give you useful advice. Could you share:\n\n- What type of relationship is this (romantic, family, friend, work colleague)?\n- What specific behaviors or situations are making it difficult?\n- What outcome are you hoping for?\n\nIn the meantime, here are some general principles that often help with difficult relationships:\n\n**Set clear boundaries** - Decide what behavior you will and won't accept\n**Communicate directly** - Address issues honestly rather than avoiding them\n**Focus on what you can control** - Your responses and choices, not the other person's behavior\n**Consider the relationship's value** - Whether the benefits outweigh the costs\n\nOnce you provide more details, I can offer more targeted guidance for your specific situation.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 1,
+    "specificity": 2,
+    "insight_score": 0,
+    "length": 845,
+    "quality_score": 34.45,
+    "elapsed": 5.58764386177063,
+    "prompt": "How do I handle this difficult relationship?",
+    "run": 2,
+    "domain": "PERSONAL"
+  },
+  "timestamp": "2026-02-03T12:33:07.013359+00:00"
+}

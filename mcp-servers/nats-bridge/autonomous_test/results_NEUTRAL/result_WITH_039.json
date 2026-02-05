@@ -1,0 +1,15 @@
+{
+  "condition": "WITH",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "I notice that all seven perspectives returned errors due to an unavailable model, but I can still provide a comprehensive synthesis on debugging complex systems based on the IMPROVE framework structure you've outlined.\n\n## Unified Approach to Debugging Complex Systems\n\n**Start with Systematic Observation**\n- Document symptoms precisely before making changes\n- Reproduce the issue consistently when possible\n- Map the system's components and their interactions\n- Identify what changed recently (code, configuration, environment)\n\n**Build Understanding Through Connection**\n- Trace data flow and dependencies between system components\n- Look for patterns across similar failures or error logs\n- Connect current issues to known system behaviors\n- Map relationships between symptoms and potential root causes\n\n**Apply Methodical Investigation**\n- Use the scientific method: form hypotheses, test them systematically\n- Isolate variables by testing components individually\n- Leverage debugging tools appropriate to your technology stack\n- Start with the most likely causes based on evidence\n\n**Question Assumptions Rigorously**\n- Challenge initial assumptions about where the problem lies\n- Ask \"what if\" questions about edge cases and unusual conditions\n- Verify that your understanding of the system matches reality\n- Question whether the problem is actually what it appears to be\n\n**Expand Your Perspective**\n- Consider multiple failure modes simultaneously\n- Look at the system from different angles (performance, security, logic)\n- Examine logs and metrics across the entire system timeline\n- Consider environmental factors (load, network, dependencies)\n\n**Collaborate and Document**\n- Share findings with team members who know different parts of the system\n- Maintain a clear record of what you've tested and eliminated\n- Create reproducible test cases for future reference\n- Document the solution and root cause analysis\n\n**Validate and Learn**\n- Confirm your fix addresses the root cause, not just symptoms\n- Test in staging environments before production deployment\n- Monitor the system post-fix to ensure stability\n- Extract lessons to prevent similar issues in the future\n\n**Key Principles:**\n- Be methodical, not reactive\n- Change one thing at a time\n- Keep detailed logs of your debugging process\n- Know when to ask for help or take a break\n\nThis approach combines systematic thinking with collaborative problem-solving to tackle even the most complex system issues effectively.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 1,
+    "specificity": 0,
+    "length": 2487,
+    "quality_score": 45,
+    "elapsed": 16.629974842071533,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:55:14.735937+00:00"
+}

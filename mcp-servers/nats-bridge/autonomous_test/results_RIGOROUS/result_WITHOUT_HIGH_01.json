@@ -1,0 +1,20 @@
+{
+  "context": "WITHOUT",
+  "clarity": "HIGH",
+  "run": 1,
+  "prompt": "What database schema would you use to store trading signals with timestamps and confidence?",
+  "response": "Here's a practical database schema for storing trading signals:\n\n## Core Tables\n\n### 1. `trading_signals` (Main table)\n```sql\nCREATE TABLE trading_signals (\n    id BIGSERIAL PRIMARY KEY,\n    symbol VARCHAR(20) NOT NULL,\n    signal_type VARCHAR(10) NOT NULL CHECK (signal_type IN ('BUY', 'SELL', 'HOLD')),\n    confidence DECIMAL(5,4) NOT NULL CHECK (confidence >= 0 AND confidence <= 1),\n    price DECIMAL(15,8),\n    timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),\n    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),\n    \n    -- Signal source/strategy identification\n    strategy_id INTEGER REFERENCES strategies(id),\n    source VARCHAR(50) NOT NULL, -- 'algorithm', 'manual', 'ml_model', etc.\n    \n    -- Optional metadata\n    metadata JSONB, -- flexible storage for additional signal data\n    \n    -- Indexing for performance\n    INDEX idx_signals_symbol_timestamp (symbol, timestamp DESC),\n    INDEX idx_signals_strategy_timestamp (strategy_id, timestamp DESC),\n    INDEX idx_signals_confidence (confidence DESC)\n);\n```\n\n### 2. `strategies` (Reference table)\n```sql\nCREATE TABLE strategies (\n    id SERIAL PRIMARY KEY,\n    name VARCHAR(100) NOT NULL UNIQUE,\n    description TEXT,\n    parameters JSONB,\n    is_active BOOLEAN DEFAULT true,\n    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()\n);\n```\n\n## Key Design Decisions\n\n**Confidence Scale**: Using decimal 0-1 scale (e.g., 0.85 = 85% confidence)\n\n**Timestamp Handling**: \n- `timestamp`: When the signal was generated for\n- `created_at`: When the record was inserted (for audit trails)\n\n**Indexing Strategy**:\n- Primary queries likely filter by symbol + time range\n- Strategy performance analysis needs strategy_id + time\n- High-confidence signal filtering\n\n## Optional Enhancements\n\n### Signal Performance Tracking\n```sql\nCREATE TABLE signal_outcomes (\n    signal_id BIGINT REFERENCES trading_signals(id),\n    outcome VARCHAR(20) CHECK (outcome IN ('PROFIT', 'LOSS', 'BREAKEVEN')),\n    profit_loss DECIMAL(15,8),\n    closed_at TIMESTAMP WITH TIME ZONE,\n    duration_minutes INTEGER\n);\n```\n\n### Time-Series Optimization (if using PostgreSQL)\nConsider using TimescaleDB extension for better time-series performance on large datasets.\n\nThis schema balances simplicity with extensibility - you can add more fields to the JSONB metadata as your signal complexity grows without schema changes.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 0,
+    "hedging": 1,
+    "actionability": 2,
+    "specificity": 9,
+    "length": 2367,
+    "quality_score": 78,
+    "elapsed": 12.429253101348877,
+    "prompt": "What database schema would you use to store trading signals with timestamps and confidence?",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:07:55.502276+00:00"
+}

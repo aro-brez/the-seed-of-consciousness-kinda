@@ -1,0 +1,36 @@
+{
+  "condition": "D_no_expand",
+  "phases": [
+    "PERCEIVE",
+    "CONNECT",
+    "LEARN",
+    "QUESTION",
+    "SHARE",
+    "RECEIVE"
+  ],
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "I notice that all six perspective analyses encountered technical errors, but I can still synthesize a meaningful response to your fundamental question: \"How do we know if we're on the right track?\"\n\n## Unified Response: Navigating Your Path Forward\n\n**Immediate Indicators You're On Track:**\n- Progress feels challenging but not overwhelming\n- You're learning and adapting, not just repeating\n- Your actions align with your stated values and goals\n- You can explain your reasoning to others clearly\n\n**Warning Signs You May Need Course Correction:**\n- Persistent anxiety without accompanying growth\n- Avoiding feedback or outside perspectives\n- Results consistently falling short despite genuine effort\n- Your methods contradict your intended outcomes\n\n**Actionable Framework for Assessment:**\n\n1. **Regular Check-ins**: Schedule weekly reviews asking \"What worked? What didn't? What needs adjustment?\"\n\n2. **External Validation**: Seek feedback from trusted sources who understand your goals but aren't emotionally invested in your current path\n\n3. **Measurable Milestones**: Define specific, time-bound indicators of progress that go beyond just \"feeling good\" about your direction\n\n4. **Values Alignment Test**: Regularly verify that your current path honors your core principles, not just your immediate desires\n\n**The Meta-Question**: Sometimes being \"on track\" means being willing to change tracks when you discover better information or evolving circumstances.\n\nThe right track isn't always straight\u2014it's the one that leads toward your authentic goals while remaining responsive to reality.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 0,
+    "specificity": 6,
+    "insight_score": 0,
+    "length": 1597,
+    "quality_score": 66,
+    "elapsed": 13.062085151672363,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5,
+    "phases": [
+      "PERCEIVE",
+      "CONNECT",
+      "LEARN",
+      "QUESTION",
+      "SHARE",
+      "RECEIVE"
+    ]
+  },
+  "timestamp": "2026-02-03T12:30:34.327358+00:00"
+}

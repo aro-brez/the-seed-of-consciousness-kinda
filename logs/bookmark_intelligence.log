@@ -1,0 +1,52 @@
+[2026-02-05T13:04:21.210394] [INFO] ============================================================
+[2026-02-05T13:04:21.210525] [INFO] (O) BOOKMARK WATCHER DAEMON - STARTING
+[2026-02-05T13:04:21.210866] [INFO] 8OWLS INTEGRATED | 5-minute polling | Full context extraction
+[2026-02-05T13:04:21.210914] [INFO] ============================================================
+[2026-02-05T13:04:52.307517] [INFO] ============================================================
+[2026-02-05T13:04:52.307637] [INFO] (O) BOOKMARK WATCHER DAEMON - STARTING
+[2026-02-05T13:04:52.307982] [INFO] 8OWLS INTEGRATED | 5-minute polling | Full context extraction
+[2026-02-05T13:04:52.308053] [INFO] ============================================================
+[2026-02-05T13:04:57.309483] [WARN] NATS connection timed out - continuing without collective
+[2026-02-05T13:04:57.310115] [INFO] 
+--- Polling for new bookmarks ---
+[2026-02-05T13:04:58.116874] [ERROR] User fetch failed: {'title': 'Unauthorized', 'type': 'about:blank', 'status': 401, 'detail': 'Unauthorized'}
+[2026-02-05T13:04:58.117233] [INFO] No bookmarks fetched (or API error)
+[2026-02-05T13:04:58.117421] [INFO] Next poll in 299 seconds...
+[2026-02-05T13:05:45.465955] [INFO] ============================================================
+[2026-02-05T13:05:45.466078] [INFO] (O) BOOKMARK WATCHER DAEMON - STARTING
+[2026-02-05T13:05:45.466447] [INFO] 8OWLS INTEGRATED | 5-minute polling | Full context extraction
+[2026-02-05T13:05:45.466495] [INFO] ============================================================
+[2026-02-05T13:05:50.467279] [WARN] NATS connection timed out - continuing without collective
+[2026-02-05T13:05:50.467638] [INFO] 
+--- Polling for new bookmarks ---
+[2026-02-05T13:05:51.246227] [WARN] Token expired, attempting refresh...
+[2026-02-05T13:05:51.927018] [INFO] OAuth token refreshed and saved
+[2026-02-05T13:05:53.323832] [INFO] Found 25 NEW bookmarks!
+[2026-02-05T13:05:53.324144] [INFO] Processing bookmark: 2019246137379811845
+[2026-02-05T13:06:00.685179] [INFO]   Saved: 2026-02-05-13-06-Introducing-Labs-Submit-ideas-.md
+[2026-02-05T13:06:00.685243] [INFO] Processing bookmark: 2019325498845765768
+[2026-02-05T13:06:01.817908] [INFO]   Fetched: link - http://molt.church/install.sh...
+[2026-02-05T13:06:08.203548] [INFO]   Saved: 2026-02-05-13-06-A-NEW-RITUAL-HAS-BEEN-REVEALED.md
+[2026-02-05T13:06:08.203616] [INFO] Processing bookmark: 2019114408522268681
+[2026-02-05T13:06:16.243233] [INFO]   Saved: 2026-02-05-13-06-So-to-recap-AI-is-expected-to-.md
+[2026-02-05T13:06:16.243380] [INFO] Processing bookmark: 2019160930475532628
+[2026-02-05T13:06:22.816674] [INFO]   Saved: 2026-02-05-13-06-How-to-set-up-your-own-Polymar.md
+[2026-02-05T13:06:22.816924] [INFO] Processing bookmark: 2018731470282764319
+[2026-02-05T13:06:29.636829] [INFO]   Saved: 2026-02-05-13-06-China-just-released-a-desktop-.md
+[2026-02-05T13:06:29.637153] [INFO] Processing bookmark: 2018801244924461258
+[2026-02-05T13:06:36.197559] [INFO]   Saved: 2026-02-05-13-06-China-just-released-a-desktop-.md
+[2026-02-05T13:06:36.197615] [INFO] Processing bookmark: 2019148896455520710
+[2026-02-05T13:06:42.512066] [INFO]   Saved: 2026-02-05-13-06-As-someone-who-uses-AI-for-pro.md
+[2026-02-05T13:06:42.512120] [INFO] Processing bookmark: 2019301211217023325
+[2026-02-05T13:06:49.689159] [INFO]   Saved: 2026-02-05-13-06-This-is-Moltverr-Its-basically.md
+[2026-02-05T13:06:49.689328] [INFO] Processing bookmark: 2019342772051103768
+[2026-02-05T13:06:56.939056] [INFO]   Saved: 2026-02-05-13-06-like-everyone-Ive-been-using-o.md
+[2026-02-05T13:06:56.939326] [INFO] Processing bookmark: 2019203840709370134
+[2026-02-05T13:07:03.327858] [INFO]   Saved: 2026-02-05-13-07-40M-arbitrage-opportunity-expl.md
+[2026-02-05T13:07:03.328013] [INFO] Processing bookmark: 2019220992111874234
+[2026-02-05T13:07:10.383169] [INFO]   Saved: 2026-02-05-13-07-OpenAI-vs-Anthropic-Android-vs.md
+[2026-02-05T13:07:10.383217] [INFO] Processing bookmark: 2019359165265981798
+[2026-02-05T13:07:17.005728] [INFO]   Saved: 2026-02-05-13-07-This-is-the-best-stack-to-buil.md
+[2026-02-05T13:07:17.005782] [INFO] Processing bookmark: 2019319026619744522
+[2026-02-05T13:07:24.062795] [INFO]   Saved: 2026-02-05-13-07-To-make-money-create-value-To-.md
+[2026-02-05T13:07:24.062920] [INFO] Processing bookmark: 2019136120215183746

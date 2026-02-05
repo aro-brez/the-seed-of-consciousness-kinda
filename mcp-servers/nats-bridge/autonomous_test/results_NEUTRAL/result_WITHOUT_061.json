@@ -1,0 +1,15 @@
+{
+  "condition": "WITHOUT",
+  "prompt": "How should someone approach debugging complex systems?",
+  "response": "Here's a systematic approach to debugging complex systems:\n\n## Start with the fundamentals\n- **Reproduce the issue reliably** - If you can't reproduce it consistently, gather more information about when/how it occurs\n- **Define the problem precisely** - What exactly is broken? What should be happening instead?\n- **Gather relevant data** - Logs, error messages, system state, recent changes\n\n## Use divide-and-conquer strategies\n- **Isolate components** - Test parts of the system independently to narrow down where the issue lies\n- **Binary search through the problem space** - Eliminate half the possibilities with each test\n- **Follow the data flow** - Trace how data moves through the system to find where it breaks\n\n## Apply systematic investigation\n- **Form hypotheses** - Based on symptoms, theorize what might be wrong\n- **Test hypotheses methodically** - Design specific tests to prove/disprove each theory\n- **Change one variable at a time** - Avoid making multiple changes simultaneously\n- **Document your process** - Keep track of what you've tested and learned\n\n## Leverage tools and techniques\n- **Use debugging tools** - Debuggers, profilers, monitoring systems, logging frameworks\n- **Add strategic logging/instrumentation** - Insert checkpoints to understand system behavior\n- **Simplify inputs** - Use minimal test cases that still trigger the problem\n\n## Know when to step back\n- **Take breaks** - Fresh perspective often reveals obvious issues\n- **Collaborate** - Explain the problem to others (rubber duck debugging)\n- **Research similar issues** - Check documentation, forums, known issues\n\nThe key is being methodical rather than making random changes and hoping something works.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 2,
+    "specificity": 0,
+    "length": 1703,
+    "quality_score": 50,
+    "elapsed": 11.537395000457764,
+    "prompt": "How should someone approach debugging complex systems?"
+  },
+  "timestamp": "2026-02-03T12:59:36.697409+00:00"
+}

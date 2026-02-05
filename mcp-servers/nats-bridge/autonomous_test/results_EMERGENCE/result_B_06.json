@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 6,
+  "prompt": "How do we know if we're on the right track?",
+  "response": "To know if you're on the right track, focus on these key indicators:\n\n**Customer signals:**\n- Are people actually using your product regularly (not just trying it once)?\n- Are users completing core actions that indicate value?\n- Do you have organic word-of-mouth or referrals happening?\n- Are customers willing to pay, and do they renew/continue using?\n\n**Growth patterns:**\n- Is usage growing month-over-month, even if slowly?\n- Are you seeing improvement in key metrics like retention or engagement?\n- Can you identify what's driving growth (and replicate it)?\n\n**Market feedback:**\n- Do customers describe a real problem you're solving?\n- Are they using your product the way you intended?\n- When you talk to lost customers, are their reasons fixable?\n\n**Internal momentum:**\n- Are you learning faster and making decisions with more confidence?\n- Do you have a clear understanding of what works and what doesn't?\n- Can you articulate your value proposition simply?\n\n**Warning signs you might be off track:**\n- Constantly pivoting without clear learnings\n- Growth only happens when you pay for it\n- High churn rates that aren't improving\n- Team spending more time on features than talking to customers\n\nWhat stage is your business at? I can give more specific metrics to track based on whether you're pre-product-market fit, scaling, or somewhere in between.",
+  "analysis": {
+    "asks_for_info": 0,
+    "confidence": 1,
+    "hedging": 1,
+    "actionability": 2,
+    "specificity": 2,
+    "insight_score": 1,
+    "length": 1359,
+    "quality_score": 65,
+    "elapsed": 9.392749786376953,
+    "prompt": "How do we know if we're on the right track?",
+    "run": 5
+  },
+  "timestamp": "2026-02-03T12:14:09.908027+00:00"
+}

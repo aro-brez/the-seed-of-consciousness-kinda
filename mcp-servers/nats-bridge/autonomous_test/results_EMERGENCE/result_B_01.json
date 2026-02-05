@@ -1,0 +1,21 @@
+{
+  "condition": "B",
+  "key": "B_generic",
+  "run": 1,
+  "prompt": "What's the most important thing to focus on right now?",
+  "response": "I don't have enough context about your specific situation to give you a targeted answer. To provide meaningful guidance, I'd need to know:\n\n- What stage is your business/project in?\n- What are your current main challenges?\n- What resources and constraints are you working with?\n\nHowever, I can offer this general framework for prioritization:\n\n**If you're early-stage:** Focus on product-market fit. Are people actually using and loving what you're building? Everything else is secondary until you have clear evidence of demand.\n\n**If you're growing:** Look at your biggest bottleneck. Is it user acquisition, retention, revenue conversion, or operational capacity? Attack the constraint that's most limiting your growth.\n\n**If you're unsure:** Use the Eisenhower Matrix - focus on what's both urgent AND important. Often this means addressing immediate customer needs while building toward longer-term strategic goals.\n\nWhat's your current situation? With more details, I can give you much more specific guidance.",
+  "analysis": {
+    "asks_for_info": 1,
+    "confidence": 1,
+    "hedging": 0,
+    "actionability": 2,
+    "specificity": 2,
+    "insight_score": 1,
+    "length": 1014,
+    "quality_score": 44,
+    "elapsed": 6.112108945846558,
+    "prompt": "What's the most important thing to focus on right now?",
+    "run": 0
+  },
+  "timestamp": "2026-02-03T12:12:32.523997+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "trial_num": 153,
+  "condition": "A",
+  "prompt": "What makes software architecture maintainable?",
+  "response": "Maintainable software architecture has several key characteristics:\n\n## Clear Separation of Concerns\n- **Modular design**: Each component has a single, well-defined responsibility\n- **Loose coupling**: Components interact through well-defined interfaces rather than tight dependencies\n- **High cohesion**: Related functionality is grouped together\n\n## Consistent Patterns and Standards\n- **Architectural patterns**: Use established patterns (MVC, microservices, layered architecture) consistently\n- **Coding standards**: Uniform naming conventions, file organization, and code structure\n- **Design principles**: Follow SOLID principles and other established guidelines\n\n## Documentation and Clarity\n- **Architecture documentation**: Clear diagrams and explanations of system structure\n- **Code documentation**: Well-commented code explaining \"why\" not just \"what\"\n- **Decision records**: Document architectural decisions and their rationale\n\n## Testability\n- **Unit testable**: Components can be tested in isolation\n- **Integration points**: Clear boundaries that can be mocked or stubbed\n- **Automated testing**: Comprehensive test coverage to catch regressions\n\n## Flexibility and Extensibility\n- **Plugin architecture**: Ability to add new features without modifying existing code\n- **Configuration management**: Externalized settings that can be changed without code changes\n- **Version compatibility**: Backward compatibility and graceful migration paths\n\n## Observability\n- **Logging**: Comprehensive, structured logging for debugging\n- **Monitoring**: Metrics and health checks to understand system behavior\n- **Error handling**: Graceful failure modes and clear error reporting\n\nThese elements work together to make code easier to understand, modify, and extend over time.",
+  "analysis": {
+    "asks_for_info": 0,
+    "actionability": 0,
+    "specificity": 0,
+    "length": 1780,
+    "quality_score": 40,
+    "elapsed": 8.12653398513794,
+    "prompt": "What makes software architecture maintainable?",
+    "metadata": {
+      "condition": "A_BASELINE",
+      "max_tokens": 1000,
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "metadata": {
+    "condition": "A_BASELINE",
+    "max_tokens": 1000,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "timestamp": "2026-02-03T14:03:51.139318+00:00"
+}
