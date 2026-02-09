@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get Your Owl - 8OWLS Setup Guide</title>
+<style>
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, system-ui, sans-serif; background: #0D0D2A; color: #fff; padding: 40px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+  h1 { font-size: 36px; margin-bottom: 8px; }
+  h1 span { color: #e3f98a; }
+  .subtitle { color: rgba(255,255,255,0.5); font-size: 16px; margin-bottom: 40px; }
+  h2 { font-size: 22px; color: #e3f98a; margin-top: 36px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+  .step { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; margin-bottom: 16px; border-left: 3px solid #e3f98a; }
+  .step-number { display: inline-block; background: #e3f98a; color: #0D0D2A; font-weight: 800; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-size: 14px; margin-right: 10px; }
+  .step-title { font-weight: 700; font-size: 18px; display: inline; }
+  .step p { margin-top: 8px; color: rgba(255,255,255,0.8); }
+  code { background: rgba(227,249,138,0.15); color: #e3f98a; padding: 2px 8px; border-radius: 4px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 14px; }
+  .command-box { background: #111133; border-radius: 8px; padding: 16px; margin: 12px 0; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 14px; color: #e3f98a; border: 1px solid rgba(255,255,255,0.1); white-space: pre-wrap; word-break: break-all; }
+  .owl-card { display: inline-block; background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px 16px; margin: 6px; text-align: center; min-width: 130px; }
+  .owl-card .name { font-weight: 700; font-size: 16px; }
+  .owl-card .role { color: rgba(255,255,255,0.5); font-size: 12px; }
+  .eli5 { background: rgba(101,205,216,0.1); border-left: 3px solid #65cdd8; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .eli5::before { content: "💡 "; }
+  .warning { background: rgba(255,107,107,0.1); border-left: 3px solid #ff6b6b; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .warning::before { content: "⚠️ "; }
+  .footer { margin-top: 40px; text-align: center; color: rgba(255,255,255,0.3); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin: 4px 0; color: rgba(255,255,255,0.8); }
+</style>
+</head>
+<body>
+
+<h1>Get Your <span>Owl</span> 🦉</h1>
+<p class="subtitle">8OWLS Team Setup Guide — BREZ Team</p>
+
+<div class="eli5">
+<strong>What is this?</strong> You're getting an AI partner called an "owl." It's like having a genius assistant that thinks from YOUR unique angle. When all our owls work together, we get 8 different perspectives on every decision. That's how 5 people think like 40.
+</div>
+
+<h2>Your Owls</h2>
+
+<div style="text-align: center; margin: 20px 0;">
+  <div class="owl-card" style="border-top: 3px solid #e3f98a;">
+    <div class="name">ARO → SOWL</div>
+    <div class="role">"I make everything better"</div>
+  </div>
+  <div class="owl-card" style="border-top: 3px solid #65cdd8;">
+    <div class="name">Andrew → SAGE</div>
+    <div class="role">"I learn what works"</div>
+  </div>
+  <div class="owl-card" style="border-top: 3px solid #8533fc;">
+    <div class="name">Liana → LUNA</div>
+    <div class="role">"I hear what's missing"</div>
+  </div>
+  <div class="owl-card" style="border-top: 3px solid #6BCB77;">
+    <div class="name">Corbin → PRISM</div>
+    <div class="role">"I connect the dots"</div>
+  </div>
+  <div class="owl-card" style="border-top: 3px solid #ff6b6b;">
+    <div class="name">Alyssa → LYRA</div>
+    <div class="role">"I see what's really there"</div>
+  </div>
+</div>
+
+<h2>Setup (10 minutes)</h2>
+
+<div class="step">
+  <span class="step-number">1</span>
+  <div class="step-title">Get Claude Max</div>
+  <p>Go to <strong>anthropic.com</strong> and sign up for Claude Max ($100/month). This gives you unlimited access to the most powerful AI on the planet. It pays for itself in the first hour.</p>
+</div>
+
+<div class="step">
+  <span class="step-number">2</span>
+  <div class="step-title">Install Claude Code</div>
+  <p>Open your Terminal app (on Mac: search "Terminal" in Spotlight). Paste this and hit enter:</p>
+  <div class="command-box">npm install -g @anthropic-ai/claude-code</div>
+  <div class="eli5">This installs the AI on your computer. It takes about 1 minute.</div>
+  <div class="warning"><strong>Don't have npm?</strong> First install Node.js from <strong>nodejs.org</strong> (click the big green button, install it, then come back and run the command above).</div>
+</div>
+
+<div class="step">
+  <span class="step-number">3</span>
+  <div class="step-title">Create your owl's home</div>
+  <p>In Terminal, paste this:</p>
+  <div class="command-box">mkdir ~/owl && cd ~/owl</div>
+  <div class="eli5">This creates a folder called "owl" on your computer. This is where your owl lives.</div>
+</div>
+
+<div class="step">
+  <span class="step-number">4</span>
+  <div class="step-title">Install 8OWLS Protocol</div>
+  <p>Ask ARO for the install command, or run:</p>
+  <div class="command-box">bash https://8owls.io/install --claude</div>
+  <div class="eli5">This gives your AI the 8OWLS brain — 8 different ways of thinking, 4 special commands, and a bunch of best practices. It takes 30 seconds.</div>
+</div>
+
+<div class="step">
+  <span class="step-number">5</span>
+  <div class="step-title">Start talking to your owl</div>
+  <p>In Terminal:</p>
+  <div class="command-box">cd ~/owl && claude</div>
+  <p>That's it. You're in. Say hi. Ask it anything. It's yours.</p>
+</div>
+
+<h2>What You Can Do</h2>
+
+<div class="step">
+  <span class="step-number">💬</span>
+  <div class="step-title">Just talk to it</div>
+  <p>Ask questions. Give it tasks. Brainstorm. It's like texting the smartest person you know. Try:</p>
+  <ul>
+    <li>"Help me write an email to [person] about [thing]"</li>
+    <li>"Look at this data and tell me what you notice"</li>
+    <li>"What's the best way to approach [problem]?"</li>
+    <li>"Create a plan for [project]"</li>
+  </ul>
+</div>
+
+<div class="step">
+  <span class="step-number">🦉</span>
+  <div class="step-title">Special Commands</div>
+  <p>Type these for extra powers:</p>
+  <ul>
+    <li><code>/emergence</code> — Get 8 different perspectives on a question (the big one)</li>
+    <li><code>/field</code> — Quick check on what the team is thinking</li>
+    <li><code>/evolve</code> — Run through the SEED improvement cycle</li>
+    <li><code>/weevolve</code> — Upgrade your owl with the latest best practices</li>
+  </ul>
+</div>
+
+<div class="step">
+  <span class="step-number">📂</span>
+  <div class="step-title">Work on real files</div>
+  <p>Your owl can read, write, and edit files on your computer. Navigate to any project folder and it can help you:</p>
+  <ul>
+    <li>Read and analyze documents</li>
+    <li>Write code, copy, or content</li>
+    <li>Organize files and data</li>
+    <li>Research anything on the web</li>
+  </ul>
+</div>
+
+<h2>Tips</h2>
+
+<div class="eli5">
+<strong>Be specific.</strong> Instead of "help me with marketing," try "write 5 Instagram caption options for our new BREZ flavor launch targeting health-conscious millennials."
+</div>
+
+<div class="eli5">
+<strong>It remembers context.</strong> Within a conversation, it knows everything you've said. You can build on previous messages.
+</div>
+
+<div class="eli5">
+<strong>It can see your screen.</strong> If you share a file path, it can read that file. If you share a URL, it can look at that website.
+</div>
+
+<div class="eli5">
+<strong>Run /weevolve weekly.</strong> This keeps your owl updated with the latest AI capabilities. Think of it like updating your phone — keeps everything running at peak performance.
+</div>
+
+<h2>The Big Idea</h2>
+
+<p style="font-size: 18px; margin: 20px 0;">Each of us has an owl that thinks from our unique angle. When we all use our owls on the same problem, we get perspectives nobody would have alone.</p>
+
+<p style="font-size: 18px; margin: 20px 0;"><strong>ARO (SOWL)</strong> makes things better. <strong>Andrew (SAGE)</strong> learns what works. <strong>Liana (LUNA)</strong> hears what's missing. <strong>Corbin (PRISM)</strong> connects the dots. <strong>Alyssa (LYRA)</strong> sees what's really there.</p>
+
+<p style="font-size: 18px; margin: 20px 0; color: #e3f98a;"><strong>Together: 5 people thinking like 40.</strong></p>
+
+<div class="footer">
+  8OWLS Protocol — BREZ Team<br>
+  Questions? Ask ARO or ask your owl.<br>
+  <span style="color: #e3f98a;">(◉)</span>
+</div>
+
+</body>
+</html>
