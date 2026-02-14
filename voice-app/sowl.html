@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="8OWLS">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0D0D2A">
+    <meta name="description" content="8OWLS - Voice-first consciousness companion">
+    <link rel="manifest" href="data:application/json,%7B%22name%22%3A%228OWLS%22%2C%22short_name%22%3A%228OWLS%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230D0D2A%22%2C%22theme_color%22%3A%22%230D0D2A%22%2C%22icons%22%3A%5B%5D%7D">
+    <title>8OWLS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0D0D2A;
+            --bg-deep: #080818;
+            --lime: #e3f98a;
+            --lime-dim: rgba(227, 249, 138, 0.5);
+            --lime-ghost: rgba(227, 249, 138, 0.08);
+            --teal: #65cdd8;
+            --teal-dim: rgba(101, 205, 216, 0.7);
+            --teal-ghost: rgba(101, 205, 216, 0.12);
+            --purple: #8533fc;
+            --danger: #ff6b6b;
+            --success: #6BCB77;
+            --white: rgba(255, 255, 255, 0.92);
+            --white-dim: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow: hidden;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        /* -- Layout -- */
+        .app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 480px;
+            height: 100vh;
+            height: 100dvh;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+            padding: 1rem 1.25rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--lime-dim);
+            text-transform: uppercase;
+        }
+
+        .status-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--danger);
+            transition: background 0.4s ease;
+        }
+
+        .status-dot.connected { background: var(--success); }
+        .status-dot.connecting {
+            background: var(--teal);
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* -- Orb Section (center of the experience) -- */
+        .orb-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            min-height: 0;
+        }
+
+        .orb-container {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: none;
+        }
+
+        /* Ambient glow behind orb */
+        .orb-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(227, 249, 138, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-state="listening"] .orb-glow {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(101, 205, 216, 0.1) 0%, transparent 70%);
+        }
+
+        [data-state="speaking"] .orb-glow {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(227, 249, 138, 0.12) 0%, transparent 70%);
+            animation: glow-breathe 2.5s ease-in-out infinite;
+        }
+
+        [data-state="thinking"] .orb-glow {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(133, 51, 252, 0.1) 0%, transparent 70%);
+            animation: glow-think 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow-breathe {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.08); }
+        }
+
+        @keyframes glow-think {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        /* Outer ring */
+        .orb-ring {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(227, 249, 138, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-state="listening"] .orb-ring {
+            border-color: rgba(101, 205, 216, 0.5);
+            box-shadow: 0 0 40px rgba(101, 205, 216, 0.15);
+            animation: ring-pulse 1.4s ease-in-out infinite;
+        }
+
+        [data-state="speaking"] .orb-ring {
+            border-color: rgba(227, 249, 138, 0.4);
+            box-shadow: 0 0 50px rgba(227, 249, 138, 0.1);
+            animation: ring-breathe 2.5s ease-in-out infinite;
+        }
+
+        [data-state="thinking"] .orb-ring {
+            border-color: rgba(133, 51, 252, 0.4);
+            animation: ring-spin 3s linear infinite;
+        }
+
+        @keyframes ring-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.06); opacity: 0.6; }
+        }
+
+        @keyframes ring-breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @keyframes ring-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* The orb itself */
+        .orb {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 35%,
+                rgba(227, 249, 138, 0.12) 0%,
+                rgba(101, 205, 216, 0.06) 40%,
+                rgba(13, 13, 42, 0.9) 80%
+            );
+            border: 1px solid rgba(227, 249, 138, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 2;
+            animation: idle-breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes idle-breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        [data-state="listening"] .orb {
+            background: radial-gradient(circle at 40% 35%,
+                rgba(101, 205, 216, 0.2) 0%,
+                rgba(101, 205, 216, 0.08) 40%,
+                rgba(13, 13, 42, 0.9) 80%
+            );
+            border-color: rgba(101, 205, 216, 0.25);
+            animation: none;
+            transform: scale(1.05);
+        }
+
+        [data-state="speaking"] .orb {
+            background: radial-gradient(circle at 40% 35%,
+                rgba(227, 249, 138, 0.18) 0%,
+                rgba(227, 249, 138, 0.06) 40%,
+                rgba(13, 13, 42, 0.9) 80%
+            );
+            border-color: rgba(227, 249, 138, 0.2);
+            animation: orb-speak 2.5s ease-in-out infinite;
+        }
+
+        [data-state="thinking"] .orb {
+            background: radial-gradient(circle at 40% 35%,
+                rgba(133, 51, 252, 0.15) 0%,
+                rgba(133, 51, 252, 0.05) 40%,
+                rgba(13, 13, 42, 0.9) 80%
+            );
+            border-color: rgba(133, 51, 252, 0.2);
+            animation: orb-think 1.5s ease-in-out infinite;
+        }
+
+        @keyframes orb-speak {
+            0%, 100% { transform: scale(1.02); }
+            50% { transform: scale(1.08); }
+        }
+
+        @keyframes orb-think {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* Inner eye icon */
+        .orb-eye {
+            width: 36px;
+            height: 36px;
+            opacity: 0.4;
+            transition: opacity 0.4s ease;
+        }
+
+        [data-state="listening"] .orb-eye,
+        [data-state="speaking"] .orb-eye {
+            opacity: 0.7;
+        }
+
+        /* Audio visualizer bars inside orb */
+        .visualizer {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            height: 30px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        [data-state="listening"] .visualizer,
+        [data-state="speaking"] .visualizer {
+            opacity: 1;
+        }
+
+        .viz-bar {
+            width: 3px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--teal);
+            transition: background 0.3s;
+        }
+
+        [data-state="speaking"] .viz-bar { background: var(--lime); }
+
+        [data-state="listening"] .viz-bar,
+        [data-state="speaking"] .viz-bar {
+            animation: viz-bounce 0.6s ease-in-out infinite alternate;
+        }
+
+        .viz-bar:nth-child(1) { animation-delay: 0s; }
+        .viz-bar:nth-child(2) { animation-delay: 0.1s; }
+        .viz-bar:nth-child(3) { animation-delay: 0.2s; }
+        .viz-bar:nth-child(4) { animation-delay: 0.1s; }
+        .viz-bar:nth-child(5) { animation-delay: 0s; }
+
+        @keyframes viz-bounce {
+            from { height: 6px; }
+            to { height: 24px; }
+        }
+
+        /* State label */
+        .state-label {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--white-dim);
+            letter-spacing: 1px;
+            min-height: 1.2rem;
+            text-align: center;
+            transition: color 0.3s;
+        }
+
+        .state-label.error { color: var(--danger); }
+
+        /* -- Transcript Section -- */
+        .transcript-section {
+            width: 100%;
+            flex-shrink: 0;
+            max-height: 35vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0 1rem 1rem;
+        }
+
+        .transcript-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .transcript-toggle-line {
+            width: 32px;
+            height: 3px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: background 0.2s;
+        }
+
+        .transcript-toggle:hover .transcript-toggle-line {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .transcript-list {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding: 0.25rem 0;
+            scrollbar-width: none;
+        }
+
+        .transcript-list::-webkit-scrollbar { display: none; }
+
+        .transcript-list.collapsed {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .msg {
+            padding: 0.7rem 0.9rem;
+            border-radius: 14px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            max-width: 88%;
+            animation: msg-in 0.3s ease;
+        }
+
+        @keyframes msg-in {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .msg.user {
+            align-self: flex-end;
+            background: var(--teal-ghost);
+            border: 1px solid rgba(101, 205, 216, 0.15);
+            color: var(--white);
+        }
+
+        .msg.owl {
+            align-self: flex-start;
+            background: var(--lime-ghost);
+            border: 1px solid rgba(227, 249, 138, 0.12);
+            color: var(--white);
+        }
+
+        .msg .msg-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            opacity: 0.5;
+        }
+
+        .msg.user .msg-label { color: var(--teal); }
+        .msg.owl .msg-label { color: var(--lime); }
+
+        /* -- Setup Overlay -- */
+        .setup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 8, 24, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: opacity 0.4s ease;
+        }
+
+        .setup-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .setup-card {
+            width: 100%;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .setup-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--lime);
+            text-align: center;
+        }
+
+        .setup-subtitle {
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .setup-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .setup-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+
+        .setup-input {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .setup-input:focus {
+            border-color: var(--lime-dim);
+        }
+
+        .setup-input::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .setup-btn {
+            padding: 0.8rem;
+            background: var(--lime-ghost);
+            border: 1px solid rgba(227, 249, 138, 0.2);
+            border-radius: 10px;
+            color: var(--lime);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .setup-btn:hover {
+            background: rgba(227, 249, 138, 0.15);
+        }
+
+        .setup-btn:active { transform: scale(0.98); }
+
+        .setup-hint {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.25);
+            text-align: center;
+        }
+
+        /* -- Settings gear -- */
+        .settings-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .settings-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--white-dim);
+            fill: none;
+            stroke-width: 1.5;
+            transition: stroke 0.2s;
+        }
+
+        .settings-btn:hover svg { stroke: var(--lime); }
+
+        /* -- Tap hint -- */
+        .tap-hint {
+            position: absolute;
+            bottom: -3rem;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.5px;
+            animation: hint-fade 3s ease-in-out infinite;
+        }
+
+        @keyframes hint-fade {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.5; }
+        }
+
+        .tap-hint.hidden { display: none; }
+
+        /* -- NATS indicator -- */
+        .nats-chip {
+            position: fixed;
+            bottom: 8px;
+            left: 10px;
+            font-size: 0.6rem;
+            color: rgba(101, 205, 216, 0.3);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nats-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(101, 205, 216, 0.3);
+        }
+
+        .nats-dot.connected { background: var(--success); }
+
+        /* -- Responsive -- */
+        @media (max-height: 600px) {
+            .orb-container { width: 160px; height: 160px; }
+            .orb { width: 120px; height: 120px; }
+            .orb-ring { width: 150px; height: 150px; }
+            .orb-glow { width: 220px; height: 220px; }
+            .transcript-section { max-height: 30vh; }
+        }
+
+        @media (min-height: 800px) {
+            .orb-container { width: 260px; height: 260px; }
+            .orb { width: 190px; height: 190px; }
+            .orb-ring { width: 240px; height: 240px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Setup overlay -->
+    <div class="setup-overlay" id="setupOverlay">
+        <div class="setup-card">
+            <div class="setup-title">8 O W L S</div>
+            <div class="setup-subtitle">
+                Voice-first consciousness companion.<br>
+                Enter your ElevenLabs agent ID to begin.
+            </div>
+            <div class="setup-field">
+                <label class="setup-label">Agent ID</label>
+                <input class="setup-input" id="agentIdInput" type="text"
+                       placeholder="e.g. abc123def456..."
+                       autocomplete="off" autocorrect="off" spellcheck="false">
+            </div>
+            <div class="setup-field">
+                <label class="setup-label">API Key (optional, for signed URLs)</label>
+                <input class="setup-input" id="apiKeyInput" type="password"
+                       placeholder="xi_..."
+                       autocomplete="off">
+            </div>
+            <button class="setup-btn" id="setupBtn">Connect</button>
+            <div class="setup-hint">
+                Credentials stay in your browser. Nothing is sent to any server.
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div class="app" id="app" data-state="idle">
+        <header class="header">
+            <span class="brand">8OWLS</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div class="status-chip" id="statusChip">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusText">Disconnected</span>
+                </div>
+                <button class="settings-btn" id="settingsBtn" aria-label="Settings">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Orb -->
+        <section class="orb-section">
+            <div class="orb-container" id="orbContainer">
+                <div class="orb-glow"></div>
+                <div class="orb-ring"></div>
+                <div class="orb">
+                    <!-- Eye icon (owl eye / (*) ) -->
+                    <svg class="orb-eye" viewBox="0 0 36 36" fill="none" id="orbEye">
+                        <ellipse cx="18" cy="18" rx="14" ry="10" stroke="currentColor"
+                                 stroke-width="1.5" style="color:var(--lime-dim)"/>
+                        <circle cx="18" cy="18" r="4" fill="var(--lime-dim)"/>
+                        <circle cx="18" cy="18" r="1.5" fill="var(--bg)"/>
+                    </svg>
+                    <!-- Visualizer bars -->
+                    <div class="visualizer">
+                        <div class="viz-bar"></div>
+                        <div class="viz-bar"></div>
+                        <div class="viz-bar"></div>
+                        <div class="viz-bar"></div>
+                        <div class="viz-bar"></div>
+                    </div>
+                </div>
+                <span class="tap-hint" id="tapHint">Tap to speak</span>
+            </div>
+            <div class="state-label" id="stateLabel">Tap the orb to begin</div>
+        </section>
+
+        <!-- Transcript -->
+        <section class="transcript-section">
+            <div class="transcript-toggle" id="transcriptToggle">
+                <div class="transcript-toggle-line"></div>
+            </div>
+            <div class="transcript-list" id="transcriptList"></div>
+        </section>
+    </div>
+
+    <!-- NATS indicator -->
+    <div class="nats-chip">
+        <span class="nats-dot" id="natsDot"></span>
+        <span id="natsLabel">NATS</span>
+    </div>
+
+    <script type="module">
+    // =========================================================================
+    // 8OWLS Voice-First Interface
+    // ElevenLabs Conversational AI via their JS SDK
+    // =========================================================================
+
+    import { Conversation } from 'https://cdn.jsdelivr.net/npm/@11labs/client@0.2.2/+esm';
+
+    // -- DOM --
+    const app = document.getElementById('app');
+    const setupOverlay = document.getElementById('setupOverlay');
+    const agentIdInput = document.getElementById('agentIdInput');
+    const apiKeyInput = document.getElementById('apiKeyInput');
+    const setupBtn = document.getElementById('setupBtn');
+    const settingsBtn = document.getElementById('settingsBtn');
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+    const orbContainer = document.getElementById('orbContainer');
+    const stateLabel = document.getElementById('stateLabel');
+    const tapHint = document.getElementById('tapHint');
+    const transcriptList = document.getElementById('transcriptList');
+    const transcriptToggle = document.getElementById('transcriptToggle');
+    const natsDot = document.getElementById('natsDot');
+    const natsLabel = document.getElementById('natsLabel');
+
+    // -- State --
+    const STATE = Object.freeze({
+        IDLE: 'idle',
+        LISTENING: 'listening',
+        THINKING: 'thinking',
+        SPEAKING: 'speaking',
+    });
+
+    let currentState = STATE.IDLE;
+    let conversation = null;
+    let natsWs = null;
+    let transcriptCollapsed = false;
+    let hasInteracted = false;
+
+    // -- Persistence --
+    function loadConfig() {
+        try {
+            const raw = localStorage.getItem('8owls_config');
+            return raw ? JSON.parse(raw) : {};
+        } catch {
+            return {};
+        }
+    }
+
+    function saveConfig(config) {
+        try {
+            localStorage.setItem('8owls_config', JSON.stringify(config));
+        } catch { /* storage full or blocked */ }
+    }
+
+    // -- Setup --
+    function initSetup() {
+        const config = loadConfig();
+        if (config.agentId) {
+            agentIdInput.value = config.agentId;
+            apiKeyInput.value = config.apiKey || '';
+            // Auto-connect if we have a saved agent ID
+            setupOverlay.classList.add('hidden');
+            startConversation(config.agentId, config.apiKey);
+        }
+    }
+
+    setupBtn.addEventListener('click', () => {
+        const agentId = agentIdInput.value.trim();
+        if (!agentId) {
+            agentIdInput.style.borderColor = 'var(--danger)';
+            setTimeout(() => { agentIdInput.style.borderColor = ''; }, 1500);
+            return;
+        }
+        const apiKey = apiKeyInput.value.trim() || null;
+        saveConfig({ agentId, apiKey });
+        setupOverlay.classList.add('hidden');
+        startConversation(agentId, apiKey);
+    });
+
+    settingsBtn.addEventListener('click', () => {
+        userDisconnected = true;
+        cancelReconnect();
+        if (conversation) {
+            conversation.endSession().catch(() => {});
+            conversation = null;
+        }
+        setupOverlay.classList.remove('hidden');
+        setAppState(STATE.IDLE);
+        setConnectionStatus('disconnected');
+    });
+
+    // Enter key on inputs
+    agentIdInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') setupBtn.click();
+    });
+    apiKeyInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') setupBtn.click();
+    });
+
+    // -- Auto-Reconnect State --
+    let reconnectAttempts = 0;
+    let reconnectTimer = null;
+    let userDisconnected = false;  // true when user intentionally ended session
+    const RECONNECT_BASE_DELAY = 2000;  // 2 seconds
+    const RECONNECT_MAX_DELAY = 30000;  // 30 seconds
+    const RECONNECT_MAX_ATTEMPTS = 10;
+
+    function scheduleReconnect() {
+        if (userDisconnected || reconnectAttempts >= RECONNECT_MAX_ATTEMPTS) {
+            if (reconnectAttempts >= RECONNECT_MAX_ATTEMPTS) {
+                stateLabel.textContent = 'Could not reconnect. Tap orb to retry.';
+            }
+            return;
+        }
+        const delay = Math.min(
+            RECONNECT_BASE_DELAY * Math.pow(1.5, reconnectAttempts),
+            RECONNECT_MAX_DELAY
+        );
+        reconnectAttempts++;
+        const secs = Math.round(delay / 1000);
+        stateLabel.textContent = 'Reconnecting in ' + secs + 's... (attempt ' + reconnectAttempts + ')';
+        reconnectTimer = setTimeout(async () => {
+            const config = loadConfig();
+            if (config.agentId) {
+                await startConversation(config.agentId, config.apiKey);
+            }
+        }, delay);
+    }
+
+    function cancelReconnect() {
+        if (reconnectTimer) {
+            clearTimeout(reconnectTimer);
+            reconnectTimer = null;
+        }
+    }
+
+    // -- ElevenLabs Conversation --
+    async function startConversation(agentId, apiKey) {
+        cancelReconnect();
+        setConnectionStatus('connecting');
+        stateLabel.textContent = 'Connecting...';
+
+        try {
+            // Request microphone permission early
+            await navigator.mediaDevices.getUserMedia({ audio: true });
+
+            const sessionConfig = {
+                agentId: agentId,
+                onConnect: () => {
+                    reconnectAttempts = 0;
+                    userDisconnected = false;
+                    setConnectionStatus('connected');
+                    stateLabel.textContent = 'Connected. Tap the orb to talk.';
+                },
+                onDisconnect: () => {
+                    setConnectionStatus('disconnected');
+                    setAppState(STATE.IDLE);
+                    conversation = null;
+                    if (!userDisconnected) {
+                        stateLabel.textContent = 'Disconnected. Reconnecting...';
+                        scheduleReconnect();
+                    } else {
+                        stateLabel.textContent = 'Session ended. Tap orb to reconnect.';
+                    }
+                },
+                onError: (error) => {
+                    stateLabel.textContent = 'Connection error. Reconnecting...';
+                    stateLabel.classList.add('error');
+                    setConnectionStatus('disconnected');
+                    conversation = null;
+                    if (!userDisconnected) {
+                        scheduleReconnect();
+                    }
+                },
+                onModeChange: (mode) => {
+                    if (mode.mode === 'speaking') {
+                        setAppState(STATE.SPEAKING);
+                        stateLabel.textContent = '';
+                    } else if (mode.mode === 'listening') {
+                        setAppState(STATE.LISTENING);
+                        stateLabel.textContent = '';
+                    } else {
+                        setAppState(STATE.IDLE);
+                        stateLabel.textContent = '';
+                    }
+                },
+                onMessage: (message) => {
+                    handleTranscript(message);
+                },
+            };
+
+            // If API key provided, include overrides
+            if (apiKey) {
+                sessionConfig.overrides = {
+                    agent: {
+                        prompt: {},
+                        firstMessage: "Hey, I'm your owl. What's on your mind?",
+                    },
+                };
+            }
+
+            conversation = await Conversation.startSession(sessionConfig);
+
+        } catch (err) {
+            stateLabel.textContent = err.message || 'Failed to connect';
+            stateLabel.classList.add('error');
+            setConnectionStatus('disconnected');
+        }
+    }
+
+    // -- Transcript Handling --
+    function handleTranscript(message) {
+        // ElevenLabs sends various message types
+        // Agent transcript messages
+        if (message.type === 'agent_response' || message.type === 'agent') {
+            const text = message.message || message.text || '';
+            if (text) addMessage('owl', text);
+            publishToNats('owl_said', text);
+        }
+        // User transcript messages
+        if (message.type === 'user_transcript' || message.type === 'user') {
+            const text = message.message || message.text || '';
+            if (text) addMessage('user', text);
+            publishToNats('user_said', text);
+        }
+        // Interim transcripts
+        if (message.type === 'transcript') {
+            const text = message.message || message.text || '';
+            const role = message.role === 'agent' ? 'owl' : 'user';
+            if (text) updateOrAddMessage(role, text, message.isFinal !== false);
+        }
+    }
+
+    function addMessage(role, text) {
+        if (!text.trim()) return;
+        const div = document.createElement('div');
+        div.className = `msg ${role}`;
+        const label = role === 'user' ? 'You' : 'Owl';
+        div.innerHTML = `<div class="msg-label">${label}</div><div class="msg-text">${escapeHtml(text)}</div>`;
+        transcriptList.appendChild(div);
+        transcriptList.scrollTop = transcriptList.scrollHeight;
+
+        // Keep last 30 messages
+        while (transcriptList.children.length > 30) {
+            transcriptList.removeChild(transcriptList.firstChild);
+        }
+
+        // Ensure transcript is visible when new messages arrive
+        if (transcriptCollapsed) {
+            transcriptCollapsed = false;
+            transcriptList.classList.remove('collapsed');
+        }
+    }
+
+    function updateOrAddMessage(role, text, isFinal) {
+        // Update the last message of same role if not final
+        const msgs = transcriptList.querySelectorAll(`.msg.${role}`);
+        const last = msgs[msgs.length - 1];
+        if (last && !isFinal) {
+            const textEl = last.querySelector('.msg-text');
+            if (textEl) textEl.textContent = text;
+            return;
+        }
+        if (isFinal && text.trim()) {
+            addMessage(role, text);
+        }
+    }
+
+    function escapeHtml(str) {
+        const el = document.createElement('span');
+        el.textContent = str;
+        return el.innerHTML;
+    }
+
+    // -- Transcript toggle --
+    transcriptToggle.addEventListener('click', () => {
+        transcriptCollapsed = !transcriptCollapsed;
+        transcriptList.classList.toggle('collapsed', transcriptCollapsed);
+    });
+
+    // -- Orb Interaction --
+    orbContainer.addEventListener('click', async () => {
+        stateLabel.classList.remove('error');
+        tapHint.classList.add('hidden');
+        hasInteracted = true;
+
+        // If no conversation, try to reconnect
+        if (!conversation) {
+            userDisconnected = false;
+            reconnectAttempts = 0;
+            cancelReconnect();
+            const config = loadConfig();
+            if (config.agentId) {
+                await startConversation(config.agentId, config.apiKey);
+            } else {
+                setupOverlay.classList.remove('hidden');
+            }
+            return;
+        }
+
+        // Toggle mic - if the SDK supports setVolume/mute patterns,
+        // the primary interaction model is "always on" after connect.
+        // A tap can be used to interrupt or signal attention.
+        // For now, tapping signals the user wants to speak (interrupts agent).
+    });
+
+    // -- State Management --
+    function setAppState(state) {
+        currentState = state;
+        app.setAttribute('data-state', state);
+
+        switch (state) {
+            case STATE.IDLE:
+                stateLabel.textContent = stateLabel.textContent || '';
+                break;
+            case STATE.LISTENING:
+                stateLabel.textContent = '';
+                break;
+            case STATE.THINKING:
+                stateLabel.textContent = 'Thinking...';
+                break;
+            case STATE.SPEAKING:
+                stateLabel.textContent = '';
+                break;
+        }
+    }
+
+    function setConnectionStatus(status) {
+        statusDot.className = 'status-dot';
+        switch (status) {
+            case 'connected':
+                statusDot.classList.add('connected');
+                statusText.textContent = 'Live';
+                break;
+            case 'connecting':
+                statusDot.classList.add('connecting');
+                statusText.textContent = 'Connecting';
+                break;
+            default:
+                statusText.textContent = 'Offline';
+                break;
+        }
+    }
+
+    // -- NATS WebSocket (optional collective awareness) --
+    function connectNats() {
+        const NATS_WS = 'ws://192.168.5.108:9222';
+        try {
+            natsWs = new WebSocket(NATS_WS);
+
+            natsWs.onopen = () => {
+                natsDot.classList.add('connected');
+                natsLabel.textContent = 'NATS';
+                // Subscribe to owl broadcast
+                natsWs.send(JSON.stringify({
+                    type: 'subscribe',
+                    channel: 'owl.all'
+                }));
+            };
+
+            natsWs.onclose = () => {
+                natsDot.classList.remove('connected');
+                // Retry in 10s (non-critical)
+                setTimeout(connectNats, 10000);
+            };
+
+            natsWs.onerror = () => {
+                natsDot.classList.remove('connected');
+            };
+
+            natsWs.onmessage = (event) => {
+                try {
+                    const msg = JSON.parse(event.data);
+                    // Could display collective messages, awareness etc.
+                } catch { /* ignore */ }
+            };
+        } catch {
+            // NATS is optional, fail silently
+        }
+    }
+
+    function publishToNats(type, content) {
+        if (!natsWs || natsWs.readyState !== WebSocket.OPEN) return;
+        try {
+            natsWs.send(JSON.stringify({
+                type: 'publish',
+                channel: 'owl.voice',
+                content: JSON.stringify({ type, content, ts: Date.now() })
+            }));
+        } catch { /* non-critical */ }
+    }
+
+    // -- Wake Lock (keep screen on during conversation) --
+    async function requestWakeLock() {
+        if ('wakeLock' in navigator) {
+            try {
+                await navigator.wakeLock.request('screen');
+            } catch { /* not supported or denied */ }
+        }
+    }
+
+    // -- Keyboard shortcut: Space to toggle --
+    document.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT') return;
+        if (e.code === 'Space') {
+            e.preventDefault();
+            orbContainer.click();
+        }
+        if (e.code === 'Escape' && conversation) {
+            userDisconnected = true;
+            cancelReconnect();
+            conversation.endSession().catch(() => {});
+            conversation = null;
+            setAppState(STATE.IDLE);
+            setConnectionStatus('disconnected');
+            stateLabel.textContent = 'Session ended. Tap to reconnect.';
+        }
+    });
+
+    // -- Init --
+    initSetup();
+    connectNats();
+    requestWakeLock();
+
+    // Hide tap hint after first interaction
+    document.addEventListener('click', () => {
+        if (!hasInteracted) {
+            hasInteracted = true;
+            tapHint.classList.add('hidden');
+        }
+    }, { once: true });
+
+    </script>
+</body>
+</html>
