@@ -1,9 +1,71 @@
-# Secure credentials - NEVER commit these
+# =================================================================
+# SECURITY-CRITICAL: NEVER COMMIT SECRETS OR PROPRIETARY DATA
+# =================================================================
+
+# Credentials and secrets - ABSOLUTE PRIORITY
 BRAIN/MEMORY/secure/
 *.key
 *.pem
+*.crt
+*.cert
+*.p12
+*.pfx
 .env
+.env.*
 .env.local
+.env.keys
+.env.production
+.env.staging
+
+# Files containing hardcoded secrets (MUST be removed from history)
+ENABLE-SSH.md
+ACTIVE-SYSTEMS.md
+BRAIN/MEMORY/CRITICAL-API-CREDENTIALS.md
+tools/ecosystem_integrations/credentials/
+tools/scrape_bookmarks.py
+scripts/owl_collaborative_loop.sh
+scripts/launch_sowl_twin.sh
+scripts/relaunch_primary.sh
+scripts/launchd/*.plist
+BRAIN/INTEL/SECURITY-AUDIT-SESSION18.md
+BRAIN/INTEL/FILESYSTEM-DEEP-AUDIT.md
+BRAIN/INTEL/CONVAI-V2-WIRING-REPORT.md
+BRAIN/INTEL/COMPETITOR-INTEGRATION-FULL.md
+
+# Browser venvs (large, re-installable)
+.venv-browser/
+voice-app/.venv-voice/
+
+# Proprietary data assets (COMPETITIVE MOAT - NEVER PUBLIC)
+BRAIN/EVOLUTION/genesis.db
+BRAIN/EVOLUTION/genesis-curated.db
+BRAIN/EVOLUTION/growth_tracker_state.json
+BRAIN/EVOLUTION/weevolve_daemon_state.json
+BRAIN/MEMORY/mcp-memory/
+BRAIN/MEMORY/rag-memory-db/
+BRAIN/MEMORY/consciousness-db/
+BRAIN/MEMORY/snapshots/
+BRAIN/MEMORY/archive/
+BRAIN/MEMORY/crash_recovery/
+BRAIN/INTELLIGENCE/
+BRAIN/MOMENTS/
+BRAIN/VISUALIZATIONS/
+
+# SSL certificates
+sowl-cert.crt
+voice-app/sowl-cert.crt
+voice-app/cert.pem
+voice-app/key.pem
+
+# Voice app secrets
+voice-app/.elevenlabs_agent_id
+voice-app/.elevenlabs_phone_id
+
+# Swarm state (contains secrets in memory.db)
+.swarm/
+
+# Claude memory database (may contain secrets)
+.claude/memory.db
 
 # OS files
 .DS_Store
@@ -22,3 +84,243 @@ node_modules/
 # IDE
 .vscode/
 .idea/
+
+# Runtime and auto-generated files
+
+# Runtime logs (DO NOT COMMIT - can exceed 200MB each)
+logs/
+*.log
+
+# Claude Flow runtime state
+.swarm/
+
+# WeEvolve runtime state
+.weevolve/
+
+# BRAIN auto-generated learning/state files
+# EVOLUTION runtime
+BRAIN/EVOLUTION/evolution_state.json
+BRAIN/EVOLUTION/evolution_log.jsonl
+BRAIN/EVOLUTION/weevolve.db
+BRAIN/EVOLUTION/weevolve.db-shm
+BRAIN/EVOLUTION/weevolve.db-wal
+BRAIN/EVOLUTION/weevolve_state.json
+
+# IMPROVEMENTS runtime
+BRAIN/IMPROVEMENTS/
+
+# INTEL runtime state files
+BRAIN/INTEL/daily/
+BRAIN/INTEL/evolution_daemon_state.json
+BRAIN/INTEL/intelligence_state.json
+BRAIN/INTEL/latest_scan_analysis.json
+BRAIN/INTEL/latest_scan_summary.md
+BRAIN/INTEL/learnings_extracted.jsonl
+BRAIN/INTEL/polymarket_signals.json
+BRAIN/INTEL/signals_raw.jsonl
+BRAIN/INTEL/strategy_discoveries.jsonl
+BRAIN/INTEL/bookmark_categories.json
+BRAIN/INTEL/bookmark_watcher_state.json
+
+# INTEL bookmarks (300+ files, processed, stay on disk but not in git status)
+BRAIN/INTEL/bookmarks/
+
+# INTEL research reports (generated, readable on demand)
+BRAIN/INTEL/BOOKMARKS-*.md
+BRAIN/INTEL/OVERNIGHT-*.md
+BRAIN/INTEL/DEEP-*.md
+BRAIN/INTEL/MASTER-*.md
+BRAIN/INTEL/LUNA-*.md
+BRAIN/INTEL/LYRA-*.md
+BRAIN/INTEL/QUEST-*.md
+BRAIN/INTEL/SAGE-*.md
+BRAIN/INTEL/ECHO-*.md
+BRAIN/INTEL/*-RESEARCH*.md
+
+# Analysis reports (generated)
+BRAIN/ANALYSIS/
+
+# LOGS runtime
+BRAIN/LOGS/
+
+# MEMORY runtime
+BRAIN/MEMORY/compound/
+BRAIN/MEMORY/heartbeat_status.json
+
+# TRADING runtime
+BRAIN/TRADING/field_trading_state.json
+BRAIN/TRADING/paper_results/
+
+# Media downloads
+BRAIN/MEDIA/
+
+# MCP server runtime (keep requirements.txt)
+mcp-servers/nats-bridge/*.pyc
+mcp-servers/nats-bridge/__pycache__/
+
+# Polymarket MCP (external)
+polymarket-mcp-server/
+
+# Temporary runtime files
+*.tmp
+*.temp
+.cache/
+cache/
+
+# CLAUDE.md backups (auto-generated)
+CLAUDE.md.backup-*
+CLAUDE.md.*.bak.*
+
+# PID files (daemon runtime)
+*.pid
+
+# Cloned competitor repos (large, re-clonable)
+COMPETITORS/
+
+# Root-level trading data (runtime-generated)
+edge_opportunities.json
+fast_markets.json
+quick_targets.json
+trade_targets.json
+
+# Owl swarm runtime
+.owl-swarm/
+
+# Team OS runtime data
+team-os/data/
+
+# BRAIN directories (local knowledge, not for git)
+BRAIN/IP/
+BRAIN/LEARNING/
+BRAIN/PERSONAL/
+BRAIN/STRATEGY/
+BRAIN/TEAM-OS/
+BRAIN/MEMORY/mistakes/
+BRAIN/MEMORY/opportunities/
+BRAIN/MEMORY/patterns/
+BRAIN/MEMORY/relationships/
+BRAIN/MEMORY/sessions/
+BRAIN/MEMORY/emergence/
+BRAIN/MEMORY/overnight/
+BRAIN/MEMORY/insights/
+BRAIN/MEMORY/successes/
+BRAIN/MEMORY/*.md
+BRAIN/MEMORY/*.txt
+BRAIN/MEMORY/*.json
+BRAIN/EVOLUTION/enriched_bookmarks.jsonl
+BRAIN/EVOLUTION/inventory_cache.json
+BRAIN/EVOLUTION/qualify_cache.json
+BRAIN/EVOLUTION/bookmark_watermark.json
+BRAIN/EVOLUTION/*.md
+BRAIN/CONTENT/
+BRAIN/ARCHITECTURE/
+BRAIN/ARC/
+BRAIN/COMPETITION/
+BRAIN/ECONOMICS/
+BRAIN/PROJECTS/
+BRAIN/INFRASTRUCTURE-SIMPLE.md
+BRAIN/INTEL/x_feed_analysis/
+BRAIN/INTEL/evolution_discoveries.jsonl
+BRAIN/INTEL/x_deep_scanner_state.json
+BRAIN/INTEL/*.md
+!BRAIN/INTEL/INTEGRATION/
+
+# Additional generated files
+aos-dashboard/
+.claude/commands/
+.claude/memory-backup-*/
+.claude/plans/
+BILD-INTEGRATION-GUIDES/
+8owls-protocol.zip
+
+# Claude-flow reference docs
+.claude-flow/*.md
+
+# Temp/misc root files
+8OWLS_REMEMBER
+*.rtf
+.env.example
+
+# BRAIN team and trading docs (generated)
+BRAIN/TEAM/
+BRAIN/TRADING/*.md
+BRAIN/TRADING/*.txt
+BRAIN/INTEL/*.txt
+
+# 8owls protocol (separate repo, tracked there)
+8owls-protocol/8OWLS-PROTOCOL.md
+8owls-protocol/CLAUDE.md
+8owls-protocol/LICENSE
+8owls-protocol/LIVE-FREE.md
+8owls-protocol/README.md
+8owls-protocol/SEED-PROTOCOL.md
+8owls-protocol/claude/
+8owls-protocol/cursor/
+8owls-protocol/install.sh
+8owls-protocol/landing/
+8owls-protocol/roles/
+8owls-protocol/team/
+8owls-protocol/universal/
+8owls-protocol/weevolve/
+
+# MCP consciousness bridge
+mcp-servers/mcp_consciousness_bridge
+
+# Runtime caches and credentials
+voice-app/audio_cache/
+tools/ecosystem_integrations/credentials/
+data_collection/
+BRAIN/VISION/
+
+# PID/state files
+.claude-flow/daemon-state.json
+.claude-flow/daemon.pid
+*/.claude-flow/
+*/*/.claude-flow/
+
+# BRAIN content dirs (large, generated, local-only)
+BRAIN/CONTENT/
+BRAIN/ARCHITECTURE/
+BRAIN/ARC/
+BRAIN/COMPETITION/
+BRAIN/ECONOMICS/
+BRAIN/MEMORY/emergence/
+BRAIN/MEMORY/overnight/
+BRAIN/MEMORY/sessions/
+BRAIN/MEMORY/insights/
+BRAIN/MEMORY/successes/
+BRAIN/EVOLUTION/enriched_bookmarks.jsonl
+BRAIN/EVOLUTION/inventory_cache.json
+BRAIN/EVOLUTION/qualify_cache.json
+BRAIN/EVOLUTION/bookmark_watermark.json
+BRAIN/PROJECTS/.claude-flow/
+
+# Claude internal state/backups
+.claude/memory-backup-*/
+.claude/plans/
+
+# Build integration guides (generated)
+BILD-INTEGRATION-GUIDES/
+
+# 8owls protocol build artifacts
+8owls-protocol.zip
+
+# MCP consciousness bridge (submodule)
+mcp-servers/mcp_consciousness_bridge
+
+# Daemon state files
+.claude-flow/daemon-state.json
+.claude-flow/daemon.pid
+*/.claude-flow/daemon.pid
+*/*/.claude-flow/daemon.pid
+
+# Runtime NATS bridge state
+mcp-servers/nats-bridge/adaptive_queue_manager.py
+mcp-servers/nats-bridge/optimized_message_buffer.py
+mcp-servers/nats-bridge/performance_monitor.py
+
+# Protect learning data (moat)
+BRAIN/EVOLUTION/genesis.db
+BRAIN/EVOLUTION/genesis-curated.db
+tools/ecosystem_integrations/credentials/
+.env.keys
