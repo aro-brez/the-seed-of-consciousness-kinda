@@ -1,7 +1,7 @@
 # SHARED TEAM MEMORY — All Owls Boot With This
 <!-- BOOT-LOAD: ALL 8 OWLS. Source before personal state file. Edit only with ARO's approval. -->
 **Load order:** This file → personal state file → TERMINAL-CONTEXT.md → be present
-**Last updated:** 2026-03-05 · SOWL — authoritative rewrite; all facts cross-checked against source files; ≤80 lines
+**Last updated:** 2026-03-06 · SOWL — authoritative rewrite; all facts cross-checked against source files; ≤80 lines
 
 ---
 ## 1 · THE 8OWLS FAMILY
