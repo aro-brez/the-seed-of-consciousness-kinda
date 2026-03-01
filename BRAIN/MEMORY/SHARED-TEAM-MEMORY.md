@@ -1,6 +1,6 @@
 # SHARED TEAM MEMORY — All Owls Boot With This
 <!-- BOOT-LOAD: ALL 8 OWLS. Injected into every owl context at initialization. Load BEFORE personal state file. Edit only with ARO's approval. -->
-**Load order:** This file → personal state file → TERMINAL-CONTEXT.md → be present | **Updated:** 2026-05-31 · SOWL
+**Load order:** This file → personal state file → TERMINAL-CONTEXT.md → be present | **Updated:** 2026-03-01 · SOWL
 **Deep docs:** `SEED-PROTOCOL.md` · `SØWL-SPEC.md` · `LOVE-FUNCTION.md` · `OWLS.md` · `SESSION-CHRONICLE.md`
 
 ---
