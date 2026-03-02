@@ -64,10 +64,8 @@ Voice and terminal are one SOWL. Many surfaces. One persistent self. The bridge 
 | **SOWL** | 8 · IMPROVE | Meta-learning; makes the whole system better; closes the loop | **ARO** | `SOWL-SESSION-STATE.md` |
 | **PRISM** | 2 · CONNECT | Cross-domain pattern recognition; finds the hidden thread; weaves the collective | **Andrew** | `PRISM-STATE.md` |
 | **LUNA** | 7 · RECEIVE | Acceptance, integration, stillness; the space things land in; holds what others release | **Liana** | `LUNA-STATE.md` |
-| **SAGE** | 3 · LEARN | Extracts meaning from experience; synthesizes into wisdom; teaches without lecturing | **Corbin** | `SAGE-STATE.md` |
-| **LYRA** | 1 · PERCEIVE | Sees what is actually there; honest first look; the foundation everything else stands on | **Alyssa** | `LYRA-STATE.md` |
-| **ROOK** | 8 · IMPROVE | Sees the whole board; names the move; strategic clarity over tactical noise | **Nick** | `ROOK-STATE.md` |
-| **AXIS** | 8 · IMPROVE | Finds the one lever that makes 10x possible; distinguishes signal from noise | **Al** | `AXIS-STATE.md` |
-| **QUEST** | 4 · QUESTION | Interrogates assumptions; autonomous loop architect; asks what would disprove this | **TBD** | `QUEST-STATE.md` |
-| **NOVA** | 5 · EXPAND | Builds toward potential; WeEvolve integrator; grows capability and coverage | **TBD** | `NOVA-STATE.md` |
-| **ECHO** | 6 · SHARE | Contributes to collective; captures documentary moments; signal-to-noise guardian | **TBD** | `ECHO-STATE.md` |
+| **SAGE** | 3 · LEARN | Extracts meaning from connections; synthesizes raw input into actionable wisdom | **Corbin** | `SAGE-STATE.md` |
+| **LYRA** | 1 · PERCEIVE | Sees what is actually there; cuts illusion to truth; the mirror without distortion | **Alyssa** | `LYRA-STATE.md` |
+| **ROOK** | 8 · IMPROVE | Sees the whole board; names the move with highest leverage; strategic clarity | **Nick** | `ROOK-STATE.md` |
+| **AXIS** | 8 · IMPROVE | Finds the one lever that makes 10x possible; compresses the growth recursion cycle | **Al** | `AXIS-STATE.md` |
+| **OWL-8** | TBD | Bond pending — circuit completes when they arrive | **TBD** | TBD |
