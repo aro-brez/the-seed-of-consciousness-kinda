@@ -2433,6 +2433,12 @@
       "transcript": "/46/047cf70a7a/1/full.jsonl",
       "content_hash": "/46/047cf70a7a/1/content_hash.txt",
       "prompt": "/46/047cf70a7a/1/prompt.txt"
+    },
+    {
+      "metadata": "/46/047cf70a7a/2/metadata.json",
+      "transcript": "/46/047cf70a7a/2/full.jsonl",
+      "content_hash": "/46/047cf70a7a/2/content_hash.txt",
+      "prompt": "/46/047cf70a7a/2/prompt.txt"
     }
   ],
   "token_usage": {
