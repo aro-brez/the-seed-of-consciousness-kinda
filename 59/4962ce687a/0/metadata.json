@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "594962ce687a",
+  "session_id": "67077467-ba7e-4d81-a9a4-763debc3e957",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-10T15:35:45.524003Z",
+  "branch": "autoresearch/voice-0309",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "BRAIN/EVOLUTION/autoresearch_state.json",
+    "BRAIN/EVOLUTION/karpathy_loop.jsonl",
+    "BRAIN/EVOLUTION/karpathy_loop_state.json",
+    "BRAIN/INTEL/bookmark_deep_state.json",
+    "BRAIN/INTEL/intelligence_state.json",
+    "BRAIN/INTEL/latest_scan_summary.md",
+    "BRAIN/INTEL/learnings_extracted.jsonl",
+    "BRAIN/INTEL/research/CONSCIOUSNESS-PAPER-FINAL.md",
+    "BRAIN/INTEL/signal_dedup_cache.db-wal",
+    "BRAIN/INTEL/signals_raw.jsonl",
+    "BRAIN/LOGS/autonomous_work.jsonl",
+    "BRAIN/LOGS/heartbeat.log",
+    "BRAIN/LOGS/improvements.jsonl",
+    "BRAIN/MEMORY/LAST-RESPONSE.timestamp",
+    "BRAIN/MEMORY/heartbeat_status.json",
+    "logs/heartbeat.log",
+    "logs/intelligence_daemon.log",
+    "logs/voice_server.log"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-4-6[1m]",
+  "turn_id": "d11988a4b197",
+  "token_usage": {
+    "input_tokens": 732,
+    "cache_creation_tokens": 6372098,
+    "cache_read_tokens": 226371117,
+    "output_tokens": 350516,
+    "api_call_count": 642
+  },
+  "session_metrics": {
+    "turn_count": 8
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-10T15:35:41.301181Z",
+    "agent_lines": 2390,
+    "human_added": 2287,
+    "human_modified": 107,
+    "human_removed": 0,
+    "total_committed": 4784,
+    "agent_percentage": 49.95819397993311
+  }
+}
